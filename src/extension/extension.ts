@@ -1,10 +1,12 @@
 import * as vscode from 'vscode';
-import { randomBytes } from 'node:crypto';
+import { randomBytes, randomUUID } from 'node:crypto';
+import { rename, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { panelAction, type PanelState } from '../shared.js';
 import { approvalReference, readPrepared, resolveReference } from './source.js';
 import { loadSession, saveSession } from './session.js';
 import { extractGraph } from './graphify.js';
+import { explain, previewContext } from './coach.js';
 import scenario from '../../fixtures/novadesk/scenario.json' with { type: 'json' };
 
 export function activate(context: vscode.ExtensionContext) {
@@ -12,7 +14,15 @@ export function activate(context: vscode.ExtensionContext) {
   let panel: vscode.WebviewPanel | undefined;
   let state: PanelState = { refs: [], busy: false };
   let queue: Promise<unknown> = Promise.resolve();
+  let request: AbortController | undefined;
   const publish = () => panel?.webview.postMessage(state);
+  const model = () => vscode.workspace.getConfiguration('vadhyar').get<string>('model', 'gpt-6-astra');
+  async function setupKey() {
+    const value = await vscode.window.showInputBox({ title: 'Vadhyar — OpenAI API key', prompt: 'Stored only in VS Code SecretStorage. Never paste this key in chat.', password: true, ignoreFocusOut: true, validateInput: text => /^\S{20,512}$/.test(text.trim()) ? undefined : 'Enter a nonempty API key (20–512 characters).' });
+    if (value !== undefined) await context.secrets.store('openai.apiKey', value.trim());
+    state = { ...state, hasKey: Boolean(await context.secrets.get('openai.apiKey')) };
+    await publish();
+  }
 
   async function prepared() {
     if (!vscode.workspace.isTrusted) throw new Error('Trust the prepared NovaDesk workspace first.');
@@ -36,6 +46,8 @@ export function activate(context: vscode.ExtensionContext) {
     const req = { id: scenario.requirementId as 'novadesk-approval-ownership', revision: requirement.hash, text: requirement.content };
     if (action.type === 'ready') {
       state = { refs: [approvalReference(source)], busy: false };
+    } else if (action.type === 'setupKey') {
+      await setupKey();
     } else if (action.type === 'confirmRequirement') {
       if (action.revision !== requirement.hash || state.requirement?.revision !== action.revision) throw new Error('Requirement changed; refresh and confirm its current text.');
       if (!session.requirements.some(item => item.revision === req.revision)) session.requirements.push({ ...req, confirmedAt: new Date().toISOString() });
@@ -46,15 +58,39 @@ export function activate(context: vscode.ExtensionContext) {
       await saveSession(folder, session);
     } else if (action.type === 'refreshGraph') {
       if (!session.requirements.some(item => item.revision === req.revision)) throw new Error('Confirm the requirement before extraction.');
-      state = { ...state, graph: undefined, mappingConfirmed: false, refs: [], busy: true, error: undefined };
+      state = { ...state, graph: undefined, mappingConfirmed: false, preview: undefined, explanation: undefined, refs: [], busy: true, error: undefined };
       void publish();
       const graph = await extractGraph(join(context.extensionUri.fsPath, '.venv-graphify/bin/graphify'), folder, source);
       const current = await prepared();
       if (current.source.hash !== source.hash || current.requirement.hash !== requirement.hash) throw new Error('Source or requirement changed during extraction; refresh.');
       state = { ...state, graph, refs: graph.refs, busy: false };
     } else if (action.type === 'confirmMapping') {
-      if (!state.graph || action.identity !== state.graph.identity || state.graph.sourceHash !== source.hash) throw new Error('Graph mapping is missing or stale.');
-      state = { ...state, mappingConfirmed: true };
+      if (!state.graph || action.identity !== state.graph.identity || state.graph.sourceHash !== source.hash || state.requirement?.revision !== req.revision) throw new Error('Graph mapping is missing or stale.');
+      state = { ...state, mappingConfirmed: true, mappingRequirementRevision: req.revision };
+    } else if (action.type === 'previewExplain' || action.type === 'explain') {
+      if (!session.requirements.some(item => item.revision === req.revision) || !state.mappingConfirmed || state.mappingRequirementRevision !== req.revision || !state.graph) throw new Error('Confirm the current requirement and source mapping before explanation.');
+      const graph = state.graph;
+      const preview = previewContext(model(), requirement, source, graph);
+      if (action.type === 'previewExplain') {
+        state = { ...state, preview, explanation: undefined };
+      } else {
+        if (!state.preview || action.identity !== preview.identity || state.preview.identity !== preview.identity) throw new Error('Sharing preview is missing or stale; preview current context again.');
+        const key = await context.secrets.get('openai.apiKey');
+        if (!key) throw new Error('Set an OpenAI API key securely in VS Code first.');
+        state = { ...state, busy: true, error: undefined }; void publish();
+        request = new AbortController();
+        let result;
+        try { result = await explain(key, preview, state.refs, request.signal); }
+        finally { request = undefined; }
+        const current = await prepared();
+        if (current.source.hash !== source.hash || current.requirement.hash !== requirement.hash || model() !== preview.model || state.preview?.identity !== preview.identity) throw new Error('Context changed during the request; response rejected as stale.');
+        const evidence = { capturedAt: new Date().toISOString(), requirementRevision: req.revision, sourceHash: source.hash, contextIdentity: preview.identity, graphIdentity: graph.identity, graphifyVersion: graph.version, graphReferences: graph.refs.length, graphRelationships: graph.relationships.length, ...result };
+        const pending = join(folder, `gate-a-${randomUUID()}.tmp`);
+        try { await writeFile(pending, JSON.stringify(evidence, null, 2), { flag: 'wx', mode: 0o600 }); await rename(pending, join(folder, 'gate-a.json')); }
+        finally { await rm(pending, { force: true }); }
+        state = { ...state, explanation: result, busy: false };
+        log.appendLine(`explain: validated; latencyMs=${result.latencyMs}; totalTokens=${result.usage?.totalTokens ?? 'unavailable'}`);
+      }
     } else if (action.type === 'openSource') {
       const ref = resolveReference(state.refs, action.id, source);
       const doc = await vscode.workspace.openTextDocument(vscode.Uri.file(source.absolutePath));
@@ -63,18 +99,25 @@ export function activate(context: vscode.ExtensionContext) {
       editor.selection = new vscode.Selection(range.start, range.end);
       editor.revealRange(range, vscode.TextEditorRevealType.InCenterIfOutsideViewport);
     }
-    state = { ...state, requirement: req, confirmed: session.requirements.some(item => item.revision === req.revision), checkpointCount: session.checkpoints.length, checkpointHash: session.checkpoints.at(-1)?.hash, error: undefined };
+    state = { ...state, requirement: req, confirmed: session.requirements.some(item => item.revision === req.revision), checkpointCount: session.checkpoints.length, checkpointHash: session.checkpoints.at(-1)?.hash, hasKey: Boolean(await context.secrets.get('openai.apiKey')), error: undefined };
     await publish();
     log.appendLine(`action: ${action.type} finished`);
     return state;
   }
   function act(raw: unknown) {
+    const parsed = panelAction.safeParse(raw);
+    if (parsed.success && parsed.data.type === 'cancelExplain') { request?.abort(); return Promise.resolve(state); }
     const result = queue.then(() => perform(raw));
     queue = result.catch(() => undefined);
     return result.catch(error => { state = { ...state, busy: false }; throw error; });
   }
 
-  context.subscriptions.push(log, vscode.commands.registerCommand('vadhyar.open', async () => {
+  context.subscriptions.push(log, vscode.commands.registerCommand('vadhyar.setupKey', setupKey), vscode.workspace.onDidChangeTextDocument(event => {
+    if (event.document.uri.scheme === 'file' && /\/(src\/approval\.ts|vadhyar-requirement\.md)$/.test(event.document.uri.path)) {
+      state = { ...state, refs: [], graph: undefined, mappingConfirmed: false, preview: undefined, explanation: undefined, error: 'Prepared source changed; save and refresh current context.' };
+      void publish();
+    }
+  }), vscode.commands.registerCommand('vadhyar.open', async () => {
     await prepared();
     if (panel) { panel.reveal(vscode.ViewColumn.Beside); return { opened: true }; }
     const dist = vscode.Uri.joinPath(context.extensionUri, 'dist');

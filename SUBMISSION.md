@@ -3,11 +3,11 @@
 ## Project
 
 - **Project name:** Vadhyar
-- **Short description:** A planned VS Code learning extension that connects a requirement to AI-built code and helps a beginner understand, change, and verify one feature themselves.
+- **Short description:** A VS Code learning prototype that connects a requirement to AI-built code and helps a beginner understand, change, and verify one feature themselves.
 - **Code repository URL:** https://github.com/sabari-nath17/vadhyar
 - **Final submitted implementation commit SHA:** Pending implementation and final submission.
-- **Working demo URL or local demo steps:** Pending implementation.
-- **Demo access requirements:** Pending implementation; never include credentials.
+- **Working demo URL or local demo steps:** Verified Gate A development-host steps are in README. Full learning-loop demo is later scope.
+- **Demo access requirements:** Trusted prepared NovaDesk, installed pinned Graphify and user API key entered only in VS Code SecretStorage; never include credentials.
 
 ## Participants
 
@@ -19,13 +19,13 @@ Final team membership is not yet recorded. Maximum team size: four.
 
 ## Run and demonstrate
 
-- **Prerequisites and versions:** S1a fixture verified with Node 26.7.0 and npm 11.19.0; extension prerequisites pending.
-- **Install and start commands:** Fixture install/check commands are in [README](README.md); extension start commands pending.
-- **Required configuration:** No credentials for the fixture. Planned extension OpenAI credential in VS Code SecretStorage; final prerequisites pending.
+- **Prerequisites and versions:** Node 26.7.0/npm 11.19.0, VS Code 1.140.0 arm64, Python 3.13.15 with isolated graphifyy 0.9.84 verified.
+- **Install and start commands:** Install/check and Extension Development Host commands are in [README](README.md).
+- **Required configuration:** No credentials for fixture/AST extraction; masked SecretStorage key setup is implemented. One live gpt-6-astra request succeeded; other account/model access is unverified.
 - **Demo walkthrough:** Requirement, source walkthrough, prediction, ownership counterexample, learner fix, actual checks, archived-milestone challenge, evidence summary.
-- **Checks performed and results:** Clean fixture install, strict typecheck, lint and all 3 baseline tests passed. The different-client approval is a disclosed seeded bug. No extension or demo run yet.
-- **Known limitations:** Role-only fixture is implemented; extension, integrations, screenshots and working demo remain pending.
-- **Libraries and APIs:** Planned use and reuse boundaries in [source decisions](docs/reuse-sources.md).
+- **Checks performed and results:** Clean install, typecheck/lint/build and 14 product tests passed. S4 real host and S5 manual live acceptance verified source/Graphify navigation, SecretStorage persistence, exact preview and one validated OpenAI response (8,732 ms; 1,850 tokens), including all three native citation buttons. The isolated S5 automated host retry stopped at trust without fresh acceptance evidence. The seed intentionally fails only the different-client ownership case; correct disposable source passes all three trusted cases.
+- **Known limitations:** Gate A passed; the complete learning loop is pending. Role-only seed is intentionally defective; S6 prediction/runner onward, complete demo, VSIX and cross-platform behavior remain pending.
+- **Libraries and APIs:** Actual pins and remaining reuse/distribution boundaries in [source decisions](docs/reuse-sources.md).
 - **AI usage:** [AI_USAGE.md](AI_USAGE.md)
 - **Development record:** [CHANGELOG.md](CHANGELOG.md)
 

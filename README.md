@@ -15,7 +15,7 @@ Built for [DevDay Kochi](https://luma.com/z10nz8gp). [Event rules](RULES.md) · 
 
 ## Current progress
 
-**Development prototype.** The latest recorded milestone is S4; the live OpenAI integration is the remaining Gate A task. The [slice record](tasks/todo.md) and [changelog](CHANGELOG.md) track subsequent build updates.
+**Development prototype.** S1b–S5 and Gate A are verified: source navigation, real Graphify extraction and one live source-grounded OpenAI response. The [slice record](tasks/todo.md) and [changelog](CHANGELOG.md) track subsequent build updates.
 
 | Area | Status |
 | --- | --- |
@@ -26,7 +26,7 @@ Built for [DevDay Kochi](https://luma.com/z10nz8gp). [Event rules](RULES.md) · 
 | VS Code extension | S2b thin panel and native source navigation verified |
 | Requirement confirmation and source checkpoints | S3 persistence and restart recorded as verified |
 | Graphify integration | S4 real extraction and host navigation recorded as verified; four refs and three AST contains relationships |
-| OpenAI runtime coaching | Planned; live API gate pending |
+| OpenAI runtime coaching | S5 live validated response and all three native citation buttons verified |
 | Prediction, learner-edit verification and follow-up flow in the panel | Planned |
 | Run scripts and dependency versions | Typecheck, lint, build, product tests and host checks available; versions pinned |
 | Complete working demo, screenshots and VSIX | Pending |
@@ -37,7 +37,7 @@ Built for [DevDay Kochi](https://luma.com/z10nz8gp). [Event rules](RULES.md) · 
 
 Requirement → source walkthrough → learner prediction → observed behavior → learner edit → executed checks → archived-milestone follow-up challenge.
 
-The implemented foundations use TypeScript, React, VS Code APIs, Zod, esbuild, Graphify and Vitest. OpenAI Responses API coaching is planned. See [reuse decisions](docs/reuse-sources.md) for sources and attribution.
+The implemented foundations use TypeScript, React, VS Code APIs, Zod, esbuild, Graphify and Vitest. OpenAI Responses API Explain is verified live. See [reuse decisions](docs/reuse-sources.md) for sources and attribution.
 
 ## Repository layout
 
@@ -68,7 +68,7 @@ npm run test -- tests/fixture-baseline.test.ts
 
 The pure contract is `canApproveMilestone(actor, milestone): boolean`. Actors have an ID and client/freelancer role; milestones have an owning-client ID and active/archived status. The seed checks role only: owner allowed, **different client also allowed (the intentional bug)**, freelancer denied. Baseline tests assert these observations and exercise frozen inputs; green does not mean the ownership requirement is satisfied. Ownership-policy checks are supplied by S1b, and archived rejection is a later transfer exercise.
 
-No API key is needed for the documented source/checkpoint/graph actions. OpenAI coaching and packaging remain pending. The planned API integration stores its key in VS Code SecretStorage, outside source, logs and the panel.
+No API key is needed for the documented source/checkpoint/graph actions. OpenAI Explain requires user API access; packaging remains pending. The API integration stores its key in VS Code SecretStorage, outside source, logs and the panel.
 
 Development tools are TypeScript, ESLint/typescript-eslint and Vitest, with exact versions in package.json and the npm lockfile. TypeScript 6.0.3 stays inside the installed parser's supported range. On the verified npm version, clean installation warns that the optional `fsevents` install script is not approved; non-watch checks succeed without approving it.
 
@@ -90,7 +90,7 @@ The requirement is in `novadesk/vadhyar-requirement.md`. The extension-owned man
 
 Run `npm run build`, then `/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --new-window --extensionDevelopmentPath="$PWD" "$PWD/novadesk"`. Trust this prepared folder and run **Vadhyar: Understand this change**. `npm run test:host` launches the installed macOS Code executable in the dedicated `/tmp/vadhyar-host-profile` and requires fresh `/tmp/vadhyar-host-evidence.json`. Close other windows using that test profile before running it. Tests never disable Workspace Trust. This host check is macOS-specific; cross-platform setup is not verified.
 
-The thin panel opens a validated current source reference using the native editor. Only the prepared single local NovaDesk folder is supported. It rejects unknown IDs, unsaved source/requirement buffers, escaping symlinks and stale references. Refresh the context after relevant edits; regenerate graph references when source changes. API coaching follows in S5.
+The thin panel opens a validated current source reference using the native editor. Only the prepared single local NovaDesk folder is supported. It rejects unknown IDs, unsaved source/requirement buffers, escaping symlinks and stale references. Refresh the context after relevant edits; regenerate graph references when source changes. S5 adds the verified live Explain flow below.
 
 ## Requirement and checkpoints (S3)
 
@@ -112,5 +112,13 @@ GRAPHIFY_NO_AUTO_REFRESH=1 .venv-graphify/bin/graphify --version
 ```
 
 Open only `novadesk` in the Extension Development Host; confirm its requirement, extract source relationships, confirm the proposed mapping and use the source buttons. `npm run test:host` uses the installed macOS VS Code and the isolated `/tmp/vadhyar-host-profile`; trust this prepared folder when prompted. Packaging the Graphify runtime is deferred to S12.
+
+## Explain setup (S5 / Gate A verified)
+
+Install with `npm ci --ignore-scripts`, then typecheck, lint, test and build with the named package scripts. In the trusted NovaDesk Extension Development Host, confirm the requirement, capture source, refresh relationships and confirm the mapping. Select **Preview context for Explain** and inspect its exact expandable payload. **Set API key securely** opens a masked native input; press Enter to save only in VS Code SecretStorage. Never paste a key into chat or project files.
+
+**Share this context and Explain** makes one request to OpenAI. The user setting `vadhyar.model` defaults to `gpt-6-astra`. One real request established access to this model for the configured account; other account/model access remains unverified. No fallback is automatic. The request has a 60-second timeout, no retries and a 4,000-token output ceiling. Cancellation stops the local request; provider billing may still apply. Accepted output is rendered as text with native source buttons and measured response ID/latency/token usage. API errors retain checkpoints; retry explicitly. Edits require saving and refreshing context.
+
+S5 checks passed clean install, typecheck/lint/build and 14 product tests. Gate A passed in the actual trusted Extension Development Host: SecretStorage survived restart; fresh Graphify produced four refs/three relationships; one validated `gpt-6-astra` response took 8,732 ms and used 1,850 tokens (1,468 input/382 output); all three returned source buttons opened correct native selections. The isolated-profile automated S5 host retry stopped at Workspace Trust without fresh evidence; manual live acceptance is recorded separately, with no trust bypass. Validated output/metadata are saved atomically in workspace extension storage `gate-a.json`; key contents are never saved there. S6 prediction/runner and the full learning-loop demo remain pending.
 
 </details>

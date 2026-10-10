@@ -1,6 +1,6 @@
 # Vadhyar slice task record
 
-Updated: 10 October 2026, Asia/Kolkata. Mode: authorized through Gate A, no push. S0b/S1a preserved; S1b–S4 complete. S5 is next. Earlier planning observations are retained below; current evidence is in the latest handoff.
+Updated: 10 October 2026, Asia/Kolkata. Mode: authorized through Gate A, no push. S0b/S1a preserved; S1b–S4 complete. S5 complete; Gate A passed with a live validated OpenAI response and native navigation. Stop before S6. Earlier planning observations are retained below; current evidence is in the latest handoff.
 
 ## Initial planning inspection (historical snapshot)
 
@@ -51,7 +51,7 @@ Agent Reach's GitHub/gh route succeeded. The `agent-reach` and `conda` executabl
 
 ## Next slice boundaries and contracts
 
-S0b and S1a are complete. The user authorized **S0b and S1a only**; the next executable slice is **S1b, prepared ownership-policy checks**. S1b and all later implementation remain outside this request.
+Historical S0b/S1a boundary: the initial request stopped before S1b. The subsequent authorization covers S1b–S5 through Gate A; these slices are now complete. S6 and later slices remain outside this request.
 
 S0b creates `AGENTS.md` and `.customrules`, and extends the existing `.gitignore` as needed. Preserve `.ignore` and its Graft search behavior. AGENTS explicitly references .customrules and this record. Each instruction file stays below 50 lines. Preserve the supplied Obsidian and development logging rules; diagnostics must be redacted. Exclude dependency/build/graph artifacts and `.venv-graphify/` without deleting them or replacing the existing Graft exclusion.
 
@@ -86,7 +86,7 @@ Contracts needed as consumers arrive, not implemented pre-emptively:
 
 ## Ordered slice register
 
-The original ordered plan is retained here. S0b and S1a are complete; later implementation rows remain pending. No time allocation is a delivery promise. Re-estimate after the real integration gate.
+The original ordered plan is retained here. S0b through S5 are complete; S6 and later implementation rows remain pending. No time allocation is a delivery promise. Re-estimate after the real integration gate.
 
 | Slice | Depends on | Proposed output and acceptance gate | Verification |
 |---|---|---|---|
@@ -95,10 +95,10 @@ The original ordered plan is retained here. S0b and S1a are complete; later impl
 | S1a | S0b | COMPLETE: pure seeded permission rule and runnable green baseline; ownership defect explicitly retained | Clean npm ci, strict typecheck, lint, focused/full baseline tests and no-match failure guard passed |
 | S1b | S1a | COMPLETE: prepared ownership requirement and trusted ordinary check harness | Seed gives exactly the expected ownership failure; a correct disposable edit passes; incorrect edit fails |
 | S2a | S1a | COMPLETE: extension manifest/entrypoint and esbuild bootstrap open in actual host | Build and real activation; unsupported/untrusted workspace recovery |
-| S2b | S2a | COMPLETE: one React panel, validated actions and safe native source opening | Message/reference tests; host keyboard and navigation checks |
+| S2b | S2a | COMPLETE: one React panel, validated actions and safe native source opening | Message/reference tests; actual native navigation verified; keyboard QA pending |
 | S3 | S1b, S2b | COMPLETE: confirm requirement, capture exact source, persist initial session atomically | Exact-content/hash tests; restart restores confirmed identity; failed write preserves valid record |
-| S4 | S3 | Real Graphify output yields up to five current source references; learner confirms the proposed requirement mapping | Pinned CLI run, raw-schema/reference tests, actual navigation, stale/failed refresh state |
-| S5 | S4 | SecretStorage key setup, context preview, live Explain response | One real validated request; refusal/error/ID tests; measured latency/usage. Gate A: integrations |
+| S4 | S3 | COMPLETE: real Graphify output yields up to five current source references; learner confirms the proposed requirement mapping | Pinned CLI run, raw-schema/reference tests, actual navigation, stale/failed refresh state |
+| S5 | S4 | COMPLETE: SecretStorage setup, exact preview and live validated Explain boundary | One real validated request; refusal/error/ID tests; measured latency/usage. Gate A: integrations |
 | S6 | S5 | Persist prediction before running fixed ownership counterexample | Trusted runner tests, expected case coverage, dirty/concurrent-edit blocking, real observed result |
 | S7 | S6 | Live hints, saved learner edit, ownership rerun and native diff | Actual before/after, correct and incorrect edits, assistance log. Gate B: first complete loop |
 | S8 | S7 | Full durable attempts, hints, revisions and resume recovery | Restart and interrupted/corrupt-write recovery; preserve valid records |
@@ -293,8 +293,39 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - Completed S4 source was published unchanged; pending S5 files/dependencies remain local and unstaged. The active branch is still codex/s0b-s1a; no checkout/reset/rebase or force-push occurred. This side task does not authorize publishing subsequent S5 work.
 - Follow-up: commit/publish this verification-only record within the same authorized publication. Main build resumes S5 and should preserve this new documentation checkpoint. No application tests or browser visual check performed here.
 
+## S5 implementation checkpoint (historical, before live verification) — 2026-10-10T22:56:03+05:30
+
+- Plan: official OpenAI SDK, native password input/SecretStorage, exact sharing preview, bounded single Explain request, schema/current-ID validation, cancellation and latency/usage record. Callers include extension/shared protocol, panel, host checks, package/lock and boundary tests. No S6 or automatic repair.
+- Implemented openai 7.32.0 (Apache-2.0) using Responses Structured Outputs with Zod, fixed https://api.openai.com/v1, user-level gpt-6-astra setting, no tools/fallback, store:false, 60-second timeout, zero SDK retries and 4,000 output-token ceiling. Only previewed requirement/approval source/current refs/AST relationships are sent. Key is read/stored solely inside extension SecretStorage; webview gets only hasKey. Error causes are intentionally sanitized to avoid retaining/logging private SDK request data.
+- Evidence: missing-module scaffold RED exit 1, then an actual secret-detector false positive on the NovaDesk requirement produced one failing test; fixed token boundary. TypeScript's mutable-graph narrowing errors and ESLint error-cause rule were corrected before green checks. Focused coach boundary 2/2 passed, including stale/secret context, refusal/incomplete/malformed/unknown IDs/executable fields. npm ci --ignore-scripts, npm ls --depth=0, typecheck/lint/build and full product 14/14 passed; audit reported zero known vulnerabilities. Diff/whitespace inspected.
+- Real UI: default-profile Extension Development Host opened trusted NovaDesk after closing its duplicate clean ordinary window; confirmed requirement, captured one checkpoint, extracted four Graphify refs/three AST contains edges, confirmed mapping and clicked the source button. Native editor selected the actual function lines 12–15. Preview showed the candidate model, fixed coach instruction and expandable exact payload. Native masked API-key input is open; user was asked to enter there and reply stored. No key was copied into tooling from chat/environment/files or other extensions.
+- Automated S5 host retry: npm run test:host exited 1 (no fresh acceptance evidence); isolated test profile waited on Workspace Trust. Existing S4 real host evidence remains valid for S4, not this new retry. Trust was never disabled. S5 live request, actual SecretStorage key storage, latency/usage and response are NOT VERIFIED. No API request has been made yet.
+- Persistence: accepted live metadata/validated explanation will be atomically saved to this workspace's extension storage gate-a.json, never a key. Source/requirement/model changes during requests reject results. Unit envelopes exercise parsers, not a live API. Cancellation/timeout are implemented but not fault-injected against the provider; full learning/session recovery remains later scope.
+- Git: S4 commit 0dfbb85 preserved. Concurrent user-authorized presentation task added 15e9a8c/c6e5296 and published its boundary; live origin HEAD now c6e5296256309263a30139deb33e4014120db266. This build performed no push. All S5 application/package files remain local; preserve presentation commits/assets. Original .ignore is byte-identical; Graft is preserved.
+- Blocker/next action: enter and confirm an API key in VS Code's masked prompt, then Share this context and Explain. Candidate model/account access must be confirmed by the actual request. Gate A cannot pass until the accepted response's IDs work in the native editor. Stop before S6; next authorized continuation is only this pending S5 live gate.
+
+- Credential handling clarification: a credential was posted by the user in chat; its value was never copied to tools/files/logs. Recommended rotation using official OpenAI safety guidance, explained that rotation is the user’s choice, and kept the technical prerequisite as manual entry of an active key in the native masked VS Code prompt. Live verification still awaits that entry; no account change or API request performed.
+
 
 ## Presentation correction — 2026-10-10T23:05:15+05:30
 
 - User requested only a logo and professional description. Extra navigation/tags/tables/record section and five repository topics are removed; existing project information remains in an expandable section. Unused supplied-logo copy removed.
 - This correction is published under the user's presentation authorization. It preserves pending S5 source and documentation changes; no additional application work is authorized.
+
+
+## S5 completed / Gate A passed — 2026-10-10T23:11:44+05:30
+
+- Plan completed: preserve the S5 code boundary, use the user-entered SecretStorage key, inspect the exact preview, make one live request, validate and open every returned citation, then stop before S6. No routing system or second model request was added.
+- Actual live evidence: captured 2026-10-10T17:34:25.626Z (23:04:25.626 IST); response `resp_013ce56289586e6f016aca771a20d887d299878f8f9ca0c95d`; requested/returned `gpt-6-astra`; 8,732 ms; 1,468 input + 382 output = 1,850 tokens. Completed output passed strict schema/current-reference checks. The summary accurately described role-only approval and the disclosed ownership defect; this is a development observation, not a teaching-quality evaluation.
+- Real Graphify 0.9.84 extraction after extension-host restart produced four current references and three AST contains relationships. Requirement confirmation/checkpoint restored; the stored-key boolean survived restart without inspecting any key value. The exact instruction/payload was expanded before Share. SDK logging is explicitly off; no automatic retries/fallback.
+- All three accepted explanation source buttons were clicked in the real native editor: whole approval file lines 1–15, decision lines 12–15, decision lines 12–15. Navigation used current host-issued IDs. This manual real-host acceptance establishes Gate A; the isolated-profile automated S5 host retry still failed at Workspace Trust and is not reported as green.
+- Evidence persisted atomically with mode 0600 at `/Users/sabarismac/Library/Application Support/Code/User/workspaceStorage/ef83949b60811d8627e701c55dab96b1/sabari-nath17.vadhyar/gate-a.json`. It contains validated output and metadata, no key/full request payload. Source hash `eda0127427545d06c9e2ff88bd51d6022674f43dbd1ccbd56da5f6c8ae3e7fd3`; requirement hash `c455503e7dd3d132533643ffac28b908a553596f8ad47e2959db46daf74c864d`.
+- Checks: clean lockfile install/dependency tree and full 14/14 product tests previously passed; explicit SDK logging-off change passed focused coach 2/2, typecheck, lint and build. Final boundary verification is recorded below. Provider cancellation/timeout/billing failure paths were not live fault-injected; keyboard/theme/cross-platform/VSIX and S11 quality evaluation remain pending.
+- Model choice: Astra is a configurable candidate, not a required permanent model. `vadhyar.model` supports manual selection; only Astra account access was verified. Sol/Luna comparisons are proposed future checks, not measured results. Multimodal screenshot input is unnecessary for this text/source slice and is unimplemented.
+- Git: branch `codex/s0b-s1a`; completed 6186c17/fc3512d and S1b–S4 preserved. Concurrent presentation correction added 381b9a8/690456a; live canonical HEAD is now `690456a0669e5047fdff24fce97840b18358c24d`. This build made no push and preserves the simplified banner/description. S5 will be a local milestone checkpoint only. Original .ignore/Graft remain preserved.
+- Next slice: S6, learner prediction persisted before the trusted ownership counterexample runner exposes observed case results. S6 is not implemented or authorized by this through-Gate-A request. Known earlier Graphify global-skill side effect and uncertain prior custom references remain disclosed in S4 evidence.
+
+### Final S5 boundary verification
+
+- Executed after the final SDK logging/security option: `npm run typecheck`, `npm run lint`, `npm run test` and `npm run build` all exited 0; six test files / 14 tests passed. `git diff --check`, affected local Markdown targets, under-50-line rule limits (32/21), protected .ignore comparison, unchanged seed/.gitignore and preserved S0b/S1a ancestry passed. Live persisted Gate A metadata is mode 0600 and both content hashes still match current prepared files.
+- Checkpoint: this record accompanies the local milestone `feat: validate live source-grounded Explain at Gate A`. No push. Gate A passed; next is S6 prediction-before-observation and trusted runner, outside current authorization.

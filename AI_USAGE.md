@@ -27,3 +27,10 @@ This preparation is separate from participant project implementation and partici
 ### S4 — 2026-10-10T22:44:02+05:30
 
 Real Graphify 0.9.84 integration is verified in VS Code: four source references, three AST contains relationships, current hash checks, learner mapping confirmation and native navigation. Typecheck/lint/build, 12 product tests and real host acceptance passed. Codex implemented the adapter and checks; human teaching/content review is pending. Gate A still needs S5. Initial Graphify auto-refresh affected the existing Pi skill; its exact prior SKILL.md and stock prior references were restored, but prior custom references are unknown. Runtime disables auto-refresh and isolates HOME.
+
+| 2026-10-10T22:56:03+05:30 | Codex | S5 code checkpoint | Official SDK, masked SecretStorage setup, exact sharing preview, response validation/cancel/metadata, focused tests and host guards | Through-Gate-A authorization; human API-key entry and live/content review pending | Clean install, typecheck/lint/build, 14 tests and visible source/Graphify/preview passed. Isolated S5 host retry failed on trust. No live API response yet; no runtime key echo or source/log storage; no push by this build |
+
+
+## 2026-10-10T23:11:44+05:30 — S5 live acceptance
+
+Codex completed and checked the S5 coach/host/panel boundary and recorded real provider evidence. The user entered the key only in the native masked field for implementation use; key contents were never copied into tooling/project files/logs. One live gpt-6-astra response passed structure/current-reference validation; 8,732 ms, 1,850 tokens. Codex compared its explanation with source and clicked all three citations in the actual native editor. SecretStorage presence survived restart and fresh Graphify extraction produced four refs/three relationships. Full product 14/14 and typecheck/lint/build passed; isolated S5 automated host retry failed on trust and manual live acceptance is separate. Human teaching-quality review remains pending. Gate A passed; stop before S6; local checkpoint only, no push by this build.

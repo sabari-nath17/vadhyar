@@ -80,3 +80,18 @@ Record each meaningful project change during the event, newest first. Update thi
 ### S4 — 2026-10-10T22:44:02+05:30
 
 Real Graphify 0.9.84 integration is verified in VS Code: four source references, three AST contains relationships, current hash checks, learner mapping confirmation and native navigation. Typecheck/lint/build, 12 product tests and real host acceptance passed. Codex implemented the adapter and checks; human teaching/content review is pending. Gate A still needs S5. Initial Graphify auto-refresh affected the existing Pi skill; its exact prior SKILL.md and stock prior references were restored, but prior custom references are unknown. Runtime disables auto-refresh and isolates HOME.
+
+## S5 code checkpoint — 2026-10-10T22:56:03+05:30
+
+- Changed: official OpenAI SDK/package lock, src/extension/coach.ts, extension/shared/panel actions, focused parser/context tests and host preview guards; required setup/status records.
+- Why: minimal source-grounded Explain with SecretStorage, approved bounded context, validated reference IDs, cancellation and actual provider metadata.
+- Checks: clean install with scripts disabled; typecheck/lint/build; focused 2/2 and full 14/14; actual UI source navigation/Graphify/preview/masked setup; diff reviewed. Isolated S5 host retry failed at trust (no new acceptance evidence).
+- Limits: live request/key storage remain pending user entry. Gate A is pending; S6 unimplemented. No push by this build; concurrent published presentation history is preserved.
+
+
+## 2026-10-10T23:11:44+05:30 — S5 / Gate A verified
+
+- Changed: official OpenAI SDK, coach boundary, SecretStorage command, exact-context preview, shared/panel actions, cancellation, sanitized errors/logging, strict response/current-ID tests and required records.
+- Why: source-grounded Explain with a real account request and validated native source references.
+- Validation: one live gpt-6-astra response accepted at 23:04:25.626 IST, 8,732 ms/1,850 tokens; current real Graphify four references/three relationships; all three model citation buttons selected correct native source; key-presence state survived host restart. Product 14/14, clean install, typecheck/lint/build passed; final boundary results follow in tasks/todo.md.
+- Limits: isolated S5 automated host retry failed at trust; manual live acceptance passed. No S6, other-model benchmark, provider fault injection, polish, VSIX or push by this build. Prior Graphify global reference recovery uncertainty remains recorded.

@@ -54,11 +54,27 @@
       {
         "command": "vadhyar.open",
         "title": "Vadhyar: Understand this change"
+      },
+      {
+        "command": "vadhyar.setupKey",
+        "title": "Vadhyar: Set OpenAI API key securely"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Vadhyar",
+      "properties": {
+        "vadhyar.model": {
+          "type": "string",
+          "default": "gpt-6-astra",
+          "scope": "application",
+          "description": "OpenAI model for Explain. No automatic fallback; account access must be verified."
+        }
+      }
+    }
   },
   "packageManager": "npm@11.19.0",
   "dependencies": {
+    "openai": "7.32.0",
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "zod": "4.6.5"

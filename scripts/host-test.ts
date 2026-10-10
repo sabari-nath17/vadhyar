@@ -47,6 +47,13 @@ export async function run() {
   assert.equal(extracted.graph.version, '0.9.84');
   assert.equal(extracted.graph.relationships.length, 3);
   await api.act({ type: 'confirmMapping', identity: extracted.graph.identity });
+  await assert.rejects(api.act({ type: 'explain', identity: '0'.repeat(64) }));
+  const previewed = await api.act({ type: 'previewExplain' });
+  assert.equal(typeof previewed.hasKey, 'boolean');
+  assert(previewed.preview.text.includes('src/approval.ts'));
+  assert(!previewed.preview.text.includes('ownership.test'));
+  await assert.rejects(api.act({ type: 'explain', identity: '0'.repeat(64) }));
+  await assert.rejects(api.act({ type: 'setupKey', apiKey: 'FAKE-SECRET-FIELD' }));
   await api.act({ type: 'openSource', id: extracted.refs[0].id });
   assert.equal(vscode.window.activeTextEditor?.selection.start.line, 11);
   await writeFile('/tmp/vadhyar-host-evidence.json', JSON.stringify({ capturedAt: new Date().toISOString(), vscode: vscode.version, activated: true, panelOpened: true, trusted: true, sourceOpened: 'src/approval.ts', selectedLine: state.refs[0].startLine, invalidIdRejected: true, confirmed: true, snapshotHash: captured.checkpointHash, restored: true, restoredOnActivation: state.confirmed && state.checkpointCount > 0, concurrentWritesPreserved: true, graphifyVersion: extracted.graph.version, graphIdentity: extracted.graph.identity, graphSourceHash: extracted.graph.sourceHash, graphReferences: extracted.refs.length, graphRelationships: extracted.graph.relationships.length, mappingConfirmed: true }, null, 2));
