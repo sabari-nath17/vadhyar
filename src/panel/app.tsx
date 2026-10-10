@@ -17,6 +17,11 @@ function App() {
     <h1>Understand this change</h1>
     <p>NovaDesk is a prepared fixture with a disclosed ownership bug.</p>
     {state.error && <p role="alert">{state.error}</p>}
+    <h2>Requirement</h2>
+    <button disabled={state.busy} onClick={() => host.postMessage({ type: 'ready' })}>Refresh current context</button>
+    {state.requirement && <><pre>{state.requirement.text}</pre><button disabled={state.busy || state.confirmed} onClick={() => host.postMessage({ type: 'confirmRequirement', revision: state.requirement!.revision })}>{state.confirmed ? 'Requirement confirmed' : 'Confirm this requirement'}</button></>}
+    <button disabled={state.busy || !state.confirmed} onClick={() => host.postMessage({ type: 'checkpoint' })}>Save source checkpoint</button>
+    <p>Captured checkpoints: {state.checkpointCount ?? 0}. Tracking begins at capture; earlier history is unknown.</p>
     <p role="status" aria-live="polite">{state.busy ? 'Loading current source…' : `${state.refs.length} validated source reference(s)`}</p>
     <h2>Current source</h2>
     {state.refs.map(ref => <button key={ref.id} disabled={state.busy} onClick={() => host.postMessage({ type: 'openSource', id: ref.id })}>{ref.symbol} — {ref.path}:{ref.startLine}–{ref.endLine}</button>)}

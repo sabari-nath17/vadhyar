@@ -1,13 +1,16 @@
 import * as vscode from 'vscode';
 import { randomBytes } from 'node:crypto';
+import { join } from 'node:path';
 import { panelAction, type PanelState } from '../shared.js';
 import { approvalReference, readPrepared, resolveReference } from './source.js';
+import { loadSession, saveSession } from './session.js';
 import scenario from '../../fixtures/novadesk/scenario.json' with { type: 'json' };
 
 export function activate(context: vscode.ExtensionContext) {
   const log = vscode.window.createOutputChannel('Vadhyar');
   let panel: vscode.WebviewPanel | undefined;
   let state: PanelState = { refs: [], busy: false };
+  let queue: Promise<unknown> = Promise.resolve();
   const publish = () => panel?.webview.postMessage(state);
 
   async function prepared() {
@@ -18,16 +21,29 @@ export function activate(context: vscode.ExtensionContext) {
     const requirement = await readPrepared(root, scenario.requirementPath);
     if (!requirement.content.includes(`ID: ${scenario.requirementId}\n`)) throw new Error('Unsupported NovaDesk requirement.');
     const source = await readPrepared(root, scenario.entrypoint.path);
-    if (vscode.workspace.textDocuments.some(doc => doc.isDirty && [source.absolutePath, requirement.absolutePath].includes(doc.uri.fsPath))) throw new Error('Save prepared files before navigation or context capture.');
+    if (vscode.workspace.textDocuments.some(doc => doc.isDirty && [source.absolutePath, requirement.absolutePath, join(root, source.path), join(root, requirement.path)].includes(doc.uri.fsPath))) throw new Error('Save prepared files before navigation or context capture.');
     return { root, source, requirement };
   }
 
-  async function act(raw: unknown) {
+  async function perform(raw: unknown) {
     const action = panelAction.parse(raw);
-    const { source } = await prepared();
+    log.appendLine(`action: ${action.type} started`);
+    const { source, requirement } = await prepared();
+    if (!context.storageUri) throw new Error('Workspace session storage is unavailable.');
+    const folder = context.storageUri.fsPath;
+    const session = await loadSession(folder);
+    const req = { id: scenario.requirementId as 'novadesk-approval-ownership', revision: requirement.hash, text: requirement.content };
     if (action.type === 'ready') {
       state = { refs: [approvalReference(source)], busy: false };
-    } else {
+    } else if (action.type === 'confirmRequirement') {
+      if (action.revision !== requirement.hash || state.requirement?.revision !== action.revision) throw new Error('Requirement changed; refresh and confirm its current text.');
+      if (!session.requirements.some(item => item.revision === req.revision)) session.requirements.push({ ...req, confirmedAt: new Date().toISOString() });
+      await saveSession(folder, session);
+    } else if (action.type === 'checkpoint') {
+      if (!session.requirements.some(item => item.revision === req.revision)) throw new Error('Confirm the current requirement before capturing source.');
+      session.checkpoints.push({ capturedAt: new Date().toISOString(), path: 'src/approval.ts', content: source.content, hash: source.hash, requirementRevision: req.revision });
+      await saveSession(folder, session);
+    } else if (action.type === 'openSource') {
       const ref = resolveReference(state.refs, action.id, source);
       const doc = await vscode.workspace.openTextDocument(vscode.Uri.file(source.absolutePath));
       const editor = await vscode.window.showTextDocument(doc, { viewColumn: vscode.ViewColumn.One });
@@ -35,8 +51,15 @@ export function activate(context: vscode.ExtensionContext) {
       editor.selection = new vscode.Selection(range.start, range.end);
       editor.revealRange(range, vscode.TextEditorRevealType.InCenterIfOutsideViewport);
     }
+    state = { ...state, requirement: req, confirmed: session.requirements.some(item => item.revision === req.revision), checkpointCount: session.checkpoints.length, checkpointHash: session.checkpoints.at(-1)?.hash, error: undefined };
     await publish();
+    log.appendLine(`action: ${action.type} finished`);
     return state;
+  }
+  function act(raw: unknown) {
+    const result = queue.then(() => perform(raw));
+    queue = result.catch(() => undefined);
+    return result;
   }
 
   context.subscriptions.push(log, vscode.commands.registerCommand('vadhyar.open', async () => {

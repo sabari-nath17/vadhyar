@@ -31,7 +31,7 @@ The proposed stack is TypeScript, React, VS Code APIs, Graphify, OpenAI Response
 
 ## Repository layout
 
-- `src/` — project implementation, to be added during development.
+- `src/` — extension host and thin React panel.
 - `novadesk/src/approval.ts` — pure seeded permission decision.
 - `tests/fixture-baseline.test.ts` — three baseline cases, including the disclosed bug.
 - `scripts/` — reproducible setup, run and packaging scripts as they become available.
@@ -54,7 +54,7 @@ npm run test
 npm run test -- tests/fixture-baseline.test.ts
 ```
 
-The pure contract is `canApproveMilestone(actor, milestone): boolean`. Actors have an ID and client/freelancer role; milestones have an owning-client ID and active/archived status. The seed checks role only: owner allowed, **different client also allowed (the intentional bug)**, freelancer denied. Baseline tests assert these observations and exercise frozen inputs; green does not mean the ownership requirement is satisfied. Ownership-policy checks arrive in S1b, and archived rejection is a later transfer exercise.
+The pure contract is `canApproveMilestone(actor, milestone): boolean`. Actors have an ID and client/freelancer role; milestones have an owning-client ID and active/archived status. The seed checks role only: owner allowed, **different client also allowed (the intentional bug)**, freelancer denied. Baseline tests assert these observations and exercise frozen inputs; green does not mean the ownership requirement is satisfied. Ownership-policy checks are supplied by S1b, and archived rejection is a later transfer exercise.
 
 No API key is needed for this slice. Build/package scripts, extension UI, Graphify and OpenAI integration are not implemented. The eventual extension stores its API key in VS Code SecretStorage.
 
@@ -79,3 +79,7 @@ The requirement is in `novadesk/vadhyar-requirement.md`. The extension-owned man
 Run `npm run build`, then `/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --new-window --extensionDevelopmentPath="$PWD" "$PWD/novadesk"`. Trust this prepared folder and run **Vadhyar: Understand this change**. `npm run test:host` launches the installed macOS Code executable in the dedicated `/tmp/vadhyar-host-profile` and requires fresh `/tmp/vadhyar-host-evidence.json`. Close other windows using that test profile before running it. Tests never disable Workspace Trust. This host check is macOS-specific; cross-platform setup is not verified.
 
 The thin panel opens a validated current source reference using the native editor. Only the prepared single local NovaDesk folder is supported. It rejects unknown IDs, unsaved source/requirement buffers, escaping symlinks and stale references. Reopen the panel to rebuild its initial source reference. Confirmation/checkpoint and graph/API actions follow in their own slices.
+
+## Requirement and checkpoints (S3)
+
+Read the requirement in the panel and confirm its displayed revision, then **Save source checkpoint**. Exact allowed source contents, hashes and timestamps are saved atomically in VS Code workspace extension storage; no earlier history is inferred. Restart restores confirmed identity. Refresh after requirement edits and confirm the new revision. Unsaved prepared buffers block actions. Limits: 20 requirement revisions and 20 checkpoints; session-clearing/recovery UI and concurrent hosts are later evidence work.

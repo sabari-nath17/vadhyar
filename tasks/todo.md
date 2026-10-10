@@ -1,6 +1,6 @@
 # Vadhyar slice task record
 
-Updated: 10 October 2026, Asia/Kolkata. Mode: authorized through Gate A, no push. S0b/S1a preserved; S1b/S2a/S2b complete. S3 is next. Earlier planning observations are retained below; current evidence is in the latest handoff.
+Updated: 10 October 2026, Asia/Kolkata. Mode: authorized through Gate A, no push. S0b/S1a preserved; S1b–S3 complete. S4 is next. Earlier planning observations are retained below; current evidence is in the latest handoff.
 
 ## Initial planning inspection (historical snapshot)
 
@@ -96,7 +96,7 @@ The original ordered plan is retained here. S0b and S1a are complete; later impl
 | S1b | S1a | COMPLETE: prepared ownership requirement and trusted ordinary check harness | Seed gives exactly the expected ownership failure; a correct disposable edit passes; incorrect edit fails |
 | S2a | S1a | COMPLETE: extension manifest/entrypoint and esbuild bootstrap open in actual host | Build and real activation; unsupported/untrusted workspace recovery |
 | S2b | S2a | COMPLETE: one React panel, validated actions and safe native source opening | Message/reference tests; host keyboard and navigation checks |
-| S3 | S1b, S2b | Confirm requirement, capture exact source, persist initial session atomically | Exact-content/hash tests; restart restores confirmed identity; failed write preserves valid record |
+| S3 | S1b, S2b | COMPLETE: confirm requirement, capture exact source, persist initial session atomically | Exact-content/hash tests; restart restores confirmed identity; failed write preserves valid record |
 | S4 | S3 | Real Graphify output yields up to five current source references; learner confirms the proposed requirement mapping | Pinned CLI run, raw-schema/reference tests, actual navigation, stale/failed refresh state |
 | S5 | S4 | SecretStorage key setup, context preview, live Explain response | One real validated request; refusal/error/ID tests; measured latency/usage. Gate A: integrations |
 | S6 | S5 | Persist prediction before running fixed ownership counterexample | Trusted runner tests, expected case coverage, dirty/concurrent-edit blocking, real observed result |
@@ -253,3 +253,9 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - S2b: thin React panel, strict Zod ready/openSource actions, allowlisted real-path source reads and host-issued hash-bound references. Unknown IDs, invalid spans, traversal/symlink escape and stale source are rejected; prepared workspace must be single/local/trusted with the expected requirement ID. CSP permits only extension scripts/styles; React renders text. Typecheck/lint/build passed; focused boundaries 2/2, full product 9/9. Real host opened src/approval.ts and selected line 12; invented reference rejected. Fresh evidence /tmp/vadhyar-host-evidence.json. Installed exact React/react-dom 19.3.0, types 19.3.0, Zod 4.6.5 with scripts disabled. UI keyboard/theme review not yet performed; no polished preview or verification runner. S2a commit 43eba1d preserved.
 - Files: src/shared.ts, src/extension/{extension,source}.ts, src/panel/{app.tsx,style.css}, tests/source-boundary.test.ts, host/build scripts, package/lock/compiler config and records.
 - Exact checks: npm run typecheck; npm run lint; npm run test -- tests/source-boundary.test.ts; npm run build; npm run test:host; npm run test. Diff reviewed before checkpoint; no push. Next S3 confirmation and atomic snapshots.
+
+## S3 handoff — 2026-10-10T22:29:20+05:30
+
+- S3: exact requirement confirmation/revision hashes, source snapshots and atomic extension-workspace storage. Strict stored-record identity validation and serialized actions preserve evidence. Typecheck/lint/build passed; session test passed including corrupt-record rejection and actual filesystem write failure preserving prior contents; full product 10/10. Real host restored confirmation/hash on a new activation, rejected changed confirmation identity, captured exact source and preserved two concurrent captures. /tmp/vadhyar-host-evidence.json records restoredOnActivation/concurrentWritesPreserved true. Restart test initially stalled on a trust-startup event race, fixed by checking trust again after its management view opens; only owned test processes were terminated. Source never reset/edited. UI uses native theme, text rendering and refresh/confirm/checkpoint actions. Twenty revisions/checkpoints supported; multi-host concurrent storage and corrupt-session recovery UI remain unverified. S2b cffb7a2 preserved; next S4.
+- Files: src/extension/session.ts, tests/session.test.ts, shared actions/state, extension/panel, host check and records.
+- Checks: npm run typecheck; npm run lint; npm run test -- tests/session.test.ts; npm run build; npm run test:host; npm run test. Diff/whitespace reviewed; local checkpoint only. Session source is private workspace storage, not Git; no push.

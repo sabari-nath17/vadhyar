@@ -4,6 +4,11 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-10T22:29:20+05:30 — S3: confirmed requirement and atomic checkpoints
+
+- S3: exact requirement confirmation/revision hashes, source snapshots and atomic extension-workspace storage. Strict stored-record identity validation and serialized actions preserve evidence. Typecheck/lint/build passed; session test passed including corrupt-record rejection and actual filesystem write failure preserving prior contents; full product 10/10. Real host restored confirmation/hash on a new activation, rejected changed confirmation identity, captured exact source and preserved two concurrent captures. /tmp/vadhyar-host-evidence.json records restoredOnActivation/concurrentWritesPreserved true. Restart test initially stalled on a trust-startup event race, fixed by checking trust again after its management view opens; only owned test processes were terminated. Source never reset/edited. UI uses native theme, text rendering and refresh/confirm/checkpoint actions. Twenty revisions/checkpoints supported; multi-host concurrent storage and corrupt-session recovery UI remain unverified. S2b cffb7a2 preserved; next S4.
+
+
 ## 2026-10-10T22:19:56+05:30 — S2b: validated native navigation
 
 - S2b: thin React panel, strict Zod ready/openSource actions, allowlisted real-path source reads and host-issued hash-bound references. Unknown IDs, invalid spans, traversal/symlink escape and stale source are rejected; prepared workspace must be single/local/trusted with the expected requirement ID. CSP permits only extension scripts/styles; React renders text. Typecheck/lint/build passed; focused boundaries 2/2, full product 9/9. Real host opened src/approval.ts and selected line 12; invented reference rejected. Fresh evidence /tmp/vadhyar-host-evidence.json. Installed exact React/react-dom 19.3.0, types 19.3.0, Zod 4.6.5 with scripts disabled. UI keyboard/theme review not yet performed; no polished preview or verification runner. S2a commit 43eba1d preserved.
