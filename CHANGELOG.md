@@ -119,3 +119,10 @@ Real Graphify 0.9.84 integration is verified in VS Code: four source references,
 - Why: source-grounded Explain with a real account request and validated native source references.
 - Validation: one live gpt-6-astra response accepted at 23:04:25.626 IST, 8,732 ms/1,850 tokens; current real Graphify four references/three relationships; all three model citation buttons selected correct native source; key-presence state survived host restart. Product 14/14, clean install, typecheck/lint/build passed; final boundary results follow in tasks/todo.md.
 - Limits: isolated S5 automated host retry failed at trust; manual live acceptance passed. No S6, other-model benchmark, provider fault injection, polish, VSIX or push by this build. Prior Graphify global reference recovery uncertainty remains recorded.
+
+## 2026-10-11T04:49:13+05:30 — Landing website and early GitHub installer
+
+- Changed: website/, docs/installation.md, docs/landing-release.md, README, package manifest/lock (pinned runtime Vitest), .vscodeignore, .gitignore and publication records.
+- Why: deliver the user-authorized public website, real download and reproducible setup without publishing ongoing parent changes.
+- Checks: clean source typecheck/lint/build, 36/36 product tests; static contract, four browser widths/two themes, keyboard/reduced motion, contrast; real isolated VSIX install/installed runner and Graphify extraction.
+- Limits: macOS Apple Silicon, S7 NovaDesk demo only; no new API or human learning validation; no blanket license selected. Public verification follows publication; see release acceptance.

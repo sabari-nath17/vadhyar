@@ -10,6 +10,14 @@ Vadhyar is a VS Code learning companion for beginners building with AI. It helps
 
 Built for [DevDay Kochi](https://luma.com/z10nz8gp). [Event rules](RULES.md) · [Submission](SUBMISSION.md).
 
+## Install the early demo
+
+[Website](https://vadhyar-website.vercel.app) · [Download Vadhyar 0.1.0 for macOS Apple Silicon](https://github.com/sabari-nath17/vadhyar/releases/download/v0.1.0/vadhyar-0.1.0.vsix) · [Installation guide](docs/installation.md) · [Release notes](https://github.com/sabari-nath17/vadhyar/releases/tag/v0.1.0)
+
+Requires **VS Code 1.140.0+**, **Python 3.10+** and isolated **Graphify 0.9.84**. OpenAI API access is required only for coaching and is billed separately. Install via **Extensions → ⋯ → Install from VSIX…**, then follow the guide to prepare Graphify and open `novadesk`.
+
+The first installer packages the completed S7 checkpoint. It supports the prepared NovaDesk learning flow, with a disclosed seeded ownership bug. Ongoing Project Guide and later extension enhancements are separate from this release. The website's walkthrough is illustrative.
+
 <details>
 <summary>Project setup, status and development records</summary>
 
@@ -31,7 +39,7 @@ Built for [DevDay Kochi](https://luma.com/z10nz8gp). [Event rules](RULES.md) · 
 | Progressive hints, learner edit, native diff and full rerun | S7 / Gate B verified in the real host; one live hint, user-saved edit and all three ownership cases passed |
 | Restart/resume and follow-up flow | S8 onward pending |
 | Run scripts and dependency versions | Typecheck, lint, build, product tests and host checks available; versions pinned |
-| Complete working demo, screenshots and VSIX | Pending |
+| GitHub installer and landing website | First S7-based 0.1.0 VSIX packaged; see [installation](docs/installation.md) and [release acceptance](docs/landing-release.md) |
 
 ## Planned demo
 
@@ -56,7 +64,7 @@ The implemented foundations use TypeScript, React, VS Code APIs, Zod, esbuild, G
 
 ## Run the project
 
-Run commands from the repository root. Node must satisfy `^22.13.0 || ^24.0.0 || >=26.0.0`; recorded build checks use Node 26.7.0 and npm 11.19.0. The development extension uses VS Code 1.140.0 on macOS; Python 3.10+ is required for Graphify, with Python 3.13 verified. See [extension launch](#extension-development-s2a) and [Graphify setup](#graphify-setup-and-recorded-s4-evidence) below. There is no hosted demo or installable VSIX yet.
+Run commands from the repository root. Node must satisfy `^22.13.0 || ^24.0.0 || >=26.0.0`; recorded build checks use Node 26.7.0 and npm 11.19.0. The development extension uses VS Code 1.140.0 on macOS; Python 3.10+ is required for Graphify, with Python 3.13 verified. See [extension launch](#extension-development-s2a) and [Graphify setup](#graphify-setup-and-recorded-s4-evidence) below. The early VSIX is linked above; the website is a marketing page, not a hosted extension runtime.
 
 ```sh
 npm ci
@@ -70,7 +78,7 @@ npm run test -- tests/fixture-baseline.test.ts
 
 The pure contract is `canApproveMilestone(actor, milestone): boolean`. Actors have an ID and client/freelancer role; milestones have an owning-client ID and active/archived status. The seed checks role only: owner allowed, **different client also allowed (the intentional bug)**, freelancer denied. Baseline tests assert these observations and exercise frozen inputs; green does not mean the ownership requirement is satisfied. Ownership-policy checks are supplied by S1b, and archived rejection is a later transfer exercise.
 
-No API key is needed for source/checkpoint/graph actions, prediction, counterexample, diff or ownership rerun. OpenAI Explain and hints require user API access; packaging remains pending. The API integration stores its key in VS Code SecretStorage, outside source, logs and the panel.
+No API key is needed for source/checkpoint/graph actions, prediction, counterexample, diff or ownership rerun. OpenAI Explain and hints require user API access; see the installation guide for VSIX setup. The API integration stores its key in VS Code SecretStorage, outside source, logs and the panel.
 
 Development tools are TypeScript, ESLint/typescript-eslint and Vitest, with exact versions in package.json and the npm lockfile. TypeScript 6.0.3 stays inside the installed parser's supported range. On the verified npm version, clean installation warns that the optional `fsevents` install script is not approved; non-watch checks succeed without approving it.
 

@@ -37,3 +37,7 @@ Real Graphify 0.9.84 integration is verified in VS Code: four source references,
 ## 2026-10-10T23:11:44+05:30 — S5 live acceptance
 
 Codex completed and checked the S5 coach/host/panel boundary and recorded real provider evidence. The user entered the key only in the native masked field for implementation use; key contents were never copied into tooling/project files/logs. One live gpt-6-astra response passed structure/current-reference validation; 8,732 ms, 1,850 tokens. Codex compared its explanation with source and clicked all three citations in the actual native editor. SecretStorage presence survived restart and fresh Graphify extraction produced four refs/three relationships. Full product 14/14 and typecheck/lint/build passed; isolated S5 automated host retry failed on trust and manual live acceptance is separate. Human teaching-quality review remains pending. Gate A passed; stop before S6; local checkpoint only, no push by this build.
+
+## 2026-10-11T04:49:13+05:30 — Landing and installer publication side task
+
+Codex planned and implemented the static design-v2 landing, corrected runtime Vitest packaging, wrote installation docs, exercised source/browser/installed-package checks, and prepared authorized GitHub/Vercel publication in an isolated clone of committed S7. No agents or parent WIP were used. Human review pending. Package limitations and historical versus new acceptance are disclosed in docs/landing-release.md. No API credential values were read or published; no new OpenAI runtime request was made.

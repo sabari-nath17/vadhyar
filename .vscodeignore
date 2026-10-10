@@ -1,0 +1,13 @@
+**
+!package.json
+!package-lock.json
+!README.md
+!CHANGELOG.md
+!dist/extension.cjs
+!dist/panel.js
+!dist/panel.css
+!fixtures/novadesk/**
+!node_modules/**
+!docs/installation.md
+!docs/reuse-sources.md
+!docs/landing-release.md
