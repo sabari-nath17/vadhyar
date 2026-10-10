@@ -4,6 +4,13 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-10T21:46:01.000+05:30 — S0b: reconcile canonical history and project instructions
+
+- Changed: Adopted the existing canonical Vadhyar history in the local checkout; adapted AGENTS.md, added .customrules, merged local/remote .gitignore entries, corrected README repository links and preserved/extended tasks/todo.md.
+- Why: Establish the current project's rules and safe file boundary before the authorized seeded fixture slice.
+- Validation: Read both remote commits and canonical instructions; checked affected local Markdown links, instruction line limits, five ignore probes, protected .ignore/local .gitignore content and Git whitespace.
+- Limitations: Documentation only; no application scripts/checks yet. Human file review pending. No force-push, history rewrite, second repository or push.
+
 ## 2026-10-10T20:30:35+05:30 — Initialize Vadhyar repository
 
 - Changed: Created this repository from the organizer's template; named the project Vadhyar; customized README, submission details and AI usage; added the implementation plan, source decisions and code/script/screenshot locations.

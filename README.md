@@ -4,7 +4,7 @@
 
 Vadhyar is a planned VS Code extension for beginners and students building personal projects with AI. It connects one requirement to the relevant code, guides a prediction and debugging exercise, and records the learner's edit alongside executed checks.
 
-**Repository:** https://github.com/sabari-nath17/vadhyar-devday-kochi
+**Repository:** https://github.com/sabari-nath17/vadhyar
 
 Created from the [DevDay Kochi hackathon template](https://github.com/anima-regem/devday-kochi-hackathon-template). Read [event rules](RULES.md) and [agent guidance](AGENTS.md). Build project implementation from scratch at the event.
 
@@ -14,6 +14,7 @@ Created from the [DevDay Kochi hackathon template](https://github.com/anima-rege
 | --- | --- |
 | Template and repository | Created |
 | Product direction and implementation plan | Documented; see [the plan](docs/implementation-plan.md) |
+| Slice status and development instructions | [Task record](tasks/todo.md), [AGENTS.md](AGENTS.md) and [.customrules](.customrules); S0b complete |
 | VS Code extension and NovaDesk fixture | Not implemented |
 | Graphify integration and OpenAI runtime coaching | Planned; not runtime-verified |
 | Run scripts and dependency versions | Pending implementation |
@@ -42,8 +43,8 @@ The proposed stack is TypeScript, React, VS Code APIs, Graphify, OpenAI Response
 Application run commands are not available yet. No project code, package manifest, or runtime scripts have been added in this setup milestone.
 
 ```sh
-git clone https://github.com/sabari-nath17/vadhyar-devday-kochi.git
-cd vadhyar-devday-kochi
+git clone https://github.com/sabari-nath17/vadhyar.git
+cd vadhyar
 ```
 
 When implementation begins, add the exact prerequisites, install/build/run/check commands and sanitized configuration examples here. Keep API credentials out of source control; the planned extension stores the OpenAI key in VS Code SecretStorage.
