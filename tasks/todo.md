@@ -268,3 +268,20 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - Checks: initial missing-module scaffold RED exit 1; typecheck/lint/build and focused graph tests passed; full product suite 12/12 passed. npm run test:host completed with fresh real evidence. git diff --check passed; diff inspected. No approval seed change. S3 checkpoint 3aed8a9 preserved.
 - Unexpected CLI side effect: first --version auto-refreshed the existing ~/.pi/agent/skills/graphify. Restored SKILL.md byte-identically from its .bak and prior 0.9.29 version stamp; restored stock 0.9.29 references from the prior installed package. Refreshed copies retained under /tmp/vadhyar-graphify-auto-refreshed-*. Prior custom reference edits cannot be verified/recovered because the CLI retained no reference backup. All later commands disable auto-refresh and runtime uses isolated HOME.
 - Files: src/extension/graphify.ts; shared/extension/panel/host actions; tests/graphify.test.ts and actual tests/fixtures/graphify-0.9.84.json; required records. Next S5 SecretStorage/context preview/live OpenAI validation. No push. Gate A is not yet passed.
+
+
+## Presentation side-task handoff — 2026-10-10T22:49:02+05:30
+
+- User-authorized scope: polish canonical GitHub presentation with supplied logos while retaining template requirements. This does not advance or replace the active S5/Gate A slice.
+- Changed: README.md, docs/assets/vadhyar-banner.jpg, docs/assets/vadhyar-logo.png, CHANGELOG.md and AI_USAGE.md; this appended handoff. Live GitHub About description and five topics updated and read back successfully.
+- Checks: organizer template review; local Markdown links/anchors, required record presence, package script names, instruction line limits, original-image equality, Git whitespace, and GitHub Markdown rendering passed. Existing S4 runtime outcomes are reported from its handoff, not new execution here.
+- Git: documentation/assets remain uncommitted and unpushed for main-build integration; no staging, commit, push, source edit or existing evidence reset performed by this side task. Preserve concurrent application changes and .ignore/Graft.
+- Next: main build continues S5 under its existing authorization; inspect these documentation changes before a coherent milestone commit. Publish the new README/assets only when pushing is authorized. Human visual/content review and full browser appearance remain unchecked.
+
+
+## Publication authorization checkpoint — 2026-10-10T22:52:28+05:30
+
+- The user now explicitly authorizes publication of this presentation provided the remaining code is preserved; this supersedes the earlier no-push restriction only for this publication.
+- Baseline: completed S4 0dfbb8527052096901a18484c87e28a96d6d1f61; remote main observed at 9a95200d9d77aed1e08c80c4b936f19c7f41b99b. Remote is an ancestor. Publish this completed baseline with the README/assets/required presentation records; pending S5/OpenAI files and dependencies remain local.
+- New commit boundary: README.md, CHANGELOG.md, AI_USAGE.md, tasks/todo.md and two docs/assets images only. Required records/anchors/rule limits and baseline credential-pattern checks passed. No source rewrite, reset, force-push, unrelated staging or application checks.
+- Next: commit this boundary and push its exact SHA to remote main. Verify remote commit and logo bytes, then report the result. The main build retains its current branch and in-progress S5 work.

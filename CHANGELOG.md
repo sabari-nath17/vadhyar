@@ -4,6 +4,19 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-10T22:52:28+05:30 — Authorized presentation publication checkpoint
+
+- User explicitly authorized publication provided existing code is preserved. Remote main was 9a95200; the reviewed completed local baseline is 0dfbb85 (S4). Publication includes that existing committed build so README commands have their matching source, plus only the six presentation/documentation paths in this new milestone.
+- Prepared checks: remote ancestry, empty pre-existing staging area, required record presence, README local links/anchors, rule limits, six-path scope and completed-baseline credential-pattern scan passed. Pending S5/OpenAI files and dependency changes stay local; no source changes, force-push or history rewrite are part of this presentation commit.
+- Commit/push and remote SHA verification follow this checkpoint; prior S4 runtime results are recorded evidence, not rerun checks. Browser appearance and full demo readiness remain unverified.
+
+## 2026-10-10T22:49:02+05:30 — GitHub presentation and supplied branding
+
+- Changed: README branded header, navigation, clearer product description, learning-loop/status tables and corrected stale setup/integration statements; added unaltered supplied artwork in docs/assets/vadhyar-banner.jpg and docs/assets/vadhyar-logo.png. Updated the canonical GitHub About description and five relevant topics.
+- Why: Make the repository easier to understand and present while preserving organizer documentation and honest build boundaries.
+- Checks: Reviewed organizer template README/RULES/AGENTS/SUBMISSION; local Markdown files/anchors, actual npm script names, required record presence, under-50-line instruction limits, byte-identical artwork copies and Git whitespace passed. GitHub Markdown renderer retained the branded header/navigation; live About/topics read-back matched.
+- Limits: Documentation-only side task; no application tests or host/API/Graphify checks rerun. Existing S4 results are attributed to the prior handoff. Human presentation review and full-browser appearance are pending. Required event/submission records remain; this is not final submission certification. Application changes, Git staging/history and active Gate A work were left to the main build. README/artwork/records are uncommitted and unpushed; no push authorization was inferred.
+
 ## 2026-10-10T22:29:20+05:30 — S3: confirmed requirement and atomic checkpoints
 
 - S3: exact requirement confirmation/revision hashes, source snapshots and atomic extension-workspace storage. Strict stored-record identity validation and serialized actions preserve evidence. Typecheck/lint/build passed; session test passed including corrupt-record rejection and actual filesystem write failure preserving prior contents; full product 10/10. Real host restored confirmation/hash on a new activation, rejected changed confirmation identity, captured exact source and preserved two concurrent captures. /tmp/vadhyar-host-evidence.json records restoredOnActivation/concurrentWritesPreserved true. Restart test initially stalled on a trust-startup event race, fixed by checking trust again after its management view opens; only owned test processes were terminated. Source never reset/edited. UI uses native theme, text rendering and refresh/confirm/checkpoint actions. Twenty revisions/checkpoints supported; multi-host concurrent storage and corrupt-session recovery UI remain unverified. S2b cffb7a2 preserved; next S4.

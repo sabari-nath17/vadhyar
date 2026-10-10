@@ -1,33 +1,61 @@
-# Vadhyar
+<div align="center">
+  <img src="docs/assets/vadhyar-banner.jpg" alt="Vadhyar — Understand what you build" width="600" />
+  <h1>Vadhyar</h1>
+  <p><strong>Understand the feature AI built. Make your next change yourself.</strong></p>
+  <p>A VS Code learning companion for beginners building with AI.</p>
+  <p>
+    <a href="#the-idea">The idea</a> ·
+    <a href="#current-progress">Build status</a> ·
+    <a href="#run-the-project">Quick start</a> ·
+    <a href="SUBMISSION.md">Submission</a> ·
+    <a href="RULES.md">Event rules</a>
+  </p>
+  <p><strong>Hackathon prototype</strong> · VS Code · TypeScript · React · Graphify</p>
+</div>
 
-**Understand the feature AI built. Make your next change yourself.**
+---
 
-Vadhyar is a planned VS Code extension for beginners and students building personal projects with AI. It connects one requirement to the relevant code, guides a prediction and debugging exercise, and records the learner's edit alongside executed checks.
+## The idea
 
-**Repository:** https://github.com/sabari-nath17/vadhyar
+AI can help you build a feature faster than you can understand it. When the next change arrives, you need to find the logic, predict its behavior and recognize what might break.
 
-Created from the [DevDay Kochi hackathon template](https://github.com/anima-regem/devday-kochi-hackathon-template). Read [event rules](RULES.md) and [agent guidance](AGENTS.md). Build project implementation from scratch at the event.
+**Vadhyar helps a beginner take ownership of one AI-built feature.** It connects the original requirement to relevant source and guides a small investigation, a learner-performed edit and verification. The goal is a feature you can reason about and change yourself.
+
+Built for [DevDay Exchange Community Hackathon: Kochi](https://luma.com/z10nz8gp), **10–11 October 2026**, using the [organizer's repository template](https://github.com/anima-regem/devday-kochi-hackathon-template). See [event rules](RULES.md), [development guidance](AGENTS.md) and the [submission record](SUBMISSION.md).
 
 ## Current progress
+
+**Development prototype.** The latest recorded milestone is S4; the live OpenAI integration is the remaining Gate A task. The [slice record](tasks/todo.md) and [changelog](CHANGELOG.md) track subsequent build updates.
 
 | Area | Status |
 | --- | --- |
 | Template and repository | Created |
 | Product direction and implementation plan | Documented; see [the plan](docs/implementation-plan.md) |
-| Slice status and development instructions | [Task record](tasks/todo.md), [AGENTS.md](AGENTS.md) and [.customrules](.customrules); S0b complete |
-| NovaDesk fixture | S1a implemented and baseline-tested; disclosed ownership bug retained |
+| Slice status and development instructions | [Task record](tasks/todo.md), [AGENTS.md](AGENTS.md) and [.customrules](.customrules) |
+| NovaDesk fixture | Seeded source and trusted ownership harness implemented; disclosed bug retained |
 | VS Code extension | S2b thin panel and native source navigation verified |
-| Graphify integration and OpenAI runtime coaching | Planned; not runtime-verified |
-| Run scripts and dependency versions | Typecheck, lint and non-watch baseline tests available; versions pinned |
-| Working demo and screenshots | Pending implementation |
+| Requirement confirmation and source checkpoints | S3 persistence and restart recorded as verified |
+| Graphify integration | S4 real extraction and host navigation recorded as verified; four refs and three AST contains relationships |
+| OpenAI runtime coaching | Planned; live API gate pending |
+| Prediction, learner-edit verification and follow-up flow in the panel | Planned |
+| Run scripts and dependency versions | Typecheck, lint, build, product tests and host checks available; versions pinned |
+| Complete working demo, screenshots and VSIX | Pending |
 
 ## Planned demo
 
-The first version targets NovaDesk, a small milestone application with simulated actors. The requirement is: **only the owning client may approve a milestone**. A disclosed seeded bug omits the ownership check.
+**NovaDesk is the prepared sample project used to demonstrate Vadhyar.** It is a small milestone application with simulated actors. The requirement is: **only the owning client may approve a milestone**. A disclosed seeded bug omits the ownership check.
 
 Requirement → source walkthrough → learner prediction → observed behavior → learner edit → executed checks → archived-milestone follow-up challenge.
 
-The proposed stack is TypeScript, React, VS Code APIs, Graphify, OpenAI Responses API, and Vitest. These are design choices, not claims of installed or working integrations. See [reuse decisions](docs/reuse-sources.md).
+| Stage | Learner action | Evidence |
+| --- | --- | --- |
+| **Understand** | Confirm the requirement and follow its source | Requirement revision, source locations and checkpoint |
+| **Predict and investigate** | State the expected outcome and inspect a counterexample | Prediction, executed behavior and progressively clearer hints; planned |
+| **Change and verify** | Edit the actual code and try a follow-up rule | Source diff, case outcomes and assistance used; planned |
+
+The full loop is the product direction, not a completed demo. A source map alone does not prove behavior; checkpoints do not establish authorship or learning gains. No mastery score is assigned.
+
+The implemented foundations use TypeScript, React, VS Code APIs, Zod, esbuild, Graphify and Vitest. OpenAI Responses API coaching is planned. See [reuse decisions](docs/reuse-sources.md) for sources and attribution.
 
 ## Repository layout
 
@@ -37,16 +65,18 @@ The proposed stack is TypeScript, React, VS Code APIs, Graphify, OpenAI Response
 - `scripts/` — reproducible setup, run and packaging scripts as they become available.
 - `screenshots/` — images captured from the actual project as it progresses.
 - `docs/` — implementation plan and reuse/source decisions.
+- `docs/assets/` — supplied Vadhyar banner and transparent logo, copied without modification.
 - [CHANGELOG.md](CHANGELOG.md) — meaningful development milestones and actual checks.
 - [AI_USAGE.md](AI_USAGE.md) — actual Codex contributions.
 - [SUBMISSION.md](SUBMISSION.md) — submission details and readiness checklist.
 
 ## Run the project
 
-S1a is a testable domain fixture, not a running extension or web application. Use a checkout containing this slice and run commands from its root. Node must satisfy `^22.13.0 || ^24.0.0 || >=26.0.0`; this slice was verified with Node 26.7.0 and npm 11.19.0.
+Run commands from the repository root. Node must satisfy `^22.13.0 || ^24.0.0 || >=26.0.0`; recorded build checks use Node 26.7.0 and npm 11.19.0. The development extension uses VS Code 1.140.0 on macOS; Python 3.10+ is required for Graphify, with Python 3.13 verified. See [extension launch](#extension-development-s2a) and [Graphify setup](#graphify-setup-and-recorded-s4-evidence) below. There is no hosted demo or installable VSIX yet.
 
 ```sh
 npm ci
+npm run build
 npm run typecheck
 npm run lint
 npm run test
@@ -56,7 +86,7 @@ npm run test -- tests/fixture-baseline.test.ts
 
 The pure contract is `canApproveMilestone(actor, milestone): boolean`. Actors have an ID and client/freelancer role; milestones have an owning-client ID and active/archived status. The seed checks role only: owner allowed, **different client also allowed (the intentional bug)**, freelancer denied. Baseline tests assert these observations and exercise frozen inputs; green does not mean the ownership requirement is satisfied. Ownership-policy checks are supplied by S1b, and archived rejection is a later transfer exercise.
 
-No API key is needed for this slice. Build/package scripts, extension UI, Graphify and OpenAI integration are not implemented. The eventual extension stores its API key in VS Code SecretStorage.
+No API key is needed for the documented source/checkpoint/graph actions. OpenAI coaching and packaging remain pending. The planned API integration stores its key in VS Code SecretStorage, outside source, logs and the panel.
 
 Development tools are TypeScript, ESLint/typescript-eslint and Vitest, with exact versions in package.json and the npm lockfile. TypeScript 6.0.3 stays inside the installed parser's supported range. On the verified npm version, clean installation warns that the optional `fsevents` install script is not approved; non-watch checks succeed without approving it.
 
@@ -78,13 +108,15 @@ The requirement is in `novadesk/vadhyar-requirement.md`. The extension-owned man
 
 Run `npm run build`, then `/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --new-window --extensionDevelopmentPath="$PWD" "$PWD/novadesk"`. Trust this prepared folder and run **Vadhyar: Understand this change**. `npm run test:host` launches the installed macOS Code executable in the dedicated `/tmp/vadhyar-host-profile` and requires fresh `/tmp/vadhyar-host-evidence.json`. Close other windows using that test profile before running it. Tests never disable Workspace Trust. This host check is macOS-specific; cross-platform setup is not verified.
 
-The thin panel opens a validated current source reference using the native editor. Only the prepared single local NovaDesk folder is supported. It rejects unknown IDs, unsaved source/requirement buffers, escaping symlinks and stale references. Reopen the panel to rebuild its initial source reference. Confirmation/checkpoint and graph/API actions follow in their own slices.
+The thin panel opens a validated current source reference using the native editor. Only the prepared single local NovaDesk folder is supported. It rejects unknown IDs, unsaved source/requirement buffers, escaping symlinks and stale references. Refresh the context after relevant edits; regenerate graph references when source changes. API coaching follows in S5.
 
 ## Requirement and checkpoints (S3)
 
 Read the requirement in the panel and confirm its displayed revision, then **Save source checkpoint**. Exact allowed source contents, hashes and timestamps are saved atomically in VS Code workspace extension storage; no earlier history is inferred. Restart restores confirmed identity. Refresh after requirement edits and confirm the new revision. Unsaved prepared buffers block actions. Limits: 20 requirement revisions and 20 checkpoints; session-clearing/recovery UI and concurrent hosts are later evidence work.
 
-### S4 — 2026-10-10T22:44:02+05:30
+## Graphify setup and recorded S4 evidence
+
+Recorded milestone: **2026-10-10T22:44:02+05:30**. These are prior build results; the presentation update does not rerun or extend them.
 
 Real Graphify 0.9.84 integration is verified in VS Code: four source references, three AST contains relationships, current hash checks, learner mapping confirmation and native navigation. Typecheck/lint/build, 12 product tests and real host acceptance passed. Codex implemented the adapter and checks; human teaching/content review is pending. Gate A still needs S5. Initial Graphify auto-refresh affected the existing Pi skill; its exact prior SKILL.md and stock prior references were restored, but prior custom references are unknown. Runtime disables auto-refresh and isolates HOME.
 
@@ -98,3 +130,16 @@ GRAPHIFY_NO_AUTO_REFRESH=1 .venv-graphify/bin/graphify --version
 ```
 
 Open only `novadesk` in the Extension Development Host; confirm its requirement, extract source relationships, confirm the proposed mapping and use the source buttons. `npm run test:host` uses the installed macOS VS Code and the isolated `/tmp/vadhyar-host-profile`; trust this prepared folder when prompted. Packaging the Graphify runtime is deferred to S12.
+
+## Project records
+
+| Record | Purpose |
+| --- | --- |
+| [RULES.md](RULES.md) | Organizer event requirements |
+| [Implementation plan](docs/implementation-plan.md) | Scope, build slices and acceptance gates |
+| [Slice record](tasks/todo.md) | Actual results and the next dependent task |
+| [CHANGELOG.md](CHANGELOG.md) | Timestamped changes, checks and known limits |
+| [AI_USAGE.md](AI_USAGE.md) | Codex contributions and human review status |
+| [SUBMISSION.md](SUBMISSION.md) | Participants, demo, final commit and submission readiness |
+
+Participant names and final membership remain unconfirmed. The full demo, archived-milestone transfer flow, cross-platform launch and learning outcomes remain unverified. Follow the organizers' actual submission method; wrap-up is **11 October 2026, by 10:00 AM IST**.
