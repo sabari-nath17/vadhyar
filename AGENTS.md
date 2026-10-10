@@ -22,7 +22,7 @@
 - Aim for meaningful commits about every 30 minutes while building; this is a convention, not an event rule.
 - Use descriptive commits; never fabricate/backdate records or create empty cadence commits.
 - Preserve shared history: no force-push, destructive reset or unrelated cleanup; explain recovery targets first.
-- Push checkpoints only when authorized; the current through-Gate-A request explicitly prohibits pushing.
+- Push checkpoints only when authorized; the current S6-only request explicitly prohibits pushing.
 - Keep credentials, QR codes and private data out of source/logs; sanitized examples only.
 - Enable verbose development diagnostics while logging only timings, operation IDs and redacted error categories.
 - For non-trivial ongoing work, consult `/Users/sabarismac/Documents/Second Brain/Second Brain/README_FOR_AI.md` and `Home.md`, then relevant notes under its AGENTS rules.

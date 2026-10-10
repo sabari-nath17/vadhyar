@@ -5,3 +5,8 @@ button { display: block; margin: .75rem 0; padding: .5rem .75rem; color: var(--v
 button:hover { background: var(--vscode-button-hoverBackground); } button:focus-visible { outline: 2px solid var(--vscode-focusBorder); outline-offset: 2px; }
 button:disabled { opacity: .6; cursor: default; } [role="alert"] { color: var(--vscode-errorForeground); }
 pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: .75rem; border: 1px solid var(--vscode-panel-border); }
+fieldset { border: 1px solid var(--vscode-panel-border); padding: .75rem; }
+label { display: block; margin: .75rem 0 .25rem; }
+select, textarea { box-sizing: border-box; width: 100%; padding: .5rem; font: inherit; color: var(--vscode-input-foreground); background: var(--vscode-input-background); border: 1px solid var(--vscode-input-border, var(--vscode-panel-border)); }
+select:focus-visible, textarea:focus-visible { outline: 2px solid var(--vscode-focusBorder); outline-offset: 2px; }
+code, [role="status"] { overflow-wrap: anywhere; }

@@ -6,8 +6,10 @@ const milestone = Object.freeze({ id: 'milestone-1', ownerClientId: 'client-owne
 it('owner-client-active', () => {
   expect(canApproveMilestone({ id: 'client-owner', role: 'client' }, milestone)).toBe(true);
 });
-it('other-client-active', () => {
-  expect(canApproveMilestone({ id: 'client-other', role: 'client' }, milestone)).toBe(false);
+it('other-client-active', ({ task }) => {
+  const actual = canApproveMilestone({ id: 'client-other', role: 'client' }, milestone);
+  Object.assign(task.meta, { approval: actual });
+  expect(actual).toBe(false);
 });
 it('freelancer-active', () => {
   expect(canApproveMilestone({ id: 'freelancer-1', role: 'freelancer' }, milestone)).toBe(false);

@@ -7,6 +7,7 @@ import { approvalReference, readPrepared, resolveReference } from './source.js';
 import { loadSession, saveSession } from './session.js';
 import { extractGraph } from './graphify.js';
 import { explain, previewContext } from './coach.js';
+import { runOwnership } from './checks.js';
 import scenario from '../../fixtures/novadesk/scenario.json' with { type: 'json' };
 
 export function activate(context: vscode.ExtensionContext) {
@@ -56,6 +57,24 @@ export function activate(context: vscode.ExtensionContext) {
       if (!session.requirements.some(item => item.revision === req.revision)) throw new Error('Confirm the current requirement before capturing source.');
       session.checkpoints.push({ capturedAt: new Date().toISOString(), path: 'src/approval.ts', content: source.content, hash: source.hash, requirementRevision: req.revision });
       await saveSession(folder, session);
+    } else if (action.type === 'savePrediction') {
+      if (!session.requirements.some(item => item.revision === req.revision) || action.requirementRevision !== req.revision || action.sourceHash !== source.hash) throw new Error('Confirm the current requirement and refresh source before predicting.');
+      if (state.prediction) throw new Error('A prediction is already saved for this interaction.');
+      if (session.predictions.length >= 20) throw new Error('This session has reached its 20-prediction limit.');
+      const prediction = { id: randomUUID(), savedAt: new Date().toISOString(), predictedApproval: action.predictedApproval, reasoning: action.reasoning, sourceHash: source.hash, requirementRevision: req.revision };
+      session.predictions.push(prediction);
+      await saveSession(folder, session);
+      state = { ...state, prediction, counterexample: undefined };
+    } else if (action.type === 'runCounterexample') {
+      const prediction = session.predictions.find(item => item.id === action.predictionId);
+      if (!prediction || state.prediction?.id !== prediction.id || prediction.sourceHash !== source.hash || prediction.requirementRevision !== req.revision) throw new Error('Save a prediction for the current source and requirement before running.');
+      if (state.counterexample?.kind === 'completed') throw new Error('This counterexample is already observed. Learner edits and reruns follow in S7.');
+      state = { ...state, counterexample: undefined, counterexampleRunning: true, busy: true, error: undefined }; void publish();
+      const result = await runOwnership(context.extensionUri.fsPath, folder, source, prediction);
+      const current = await prepared();
+      if (current.source.hash !== source.hash || current.requirement.hash !== req.revision || state.prediction?.id !== prediction.id) throw new Error('Source or requirement changed during the run; no current outcome was accepted. Refresh and predict again.');
+      state = { ...state, counterexample: result, counterexampleRunning: false, busy: false };
+      log.appendLine(`counterexample: ${result.kind}; runId=${result.id}; latencyMs=${result.latencyMs}`);
     } else if (action.type === 'refreshGraph') {
       if (!session.requirements.some(item => item.revision === req.revision)) throw new Error('Confirm the requirement before extraction.');
       state = { ...state, graph: undefined, mappingConfirmed: false, preview: undefined, explanation: undefined, refs: [], busy: true, error: undefined };
@@ -99,7 +118,7 @@ export function activate(context: vscode.ExtensionContext) {
       editor.selection = new vscode.Selection(range.start, range.end);
       editor.revealRange(range, vscode.TextEditorRevealType.InCenterIfOutsideViewport);
     }
-    state = { ...state, requirement: req, confirmed: session.requirements.some(item => item.revision === req.revision), checkpointCount: session.checkpoints.length, checkpointHash: session.checkpoints.at(-1)?.hash, hasKey: Boolean(await context.secrets.get('openai.apiKey')), error: undefined };
+    state = { ...state, sourceHash: source.hash, requirement: req, confirmed: session.requirements.some(item => item.revision === req.revision), checkpointCount: session.checkpoints.length, checkpointHash: session.checkpoints.at(-1)?.hash, hasKey: Boolean(await context.secrets.get('openai.apiKey')), error: undefined };
     await publish();
     log.appendLine(`action: ${action.type} finished`);
     return state;
@@ -109,12 +128,12 @@ export function activate(context: vscode.ExtensionContext) {
     if (parsed.success && parsed.data.type === 'cancelExplain') { request?.abort(); return Promise.resolve(state); }
     const result = queue.then(() => perform(raw));
     queue = result.catch(() => undefined);
-    return result.catch(error => { state = { ...state, busy: false }; throw error; });
+    return result.catch(error => { state = { ...state, busy: false, counterexampleRunning: false }; throw error; });
   }
 
   context.subscriptions.push(log, vscode.commands.registerCommand('vadhyar.setupKey', setupKey), vscode.workspace.onDidChangeTextDocument(event => {
     if (event.document.uri.scheme === 'file' && /\/(src\/approval\.ts|vadhyar-requirement\.md)$/.test(event.document.uri.path)) {
-      state = { ...state, refs: [], graph: undefined, mappingConfirmed: false, preview: undefined, explanation: undefined, error: 'Prepared source changed; save and refresh current context.' };
+      state = { ...state, refs: [], sourceHash: undefined, prediction: undefined, counterexample: undefined, graph: undefined, mappingConfirmed: false, preview: undefined, explanation: undefined, error: 'Prepared source changed; save and refresh current context.' };
       void publish();
     }
   }), vscode.commands.registerCommand('vadhyar.open', async () => {

@@ -9,6 +9,14 @@ describe('host source boundary', () => {
   it('rejects arbitrary message fields and executable paths', () => {
     expect(panelAction.safeParse({ type: 'openSource', id: 'approval', path: '/etc/passwd' }).success).toBe(false);
     expect(panelAction.safeParse({ type: 'exec', command: 'whoami' }).success).toBe(false);
+    const prediction = { type: 'savePrediction', predictedApproval: false, reasoning: 'Only the owner may approve.', sourceHash: 'a'.repeat(64), requirementRevision: 'b'.repeat(64) };
+    expect(panelAction.safeParse(prediction).success).toBe(true);
+    expect(panelAction.safeParse({ ...prediction, reasoning: ' ' }).success).toBe(false);
+    expect(panelAction.safeParse({ ...prediction, expected: true }).success).toBe(false);
+    const run = { type: 'runCounterexample', predictionId: '526f0aad-37ef-4fa4-82a8-cd6c56a35542' };
+    expect(panelAction.safeParse(run).success).toBe(true);
+    expect(panelAction.safeParse({ ...run, command: 'whoami' }).success).toBe(false);
+    expect(panelAction.safeParse({ ...run, caseId: 'owner-client-active' }).success).toBe(false);
   });
   it('opens only a current, bounded host reference and rejects escaping symlinks', async () => {
     const folder = await mkdtemp(join(tmpdir(), 'vadhyar-source-'));

@@ -4,6 +4,13 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-10T23:41:53+05:30 — S6: saved prediction and trusted ownership counterexample
+
+- Changed: Added the fixed Vitest runner in `src/extension/checks.ts`; extended shared actions, the existing atomic session and extension host; added the prediction/result panel and theme-native form styles. The trusted different-client test now reports its actual boolean without changing its expectation; its manifest hash was updated. Added runner tests and extended session/message boundaries; updated project records and current scope instructions.
+- Why: Save the learner's prediction before execution/reveal and compare it with measured current-source behavior. Only `other-client-active` runs. A role-only seed approval remains a failed requirement check, even when predicted correctly. Errors, malformed results and timeout produce an execution problem without a learner verdict.
+- Checks: Test-first runner/session failures were observed before implementation. Final typecheck/lint/build and 21/21 product tests passed, including real seed/correct/throwing/hung source runs and trusted-definition/report validation. Focused S6 suite passed 10/10. Native final acceptance saved prediction first with mode 0600, then ran one case/two skipped (exit 1; 484 ms), verified Save → Run → result → source keyboard focus and selected source lines 12–15. Impeccable Operate detector returned no findings; one independent read-only review corrected an overly broad pass label to the specific different-client check.
+- Correction/limits: Stale UI control state caused command text to replace the selected seed function; restored it byte-identically, verified no source diff, confirmed the native flow and reran the 3/3 baseline. No new API call, key value inspection/request, dependency change or push. Full result persistence/resume, learner edits/full-policy rerun, native error-state fault injection and cross-platform/VSIX checks are later scope. Automated host checks were not rerun. Human teaching/content review and replacement-key status for later API work remain unverified. Gate A and prior commits are preserved; stop before S7.
+
 ## 2026-10-10T23:05:15+05:30 — Narrow presentation to the requested scope
 
 - Removed the added navigation, technology tags, learning-loop table and extra project-record section; retained the supplied banner and professional description. Existing setup/status information is folded into one expandable section. Removed the unused logo copy and the five added GitHub topics.

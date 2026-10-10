@@ -15,7 +15,7 @@ Built for [DevDay Kochi](https://luma.com/z10nz8gp). [Event rules](RULES.md) · 
 
 ## Current progress
 
-**Development prototype.** S1b–S5 and Gate A are verified: source navigation, real Graphify extraction and one live source-grounded OpenAI response. The [slice record](tasks/todo.md) and [changelog](CHANGELOG.md) track subsequent build updates.
+**Development prototype.** S1b–S6 are complete. Gate A verified source navigation, real Graphify extraction and one live source-grounded OpenAI response; S6 verified a saved prediction followed by the trusted ownership counterexample. The [slice record](tasks/todo.md) and [changelog](CHANGELOG.md) hold actual evidence.
 
 | Area | Status |
 | --- | --- |
@@ -27,7 +27,8 @@ Built for [DevDay Kochi](https://luma.com/z10nz8gp). [Event rules](RULES.md) · 
 | Requirement confirmation and source checkpoints | S3 persistence and restart recorded as verified |
 | Graphify integration | S4 real extraction and host navigation recorded as verified; four refs and three AST contains relationships |
 | OpenAI runtime coaching | S5 live validated response and all three native citation buttons verified |
-| Prediction, learner-edit verification and follow-up flow in the panel | Planned |
+| Saved prediction and ownership counterexample | S6 real runner and native keyboard/source flow verified; seed remains a failed requirement check |
+| Learner edit, full ownership rerun and follow-up flow | S7 onward pending |
 | Run scripts and dependency versions | Typecheck, lint, build, product tests and host checks available; versions pinned |
 | Complete working demo, screenshots and VSIX | Pending |
 
@@ -68,7 +69,7 @@ npm run test -- tests/fixture-baseline.test.ts
 
 The pure contract is `canApproveMilestone(actor, milestone): boolean`. Actors have an ID and client/freelancer role; milestones have an owning-client ID and active/archived status. The seed checks role only: owner allowed, **different client also allowed (the intentional bug)**, freelancer denied. Baseline tests assert these observations and exercise frozen inputs; green does not mean the ownership requirement is satisfied. Ownership-policy checks are supplied by S1b, and archived rejection is a later transfer exercise.
 
-No API key is needed for the documented source/checkpoint/graph actions. OpenAI Explain requires user API access; packaging remains pending. The API integration stores its key in VS Code SecretStorage, outside source, logs and the panel.
+No API key is needed for source/checkpoint/graph actions or the S6 prediction and counterexample. OpenAI Explain requires user API access; packaging remains pending. The API integration stores its key in VS Code SecretStorage, outside source, logs and the panel.
 
 Development tools are TypeScript, ESLint/typescript-eslint and Vitest, with exact versions in package.json and the npm lockfile. TypeScript 6.0.3 stays inside the installed parser's supported range. On the verified npm version, clean installation warns that the optional `fsevents` install script is not approved; non-watch checks succeed without approving it.
 
@@ -119,6 +120,14 @@ Install with `npm ci --ignore-scripts`, then typecheck, lint, test and build wit
 
 **Share this context and Explain** makes one request to OpenAI. The user setting `vadhyar.model` defaults to `gpt-6-astra`. One real request established access to this model for the configured account; other account/model access remains unverified. No fallback is automatic. The request has a 60-second timeout, no retries and a 4,000-token output ceiling. Cancellation stops the local request; provider billing may still apply. Accepted output is rendered as text with native source buttons and measured response ID/latency/token usage. API errors retain checkpoints; retry explicitly. Edits require saving and refreshing context.
 
-S5 checks passed clean install, typecheck/lint/build and 14 product tests. Gate A passed in the actual trusted Extension Development Host: SecretStorage survived restart; fresh Graphify produced four refs/three relationships; one validated `gpt-6-astra` response took 8,732 ms and used 1,850 tokens (1,468 input/382 output); all three returned source buttons opened correct native selections. The isolated-profile automated S5 host retry stopped at Workspace Trust without fresh evidence; manual live acceptance is recorded separately, with no trust bypass. Validated output/metadata are saved atomically in workspace extension storage `gate-a.json`; key contents are never saved there. S6 prediction/runner and the full learning-loop demo remain pending.
+S5 checks passed clean install, typecheck/lint/build and 14 product tests. Gate A passed in the actual trusted Extension Development Host: SecretStorage survived restart; fresh Graphify produced four refs/three relationships; one validated `gpt-6-astra` response took 8,732 ms and used 1,850 tokens (1,468 input/382 output); all three returned source buttons opened correct native selections. The isolated-profile automated S5 host retry stopped at Workspace Trust without fresh evidence; manual live acceptance is recorded separately, with no trust bypass. Validated output/metadata are saved atomically in workspace extension storage `gate-a.json`; key contents are never saved there. The complete learning-loop demo remains pending.
+
+## Saved prediction and trusted counterexample (S6)
+
+In the trusted prepared NovaDesk panel, confirm the current requirement, choose **Allow approval** or **Deny approval**, enter your reasoning and select **Save prediction**. The host saves it atomically in the existing workspace session before enabling **Run ownership counterexample**. The runner executes only the existing `other-client-active` case against a copy of the exact current source, with the pinned trusted harness/config and installed Vitest 5.0.3. Panel messages cannot supply a command, path or alternative case. Unsaved source/requirement buffers block execution; changes during a run invalidate its result.
+
+The unchanged seed produces **Different-client ownership check FAILED**: approval allowed, expected denial, one case executed, two skipped and exit 1. The panel compares this observation with the saved prediction, displays source/requirement hashes and opens the checked function in the native editor. A matching prediction does not turn the failed requirement into a success. Runner errors, invalid output and the 20-second timeout show an execution problem with retry, without a learner verdict.
+
+S6 typecheck, lint, build and all 21 product tests passed, including actual seeded/correct/throwing/hung source runs. Native acceptance verified prediction saved before execution, keyboard focus through Save → Run → result → source, and function selection at lines 12–15; the final run took 484 ms. No OpenAI call was made in S6. Prediction records are saved, but the current result and interaction are not resumed after refresh/restart; complete attempt persistence/resume belongs to S8. S7 adds hints, learner edits and the full ownership rerun. Its API prerequisite is an active key stored only in SecretStorage; replacement-key status was not verified in S6.
 
 </details>

@@ -1,7 +1,7 @@
 # Vadhyar stack and evidence rules
 
 - V1: one prepared NovaDesk TypeScript workspace, one ownership requirement and an archived-milestone transfer task.
-- Current authorization: resume after S1a through S1b, S2–S5 and Gate A; stop before S6. No push.
+- Current authorization: S6 saved prediction and trusted ownership counterexample only; stop before S7. No OpenAI request or push.
 - The learner edits source; the runtime coach has no edit, shell or arbitrary-command tool.
 - Use strict TypeScript, Vitest and one root npm lockfile; add later dependencies only when needed.
 - The fixture intentionally checks client role without ownership; label its baseline behavior honestly.
