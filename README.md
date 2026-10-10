@@ -47,7 +47,7 @@ The implemented foundations use TypeScript, React, VS Code APIs, Zod, esbuild, G
 - `scripts/` — reproducible setup, run and packaging scripts as they become available.
 - `screenshots/` — images captured from the actual project as it progresses.
 - `docs/` — implementation plan and reuse/source decisions.
-- `docs/assets/` — supplied Vadhyar banner and transparent logo, copied without modification.
+- `docs/assets/` — supplied Vadhyar banner, copied without modification.
 - [CHANGELOG.md](CHANGELOG.md) — meaningful development milestones and actual checks.
 - [AI_USAGE.md](AI_USAGE.md) — actual Codex contributions.
 - [SUBMISSION.md](SUBMISSION.md) — submission details and readiness checklist.
