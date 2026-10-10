@@ -1,0 +1,16 @@
+{
+  "bundle": "intermediate S9 build; not final combined-tree acceptance",
+  "evidence": {
+    "startedAt": "2026-10-10T21:15:26.830Z",
+    "activated": true,
+    "vscode": "1.140.0",
+    "trusted": true,
+    "step": "failed",
+    "actualCounterexample": true,
+    "dirtyAndSavedSourceStale": true,
+    "memory": "/tmp/vh-s8-tyubqzbd/User/workspaceStorage/75bc65255fedac1392ad7682a621463c/sabari-nath17.vadhyar",
+    "hasKeyBefore": false,
+    "failed": true,
+    "error": "DialogService: refused to show dialog in tests. Contents: Clear NovaDesk session?"
+  }
+}

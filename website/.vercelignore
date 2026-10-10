@@ -1,0 +1,7 @@
+PLAN.md
+README.md
+check.mjs
+DESIGN.md
+.gitignore
+.env*
+.vercel/

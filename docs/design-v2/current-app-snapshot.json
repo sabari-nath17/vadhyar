@@ -1,0 +1,125 @@
+{
+  "snapshotAt": "2026-10-11T05:16:42.669048+05:30",
+  "importedAt": "2026-10-11T05:24:35.125399+05:30",
+  "sourceCommit": "21fdcc9fde4c8f7d4b16155b122939ad1c8700a1",
+  "sourceBranch": "codex/s0b-s1a",
+  "archiveSha256": "fa28f4f737daadbc8d626cdd91fc6ee8911c76a183661ab29b120952dfaee9e3",
+  "scope": "Current primary source and evidence imported into the isolated branch. Primary checkout is untouched. UI changes must be compared against this snapshot, not the older S7 base.",
+  "immutableFiles": [
+    {
+      "path": "fixtures/novadesk/ownership.test.ts",
+      "bytes": 857,
+      "sha256": "dc87ff8d98ebedfab92d542af877cd0f1c82a3ea82760c449a95d817c5750bcf"
+    },
+    {
+      "path": "fixtures/novadesk/scenario.json",
+      "bytes": 1262,
+      "sha256": "734b14b2c313952706b2b0bb77b0fa340cdf94ef11c15425a7c93c1ff3c25b07"
+    },
+    {
+      "path": "fixtures/novadesk/transfer.config.ts",
+      "bytes": 283,
+      "sha256": "7b6ef205a22cbe87b13c9bc4c71ed6777701d30ee6665b9c68d5c0add3a92ad8"
+    },
+    {
+      "path": "fixtures/novadesk/transfer.md",
+      "bytes": 819,
+      "sha256": "6705e110bc2989d4f5a4575682e5f091d9498c2e0e98a7e97ca535940902415d"
+    },
+    {
+      "path": "fixtures/novadesk/transfer.test.ts",
+      "bytes": 406,
+      "sha256": "f4efdec1df42ab6e97f4bf1b1a21f5846be43873c3a235b36d9a629866c5c170"
+    },
+    {
+      "path": "fixtures/novadesk/vitest.config.ts",
+      "bytes": 284,
+      "sha256": "b9f0a437f70f6db5a16d404388f85fc04e1d95a5d2e2791b1e037d59a2add753"
+    },
+    {
+      "path": "novadesk/src/approval.ts",
+      "bytes": 365,
+      "sha256": "eda0127427545d06c9e2ff88bd51d6022674f43dbd1ccbd56da5f6c8ae3e7fd3"
+    },
+    {
+      "path": "novadesk/vadhyar-requirement.md",
+      "bytes": 736,
+      "sha256": "c455503e7dd3d132533643ffac28b908a553596f8ad47e2959db46daf74c864d"
+    },
+    {
+      "path": "src/extension/checks.ts",
+      "bytes": 8375,
+      "sha256": "c686911ca2bc0a2a0851677fedfa8fbdb0b6e69e869dc3aeadb57f2f18f51787"
+    },
+    {
+      "path": "src/extension/coach.ts",
+      "bytes": 11580,
+      "sha256": "e9aae8374e13b7f4d8d1daa94c3b5dc4422b86f437f0775cd0625f3af93cf9d5"
+    },
+    {
+      "path": "src/extension/extension.ts",
+      "bytes": 46551,
+      "sha256": "413f500a142550681c0e153f972226ca392a703d939d22b3f7e00dc4704a421d"
+    },
+    {
+      "path": "src/extension/graphify.ts",
+      "bytes": 4966,
+      "sha256": "7b44fea0a3f980a51cdba28f5576d42b2d8f440b53452ed4b8608fa167eafb1c"
+    },
+    {
+      "path": "src/extension/handover.ts",
+      "bytes": 5158,
+      "sha256": "a8ba8eeacbe2f1f9255f45e8bf4a5b5abb356a82afd25f96643751e324a601d7"
+    },
+    {
+      "path": "src/extension/requirements.ts",
+      "bytes": 4288,
+      "sha256": "b09342d8ce18b493fa556d3c2c4da5b6ed7540e0bdcee99fb3fa49cd721c079e"
+    },
+    {
+      "path": "src/extension/session.ts",
+      "bytes": 15569,
+      "sha256": "dc0589fcbf6db840ef3fd1d29c36fddee73f22ff890b06eec0fa420c7b4178e0"
+    },
+    {
+      "path": "src/extension/source.ts",
+      "bytes": 2418,
+      "sha256": "f89be39b9caff9c596de4821018ca1b05ab2b0954dfe545cf2a973c8b25b0e53"
+    },
+    {
+      "path": "src/extension/walkthrough.ts",
+      "bytes": 1100,
+      "sha256": "ee4d78d07a40d4a2f5d8e407a816491c88df29e16ce342bc81465250087da128"
+    },
+    {
+      "path": "src/project/checks.ts",
+      "bytes": 2735,
+      "sha256": "d722196d47512daf264b2aead898afc26084962193030b0fd921093a8bc4231a"
+    },
+    {
+      "path": "src/project/coach.ts",
+      "bytes": 5908,
+      "sha256": "c0a5a89e7f6e6e9fa2b012304aa4103add50a9e8f5d3db3c58f641c86c5447dc"
+    },
+    {
+      "path": "src/project/controller.ts",
+      "bytes": 21468,
+      "sha256": "af2890cfdca360df153671d6e99102c84d9f246bc3e6e9f343e34261de4420c2"
+    },
+    {
+      "path": "src/project/model.ts",
+      "bytes": 13639,
+      "sha256": "34897e91e1560fa94cd7ae3d2a6ef81965e32abdc7be2be8970b51bf1e972289"
+    },
+    {
+      "path": "src/project/shared.ts",
+      "bytes": 5194,
+      "sha256": "7e59cdcfbfbdf7b65138de7eab50ca07de44ce8973a3641435e20c88d4ad68c5"
+    },
+    {
+      "path": "src/shared.ts",
+      "bytes": 7912,
+      "sha256": "0f6678a9a02abe6ab0b66ed86a5f0c25901e72f61e63915a9277ea51b2892282"
+    }
+  ]
+}

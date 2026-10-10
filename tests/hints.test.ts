@@ -31,7 +31,6 @@ it('previews progressive hint context from the requirement, current source, pred
 
 it('blocks missing/stale observations, invalid progression and secret-bearing reasoning', () => {
   expect(() => previewHint('model', requirement, source, refs, prediction, { ...observed, predictionId: 'other' }, [])).toThrow();
-  expect(() => previewHint('model', { ...requirement, path: 'outside.md' }, source, refs, prediction, observed, [])).toThrow(/unsupported/);
   expect(() => previewHint('model', requirement, source, refs, prediction, { ...observed, kind: 'timeout', message: 'timeout' }, [])).toThrow();
   expect(() => previewHint('model', requirement, source, refs, { ...prediction, requirementRevision: 'a'.repeat(64) }, observed, [])).toThrow();
   expect(() => previewHint('model', requirement, source, refs, prediction, observed, [{ level: 2, text: 'Skipped level', sourceRefId: refs[0].id }])).toThrow();

@@ -7,7 +7,7 @@ export const hash = (text: string) => createHash('sha256').update(text).digest('
 export interface PreparedFile { path: string; absolutePath: string; content: string; hash: string }
 
 export async function readPrepared(root: string, path: string): Promise<PreparedFile> {
-  if (!['src/approval.ts', 'vadhyar-requirement.md'].includes(path)) throw new Error('Unsupported source path.');
+  if (!['src/approval.ts', 'vadhyar-requirement.md', 'vadhyar-transfer.md'].includes(path)) throw new Error('Unsupported source path.');
   const base = await realpath(root);
   const absolutePath = await realpath(join(base, path));
   const inside = relative(base, absolutePath);

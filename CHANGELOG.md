@@ -1,5 +1,9 @@
 # Change log
 
+## 2026-10-11T05:26:53+05:30 — Preserve current app before V2 integration
+
+Imported the verified current primary source/UI snapshot into the isolated branch to retain newer capabilities before Phase 2. Main checkout untouched; immutable host/shared/project/fixture hashes recorded in docs/design-v2/current-app-snapshot.json. Typecheck/lint, focused 22/22 and full 115/115 pass. This checkpoint preserves existing human/parent work; it does not claim that work as new V2 implementation. Next: lesson shell and UI callers only; no push or external request.
+
 ## 2026-10-11T05:23:35+05:30 — Phase 1 asset review
 
 Reviewed all 26 generated SVGs plus the unchanged wordmark in all nine requested width/theme combinations; every image loaded and no horizontal overflow. Added docs/design-v2/phase-1 screenshots and measured matrix. Asset geometry/inert-content checks remain the Phase 0 tests; no source/host change, API call or push.
@@ -10,7 +14,19 @@ Changed: `src/panel/v2/`, local gallery/evidence scripts, package commands, 26 S
 
 Record each meaningful project change during the event, newest first. Update this file in the same commit as the change. Use a real timestamp with timezone, for example `YYYY-MM-DDTHH:MM:SS+05:30`.
 
+
+Record each meaningful project change during the event, newest first. Update this file in the same commit as the change. Use a real timestamp with timezone, for example `YYYY-MM-DDTHH:MM:SS+05:30`.
+
 ## Event build log
+
+## 2026-10-11T01:31:17.000+05:30 — Project Guide for evolving local projects
+
+- Changed: added five `src/project/` modules, `src/panel/project.tsx`, `scripts/capture-intent.mjs`, four test files, implementation/usage guides and a synthetic capture. Integrated existing host commands, SDK export, shared panel state, stylesheet and package metadata; updated README/design/earlier guide plan and records.
+- Why: handle features added mid-project, inspect changes across files, confirm relevant source, explain logic and prepare a reviewable next-slice coding prompt in the learner's own workspace.
+- Corrections: preserve intent/import provenance; reject unknown or stale context/citations; separate script success from requirement coverage; keep output ephemeral; preserve corrupt/full memory; deduplicate file events and source contents; require a connected capture integration.
+- Checks: typecheck/lint/build, 19 focused and 67 combined tests (17 files, 22.51 s; real timeout 20,008 ms). Real temporary files/Git/storage/CLI/check processes and SDK requests through mock HTTP ran. Synthetic UI passed 12 theme/size combinations, sharing/copy/stale/reduced-motion/page-error checks; capture visually inspected. Five local-link checks passed; instruction files remain 32/21 lines; Git whitespace passed.
+- Limits: new native Project Guide/editor and live grouping/planning acceptance pending. No credentials inspected, universal prompt interception, whole-project Graphify adapter or general acceptance-case mapper. Parent UI/reuse work and index preserved; no mixed-work commit or push.
+- Final verification — 2026-10-11T01:35:23.000+05:30: corrected UTF-8 byte limits and CLI Unicode input; typecheck/lint/build, focused 20/20 and combined 68/68 tests passed (22.46 s; actual timeout 20,010 ms). Supersedes the earlier counts for this working tree.
 
 ## 2026-10-11T00:29:22+05:30 — S7: progressive hints and verified learner edit
 
@@ -127,3 +143,56 @@ Real Graphify 0.9.84 integration is verified in VS Code: four source references,
 - Why: source-grounded Explain with a real account request and validated native source references.
 - Validation: one live gpt-6-astra response accepted at 23:04:25.626 IST, 8,732 ms/1,850 tokens; current real Graphify four references/three relationships; all three model citation buttons selected correct native source; key-presence state survived host restart. Product 14/14, clean install, typecheck/lint/build passed; final boundary results follow in tasks/todo.md.
 - Limits: isolated S5 automated host retry failed at trust; manual live acceptance passed. No S6, other-model benchmark, provider fault injection, polish, VSIX or push by this build. Prior Graphify global reference recovery uncertainty remains recorded.
+
+## 2026-10-11T00:39:00+05:30 — Selective reuse integrations
+
+- Added version-bound walkthrough navigation/export, workspace Markdown requirement selection with preserved revisions and unmapped-check blocking, and Promptfoo production-coach evaluations.
+- Reused the existing host references, sessions, coach and checks; preserved ongoing S7 and UI changes. Main changes: extension handlers, shared contracts, requirement/walkthrough modules, panel controls, evaluation provider/config/runner, package lock and focused tests.
+- Verified typecheck/lint/build, 48 working-tree tests, upstream tour schema and 2/2 offline eval cases. Live eval missing key/model; native UI/playback acceptance pending. No push or mixed-work commit.
+
+
+## 2026-10-11T01:45:48+05:30 — combined-tree stabilization review
+
+- Reviewed the completed uncommitted Project Guide/UI/selective-reuse integration; preserved both canonical modes and all overlapping work. Recorded a NovaDesk-first V1 recommendation with Project Guide kept as a separate experimental mode.
+- Changed only `README.md` (Node 22.22 engine consistency), `tasks/todo.md` and appended audit documentation. No runtime/S8 change, staging, commit or push.
+- Latest-tree typecheck/lint/build and 68 tests passed; offline coach validators 2/2 and installed dependency-tree check passed. Actual isolated VS Code activation succeeded; trust/window selection prevented native import/walkthrough acceptance. CodeTour playback, connected agent capture and live Project Guide/evaluation acceptance remain unverified. Historical 12 synthetic theme/width checks were not replayed. See the task record for exact evidence and limits.
+
+## 2026-10-11T02:17:43+05:30 — S8 NovaDesk persistence and resume
+
+- Persist/restore complete prepared-learning evidence and selected stage through the existing controller, with schema-1 migration, validated version-2 records and synced atomic saves. Imported requirement/checkpoint history and separate Project Guide/Gate A storage are preserved.
+- Restored results require matching requirement/source/trusted-check fingerprints; interrupted runs require explicit retry. Added local saved reflections using existing panel controls and a scoped light-theme historical-result fill correction. No coach source-edit authority or new dependency.
+- Final combined tree: typecheck/lint/build, 77 tests and 2 offline validator cases passed. Disposable real VS Code panel close/reopen and fresh extension-host restart restored correlated saved identities; a later disposable edit made the old pass historical. UI interactions/themes used synthetic host responses; detector returned eight existing typography advisories, exit 2. See [evidence](docs/s8-evidence/resume.json) and [task record](tasks/todo.md) for boundaries.
+- Active S7 session/source and Gate A file remain byte-identical. No API request, key handling, commit or push; mixed Project Guide/reuse/UI work preserved. Next S9; connected capture, CodeTour playback, live new-coach quality and packaging remain unverified.
+
+## 2026-10-11T03:10:40+05:30 — S9 NovaDesk stale state and safe controls
+
+- Bound current explanations/source links/check results to their source, requirement and relevant trusted-check identities; retained historical evidence while rejecting stale navigation/verification. Added fixed memory-location and native-confirmed NovaDesk-only clear actions with narrow scope, failure recovery and later-record preservation. S8 schema and Project Guide workflow remain unchanged.
+- Used existing controller/panel controls; no dependency, CSS/motion or coach change. Typecheck/lint/build and **89/89 tests** passed; offline validators **2/2**. Disposable filesystem and mocked dialog/SecretStorage checks cover failures and scope. Synthetic rendered interactions passed; final native confirmation/Trash acceptance remains blocked by Trust/window selection, so Gate C is not certified. [Evidence](docs/s9-evidence/session-controls.json).
+- Active learner/session/Gate A hashes and unrelated work preserved. No API request, key handling, commit or push. Next S10 after outstanding native integrity acceptance; a clean checkpoint is still needed for the mixed tree.
+
+## 2026-10-11T03:27:38+05:30 — S9 final native integrity acceptance
+
+Actual trusted disposable host verified seeded failure/save staleness, memory reveal, native Cancel/Confirm, retained Project Guide/source/credential presence and panel reopen. Current source/bundle hashes match the 89-test boundary; no runtime edit. Earlier native failures remain historical diagnostics. Gate C now passes for NovaDesk; native failure/OS Trash restoration, CodeTour/capture/live eval remain unverified. No commit or push. [Evidence](docs/s9-evidence/native-acceptance.json).
+
+
+## 2026-10-11T03:52:35+05:30 — S10 transfer and evidence handover
+
+- Added a separately confirmed archived-milestone revision and fixed four-case transfer through the existing runner/controller/session. Original ownership cases and seeded source remain unchanged. Conflicting prepared documents and modified definitions are rejected safely.
+- Added a timeline derived only from saved evidence and native Markdown handover with current/historical identities, recorded hint counts and inert text. Reused bounded native export/revalidation/atomic-write behavior.
+- Typecheck/lint/build and **93/93 tests** passed. Real VS Code: user prediction saved before the failed archived case, user-delegated developer test edit, native diff, four-case pass, exact saved-record report and panel reopen passed. No learner-authorship/mastery claim. [Evidence](docs/s10-evidence/transfer.json).
+- Project Guide and active S7/Gate A data preserved; no API request, dependency, commit or push. Next S11; release/demo quality is not yet certified.
+
+
+## 2026-10-11T04:00:41+05:30 — S11 coach reliability and offline evaluation
+
+- Reject explicit unsupported verdicts and malformed response metadata, correlate hint cases and use lifecycle guidance for the archived challenge; classify SDK connection failures correctly. No new dependency or model routing.
+- Expanded the existing Promptfoo set to six offline validators plus six live cases; added accepted-output control and real SDK mock-HTTP failure tests. Full typecheck/lint/build and **103 tests** passed; offline **6/6** and disposable mutation regression passed. [Evidence](docs/s11-evidence/coach-quality.json).
+- Live evaluation remains unrun because separate environment credentials/model are absent; human teaching review remains pending. No API/key operation, commit or push; Project Guide/active learner data preserved. Next S12.
+
+- S12: accessible Settings focus, truthful seed disclosure, scoped NovaDesk metadata sizing, correct light-theme result fills and stable native panel reopening; 104 tests plus real disposable editor-loop/restart evidence.
+
+## 2026-10-11T05:02:28+05:30 — Landing / installer publication verified
+
+- Delivered: https://vadhyar-website.vercel.app, GitHub v0.1.0 installer/checksum and docs/installation.md; public Vadhyar wording corrected at the user's request.
+- Evidence: final live HTML/source and wording equality, four widths/two themes plus keyboard/reduced motion; published asset downloaded back and checksum passed. Anonymous asset endpoint returns HTTP 200. Earlier source 36/36, clean installation, installed real runner and Graphify checks are retained.
+- Boundary: included milestone project, macOS Apple Silicon, VS Code 1.140.0+; no fresh API/learning validation or parent source publication. Existing package and tag remain immutable after wording changes.

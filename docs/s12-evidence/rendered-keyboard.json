@@ -1,0 +1,9 @@
+{
+  "mode": "Synthetic host using actual bundle",
+  "settings": {
+    "expanded": "false",
+    "focus": "vd-settings-toggle"
+  },
+  "unavailableVerifyFocusable": true,
+  "unavailableVerifyDidNotAdvance": true
+}

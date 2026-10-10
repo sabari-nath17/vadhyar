@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vadhyar — Understand what you build</title>
+<meta name="description" content="AI built the feature. Understand its logic, make the next change yourself, and check it against your requirement. A VS Code learning companion.">
+<meta name="theme-color" content="#F4EFE6">
+<meta property="og:title" content="Vadhyar — Understand what you build"><meta property="og:description" content="Take ownership of the features AI builds for you. Try the early VS Code release."><meta property="og:type" content="website"><meta property="og:url" content="https://vadhyar-website.vercel.app"><link rel="canonical" href="https://vadhyar-website.vercel.app">
+<link rel="icon" href="assets/guide.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/inter-normal-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css"><script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header wrap">
+<a class="brand" href="#main" aria-label="Vadhyar home"><img src="assets/vadhyar-logo.png" width="595" height="250" alt="Vadhyar — understand what you build"></a>
+<nav aria-label="Main navigation"><a href="#how">How it works</a><a href="#install">Install</a><a href="https://github.com/sabari-nath17/vadhyar">GitHub <span aria-hidden="true">↗</span></a><button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 13a9 9 0 1 1-10-10 7 7 0 0 0 10 10Z"/></svg></button></nav>
+</header>
+<main id="main">
+<section class="hero wrap" aria-labelledby="hero-title">
+<div class="hero-copy"><p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> A learning companion for VS Code</p>
+<h1 id="hero-title">AI built it.<br>Make it <em>yours.</em></h1>
+<p class="lead">Understand the logic. Make the next change yourself. Check that it still matches your idea.</p>
+<a class="button primary" href="https://github.com/sabari-nath17/vadhyar/releases/download/v0.1.0/vadhyar-0.1.0.vsix"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5"/></svg>Install from GitHub</a>
+<p class="caption">macOS Apple Silicon release · VS Code 1.140.0+ · <a href="#install">Setup takes a few steps</a></p>
+</div>
+<div class="hero-art"><div class="speech"><p>“I built this with AI.<br>Where do I change it?”</p><span>Start with the rule. Follow the code.</span></div><img class="guide" src="assets/guide.svg" width="320" height="340" alt="A friendly lotus guide with a raised teaching hand"><div class="art-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg> Your editor. Your code. Your next step.</div></div>
+</section>
+<div class="principle-strip"><div class="wrap"><span>Learn on a real feature</span><span>Make the edit yourself</span><span>Keep evidence with the code</span></div></div>
+<section id="how" class="section wrap" aria-labelledby="how-title">
+<div class="section-heading"><p class="eyebrow">One small learning loop</p><h2 id="how-title">From “it works”<br>to “I know why.”</h2><p>One requirement. A few relevant code locations. A change you can reason through.</p></div>
+<div class="walkthrough">
+<div class="walkthrough-control"><p class="caption">Illustrative walkthrough · milestone approval exercise</p><ol class="steps" aria-label="Explore the learning flow">
+<li><button type="button" aria-current="step" data-step="0"><span>1</span>Confirm</button></li><li><button type="button" data-step="1"><span>2</span>Understand</button></li><li><button type="button" data-step="2"><span>3</span>Predict</button></li><li><button type="button" data-step="3"><span>4</span>Observe</button></li><li><button type="button" data-step="4"><span>5</span>Change</button></li><li><button type="button" data-step="5"><span>6</span>Verify</button></li></ol>
+<p class="small muted">This example explains the flow. It does not run code or call OpenAI.</p></div>
+<article class="lesson-example" aria-live="polite" aria-atomic="true"><p id="example-label" class="eyebrow">01 / Confirm the intention</p><h3 id="example-title">What should this feature do?</h3><p id="example-body">Only the client who owns a milestone may approve it. A different client and a freelancer must be denied.</p><div id="example-detail" class="manuscript"><p class="small">The requirement</p><p>“Only the owning client may approve.”</p></div><p id="example-note" class="small muted">The prepared exercise deliberately contains an ownership bug.</p></article>
+</div>
+</section>
+<section class="reason-section"><div class="wrap reason-layout"><div><p class="eyebrow">Keep the decisions in view</p><h2>A feature you can<br>come back to.</h2><p class="lead">Vadhyar connects what you wanted, what the code does, and what happened when you checked it.</p></div><dl class="reason-list"><div><dt><span>01</span>Guidance tied to source</dt><dd>Follow relevant code in your native editor. Review what you share before requesting an OpenAI explanation or hint.</dd></div><div><dt><span>02</span>Checks, with context</dt><dd>Compare a saved prediction with an observed case. Inspect your edit and run the prepared checks again.</dd></div><div><dt><span>03</span>Evidence, not a score</dt><dd>Keep code checkpoints and recorded activity locally. Passing cases describe behavior; they do not measure mastery.</dd></div></dl></div></section>
+<section id="install" class="section wrap install-section" aria-labelledby="install-title">
+<div class="section-heading"><p class="eyebrow">Start in your editor</p><h2 id="install-title">One download.<br>A real feature to explore.</h2><p>This first release supports the included milestone learning project on macOS Apple Silicon.</p></div>
+<div class="install-layout"><ol class="install-list"><li><span class="number">1</span><div><h3>Download the extension</h3><p>Get <code>vadhyar-0.1.0.vsix</code> from the GitHub release. It requires VS Code 1.140.0 or newer.</p><a class="text-link" href="https://github.com/sabari-nath17/vadhyar/releases/tag/v0.1.0">Open the GitHub release <span aria-hidden="true">↗</span></a></div></li><li><span class="number">2</span><div><h3>Install in VS Code</h3><p>Open Extensions → the ⋯ menu → <strong>Install from VSIX…</strong>. Select the downloaded file.</p></div></li><li><span class="number">3</span><div><h3>Prepare your workspace</h3><p>Download the release source and follow the guide to set up Graphify. The pinned test runner is included in the extension. Open the included folder containing <code>vadhyar-requirement.md</code>.</p></div></li><li><span class="number">4</span><div><h3>Open Vadhyar</h3><p>Use the Command Palette: <strong>Vadhyar: Understand this change</strong>. Connect your own OpenAI API key for explanations and hints.</p></div></li></ol><aside class="setup-card"><img src="assets/guide.svg" width="128" height="136" alt="" loading="lazy"><h3>Everything you need,<br>step by step.</h3><p>Requirements, commands, API setup and fixes for common installation problems.</p><a class="button secondary" href="https://github.com/sabari-nath17/vadhyar/blob/main/docs/installation.md">Read the installation guide <span aria-hidden="true">↗</span></a><p class="small muted">Extension download is free. OpenAI API usage is billed separately by OpenAI.</p></aside></div>
+</section>
+<section id="faq" class="section wrap faq-section" aria-labelledby="faq-title"><div><p class="eyebrow">Before you start</p><h2 id="faq-title">A few clear answers.</h2></div><div class="faq-list">
+<details><summary>Does Vadhyar write the fix for me?</summary><p>No. In the learning workflow, the coach explains and gives progressive hints. You inspect and edit the code yourself in VS Code.</p></details>
+<details><summary>Does this website run the extension?</summary><p>The walkthrough here is an illustration. The extension uses real project source, OpenAI API requests for coaching, and executed checks in its prepared exercise. The website makes no AI calls.</p></details>
+<details><summary>Can I use it with any repository?</summary><p>The 0.1.0 installer supports the included milestone learning project. Broader Project Guide work is in development and is not included in this installer.</p></details>
+<details><summary>Where does my data go?</summary><p>Code checkpoints and recorded activity stay in workspace-scoped VS Code storage. API credentials use VS Code SecretStorage. Coaching sends the context shown in your sharing preview to OpenAI after your approval.</p></details>
+<details><summary>Do I need a ChatGPT subscription?</summary><p>You need separate OpenAI API access for explanations and hints. A ChatGPT subscription does not supply the API key. Local source inspection, predictions and prepared checks do not need an API key.</p></details>
+<details><summary>What has been tested?</summary><p>The release has development checks and recorded native editor acceptance. It has not established learning gains. See the GitHub release notes for this package’s checks and remaining platform limits.</p></details>
+</div></section>
+<section class="closing wrap"><div><p class="eyebrow">Understand what you build</p><h2>Your next change<br>can start with understanding.</h2></div><a class="button secondary" href="#install">Get started <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></section>
+</main>
+<footer class="wrap"><span>Vadhyar · Built for DevDay Kochi 2026</span><div><a href="https://github.com/sabari-nath17/vadhyar">Source on GitHub</a><a href="https://github.com/sabari-nath17/vadhyar/releases/tag/v0.1.0">Release notes</a><a href="#faq">Privacy & scope</a></div></footer>
+</body></html>

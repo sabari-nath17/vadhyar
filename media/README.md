@@ -6,3 +6,5 @@
 - Preserve the SIL Open Font Licenses: [Inter](fonts/inter-OFL.txt), [JetBrains Mono](fonts/jetbrainsmono-OFL.txt), [Playfair Display](fonts/playfairdisplay-OFL.txt). Other scripts use platform fallbacks.
 
 The gallery bundles font imports and copies artwork locally. Original extension resource policy is untouched in Phase 0; Phase 2 uses its local resource origin. No runtime font fetch or new external network call. Asset review: [Phase 0 report](../docs/design-v2/phase-0/README.md).
+
+The existing v1 font files are also retained for its callers during panel integration.

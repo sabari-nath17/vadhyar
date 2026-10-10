@@ -1,0 +1,21 @@
+{
+  "capturedAt": "2026-10-10T19:10:17.587Z",
+  "vscode": "1.140.0",
+  "activated": true,
+  "panelOpened": true,
+  "trusted": true,
+  "sourceOpened": "src/approval.ts",
+  "selectedLine": 12,
+  "invalidIdRejected": true,
+  "confirmed": true,
+  "snapshotHash": "eda0127427545d06c9e2ff88bd51d6022674f43dbd1ccbd56da5f6c8ae3e7fd3",
+  "restored": true,
+  "restoredOnActivation": true,
+  "concurrentWritesPreserved": true,
+  "graphifyVersion": "0.9.84",
+  "graphIdentity": "a03c97f6f81eac3d8663335076a4da11ab686d4952bb78d66e58674d0c302c47",
+  "graphSourceHash": "eda0127427545d06c9e2ff88bd51d6022674f43dbd1ccbd56da5f6c8ae3e7fd3",
+  "graphReferences": 4,
+  "graphRelationships": 3,
+  "mappingConfirmed": true
+}

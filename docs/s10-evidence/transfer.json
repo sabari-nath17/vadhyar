@@ -1,0 +1,194 @@
+{
+  "capturedAt": "2026-10-10T22:19:43.220Z",
+  "stage": "S10",
+  "mode": "real VS Code Development Host; disposable copy",
+  "vscode": "1.140.0",
+  "trusted": true,
+  "workspace": "/Users/sabarismac/Documents/ChatGPT/Vadhyar 2/node_modules/vh-s10-learner-3t6toose/NovaDesk-S10",
+  "memory": "/Users/sabarismac/Library/Application Support/Code/User/workspaceStorage/e9acd487559d356a95464bcd49808b1f/sabari-nath17.vadhyar",
+  "prediction": {
+    "id": "b4ae3e53-01b0-46db-b5fd-1aeb0febaf35",
+    "savedAt": "2026-10-10T22:15:01.549Z",
+    "predictedApproval": true,
+    "reasoning": "observed",
+    "sourceHash": "d41e8c0de5bd6baac8e64c1cd9f79ae7e2b5ea0f117e3a7b0f88ca142a1214db",
+    "requirementRevision": "6705e110bc2989d4f5a4575682e5f091d9498c2e0e98a7e97ca535940902415d",
+    "caseId": "owner-client-archived"
+  },
+  "actualCounterexample": {
+    "id": "6ec8f4a2-bf90-48f2-9f03-a50608eb5a92",
+    "predictionId": "b4ae3e53-01b0-46db-b5fd-1aeb0febaf35",
+    "sourceHash": "d41e8c0de5bd6baac8e64c1cd9f79ae7e2b5ea0f117e3a7b0f88ca142a1214db",
+    "requirementRevision": "6705e110bc2989d4f5a4575682e5f091d9498c2e0e98a7e97ca535940902415d",
+    "startedAt": "2026-10-10T22:15:01.579Z",
+    "finishedAt": "2026-10-10T22:15:01.933Z",
+    "latencyMs": 354,
+    "fingerprints": {
+      "harness": "49345280d0d0e84b96720566404a0db6bdaf87dae09d0d3476534068d420a3a1",
+      "config": "7b6ef205a22cbe87b13c9bc4c71ed6777701d30ee6665b9c68d5c0add3a92ad8",
+      "lock": "33fa233fbeb1777d81190b68c431926857bb895e31ae880cade2298fff8337a3"
+    },
+    "vitestVersion": "5.0.3",
+    "caseId": "owner-client-archived",
+    "kind": "completed",
+    "observedApproval": true,
+    "requirementPassed": false,
+    "exitCode": 1,
+    "executedCases": 1,
+    "skippedCases": 3
+  },
+  "actualFullRun": {
+    "id": "e4e56f90-e5d8-48ad-9110-135db56a9793",
+    "predictionId": "b4ae3e53-01b0-46db-b5fd-1aeb0febaf35",
+    "sourceHash": "8e39a8e0f9d8b358da6629dfec955fed5327e15c071fd884c8b267a41605b35e",
+    "requirementRevision": "6705e110bc2989d4f5a4575682e5f091d9498c2e0e98a7e97ca535940902415d",
+    "startedAt": "2026-10-10T22:18:29.570Z",
+    "finishedAt": "2026-10-10T22:18:29.935Z",
+    "latencyMs": 365,
+    "fingerprints": {
+      "harness": "49345280d0d0e84b96720566404a0db6bdaf87dae09d0d3476534068d420a3a1",
+      "config": "7b6ef205a22cbe87b13c9bc4c71ed6777701d30ee6665b9c68d5c0add3a92ad8",
+      "lock": "33fa233fbeb1777d81190b68c431926857bb895e31ae880cade2298fff8337a3"
+    },
+    "vitestVersion": "5.0.3",
+    "baselineHash": "d41e8c0de5bd6baac8e64c1cd9f79ae7e2b5ea0f117e3a7b0f88ca142a1214db",
+    "suiteId": "transfer",
+    "kind": "completed",
+    "cases": [
+      {
+        "id": "owner-client-active",
+        "observedApproval": true,
+        "expectedApproval": true,
+        "status": "passed"
+      },
+      {
+        "id": "other-client-active",
+        "observedApproval": false,
+        "expectedApproval": false,
+        "status": "passed"
+      },
+      {
+        "id": "freelancer-active",
+        "observedApproval": false,
+        "expectedApproval": false,
+        "status": "passed"
+      },
+      {
+        "id": "owner-client-archived",
+        "observedApproval": false,
+        "expectedApproval": false,
+        "status": "passed"
+      }
+    ],
+    "requirementPassed": true,
+    "exitCode": 0
+  },
+  "diff": {
+    "id": "d672b550-c5dd-4f01-8c88-d75341b925ea",
+    "predictionId": "b4ae3e53-01b0-46db-b5fd-1aeb0febaf35",
+    "sourceHash": "8e39a8e0f9d8b358da6629dfec955fed5327e15c071fd884c8b267a41605b35e",
+    "requirementRevision": "6705e110bc2989d4f5a4575682e5f091d9498c2e0e98a7e97ca535940902415d",
+    "type": "diff",
+    "recordedAt": "2026-10-10T22:18:22.754Z",
+    "before": {
+      "content": "export interface Actor {\n  id: string;\n  role: 'client' | 'freelancer';\n}\n\nexport interface Milestone {\n  id: string;\n  ownerClientId: string;\n  status: 'active' | 'archived';\n}\n\nexport function canApproveMilestone(actor: Actor, _milestone: Milestone): boolean {\n  // Disclosed teaching seed: ownership is intentionally omitted.\n  return actor.role === 'client' && actor.id === _milestone.ownerClientId;\n}\n",
+      "hash": "d41e8c0de5bd6baac8e64c1cd9f79ae7e2b5ea0f117e3a7b0f88ca142a1214db"
+    },
+    "after": {
+      "content": "export interface Actor {\n  id: string;\n  role: 'client' | 'freelancer';\n}\n\nexport interface Milestone {\n  id: string;\n  ownerClientId: string;\n  status: 'active' | 'archived';\n}\n\nexport function canApproveMilestone(actor: Actor, _milestone: Milestone): boolean {\n  // Disclosed teaching seed: ownership is intentionally omitted.\n  return actor.role === 'client' && actor.id === _milestone.ownerClientId && _milestone.status === 'active';\n}\n",
+      "hash": "8e39a8e0f9d8b358da6629dfec955fed5327e15c071fd884c8b267a41605b35e"
+    }
+  },
+  "nativeExport": {
+    "file": "/Users/sabarismac/Documents/ChatGPT/Vadhyar 2/node_modules/vh-s10-learner-3t6toose/NovaDesk-S10/vadhyar-handover.md",
+    "sha256": "c5e528eca5ca2b42a933de6a4c6874c88626e226cef2141bfb8d5144785fb3b1",
+    "matchesPersistedEvidenceExactly": true,
+    "timelineRecords": 12,
+    "nativeSave": true,
+    "overwriteConfirmed": true
+  },
+  "provenance": {
+    "prediction": "saved by user in native panel",
+    "sourceEdit": "Codex developer test using Computer Use, explicitly delegated by user",
+    "userAuthorization": "You can do the test",
+    "learnerAuthorshipVerified": false,
+    "coachHintCount": 0,
+    "externalAssistance": "known developer test; no independent learning claim"
+  },
+  "priorDriverFailures": [
+    "evidence-driver-v1.json",
+    "evidence-driver-v2.json"
+  ],
+  "protection": {
+    "activeS7SessionSourceGateAUnchanged": true
+  },
+  "status": "functional native acceptance passed; developer test edit explicitly delegated; learner authorship unverified",
+  "panelCloseReopen": {
+    "verified": true,
+    "restoredStage": "verify",
+    "savedSessionBytesUnchanged": true,
+    "newRunsOnReopen": 0
+  },
+  "checks": {
+    "typecheck": {
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "startedAt": "2026-10-11T03:38:16.080+05:30",
+      "finishedAt": "2026-10-11T03:38:18.666+05:30",
+      "durationSeconds": 2.587
+    },
+    "lint": {
+      "command": "npm run lint",
+      "exitCode": 0,
+      "startedAt": "2026-10-11T03:38:18.666+05:30",
+      "finishedAt": "2026-10-11T03:38:19.678+05:30",
+      "durationSeconds": 1.012
+    },
+    "build": {
+      "command": "npm run build",
+      "exitCode": 0,
+      "startedAt": "2026-10-11T03:38:19.678+05:30",
+      "finishedAt": "2026-10-11T03:38:19.959+05:30",
+      "durationSeconds": 0.282
+    },
+    "test": {
+      "command": "npm run test",
+      "exitCode": 0,
+      "startedAt": "2026-10-11T03:38:19.959+05:30",
+      "finishedAt": "2026-10-11T03:38:43.220+05:30",
+      "durationSeconds": 23.261,
+      "testsPassed": 93,
+      "testFiles": 21,
+      "reportedDurationSeconds": 22.97,
+      "realHungRunnerMs": 20007
+    }
+  },
+  "sourceFingerprints": {
+    "src/shared.ts": "0f6678a9a02abe6ab0b66ed86a5f0c25901e72f61e63915a9277ea51b2892282",
+    "src/extension/checks.ts": "c686911ca2bc0a2a0851677fedfa8fbdb0b6e69e869dc3aeadb57f2f18f51787",
+    "src/extension/session.ts": "dc0589fcbf6db840ef3fd1d29c36fddee73f22ff890b06eec0fa420c7b4178e0",
+    "src/extension/source.ts": "f89be39b9caff9c596de4821018ca1b05ab2b0954dfe545cf2a973c8b25b0e53",
+    "src/extension/extension.ts": "4064bebb2b976b7431d03a42d22ae56206bc45f20badb3fc7828f151cbbd904d",
+    "src/extension/handover.ts": "a8ba8eeacbe2f1f9255f45e8bf4a5b5abb356a82afd25f96643751e324a601d7",
+    "src/extension/walkthrough.ts": "ee4d78d07a40d4a2f5d8e407a816491c88df29e16ce342bc81465250087da128",
+    "src/panel/app.tsx": "c871c9e485e163fc93af8b944e0600a1fb4ba7ae212e2b5157da2770a01631fc",
+    "src/panel/results.tsx": "ee4c2e45046ad826708f3e64ef610e03bdb31ae0fbdc8ad6a3e96ac8ca02f908",
+    "src/panel/change.tsx": "b47145f8c0bf33a412e38d944e914f86e66736192f06fcdcdf56ac470319d242",
+    "fixtures/novadesk/scenario.json": "734b14b2c313952706b2b0bb77b0fa340cdf94ef11c15425a7c93c1ff3c25b07",
+    "fixtures/novadesk/transfer.test.ts": "f4efdec1df42ab6e97f4bf1b1a21f5846be43873c3a235b36d9a629866c5c170",
+    "fixtures/novadesk/transfer.config.ts": "7b6ef205a22cbe87b13c9bc4c71ed6777701d30ee6665b9c68d5c0add3a92ad8",
+    "fixtures/novadesk/transfer.md": "6705e110bc2989d4f5a4575682e5f091d9498c2e0e98a7e97ca535940902415d",
+    "tests/transfer-runner.test.ts": "4c6c5351a0108d4a6e42cb2917b4f37d7504f296343664a6a9d784c78a3045da",
+    "tests/resume-host.test.ts": "e4768fd6e6e9672c908c099fd0aa56988dfd58776f005b0eaad6792b292d1630",
+    "tests/reuse-host.test.ts": "7aa5e04c9774805f05755942f53eb44e8b68f7ef9fa5177b80e196d7202910d1"
+  },
+  "builtExtensionSha256": "bded3144c8c43b25c5d7fefa124a4598d05ecc4db81419b741985660daa0ff74",
+  "builtPanelSha256": "bb982b0b73cee17fbe584229dd325eb33b2f3f822cb0e3f437c439ebd0597fc8",
+  "preservation": {
+    "preexistingFiles": 140,
+    "onlyPlannedS10SourcePathsChangedBeforeDocumentation": true,
+    "projectGuidePackageCoachStyleSeedAndIgnoresUnchanged": true,
+    "activeS7SessionSourceGateAUnchanged": true,
+    "noCommitOrPush": true
+  }
+}

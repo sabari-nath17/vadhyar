@@ -1,15 +1,21 @@
 import { useEffect, useRef, useState } from 'react';
+import { Icon } from './ui.js';
 import { boardSize, newSnake, stepSnake, turnSnake, type Direction } from './snake.js';
 
 const directions: Record<string, Direction> = { arrowup: 'up', w: 'up', arrowdown: 'down', s: 'down', arrowleft: 'left', a: 'left', arrowright: 'right', d: 'right' };
 
 export function SnakeGame() {
+  const [open, setOpen] = useState(false);
+  return <details className="snake-egg" onToggle={event => setOpen(event.currentTarget.open)}><summary aria-label="Take a short break"><Icon name="egg" />Take a short break</summary>{open && <SnakeBoard />}</details>;
+}
+
+function SnakeBoard() {
   const [game, setGame] = useState(() => newSnake());
   const board = useRef<HTMLDivElement>(null);
   const pause = () => setGame(current => current.status === 'running' ? { ...current, status: 'paused' } : current);
   useEffect(() => {
     if (game.status !== 'running') return;
-    const timer = window.setInterval(() => setGame(current => stepSnake(current)), 200);
+    const timer = window.setInterval(() => setGame(current => stepSnake(current)), window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 600 : 200);
     return () => window.clearInterval(timer);
   }, [game.status]);
   useEffect(() => {
@@ -17,15 +23,11 @@ export function SnakeGame() {
     document.addEventListener('visibilitychange', onVisibility);
     return () => document.removeEventListener('visibilitychange', onVisibility);
   }, []);
-  return <details className="snake-egg" onToggle={event => { if (!event.currentTarget.open) pause(); }} onBlur={event => {
-    if (!event.currentTarget.contains(event.relatedTarget)) pause();
-  }}>
-    <summary aria-label="Open Snake Easter egg" title="A tiny break">🥚</summary>
-    <section aria-labelledby="snake-title">
+  return <section aria-labelledby="snake-title">
       <h2 id="snake-title">Snake — a tiny break</h2>
       <p id="snake-help">Collect diamonds. Avoid walls and your tail. Focus the board and use arrow keys or WASD; Escape pauses. Direction buttons work too.</p>
       <p role="status" aria-live="polite">{game.status === 'lost' ? 'Game over.' : game.status === 'won' ? 'You filled the board!' : game.status === 'running' ? 'Playing.' : game.status === 'paused' ? 'Paused.' : 'Ready.'} Diamonds: {game.body.length - 3}.</p>
-      <div ref={board} className="snake-board" role="group" tabIndex={0} aria-label="Snake game board" aria-describedby="snake-help" onKeyDown={event => {
+      <div ref={board} className="snake-board" role="group" tabIndex={0} aria-label="Snake game board" aria-describedby="snake-help" onBlur={pause} onKeyDown={event => {
         const direction = directions[event.key.toLowerCase()];
         if (direction || event.key === 'Escape') {
           event.preventDefault(); event.stopPropagation();
@@ -33,17 +35,16 @@ export function SnakeGame() {
           else pause();
         }
       }}>
-        {Array.from({ length: boardSize ** 2 }, (_, cell) => <span key={cell} aria-hidden="true" className={game.body.includes(cell) ? 'snake-cell snake-body' : game.food === cell ? 'snake-cell snake-food' : 'snake-cell'}>{game.body[0] === cell ? '●' : game.body.includes(cell) ? '▪' : game.food === cell ? '◆' : ''}</span>)}
+        {Array.from({ length: boardSize ** 2 }, (_, cell) => <span key={cell} aria-hidden="true" className={game.body.includes(cell) ? 'snake-cell snake-body' : game.food === cell ? 'snake-cell snake-food' : 'snake-cell'}></span>)}
       </div>
       <div className="snake-controls">
-        <button disabled={game.status === 'running' || game.status === 'lost' || game.status === 'won'} onClick={() => { setGame(current => ({ ...current, status: 'running' })); board.current?.focus(); }}>{game.status === 'paused' ? 'Resume' : 'Play'}</button>
-        <button disabled={game.status !== 'running'} onClick={pause}>Pause</button>
+        {(game.status === 'ready' || game.status === 'paused') && <button onClick={() => { setGame(current => ({ ...current, status: 'running' })); board.current?.focus(); }}>{game.status === 'paused' ? 'Resume' : 'Play'}</button>}
+        {game.status === 'running' && <button onClick={pause}>Pause</button>}
         <button onClick={() => { setGame(newSnake()); board.current?.focus(); }}>New game</button>
       </div>
-      <div className="snake-controls" role="group" aria-label="Snake directions">
-        {(['up', 'left', 'down', 'right'] as const).map((direction, index) => <button key={direction} aria-label={`Move ${direction}`} disabled={game.status !== 'running'} onClick={() => { setGame(current => turnSnake(current, direction)); board.current?.focus(); }}>{['↑', '←', '↓', '→'][index]}</button>)}
-      </div>
+      {(game.status === 'running' || game.status === 'paused') && <div className="snake-controls" role="group" aria-label="Snake directions">
+        {(['up', 'left', 'down', 'right'] as const).map((direction, index) => <button key={direction} aria-label={`Move ${direction}`} onClick={() => { setGame(current => turnSnake({ ...current, status: 'running' }, direction)); board.current?.focus(); }}><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true" ><g transform={`rotate(${[0, 270, 180, 90][index]}, 12, 12)`}><path d="m6 10 6-6 6 6m-6-6v16" /></g></svg></button>)}
+      </div>}
       <p>This game stays in the panel. It makes no API calls and its score is separate from learning progress.</p>
-    </section>
-  </details>;
+    </section>;
 }

@@ -1,0 +1,149 @@
+{
+  "recordedAt": "2026-10-11T03:10:40+05:30",
+  "scope": "S9 NovaDesk stale-state and session controls only",
+  "git": {
+    "branch": "codex/s0b-s1a",
+    "head": "21fdcc9fde4c8f7d4b16155b122939ad1c8700a1",
+    "committed": false,
+    "pushed": false,
+    "mixedWorkingTree": true
+  },
+  "s8Prerequisite": {
+    "nativeResumeRecord": "../s8-evidence/resume.json",
+    "focusedResumeRerun": {
+      "passed": 20,
+      "files": 5,
+      "durationSeconds": 2.55
+    }
+  },
+  "finalChecks": {
+    "typecheck": {
+      "command": "npm run typecheck",
+      "exitCode": 0
+    },
+    "lint": {
+      "command": "npm run lint",
+      "exitCode": 0
+    },
+    "build": {
+      "command": "npm run build",
+      "exitCode": 0
+    },
+    "test": {
+      "command": "npm run test",
+      "exitCode": 0,
+      "passed": 89,
+      "files": 20,
+      "start": "2026-10-11T03:03:09+05:30",
+      "durationSeconds": 23.62,
+      "actualTimeoutMilliseconds": 20009
+    },
+    "offlineCoach": {
+      "command": "npm run eval:coach -- --offline",
+      "exitCode": 0,
+      "passed": 2,
+      "scope": "synthetic response validators only; no live coach or teaching-quality result"
+    }
+  },
+  "automatedCoverage": [
+    "source edits, dirty buffers, deleted source, requirement revisions and imported requirement drift",
+    "saved explanation/graph/reference freshness and stale navigation rejection",
+    "trusted harness/config/lock fingerprints, mismatched definitions and in-flight source changes",
+    "ordinary seed failure, correct/incorrect edits, throwing source and real 20-second timeout",
+    "native-dialog mock cancel/confirm boundaries; no panel confirmation/path authority",
+    "exact clear allowlist; Project Guide/unrelated/source sentinel bytes retained",
+    "credential presence retained with no SecretStorage store/delete during clear",
+    "failed and partially failed clear restores primary JSON; conflicting later record is not overwritten",
+    "interrupted recovery folder, escaping symlink and ambiguous scratch rejected without discarding records",
+    "strict saved explanation validation/atomic writes retain corrupt or prior valid bytes on failure",
+    "existing schema migration/resume and Project Guide regression suites"
+  ],
+  "native": {
+    "version": "1.140.0",
+    "acceptance": "passed in normal trusted disposable Development Host on current bundle",
+    "intermediate": "Trusted actual host ran the real counterexample, dirty/save invalidation and Show memory location, then extension-test mode refused the native confirmation dialog. See native-intermediate.json; not a final-bundle pass.",
+    "normalHost": "Actual normal development host activated but Workspace Trust was false; computer-use bound to an older Open picker, so no input was sent there.",
+    "finalAttempt": "Last S9 native retry activated with Workspace Trust false and stopped before product actions. Final current-bundle native acceptance remains unverified; see native-final.json.",
+    "confirmationAndTrash": "Actual Cancel and Confirm completed; narrow-scope removal verified; useTrash requested; OS restoration unverified",
+    "credentialsPresentClear": "Actual presence true before/after, no value inspected and no store/delete",
+    "activeLearnerWindow": "not reloaded, edited or cleared",
+    "ownedTemporaryHost": "Closed only identified disposable window; --wait CLI exited 0",
+    "acceptanceRecord": "native-acceptance.json",
+    "earlierAttempts": "Earlier Trust/window/test-mode failures are retained as historical diagnostics and superseded by native-acceptance.json."
+  },
+  "operate": {
+    "host": "actual compiled React panel with synthetic messages; no filesystem, runner, credentials or API connected",
+    "variants": 12,
+    "requestedWidths": [
+      320,
+      360,
+      900
+    ],
+    "renderedWidths": [
+      320,
+      360,
+      680
+    ],
+    "themes": [
+      "vscode-dark",
+      "vscode-light",
+      "vscode-high-contrast",
+      "vscode-high-contrast-light"
+    ],
+    "checks": [
+      "historical labels and disabled source links",
+      "one primary and no panel overflow at recorded widths",
+      "stale checks disable rerun; changed requirement returns to confirmation",
+      "keyboard memory/clear actions; cancelled and failed clear retain state",
+      "dirty source blocks prediction; failed clear retains typed draft",
+      "successful clear acknowledgement returns to Confirm/zero checkpoints and resets draft"
+    ],
+    "finalConfirmation": "synthetic-interactions.json",
+    "capture": "s9-controls.png",
+    "detector": {
+      "exitCode": 0,
+      "changedTargetsOnly": true,
+      "findings": 0,
+      "unchangedCss": "not rescanned; eight existing S8 typography advisories remain"
+    }
+  },
+  "preservation": {
+    "preexistingFiles": 129,
+    "codeTouched": 13,
+    "preexistingOtherFilesUnchangedBeforeDocs": 116,
+    "activeS7SessionUnchanged": true,
+    "activeLearnerSourceUnchanged": true,
+    "gateAEvidenceUnchanged": true,
+    "projectGuidePackageCoachStyleIgnoresUnchanged": true
+  },
+  "limits": [
+    "Native clear failure injection and OS Trash restoration were not exercised; automated filesystem/mocked backend regressions cover failures.",
+    "Ambiguous/interrupted clear recovery bundles require inspection; they are retained, not automatically purged.",
+    "Rollback restores primary JSON on simulated partial backend failure; derived scratch may require regeneration.",
+    "No general concurrent-host transaction lock or cross-platform/package acceptance is claimed.",
+    "No new OpenAI request, key prompt/value inspection, live evaluation, CodeTour playback or connected agent capture.",
+    "A clean S8/S9 checkpoint is still needed because unrelated/overlapping work remains uncommitted."
+  ],
+  "nextSlice": "S10 archived-lifecycle transfer and evidence handover",
+  "sourceHashes": {
+    "src/extension/session.ts": "6cdbd4b5c7e1418905d7fe5f98af444b2c4bfbfec7ce80e03b15c70a01412897",
+    "src/extension/extension.ts": "99e91d9e4b48aa70a30c3b3492062591ff3dd583b1738596e36cdb8119369ea5",
+    "src/shared.ts": "db78a14f9ef01ca57b15dc07262c16ab40a2f39cffda853d483ea5eafe848a85",
+    "src/panel/app.tsx": "258c79dd6c66517ff93a1bb40c48071b196e11df44aac7e1b8598d1529487726",
+    "src/panel/ui.tsx": "a115a590889a5e63e0380971fb15b5ead50d8a833808c9f27bf15ef39ee2424a",
+    "src/panel/understand.tsx": "c586f108c117975196d3139e7fdeb0509efbfb9b0ece49efe4b881b9e7124a07",
+    "src/panel/change.tsx": "e1e6a2b3699b96e953c2e35ae9acb53de6d285bfb52f967456bbd036ab01fe92",
+    "src/panel/reuse-controls.tsx": "53cb46974310d4b69b06cda65463af5b8deff152031bafb8e31837bb3bf004ab",
+    "src/panel/results.tsx": "fec45dae80fb2fe21b519b3caf7c215e94c03d73bede8c97f4f26512512acd09",
+    "src/panel/workflow.ts": "c89d7217ff0e61a601aa16803dc99ca58c008709deaa8d73d30d47b783e40576",
+    "tests/resume-host.test.ts": "6a7f22dc5485bfbcd95e75ba35da2abad9ee56895c0908c558827a14d5f5d100",
+    "tests/reuse-host.test.ts": "14f58e32cf831a3b2fcf6384ad2cd9935b7da2e471b84ac0f0ecc6e5d2d53975",
+    "tests/panel-workflow.test.ts": "159df26e8aa787000641eec1aeb3733677f736e41bb1827161006f45f0d8445c",
+    "tests/session-controls.test.ts": "0eb4a7470ec5340e4e6b93ea69da25a980cbad74ba526185b2d10c0c7f4ff9ab"
+  },
+  "builtJavaScriptHashes": {
+    "dist/extension.cjs": "2901053dc98f1f70562b8dd255c16a6349d3f0357ff3bbf496b6cc703ffc80eb",
+    "dist/panel.js": "7dca9cf12501ec202c634bbc9f5544a8b0e164cc4344266cc14568be69471bef"
+  },
+  "nativeAcceptedAt": "2026-10-11T03:27:38+05:30"
+}

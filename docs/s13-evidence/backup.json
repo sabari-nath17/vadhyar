@@ -1,0 +1,16 @@
+{
+  "format": "edited still-frame native recap",
+  "screenshots": [
+    "native-reviewed-context.png",
+    "native-live-explanation.png",
+    "native-prediction-before-run.png",
+    "native-counterexample.png",
+    "native-live-hint.png",
+    "native-ownership-verified.png",
+    "native-archived-counterexample.png",
+    "native-final-result.png",
+    "native-installed-resume.png"
+  ],
+  "durationSeconds": 72,
+  "disclosure": "Actual installed-extension rehearsal. Developer-performed edits, not learner authorship or a learning-gain claim. Frames replay recorded operations, not fresh calls."
+}
