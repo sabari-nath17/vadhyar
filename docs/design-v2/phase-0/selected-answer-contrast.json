@@ -1,0 +1,77 @@
+{
+  "before": {
+    "background": "color(srgb 0.985098 0.962745 0.935686)",
+    "text": "rgb(244, 239, 230)",
+    "ratio": 1.0619905025383196
+  },
+  "after": {
+    "background": "color(srgb 0.219216 0.21098 0.19451)",
+    "text": "rgb(244, 239, 230)",
+    "ratio": 10.55668637348587
+  },
+  "checks": [
+    {
+      "width": 320,
+      "theme": "light",
+      "background": "color(srgb 0.985098 0.962745 0.935686)",
+      "text": "rgb(44, 53, 57)",
+      "ratio": 11.622479595587949
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "background": "color(srgb 0.219216 0.21098 0.19451)",
+      "text": "rgb(244, 239, 230)",
+      "ratio": 10.55668637348587
+    },
+    {
+      "width": 320,
+      "theme": "hc",
+      "background": "rgb(0, 0, 0)",
+      "text": "rgb(255, 255, 255)",
+      "ratio": 21
+    },
+    {
+      "width": 360,
+      "theme": "light",
+      "background": "color(srgb 0.985098 0.962745 0.935686)",
+      "text": "rgb(44, 53, 57)",
+      "ratio": 11.622479595587949
+    },
+    {
+      "width": 360,
+      "theme": "dark",
+      "background": "color(srgb 0.219216 0.21098 0.19451)",
+      "text": "rgb(244, 239, 230)",
+      "ratio": 10.55668637348587
+    },
+    {
+      "width": 360,
+      "theme": "hc",
+      "background": "rgb(0, 0, 0)",
+      "text": "rgb(255, 255, 255)",
+      "ratio": 21
+    },
+    {
+      "width": 720,
+      "theme": "light",
+      "background": "color(srgb 0.985098 0.962745 0.935686)",
+      "text": "rgb(44, 53, 57)",
+      "ratio": 11.622479595587949
+    },
+    {
+      "width": 720,
+      "theme": "dark",
+      "background": "color(srgb 0.219216 0.21098 0.19451)",
+      "text": "rgb(244, 239, 230)",
+      "ratio": 10.55668637348587
+    },
+    {
+      "width": 720,
+      "theme": "hc",
+      "background": "rgb(0, 0, 0)",
+      "text": "rgb(255, 255, 255)",
+      "ratio": 21
+    }
+  ]
+}

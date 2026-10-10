@@ -1,0 +1,57 @@
+
+> vadhyar@0.1.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v5.0.3 /Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2
+
+ ✓ tests/v2-foundations.test.ts > V2 token and authored asset boundaries > keeps light text and UI borders above their contrast floor 3ms
+ ✓ tests/v2-foundations.test.ts > V2 token and authored asset boundaries > keeps dark text and UI borders above their contrast floor 0ms
+ ✓ tests/v2-foundations.test.ts > V2 token and authored asset boundaries > ships the full inert SVG asset set without scripts, links or baked text 7ms
+ ✓ tests/v2-foundations.test.ts > V2 token and authored asset boundaries > includes the descending hand in both square brand emblems 0ms
+ ✓ tests/v2-foundations.test.ts > V2 token and authored asset boundaries > redefines the surface-dependent selected color inside the dark theme 0ms
+ ✓ tests/snake.test.ts > local Snake Easter egg > starts with food outside the body and freezes before play or while paused 1ms
+ ✓ tests/snake.test.ts > local Snake Easter egg > moves one cell without growing and prevents reversal within a tick 0ms
+ ✓ tests/snake.test.ts > local Snake Easter egg > grows on food and keeps new food outside the snake 0ms
+ ✓ tests/snake.test.ts > local Snake Easter egg > ends on walls or the body, but permits entering a vacated tail cell 0ms
+ ✓ tests/snake.test.ts > local Snake Easter egg > wins without looping when the final free cell is collected 0ms
+ ✓ tests/graphify.test.ts > validates the actual no-cluster 0.9.84 shape and selects grounded entrypoint references 7ms
+ ✓ tests/graphify.test.ts > rejects foreign paths, unknown edges, invalid spans and unsupported provenance 1ms
+ ✓ tests/source-boundary.test.ts > host source boundary > retains current graph links when refreshing or adding a hint reference, without duplicates or stale links 1ms
+ ✓ tests/source-boundary.test.ts > host source boundary > rejects arbitrary message fields and executable paths 2ms
+ ✓ tests/source-boundary.test.ts > host source boundary > opens only a current, bounded host reference and rejects escaping symlinks 9ms
+ ✓ tests/v2-evidence.test.ts > V2 recorded-evidence presentation > derives registry length and actual matched case counts 2ms
+ ✓ tests/v2-evidence.test.ts > V2 recorded-evidence presentation > withholds achievements for stale or incomplete verification 0ms
+ ✓ tests/v2-evidence.test.ts > V2 recorded-evidence presentation > never infers independent authorship or source-open history 0ms
+ ✓ tests/v2-evidence.test.ts > V2 recorded-evidence presentation > requires a correlated prediction saved before execution 0ms
+ ✓ tests/session.test.ts > round-trips exact snapshots and preserves the old record after a rejected or failed write 20ms
+ ✓ tests/session.test.ts > records actual hint use, exact native-diff snapshots and a correlated full ownership result 6ms
+ ✓ tests/session.test.ts > saves a prediction before execution while preserving existing checkpoint records 5ms
+ ✓ tests/fixture-baseline.test.ts > NovaDesk disclosed role-only seed (not ownership-policy verification) > allows the owning client on an active milestone 1ms
+ ✓ tests/fixture-baseline.test.ts > NovaDesk disclosed role-only seed (not ownership-policy verification) > SEEDED BUG: allows a different client on an active milestone 0ms
+ ✓ tests/fixture-baseline.test.ts > NovaDesk disclosed role-only seed (not ownership-policy verification) > denies a freelancer on an active milestone 0ms
+ ✓ tests/hints.test.ts > previews progressive hint context from the requirement, current source, prediction and observation 4ms
+ ✓ tests/hints.test.ts > blocks missing/stale observations, invalid progression and secret-bearing reasoning 1ms
+ ✓ tests/hints.test.ts > validates hint level/IDs and rejects code, extra executable fields, refusals and incomplete output 3ms
+ ✓ tests/coach.test.ts > coach transmission and response boundary > previews only the prepared requirement/source and current IDs; rejects stale or secret-bearing context 2ms
+ ✓ tests/coach.test.ts > coach transmission and response boundary > accepts structured grounded text and rejects refusal, incomplete, unknown IDs and executable fields 5ms
+ ✓ tests/scenario-contract.test.ts > trusted ownership scenario > pins its harness and identifies its requirement and three ordinary cases 3ms
+ ✓ tests/scenario-contract.test.ts > trusted ownership scenario > distinguishes seed using the real fixed harness 349ms
+ ✓ tests/ownership-runner.test.ts > full ownership suite distinguishes seed 309ms
+ ✓ tests/scenario-contract.test.ts > trusted ownership scenario > distinguishes correct edit using the real fixed harness 271ms
+ ✓ tests/ownership-runner.test.ts > full ownership suite distinguishes correct edit 257ms
+ ✓ tests/scenario-contract.test.ts > trusted ownership scenario > distinguishes deny-all edit using the real fixed harness 266ms
+ ✓ tests/ownership-runner.test.ts > full ownership suite distinguishes deny-all edit 250ms
+ ✓ tests/ownership-runner.test.ts > full ownership suite distinguishes throwing source 246ms
+ ✓ tests/ownership-runner.test.ts > full ownership reports cannot pass with missing, skipped or inconsistent cases 1ms
+ ✓ tests/ownership-runner.test.ts > executes only the counterexample and distinguishes seed 258ms
+ ✓ tests/ownership-runner.test.ts > executes only the counterexample and distinguishes correct edit 239ms
+ ✓ tests/ownership-runner.test.ts > executes only the counterexample and distinguishes throwing source 232ms
+ ✓ tests/ownership-runner.test.ts > executes only the counterexample and distinguishes hung source 20008ms
+ ✓ tests/ownership-runner.test.ts > rejects missing observations, unexpected case coverage and inconsistent process status 2ms
+ ✓ tests/ownership-runner.test.ts > refuses changed trusted definitions and an absent or stale prediction before execution 272ms
+
+ Test Files  11 passed (11)
+      Tests  45 passed (45)
+   Start at  05:20:48
+   Duration  22.32s (tests 95%, import 3%, transform 2%)

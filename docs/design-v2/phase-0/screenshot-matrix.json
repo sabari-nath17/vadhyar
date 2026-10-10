@@ -1,0 +1,87 @@
+{
+  "capturedAt": "2026-10-10T23:48:52.728Z",
+  "scope": "Development component gallery; not a learner session",
+  "views": [
+    {
+      "fonts": "loaded",
+      "height": 640,
+      "scrollWidth": 320,
+      "selected": "No, stop it",
+      "sourceRule": "Only the client who owns a milestone may approve it. A freelancer may not approve it.",
+      "width": 320,
+      "theme": "light"
+    },
+    {
+      "fonts": "loaded",
+      "height": 640,
+      "scrollWidth": 320,
+      "selected": "No, stop it",
+      "sourceRule": "Only the client who owns a milestone may approve it. A freelancer may not approve it.",
+      "width": 320,
+      "theme": "dark"
+    },
+    {
+      "fonts": "loaded",
+      "height": 640,
+      "scrollWidth": 320,
+      "selected": "No, stop it",
+      "sourceRule": "Only the client who owns a milestone may approve it. A freelancer may not approve it.",
+      "width": 320,
+      "theme": "hc"
+    },
+    {
+      "fonts": "loaded",
+      "height": 640,
+      "scrollWidth": 360,
+      "selected": "No, stop it",
+      "sourceRule": "Only the client who owns a milestone may approve it. A freelancer may not approve it.",
+      "width": 360,
+      "theme": "light"
+    },
+    {
+      "fonts": "loaded",
+      "height": 640,
+      "scrollWidth": 360,
+      "selected": "No, stop it",
+      "sourceRule": "Only the client who owns a milestone may approve it. A freelancer may not approve it.",
+      "width": 360,
+      "theme": "dark"
+    },
+    {
+      "fonts": "loaded",
+      "height": 640,
+      "scrollWidth": 360,
+      "selected": "No, stop it",
+      "sourceRule": "Only the client who owns a milestone may approve it. A freelancer may not approve it.",
+      "width": 360,
+      "theme": "hc"
+    },
+    {
+      "fonts": "loaded",
+      "height": 640,
+      "scrollWidth": 720,
+      "selected": "No, stop it",
+      "sourceRule": "Only the client who owns a milestone may approve it. A freelancer may not approve it.",
+      "width": 720,
+      "theme": "light"
+    },
+    {
+      "fonts": "loaded",
+      "height": 640,
+      "scrollWidth": 720,
+      "selected": "No, stop it",
+      "sourceRule": "Only the client who owns a milestone may approve it. A freelancer may not approve it.",
+      "width": 720,
+      "theme": "dark"
+    },
+    {
+      "fonts": "loaded",
+      "height": 640,
+      "scrollWidth": 720,
+      "selected": "No, stop it",
+      "sourceRule": "Only the client who owns a milestone may approve it. A freelancer may not approve it.",
+      "width": 720,
+      "theme": "hc"
+    }
+  ]
+}

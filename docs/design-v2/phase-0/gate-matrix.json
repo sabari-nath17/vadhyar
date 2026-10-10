@@ -1,0 +1,191 @@
+[
+  {
+    "theme": "light",
+    "gate": "No key",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "light",
+    "gate": "Loading",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "light",
+    "gate": "Stale",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "light",
+    "gate": "Unsaved",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "light",
+    "gate": "API error",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "light",
+    "gate": "Runner failed",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "light",
+    "gate": "Returning session",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "light",
+    "gate": "Empty path",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "light",
+    "gate": "Imported",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "dark",
+    "gate": "No key",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "dark",
+    "gate": "Loading",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "dark",
+    "gate": "Stale",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "dark",
+    "gate": "Unsaved",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "dark",
+    "gate": "API error",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "dark",
+    "gate": "Runner failed",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "dark",
+    "gate": "Returning session",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "dark",
+    "gate": "Empty path",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "dark",
+    "gate": "Imported",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "hc",
+    "gate": "No key",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "hc",
+    "gate": "Loading",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "hc",
+    "gate": "Stale",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "hc",
+    "gate": "Unsaved",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "hc",
+    "gate": "API error",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "hc",
+    "gate": "Runner failed",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "hc",
+    "gate": "Returning session",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "hc",
+    "gate": "Empty path",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "hc",
+    "gate": "Imported",
+    "primary": 1,
+    "scrollWidth": 360,
+    "width": 360
+  }
+]

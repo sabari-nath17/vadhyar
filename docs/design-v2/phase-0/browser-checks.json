@@ -1,0 +1,53 @@
+{
+  "recordedAt": "2026-10-10T23:30:46.769Z",
+  "gateChecks": 27,
+  "keyboard": {
+    "reason": "Typing 1 stays in this field.1",
+    "selected": "Deny approval"
+  },
+  "regressions": [
+    {
+      "name": "1 then 2 switches answer",
+      "before": "Allow approval",
+      "after": "Deny approval"
+    },
+    {
+      "name": "Closing feedback restores focus",
+      "before": "BODY",
+      "after": "SELECT"
+    },
+    {
+      "name": "Narrow feedback fits 320px",
+      "before": 337,
+      "after": 320
+    }
+  ],
+  "selectedContrast": {
+    "before": {
+      "background": "color(srgb 0.985098 0.962745 0.935686)",
+      "text": "rgb(244, 239, 230)",
+      "ratio": 1.0619905025383196
+    },
+    "after": {
+      "background": "color(srgb 0.219216 0.21098 0.19451)",
+      "text": "rgb(244, 239, 230)",
+      "ratio": 10.55668637348587
+    }
+  },
+  "limits": [
+    "Development gallery only",
+    "High-contrast fallback palette; native theme acceptance is Phase 2+",
+    "Reduced-motion CSS reviewed; OS preference was not changed"
+  ],
+  "plainLanguageRetest": {
+    "at": "2026-10-10T23:51:33.521Z",
+    "firstKey": "Yes, allow it",
+    "secondKey": "No, stop it",
+    "typingKeepsAnswer": true,
+    "escapeFocus": {
+      "closed": true,
+      "name": "Feedback appearanceBroken rule · recorded seedCases match · recorded developer editHint presentation · component example",
+      "tag": "SELECT"
+    }
+  }
+}

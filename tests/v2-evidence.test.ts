@@ -1,0 +1,34 @@
+import { describe, expect, it } from 'vitest';
+import { readFileSync } from 'node:fs';
+import type { PanelState } from '../src/shared.js';
+import { lessonSteps, recordedSummary } from '../src/panel/v2/evidence.js';
+
+const record = JSON.parse(readFileSync(new URL('../docs/design-v2/phase-0/recorded-checks.json', import.meta.url), 'utf8')) as { seed: PanelState; corrected: PanelState };
+describe('V2 recorded-evidence presentation', () => {
+  it('derives registry length and actual matched case counts', () => {
+    expect(lessonSteps).toHaveLength(6);
+    expect(recordedSummary(record.seed)).toMatchObject({ matched: 2, total: 3, passed: false });
+    expect(recordedSummary(record.corrected)).toMatchObject({ matched: 3, total: 3, passed: true });
+  });
+  it('withholds achievements for stale or incomplete verification', () => {
+    const stale = recordedSummary({ ...record.corrected, sourceHash: 'earlier' });
+    expect(stale.passed).toBe(false);
+    expect(stale.earned).not.toContain('all-cases-match');
+    const state = structuredClone(record.corrected);
+    if (state.ownershipRun?.kind !== 'completed') throw new Error('Recorded runner evidence missing.');
+    state.ownershipRun.cases.pop();
+    expect(recordedSummary(state).complete).toBe(false);
+  });
+  it('never infers independent authorship or source-open history', () => {
+    expect(recordedSummary(record.corrected).earned).not.toContain('fixed-it-yourself');
+    expect(recordedSummary(record.corrected).earned).not.toContain('found-the-bug');
+    expect(recordedSummary({ ...record.corrected, hints: undefined }).earned).not.toContain('no-hints');
+  });
+  it('requires a correlated prediction saved before execution', () => {
+    const state = structuredClone(record.corrected);
+    state.prediction!.savedAt = '2099-01-01T00:00:00.000Z';
+    expect(recordedSummary(state).earned).not.toContain('predicted-first');
+    state.prediction!.id = 'uncorrelated';
+    expect(recordedSummary(state).predictedFirst).toBe(false);
+  });
+});

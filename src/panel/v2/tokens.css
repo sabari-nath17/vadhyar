@@ -1,0 +1,43 @@
+:root {
+  --terra: #A7413A; --teal: #6A8A82; --ochre: #D9A05B;
+  --charcoal: #1E2022; --parchment: #F4EFE6; --ink: #2C3539;
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px; --sp-12: 48px;
+  --r-ctl: 12px; --r-card: 12px; --r-sheet: 16px; --r-frame: 2px; --bd: 2px;
+  --interface: Inter, var(--vscode-font-family, system-ui), system-ui, sans-serif;
+  --heritage: 'Playfair Display', Georgia, serif;
+  --mono: 'JetBrains Mono', var(--vscode-editor-font-family, monospace), monospace;
+  --press: 80ms; --select: 120ms; --pop: 140ms; --sheet: 220ms; --progress: 240ms;
+  --canvas: var(--parchment); --card: #FFFFFF; --border: #82786B;
+  --text: var(--ink); --muted: #4E5659; --link: #8A302A;
+  --primary: var(--ochre); --on-primary: var(--charcoal); --frame: var(--terra);
+  --lip-ochre: #976622; --lip-teal: #4E6B63; --lip-terra: #7F302B;
+  --sheet-ok: #DCE8E4; --sheet-bad: #F2D9D6; --sheet-hint: #F6E5CC;
+  --fail-text: #963730; --pass-text: #3F5F57;
+  --disabled-bg: #E6DFD0; --disabled-text: #4E5659;
+  --focus: var(--vscode-focusBorder, #725023);
+  --selected: color-mix(in srgb, var(--ochre) 10%, var(--card));
+  --selection-border: #8F6027;
+  --display-size: 28px; --heading-size: 22px; --body-size: 15px;
+}
+.vd-theme-dark, body.vscode-dark {
+  --canvas: var(--charcoal); --card: #262A2D; --border: #7B7F79;
+  --text: var(--parchment); --muted: #B9B2A5; --link: var(--ochre);
+  --lip-ochre: #976622; --sheet-ok: #24312E; --sheet-bad: #3A2523; --sheet-hint: #3A3022;
+  --fail-text: #E39A93; --pass-text: #8FB0A7; --frame: #CD786F;
+  --disabled-bg: #2A2D30; --disabled-text: #B9B2A5; --selection-border: var(--ochre);
+  /* Resolve the mix here, after the dark surface replaces the root surface. */
+  --selected: color-mix(in srgb, var(--ochre) 10%, var(--card));
+  --focus: var(--vscode-focusBorder, var(--ochre));
+}
+.vd-theme-hc, body:is(.vscode-high-contrast, .vscode-high-contrast-light) {
+  --canvas: var(--vscode-editor-background, #000000); --card: var(--vscode-editor-background, #000000);
+  --text: var(--vscode-foreground, #FFFFFF); --muted: var(--vscode-foreground, #FFFFFF);
+  --border: var(--vscode-contrastBorder, #FFFFFF); --frame: var(--vscode-contrastBorder, #FFFFFF);
+  --link: var(--vscode-textLink-foreground, #FFFFFF); --primary: var(--vscode-button-background, #FFFF00);
+  --on-primary: var(--vscode-button-foreground, #000000); --lip-ochre: var(--vscode-contrastBorder, #FFFFFF);
+  --sheet-ok: var(--canvas); --sheet-bad: var(--canvas); --sheet-hint: var(--canvas);
+  --fail-text: var(--text); --pass-text: var(--text); --frame: var(--border);
+  --disabled-bg: var(--canvas); --disabled-text: var(--text); --focus: var(--vscode-focusBorder, #FFFF00);
+  --selection-border: var(--focus); --selected: var(--canvas); --teal: var(--text); --ochre: var(--primary);
+}
+@media (min-width: 720px) { :root { --display-size: 40px; --heading-size: 28px; --body-size: 17px; } }

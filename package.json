@@ -17,7 +17,10 @@
     "lint": "eslint src scripts novadesk/src tests fixtures vitest.config.ts eslint.config.mjs --max-warnings=0",
     "test": "vitest run --reporter=verbose",
     "build": "node scripts/build.mjs",
-    "test:host": "node scripts/test-host.mjs"
+    "test:host": "node scripts/test-host.mjs",
+    "gallery": "node scripts/gallery.mjs --serve",
+    "build:gallery": "node scripts/gallery.mjs",
+    "record:gallery": "node scripts/record-gallery.mjs"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",

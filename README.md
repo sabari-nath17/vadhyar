@@ -10,6 +10,10 @@ Vadhyar is a VS Code learning companion for beginners building with AI. It helps
 
 Built for [DevDay Kochi](https://luma.com/z10nz8gp). [Event rules](RULES.md) · [Submission](SUBMISSION.md).
 
+## V2 design preview
+
+An isolated **Phase 0 component gallery** is available with `npm run gallery -- --port 4187`, then open `http://127.0.0.1:4187/gallery/`. Use `npm run build:gallery` for static output. It has bundled fonts, the generated guide artwork and light/dark/high-contrast foundations; it does not send host actions or present a live learner session. [Phase 0 screenshots and checks](docs/design-v2/phase-0/README.md) · [V2 specification](design-v2.md).
+
 <details>
 <summary>Project setup, status and development records</summary>
 

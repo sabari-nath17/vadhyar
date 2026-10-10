@@ -1,0 +1,184 @@
+{
+  "capturedAt": "2026-10-10T22:49:35.207Z",
+  "provenance": "Recorded developer checks in disposable runner copies. No learner authorship or independent learning claim. No API requests.",
+  "seed": {
+    "refs": [],
+    "busy": false,
+    "confirmed": true,
+    "requirement": {
+      "id": "novadesk-approval-ownership",
+      "revision": "c455503e7dd3d132533643ffac28b908a553596f8ad47e2959db46daf74c864d",
+      "text": "# NovaDesk ownership requirement\n\nID: novadesk-approval-ownership\nRevision: 1\n\nOnly the client who owns a milestone may approve it. A freelancer may not approve it.\nThis prepared teaching fixture intentionally checks client role without checking ownership.\nActors are simulated; this is not authentication. Archived lifecycle rules are withheld until the later transfer exercise.\n\n## Scenarios\n\n- **owner-client-active:** Given an active milestone owned by client-owner, when client-owner approves it, then approval is allowed.\n- **other-client-active:** Given that milestone, when client-other approves it, then approval is denied.\n- **freelancer-active:** Given that milestone, when freelancer-1 approves it, then approval is denied.\n"
+    },
+    "prediction": {
+      "id": "72fb5e9b-a306-408d-b60a-8459d5b2e724",
+      "savedAt": "2026-10-10T22:49:34.266Z",
+      "predictedApproval": false,
+      "reasoning": "Developer check: predict denial under the owner-only requirement.",
+      "sourceHash": "eda0127427545d06c9e2ff88bd51d6022674f43dbd1ccbd56da5f6c8ae3e7fd3",
+      "requirementRevision": "c455503e7dd3d132533643ffac28b908a553596f8ad47e2959db46daf74c864d"
+    },
+    "counterexample": {
+      "id": "8d7eeb6a-4a48-44b5-bdb6-7b9f80e34ca5",
+      "predictionId": "72fb5e9b-a306-408d-b60a-8459d5b2e724",
+      "startedAt": "2026-10-10T22:49:34.268Z",
+      "sourceHash": "eda0127427545d06c9e2ff88bd51d6022674f43dbd1ccbd56da5f6c8ae3e7fd3",
+      "requirementRevision": "c455503e7dd3d132533643ffac28b908a553596f8ad47e2959db46daf74c864d",
+      "vitestVersion": "5.0.3",
+      "fingerprints": {
+        "harness": "dc87ff8d98ebedfab92d542af877cd0f1c82a3ea82760c449a95d817c5750bcf",
+        "config": "b9f0a437f70f6db5a16d404388f85fc04e1d95a5d2e2791b1e037d59a2add753",
+        "lock": "97e5c6242cd8010badb16d551068cd649302f03457fce66664bf0863e19607f9"
+      },
+      "finishedAt": "2026-10-10T22:49:34.644Z",
+      "latencyMs": 376,
+      "kind": "completed",
+      "cases": [
+        {
+          "id": "other-client-active",
+          "observedApproval": true,
+          "expectedApproval": false,
+          "status": "failed"
+        }
+      ],
+      "requirementPassed": false,
+      "exitCode": 1,
+      "caseId": "other-client-active",
+      "observedApproval": true,
+      "executedCases": 1,
+      "skippedCases": 2
+    },
+    "hints": [],
+    "sourceHash": "eda0127427545d06c9e2ff88bd51d6022674f43dbd1ccbd56da5f6c8ae3e7fd3",
+    "ownershipRun": {
+      "id": "5abbd38f-36d1-4569-a224-ecef220bc2d6",
+      "predictionId": "72fb5e9b-a306-408d-b60a-8459d5b2e724",
+      "startedAt": "2026-10-10T22:49:34.646Z",
+      "sourceHash": "eda0127427545d06c9e2ff88bd51d6022674f43dbd1ccbd56da5f6c8ae3e7fd3",
+      "requirementRevision": "c455503e7dd3d132533643ffac28b908a553596f8ad47e2959db46daf74c864d",
+      "vitestVersion": "5.0.3",
+      "fingerprints": {
+        "harness": "dc87ff8d98ebedfab92d542af877cd0f1c82a3ea82760c449a95d817c5750bcf",
+        "config": "b9f0a437f70f6db5a16d404388f85fc04e1d95a5d2e2791b1e037d59a2add753",
+        "lock": "97e5c6242cd8010badb16d551068cd649302f03457fce66664bf0863e19607f9"
+      },
+      "finishedAt": "2026-10-10T22:49:34.913Z",
+      "latencyMs": 267,
+      "kind": "completed",
+      "cases": [
+        {
+          "id": "owner-client-active",
+          "observedApproval": true,
+          "expectedApproval": true,
+          "status": "passed"
+        },
+        {
+          "id": "other-client-active",
+          "observedApproval": true,
+          "expectedApproval": false,
+          "status": "failed"
+        },
+        {
+          "id": "freelancer-active",
+          "observedApproval": false,
+          "expectedApproval": false,
+          "status": "passed"
+        }
+      ],
+      "requirementPassed": false,
+      "exitCode": 1,
+      "baselineHash": "eda0127427545d06c9e2ff88bd51d6022674f43dbd1ccbd56da5f6c8ae3e7fd3",
+      "suiteId": "ownership"
+    }
+  },
+  "corrected": {
+    "refs": [],
+    "busy": false,
+    "confirmed": true,
+    "requirement": {
+      "id": "novadesk-approval-ownership",
+      "revision": "c455503e7dd3d132533643ffac28b908a553596f8ad47e2959db46daf74c864d",
+      "text": "# NovaDesk ownership requirement\n\nID: novadesk-approval-ownership\nRevision: 1\n\nOnly the client who owns a milestone may approve it. A freelancer may not approve it.\nThis prepared teaching fixture intentionally checks client role without checking ownership.\nActors are simulated; this is not authentication. Archived lifecycle rules are withheld until the later transfer exercise.\n\n## Scenarios\n\n- **owner-client-active:** Given an active milestone owned by client-owner, when client-owner approves it, then approval is allowed.\n- **other-client-active:** Given that milestone, when client-other approves it, then approval is denied.\n- **freelancer-active:** Given that milestone, when freelancer-1 approves it, then approval is denied.\n"
+    },
+    "prediction": {
+      "id": "72fb5e9b-a306-408d-b60a-8459d5b2e724",
+      "savedAt": "2026-10-10T22:49:34.266Z",
+      "predictedApproval": false,
+      "reasoning": "Developer check: predict denial under the owner-only requirement.",
+      "sourceHash": "eda0127427545d06c9e2ff88bd51d6022674f43dbd1ccbd56da5f6c8ae3e7fd3",
+      "requirementRevision": "c455503e7dd3d132533643ffac28b908a553596f8ad47e2959db46daf74c864d"
+    },
+    "counterexample": {
+      "id": "8d7eeb6a-4a48-44b5-bdb6-7b9f80e34ca5",
+      "predictionId": "72fb5e9b-a306-408d-b60a-8459d5b2e724",
+      "startedAt": "2026-10-10T22:49:34.268Z",
+      "sourceHash": "eda0127427545d06c9e2ff88bd51d6022674f43dbd1ccbd56da5f6c8ae3e7fd3",
+      "requirementRevision": "c455503e7dd3d132533643ffac28b908a553596f8ad47e2959db46daf74c864d",
+      "vitestVersion": "5.0.3",
+      "fingerprints": {
+        "harness": "dc87ff8d98ebedfab92d542af877cd0f1c82a3ea82760c449a95d817c5750bcf",
+        "config": "b9f0a437f70f6db5a16d404388f85fc04e1d95a5d2e2791b1e037d59a2add753",
+        "lock": "97e5c6242cd8010badb16d551068cd649302f03457fce66664bf0863e19607f9"
+      },
+      "finishedAt": "2026-10-10T22:49:34.644Z",
+      "latencyMs": 376,
+      "kind": "completed",
+      "cases": [
+        {
+          "id": "other-client-active",
+          "observedApproval": true,
+          "expectedApproval": false,
+          "status": "failed"
+        }
+      ],
+      "requirementPassed": false,
+      "exitCode": 1,
+      "caseId": "other-client-active",
+      "observedApproval": true,
+      "executedCases": 1,
+      "skippedCases": 2
+    },
+    "hints": [],
+    "sourceHash": "d41e8c0de5bd6baac8e64c1cd9f79ae7e2b5ea0f117e3a7b0f88ca142a1214db",
+    "ownershipRun": {
+      "id": "eec8cf49-5e90-4bb4-8933-e01addd7d14c",
+      "predictionId": "72fb5e9b-a306-408d-b60a-8459d5b2e724",
+      "startedAt": "2026-10-10T22:49:34.915Z",
+      "sourceHash": "d41e8c0de5bd6baac8e64c1cd9f79ae7e2b5ea0f117e3a7b0f88ca142a1214db",
+      "requirementRevision": "c455503e7dd3d132533643ffac28b908a553596f8ad47e2959db46daf74c864d",
+      "vitestVersion": "5.0.3",
+      "fingerprints": {
+        "harness": "dc87ff8d98ebedfab92d542af877cd0f1c82a3ea82760c449a95d817c5750bcf",
+        "config": "b9f0a437f70f6db5a16d404388f85fc04e1d95a5d2e2791b1e037d59a2add753",
+        "lock": "97e5c6242cd8010badb16d551068cd649302f03457fce66664bf0863e19607f9"
+      },
+      "finishedAt": "2026-10-10T22:49:35.206Z",
+      "latencyMs": 291,
+      "kind": "completed",
+      "cases": [
+        {
+          "id": "owner-client-active",
+          "observedApproval": true,
+          "expectedApproval": true,
+          "status": "passed"
+        },
+        {
+          "id": "other-client-active",
+          "observedApproval": false,
+          "expectedApproval": false,
+          "status": "passed"
+        },
+        {
+          "id": "freelancer-active",
+          "observedApproval": false,
+          "expectedApproval": false,
+          "status": "passed"
+        }
+      ],
+      "requirementPassed": true,
+      "exitCode": 0,
+      "baselineHash": "eda0127427545d06c9e2ff88bd51d6022674f43dbd1ccbd56da5f6c8ae3e7fd3",
+      "suiteId": "ownership"
+    }
+  }
+}

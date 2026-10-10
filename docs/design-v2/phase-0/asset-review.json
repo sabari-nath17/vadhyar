@@ -1,0 +1,302 @@
+[
+  {
+    "folder": "brand",
+    "file": "assets-brand-32-and-360.jpg",
+    "images": [
+      {
+        "complete": true,
+        "src": "./media/brand/activity-bar.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/brand/activity-bar.svg",
+        "width": 32
+      },
+      {
+        "complete": true,
+        "src": "./media/brand/symbol-mono.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/brand/symbol-mono.svg",
+        "width": 32
+      },
+      {
+        "complete": true,
+        "src": "./media/brand/symbol.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/brand/symbol.svg",
+        "width": 32
+      }
+    ],
+    "scrollWidth": 720,
+    "width": 720
+  },
+  {
+    "folder": "guide",
+    "file": "assets-guide-32-and-360.jpg",
+    "images": [
+      {
+        "complete": true,
+        "src": "./media/guide/aha.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/guide/aha.svg",
+        "width": 32
+      },
+      {
+        "complete": true,
+        "src": "./media/guide/bloom.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/guide/bloom.svg",
+        "width": 32
+      },
+      {
+        "complete": true,
+        "src": "./media/guide/celebrate.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/guide/celebrate.svg",
+        "width": 32
+      },
+      {
+        "complete": true,
+        "src": "./media/guide/curious.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/guide/curious.svg",
+        "width": 32
+      },
+      {
+        "complete": true,
+        "src": "./media/guide/key.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/guide/key.svg",
+        "width": 32
+      },
+      {
+        "complete": true,
+        "src": "./media/guide/pointing.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/guide/pointing.svg",
+        "width": 32
+      },
+      {
+        "complete": true,
+        "src": "./media/guide/resting.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/guide/resting.svg",
+        "width": 32
+      },
+      {
+        "complete": true,
+        "src": "./media/guide/thinking.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/guide/thinking.svg",
+        "width": 32
+      },
+      {
+        "complete": true,
+        "src": "./media/guide/welcome.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/guide/welcome.svg",
+        "width": 32
+      }
+    ],
+    "scrollWidth": 720,
+    "width": 720
+  },
+  {
+    "folder": "path",
+    "file": "assets-path-32-and-360.jpg",
+    "images": [
+      {
+        "complete": true,
+        "src": "./media/path/break.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/path/break.svg",
+        "width": 32
+      },
+      {
+        "complete": true,
+        "src": "./media/path/done.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/path/done.svg",
+        "width": 32
+      },
+      {
+        "complete": true,
+        "src": "./media/path/locked.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/path/locked.svg",
+        "width": 32
+      },
+      {
+        "complete": true,
+        "src": "./media/path/planned.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/path/planned.svg",
+        "width": 32
+      },
+      {
+        "complete": true,
+        "src": "./media/path/start.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/path/start.svg",
+        "width": 32
+      }
+    ],
+    "scrollWidth": 720,
+    "width": 720
+  },
+  {
+    "folder": "stickers",
+    "file": "assets-stickers-32-and-360.jpg",
+    "images": [
+      {
+        "complete": true,
+        "src": "./media/stickers/all-cases-match.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/stickers/all-cases-match.svg",
+        "width": 32
+      },
+      {
+        "complete": true,
+        "src": "./media/stickers/fixed-it-yourself.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/stickers/fixed-it-yourself.svg",
+        "width": 32
+      },
+      {
+        "complete": true,
+        "src": "./media/stickers/found-the-bug.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/stickers/found-the-bug.svg",
+        "width": 32
+      },
+      {
+        "complete": true,
+        "src": "./media/stickers/no-hints.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/stickers/no-hints.svg",
+        "width": 32
+      },
+      {
+        "complete": true,
+        "src": "./media/stickers/predicted-first.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/stickers/predicted-first.svg",
+        "width": 32
+      }
+    ],
+    "scrollWidth": 720,
+    "width": 720
+  },
+  {
+    "folder": "gates",
+    "file": "assets-gates-32-and-360.jpg",
+    "images": [
+      {
+        "complete": true,
+        "src": "./media/gates/loading.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/gates/loading.svg",
+        "width": 32
+      },
+      {
+        "complete": true,
+        "src": "./media/gates/no-key.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/gates/no-key.svg",
+        "width": 32
+      },
+      {
+        "complete": true,
+        "src": "./media/gates/runner-failed.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/gates/runner-failed.svg",
+        "width": 32
+      },
+      {
+        "complete": true,
+        "src": "./media/gates/stale.svg",
+        "width": 360
+      },
+      {
+        "complete": true,
+        "src": "./media/gates/stale.svg",
+        "width": 32
+      }
+    ],
+    "scrollWidth": 720,
+    "width": 720
+  }
+]

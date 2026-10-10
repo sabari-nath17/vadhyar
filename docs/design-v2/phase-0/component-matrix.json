@@ -1,0 +1,650 @@
+[
+  {
+    "width": 320,
+    "theme": "light",
+    "view": "Lesson components",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "light",
+    "view": "Buttons and busy controls",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "light",
+    "view": "Feedback sheet",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "light",
+    "view": "Path nodes",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "light",
+    "view": "Gates and banners",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "light",
+    "view": "Requirement and disclosures",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "light",
+    "view": "Earned proof stickers",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "light",
+    "view": "Asset review",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "dark",
+    "view": "Lesson components",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "dark",
+    "view": "Buttons and busy controls",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "dark",
+    "view": "Feedback sheet",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "dark",
+    "view": "Path nodes",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "dark",
+    "view": "Gates and banners",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "dark",
+    "view": "Requirement and disclosures",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "dark",
+    "view": "Earned proof stickers",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "dark",
+    "view": "Asset review",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "hc",
+    "view": "Lesson components",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "hc",
+    "view": "Buttons and busy controls",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "hc",
+    "view": "Feedback sheet",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "hc",
+    "view": "Path nodes",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "hc",
+    "view": "Gates and banners",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "hc",
+    "view": "Requirement and disclosures",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "hc",
+    "view": "Earned proof stickers",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "theme": "hc",
+    "view": "Asset review",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 320
+  },
+  {
+    "width": 360,
+    "theme": "light",
+    "view": "Lesson components",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "light",
+    "view": "Buttons and busy controls",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "light",
+    "view": "Feedback sheet",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "light",
+    "view": "Path nodes",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "light",
+    "view": "Gates and banners",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "light",
+    "view": "Requirement and disclosures",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "light",
+    "view": "Earned proof stickers",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "light",
+    "view": "Asset review",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "dark",
+    "view": "Lesson components",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "dark",
+    "view": "Buttons and busy controls",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "dark",
+    "view": "Feedback sheet",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "dark",
+    "view": "Path nodes",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "dark",
+    "view": "Gates and banners",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "dark",
+    "view": "Requirement and disclosures",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "dark",
+    "view": "Earned proof stickers",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "dark",
+    "view": "Asset review",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "hc",
+    "view": "Lesson components",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "hc",
+    "view": "Buttons and busy controls",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "hc",
+    "view": "Feedback sheet",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "hc",
+    "view": "Path nodes",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "hc",
+    "view": "Gates and banners",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "hc",
+    "view": "Requirement and disclosures",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "hc",
+    "view": "Earned proof stickers",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 360
+  },
+  {
+    "width": 360,
+    "theme": "hc",
+    "view": "Asset review",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 360
+  },
+  {
+    "width": 720,
+    "theme": "light",
+    "view": "Lesson components",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "light",
+    "view": "Buttons and busy controls",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "light",
+    "view": "Feedback sheet",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "light",
+    "view": "Path nodes",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "light",
+    "view": "Gates and banners",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "light",
+    "view": "Requirement and disclosures",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "light",
+    "view": "Earned proof stickers",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "light",
+    "view": "Asset review",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "dark",
+    "view": "Lesson components",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "dark",
+    "view": "Buttons and busy controls",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "dark",
+    "view": "Feedback sheet",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "dark",
+    "view": "Path nodes",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "dark",
+    "view": "Gates and banners",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "dark",
+    "view": "Requirement and disclosures",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "dark",
+    "view": "Earned proof stickers",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "dark",
+    "view": "Asset review",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "hc",
+    "view": "Lesson components",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "hc",
+    "view": "Buttons and busy controls",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "hc",
+    "view": "Feedback sheet",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "hc",
+    "view": "Path nodes",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "hc",
+    "view": "Gates and banners",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 1,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "hc",
+    "view": "Requirement and disclosures",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "hc",
+    "view": "Earned proof stickers",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 720
+  },
+  {
+    "width": 720,
+    "theme": "hc",
+    "view": "Asset review",
+    "missingImages": [],
+    "plannedActions": 0,
+    "primary": 0,
+    "scrollWidth": 720
+  }
+]

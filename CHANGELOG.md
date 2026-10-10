@@ -1,5 +1,9 @@
 # Change log
 
+## 2026-10-11T05:20:25+05:30 — Phase 0 v2 foundations in an isolated branch
+
+Changed: `src/panel/v2/`, local gallery/evidence scripts, package commands, 26 SVGs, font assets, tests and design-v2.md. Reason: one plain task at a time while keeping evidence and host boundaries intact. Checks: typecheck, lint, original build, gallery build, focused 9/9 and full 45/45; browser matrix at 320/360/720 in three themes. Fixed keyboard, focus, overflow, missing-hand and dark selected-text regressions. Limits: gallery only; native wiring and human usability acceptance pending. Main checkout, host, schema and seed unchanged; no push.
+
 Record each meaningful project change during the event, newest first. Update this file in the same commit as the change. Use a real timestamp with timezone, for example `YYYY-MM-DDTHH:MM:SS+05:30`.
 
 ## Event build log
