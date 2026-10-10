@@ -312,7 +312,7 @@ No owl or lookalike. No Feather or duolingo-sans. No hearts, XP, streak, rank or
 
 ## 18. Changelog
 
-- **2.0.1**: Phase 0 implementation and accessibility adjustments; plain-language labels; inert planned nodes; no invented execution order or authorship statistics. Assets generated before screens as explicitly requested.
+- **2.0.1**: Phase 0/1 implementation and accessibility adjustments; plain-language labels; inert planned nodes; no invented execution order or authorship statistics. Assets generated before screens as explicitly requested.
 - **2.0.0**: first release of the guided-lesson experience layer.
 
 ## 19. Implementation rulings and simple language

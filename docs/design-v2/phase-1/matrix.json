@@ -1,0 +1,1041 @@
+{
+  "capturedAt": "2026-10-10T23:52:59.709Z",
+  "scope": "Asset gallery; all artwork previews are unearned",
+  "views": [
+    {
+      "images": [
+        {
+          "loaded": true,
+          "src": "./media/vadhyar-logo.png"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/welcome.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/thinking.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/pointing.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/curious.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/aha.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/celebrate.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/resting.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/key.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/symbol.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/symbol-mono.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/activity-bar.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/bloom.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/start.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/done.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/locked.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/planned.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/break.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/predicted-first.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/found-the-bug.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/fixed-it-yourself.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/all-cases-match.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/no-hints.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/no-key.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/loading.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/stale.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/runner-failed.svg"
+        }
+      ],
+      "scrollWidth": 320,
+      "width": 320,
+      "theme": "light"
+    },
+    {
+      "images": [
+        {
+          "loaded": true,
+          "src": "./media/vadhyar-logo.png"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/welcome.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/thinking.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/pointing.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/curious.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/aha.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/celebrate.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/resting.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/key.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/symbol.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/symbol-mono.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/activity-bar.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/bloom.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/start.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/done.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/locked.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/planned.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/break.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/predicted-first.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/found-the-bug.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/fixed-it-yourself.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/all-cases-match.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/no-hints.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/no-key.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/loading.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/stale.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/runner-failed.svg"
+        }
+      ],
+      "scrollWidth": 320,
+      "width": 320,
+      "theme": "dark"
+    },
+    {
+      "images": [
+        {
+          "loaded": true,
+          "src": "./media/vadhyar-logo.png"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/welcome.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/thinking.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/pointing.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/curious.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/aha.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/celebrate.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/resting.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/key.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/symbol.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/symbol-mono.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/activity-bar.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/bloom.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/start.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/done.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/locked.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/planned.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/break.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/predicted-first.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/found-the-bug.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/fixed-it-yourself.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/all-cases-match.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/no-hints.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/no-key.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/loading.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/stale.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/runner-failed.svg"
+        }
+      ],
+      "scrollWidth": 320,
+      "width": 320,
+      "theme": "hc"
+    },
+    {
+      "images": [
+        {
+          "loaded": true,
+          "src": "./media/vadhyar-logo.png"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/welcome.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/thinking.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/pointing.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/curious.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/aha.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/celebrate.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/resting.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/key.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/symbol.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/symbol-mono.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/activity-bar.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/bloom.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/start.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/done.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/locked.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/planned.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/break.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/predicted-first.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/found-the-bug.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/fixed-it-yourself.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/all-cases-match.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/no-hints.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/no-key.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/loading.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/stale.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/runner-failed.svg"
+        }
+      ],
+      "scrollWidth": 360,
+      "width": 360,
+      "theme": "light"
+    },
+    {
+      "images": [
+        {
+          "loaded": true,
+          "src": "./media/vadhyar-logo.png"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/welcome.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/thinking.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/pointing.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/curious.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/aha.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/celebrate.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/resting.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/key.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/symbol.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/symbol-mono.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/activity-bar.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/bloom.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/start.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/done.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/locked.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/planned.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/break.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/predicted-first.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/found-the-bug.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/fixed-it-yourself.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/all-cases-match.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/no-hints.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/no-key.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/loading.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/stale.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/runner-failed.svg"
+        }
+      ],
+      "scrollWidth": 360,
+      "width": 360,
+      "theme": "dark"
+    },
+    {
+      "images": [
+        {
+          "loaded": true,
+          "src": "./media/vadhyar-logo.png"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/welcome.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/thinking.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/pointing.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/curious.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/aha.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/celebrate.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/resting.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/key.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/symbol.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/symbol-mono.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/activity-bar.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/bloom.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/start.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/done.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/locked.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/planned.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/break.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/predicted-first.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/found-the-bug.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/fixed-it-yourself.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/all-cases-match.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/no-hints.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/no-key.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/loading.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/stale.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/runner-failed.svg"
+        }
+      ],
+      "scrollWidth": 360,
+      "width": 360,
+      "theme": "hc"
+    },
+    {
+      "images": [
+        {
+          "loaded": true,
+          "src": "./media/vadhyar-logo.png"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/welcome.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/thinking.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/pointing.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/curious.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/aha.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/celebrate.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/resting.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/key.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/symbol.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/symbol-mono.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/activity-bar.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/bloom.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/start.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/done.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/locked.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/planned.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/break.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/predicted-first.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/found-the-bug.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/fixed-it-yourself.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/all-cases-match.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/no-hints.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/no-key.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/loading.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/stale.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/runner-failed.svg"
+        }
+      ],
+      "scrollWidth": 720,
+      "width": 720,
+      "theme": "light"
+    },
+    {
+      "images": [
+        {
+          "loaded": true,
+          "src": "./media/vadhyar-logo.png"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/welcome.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/thinking.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/pointing.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/curious.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/aha.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/celebrate.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/resting.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/key.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/symbol.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/symbol-mono.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/activity-bar.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/bloom.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/start.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/done.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/locked.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/planned.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/break.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/predicted-first.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/found-the-bug.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/fixed-it-yourself.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/all-cases-match.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/no-hints.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/no-key.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/loading.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/stale.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/runner-failed.svg"
+        }
+      ],
+      "scrollWidth": 720,
+      "width": 720,
+      "theme": "dark"
+    },
+    {
+      "images": [
+        {
+          "loaded": true,
+          "src": "./media/vadhyar-logo.png"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/welcome.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/thinking.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/pointing.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/curious.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/aha.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/celebrate.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/resting.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/key.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/symbol.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/symbol-mono.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/brand/activity-bar.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/guide/bloom.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/start.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/done.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/locked.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/planned.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/path/break.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/predicted-first.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/found-the-bug.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/fixed-it-yourself.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/all-cases-match.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/stickers/no-hints.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/no-key.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/loading.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/stale.svg"
+        },
+        {
+          "loaded": true,
+          "src": "./media/gates/runner-failed.svg"
+        }
+      ],
+      "scrollWidth": 720,
+      "width": 720,
+      "theme": "hc"
+    }
+  ]
+}

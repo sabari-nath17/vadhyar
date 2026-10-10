@@ -1,5 +1,9 @@
 # AI usage record
 
+## 2026-10-11T05:23:35+05:30 — Phase 1 visual checks
+
+Codex used Computer Use to capture the asset gallery at 320/360/720 CSS px in light/dark/high-contrast fallback and assembled a contact sheet from actual screenshots. Artwork is explicitly unearned; human acceptance and native theme integration remain unverified.
+
 ## 2026-10-11T05:20:25+05:30 — V2 Phase 0 assistance
 
 Codex read the supplied designs and product/host context, applied Skill Router, Superpowers execution/debugging/verification and review checklists, Impeccable and animation principles, authored local SVGs and components, and used Computer Use for gallery interaction and screenshots. Recorded developer checks use actual disposable runner executions; no API request or learner authorship claim. Automated checks and in-thread review are recorded in docs/design-v2/phase-0; human review is pending. No subagents, credential access or push.

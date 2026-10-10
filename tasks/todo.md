@@ -1,5 +1,9 @@
 # Vadhyar slice task record
 
+## 2026-10-11T05:23:35+05:30 — V2 Phase 1 completed
+
+Phase 0 local checkpoint a611934. Asset review gate complete: 26 inert SVGs, 27 loaded images per width/theme view and nine screenshots. Evidence docs/design-v2/phase-1/README.md. Next: integrate the lesson shell against the current app snapshot, preserving all existing host behavior and capabilities.
+
 ## 2026-10-11T05:20:25+05:30 — V2 Phase 0 isolated slice
 
 Scope: tokens, local fonts, §5 library, developer gallery and §10 assets; original entrypoint/host/schema/fixture unchanged. Base: 21fdcc9; branch codex/design-v2-phase-0. Completed: all 26 SVGs, nine width/theme screenshots, keyboard/focus/contrast corrections, focused 9/9 and full 45/45, typecheck/lint/builds. Evidence: docs/design-v2/phase-0/README.md. Next: Phase 1 asset matrix, then reconcile current primary host capabilities before Phase 2 native lesson wiring. Local checkpoint commit follows staged review; no push or merge. Current primary source/UI backup verified at ../Vadhyar UI backups/before-design-v2-20261011-051642-IST (236 files).
