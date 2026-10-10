@@ -292,3 +292,9 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - Presentation commit 15e9a8c2e68f3ee46ca0cf5f0495758957f2bea6 was fast-forward published to origin/main and confirmed through GitHub API. All six published README/image/record blobs match the local commit.
 - Completed S4 source was published unchanged; pending S5 files/dependencies remain local and unstaged. The active branch is still codex/s0b-s1a; no checkout/reset/rebase or force-push occurred. This side task does not authorize publishing subsequent S5 work.
 - Follow-up: commit/publish this verification-only record within the same authorized publication. Main build resumes S5 and should preserve this new documentation checkpoint. No application tests or browser visual check performed here.
+
+
+## Presentation correction — 2026-10-10T23:05:15+05:30
+
+- User requested only a logo and professional description. Extra navigation/tags/tables/record section and five repository topics are removed; existing project information remains in an expandable section. Unused supplied-logo copy removed.
+- This correction is published under the user's presentation authorization. It preserves pending S5 source and documentation changes; no additional application work is authorized.

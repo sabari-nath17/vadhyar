@@ -1,27 +1,17 @@
-<div align="center">
+<p align="center">
   <img src="docs/assets/vadhyar-banner.jpg" alt="Vadhyar — Understand what you build" width="600" />
-  <h1>Vadhyar</h1>
-  <p><strong>Understand the feature AI built. Make your next change yourself.</strong></p>
-  <p>A VS Code learning companion for beginners building with AI.</p>
-  <p>
-    <a href="#the-idea">The idea</a> ·
-    <a href="#current-progress">Build status</a> ·
-    <a href="#run-the-project">Quick start</a> ·
-    <a href="SUBMISSION.md">Submission</a> ·
-    <a href="RULES.md">Event rules</a>
-  </p>
-  <p><strong>Hackathon prototype</strong> · VS Code · TypeScript · React · Graphify</p>
-</div>
+</p>
 
----
+# Vadhyar
 
-## The idea
+**Understand the feature AI built. Make your next change yourself.**
 
-AI can help you build a feature faster than you can understand it. When the next change arrives, you need to find the logic, predict its behavior and recognize what might break.
+Vadhyar is a VS Code learning companion for beginners building with AI. It helps you connect a requirement to its code, understand the logic and make your next change yourself.
 
-**Vadhyar helps a beginner take ownership of one AI-built feature.** It connects the original requirement to relevant source and guides a small investigation, a learner-performed edit and verification. The goal is a feature you can reason about and change yourself.
+Built for [DevDay Kochi](https://luma.com/z10nz8gp). [Event rules](RULES.md) · [Submission](SUBMISSION.md).
 
-Built for [DevDay Exchange Community Hackathon: Kochi](https://luma.com/z10nz8gp), **10–11 October 2026**, using the [organizer's repository template](https://github.com/anima-regem/devday-kochi-hackathon-template). See [event rules](RULES.md), [development guidance](AGENTS.md) and the [submission record](SUBMISSION.md).
+<details>
+<summary>Project setup, status and development records</summary>
 
 ## Current progress
 
@@ -46,14 +36,6 @@ Built for [DevDay Exchange Community Hackathon: Kochi](https://luma.com/z10nz8gp
 **NovaDesk is the prepared sample project used to demonstrate Vadhyar.** It is a small milestone application with simulated actors. The requirement is: **only the owning client may approve a milestone**. A disclosed seeded bug omits the ownership check.
 
 Requirement → source walkthrough → learner prediction → observed behavior → learner edit → executed checks → archived-milestone follow-up challenge.
-
-| Stage | Learner action | Evidence |
-| --- | --- | --- |
-| **Understand** | Confirm the requirement and follow its source | Requirement revision, source locations and checkpoint |
-| **Predict and investigate** | State the expected outcome and inspect a counterexample | Prediction, executed behavior and progressively clearer hints; planned |
-| **Change and verify** | Edit the actual code and try a follow-up rule | Source diff, case outcomes and assistance used; planned |
-
-The full loop is the product direction, not a completed demo. A source map alone does not prove behavior; checkpoints do not establish authorship or learning gains. No mastery score is assigned.
 
 The implemented foundations use TypeScript, React, VS Code APIs, Zod, esbuild, Graphify and Vitest. OpenAI Responses API coaching is planned. See [reuse decisions](docs/reuse-sources.md) for sources and attribution.
 
@@ -131,15 +113,4 @@ GRAPHIFY_NO_AUTO_REFRESH=1 .venv-graphify/bin/graphify --version
 
 Open only `novadesk` in the Extension Development Host; confirm its requirement, extract source relationships, confirm the proposed mapping and use the source buttons. `npm run test:host` uses the installed macOS VS Code and the isolated `/tmp/vadhyar-host-profile`; trust this prepared folder when prompted. Packaging the Graphify runtime is deferred to S12.
 
-## Project records
-
-| Record | Purpose |
-| --- | --- |
-| [RULES.md](RULES.md) | Organizer event requirements |
-| [Implementation plan](docs/implementation-plan.md) | Scope, build slices and acceptance gates |
-| [Slice record](tasks/todo.md) | Actual results and the next dependent task |
-| [CHANGELOG.md](CHANGELOG.md) | Timestamped changes, checks and known limits |
-| [AI_USAGE.md](AI_USAGE.md) | Codex contributions and human review status |
-| [SUBMISSION.md](SUBMISSION.md) | Participants, demo, final commit and submission readiness |
-
-Participant names and final membership remain unconfirmed. The full demo, archived-milestone transfer flow, cross-platform launch and learning outcomes remain unverified. Follow the organizers' actual submission method; wrap-up is **11 October 2026, by 10:00 AM IST**.
+</details>

@@ -4,6 +4,11 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-10T23:05:15+05:30 — Narrow presentation to the requested scope
+
+- Removed the added navigation, technology tags, learning-loop table and extra project-record section; retained the supplied banner and professional description. Existing setup/status information is folded into one expandable section. Removed the unused logo copy and the five added GitHub topics.
+- User requested this correction. Documentation-only scope; preserve pending S5 changes and publish only this correction. Link/record/whitespace and exact commit-scope checks are performed before publication; application behavior is unchanged.
+
 ## 2026-10-10T22:54:25+05:30 — Presentation publication verified
 
 - Published presentation commit 15e9a8c2e68f3ee46ca0cf5f0495758957f2bea6 to canonical remote main with a normal fast-forward push. It includes the previously completed S4 history; its own diff has only README, two supplied images and three documentation records.
