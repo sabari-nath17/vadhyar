@@ -9,19 +9,51 @@
     "url": "git+https://github.com/sabari-nath17/vadhyar.git"
   },
   "engines": {
-    "node": "^22.13.0 || ^24.0.0 || >=26.0.0"
+    "node": "^22.13.0 || ^24.0.0 || >=26.0.0",
+    "vscode": "^1.140.0"
   },
   "scripts": {
     "typecheck": "tsc --project tsconfig.json",
-    "lint": "eslint novadesk/src tests fixtures eslint.config.mjs --max-warnings=0",
-    "test": "vitest run --reporter=verbose"
+    "lint": "eslint src scripts novadesk/src tests fixtures vitest.config.ts eslint.config.mjs --max-warnings=0",
+    "test": "vitest run --reporter=verbose",
+    "build": "node scripts/build.mjs",
+    "test:host": "node scripts/test-host.mjs"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
     "@types/node": "26.6.5",
+    "@types/vscode": "1.140.0",
+    "esbuild": "0.28.2",
     "eslint": "10.12.0",
     "typescript": "6.0.3",
     "typescript-eslint": "8.71.1",
     "vitest": "5.0.3"
-  }
+  },
+  "displayName": "Vadhyar",
+  "publisher": "sabari-nath17",
+  "main": "./dist/extension.cjs",
+  "categories": [
+    "Education"
+  ],
+  "activationEvents": [
+    "onCommand:vadhyar.open"
+  ],
+  "extensionKind": [
+    "workspace"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": false,
+      "description": "Runs only in a trusted prepared NovaDesk workspace."
+    }
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "vadhyar.open",
+        "title": "Vadhyar: Understand this change"
+      }
+    ]
+  },
+  "packageManager": "npm@11.19.0"
 }

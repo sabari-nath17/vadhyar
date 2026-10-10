@@ -8,5 +8,5 @@
     "moduleResolution": "NodeNext",
     "paths": { "@novadesk/approval": ["./novadesk/src/approval.ts"] }
   },
-  "include": ["novadesk/src/**/*.ts", "tests/**/*.ts", "fixtures/**/*.ts"]
+  "include": ["novadesk/src/**/*.ts", "tests/**/*.ts", "fixtures/**/*.ts", "src/**/*.ts", "scripts/**/*.ts", "vitest.config.ts"]
 }

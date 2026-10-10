@@ -4,6 +4,11 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-10T22:15:30+05:30 — S2a: real extension activation
+
+- S2a: extension manifest, esbuild bootstrap, native command and real-host activation check. Typecheck, lint, build and product 7/7 passed. Real VS Code 1.140.0 host evidence at /tmp/vadhyar-host-evidence.json confirms activation, trusted prepared workspace and panel opening. Initial CLI launches gave no evidence/untrusted failures; fixed fail-closed freshness guard, direct Code executable and explicit /tmp profile path after macOS tmpdir mismatch. User confirmed workspace trust. No global trust disable. esbuild 0.28.2/@types/vscode 1.140.0 installed with scripts disabled; build uses the registry native binary. Source navigation/unsupported-workspace handling arrive in S2b; integrations not checked. S1b checkpoint faf9b98 retained; no push.
+
+
 ## 2026-10-10T22:06:20+05:30 — S1b: trusted prepared ownership checks
 
 - Added requirement, scenario/harness/config, product contract tests and type/test configuration. Updated scope/status records.

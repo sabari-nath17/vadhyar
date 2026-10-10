@@ -16,7 +16,7 @@ Created from the [DevDay Kochi hackathon template](https://github.com/anima-rege
 | Product direction and implementation plan | Documented; see [the plan](docs/implementation-plan.md) |
 | Slice status and development instructions | [Task record](tasks/todo.md), [AGENTS.md](AGENTS.md) and [.customrules](.customrules); S0b complete |
 | NovaDesk fixture | S1a implemented and baseline-tested; disclosed ownership bug retained |
-| VS Code extension | Not implemented |
+| VS Code extension | S2a activation/build verified; functional panel actions next |
 | Graphify integration and OpenAI runtime coaching | Planned; not runtime-verified |
 | Run scripts and dependency versions | Typecheck, lint and non-watch baseline tests available; versions pinned |
 | Working demo and screenshots | Pending implementation |
@@ -73,3 +73,7 @@ GitHub account: [sabari-nath17](https://github.com/sabari-nath17). Participant n
 ## Prepared ownership checks (S1b)
 
 The requirement is in `novadesk/vadhyar-requirement.md`. The extension-owned manifest pins ordinary cases and harness/config hashes in `fixtures/novadesk`. Product tests validate the seed plus disposable correct and incorrect edits; policy failures are not learner successes. Run `npm run test -- tests/scenario-contract.test.ts`. To inspect the disclosed defect directly, run `npm exec -- vitest run --config fixtures/novadesk/vitest.config.ts` (expected exit 1, one ownership failure). The working seed remains unchanged.
+
+## Extension development (S2a)
+
+Run `npm run build`, then `/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --new-window --extensionDevelopmentPath="$PWD" "$PWD/novadesk"`. Trust this prepared folder and run **Vadhyar: Understand this change**. `npm run test:host` launches the installed macOS Code executable in the dedicated `/tmp/vadhyar-host-profile` and requires fresh `/tmp/vadhyar-host-evidence.json`. Close other windows using that test profile before running it. Tests never disable Workspace Trust. This host check is macOS-specific; cross-platform setup is not verified.
