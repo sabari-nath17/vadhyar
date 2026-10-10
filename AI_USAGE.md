@@ -45,3 +45,7 @@ Codex planned and implemented the static design-v2 landing, corrected runtime Vi
 ## 2026-10-11T04:57:58+05:30 — Public Vadhyar wording
 
 Codex applied the user-requested public wording correction, retained the release scope, and added a regression assertion. No extension behavior, API call, package binary or historical evidence changed. Human review pending.
+
+## 2026-10-11T05:02:28+05:30 — Website and installation handoff
+
+Codex published the authorized landing and completed-source installer through an isolated clone, updated public copy as requested and validated source, real installation/runtime, browser and downloaded checksum. Human review pending. Main working tree source/index/branch preserved. No fresh API calls, credential values or sub-agents were used. Public support and verification limits are in docs/landing-release.md.

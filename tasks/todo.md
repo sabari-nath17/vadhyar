@@ -387,3 +387,11 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 ## 2026-10-11T04:57:58+05:30 — Public Vadhyar wording
 
 Public Vadhyar wording updated on the landing/README/setup/release copy. No source behavior or prior evidence rewritten. Website contract passes; publication and final live acceptance recorded after deployment.
+
+## 2026-10-11T05:02:28+05:30 — Landing publication handoff complete
+
+- Public website: https://vadhyar-website.vercel.app, final production dpl_G5k8qWu9CuHmXBqgTD8wHmgCrgdC.
+- GitHub release: v0.1.0 at 76beac810328e1187cc75c2b2fc1936943447538; latest public wording source b3f416dc8a4768f148d5d0c64f70d0a8d86e6842. Downloaded installer SHA256 validated.
+- Final website contract and public browser repeat pass, including wording exclusion, 320/360/768/1440 and both themes. Detailed checks/limits: docs/landing-release.md.
+- Local changes limited to website, installation docs, README installation section and appended records; parent source/branch/index and existing work preserved. Publishing used an isolated clone. This record's public commit can be resolved with Git history; no empty cadence commit.
+- Next: continue the separately authorized main slices. Reconcile public main before later publication without replacing working files or rewriting history. Installer remains scoped to the included milestone learning project; current unpublished enhancements remain separate.

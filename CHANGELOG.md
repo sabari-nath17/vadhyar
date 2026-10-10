@@ -130,3 +130,9 @@ Real Graphify 0.9.84 integration is verified in VS Code: four source references,
 ## 2026-10-11T04:57:58+05:30 — Public Vadhyar wording
 
 Changed public website, installation guide, README and GitHub release copy to describe Vadhyar without the retired sample labels, as requested. Preserved supported-project boundaries and the existing installer; added a static copy regression check. Browser checks, installation/runtime acceptance and source suite remain recorded separately.
+
+## 2026-10-11T05:02:28+05:30 — Landing / installer publication verified
+
+- Delivered: https://vadhyar-website.vercel.app, GitHub v0.1.0 installer/checksum and docs/installation.md; public Vadhyar wording corrected at the user's request.
+- Evidence: final live HTML/source and wording equality, four widths/two themes plus keyboard/reduced motion; published asset downloaded back and checksum passed. Anonymous asset endpoint returns HTTP 200. Earlier source 36/36, clean installation, installed real runner and Graphify checks are retained.
+- Boundary: included milestone project, macOS Apple Silicon, VS Code 1.140.0+; no fresh API/learning validation or parent source publication. Existing package and tag remain immutable after wording changes.
