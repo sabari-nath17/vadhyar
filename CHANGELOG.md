@@ -4,6 +4,13 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-10T21:53:27.000+05:30 — S1a: testable NovaDesk seeded fixture
+
+- Changed: Added package.json/lockfile, ESLint configuration, the pure actor/milestone approval contract and three labeled baseline cases. Updated README, task/AI records and SUBMISSION's canonical repository URL and fixture/check status.
+- Why: Establish a small executable fixture for the next ownership learning slice while keeping its intentional bug visible.
+- Validation: Observed deny-all test-first red (2 failed, 1 passed); final focused/full baseline green (3 passed); strict typecheck and lint passed; clean npm ci and dependency tree passed; unmatched test selection correctly exited 1. Install audit reported 0 vulnerabilities.
+- Limitations: Role-only seed intentionally allows another client; baseline green is not ownership-policy success. npm warns about the unapproved optional fsevents install script, but non-watch checks work. No editor/UI, Graphify/OpenAI, packaging, archived checks or demo verification. Human review pending; local checkpoint only, no push.
+
 ## 2026-10-10T21:46:01.000+05:30 — S0b: reconcile canonical history and project instructions
 
 - Changed: Adopted the existing canonical Vadhyar history in the local checkout; adapted AGENTS.md, added .customrules, merged local/remote .gitignore entries, corrected README repository links and preserved/extended tasks/todo.md.

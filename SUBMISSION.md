@@ -4,7 +4,7 @@
 
 - **Project name:** Vadhyar
 - **Short description:** A planned VS Code learning extension that connects a requirement to AI-built code and helps a beginner understand, change, and verify one feature themselves.
-- **Code repository URL:** https://github.com/sabari-nath17/vadhyar-devday-kochi
+- **Code repository URL:** https://github.com/sabari-nath17/vadhyar
 - **Final submitted implementation commit SHA:** Pending implementation and final submission.
 - **Working demo URL or local demo steps:** Pending implementation.
 - **Demo access requirements:** Pending implementation; never include credentials.
@@ -19,12 +19,12 @@ Final team membership is not yet recorded. Maximum team size: four.
 
 ## Run and demonstrate
 
-- **Prerequisites and versions:** Pending runtime verification.
-- **Install and start commands:** Pending implementation; see [README](README.md).
-- **Required configuration:** Planned OpenAI API credential in VS Code SecretStorage; final prerequisites pending.
+- **Prerequisites and versions:** S1a fixture verified with Node 26.7.0 and npm 11.19.0; extension prerequisites pending.
+- **Install and start commands:** Fixture install/check commands are in [README](README.md); extension start commands pending.
+- **Required configuration:** No credentials for the fixture. Planned extension OpenAI credential in VS Code SecretStorage; final prerequisites pending.
 - **Demo walkthrough:** Requirement, source walkthrough, prediction, ownership counterexample, learner fix, actual checks, archived-milestone challenge, evidence summary.
-- **Checks performed and results:** Repository documentation checks only at setup; no application checks or demo run yet.
-- **Known limitations:** Application implementation, run scripts, screenshots and working demo remain pending.
+- **Checks performed and results:** Clean fixture install, strict typecheck, lint and all 3 baseline tests passed. The different-client approval is a disclosed seeded bug. No extension or demo run yet.
+- **Known limitations:** Role-only fixture is implemented; extension, integrations, screenshots and working demo remain pending.
 - **Libraries and APIs:** Planned use and reuse boundaries in [source decisions](docs/reuse-sources.md).
 - **AI usage:** [AI_USAGE.md](AI_USAGE.md)
 - **Development record:** [CHANGELOG.md](CHANGELOG.md)

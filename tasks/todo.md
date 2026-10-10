@@ -1,6 +1,6 @@
 # Vadhyar slice task record
 
-Updated: 10 October 2026, Asia/Kolkata. Mode: build authorized for S0b and S1a only. S0b complete; S1a next. Earlier planning observations are retained below; current evidence is in the latest handoff.
+Updated: 10 October 2026, Asia/Kolkata. Mode: build authorized for S0b and S1a only. Both complete; stop here. S1b is next and not implemented. Earlier planning observations are retained below; current evidence is in the latest handoff.
 
 ## Initial planning inspection (historical snapshot)
 
@@ -51,7 +51,7 @@ Agent Reach's GitHub/gh route succeeded. The `agent-reach` and `conda` executabl
 
 ## Next slice boundaries and contracts
 
-S0b is complete. The user authorized **S0b and S1a only**; the next executable slice is **S1a, seeded approval rule**. S1b and all later implementation remain outside this request.
+S0b and S1a are complete. The user authorized **S0b and S1a only**; the next executable slice is **S1b, prepared ownership-policy checks**. S1b and all later implementation remain outside this request.
 
 S0b creates `AGENTS.md` and `.customrules`, and extends the existing `.gitignore` as needed. Preserve `.ignore` and its Graft search behavior. AGENTS explicitly references .customrules and this record. Each instruction file stays below 50 lines. Preserve the supplied Obsidian and development logging rules; diagnostics must be redacted. Exclude dependency/build/graph artifacts and `.venv-graphify/` without deleting them or replacing the existing Graft exclusion.
 
@@ -86,13 +86,13 @@ Contracts needed as consumers arrive, not implemented pre-emptively:
 
 ## Ordered slice register
 
-The original ordered plan is retained here. S0b is complete; S1a is authorized next; later implementation rows remain pending. No time allocation is a delivery promise. Re-estimate after the real integration gate.
+The original ordered plan is retained here. S0b and S1a are complete; later implementation rows remain pending. No time allocation is a delivery promise. Re-estimate after the real integration gate.
 
 | Slice | Depends on | Proposed output and acceptance gate | Verification |
 |---|---|---|---|
 | S0 | None | Repository/skill inspection and planning record complete; human acceptance pending | Inspect record and chat plan; no code changed |
 | S0b | Accepted S0 | COMPLETE: lean rules/exclusions; canonical history reconciled; existing local files/Graft preserved | Links, under-50-line limits, ignore probes, protected-file comparison and diff checks passed |
-| S1a | S0b | Pure seeded permission rule and a runnable development baseline | Typecheck, lint, focused baseline tests; report the policy defect explicitly |
+| S1a | S0b | COMPLETE: pure seeded permission rule and runnable green baseline; ownership defect explicitly retained | Clean npm ci, strict typecheck, lint, focused/full baseline tests and no-match failure guard passed |
 | S1b | S1a | Prepared ownership requirement and trusted ordinary check harness | Seed gives exactly the expected ownership failure; a correct disposable edit passes; incorrect edit fails |
 | S2a | S1a | Extension manifest/entrypoint and esbuild bootstrap open in actual host | Build and real activation; unsupported/untrusted workspace recovery |
 | S2b | S2a | One React panel, validated actions and safe native source opening | Message/reference tests; host keyboard and navigation checks |
@@ -191,7 +191,7 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - S6/S7: record prediction first, retain failed attempts, invalidate results on edits, show stale history explicitly, and record hint use.
 - S10: lock the transfer attempt's assistance classification before exposing feedback; a guided retry remains guided. A presenter rehearsal is not evidence of learning improvement.
 
-## Work report and handoff
+## Planning work report (historical)
 
 - Completed: read skill PRD/plan/workflow/reuse references and applicable guidance; inspect empty repository/Git state; refresh skill routing; verify local tool versions and primary-source integration facts; create this record.
 - Files changed: only `tasks/todo.md`.
@@ -215,3 +215,20 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - Application checks: not run for this documentation-only slice; no package scripts exist yet.
 - Checkpoint: commit this verified S0b milestone locally; the next handoff will record its SHA. Human file review is pending.
 - Next: S1a's five planned files, dependency compatibility check, labeled test-first red result and final green baseline. No S1b behavior in this slice.
+
+## S1a handoff — 2026-10-10T21:53:27.000+05:30
+
+- Result: `canApproveMilestone(actor, milestone): boolean` is a pure role-only seed. Actor fields are id/role; milestone fields are id/ownerClientId/status. Owner and different client are allowed; freelancer is denied. Ownership and archived restrictions are intentionally not implemented.
+- Added exactly five planned implementation files: package.json, package-lock.json, eslint.config.mjs, novadesk/src/approval.ts and tests/fixture-baseline.test.ts. No extension shell, API/Graphify integration, runtime harness or additional scaffolding.
+- Scripts: strict no-emit TypeScript check of source/tests; ESLint with zero tolerated warnings; `vitest run --reporter=verbose`. The tests label the different-client result as SEEDED BUG and freeze caller inputs to catch mutations.
+- Dependency evidence: npm registry metadata showed TypeScript 7.0.2 outside typescript-eslint 8.71.1's `>=4.8.4 <6.1.0` range. Pinned TypeScript 6.0.3, typescript-eslint 8.71.1, ESLint 10.12.0, @eslint/js 10.0.1, @types/node 26.6.5 and Vitest 5.0.3. Node 26.7.0 satisfies the selected engine constraints. No runtime dependencies added.
+- Test-first RED: the temporary deny-all stub yielded exactly two assertion failures (owner and different client) and one pass (freelancer), exit 1. Typecheck and lint passed at that stage. This was development evidence, not the final fixture state.
+- GREEN: after adding the role-only decision, strict typecheck and lint passed, and `npm run test -- tests/fixture-baseline.test.ts` passed all 3 cases, exit 0.
+- Clean-install verification: `npm ci` and `npm ls --depth=0` passed; install audit reported 0 vulnerabilities. npm warned that the optional fsevents@2.3.3 install script is not approved. No script approval or global configuration change was made; non-watch checks work.
+- Final checks after clean install: `npm run typecheck` passed; `npm run lint` passed; `npm run test` passed one file / 3 tests. The deliberately unmatched filter `tests/__vadhyar_no_test_matches__.test.ts` exited 1 with No test files found, confirming that an empty selection cannot report green.
+- Lockfile root pins match package.json; all 155 package records use public npm registry URLs where resolved. Affected Markdown local links, rule-file limits (32/21 lines), original local .gitignore preservation and byte-identical .ignore checks passed. Staged diff review and whitespace checks passed for the ten intended S1a files.
+- Updated README, CHANGELOG and AI_USAGE as canonical instructions require. Corrected SUBMISSION's stale repository URL and fixture/check status; extension/demo readiness remains pending. Absolute Mode was applied after the user's winning-goal instruction; the S0b/S1a boundary remains intact.
+- Git: S0b checkpoint `6186c17` is a descendant of canonical main `9a95200`. S1a will be committed locally as this milestone; no push. The pre-existing .ignore remains unchanged and untracked; generated Graft content remains ignored and preserved.
+- Human review: slice authorization supplied; file-level review pending. Automated checks do not establish a working hackathon demo or learning outcome.
+- Next slice S1b: prepared requirement, trusted ordinary ownership checks/scenario manifest and fixture-contract evidence that distinguishes the intentional seed failure from product-suite success. Reuse the current source and five-file bootstrap; do not fix ownership in the baseline seed.
+- Not checked/implemented: archived-policy cases, runtime runner/integrity, editor host/UI, Graphify, OpenAI, VSIX, demo rehearsal or cross-platform behavior. Stop after this handoff.
