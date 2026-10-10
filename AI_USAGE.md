@@ -4,11 +4,9 @@ Use Codex during the hackathon and briefly document its actual contribution here
 
 ## Event build log
 
-No participant AI usage has been recorded yet. Replace the placeholder row as you build. Mark human review as pending until someone has reviewed the contribution.
-
 | Date and time with timezone | Tool / model, if known | Task | Assistance and affected files | Human review / corrections | Validation and result |
 | --- | --- | --- | --- | --- | --- |
-| TODO | Codex | TODO | TODO | Pending | TODO |
+| 2026-10-10T20:30:35+05:30 | Codex | Create Vadhyar project repository | Read the organizer template; generated the repository from it; added project overview, planned build documentation, submission status, and code/script/screenshot locations | User requested repository creation and the Vadhyar name; file-level human review pending | GitHub confirmed template generation; local documentation/link and Git whitespace checks recorded with this milestone; application checks not run |
 
 ## Template preparation
 

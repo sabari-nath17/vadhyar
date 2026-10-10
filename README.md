@@ -1,56 +1,59 @@
-# DevDay Exchange Community Hackathon: Kochi
+# Vadhyar
 
-A repository template for participants at the 10–11 October 2026 hackathon. It contains event rules and documentation scaffolding; build your project from scratch at the event.
+**Understand the feature AI built. Make your next change yourself.**
 
-**[Event and registration on Luma](https://luma.com/z10nz8gp)** · **[Event rules](RULES.md)** · **[Agent instructions](AGENTS.md)**
+Vadhyar is a planned VS Code extension for beginners and students building personal projects with AI. It connects one requirement to the relevant code, guides a prediction and debugging exercise, and records the learner's edit alongside executed checks.
 
-## Event details
+**Repository:** https://github.com/sabari-nath17/vadhyar-devday-kochi
 
-| Detail | Information |
+Created from the [DevDay Kochi hackathon template](https://github.com/anima-regem/devday-kochi-hackathon-template). Read [event rules](RULES.md) and [agent guidance](AGENTS.md). Build project implementation from scratch at the event.
+
+## Current progress
+
+| Area | Status |
 | --- | --- |
-| Venue | JAIN University, Kochi |
-| Location | [Open the venue map](https://maps.app.goo.gl/Eme7gR7NDXSNRANu5) |
-| Rooms | 2008 and 2009 |
-| Check-in | 10 October 2026, 6:00 PM IST |
-| Kick-off | 10 October 2026, 6:30 PM IST |
-| Wrap-up | 11 October 2026, by 10:00 AM IST |
-| Participation | Solo or a team of up to 4 participants |
-| Theme | Open — build anything you like |
+| Template and repository | Created |
+| Product direction and implementation plan | Documented; see [the plan](docs/implementation-plan.md) |
+| VS Code extension and NovaDesk fixture | Not implemented |
+| Graphify integration and OpenAI runtime coaching | Planned; not runtime-verified |
+| Run scripts and dependency versions | Pending implementation |
+| Working demo and screenshots | Pending implementation |
 
-Keep your approved Luma QR code ready for entry, and bring your laptop and charger. Eligible checked-in participants will receive Codex credits and OpenAI API credits.
+## Planned demo
 
-## Use this template
+The first version targets NovaDesk, a small milestone application with simulated actors. The requirement is: **only the owning client may approve a milestone**. A disclosed seeded bug omits the ownership check.
 
-1. Select **Use this template → Create a new repository** on GitHub. Create your own project repository and clone it.
-2. Read [RULES.md](RULES.md) and [AGENTS.md](AGENTS.md) before building. Begin project implementation at the event.
-3. Fill in the project overview below as you build. Use any suitable language or framework, keeping the implementation simple.
-4. Record meaningful changes in [CHANGELOG.md](CHANGELOG.md) and your Codex usage in [AI_USAGE.md](AI_USAGE.md). Commit after completed milestones; aim for a meaningful checkpoint about every 30 minutes.
-5. Complete [SUBMISSION.md](SUBMISSION.md) with your code repository, short project description, and working demo. Follow submission instructions announced by the organizers.
+Requirement → source walkthrough → learner prediction → observed behavior → learner edit → executed checks → archived-milestone follow-up challenge.
 
-This template has no application code or required technology stack. The documentation and commit cadence are repository workflow guidance; the event participation rules are in [RULES.md](RULES.md).
+The proposed stack is TypeScript, React, VS Code APIs, Graphify, OpenAI Responses API, and Vitest. These are design choices, not claims of installed or working integrations. See [reuse decisions](docs/reuse-sources.md).
 
-## Project overview — complete during the event
+## Repository layout
 
-- **Project name:** TODO
-- **Short description:** TODO — what it does, who it helps, and why it matters.
-- **Team:** TODO — participant names and GitHub handles; maximum 4 members.
-- **Working demo:** TODO — link or local demo instructions.
-- **Technology stack:** TODO
+- `src/` — project implementation, to be added during development.
+- `scripts/` — reproducible setup, run and packaging scripts as they become available.
+- `screenshots/` — images captured from the actual project as it progresses.
+- `docs/` — implementation plan and reuse/source decisions.
+- [CHANGELOG.md](CHANGELOG.md) — meaningful development milestones and actual checks.
+- [AI_USAGE.md](AI_USAGE.md) — actual Codex contributions.
+- [SUBMISSION.md](SUBMISSION.md) — submission details and readiness checklist.
 
-### Run the project
+## Run the project
 
-Replace these placeholders with commands that actually work for your project:
+Application run commands are not available yet. No project code, package manifest, or runtime scripts have been added in this setup milestone.
 
-1. Prerequisites and versions: TODO
-2. Dependency installation: TODO
-3. Environment setup: TODO — list required variable names and provide a sanitized `.env.example` if needed.
-4. Start the project: TODO
-5. Run checks or tests: TODO
+```sh
+git clone https://github.com/sabari-nath17/vadhyar-devday-kochi.git
+cd vadhyar-devday-kochi
+```
 
-### Current status
+When implementation begins, add the exact prerequisites, install/build/run/check commands and sanitized configuration examples here. Keep API credentials out of source control; the planned extension stores the OpenAI key in VS Code SecretStorage.
 
-- Working features: TODO
-- Known limitations: TODO
-- Libraries, APIs, and public datasets used: TODO — include source links and applicable attribution.
+## Development workflow
 
-See [AI_USAGE.md](AI_USAGE.md) for AI assistance and [CHANGELOG.md](CHANGELOG.md) for the development record.
+Keep all project code in this repository. After each meaningful milestone, update the changelog and AI usage record, commit the coherent change, and push progress. Add screenshots only when they represent actual implemented behavior. The template suggests a meaningful checkpoint about every 30 minutes while actively building.
+
+GitHub account: [sabari-nath17](https://github.com/sabari-nath17). Participant names and final team membership remain to be confirmed.
+
+## Event
+
+[DevDay Exchange Community: Kochi](https://luma.com/z10nz8gp), 10–11 October 2026. Event details and organizer rules remain in [RULES.md](RULES.md).

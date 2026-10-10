@@ -4,16 +4,12 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
-No project implementation has been recorded yet. Replace this sentence with entries as you build:
+## 2026-10-10T20:30:35+05:30 — Initialize Vadhyar repository
 
-```text
-## <actual timestamp> — <short change title>
-
-- Changed: <feature or files changed>
-- Why: <reason for the change>
-- Validation: <commands or manual checks actually run, with results>
-- Limitations: <known issues or "None identified in these checks">
-```
+- Changed: Created this repository from the organizer's template; named the project Vadhyar; customized README, submission details and AI usage; added the implementation plan, source decisions and code/script/screenshot locations.
+- Why: Establish the project's source and progress record for the hackathon.
+- Validation: Confirmed GitHub template metadata and generated repository; checked local Markdown references and Git diff whitespace before this commit. Remote commit verification follows the push.
+- Limitations: Documentation setup only. No application code, runnable scripts, screenshots, working demo or application test results are included yet. Earlier design documentation is identified as planning, not event implementation.
 
 ## Template setup — 10 October 2026
 

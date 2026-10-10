@@ -1,48 +1,45 @@
-# Project submission
-
-Complete this file during the hackathon and use it to prepare your submission through the method announced by the organizers. Do not submit your project to the template repository.
+# Vadhyar — project submission
 
 ## Project
 
-- **Project name:** TODO
-- **Short description:** TODO — describe the problem, what you built, and who benefits.
-- **Code repository URL:** TODO
-- **Final submitted implementation commit SHA:** TODO
-- **Working demo URL or local demo steps:** TODO
-- **Demo access requirements:** TODO — explain any prerequisites without including private credentials.
+- **Project name:** Vadhyar
+- **Short description:** A planned VS Code learning extension that connects a requirement to AI-built code and helps a beginner understand, change, and verify one feature themselves.
+- **Code repository URL:** https://github.com/sabari-nath17/vadhyar-devday-kochi
+- **Final submitted implementation commit SHA:** Pending implementation and final submission.
+- **Working demo URL or local demo steps:** Pending implementation.
+- **Demo access requirements:** Pending implementation; never include credentials.
 
 ## Participants
 
-Participate solo or in a team of up to 4. Remove unused rows.
-
 | Participant name | GitHub handle | Contribution |
 | --- | --- | --- |
-| TODO | TODO | TODO |
+| To be confirmed | sabari-nath17 | Repository owner; project contributions will be recorded during development |
+
+Final team membership is not yet recorded. Maximum team size: four.
 
 ## Run and demonstrate
 
-- **Prerequisites and versions:** TODO
-- **Install command:** TODO
-- **Required environment variable names:** TODO — use a sanitized example file if needed.
-- **Start command:** TODO
-- **Demo walkthrough:** TODO — brief steps showing the implemented features.
-- **Checks performed and results:** TODO
-- **Known limitations or incomplete features:** TODO
-- **Libraries, APIs, and public datasets used:** TODO — link sources and record attribution where required.
-- **AI usage record:** [AI_USAGE.md](AI_USAGE.md)
-- **Development change log:** [CHANGELOG.md](CHANGELOG.md)
+- **Prerequisites and versions:** Pending runtime verification.
+- **Install and start commands:** Pending implementation; see [README](README.md).
+- **Required configuration:** Planned OpenAI API credential in VS Code SecretStorage; final prerequisites pending.
+- **Demo walkthrough:** Requirement, source walkthrough, prediction, ownership counterexample, learner fix, actual checks, archived-milestone challenge, evidence summary.
+- **Checks performed and results:** Repository documentation checks only at setup; no application checks or demo run yet.
+- **Known limitations:** Application implementation, run scripts, screenshots and working demo remain pending.
+- **Libraries and APIs:** Planned use and reuse boundaries in [source decisions](docs/reuse-sources.md).
+- **AI usage:** [AI_USAGE.md](AI_USAGE.md)
+- **Development record:** [CHANGELOG.md](CHANGELOG.md)
 
 ## Submission checklist
 
 - [ ] The project implementation started from scratch at the event.
-- [ ] I participated solo or with no more than 4 team members in total.
-- [ ] Codex was used during development and its usage is documented.
-- [ ] The code repository URL, short description, and working demo are provided.
+- [ ] Participation was solo or in a team of no more than four.
+- [ ] Codex development usage is documented.
+- [ ] The code repository, short description and working demo are supplied.
 - [ ] README setup and demo instructions match the submitted code.
 - [ ] Actual checks and known limitations are documented.
 - [ ] Meaningful changes are documented and committed throughout development.
-- [ ] The final implementation is committed and pushed, and its SHA is recorded above.
-- [ ] No credentials or private data are included in the repository or demo instructions.
-- [ ] The organizers' announced submission method and timing have been followed.
+- [ ] Final implementation is committed and pushed, and its SHA is recorded.
+- [ ] No credentials or private data are included.
+- [ ] The organizers' submission method and timing have been followed.
 
-Event reference: [DevDay Exchange Community: Kochi on Luma](https://luma.com/z10nz8gp). The event wraps up by **10:00 AM IST on 11 October 2026**.
+Event reference: [DevDay Exchange Community: Kochi](https://luma.com/z10nz8gp). Wrap-up is **11 October 2026, by 10:00 AM IST**.
