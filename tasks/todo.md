@@ -383,3 +383,7 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - Executed: source typecheck/lint/build and 36/36; website contract/browser/contrast; clean-profile CLI installation; installed real runner single/full cases and Graphify 0.9.84 (four references/three edges). No new API call or installed native loop.
 - Publication: explicitly authorized for this task. Website public alias returns 200; final versioned GitHub release/download and redeployment acceptance follow publication. See docs/landing-release.md.
 - Next: continue the parent's independently authorized development slices; first public installer is the narrower S7 demo. No parent stage/commit/reset/push was performed.
+
+## 2026-10-11T04:57:58+05:30 — Public Vadhyar wording
+
+Public Vadhyar wording updated on the landing/README/setup/release copy. No source behavior or prior evidence rewritten. Website contract passes; publication and final live acceptance recorded after deployment.

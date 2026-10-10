@@ -126,3 +126,7 @@ Real Graphify 0.9.84 integration is verified in VS Code: four source references,
 - Why: deliver the user-authorized public website, real download and reproducible setup without publishing ongoing parent changes.
 - Checks: clean source typecheck/lint/build, 36/36 product tests; static contract, four browser widths/two themes, keyboard/reduced motion, contrast; real isolated VSIX install/installed runner and Graphify extraction.
 - Limits: macOS Apple Silicon, S7 NovaDesk demo only; no new API or human learning validation; no blanket license selected. Public verification follows publication; see release acceptance.
+
+## 2026-10-11T04:57:58+05:30 — Public Vadhyar wording
+
+Changed public website, installation guide, README and GitHub release copy to describe Vadhyar without the retired sample labels, as requested. Preserved supported-project boundaries and the existing installer; added a static copy regression check. Browser checks, installation/runtime acceptance and source suite remain recorded separately.

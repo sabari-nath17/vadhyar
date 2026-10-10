@@ -6,153 +6,31 @@
 
 **Understand the feature AI built. Make your next change yourself.**
 
-Vadhyar is a VS Code learning companion for beginners building with AI. It helps you connect a requirement to its code, understand the logic and make your next change yourself.
+A VS Code learning companion for beginners building with AI. Connect your requirement to relevant code, reason through its logic, make your own edit and check the result.
 
-Built for [DevDay Kochi](https://luma.com/z10nz8gp). [Event rules](RULES.md) · [Submission](SUBMISSION.md).
+[Website](https://vadhyar-website.vercel.app) · [Download the extension](https://github.com/sabari-nath17/vadhyar/releases/download/v0.1.0/vadhyar-0.1.0.vsix) · [Installation guide](docs/installation.md)
 
-## Install the early demo
+## Install
 
-[Website](https://vadhyar-website.vercel.app) · [Download Vadhyar 0.1.0 for macOS Apple Silicon](https://github.com/sabari-nath17/vadhyar/releases/download/v0.1.0/vadhyar-0.1.0.vsix) · [Installation guide](docs/installation.md) · [Release notes](https://github.com/sabari-nath17/vadhyar/releases/tag/v0.1.0)
+1. Download `vadhyar-0.1.0.vsix` from [GitHub Releases](https://github.com/sabari-nath17/vadhyar/releases/tag/v0.1.0).
+2. In VS Code: **Extensions → ⋯ → Install from VSIX…**.
+3. Follow [the setup guide](docs/installation.md) to open the included learning project and configure Graphify.
+4. Run **Vadhyar: Understand this change**. Add your own OpenAI API key through the secure native prompt for explanations and hints.
 
-Requires **VS Code 1.140.0+**, **Python 3.10+** and isolated **Graphify 0.9.84**. OpenAI API access is required only for coaching and is billed separately. Install via **Extensions → ⋯ → Install from VSIX…**, then follow the guide to prepare Graphify and open `novadesk`.
+Requires **macOS Apple Silicon, VS Code 1.140.0+, Python 3.10+ and Graphify 0.9.84**. The pinned test runner is included. OpenAI API usage is billed separately.
 
-The first installer packages the completed S7 checkpoint. It supports the prepared NovaDesk learning flow, with a disclosed seeded ownership bug. Ongoing Project Guide and later extension enhancements are separate from this release. The website's walkthrough is illustrative.
+## How it works
 
-<details>
-<summary>Project setup, status and development records</summary>
+**Requirement → relevant source → prediction → observed behavior → your edit → executed checks.**
 
-## Current progress
+The coach supplies source-linked explanations and conceptual hints. You make the code change in the editor. Workspace-scoped records keep your checkpoints and activity; credentials use VS Code SecretStorage. Review the exact context before sharing it with OpenAI.
 
-**Development prototype.** S1b–S7 are complete. Gate A verified source navigation, real Graphify extraction and a live source-grounded explanation. Gate B verified prediction → counterexample → live hint → learner-saved edit → native diff → all three ownership checks. The [slice record](tasks/todo.md) and [changelog](CHANGELOG.md) hold actual evidence.
+## Current release scope
 
-| Area | Status |
-| --- | --- |
-| Template and repository | Created |
-| Product direction and implementation plan | Documented; see [the plan](docs/implementation-plan.md) |
-| Slice status and development instructions | [Task record](tasks/todo.md), [AGENTS.md](AGENTS.md) and [.customrules](.customrules) |
-| NovaDesk fixture | Seeded source and trusted ownership harness implemented; disclosed bug retained |
-| VS Code extension | S2b thin panel and native source navigation verified |
-| Requirement confirmation and source checkpoints | S3 persistence and restart recorded as verified |
-| Graphify integration | S4 real extraction and host navigation recorded as verified; four refs and three AST contains relationships |
-| OpenAI runtime coaching | S5 live validated response and all three native citation buttons verified |
-| Saved prediction and ownership counterexample | S6 real runner and native keyboard/source flow verified; seed remains a failed requirement check |
-| Progressive hints, learner edit, native diff and full rerun | S7 / Gate B verified in the real host; one live hint, user-saved edit and all three ownership cases passed |
-| Restart/resume and follow-up flow | S8 onward pending |
-| Run scripts and dependency versions | Typecheck, lint, build, product tests and host checks available; versions pinned |
-| GitHub installer and landing website | First S7-based 0.1.0 VSIX packaged; see [installation](docs/installation.md) and [release acceptance](docs/landing-release.md) |
+Version 0.1.0 supports the included milestone approval project and three prepared ownership cases. Its intentionally seeded ownership bug is disclosed in the exercise. Arbitrary repositories, automatic repairs and broader Project Guide operations are not included. The website walkthrough is illustrative.
 
-## Planned demo
+## Development and evidence
 
-**NovaDesk is the prepared sample project used to demonstrate Vadhyar.** It is a small milestone application with simulated actors. The requirement is: **only the owning client may approve a milestone**. A disclosed seeded bug omits the ownership check.
+Use the [installation/source-build guide](docs/installation.md), [implementation plan](docs/implementation-plan.md), [task record](tasks/todo.md) and [release acceptance](docs/landing-release.md). Typecheck, lint, build and 36 product tests passed for the release source. Clean-profile installation, the installed check runner and real Graphify extraction were exercised. Package checks do not establish learning gains or fresh API acceptance.
 
-Requirement → source walkthrough → learner prediction → observed behavior → learner edit → executed checks → archived-milestone follow-up challenge.
-
-The implemented foundations use TypeScript, React, VS Code APIs, Zod, esbuild, Graphify and Vitest. OpenAI Responses API Explain is verified live. See [reuse decisions](docs/reuse-sources.md) for sources and attribution.
-
-## Repository layout
-
-- `src/` — extension host and thin React panel.
-- `novadesk/src/approval.ts` — pure seeded permission decision.
-- `tests/fixture-baseline.test.ts` — three baseline cases, including the disclosed bug.
-- `scripts/` — reproducible setup, run and packaging scripts as they become available.
-- `screenshots/` — images captured from the actual project as it progresses.
-- `docs/` — implementation plan and reuse/source decisions.
-- `docs/assets/` — supplied Vadhyar banner, copied without modification.
-- [CHANGELOG.md](CHANGELOG.md) — meaningful development milestones and actual checks.
-- [AI_USAGE.md](AI_USAGE.md) — actual Codex contributions.
-- [SUBMISSION.md](SUBMISSION.md) — submission details and readiness checklist.
-
-## Run the project
-
-Run commands from the repository root. Node must satisfy `^22.13.0 || ^24.0.0 || >=26.0.0`; recorded build checks use Node 26.7.0 and npm 11.19.0. The development extension uses VS Code 1.140.0 on macOS; Python 3.10+ is required for Graphify, with Python 3.13 verified. See [extension launch](#extension-development-s2a) and [Graphify setup](#graphify-setup-and-recorded-s4-evidence) below. The early VSIX is linked above; the website is a marketing page, not a hosted extension runtime.
-
-```sh
-npm ci
-npm run build
-npm run typecheck
-npm run lint
-npm run test
-# Focused, non-watch baseline:
-npm run test -- tests/fixture-baseline.test.ts
-```
-
-The pure contract is `canApproveMilestone(actor, milestone): boolean`. Actors have an ID and client/freelancer role; milestones have an owning-client ID and active/archived status. The seed checks role only: owner allowed, **different client also allowed (the intentional bug)**, freelancer denied. Baseline tests assert these observations and exercise frozen inputs; green does not mean the ownership requirement is satisfied. Ownership-policy checks are supplied by S1b, and archived rejection is a later transfer exercise.
-
-No API key is needed for source/checkpoint/graph actions, prediction, counterexample, diff or ownership rerun. OpenAI Explain and hints require user API access; see the installation guide for VSIX setup. The API integration stores its key in VS Code SecretStorage, outside source, logs and the panel.
-
-Development tools are TypeScript, ESLint/typescript-eslint and Vitest, with exact versions in package.json and the npm lockfile. TypeScript 6.0.3 stays inside the installed parser's supported range. On the verified npm version, clean installation warns that the optional `fsevents` install script is not approved; non-watch checks succeed without approving it.
-
-## Development workflow
-
-Keep all project code in this repository. After each meaningful milestone, update the changelog and AI usage record and commit the coherent change. Push only when authorized. Add screenshots only when they represent actual implemented behavior. The template suggests a meaningful checkpoint about every 30 minutes while actively building.
-
-GitHub account: [sabari-nath17](https://github.com/sabari-nath17). Participant names and final team membership remain to be confirmed.
-
-## Event
-
-[DevDay Exchange Community: Kochi](https://luma.com/z10nz8gp), 10–11 October 2026. Event details and organizer rules remain in [RULES.md](RULES.md).
-
-## Prepared ownership checks (S1b)
-
-The requirement is in `novadesk/vadhyar-requirement.md`. The extension-owned manifest pins ordinary cases and harness/config hashes in `fixtures/novadesk`. Product tests validate the seed plus disposable correct and incorrect edits; policy failures are not learner successes. Run `npm run test -- tests/scenario-contract.test.ts`. To inspect the disclosed defect directly, run `npm exec -- vitest run --config fixtures/novadesk/vitest.config.ts` (expected exit 1, one ownership failure). The working seed remains unchanged.
-
-## Extension development (S2a)
-
-Run `npm run build`, then `/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --new-window --extensionDevelopmentPath="$PWD" "$PWD/novadesk"`. Trust this prepared folder and run **Vadhyar: Understand this change**. `npm run test:host` launches the installed macOS Code executable in the dedicated `/tmp/vadhyar-host-profile` and requires fresh `/tmp/vadhyar-host-evidence.json`. Close other windows using that test profile before running it. Tests never disable Workspace Trust. This host check is macOS-specific; cross-platform setup is not verified.
-
-The thin panel opens a validated current source reference using the native editor. Only the prepared single local NovaDesk folder is supported. It rejects unknown IDs, unsaved source/requirement buffers, escaping symlinks and stale references. Refresh the context after relevant edits; regenerate graph references when source changes. S5 adds the verified live Explain flow below.
-
-## Requirement and checkpoints (S3)
-
-Read the requirement in the panel and confirm its displayed revision, then **Save source checkpoint**. Exact allowed source contents, hashes and timestamps are saved atomically in VS Code workspace extension storage; no earlier history is inferred. Restart restores confirmed identity. Refresh after requirement edits and confirm the new revision. Unsaved prepared buffers block actions. Limits: 20 requirement revisions and 20 checkpoints; session-clearing/recovery UI and concurrent hosts are later evidence work.
-
-## Graphify setup and recorded S4 evidence
-
-Recorded milestone: **2026-10-10T22:44:02+05:30**. These are prior build results; the presentation update does not rerun or extend them.
-
-Real Graphify 0.9.84 integration is verified in VS Code: four source references, three AST contains relationships, current hash checks, learner mapping confirmation and native navigation. Typecheck/lint/build, 12 product tests and real host acceptance passed. Codex implemented the adapter and checks; human teaching/content review is pending. Gate A still needs S5. Initial Graphify auto-refresh affected the existing Pi skill; its exact prior SKILL.md and stock prior references were restored, but prior custom references are unknown. Runtime disables auto-refresh and isolates HOME.
-
-Graphify development prerequisite (Python 3.13 verified):
-
-```sh
-python3 -m venv .venv-graphify
-.venv-graphify/bin/pip install 'graphifyy==0.9.84'
-.venv-graphify/bin/pip check
-GRAPHIFY_NO_AUTO_REFRESH=1 .venv-graphify/bin/graphify --version
-```
-
-Open only `novadesk` in the Extension Development Host; confirm its requirement, extract source relationships, confirm the proposed mapping and use the source buttons. `npm run test:host` uses the installed macOS VS Code and the isolated `/tmp/vadhyar-host-profile`; trust this prepared folder when prompted. Packaging the Graphify runtime is deferred to S12.
-
-## Explain setup (S5 / Gate A verified)
-
-Install with `npm ci --ignore-scripts`, then typecheck, lint, test and build with the named package scripts. In the trusted NovaDesk Extension Development Host, confirm the requirement, capture source, refresh relationships and confirm the mapping. Select **Preview context for Explain** and inspect its exact expandable payload. **Set API key securely** opens a masked native input; press Enter to save only in VS Code SecretStorage. Never paste a key into chat or project files.
-
-**Share this context and Explain** makes one request to OpenAI. The user setting `vadhyar.model` defaults to `gpt-6-astra`. One real request established access to this model for the configured account; other account/model access remains unverified. No fallback is automatic. The request has a 60-second timeout, no retries and a 4,000-token output ceiling. Cancellation stops the local request; provider billing may still apply. Accepted output is rendered as text with native source buttons and measured response ID/latency/token usage. API errors retain checkpoints; retry explicitly. Edits require saving and refreshing context.
-
-S5 checks passed clean install, typecheck/lint/build and 14 product tests. Gate A passed in the actual trusted Extension Development Host: SecretStorage survived restart; fresh Graphify produced four refs/three relationships; one validated `gpt-6-astra` response took 8,732 ms and used 1,850 tokens (1,468 input/382 output); all three returned source buttons opened correct native selections. The isolated-profile automated S5 host retry stopped at Workspace Trust without fresh evidence; manual live acceptance is recorded separately, with no trust bypass. Validated output/metadata are saved atomically in workspace extension storage `gate-a.json`; key contents are never saved there. The complete learning-loop demo remains pending.
-
-## Saved prediction and trusted counterexample (S6)
-
-In the trusted prepared NovaDesk panel, confirm the current requirement, choose **Allow approval** or **Deny approval**, enter your reasoning and select **Save prediction**. The host saves it atomically in the existing workspace session before enabling **Run ownership counterexample**. The runner executes only the existing `other-client-active` case against a copy of the exact current source, with the pinned trusted harness/config and installed Vitest 5.0.3. Panel messages cannot supply a command, path or alternative case. Unsaved source/requirement buffers block execution; changes during a run invalidate its result.
-
-The unchanged seed produces **Different-client ownership check FAILED**: approval allowed, expected denial, one case executed, two skipped and exit 1. The panel compares this observation with the saved prediction, displays source/requirement hashes and opens the checked function in the native editor. A matching prediction does not turn the failed requirement into a success. Runner errors, invalid output and the 20-second timeout show an execution problem with retry, without a learner verdict.
-
-S6 typecheck, lint, build and all 21 product tests passed, including actual seeded/correct/throwing/hung source runs. Native acceptance verified prediction saved before execution, keyboard focus through Save → Run → result → source, and function selection at lines 12–15; the final run took 484 ms. No OpenAI call was made in S6. S7 retains this before-edit observation while refreshing changed source in the current interaction. Complete attempt persistence/resume after restart belongs to S8.
-
-## Progressive hints and learner verification (S7)
-
-After the failed counterexample, select **Preview hint 1** and inspect the exact instruction/evidence payload. **Share this context and request hint** uses the configured `vadhyar.model` and checks SecretStorage before requesting. If no key is stored, the existing masked native prompt opens. Hints progress through a concept, relevant source fields and a debugging action, with a maximum of three. Each accepted hint records its level, source/requirement/prediction identity, actual response ID, model, time and usage. The coach supplies text guidance and a validated source link; it has no source-edit or command tool.
-
-Edit and save `src/approval.ts` yourself in VS Code. Select **Refresh saved source**, then **Open before/after diff**. The native editor compares a read-only captured baseline with your saved file; exact before/after snapshots are recorded. **Run all three ownership checks** uses only the pinned owner/different-client/freelancer suite against the saved source. The table shows required and actual decisions for every case. An incorrect edit remains **FAILED**; errors and timeout report an execution problem without a learner-answer verdict. Earlier observations and hint links are marked historical after an edit.
-
-S7 product checks passed typecheck, lint, build and 36 tests, including the independently added five Snake tests. Real process checks distinguish seed/correct/deny-all/throwing code and timeout. One live configured `gpt-6-astra` hint was validated (5,423 ms; 1,134 tokens), followed by a user-performed saved edit and inspected native diff in a disposable learning copy. The user triggered the real panel rerun: all three cases passed, none skipped, exit 0, 455 ms. Exact hashes correlate the prediction, diff and runner; the repository seed remains unchanged. This guided development acceptance establishes Gate B without claiming independent understanding. Hint/diff/run activity uses the existing atomic workspace session; activity is limited to 60 events and the complete record to 900,000 characters. Restart/resume UI, broader stale-state coverage, semantic hint-quality evaluation, theme variants and packaging remain later slices. Final milestone checks ran on an isolated S7-only build copy; newer concurrent interface/integration work remains in the shared checkout and is excluded from that checkpoint.
-
-## Build Guide and a small Easter egg
-
-The proposed [Build Guide](docs/build-guide-plan.md) extends Vadhyar with one-feature planning and reviewed, copyable coding prompts. It is a plan, not an implemented project mentor. Bounded project/source selection is a prerequisite because the current learning scenario is NovaDesk-specific.
-
-The panel now includes a local **Snake** Easter egg. Open the **🥚** at the bottom, select **Play**, and use arrow keys/WASD or the direction buttons. Escape pauses; **New game** resets. Leaving the game, closing the egg or hiding the page pauses play. Game state resets when the panel reloads; its score is separate from learning records. It makes no OpenAI requests, reads no project files and adds no dependency.
-
-Snake has five passing logic tests and isolated Chromium keyboard/layout checks at 320, 768, 1024 and 1440 pixels. These browser checks use a mock VS Code bridge; the game has not been exercised in the actual Extension Development Host.
-
-</details>
+Built for [DevDay Kochi](https://luma.com/z10nz8gp). [Event rules](RULES.md) · [AI usage](AI_USAGE.md) · [Change log](CHANGELOG.md) · [Source attribution](docs/reuse-sources.md). No project-wide license has been selected.

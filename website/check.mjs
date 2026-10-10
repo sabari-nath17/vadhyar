@@ -8,6 +8,7 @@ const css = await readFile(join(folder, 'styles.css'), 'utf8');
 assert.equal((html.match(/<h1\b/g) ?? []).length, 1);
 assert(html.includes('releases/download/v0.1.0/vadhyar-0.1.0.vsix'));
 assert(html.includes('Illustrative walkthrough'));
+assert(!/\bdemo\b|novadesk|novadeck/i.test(html));
 assert(html.includes('VS Code 1.140.0'));
 assert(css.includes('prefers-reduced-motion'));
 for (const match of html.matchAll(/(?:src|href)="([^"#]+)"/g)) {

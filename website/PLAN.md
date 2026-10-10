@@ -6,7 +6,7 @@ Goal: publish a direct, responsive website with a real GitHub installer and clea
 
 Use supplied design-v2.md visual language: parchment, charcoal, ochre action, terracotta/teal evidence, local Inter/Playfair, flat 2px sticker borders, 12px corners, authored lotus Guide. Adapt it to a marketing page; do not change extension behavior. No copied mascot, invented users, scores, learning gains or testimonials.
 
-Release the completed S7 source checkpoint (21fdcc9) as the initial 0.1.0 demo. Ongoing mixed extension changes remain a separate development state. Early release supports prepared NovaDesk, not arbitrary repositories. The website interaction is an explicitly labelled example, not a live execution or API call.
+Release the completed S7 source checkpoint (21fdcc9) as the initial 0.1.0 learning release. Ongoing mixed extension changes remain a separate development state. Early release supports prepared milestone, not arbitrary repositories. The website interaction is an explicitly labelled example, not a live execution or API call.
 
 ## Implementation tasks
 

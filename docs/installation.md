@@ -1,6 +1,6 @@
 # Install Vadhyar 0.1.0
 
-**Early NovaDesk demo for macOS on Apple Silicon.** Requires VS Code 1.140.0 or newer and Python 3.10+. This release packages the completed S7 source checkpoint. Later Project Guide, transfer, resume and design-v2 extension work are not part of this installer. The landing page follows design-v2 visually; its walkthrough is an illustration.
+**VS Code learning companion for macOS on Apple Silicon.** Requires VS Code 1.140.0 or newer and Python 3.10+. This release packages the completed S7 source checkpoint. Later Project Guide, transfer, resume and design-v2 extension work are not part of this installer. The landing page follows design-v2 visually; its walkthrough is an illustration.
 
 ## 1. Download and install
 
@@ -21,10 +21,9 @@ Clone the versioned source, then open only the prepared folder:
 ```sh
 git clone --branch v0.1.0 --depth 1 https://github.com/sabari-nath17/vadhyar.git
 cd vadhyar
-code novadesk
 ```
 
-You may instead download the release source ZIP and open its `novadesk` folder. Trust it only after inspecting the source. The actors are simulated; this is not an authentication system. The ownership bug is deliberately seeded.
+You may instead download the release source ZIP and open the included project folder containing `vadhyar-requirement.md`. Trust it only after inspecting the source. The actors are simulated; this is not an authentication system. The ownership bug is deliberately seeded.
 
 The VSIX includes the pinned Vitest 5.0.3 runtime and trusted harness, so the installer does not require `npm ci` for its checks.
 
@@ -62,7 +61,7 @@ Code checkpoints, predictions, hints, diffs and run records use workspace-scoped
 | Symptom | Action |
 |---|---|
 | VS Code refuses installation | Check Help → About. The manifest requires 1.140.0+, macOS Apple Silicon. Do not force installation on an older editor. |
-| Command not visible | Confirm the installed extension is enabled, then reload VS Code. Open the prepared `novadesk` folder in a trusted local window. |
+| Command not visible | Confirm the installed extension is enabled, then reload VS Code. Open the included project folder containing `vadhyar-requirement.md` in a trusted local window. |
 | Graphify extraction fails | Verify the installed extension path, isolated executable and `graphify 0.9.84`; inspect the actionable panel message. |
 | Runner cannot produce a result | Reinstall the original VSIX and preserve its trusted fixtures; inspect the prepared source for exceptions. Do not treat execution errors as a passing case. |
 | API model/key error | Check your API account, billing and accessible model; enter the key only in the native masked prompt. |

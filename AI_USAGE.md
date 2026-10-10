@@ -41,3 +41,7 @@ Codex completed and checked the S5 coach/host/panel boundary and recorded real p
 ## 2026-10-11T04:49:13+05:30 — Landing and installer publication side task
 
 Codex planned and implemented the static design-v2 landing, corrected runtime Vitest packaging, wrote installation docs, exercised source/browser/installed-package checks, and prepared authorized GitHub/Vercel publication in an isolated clone of committed S7. No agents or parent WIP were used. Human review pending. Package limitations and historical versus new acceptance are disclosed in docs/landing-release.md. No API credential values were read or published; no new OpenAI runtime request was made.
+
+## 2026-10-11T04:57:58+05:30 — Public Vadhyar wording
+
+Codex applied the user-requested public wording correction, retained the release scope, and added a regression assertion. No extension behavior, API call, package binary or historical evidence changed. Human review pending.
