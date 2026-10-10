@@ -24,6 +24,8 @@ function App() {
     <p>Captured checkpoints: {state.checkpointCount ?? 0}. Tracking begins at capture; earlier history is unknown.</p>
     <p role="status" aria-live="polite">{state.busy ? 'Loading current source…' : `${state.refs.length} validated source reference(s)`}</p>
     <h2>Current source</h2>
+    <button disabled={state.busy || !state.confirmed} onClick={() => host.postMessage({ type: 'refreshGraph' })}>Refresh source relationships</button>
+    {state.graph && <section><p>Graphify {state.graph.version}: current AST relationships. These propose a requirement mapping; they do not prove policy satisfaction.</p><ul>{state.graph.relationships.map((edge, index) => <li key={index}>{state.refs.find(ref => ref.id === edge.sourceId)?.symbol} {edge.relation} {state.refs.find(ref => ref.id === edge.targetId)?.symbol} ({edge.provenance})</li>)}</ul><button disabled={state.busy || state.mappingConfirmed} onClick={() => host.postMessage({ type: 'confirmMapping', identity: state.graph!.identity })}>{state.mappingConfirmed ? 'Source mapping confirmed' : 'Use these source links for this requirement'}</button></section>}
     {state.refs.map(ref => <button key={ref.id} disabled={state.busy} onClick={() => host.postMessage({ type: 'openSource', id: ref.id })}>{ref.symbol} — {ref.path}:{ref.startLine}–{ref.endLine}</button>)}
   </main>;
 }

@@ -83,3 +83,18 @@ The thin panel opens a validated current source reference using the native edito
 ## Requirement and checkpoints (S3)
 
 Read the requirement in the panel and confirm its displayed revision, then **Save source checkpoint**. Exact allowed source contents, hashes and timestamps are saved atomically in VS Code workspace extension storage; no earlier history is inferred. Restart restores confirmed identity. Refresh after requirement edits and confirm the new revision. Unsaved prepared buffers block actions. Limits: 20 requirement revisions and 20 checkpoints; session-clearing/recovery UI and concurrent hosts are later evidence work.
+
+### S4 — 2026-10-10T22:44:02+05:30
+
+Real Graphify 0.9.84 integration is verified in VS Code: four source references, three AST contains relationships, current hash checks, learner mapping confirmation and native navigation. Typecheck/lint/build, 12 product tests and real host acceptance passed. Codex implemented the adapter and checks; human teaching/content review is pending. Gate A still needs S5. Initial Graphify auto-refresh affected the existing Pi skill; its exact prior SKILL.md and stock prior references were restored, but prior custom references are unknown. Runtime disables auto-refresh and isolates HOME.
+
+Graphify development prerequisite (Python 3.13 verified):
+
+```sh
+python3 -m venv .venv-graphify
+.venv-graphify/bin/pip install 'graphifyy==0.9.84'
+.venv-graphify/bin/pip check
+GRAPHIFY_NO_AUTO_REFRESH=1 .venv-graphify/bin/graphify --version
+```
+
+Open only `novadesk` in the Extension Development Host; confirm its requirement, extract source relationships, confirm the proposed mapping and use the source buttons. `npm run test:host` uses the installed macOS VS Code and the isolated `/tmp/vadhyar-host-profile`; trust this prepared folder when prompted. Packaging the Graphify runtime is deferred to S12.

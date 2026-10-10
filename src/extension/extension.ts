@@ -4,6 +4,7 @@ import { join } from 'node:path';
 import { panelAction, type PanelState } from '../shared.js';
 import { approvalReference, readPrepared, resolveReference } from './source.js';
 import { loadSession, saveSession } from './session.js';
+import { extractGraph } from './graphify.js';
 import scenario from '../../fixtures/novadesk/scenario.json' with { type: 'json' };
 
 export function activate(context: vscode.ExtensionContext) {
@@ -43,6 +44,17 @@ export function activate(context: vscode.ExtensionContext) {
       if (!session.requirements.some(item => item.revision === req.revision)) throw new Error('Confirm the current requirement before capturing source.');
       session.checkpoints.push({ capturedAt: new Date().toISOString(), path: 'src/approval.ts', content: source.content, hash: source.hash, requirementRevision: req.revision });
       await saveSession(folder, session);
+    } else if (action.type === 'refreshGraph') {
+      if (!session.requirements.some(item => item.revision === req.revision)) throw new Error('Confirm the requirement before extraction.');
+      state = { ...state, graph: undefined, mappingConfirmed: false, refs: [], busy: true, error: undefined };
+      void publish();
+      const graph = await extractGraph(join(context.extensionUri.fsPath, '.venv-graphify/bin/graphify'), folder, source);
+      const current = await prepared();
+      if (current.source.hash !== source.hash || current.requirement.hash !== requirement.hash) throw new Error('Source or requirement changed during extraction; refresh.');
+      state = { ...state, graph, refs: graph.refs, busy: false };
+    } else if (action.type === 'confirmMapping') {
+      if (!state.graph || action.identity !== state.graph.identity || state.graph.sourceHash !== source.hash) throw new Error('Graph mapping is missing or stale.');
+      state = { ...state, mappingConfirmed: true };
     } else if (action.type === 'openSource') {
       const ref = resolveReference(state.refs, action.id, source);
       const doc = await vscode.workspace.openTextDocument(vscode.Uri.file(source.absolutePath));
@@ -59,7 +71,7 @@ export function activate(context: vscode.ExtensionContext) {
   function act(raw: unknown) {
     const result = queue.then(() => perform(raw));
     queue = result.catch(() => undefined);
-    return result;
+    return result.catch(error => { state = { ...state, busy: false }; throw error; });
   }
 
   context.subscriptions.push(log, vscode.commands.registerCommand('vadhyar.open', async () => {

@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "approval",
+      "label": "approval.ts",
+      "file_type": "code",
+      "source_file": "approval.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "approval_actor",
+      "label": "Actor",
+      "file_type": "code",
+      "source_file": "approval.ts",
+      "source_location": "L1",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "approval_milestone",
+      "label": "Milestone",
+      "file_type": "code",
+      "source_file": "approval.ts",
+      "source_location": "L6",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "approval_canapprovemilestone",
+      "label": "canApproveMilestone()",
+      "file_type": "code",
+      "source_file": "approval.ts",
+      "source_location": "L12",
+      "_callable": true,
+      "_origin": "ast"
+    }
+  ],
+  "edges": [
+    {
+      "source": "approval",
+      "target": "approval_actor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "approval.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "approval",
+      "target": "approval_milestone",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "approval.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "approval",
+      "target": "approval_canapprovemilestone",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "approval.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 0,
+  "output_tokens": 0
+}
