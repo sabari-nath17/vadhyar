@@ -4,6 +4,13 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-11T00:14:03+05:30 — Snake Easter egg and Build Guide plan
+
+- Changed: Added `src/panel/snake.ts`, `src/panel/snake-game.tsx` and `tests/snake.test.ts`; integrated one panel component and scoped theme styles. Added `docs/build-guide-plan.md`; updated README, AI_USAGE and task records.
+- Why: User requested project/prompt guidance planning and game Easter eggs, then selected Snake. The proposed guide captures one feature's intent, prepares a focused prompt and reconnects resulting code to the learning loop. The game stays local and separate from learning evidence.
+- Checks: Typecheck, lint, build and focused Snake 5/5 passed; full working-tree product suite passed 35/35, including pre-existing S7 work. Isolated browser checks passed keyboard reveal/steering, direction buttons, pause/resume, blur/close pause, restart, wall loss and board widths 320/768/1024/1440; no game host messages or page errors. Rendered screenshot inspected. Default Playwright browser was absent; existing Chrome used with a disposable context. Initial blur assertion used a disabled mock-host button; corrected the mock ready state and reran successfully.
+- Limits: Build Guide is planned only. No API call, credential access, push or new dependency. Browser checks used a mock host; actual Extension Host game acceptance, theme variants and screen-reader behavior remain unverified. Preserve concurrent S7 source/harness changes; this milestone stages only its own panel integration, game, plan and records.
+
 ## 2026-10-10T23:41:53+05:30 — S6: saved prediction and trusted ownership counterexample
 
 - Changed: Added the fixed Vitest runner in `src/extension/checks.ts`; extended shared actions, the existing atomic session and extension host; added the prediction/result panel and theme-native form styles. The trusted different-client test now reports its actual boolean without changing its expectation; its manifest hash was updated. Added runner tests and extended session/message boundaries; updated project records and current scope instructions.

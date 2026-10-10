@@ -130,4 +130,12 @@ The unchanged seed produces **Different-client ownership check FAILED**: approva
 
 S6 typecheck, lint, build and all 21 product tests passed, including actual seeded/correct/throwing/hung source runs. Native acceptance verified prediction saved before execution, keyboard focus through Save → Run → result → source, and function selection at lines 12–15; the final run took 484 ms. No OpenAI call was made in S6. Prediction records are saved, but the current result and interaction are not resumed after refresh/restart; complete attempt persistence/resume belongs to S8. S7 adds hints, learner edits and the full ownership rerun. Its API prerequisite is an active key stored only in SecretStorage; replacement-key status was not verified in S6.
 
+## Build Guide and a small Easter egg
+
+The proposed [Build Guide](docs/build-guide-plan.md) extends Vadhyar with one-feature planning and reviewed, copyable coding prompts. It is a plan, not an implemented project mentor. Bounded project/source selection is a prerequisite because the current learning scenario is NovaDesk-specific.
+
+The panel now includes a local **Snake** Easter egg. Open the **🥚** at the bottom, select **Play**, and use arrow keys/WASD or the direction buttons. Escape pauses; **New game** resets. Leaving the game, closing the egg or hiding the page pauses play. Game state resets when the panel reloads; its score is separate from learning records. It makes no OpenAI requests, reads no project files and adds no dependency.
+
+Snake has five passing logic tests and isolated Chromium keyboard/layout checks at 320, 768, 1024 and 1440 pixels. These browser checks use a mock VS Code bridge; the game has not been exercised in the actual Extension Development Host.
+
 </details>

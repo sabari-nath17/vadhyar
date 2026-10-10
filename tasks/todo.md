@@ -1,5 +1,14 @@
 # Vadhyar slice task record
 
+## Side task — 2026-10-11T00:14:03+05:30
+
+- Requested: plan a project mentor that helps with intent, small slices and coding prompts; implement game Easter eggs. User selected Snake.
+- Complete: local Snake component/model and five tests, one app import/render and scoped styles. Open the bottom egg to play; keyboard/direction buttons, pause/resume, reset, collisions, growth and win behavior are implemented. No host actions, API calls or learning-session writes originate from the game.
+- Planned only: `docs/build-guide-plan.md` records bounded portability → confirmed intent/copyable prompt → checkpoint/handover → resume. Current prepared source/graph assumptions need generalization before claiming other-project support. Pre-existing S7 code remains work in progress; this task does not certify or advance its live gate.
+- Checks: typecheck/lint/build passed; focused Snake 5/5, full working-tree 35/35. Isolated Chrome/mock-host checks passed keyboard reveal/steering, direction buttons, pause/resume, blur/close pause, reset, wall loss and responsive board. Screenshot inspected; no page errors or game host messages. Actual game Extension Host/theme/screen-reader checks not run.
+- Checkpoint: local milestone intended to contain only this side task. Pre-existing S7 source/harness/session changes and `.ignore` are preserved unstaged; no push. See the milestone commit for its SHA.
+- Next: exercise the egg in the actual Extension Development Host. Complete the original learning loop before authorizing Build Guide G0/G1. No Guide API operation or arbitrary-project verification is implemented.
+
 Updated: 10 October 2026, Asia/Kolkata. Mode: authorized S6 only, no OpenAI request or push. S0b/S1a and S1b–S5/Gate A preserved; S6 complete with saved prediction and a real trusted counterexample. Stop before S7. Earlier planning observations are retained below; current evidence is in the latest handoff.
 
 ## Initial planning inspection (historical snapshot)

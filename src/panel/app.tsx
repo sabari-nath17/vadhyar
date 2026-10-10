@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import type { PanelAction, PanelState } from '../shared.js';
+import { SnakeGame } from './snake-game.js';
 
 declare function acquireVsCodeApi(): { postMessage(message: PanelAction): void };
 const host = acquireVsCodeApi();
@@ -73,6 +74,7 @@ function App() {
         {state.counterexample && state.counterexample.kind !== 'completed' && <p role="alert">Execution problem: {state.counterexample.message}</p>}
       </>}
     </section>
+    <SnakeGame />
   </main>;
 }
 
