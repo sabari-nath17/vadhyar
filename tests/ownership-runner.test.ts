@@ -2,11 +2,49 @@ import { cp, mkdtemp, mkdir, readFile, rm, symlink, writeFile } from 'node:fs/pr
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { expect, it } from 'vitest';
-import { runOwnership, validateOwnershipReport } from '../src/extension/checks.js';
+import { runFullOwnership, runOwnership, validateFullOwnershipReport, validateOwnershipReport } from '../src/extension/checks.js';
 import { hash } from '../src/extension/source.js';
 
 const root = resolve(import.meta.dirname, '..');
 const seed = await readFile(join(root, 'novadesk/src/approval.ts'), 'utf8');
+
+it.each([
+  ['seed', seed, ['passed', 'failed', 'passed']],
+  ['correct edit', seed.replace("return actor.role === 'client';", "return actor.role === 'client' && actor.id === _milestone.ownerClientId;"), ['passed', 'passed', 'passed']],
+  ['deny-all edit', seed.replace("return actor.role === 'client';", 'return false;'), ['failed', 'passed', 'passed']],
+  ['throwing source', seed.replace("return actor.role === 'client';", "throw new Error('execution problem');"), undefined],
+])('full ownership suite distinguishes %s', async (_name, content, expected) => {
+  const folder = await mkdtemp(join(tmpdir(), 'vadhyar-full-'));
+  const source = { path: 'src/approval.ts', absolutePath: '/prepared/src/approval.ts', content, hash: hash(content) };
+  const prediction = { id: '526f0aad-37ef-4fa4-82a8-cd6c56a35542', savedAt: new Date().toISOString(), predictedApproval: false, reasoning: 'Owner only.', sourceHash: hash(seed), requirementRevision: 'a'.repeat(64) };
+  try {
+    const result = await runFullOwnership(root, folder, source, prediction);
+    expect(result).toMatchObject({ baselineHash: hash(seed), sourceHash: source.hash, suiteId: 'ownership' });
+    if (!expected) { expect(result.kind).toBe('executionError'); expect(result).not.toHaveProperty('cases'); }
+    else {
+      expect(result.kind).toBe('completed');
+      if (result.kind !== 'completed') throw new Error('Missing actual suite result.');
+      expect(result.cases.map(item => item.status)).toEqual(expected);
+      expect(result.cases.map(item => item.id)).toEqual(['owner-client-active', 'other-client-active', 'freelancer-active']);
+      expect(result.requirementPassed).toBe(!expected.includes('failed'));
+      expect(result.exitCode).toBe(expected.includes('failed') ? 1 : 0);
+    }
+  } finally { await rm(folder, { recursive: true, force: true }); }
+});
+
+it('full ownership reports cannot pass with missing, skipped or inconsistent cases', () => {
+  const report = { numTotalTests: 3, numPendingTests: 0, numPassedTests: 3, numFailedTests: 0, success: true, testResults: [{ message: '', assertionResults: [
+    { title: 'owner-client-active', status: 'passed', meta: { approval: true } },
+    { title: 'other-client-active', status: 'passed', meta: { approval: false } },
+    { title: 'freelancer-active', status: 'passed', meta: { approval: false } },
+  ] }] };
+  expect(validateFullOwnershipReport(report, 0).requirementPassed).toBe(true);
+  const missing = structuredClone(report); missing.testResults[0].assertionResults.pop();
+  expect(() => validateFullOwnershipReport(missing, 0)).toThrow();
+  const skipped = structuredClone(report); skipped.testResults[0].assertionResults[0].status = 'skipped';
+  expect(() => validateFullOwnershipReport(skipped, 0)).toThrow();
+  expect(() => validateFullOwnershipReport(report, 1)).toThrow();
+});
 
 it.each([
   ['seed', seed, { kind: 'completed', observedApproval: true, requirementPassed: false, exitCode: 1 }],

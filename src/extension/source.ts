@@ -25,6 +25,11 @@ export function approvalReference(source: PreparedFile): SourceRef {
   return { id: `approval-${source.hash}`, path: source.path, startLine, endLine: lines.length, symbol: 'canApproveMilestone', hash: source.hash };
 }
 
+export function withApprovalReference(refs: SourceRef[], source: PreparedFile): SourceRef[] {
+  const approval = approvalReference(source);
+  return [...refs.filter(ref => ref.hash === source.hash && ref.id !== approval.id), approval];
+}
+
 export function resolveReference(refs: SourceRef[], id: string, source: PreparedFile): SourceRef {
   const ref = refs.find(item => item.id === id);
   if (!ref) throw new Error('Unknown source reference.');

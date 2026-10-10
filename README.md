@@ -15,7 +15,7 @@ Built for [DevDay Kochi](https://luma.com/z10nz8gp). [Event rules](RULES.md) · 
 
 ## Current progress
 
-**Development prototype.** S1b–S6 are complete. Gate A verified source navigation, real Graphify extraction and one live source-grounded OpenAI response; S6 verified a saved prediction followed by the trusted ownership counterexample. The [slice record](tasks/todo.md) and [changelog](CHANGELOG.md) hold actual evidence.
+**Development prototype.** S1b–S7 are complete. Gate A verified source navigation, real Graphify extraction and a live source-grounded explanation. Gate B verified prediction → counterexample → live hint → learner-saved edit → native diff → all three ownership checks. The [slice record](tasks/todo.md) and [changelog](CHANGELOG.md) hold actual evidence.
 
 | Area | Status |
 | --- | --- |
@@ -28,7 +28,8 @@ Built for [DevDay Kochi](https://luma.com/z10nz8gp). [Event rules](RULES.md) · 
 | Graphify integration | S4 real extraction and host navigation recorded as verified; four refs and three AST contains relationships |
 | OpenAI runtime coaching | S5 live validated response and all three native citation buttons verified |
 | Saved prediction and ownership counterexample | S6 real runner and native keyboard/source flow verified; seed remains a failed requirement check |
-| Learner edit, full ownership rerun and follow-up flow | S7 onward pending |
+| Progressive hints, learner edit, native diff and full rerun | S7 / Gate B verified in the real host; one live hint, user-saved edit and all three ownership cases passed |
+| Restart/resume and follow-up flow | S8 onward pending |
 | Run scripts and dependency versions | Typecheck, lint, build, product tests and host checks available; versions pinned |
 | Complete working demo, screenshots and VSIX | Pending |
 
@@ -69,7 +70,7 @@ npm run test -- tests/fixture-baseline.test.ts
 
 The pure contract is `canApproveMilestone(actor, milestone): boolean`. Actors have an ID and client/freelancer role; milestones have an owning-client ID and active/archived status. The seed checks role only: owner allowed, **different client also allowed (the intentional bug)**, freelancer denied. Baseline tests assert these observations and exercise frozen inputs; green does not mean the ownership requirement is satisfied. Ownership-policy checks are supplied by S1b, and archived rejection is a later transfer exercise.
 
-No API key is needed for source/checkpoint/graph actions or the S6 prediction and counterexample. OpenAI Explain requires user API access; packaging remains pending. The API integration stores its key in VS Code SecretStorage, outside source, logs and the panel.
+No API key is needed for source/checkpoint/graph actions, prediction, counterexample, diff or ownership rerun. OpenAI Explain and hints require user API access; packaging remains pending. The API integration stores its key in VS Code SecretStorage, outside source, logs and the panel.
 
 Development tools are TypeScript, ESLint/typescript-eslint and Vitest, with exact versions in package.json and the npm lockfile. TypeScript 6.0.3 stays inside the installed parser's supported range. On the verified npm version, clean installation warns that the optional `fsevents` install script is not approved; non-watch checks succeed without approving it.
 
@@ -128,7 +129,15 @@ In the trusted prepared NovaDesk panel, confirm the current requirement, choose 
 
 The unchanged seed produces **Different-client ownership check FAILED**: approval allowed, expected denial, one case executed, two skipped and exit 1. The panel compares this observation with the saved prediction, displays source/requirement hashes and opens the checked function in the native editor. A matching prediction does not turn the failed requirement into a success. Runner errors, invalid output and the 20-second timeout show an execution problem with retry, without a learner verdict.
 
-S6 typecheck, lint, build and all 21 product tests passed, including actual seeded/correct/throwing/hung source runs. Native acceptance verified prediction saved before execution, keyboard focus through Save → Run → result → source, and function selection at lines 12–15; the final run took 484 ms. No OpenAI call was made in S6. Prediction records are saved, but the current result and interaction are not resumed after refresh/restart; complete attempt persistence/resume belongs to S8. S7 adds hints, learner edits and the full ownership rerun. Its API prerequisite is an active key stored only in SecretStorage; replacement-key status was not verified in S6.
+S6 typecheck, lint, build and all 21 product tests passed, including actual seeded/correct/throwing/hung source runs. Native acceptance verified prediction saved before execution, keyboard focus through Save → Run → result → source, and function selection at lines 12–15; the final run took 484 ms. No OpenAI call was made in S6. S7 retains this before-edit observation while refreshing changed source in the current interaction. Complete attempt persistence/resume after restart belongs to S8.
+
+## Progressive hints and learner verification (S7)
+
+After the failed counterexample, select **Preview hint 1** and inspect the exact instruction/evidence payload. **Share this context and request hint** uses the configured `vadhyar.model` and checks SecretStorage before requesting. If no key is stored, the existing masked native prompt opens. Hints progress through a concept, relevant source fields and a debugging action, with a maximum of three. Each accepted hint records its level, source/requirement/prediction identity, actual response ID, model, time and usage. The coach supplies text guidance and a validated source link; it has no source-edit or command tool.
+
+Edit and save `src/approval.ts` yourself in VS Code. Select **Refresh saved source**, then **Open before/after diff**. The native editor compares a read-only captured baseline with your saved file; exact before/after snapshots are recorded. **Run all three ownership checks** uses only the pinned owner/different-client/freelancer suite against the saved source. The table shows required and actual decisions for every case. An incorrect edit remains **FAILED**; errors and timeout report an execution problem without a learner-answer verdict. Earlier observations and hint links are marked historical after an edit.
+
+S7 product checks passed typecheck, lint, build and 36 tests, including the independently added five Snake tests. Real process checks distinguish seed/correct/deny-all/throwing code and timeout. One live configured `gpt-6-astra` hint was validated (5,423 ms; 1,134 tokens), followed by a user-performed saved edit and inspected native diff in a disposable learning copy. The user triggered the real panel rerun: all three cases passed, none skipped, exit 0, 455 ms. Exact hashes correlate the prediction, diff and runner; the repository seed remains unchanged. This guided development acceptance establishes Gate B without claiming independent understanding. Hint/diff/run activity uses the existing atomic workspace session; activity is limited to 60 events and the complete record to 900,000 characters. Restart/resume UI, broader stale-state coverage, semantic hint-quality evaluation, theme variants and packaging remain later slices. Final milestone checks ran on an isolated S7-only build copy; newer concurrent interface/integration work remains in the shared checkout and is excluded from that checkpoint.
 
 ## Build Guide and a small Easter egg
 

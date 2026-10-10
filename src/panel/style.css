@@ -10,6 +10,9 @@ label { display: block; margin: .75rem 0 .25rem; }
 select, textarea { box-sizing: border-box; width: 100%; padding: .5rem; font: inherit; color: var(--vscode-input-foreground); background: var(--vscode-input-background); border: 1px solid var(--vscode-input-border, var(--vscode-panel-border)); }
 select:focus-visible, textarea:focus-visible { outline: 2px solid var(--vscode-focusBorder); outline-offset: 2px; }
 code, [role="status"] { overflow-wrap: anywhere; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: .5rem .25rem; text-align: left; border-bottom: 1px solid var(--vscode-panel-border); }
+caption { text-align: left; margin: .75rem 0; }
 
 .snake-egg { margin-top: 2rem; border-top: 1px solid var(--vscode-panel-border); padding-top: .75rem; }
 .snake-egg > summary { cursor: pointer; width: fit-content; padding: .5rem; }

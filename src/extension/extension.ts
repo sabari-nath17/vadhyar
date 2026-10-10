@@ -3,11 +3,11 @@ import { randomBytes, randomUUID } from 'node:crypto';
 import { rename, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { panelAction, type PanelState } from '../shared.js';
-import { approvalReference, readPrepared, resolveReference } from './source.js';
+import { approvalReference, withApprovalReference, readPrepared, resolveReference, type PreparedFile } from './source.js';
 import { loadSession, saveSession } from './session.js';
 import { extractGraph } from './graphify.js';
-import { explain, previewContext } from './coach.js';
-import { runOwnership } from './checks.js';
+import { explain, previewContext, previewHint, requestHint } from './coach.js';
+import { runFullOwnership, runOwnership } from './checks.js';
 import scenario from '../../fixtures/novadesk/scenario.json' with { type: 'json' };
 
 export function activate(context: vscode.ExtensionContext) {
@@ -16,6 +16,7 @@ export function activate(context: vscode.ExtensionContext) {
   let state: PanelState = { refs: [], busy: false };
   let queue: Promise<unknown> = Promise.resolve();
   let request: AbortController | undefined;
+  let baseline: PreparedFile | undefined;
   const publish = () => panel?.webview.postMessage(state);
   const model = () => vscode.workspace.getConfiguration('vadhyar').get<string>('model', 'gpt-6-astra');
   async function setupKey() {
@@ -46,7 +47,8 @@ export function activate(context: vscode.ExtensionContext) {
     const session = await loadSession(folder);
     const req = { id: scenario.requirementId as 'novadesk-approval-ownership', revision: requirement.hash, text: requirement.content };
     if (action.type === 'ready') {
-      state = { refs: [approvalReference(source)], busy: false };
+      if (!baseline || state.prediction?.requirementRevision !== req.revision) { baseline = undefined; state = { refs: [], busy: false }; }
+      state = { ...state, refs: withApprovalReference(state.refs, source), busy: false };
     } else if (action.type === 'setupKey') {
       await setupKey();
     } else if (action.type === 'confirmRequirement') {
@@ -68,13 +70,68 @@ export function activate(context: vscode.ExtensionContext) {
     } else if (action.type === 'runCounterexample') {
       const prediction = session.predictions.find(item => item.id === action.predictionId);
       if (!prediction || state.prediction?.id !== prediction.id || prediction.sourceHash !== source.hash || prediction.requirementRevision !== req.revision) throw new Error('Save a prediction for the current source and requirement before running.');
-      if (state.counterexample?.kind === 'completed') throw new Error('This counterexample is already observed. Learner edits and reruns follow in S7.');
+      if (state.counterexample?.kind === 'completed') throw new Error('This counterexample is already observed. Edit and save source, open its diff, then rerun all ownership checks.');
       state = { ...state, counterexample: undefined, counterexampleRunning: true, busy: true, error: undefined }; void publish();
       const result = await runOwnership(context.extensionUri.fsPath, folder, source, prediction);
       const current = await prepared();
       if (current.source.hash !== source.hash || current.requirement.hash !== req.revision || state.prediction?.id !== prediction.id) throw new Error('Source or requirement changed during the run; no current outcome was accepted. Refresh and predict again.');
-      state = { ...state, counterexample: result, counterexampleRunning: false, busy: false };
+      if (result.kind === 'completed') baseline = source;
+      state = { ...state, baselineHash: baseline?.hash, hints: [], counterexample: result, counterexampleRunning: false, busy: false };
       log.appendLine(`counterexample: ${result.kind}; runId=${result.id}; latencyMs=${result.latencyMs}`);
+    } else if (['previewHint', 'hint', 'openDiff', 'runOwnership'].includes(action.type)) {
+      const prediction = session.predictions.find(item => item.id === state.prediction?.id);
+      const counterexample = state.counterexample;
+      if (!baseline || !prediction || prediction.sourceHash !== baseline.hash || prediction.requirementRevision !== req.revision || counterexample?.kind !== 'completed' || counterexample.requirementPassed || counterexample.predictionId !== prediction.id) throw new Error('Observe the saved prediction’s failed ownership counterexample before guided editing.');
+      if (session.activity.length >= 60) throw new Error('This session has reached its 60-activity limit.');
+      if (action.type === 'previewHint' || action.type === 'hint') {
+        const refs = [approvalReference(source)];
+        const previous = state.hints?.map(item => item.result.hint) ?? [];
+        if (previous.length >= 3) throw new Error('All three hint levels are used. Edit and save source, then open the diff and rerun checks.');
+        const preview = previewHint(model(), requirement, source, refs, prediction, counterexample, previous);
+        if (action.type === 'previewHint') {
+          state = { ...state, hintPreview: preview, refs: withApprovalReference(state.refs, source) };
+        } else {
+          if (state.hintPreview?.identity !== preview.identity || action.identity !== preview.identity) throw new Error('Hint preview is missing or stale; preview the current context again.');
+          state = { ...state, hasKey: Boolean(await context.secrets.get('openai.apiKey')) }; await publish();
+          if (!state.hasKey) await setupKey();
+          const key = await context.secrets.get('openai.apiKey');
+          if (!key) throw new Error('Secure key entry was cancelled; no hint request was made.');
+          const beforeRequest = await prepared();
+          if (beforeRequest.source.hash !== source.hash || beforeRequest.requirement.hash !== req.revision || model() !== preview.model || state.hintPreview?.identity !== preview.identity) throw new Error('Context changed; preview the hint again before sharing.');
+          state = { ...state, busy: true, error: undefined }; void publish();
+          request = new AbortController();
+          let result;
+          try { result = await requestHint(key, preview, refs, previous.length + 1, request.signal); }
+          finally { request = undefined; }
+          const current = await prepared();
+          if (current.source.hash !== source.hash || current.requirement.hash !== req.revision || model() !== preview.model || state.hintPreview?.identity !== preview.identity || state.prediction?.id !== prediction.id) throw new Error('Context changed during the request; no hint was accepted.');
+          const evidence = { id: randomUUID(), type: 'hint' as const, predictionId: prediction.id, recordedAt: new Date().toISOString(), sourceHash: source.hash, requirementRevision: req.revision, counterexampleId: counterexample.id, contextIdentity: preview.identity, result };
+          session.activity.push(evidence);
+          await saveSession(folder, session);
+          state = { ...state, hints: [...(state.hints ?? []), evidence], hintPreview: undefined, refs: withApprovalReference(state.refs, source), busy: false };
+          log.appendLine(`hint: validated; level=${result.hint.level}; responseId=${result.responseId}; latencyMs=${result.latencyMs}; totalTokens=${result.usage?.totalTokens ?? 'unavailable'}`);
+        }
+      } else if (action.type === 'openDiff') {
+        if (source.hash === baseline.hash) throw new Error('Edit and save approval.ts yourself before opening the before/after diff.');
+        await vscode.commands.executeCommand('vscode.diff', vscode.Uri.from({ scheme: 'vadhyar-before', path: '/src/approval.ts', query: baseline.hash }), vscode.Uri.file(source.absolutePath), 'NovaDesk — before edit ↔ saved source', { preview: true, viewColumn: vscode.ViewColumn.One });
+        const current = await prepared();
+        if (current.source.hash !== source.hash || current.requirement.hash !== req.revision || state.prediction?.id !== prediction.id) throw new Error('Source changed while opening the diff; save and open it again.');
+        const diff = { id: randomUUID(), type: 'diff' as const, predictionId: prediction.id, recordedAt: new Date().toISOString(), sourceHash: source.hash, requirementRevision: req.revision, before: { content: baseline.content, hash: baseline.hash }, after: { content: source.content, hash: source.hash } };
+        session.activity.push(diff);
+        await saveSession(folder, session);
+        state = { ...state, diff };
+      } else if (action.type === 'runOwnership') {
+        const diff = state.diff;
+        if (!diff || diff.predictionId !== prediction.id || diff.before.hash !== baseline.hash || diff.after.hash !== source.hash || diff.requirementRevision !== req.revision) throw new Error('Open the before/after diff for your current saved source before rerunning.');
+        state = { ...state, ownershipRun: undefined, ownershipRunning: true, busy: true, error: undefined }; void publish();
+        const result = await runFullOwnership(context.extensionUri.fsPath, folder, source, prediction);
+        const current = await prepared();
+        if (current.source.hash !== source.hash || current.requirement.hash !== req.revision || state.prediction?.id !== prediction.id || state.diff?.id !== diff.id) throw new Error('Source changed during the rerun; no current verdict was accepted. Save and open the diff again.');
+        session.activity.push({ type: 'ownership', diffId: diff.id, run: result });
+        await saveSession(folder, session);
+        state = { ...state, ownershipRun: result, ownershipRunning: false, busy: false };
+        log.appendLine(`ownership: ${result.kind}; runId=${result.id}; latencyMs=${result.latencyMs}`);
+      }
     } else if (action.type === 'refreshGraph') {
       if (!session.requirements.some(item => item.revision === req.revision)) throw new Error('Confirm the requirement before extraction.');
       state = { ...state, graph: undefined, mappingConfirmed: false, preview: undefined, explanation: undefined, refs: [], busy: true, error: undefined };
@@ -128,12 +185,18 @@ export function activate(context: vscode.ExtensionContext) {
     if (parsed.success && parsed.data.type === 'cancelExplain') { request?.abort(); return Promise.resolve(state); }
     const result = queue.then(() => perform(raw));
     queue = result.catch(() => undefined);
-    return result.catch(error => { state = { ...state, busy: false, counterexampleRunning: false }; throw error; });
+    return result.catch(error => { state = { ...state, busy: false, counterexampleRunning: false, ownershipRunning: false }; throw error; });
   }
 
-  context.subscriptions.push(log, vscode.commands.registerCommand('vadhyar.setupKey', setupKey), vscode.workspace.onDidChangeTextDocument(event => {
+  context.subscriptions.push(log, vscode.workspace.registerTextDocumentContentProvider('vadhyar-before', {
+    provideTextDocumentContent(uri) {
+      if (!baseline || uri.path !== '/src/approval.ts' || uri.query !== baseline.hash) throw new Error('Captured before-edit source is unavailable.');
+      return baseline.content;
+    },
+  }), vscode.commands.registerCommand('vadhyar.setupKey', setupKey), vscode.workspace.onDidChangeTextDocument(event => {
     if (event.document.uri.scheme === 'file' && /\/(src\/approval\.ts|vadhyar-requirement\.md)$/.test(event.document.uri.path)) {
-      state = { ...state, refs: [], sourceHash: undefined, prediction: undefined, counterexample: undefined, graph: undefined, mappingConfirmed: false, preview: undefined, explanation: undefined, error: 'Prepared source changed; save and refresh current context.' };
+      if (!baseline || event.document.uri.path.endsWith('/vadhyar-requirement.md')) { baseline = undefined; state = { ...state, prediction: undefined, counterexample: undefined, baselineHash: undefined, hints: undefined }; }
+      state = { ...state, refs: [], sourceHash: undefined, hintPreview: undefined, diff: undefined, ownershipRun: undefined, graph: undefined, mappingConfirmed: false, preview: undefined, explanation: undefined, error: `Prepared source changed; save and refresh current context.${baseline ? ' Before-edit evidence is retained for this interaction.' : ''}` };
       void publish();
     }
   }), vscode.commands.registerCommand('vadhyar.open', async () => {
