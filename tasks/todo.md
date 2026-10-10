@@ -285,3 +285,10 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - Baseline: completed S4 0dfbb8527052096901a18484c87e28a96d6d1f61; remote main observed at 9a95200d9d77aed1e08c80c4b936f19c7f41b99b. Remote is an ancestor. Publish this completed baseline with the README/assets/required presentation records; pending S5/OpenAI files and dependencies remain local.
 - New commit boundary: README.md, CHANGELOG.md, AI_USAGE.md, tasks/todo.md and two docs/assets images only. Required records/anchors/rule limits and baseline credential-pattern checks passed. No source rewrite, reset, force-push, unrelated staging or application checks.
 - Next: commit this boundary and push its exact SHA to remote main. Verify remote commit and logo bytes, then report the result. The main build retains its current branch and in-progress S5 work.
+
+
+## Publication verified — 2026-10-10T22:54:25+05:30
+
+- Presentation commit 15e9a8c2e68f3ee46ca0cf5f0495758957f2bea6 was fast-forward published to origin/main and confirmed through GitHub API. All six published README/image/record blobs match the local commit.
+- Completed S4 source was published unchanged; pending S5 files/dependencies remain local and unstaged. The active branch is still codex/s0b-s1a; no checkout/reset/rebase or force-push occurred. This side task does not authorize publishing subsequent S5 work.
+- Follow-up: commit/publish this verification-only record within the same authorized publication. Main build resumes S5 and should preserve this new documentation checkpoint. No application tests or browser visual check performed here.

@@ -4,6 +4,12 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-10T22:54:25+05:30 — Presentation publication verified
+
+- Published presentation commit 15e9a8c2e68f3ee46ca0cf5f0495758957f2bea6 to canonical remote main with a normal fast-forward push. It includes the previously completed S4 history; its own diff has only README, two supplied images and three documentation records.
+- GitHub API confirmed remote main SHA and all six file blob identities. Source/config/test/script/package trees are byte-identical between S4 and the presentation commit. Existing uncommitted S5/OpenAI work remains local and unstaged.
+- No application checks were rerun, no force-push/reset/history rewrite was used, and browser appearance remains unchecked. This verification record is a subsequent documentation-only milestone.
+
 ## 2026-10-10T22:52:28+05:30 — Authorized presentation publication checkpoint
 
 - User explicitly authorized publication provided existing code is preserved. Remote main was 9a95200; the reviewed completed local baseline is 0dfbb85 (S4). Publication includes that existing committed build so README commands have their matching source, plus only the six presentation/documentation paths in this new milestone.
