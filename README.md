@@ -16,7 +16,7 @@ Created from the [DevDay Kochi hackathon template](https://github.com/anima-rege
 | Product direction and implementation plan | Documented; see [the plan](docs/implementation-plan.md) |
 | Slice status and development instructions | [Task record](tasks/todo.md), [AGENTS.md](AGENTS.md) and [.customrules](.customrules); S0b complete |
 | NovaDesk fixture | S1a implemented and baseline-tested; disclosed ownership bug retained |
-| VS Code extension | S2a activation/build verified; functional panel actions next |
+| VS Code extension | S2b thin panel and native source navigation verified |
 | Graphify integration and OpenAI runtime coaching | Planned; not runtime-verified |
 | Run scripts and dependency versions | Typecheck, lint and non-watch baseline tests available; versions pinned |
 | Working demo and screenshots | Pending implementation |
@@ -77,3 +77,5 @@ The requirement is in `novadesk/vadhyar-requirement.md`. The extension-owned man
 ## Extension development (S2a)
 
 Run `npm run build`, then `/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --new-window --extensionDevelopmentPath="$PWD" "$PWD/novadesk"`. Trust this prepared folder and run **Vadhyar: Understand this change**. `npm run test:host` launches the installed macOS Code executable in the dedicated `/tmp/vadhyar-host-profile` and requires fresh `/tmp/vadhyar-host-evidence.json`. Close other windows using that test profile before running it. Tests never disable Workspace Trust. This host check is macOS-specific; cross-platform setup is not verified.
+
+The thin panel opens a validated current source reference using the native editor. Only the prepared single local NovaDesk folder is supported. It rejects unknown IDs, unsaved source/requirement buffers, escaping symlinks and stale references. Reopen the panel to rebuild its initial source reference. Confirmation/checkpoint and graph/API actions follow in their own slices.

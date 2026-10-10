@@ -1,6 +1,6 @@
 # Vadhyar slice task record
 
-Updated: 10 October 2026, Asia/Kolkata. Mode: authorized through Gate A, no push. S0b/S1a preserved; S1b/S2a complete. S2b is next. Earlier planning observations are retained below; current evidence is in the latest handoff.
+Updated: 10 October 2026, Asia/Kolkata. Mode: authorized through Gate A, no push. S0b/S1a preserved; S1b/S2a/S2b complete. S3 is next. Earlier planning observations are retained below; current evidence is in the latest handoff.
 
 ## Initial planning inspection (historical snapshot)
 
@@ -95,7 +95,7 @@ The original ordered plan is retained here. S0b and S1a are complete; later impl
 | S1a | S0b | COMPLETE: pure seeded permission rule and runnable green baseline; ownership defect explicitly retained | Clean npm ci, strict typecheck, lint, focused/full baseline tests and no-match failure guard passed |
 | S1b | S1a | COMPLETE: prepared ownership requirement and trusted ordinary check harness | Seed gives exactly the expected ownership failure; a correct disposable edit passes; incorrect edit fails |
 | S2a | S1a | COMPLETE: extension manifest/entrypoint and esbuild bootstrap open in actual host | Build and real activation; unsupported/untrusted workspace recovery |
-| S2b | S2a | One React panel, validated actions and safe native source opening | Message/reference tests; host keyboard and navigation checks |
+| S2b | S2a | COMPLETE: one React panel, validated actions and safe native source opening | Message/reference tests; host keyboard and navigation checks |
 | S3 | S1b, S2b | Confirm requirement, capture exact source, persist initial session atomically | Exact-content/hash tests; restart restores confirmed identity; failed write preserves valid record |
 | S4 | S3 | Real Graphify output yields up to five current source references; learner confirms the proposed requirement mapping | Pinned CLI run, raw-schema/reference tests, actual navigation, stale/failed refresh state |
 | S5 | S4 | SecretStorage key setup, context preview, live Explain response | One real validated request; refusal/error/ID tests; measured latency/usage. Gate A: integrations |
@@ -247,3 +247,9 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - S2a: extension manifest, esbuild bootstrap, native command and real-host activation check. Typecheck, lint, build and product 7/7 passed. Real VS Code 1.140.0 host evidence at /tmp/vadhyar-host-evidence.json confirms activation, trusted prepared workspace and panel opening. Initial CLI launches gave no evidence/untrusted failures; fixed fail-closed freshness guard, direct Code executable and explicit /tmp profile path after macOS tmpdir mismatch. User confirmed workspace trust. No global trust disable. esbuild 0.28.2/@types/vscode 1.140.0 installed with scripts disabled; build uses the registry native binary. Source navigation/unsupported-workspace handling arrive in S2b; integrations not checked. S1b checkpoint faf9b98 retained; no push.
 - Files: package.json/lockfile, scripts/build.mjs, scripts/test-host.mjs, scripts/host-test.ts, src/extension/extension.ts, compiler/lint config and required records.
 - Commands: npm run typecheck; npm run lint; npm run build; npm run test; npm run test:host. Only fresh host evidence counts; process exit alone is insufficient. Diff reviewed; checkpoint locally.
+
+## S2b handoff — 2026-10-10T22:19:56+05:30
+
+- S2b: thin React panel, strict Zod ready/openSource actions, allowlisted real-path source reads and host-issued hash-bound references. Unknown IDs, invalid spans, traversal/symlink escape and stale source are rejected; prepared workspace must be single/local/trusted with the expected requirement ID. CSP permits only extension scripts/styles; React renders text. Typecheck/lint/build passed; focused boundaries 2/2, full product 9/9. Real host opened src/approval.ts and selected line 12; invented reference rejected. Fresh evidence /tmp/vadhyar-host-evidence.json. Installed exact React/react-dom 19.3.0, types 19.3.0, Zod 4.6.5 with scripts disabled. UI keyboard/theme review not yet performed; no polished preview or verification runner. S2a commit 43eba1d preserved.
+- Files: src/shared.ts, src/extension/{extension,source}.ts, src/panel/{app.tsx,style.css}, tests/source-boundary.test.ts, host/build scripts, package/lock/compiler config and records.
+- Exact checks: npm run typecheck; npm run lint; npm run test -- tests/source-boundary.test.ts; npm run build; npm run test:host; npm run test. Diff reviewed before checkpoint; no push. Next S3 confirmation and atomic snapshots.

@@ -1,0 +1,7 @@
+body { color: var(--vscode-foreground); background: var(--vscode-editor-background); font-family: var(--vscode-font-family); font-size: var(--vscode-font-size); }
+main { max-width: 52rem; margin: 0 auto; padding: 1rem; }
+h1 { font-size: 1.5rem; } h2 { font-size: 1.125rem; }
+button { display: block; margin: .75rem 0; padding: .5rem .75rem; color: var(--vscode-button-foreground); background: var(--vscode-button-background); border: 1px solid transparent; cursor: pointer; text-align: left; }
+button:hover { background: var(--vscode-button-hoverBackground); } button:focus-visible { outline: 2px solid var(--vscode-focusBorder); outline-offset: 2px; }
+button:disabled { opacity: .6; cursor: default; } [role="alert"] { color: var(--vscode-errorForeground); }
+pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: .75rem; border: 1px solid var(--vscode-panel-border); }

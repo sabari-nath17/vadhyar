@@ -4,6 +4,11 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-10T22:19:56+05:30 — S2b: validated native navigation
+
+- S2b: thin React panel, strict Zod ready/openSource actions, allowlisted real-path source reads and host-issued hash-bound references. Unknown IDs, invalid spans, traversal/symlink escape and stale source are rejected; prepared workspace must be single/local/trusted with the expected requirement ID. CSP permits only extension scripts/styles; React renders text. Typecheck/lint/build passed; focused boundaries 2/2, full product 9/9. Real host opened src/approval.ts and selected line 12; invented reference rejected. Fresh evidence /tmp/vadhyar-host-evidence.json. Installed exact React/react-dom 19.3.0, types 19.3.0, Zod 4.6.5 with scripts disabled. UI keyboard/theme review not yet performed; no polished preview or verification runner. S2a commit 43eba1d preserved.
+
+
 ## 2026-10-10T22:15:30+05:30 — S2a: real extension activation
 
 - S2a: extension manifest, esbuild bootstrap, native command and real-host activation check. Typecheck, lint, build and product 7/7 passed. Real VS Code 1.140.0 host evidence at /tmp/vadhyar-host-evidence.json confirms activation, trusted prepared workspace and panel opening. Initial CLI launches gave no evidence/untrusted failures; fixed fail-closed freshness guard, direct Code executable and explicit /tmp profile path after macOS tmpdir mismatch. User confirmed workspace trust. No global trust disable. esbuild 0.28.2/@types/vscode 1.140.0 installed with scripts disabled; build uses the registry native binary. Source navigation/unsupported-workspace handling arrive in S2b; integrations not checked. S1b checkpoint faf9b98 retained; no push.
