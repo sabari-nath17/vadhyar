@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "scenarioId": "novadesk-ownership-v1",
+  "requirementId": "novadesk-approval-ownership",
+  "requirementPath": "vadhyar-requirement.md",
+  "allowedSources": [
+    "src/approval.ts"
+  ],
+  "entrypoint": {
+    "path": "src/approval.ts",
+    "symbol": "canApproveMilestone"
+  },
+  "suite": "ownership",
+  "caseIds": [
+    "owner-client-active",
+    "other-client-active",
+    "freelancer-active"
+  ],
+  "trustedHashes": {
+    "fixtures/novadesk/ownership.test.ts": "0740c53cd64fa264644088070d1c81121a64c6cfe4dffd6dadccd37379ab6673",
+    "fixtures/novadesk/vitest.config.ts": "b9f0a437f70f6db5a16d404388f85fc04e1d95a5d2e2791b1e037d59a2add753"
+  }
+}

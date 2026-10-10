@@ -4,6 +4,12 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-10T22:06:20+05:30 — S1b: trusted prepared ownership checks
+
+- Added requirement, scenario/harness/config, product contract tests and type/test configuration. Updated scope/status records.
+- Typecheck/lint passed; product 7/7; seed policy 2 passes/1 expected failure; correct disposable edit 3/3; deny-all rejected. Source seed unchanged. Runtime/editor/API integration remains pending.
+
+
 ## 2026-10-10T21:53:27.000+05:30 — S1a: testable NovaDesk seeded fixture
 
 - Changed: Added package.json/lockfile, ESLint configuration, the pure actor/milestone approval contract and three labeled baseline cases. Updated README, task/AI records and SUBMISSION's canonical repository URL and fixture/check status.

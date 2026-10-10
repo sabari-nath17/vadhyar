@@ -1,6 +1,6 @@
 # Vadhyar slice task record
 
-Updated: 10 October 2026, Asia/Kolkata. Mode: build authorized for S0b and S1a only. Both complete; stop here. S1b is next and not implemented. Earlier planning observations are retained below; current evidence is in the latest handoff.
+Updated: 10 October 2026, Asia/Kolkata. Mode: authorized through Gate A, no push. S0b/S1a preserved; S1b complete. S2a is next. Earlier planning observations are retained below; current evidence is in the latest handoff.
 
 ## Initial planning inspection (historical snapshot)
 
@@ -93,7 +93,7 @@ The original ordered plan is retained here. S0b and S1a are complete; later impl
 | S0 | None | Repository/skill inspection and planning record complete; human acceptance pending | Inspect record and chat plan; no code changed |
 | S0b | Accepted S0 | COMPLETE: lean rules/exclusions; canonical history reconciled; existing local files/Graft preserved | Links, under-50-line limits, ignore probes, protected-file comparison and diff checks passed |
 | S1a | S0b | COMPLETE: pure seeded permission rule and runnable green baseline; ownership defect explicitly retained | Clean npm ci, strict typecheck, lint, focused/full baseline tests and no-match failure guard passed |
-| S1b | S1a | Prepared ownership requirement and trusted ordinary check harness | Seed gives exactly the expected ownership failure; a correct disposable edit passes; incorrect edit fails |
+| S1b | S1a | COMPLETE: prepared ownership requirement and trusted ordinary check harness | Seed gives exactly the expected ownership failure; a correct disposable edit passes; incorrect edit fails |
 | S2a | S1a | Extension manifest/entrypoint and esbuild bootstrap open in actual host | Build and real activation; unsupported/untrusted workspace recovery |
 | S2b | S2a | One React panel, validated actions and safe native source opening | Message/reference tests; host keyboard and navigation checks |
 | S3 | S1b, S2b | Confirm requirement, capture exact source, persist initial session atomically | Exact-content/hash tests; restart restores confirmed identity; failed write preserves valid record |
@@ -232,3 +232,12 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - Human review: slice authorization supplied; file-level review pending. Automated checks do not establish a working hackathon demo or learning outcome.
 - Next slice S1b: prepared requirement, trusted ordinary ownership checks/scenario manifest and fixture-contract evidence that distinguishes the intentional seed failure from product-suite success. Reuse the current source and five-file bootstrap; do not fix ownership in the baseline seed.
 - Not checked/implemented: archived-policy cases, runtime runner/integrity, editor host/UI, Graphify, OpenAI, VSIX, demo rehearsal or cross-platform behavior. Stop after this handoff.
+
+## S1b handoff — 2026-10-10T22:06:20+05:30
+
+- Plan: requirement, trusted manifest/harness/config and real seed/correct/incorrect contract checks. Added root TypeScript/Vitest config because alias typechecking and product/harness separation require them. Prior completed checkpoints 6186c17/fc3512d remain ancestors. Origin still 9a95200.
+- Files: novadesk/vadhyar-requirement.md; fixtures/novadesk/{scenario.json,ownership.test.ts,vitest.config.ts}; tests/scenario-contract.test.ts; tsconfig.json; vitest.config.ts; package scripts. Updated authorization text without expanding past S5.
+- RED: contract test initially could not load the missing manifest (exit 1); no claim of behavioral red at that point. TypeScript needed explicit installed Node types in the project config; corrected, no added dependency.
+- Evidence: strict typecheck/lint passed; focused contract 4/4 and full product 7/7 passed. Fixed policy command exited 1 with exactly owner-client-active passed, other-client-active failed, freelancer-active passed. Disposable correct source edit yielded 3 passes/exit 0; deny-all yielded owner failure/exit 1. Working approval.ts was never edited. Manifest hashes match trusted tests/config.
+- Exact commands: npm run typecheck; npm run lint; npm run test -- tests/scenario-contract.test.ts; npm run test; npm exec -- vitest run --config fixtures/novadesk/vitest.config.ts --reporter=json --outputFile=/tmp/vadhyar-ownership-seed.json. Diff/whitespace reviewed before local checkpoint.
+- Next: S2a extension activation/build, then S2b safe source navigation. Harness runtime, UI, graph and API not verified yet. No push; .ignore/Graft preserved.

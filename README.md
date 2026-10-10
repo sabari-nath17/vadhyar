@@ -69,3 +69,7 @@ GitHub account: [sabari-nath17](https://github.com/sabari-nath17). Participant n
 ## Event
 
 [DevDay Exchange Community: Kochi](https://luma.com/z10nz8gp), 10–11 October 2026. Event details and organizer rules remain in [RULES.md](RULES.md).
+
+## Prepared ownership checks (S1b)
+
+The requirement is in `novadesk/vadhyar-requirement.md`. The extension-owned manifest pins ordinary cases and harness/config hashes in `fixtures/novadesk`. Product tests validate the seed plus disposable correct and incorrect edits; policy failures are not learner successes. Run `npm run test -- tests/scenario-contract.test.ts`. To inspect the disclosed defect directly, run `npm exec -- vitest run --config fixtures/novadesk/vitest.config.ts` (expected exit 1, one ownership failure). The working seed remains unchanged.

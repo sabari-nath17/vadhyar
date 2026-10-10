@@ -12,8 +12,8 @@
     "node": "^22.13.0 || ^24.0.0 || >=26.0.0"
   },
   "scripts": {
-    "typecheck": "tsc --noEmit --strict --target ES2022 --module NodeNext --moduleResolution NodeNext novadesk/src/approval.ts tests/fixture-baseline.test.ts",
-    "lint": "eslint novadesk/src tests eslint.config.mjs --max-warnings=0",
+    "typecheck": "tsc --project tsconfig.json",
+    "lint": "eslint novadesk/src tests fixtures eslint.config.mjs --max-warnings=0",
     "test": "vitest run --reporter=verbose"
   },
   "devDependencies": {
