@@ -149,3 +149,10 @@ Codex used Vadhyar Build, Skill Router, Ponytail, Incremental Implementation, do
 ### 2026-10-11T08:27:03+05:30 — Pitch deck upload
 
 User explicitly authorized publishing the deck to GitHub. Codex located the latest final 25-slide exports, checked basic package integrity, added download links and prepared a narrowly scoped remote commit from canonical main. The deck content was not rewritten; human content review remains separate. No credentials were printed, no application tests/API requests were made, and no ongoing local build changes were staged or published.
+
+
+## 2026-10-11T09:06:47+05:30 — README feature and screenshot side request
+
+Codex used Skill Router, Vadhyar Build, documentation, Demo Readiness, Computer and verification-before-completion capabilities to capture the actual released interface in disposable NovaDesk/SeatCheck workspaces and improve its GitHub presentation. No sub-agents, generated product imagery, runtime edits, API requests or credential-value access. Native actions used existing approval/check/navigation controls; source edits and the prediction were Codex developer rehearsals, not independent learner work. Human content/teaching-quality review remains pending.
+
+Fresh verification: five original 2940 × 1846 JPEGs visually inspected and image metadata checked; 58 local links, rule limits, whitespace and limited document secret-pattern review passed. Native ownership checks matched 3/3 after the disclosed developer edit; SeatCheck's approved existing test passed 3/3 with exit 0. Three runtime bundles match the installed 0.1.1 package, and protected active learner/source records plus parent Git state are unchanged. Full automated source checks and live teaching evidence remain separately dated. The isolated clone had no usable Graft index; targeted source lookup used the existing search fallback, with no index or dependency upgrade.

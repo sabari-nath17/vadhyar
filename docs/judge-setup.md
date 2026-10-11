@@ -46,6 +46,7 @@ Setup does **not** exercise the native panel or make a live OpenAI request. Inst
 - Unsupported system or old prerequisite: stop, install a supported prerequisite or use the supported presentation machine. Do not bypass the platform check.
 - Download/pip/network/timeout error: setup exits nonzero and keeps its partial new folder for inspection; no success evidence is written. Retry with another **new** folder after resolving the stated operation. No existing folder is reset.
 - Existing destination: use `Vadhyar-judge-002`, for example. Saved code/session records, Project Guide records and the active development profile are not cleanup targets.
+- Keep the destination path short, as in the example. A deeply nested macOS user-data directory can exceed VS Code's IPC socket-path limit and exit without opening a window. This occurred during screenshot rehearsal; use another new, shorter destination rather than resetting an existing profile.
 - Python dependencies: use a supported Python; the fresh setup used 3.14.7 and checks the new environment with `pip check`.
 - Model/account rejection: check account credit and the selected model through the normal account controls. Do not interpret a rejected request as a successful explanation.
 

@@ -618,3 +618,14 @@ Public Vadhyar wording updated on the landing/README/setup/release copy. No sour
 - Source: final Vadhyar hackathon export prepared 11 October 2026; 25 slides. PDF basic signature and PowerPoint archive integrity passed. No source, build, installer or runtime change.
 - Checkpoint: this upload commit is based on remote main `f1436c17396dd73d80816af79958af047222be07`; its exact SHA is in repository Git history. Remote file hashes will be checked after publishing and reported in the chat.
 - Preservation: working checkout, local branch, staging index and active build work are untouched. Next: use the published deck; ongoing implementation belongs to the parent task.
+
+
+## 2026-10-11T09:06:47+05:30 — GitHub feature highlights and product captures
+
+- Authorized side-request scope: README feature presentation, five actual product images, capture evidence and append-only records in an exclusively owned canonical clone, branch `codex/readme-product-screenshots`, documentation base `7aa0184`. No parent implementation/recording work or Git index touched. Frozen implementation remains `4f36ced` / 0.1.1.
+- Native gate: disposable NovaDesk requirement/checkpoint, real Graphify 0.9.84 mapping, validated source navigation, saved developer prediction, executed different-client failure, developer edit/native diff and all three ownership cases matching their rules. No hints/API used in this pass.
+- Separate-project image gate: disposable SeatCheck baseline (4 files), requirement import/confirmation, second confirmed concise intention revision with original history retained, selected real source, tracked developer diff and native-confirmed existing test. Actual result: 3 passed, 0 failed, exit 0. The panel correctly states no requirement-coverage verdict and raw output not saved.
+- All five captures are original full-window JPEGs, visually inspected at 2940 × 1846; README captions disclose prepared material, developer assistance and experimental Project Guide coverage. Evidence: [capture record](../docs/product-screenshots/README.md).
+- Checks passed: 58 local link targets, five image metadata checks, 3/3 released bundle byte matches, rule limits (32/21), diff whitespace and limited new-document credential-pattern check. Parent branch/HEAD/index and 4/4 protected source/session records are unchanged. Prior full-suite results were not relabeled as fresh.
+- Corrected the screenshot filename extension to match the capture API's JPEG bytes without editing/re-encoding the images. Recorded an observed deep-profile IPC launch error and supported short-path recovery in the judge guide.
+- Pending publication verification: normal push only, verify remote commit and exact image/document bytes. Runtime/package/tag remain unchanged; no new live coach, restart, CodeTour, connected-agent or independent-learning acceptance claimed.

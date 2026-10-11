@@ -8,7 +8,35 @@ Help a beginner connect an AI-built feature to their intention, investigate one 
 
 Built for [DevDay Exchange Community Hackathon: Kochi](https://luma.com/z10nz8gp), 10–11 October 2026. [Event rules](RULES.md) · [Agent instructions](AGENTS.md) · [Submission](SUBMISSION.md).
 
-## Project overview — complete during the event
+**Requirement → relevant source → prediction → observed behavior → your edit → executed checks → independent follow-up.**
+
+[Install the demo](docs/judge-setup.md) · [Download 0.1.1](https://github.com/sabari-nath17/vadhyar/releases/tag/v0.1.1) · [View the pitch deck](docs/pitch/README.md)
+
+## What you can do
+
+| Feature | What it helps you do |
+| --- | --- |
+| **Follow your intention into the code** | Confirm a requirement, inspect real Graphify relationships and open validated source locations in the native editor. |
+| **Predict before seeing the answer** | Save an outcome and reason before the trusted counterexample runs. Compare your prediction with actual behavior and the required rule. |
+| **Investigate with progressive hints** | Review the sharing context and request source-grounded guidance. The coach guides; you make the code change. |
+| **Edit, compare and check** | Save your edit, inspect the native before/after diff and rerun the owner, other-client and freelancer cases. Failed requirements remain failures. |
+| **Try the next change yourself** | Attempt the archived-milestone follow-up while preserving ownership behavior. Hint use is recorded; a rehearsal does not establish independent mastery. |
+| **Keep an inspectable learning record** | Reopen saved context, distinguish current evidence from stale history, add a reflection and inspect the evidence journey or Markdown handover. |
+
+These are the **prepared NovaDesk learning workflow**. [All recorded features and verification boundaries](docs/feature-coverage.md) are listed separately.
+
+### Project Guide — experimental
+
+For a separate local project, **Vadhyar: Open Project Guide** offers:
+
+- **Feature intentions and history:** add/import an intention, confirm expected behavior and preserve earlier revisions.
+- **Changes across files:** capture a baseline, inspect additions/edits/deletions and confirm the relevant source group.
+- **One decision to investigate:** suggested topics disclose the requirement, changed function/condition, selection reason, static dependencies and context left unreviewed. Ambiguous requirement connections need confirmation.
+- **Reviewed coaching and checks:** preview selected context for an explanation or build plan/prompt; choose an existing project script and approve each execution. Save context for later.
+
+The unrelated **SeatCheck** supporting fixture exercises project tracking, source changes and actual checks. Selected context and static relationships have bounded coverage. A successful script is evidence for that script, not complete PRD compliance or support for every repository. [Project Guide scope and controls](docs/project-guide.md).
+
+## Project overview
 
 - **Project name:** Vadhyar.
 - **Short description:** A local VS Code learning companion for beginners building with AI. It connects their intention to source, helps them reason before making their own edit, and preserves evidence of the checks that actually ran.
@@ -17,6 +45,44 @@ Built for [DevDay Exchange Community Hackathon: Kochi](https://luma.com/z10nz8gp
 - **Technology stack:** TypeScript, React, native VS Code APIs, Zod, esbuild, Vitest, Graphify 0.9.84 and the official OpenAI Responses API SDK. Promptfoo is development-only.
 
 **Frozen implementation:** [`4f36cedcb93940e526165fbf94d6681542f54066`](https://github.com/sabari-nath17/vadhyar/tree/4f36cedcb93940e526165fbf94d6681542f54066) · [Complete 51-feature inventory and evidence](docs/feature-coverage.md) · [Prepared submission record](SUBMISSION.md). Later main-branch documentation does not change this installer/source checkpoint.
+
+## See Vadhyar in VS Code
+
+Actual product captures from 11 October 2026: the original 0.1.1 interface in an Extension Development Host, using disposable workspaces. [Capture evidence and limits](docs/product-screenshots/README.md).
+
+### NovaDesk: connect the requirement to the decision
+
+![Vadhyar's confirmed NovaDesk ownership requirement beside the actual approval function in VS Code](docs/product-screenshots/novadesk-requirement-source.jpg)
+
+The prepared fixture deliberately checks only the client role. Vadhyar connects the confirmed ownership requirement to the native source location so the missing decision can be investigated.
+
+<details>
+<summary>Saved prediction → failed counterexample → developer edit and actual checks</summary>
+
+![A saved Allow prediction beside the executed different-client counterexample, visibly marked BREAKS RULE](docs/product-screenshots/novadesk-saved-prediction.jpg)
+
+The prediction is saved before execution. Another client is actually allowed; the required outcome is Deny. **The requirement check fails.**
+
+![Native before-and-after ownership diff beside three executed checks that match the ownership rule](docs/product-screenshots/novadesk-native-diff-checks.jpg)
+
+After a **Codex developer rehearsal edit**, the native diff shows the added ownership condition. All three trusted cases match their expected outcomes. This is executed check evidence, not an independent learner assessment.
+
+</details>
+
+### Project Guide: a different project, its own intention and source
+
+![Experimental Project Guide tracking SeatCheck's available-seat intention beside its separate reservation function](docs/product-screenshots/project-guide-intention-source.jpg)
+
+**SeatCheck is a separate JavaScript supporting fixture**, with its own requirement, source and existing tests. The capture shows a confirmed intention, preserved revision history and a project baseline; its starting zero-seat bug is disclosed.
+
+<details>
+<summary>Inspect the tracked change and the approved project check</summary>
+
+![SeatCheck's native tracked diff beside its approved npm test result: three tests pass and no requirement-coverage verdict is inferred](docs/product-screenshots/project-guide-native-diff-check.jpg)
+
+A Codex developer edit changes `>= 0` to `> 0`. After native command confirmation, the project's existing test runs: **3 passed, 0 failed, exit 0**. The panel explicitly limits that result to the selected script. No new live coaching request was made for these captures.
+
+</details>
 
 ## Install and demonstrate
 
