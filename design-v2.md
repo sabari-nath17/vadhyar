@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | 2.6.0 |
+| **Version** | 2.7.0 |
 | **Scope** | The Vadhyar VS Code panel (React): path home, lessons, feedback, completion, evidence, states, assets |
 | **Audience** | Codex or any engineer building the UI. You MAY generate images, SVG, sounds and scaffolding. You MUST NOT change host behavior. |
 | **Relationship to `design.md` 1.1.0** | v2 **adds an experience layer** on top of it. Where they conflict, v2 wins (see §15). Everything not mentioned here (consent, state catalog, accessibility, editor integration, logo placement) is inherited unchanged. §4 repeats the essentials so this file works alone. |
@@ -410,3 +410,9 @@ Evidence: [shell phase](docs/design-v2/simplification/shell/README.md) and [task
 - Hint review is a direct button. All sharing consent and existing validation remain unchanged.
 - Deviation from §7's narrow 96px Guide: lesson art is 64px beside the question below 720px, preserving task space. Wide art remains 160px; the welcome and completion artwork remain their specified sizes. Administrative and evidence sheets omit decorative art.
 - Project Guide route simplification, four-theme contrast and automated route parity remain the next gates. Native acceptance and human beginner usability remain pending.
+
+### Project Guide feature placement
+
+Project Guide now uses the same pinned wordmark/code/idea shell and a compact four-step navigation. Its task alone scrolls, including notices and errors; changing steps returns focus and scroll to the question. Saved ideas and selected source files are flat lists in their own steps. Copy prompt is a direct control; its full proposed text remains inspectable. Existing guidance is shown before re-generation controls and uses flat purpose/logic/consequence content. General checks retain native confirmation and never claim requirement coverage. Cancel is also reachable from More options during an operation. All existing request, revision, selection and stale guards remain intact.
+
+The project-preview record uses actual disposable controller capture/intent/change/script operations with mocked VS Code dialogs and explicitly mocked guidance. The zero-exit sample script establishes no approval-rule coverage. No real OpenAI call is implied. [Project phase](docs/design-v2/simplification/project/README.md). Four-theme contrast, final parity and native/human acceptance remain open.

@@ -1,5 +1,9 @@
 # Change log
 
+## 2026-10-11T07:43:31+05:30 — Project Guide routes
+
+Pinned the Project Guide shell and put saved ideas, selected code and prompt copying directly in their steps. Guidance content leads its re-generation controls; errors/notices scroll inside the task. Added a recorded developer scenario from actual disposable captures/revisions/changes and one real sample script; guidance/dialogs are explicitly mocked. Scope: project panel/CSS, preview generator, presentation/recording tests, spec and screenshots. Two new assertions failed first; focused 30/30 then 25/25 and full **145/145, 29 files, 32.88 s** passed, with typecheck/lint/build. Nine required captures fit 136/66/430px; the three previously deep routes invoke validated UI actions in two taps. No host, API, dependency or primary change. Native/human acceptance pending.
+
 ## 2026-10-11T07:31:33+05:30 — Flat task and saved-record routes
 
 Replaced nested result cards with an evidence-derived comparison, moved proof/reflection to a tabbed sheet over the current task, shortened hint access and sized narrow lesson art beside the question. Existing actions and save/check acknowledgement remain unchanged. Scope: six panel files, presentation regressions, specification/docs and browser evidence. Three assertions failed before implementation; typecheck/lint/build, focused 33/33 and full **142/142 in 28 files, 32.77 s** pass. Nine 320/360/720 × light/dark/HC task captures fit 136px top / 66px action / 430px task without overflow. Tab keys, focus return and unsaved-note retention checked in the recorded preview. Native/human acceptance remains pending; no host/API/dependency change, merge or push.

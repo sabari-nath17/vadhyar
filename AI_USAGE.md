@@ -1,5 +1,9 @@
 # AI usage record
 
+## 2026-10-11T07:43:31+05:30 — Project Guide UI and route checks
+
+Codex kept existing controller contracts while simplifying the four task views and record access. Two assertions failed before the UI correction. The developer recording test used actual temporary files/controller persistence and a sample script, mocked dialogs and a labelled mocked model response; no OpenAI request or credential value was used. Computer Use measured nine width/theme views and verified the real renderer emitted expected select/source/copy actions after two interactions from another step. Full 145/145 and typecheck/lint/build pass. This establishes UI reachability plus offline host regression, not native execution of those browser messages or beginner usability. In-thread review only; no subagents or primary-checkout mutation.
+
 ## 2026-10-11T07:31:33+05:30 — Task simplification and adversarial review
 
 Codex applied Red Team Review to route depth, product/practice scope and evidence clarity, then implemented the authorized UI corrections with existing components and platform dialogs. Three failing assertions preceded the flat ledger, sheet and direct hint action. Typechecking caught use of an extra runner-record field absent from the panel contract; corrected it to derive the binary expectation from the existing outcome/verdict. Full 142/142 and typecheck/lint/build pass. Browser interactions verified tab keyboard use, return to the same lesson and draft retention without sending or storing the note. Screenshot counts describe actual captures; scene/model/graph specimens remain labelled. In-thread review only; human/native acceptance pending. No subagents, OpenAI call, credential retrieval, host change or primary-checkout mutation.

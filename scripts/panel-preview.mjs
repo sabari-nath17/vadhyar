@@ -35,6 +35,8 @@ const scenes={
  gated:{...common,confirmed:false,stage:'predict'},
  project:{refs:[],busy:false,project:{name:'Vadhyar UI specimen',busy:false,started:false,fileCount:0,omitted:[],changes:[],intents:[],files:[],selectedFiles:[],captureConnected:false}},
 };
+const projectRecord=JSON.parse(await readFile('docs/design-v2/simplification/project/project-recorded.json','utf8'));
+for(const [name,project] of Object.entries(projectRecord.scenes)) scenes[name]={refs:[],busy:false,project};
 const output='dist/gallery/preview';await mkdir(output,{recursive:true});
 for(const file of await readdir('dist')) if(/\.(js|css|woff2|png)$/.test(file)) await cp(`dist/${file}`,`${output}/${file}`);
 await cp('dist/media',`${output}/media`,{recursive:true});

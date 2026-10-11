@@ -1,0 +1,42 @@
+{
+  "recordedAt": "2026-10-11T02:12:10.056Z",
+  "scope": "Actual renderer messages; no host action executed in this browser. Navigation began from Check it.",
+  "routes": [
+    {
+      "id": "project-select",
+      "route": [
+        "Your idea",
+        "Saved idea button"
+      ],
+      "taps": 2,
+      "action": {
+        "id": "c9267e17-a450-4ab3-89ae-01d63104e2ba",
+        "type": "projectSelectIntent"
+      }
+    },
+    {
+      "id": "project-source",
+      "route": [
+        "What changed",
+        "Selected source button"
+      ],
+      "taps": 2,
+      "action": {
+        "path": "src/approval.ts",
+        "snapshot": "c941322a57d9133db1620a984ec597bf3a743e279197f533cbe8a1e7a776c204",
+        "type": "projectOpenSource"
+      }
+    },
+    {
+      "id": "project-prompt",
+      "route": [
+        "How it works",
+        "Copy this prompt"
+      ],
+      "taps": 2,
+      "action": {
+        "type": "projectCopyPrompt"
+      }
+    }
+  ]
+}

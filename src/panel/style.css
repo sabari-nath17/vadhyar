@@ -137,6 +137,9 @@ blockquote { margin: 8px 0 0; padding-inline-start: 12px; border-left: 2px solid
 .vd-evidence-tabs { display: flex; gap: 8px; }
 .vd-evidence-tabs > .vd2-control { flex: 1; }
 .vd-evidence-tabs [aria-selected="true"] { color: var(--text); background: var(--selected); border-color: var(--selection-border); }
+.vd2-project-nav { height: 44px; }
+.vd2-project-nav .vd2-button { min-height: 44px; height: 44px; padding: 2px; font-size: 12px; line-height: 16px; }
+.vd-project-saved, .vd-project-guide { display: grid; gap: 12px; }
 [role="tabpanel"], .vd-reflection, .vd-reflection form { display: grid; gap: 12px; }
 [role="tabpanel"][hidden] { display: none; }
 @media (max-width: 719px) {

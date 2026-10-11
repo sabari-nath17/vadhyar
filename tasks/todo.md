@@ -1,5 +1,9 @@
 # Vadhyar slice task record
 
+## 2026-10-11T07:43:31+05:30 — Project routes complete
+
+Previous checkpoint fa3ff50. Project shell/flat routes and actual disposable developer recording are complete; browser messages for select/source/copy are validated at two interactions. Full 145/145, typecheck/lint/build and nine screenshots pass. Guidance is an explicit UI mock; captures/revisions/script data are recorded operations. Next: four-theme contrast and all-state screen budgets, then final feature parity/report/package. Host is still the 29db3ef immutable snapshot; primary host changes observed during this side work are not reconciled or modified. No merge/push.
+
 ## 2026-10-11T07:31:33+05:30 — Task/evidence simplification complete
 
 Previous checkpoint 0eebb81. Scope: flat Observe ledger, on-request feedback dialog, persistent tabbed saved-record sheet, reflection and direct hint route; narrow art is 64px beside the heading. All current host bytes stay pinned to 29db3ef. Latest full **142/142**, typecheck/lint/build pass; nine required task screenshots and tab/focus/draft checks are in docs/design-v2/simplification/tasks. The milestone commit contains this record. Next: Project Guide route parity, four-theme contrast, UI route checks and updated local VSIX. The user requested continuing improvements after the red-team assessment. No merge/push or primary/session change. Human beginner/native acceptance remains unverified.
