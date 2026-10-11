@@ -139,3 +139,15 @@ S12: Codex reviewed and refined the existing UI with Impeccable and reviewed exi
 ## 2026-10-11T05:02:28+05:30 — Website and installation handoff
 
 Codex published the authorized landing and completed-source installer through an isolated clone, updated public copy as requested and validated source, real installation/runtime, browser and downloaded checksum. Human review pending. Main working tree source/index/branch preserved. No fresh API calls, credential values or sub-agents were used. Public support and verification limits are in docs/landing-release.md.
+
+## 2026-10-11 08:10:40 IST — UI state, contrast and feature-route completion
+
+- Change/reason: keep errors within the task, shorten consent/check labels, support both high-contrast variants and resume confirmed lessons directly.
+- Files: panel shell/components, project/results UI, tokens/gallery, preview, feature inventory, UI evidence and review workflow.
+- Checks: typecheck, lint and build passed; full serial 149/149 tests, focused parity checks recorded separately; 88 measured states and 55 actual browser route witnesses.
+- Limits: renderer preview only, no new API calls or host changes; native editor/beginner acceptance and remote CI are unverified.
+- Publication: user authorized only the separate `codex/updaeted-ui` branch; no main-branch merge.
+
+### 2026-10-11 08:12:53 IST — final isolated UI gate
+
+Typecheck, lint and build passed. Full serial suite: 152/152 across 30 files in 34.00s. Feature parity: 53 entries, 55 browser witnesses, 88 state/theme measurements. Installer packaging succeeded; native install/host and beginner acceptance remain unverified. Codex reviewed the diff; human visual review remains pending. Publication is authorized only to codex/updaeted-ui.

@@ -1,0 +1,967 @@
+[
+  {
+    "id": "evidence",
+    "scene": "fullLesson",
+    "start": "Check it",
+    "route": [
+      "Show code evidence"
+    ],
+    "taps": 1,
+    "actions": [],
+    "destination": "Your saved record",
+    "visible": true
+  },
+  {
+    "id": "key",
+    "scene": "fullLesson",
+    "start": "Check it",
+    "route": [
+      "Open settings",
+      "Replace OpenAI key securely"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "setupKey"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "rule",
+    "scene": "fullLesson",
+    "start": "Check it",
+    "route": [
+      "Review your rule"
+    ],
+    "taps": 1,
+    "actions": [],
+    "destination": "Your rule and examples",
+    "visible": true
+  },
+  {
+    "id": "import",
+    "scene": "fullLesson",
+    "start": "Check it",
+    "route": [
+      "Review your rule",
+      "Import requirement"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "importRequirement"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "prepared",
+    "scene": "fullLesson",
+    "start": "Check it",
+    "route": [
+      "Review your rule",
+      "Use prepared requirement"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "usePreparedRequirement"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "cases",
+    "scene": "fullLesson",
+    "start": "Check it",
+    "route": [
+      "Review your rule"
+    ],
+    "taps": 1,
+    "actions": [],
+    "destination": "What should happen",
+    "visible": true
+  },
+  {
+    "id": "snapshot",
+    "scene": "fullLesson",
+    "start": "Check it",
+    "route": [
+      "Review your rule",
+      "Save a snapshot of this code"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "checkpoint"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "export-tour",
+    "scene": "fullTour",
+    "start": "Check it",
+    "route": [
+      "Open settings",
+      "Export walkthrough"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "exportWalkthrough"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "technical",
+    "scene": "fullLesson",
+    "start": "Check it",
+    "route": [
+      "Show code evidence",
+      "Technical details"
+    ],
+    "taps": 2,
+    "actions": [],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "refresh",
+    "scene": "fullLesson",
+    "start": "Check it",
+    "route": [
+      "Open settings",
+      "Refresh saved context"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "ready"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "snake",
+    "scene": "fullLesson",
+    "start": "Check it",
+    "route": [
+      "Open settings",
+      "Take a short break"
+    ],
+    "taps": 2,
+    "actions": [],
+    "destination": "Snake — a tiny break",
+    "visible": true
+  },
+  {
+    "id": "disclosure",
+    "scene": "fullLesson",
+    "start": "Check it",
+    "route": [
+      "Review your rule"
+    ],
+    "taps": 1,
+    "actions": [],
+    "destination": "Your rule and examples",
+    "visible": true
+  },
+  {
+    "id": "transfer",
+    "scene": "fullLesson",
+    "start": "Check it",
+    "route": [
+      "Open settings",
+      "Try the next rule"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "startTransfer"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "handover",
+    "scene": "fullLesson",
+    "start": "Check it",
+    "route": [
+      "Show code evidence",
+      "Export my proof"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "exportHandover"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "memory",
+    "scene": "fullLesson",
+    "start": "Check it",
+    "route": [
+      "Open settings",
+      "Show memory location"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "showMemoryLocation"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "clear",
+    "scene": "fullLesson",
+    "start": "Check it",
+    "route": [
+      "Open settings",
+      "Clear prepared exercise"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "clearNovaDeskSession"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "sound",
+    "scene": "fullLesson",
+    "start": "Check it",
+    "route": [
+      "Open settings",
+      "Sound: off"
+    ],
+    "taps": 2,
+    "actions": [],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "planned-demo",
+    "scene": "fullLesson",
+    "start": "Check it",
+    "route": [
+      "Open settings",
+      "Demo preparation · planned"
+    ],
+    "taps": 2,
+    "actions": [],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "confirm",
+    "scene": "confirm",
+    "start": "Check it",
+    "route": [
+      "Your rule",
+      "Confirm my rule"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "confirmRequirement",
+        "revision": "c455503e7dd3d132533643ffac28b908a553596f8ad47e2959db46daf74c864d"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "connections",
+    "scene": "connections",
+    "start": "Check it",
+    "route": [
+      "How it works",
+      "Find the code"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "setStage",
+        "stage": "understand"
+      },
+      {
+        "type": "refreshGraph"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "mapping",
+    "scene": "understand",
+    "start": "Check it",
+    "route": [
+      "How it works",
+      "Use these code links"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "setStage",
+        "stage": "understand"
+      },
+      {
+        "type": "confirmMapping",
+        "identity": "4466cd750a20803242c9cdd87c798d3184ae3b89ffd62fa082cac9871e1d7428"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "source",
+    "scene": "fullLesson",
+    "start": "Check it",
+    "route": [
+      "How it works",
+      "canApproveMilestone"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "setStage",
+        "stage": "understand"
+      },
+      {
+        "type": "openSource",
+        "id": "preview-source"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "sharing",
+    "scene": "fullLesson",
+    "start": "Check it",
+    "route": [
+      "How it works",
+      "Review what will be shared"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "setStage",
+        "stage": "understand"
+      },
+      {
+        "type": "previewExplain"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "explain",
+    "scene": "fullTour",
+    "start": "Check it",
+    "route": [
+      "How it works"
+    ],
+    "taps": 1,
+    "actions": [
+      {
+        "type": "setStage",
+        "stage": "understand"
+      }
+    ],
+    "destination": "Source-linked explanation",
+    "visible": true
+  },
+  {
+    "id": "walkthrough",
+    "scene": "fullTour",
+    "start": "Check it",
+    "route": [
+      "Open settings",
+      "Highlight walkthrough step"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "walkthroughStep",
+        "index": 0
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "prediction",
+    "scene": "predict",
+    "start": "Check it",
+    "route": [
+      "Your guess"
+    ],
+    "taps": 1,
+    "actions": [
+      {
+        "type": "setStage",
+        "stage": "predict"
+      }
+    ],
+    "destination": "Will it allow this?",
+    "visible": true
+  },
+  {
+    "id": "counterexample",
+    "scene": "predictionSaved",
+    "start": "Check it",
+    "route": [
+      "Your guess",
+      "Run the saved check"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "setStage",
+        "stage": "predict"
+      },
+      {
+        "type": "runCounterexample",
+        "predictionId": "72fb5e9b-a306-408d-b60a-8459d5b2e724"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "comparison",
+    "scene": "fullLesson",
+    "start": "Check it",
+    "route": [
+      "What happened"
+    ],
+    "taps": 1,
+    "actions": [
+      {
+        "type": "setStage",
+        "stage": "observe"
+      }
+    ],
+    "destination": "What happened?",
+    "visible": true
+  },
+  {
+    "id": "hint",
+    "scene": "change",
+    "start": "Check it",
+    "route": [
+      "Try a change",
+      "Review before getting a hint"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "setStage",
+        "stage": "change"
+      },
+      {
+        "type": "previewHint"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "edit",
+    "scene": "change",
+    "start": "Check it",
+    "route": [
+      "Try a change",
+      "canApproveMilestone"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "setStage",
+        "stage": "change"
+      },
+      {
+        "type": "openSource",
+        "id": "preview-source"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "diff",
+    "scene": "changed",
+    "start": "Check it",
+    "route": [
+      "Try a change",
+      "Compare my change"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "setStage",
+        "stage": "change"
+      },
+      {
+        "type": "openDiff"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "verify",
+    "scene": "fullLesson",
+    "start": "Check it",
+    "route": [
+      "Check it",
+      "Check again"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "setStage",
+        "stage": "verify"
+      },
+      {
+        "type": "runOwnership"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "sharing",
+    "scene": "sharing",
+    "start": "Check it",
+    "route": [
+      "Send to OpenAI"
+    ],
+    "taps": 1,
+    "actions": [
+      {
+        "type": "explain",
+        "identity": "ce3b0280c427800ef95f623f89ddbb83089d7f43c483ceffcd4fb207c139d456"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "sharing",
+    "scene": "loading",
+    "start": "Check it",
+    "route": [
+      "Cancel"
+    ],
+    "taps": 1,
+    "actions": [
+      {
+        "type": "cancelExplain"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "hint",
+    "scene": "hintSharing",
+    "start": "Check it",
+    "route": [
+      "Send to OpenAI"
+    ],
+    "taps": 1,
+    "actions": [
+      {
+        "type": "hint",
+        "identity": "ce3b0280c427800ef95f623f89ddbb83089d7f43c483ceffcd4fb207c139d456"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "project-start",
+    "scene": "project",
+    "start": "Check it",
+    "route": [
+      "Start tracking my code"
+    ],
+    "taps": 1,
+    "actions": [
+      {
+        "type": "projectStart"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "project-refresh",
+    "scene": "projectPlan",
+    "start": "Check it",
+    "route": [
+      "What changed",
+      "Read saved changes"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "projectReady"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "project-import",
+    "scene": "projectPlan",
+    "start": "Check it",
+    "route": [
+      "Your idea",
+      "Import a rule from my PRD"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "projectImportIntent"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "project-select",
+    "scene": "projectPlan",
+    "start": "Check it",
+    "route": [
+      "Your idea",
+      "Approval rule — revised"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "projectSelectIntent",
+        "id": "65856259-5abd-4293-ad5c-bb870ea9ef61"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "project-confirm",
+    "scene": "projectUnconfirmed",
+    "start": "Check it",
+    "route": [
+      "Your idea",
+      "Confirm my idea"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "projectConfirmIntent",
+        "id": "65856259-5abd-4293-ad5c-bb870ea9ef61",
+        "revision": "390aff5094f9ad6dfb5c07eafccdaa814dbea670e76af6693c09b30329c587b8"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "project-files",
+    "scene": "projectPlan",
+    "start": "Check it",
+    "route": [
+      "What changed",
+      "Choose relevant files"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "projectSelectFiles"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "project-suggest",
+    "scene": "projectSuggest",
+    "start": "Check it",
+    "route": [
+      "How it works",
+      "Find the code for my idea"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "projectSuggestFiles"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "project-diff",
+    "scene": "projectPlan",
+    "start": "Check it",
+    "route": [
+      "What changed",
+      "Open this change"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "projectOpenDiff",
+        "path": "src/approval.ts",
+        "snapshot": "c941322a57d9133db1620a984ec597bf3a743e279197f533cbe8a1e7a776c204"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "project-source",
+    "scene": "projectPlan",
+    "start": "Check it",
+    "route": [
+      "What changed",
+      "src/approval.ts"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "projectOpenSource",
+        "path": "src/approval.ts",
+        "snapshot": "c941322a57d9133db1620a984ec597bf3a743e279197f533cbe8a1e7a776c204"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "project-preview",
+    "scene": "projectPlan",
+    "start": "Check it",
+    "route": [
+      "How it works",
+      "Review a build plan and prompt"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "projectPreview",
+        "operation": "plan"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "project-send",
+    "scene": "projectShare",
+    "start": "Check it",
+    "route": [
+      "Send this to OpenAI"
+    ],
+    "taps": 1,
+    "actions": [
+      {
+        "type": "projectSend",
+        "identity": "57dbbb5dc600bedf74f8fd2d1ce5495f3e45bc580b761db9989c2f78ea92abe4"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "project-cancel",
+    "scene": "projectBusy",
+    "start": "Check it",
+    "route": [
+      "Open project options",
+      "Cancel operation"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "projectCancel"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "project-group",
+    "scene": "projectGroup",
+    "start": "Check it",
+    "route": [
+      "What changed",
+      "Use these proposed files"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "projectUseGroup",
+        "index": 0
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "project-prompt",
+    "scene": "projectPlan",
+    "start": "Check it",
+    "route": [
+      "How it works",
+      "Copy this prompt"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "projectCopyPrompt"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "project-check-select",
+    "scene": "projectCheck",
+    "start": "Check it",
+    "route": [
+      "Check it",
+      "Choose a different check"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "projectSelectCheck"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "project-check-run",
+    "scene": "projectCheck",
+    "start": "Check it",
+    "route": [
+      "Check it",
+      "Run this check"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "projectRunCheck"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "project-capture",
+    "scene": "projectPlan",
+    "start": "Check it",
+    "route": [
+      "Open project options",
+      "Enable agent capture bridge"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "projectConnectCapture"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "lock",
+    "scene": "predict",
+    "start": null,
+    "route": [
+      "Your guess",
+      "Save my guess and check"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "setStage",
+        "stage": "predict"
+      },
+      {
+        "type": "savePrediction",
+        "predictedApproval": false,
+        "reasoning": "UI route check: a different client does not own this milestone.",
+        "sourceHash": "eda0127427545d06c9e2ff88bd51d6022674f43dbd1ccbd56da5f6c8ae3e7fd3",
+        "requirementRevision": "c455503e7dd3d132533643ffac28b908a553596f8ad47e2959db46daf74c864d"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "reflection",
+    "scene": "fullLesson",
+    "start": "Check it",
+    "route": [
+      "Show code evidence",
+      "Save my note"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "saveReflection",
+        "text": "UI route check: I learned to compare ownership, not only the client role.",
+        "sourceHash": "d41e8c0de5bd6baac8e64c1cd9f79ae7e2b5ea0f117e3a7b0f88ca142a1214db",
+        "requirementRevision": "c455503e7dd3d132533643ffac28b908a553596f8ad47e2959db46daf74c864d"
+      }
+    ],
+    "destination": null,
+    "visible": true
+  },
+  {
+    "id": "project-intent",
+    "scene": "projectNewIdea",
+    "start": "Check it",
+    "route": [
+      "Your idea",
+      "Save my idea"
+    ],
+    "taps": 2,
+    "actions": [
+      {
+        "type": "projectAddIntent",
+        "intent": {
+          "title": "UI route check",
+          "request": "Keep this example separate from actual user project records.",
+          "expected": "Only approved context should be shared.",
+          "origin": "manual"
+        }
+      }
+    ],
+    "destination": null,
+    "visible": true
+  }
+]

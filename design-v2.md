@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | 2.7.0 |
+| **Version** | 2.8.0 |
 | **Scope** | The Vadhyar VS Code panel (React): path home, lessons, feedback, completion, evidence, states, assets |
 | **Audience** | Codex or any engineer building the UI. You MAY generate images, SVG, sounds and scaffolding. You MUST NOT change host behavior. |
 | **Relationship to `design.md` 1.1.0** | v2 **adds an experience layer** on top of it. Where they conflict, v2 wins (see §15). Everything not mentioned here (consent, state catalog, accessibility, editor integration, logo placement) is inherited unchanged. §4 repeats the essentials so this file works alone. |
@@ -416,3 +416,14 @@ Evidence: [shell phase](docs/design-v2/simplification/shell/README.md) and [task
 Project Guide now uses the same pinned wordmark/code/idea shell and a compact four-step navigation. Its task alone scrolls, including notices and errors; changing steps returns focus and scroll to the question. Saved ideas and selected source files are flat lists in their own steps. Copy prompt is a direct control; its full proposed text remains inspectable. Existing guidance is shown before re-generation controls and uses flat purpose/logic/consequence content. General checks retain native confirmation and never claim requirement coverage. Cancel is also reachable from More options during an operation. All existing request, revision, selection and stale guards remain intact.
 
 The project-preview record uses actual disposable controller capture/intent/change/script operations with mocked VS Code dialogs and explicitly mocked guidance. The zero-exit sample script establishes no approval-rule coverage. No real OpenAI call is implied. [Project phase](docs/design-v2/simplification/project/README.md). Four-theme contrast, final parity and native/human acceptance remain open.
+
+## Simplification completion and verification rulings (2.8.0)
+
+- Saved, confirmed lessons resume directly from the path. The Start sheet is retained for an unconfirmed first introduction. This removes a repeated acknowledgement while preserving the host requirement approval.
+- Errors and notices live inside the scrolling task. At a 640px panel height, the top occupies 136px including its inset, a blocked-action footer uses at most 86px, and the task retains at least 416px at 360px width. Measurements are in `docs/design-v2/simplification/gates/`.
+- Both high-contrast variants use VS Code theme variables, with explicit dark/light preview fallbacks. Fonts and assets remain bundled.
+- The existing action for running a project check is labelled “Run this check”; its actual selected script is shown in the task. Send/Cancel labels are shortened; full sharing details, model, consent and original messages are preserved.
+- A reflection draft survives switching Evidence tabs and closing the sheet; a deliberate session-clear notification or change of exercise clears it. Unsaved text is still not durable storage.
+- Feature parity uses real browser route recordings, rendered component tests and a source-hash guard in CI. CI fails missing, over-budget, invalid or stale evidence; it does not automatically rerun a desktop browser. This is a deliberate deviation from a browser runner inside CI, avoiding a new browser dependency. Recordings use labelled renderer specimens; native commands are checked against the manifest. Host outcomes remain covered separately.
+- Required 320/360/720 captures are retained, with high-contrast light added. These are browser renderer captures, not an Extension Development Host or beginner usability acceptance.
+- Publication is authorized only to the separate `codex/updaeted-ui` branch. The primary checkout and main branch remain outside this change.

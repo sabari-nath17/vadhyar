@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "status": "baseline before simplification",
+  "version": 2,
+  "status": "current routes recorded; no native-host acceptance claim",
   "baselineCommit": "d044979 plus communication follow-up",
   "hostBaseline": "29db3ef",
   "scope": "Presentation routes only. Host permissions, confirmations and execution remain unchanged.",
@@ -24,7 +24,8 @@
         "taps": 0,
         "status": "requires simplification"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "manifest command checked; native editor execution remains unverified"
     },
     {
       "id": "key",
@@ -35,7 +36,7 @@
       ],
       "route": [
         "Open settings",
-        "Connect OpenAI"
+        "Replace OpenAI key securely"
       ],
       "maxTaps": 2,
       "preconditions": "not busy",
@@ -47,7 +48,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "rule",
@@ -55,7 +57,7 @@
       "feature": "Current requirement",
       "hostAction": [],
       "route": [
-        "Your rule"
+        "Review your rule"
       ],
       "maxTaps": 2,
       "preconditions": "requirement loaded",
@@ -66,7 +68,8 @@
         "taps": 1,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "confirm",
@@ -89,7 +92,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "import",
@@ -99,8 +103,7 @@
         "importRequirement"
       ],
       "route": [
-        "Your rule",
-        "Show the full rule and examples",
+        "Review your rule",
         "Import requirement"
       ],
       "maxTaps": 2,
@@ -114,7 +117,8 @@
         "taps": 3,
         "status": "requires simplification"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "prepared",
@@ -124,8 +128,7 @@
         "usePreparedRequirement"
       ],
       "route": [
-        "Your rule",
-        "Show the full rule and examples",
+        "Review your rule",
         "Use prepared requirement"
       ],
       "maxTaps": 2,
@@ -139,7 +142,8 @@
         "taps": 3,
         "status": "requires simplification"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "cases",
@@ -147,7 +151,7 @@
       "feature": "Acceptance scenarios",
       "hostAction": [],
       "route": [
-        "Your rule"
+        "Review your rule"
       ],
       "maxTaps": 2,
       "preconditions": "requirement scenarios loaded",
@@ -158,7 +162,8 @@
         "taps": 1,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "snapshot",
@@ -168,9 +173,8 @@
         "checkpoint"
       ],
       "route": [
-        "Your rule",
-        "Save a code snapshot",
-        "Save this code"
+        "Review your rule",
+        "Save a snapshot of this code"
       ],
       "maxTaps": 2,
       "preconditions": "confirmed and not busy",
@@ -183,7 +187,8 @@
         "taps": 3,
         "status": "requires simplification"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "connections",
@@ -206,7 +211,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "mapping",
@@ -229,7 +235,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "source",
@@ -240,7 +247,7 @@
       ],
       "route": [
         "How it works",
-        "Source chip"
+        "canApproveMilestone"
       ],
       "maxTaps": 2,
       "preconditions": "current validated references",
@@ -252,7 +259,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "sharing",
@@ -277,7 +285,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "explain",
@@ -296,7 +305,8 @@
         "taps": 1,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "walkthrough",
@@ -306,8 +316,8 @@
         "walkthroughStep"
       ],
       "route": [
-        "How it works",
-        "Take me through the code"
+        "Open settings",
+        "Highlight walkthrough step"
       ],
       "maxTaps": 2,
       "preconditions": "current explanation, references and walkthrough",
@@ -319,7 +329,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "export-tour",
@@ -329,8 +340,7 @@
         "exportWalkthrough"
       ],
       "route": [
-        "How it works",
-        "Take me through the code",
+        "Open settings",
         "Export walkthrough"
       ],
       "maxTaps": 2,
@@ -344,7 +354,8 @@
         "taps": 3,
         "status": "requires simplification"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "prediction",
@@ -363,7 +374,8 @@
         "taps": 1,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "lock",
@@ -386,7 +398,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "counterexample",
@@ -409,7 +422,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "comparison",
@@ -428,7 +442,8 @@
         "taps": 1,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "hint",
@@ -441,7 +456,6 @@
       ],
       "route": [
         "Try a change",
-        "Need a hint?",
         "Review before getting a hint"
       ],
       "maxTaps": 2,
@@ -455,7 +469,8 @@
         "taps": 3,
         "status": "requires simplification"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "edit",
@@ -466,7 +481,7 @@
       ],
       "route": [
         "Try a change",
-        "Source chip"
+        "canApproveMilestone"
       ],
       "maxTaps": 2,
       "preconditions": "current references",
@@ -478,7 +493,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "diff",
@@ -501,7 +517,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "verify",
@@ -524,7 +541,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "evidence",
@@ -532,8 +550,7 @@
       "feature": "Evidence summary",
       "hostAction": [],
       "route": [
-        "Open settings",
-        "Show my proof"
+        "Show code evidence"
       ],
       "maxTaps": 2,
       "preconditions": "always; empty state is explicit",
@@ -545,7 +562,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "technical",
@@ -553,8 +571,8 @@
       "feature": "Technical details",
       "hostAction": [],
       "route": [
-        "Open settings",
-        "More detail"
+        "Show code evidence",
+        "Technical details"
       ],
       "maxTaps": 2,
       "preconditions": "always; absent fields stay unavailable",
@@ -566,7 +584,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "refresh",
@@ -577,7 +596,7 @@
       ],
       "route": [
         "Open settings",
-        "Read saved code"
+        "Refresh saved context"
       ],
       "maxTaps": 2,
       "preconditions": "not busy",
@@ -589,7 +608,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "snake",
@@ -598,7 +618,7 @@
       "hostAction": [],
       "route": [
         "Open settings",
-        "Snake"
+        "Take a short break"
       ],
       "maxTaps": 2,
       "preconditions": "local game only",
@@ -610,7 +630,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "disclosure",
@@ -618,7 +639,7 @@
       "feature": "Prepared/imported scope disclosure",
       "hostAction": [],
       "route": [
-        "Your rule"
+        "Review your rule"
       ],
       "maxTaps": 2,
       "preconditions": "requirement loaded",
@@ -629,7 +650,8 @@
         "taps": 1,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "transfer",
@@ -639,7 +661,7 @@
         "startTransfer"
       ],
       "route": [
-        "Close lesson",
+        "Open settings",
         "Try the next rule"
       ],
       "maxTaps": 2,
@@ -652,7 +674,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "reflection",
@@ -662,8 +685,7 @@
         "saveReflection"
       ],
       "route": [
-        "Check it",
-        "What did you notice? \u00b7 saved here",
+        "Show code evidence",
         "Save my note"
       ],
       "maxTaps": 2,
@@ -677,7 +699,8 @@
         "taps": 3,
         "status": "requires simplification"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "handover",
@@ -687,8 +710,7 @@
         "exportHandover"
       ],
       "route": [
-        "Open settings",
-        "Show my proof",
+        "Show code evidence",
         "Export my proof"
       ],
       "maxTaps": 2,
@@ -702,7 +724,8 @@
         "taps": 3,
         "status": "requires simplification"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "memory",
@@ -725,7 +748,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "clear",
@@ -748,7 +772,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "sound",
@@ -769,7 +794,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "planned-demo",
@@ -778,7 +804,7 @@
       "hostAction": [],
       "route": [
         "Open settings",
-        "Demo preparation"
+        "Demo preparation \u00b7 planned"
       ],
       "maxTaps": 2,
       "preconditions": "visibly planned, not executable",
@@ -790,7 +816,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "project-start",
@@ -800,7 +827,6 @@
         "projectStart"
       ],
       "route": [
-        "Editor command: Vadhyar: Open Project Guide",
         "Start tracking my code"
       ],
       "maxTaps": 2,
@@ -813,7 +839,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "project-refresh",
@@ -836,7 +863,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "project-intent",
@@ -859,7 +887,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "project-import",
@@ -882,7 +911,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "project-select",
@@ -893,8 +923,7 @@
       ],
       "route": [
         "Your idea",
-        "Saved ideas",
-        "Saved idea button"
+        "Approval rule \u2014 revised"
       ],
       "maxTaps": 2,
       "preconditions": "saved idea exists",
@@ -907,7 +936,8 @@
         "taps": 3,
         "status": "requires simplification"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "project-confirm",
@@ -930,7 +960,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "project-files",
@@ -953,7 +984,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "project-suggest",
@@ -976,7 +1008,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "project-diff",
@@ -999,7 +1032,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "project-source",
@@ -1010,8 +1044,7 @@
       ],
       "route": [
         "What changed",
-        "Open selected source",
-        "Selected source button"
+        "src/approval.ts"
       ],
       "maxTaps": 2,
       "preconditions": "selected saved source",
@@ -1024,7 +1057,8 @@
         "taps": 3,
         "status": "requires simplification"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "project-preview",
@@ -1047,7 +1081,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "project-send",
@@ -1068,7 +1103,8 @@
         "taps": 1,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "project-cancel",
@@ -1078,7 +1114,7 @@
         "projectCancel"
       ],
       "route": [
-        "Check it",
+        "Open project options",
         "Cancel operation"
       ],
       "maxTaps": 2,
@@ -1091,7 +1127,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "project-group",
@@ -1114,7 +1151,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "project-prompt",
@@ -1125,7 +1163,6 @@
       ],
       "route": [
         "How it works",
-        "My proposed coding prompt",
         "Copy this prompt"
       ],
       "maxTaps": 2,
@@ -1139,7 +1176,8 @@
         "taps": 3,
         "status": "requires simplification"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "project-check-select",
@@ -1162,7 +1200,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "project-check-run",
@@ -1173,7 +1212,7 @@
       ],
       "route": [
         "Check it",
-        "Run selected check"
+        "Run this check"
       ],
       "maxTaps": 2,
       "preconditions": "approved check; native confirmation remains required",
@@ -1185,7 +1224,8 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     },
     {
       "id": "project-capture",
@@ -1208,7 +1248,10 @@
         "taps": 2,
         "status": "control inspected"
       },
-      "pathHomeAllowance": 1
+      "pathHomeAllowance": 1,
+      "verification": "visible browser controls and existing message boundary exercised with labelled preview inputs"
     }
-  ]
+  ],
+  "recordedAt": "2026-10-11T02:38:25.201620+00:00",
+  "routeEvidence": "docs/design-v2/simplification/parity/browser-routes.json"
 }

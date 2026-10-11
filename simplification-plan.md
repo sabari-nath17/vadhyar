@@ -183,4 +183,4 @@ contrast and parity tests. Report before/after screenshots for 360px and
 - First entry remains path home with a visible resume action. The host stage remains authoritative.
 - Project Guide remains a separate native editor command; this panel cannot launch it through an unsupported message or command URI.
 - The parity inventory includes the newer transfer, reflection, memory and Project Guide controls omitted by the supplied 28-row list. Routes count panel interactions to reach or invoke the feature after its declared preconditions; typing and native confirmation are separate.
-- CI component-route checks and recorded browser interaction checks are complementary. Neither establishes a native Extension Development Host pass.
+- CI rendered component checks and source-hash-pinned browser route records are complementary. CI fails when evidence is missing, over budget, malformed or stale; desktop browser routes require rerecording after renderer changes. Neither establishes a native Extension Development Host pass.

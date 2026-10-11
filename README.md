@@ -202,3 +202,9 @@ Typecheck, lint, build, all 89 tests and two offline validator cases passed on t
 After a current pass of all three ownership cases, choose **Start archived transfer challenge**. Vadhyar creates the fixed prepared `vadhyar-transfer.md` requirement only when no conflicting file exists. Confirm the new revision, inspect source and save a prediction before running the owning-client/archived case. Edit the source yourself, save/refresh, open the native diff and rerun all four checks. A deny-all edit still fails the active-owner case. Requirement revisions and earlier attempts remain recorded.
 
 **Evidence so far · timeline and handover** shows saved events with requirement/source/check identities and historical labels. **Export Markdown handover** opens a native save dialog and confirms overwrite. Its inert text is a snapshot of saved evidence, including actual hint counts; it makes no mastery or authorship claim. No API key is required for this flow. [S10 native/automated evidence](docs/s10-evidence/transfer.json) separates the user-saved prediction from the delegated developer test edit.
+
+### Updated UI review branch
+
+`codex/updaeted-ui` contains the isolated panel redesign. A saved, confirmed practice lesson resumes in one click. The pinned rule, code-evidence control and task action stay visible; the task scrolls. Project Guide retains its separate native editor command.
+
+See [feature parity](feature-parity.json), [the simplification evidence](docs/design-v2/simplification/README.md), and [the UI red-team review](docs/design-v2/simplification/red-team-review.md). Browser specimens record messages without calling OpenAI or the extension host. Native editor acceptance and beginner user validation remain separate.

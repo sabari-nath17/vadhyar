@@ -10,7 +10,7 @@ import { steps, availableSteps, completedSteps, currentRun, requirementProse, re
 import { Understand } from './understand.js';
 import { Change } from './change.js';
 import { Observation, Verification } from './results.js';
-import { Task, AnswerCard, ProgressSegments, RequirementFrame, StartSheet } from './v2/components.js';
+import { Task, TaskNotices, AnswerCard, ProgressSegments, RequirementFrame, StartSheet } from './v2/components.js';
 import { Control } from './ui.js';
 import { playTone } from './v2/sound.js';
 import { recordedSummary } from './v2/evidence.js';
@@ -90,10 +90,9 @@ function App() {
     {locked && <StartSheet title="Finish this first" onClose={() => setLocked('')} action={<Control className="vd-primary" onClick={() => setLocked('')}>Back to my task</Control>}><p>{locked}</p></StartSheet>}
     <EvidenceReview state={state} send={send} open={evidenceOpen} back={() => setEvidenceOpen(false)} />
     {feedbackOpen && state.counterexample?.kind === 'completed' && <StartSheet title={state.counterexample.observedApproval ? 'The code allowed it.' : 'The code stopped it.'} onClose={() => setFeedbackOpen(false)} action={<Control className="vd-primary" onClick={() => setFeedbackOpen(false)}>Back to my result</Control>}><p>{state.counterexampleCurrent ? state.counterexample.requirementPassed ? 'This case follows your rule.' : 'This case breaks your rule.' : 'This is an earlier result. Check the current code before trusting it.'}</p><p>Use the result to investigate the code. A passing case does not establish understanding.</p></StartSheet>}
+    <TaskNotices.Provider value={<>{state.error && <div className="vd-banner vd-fail" role="alert"><p>{state.error}</p><p>Your typed answer is kept here.</p><Control disabled={state.busy} onClick={() => send({ type: 'ready' })}>Refresh saved context</Control></div>}{state.notice && <p role="status" className="vd-muted vd-notice">{state.notice}</p>}</>}>
     <section className={`vd-task vd-stage vd-screen-${route}`} key={route === 'lesson' ? active : route} ref={taskHeading} tabIndex={-1} aria-label={route === 'lesson' ? `Current task: ${steps[activeIndex].name}` : {home:'Your path',complete:'Completion',break:'Take a break'}[route]} aria-busy={state.busy || saving}>
-    {state.error && <div className="vd-banner vd-fail" role="alert"><p>{state.error}</p><p>Your typed answer is kept here.</p><Control disabled={state.busy} onClick={() => send({ type: 'ready' })}>Refresh saved context</Control></div>}
-    {state.notice && <p role="status" className="vd-muted vd-notice">{state.notice}</p>}
-      {route === 'home' && <PathHome state={state} start={() => setStartOpen(true)} proof={() => setEvidenceOpen(true)} takeBreak={() => setRoute('break')} challenge={() => { send({type:'startTransfer'}); setRoute('lesson'); }} />}
+      {route === 'home' && <PathHome state={state} start={() => state.confirmed ? setRoute('lesson') : setStartOpen(true)} proof={() => setEvidenceOpen(true)} takeBreak={() => setRoute('break')} challenge={() => { send({type:'startTransfer'}); setRoute('lesson'); }} />}
       {route === 'complete' && <Completion state={state} bloom={bloom} challenge={() => { send({type:'startTransfer'}); setRoute('lesson'); }} home={() => setRoute('home')} proof={() => setEvidenceOpen(true)} />}
       {route === 'break' && <Task title="Take a break" pose="resting" action={<Control className="vd-primary" onClick={() => setRoute('home')}>Back to my path</Control>}><p>Your saved lesson stays in this workspace.</p><SnakeGame defaultOpen /></Task>}
       {route === 'lesson' && <>
@@ -119,6 +118,7 @@ function App() {
       {active === 'verify' && <Verification state={state} send={send} complete={finish} notes={() => setEvidenceOpen(true)} />}
       </>}
     </section>
+    </TaskNotices.Provider>
     {startOpen && <LessonStart state={state} close={() => setStartOpen(false)} begin={() => { setStartOpen(false); setRoute('lesson'); }} />}
   </main>;
 }

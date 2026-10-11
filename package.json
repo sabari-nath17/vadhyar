@@ -122,7 +122,9 @@
     "docs/landing-release.md",
     "design-v2.md",
     "PRODUCT.md",
-    "docs/design-v2/**"
+    "docs/design-v2/**",
+    "feature-parity.json",
+    "simplification-plan.md"
   ],
   "dependencies": {
     "openai": "7.32.0",

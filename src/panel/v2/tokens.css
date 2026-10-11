@@ -29,7 +29,7 @@
   --selected: color-mix(in srgb, var(--ochre) 10%, var(--card));
   --focus: var(--vscode-focusBorder, var(--ochre));
 }
-.vd-theme-hc, body:is(.vscode-high-contrast, .vscode-high-contrast-light) {
+.vd-theme-hc, .vd-theme-hc-light, body:is(.vscode-high-contrast, .vscode-high-contrast-light) {
   --canvas: var(--vscode-editor-background, #000000); --card: var(--vscode-editor-background, #000000);
   --text: var(--vscode-foreground, #FFFFFF); --muted: var(--vscode-foreground, #FFFFFF);
   --border: var(--vscode-contrastBorder, #FFFFFF); --frame: var(--vscode-contrastBorder, #FFFFFF);
@@ -39,5 +39,13 @@
   --fail-text: var(--text); --pass-text: var(--text); --frame: var(--border);
   --disabled-bg: var(--canvas); --disabled-text: var(--text); --focus: var(--vscode-focusBorder, #FFFF00);
   --selection-border: var(--focus); --selected: var(--canvas); --teal: var(--text); --ochre: var(--primary);
+}
+.vd-theme-hc-light, body.vscode-high-contrast-light {
+  --canvas: var(--vscode-editor-background, #FFFFFF); --card: var(--vscode-editor-background, #FFFFFF);
+  --text: var(--vscode-foreground, #000000); --muted: var(--vscode-foreground, #000000);
+  --border: var(--vscode-contrastBorder, #000000); --frame: var(--vscode-contrastBorder, #000000);
+  --link: var(--vscode-textLink-foreground, #000080); --primary: var(--vscode-button-background, #000000);
+  --on-primary: var(--vscode-button-foreground, #FFFFFF); --lip-ochre: var(--vscode-contrastBorder, #000000);
+  --focus: var(--vscode-focusBorder, #000080);
 }
 @media (min-width: 720px) { :root { --display-size: 40px; --heading-size: 28px; --body-size: 17px; } }

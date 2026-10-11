@@ -35,8 +35,28 @@ const scenes={
  gated:{...common,confirmed:false,stage:'predict'},
  project:{refs:[],busy:false,project:{name:'Vadhyar UI specimen',busy:false,started:false,fileCount:0,omitted:[],changes:[],intents:[],files:[],selectedFiles:[],captureConnected:false}},
 };
+// Labelled precondition specimens expose existing controls; they are not coaching results.
+const tour={...common,stage:'understand',explanationCurrent:true,walkthrough:{sourceHash:common.sourceHash,requirementRevision:common.requirement.revision,index:0},explanation:{sourceHash:common.sourceHash,requirementRevision:common.requirement.revision,responseId:'UI-specimen-mocked-response',model:'UI specimen — no live API',latencyMs:0,explanation:{summary:'UI specimen for route checks. No live explanation request was made.',steps:[{title:'Follow the approval rule',text:'UI specimen: open the selected permission function.',sourceRefId:refs[0].id}]}}};
+Object.assign(scenes,{
+ tour,
+ connections:{...common,stage:'understand',graph:undefined,graphCurrent:false},
+ predictionSaved:{...common,stage:'predict',prediction:record.seed.prediction},
+ hintSharing:{...scenes.change,hintPreview:context},
+ changed:{...scenes.verify,diff:undefined},
+ cleared:{...common,confirmed:false,stage:'confirm',sessionCleared:'UI-specimen-clear-event'},
+});
+scenes.fullLesson={...scenes.verify,referencesCurrent:true,refs:refs.map(ref=>({...ref,hash:record.corrected.sourceHash})),graph:{...graph,sourceHash:record.corrected.sourceHash,refs:refs.map(ref=>({...ref,hash:record.corrected.sourceHash}))}};
+scenes.fullTour={...scenes.fullLesson,explanationCurrent:true,walkthrough:{...tour.walkthrough,sourceHash:record.corrected.sourceHash},explanation:{...tour.explanation,sourceHash:record.corrected.sourceHash}};
 const projectRecord=JSON.parse(await readFile('docs/design-v2/simplification/project/project-recorded.json','utf8'));
 for(const [name,project] of Object.entries(projectRecord.scenes)) scenes[name]={refs:[],busy:false,project};
+const project=projectRecord.scenes.projectPlan;
+Object.assign(scenes,{
+ projectNewIdea:{refs:[],busy:false,project:{...project,intents:[],selectedIntent:undefined,guide:undefined}},
+ projectUnconfirmed:{refs:[],busy:false,project:{...project,intents:project.intents.map(intent=>({...intent,confirmedAt:undefined})),guide:undefined}},
+ projectSuggest:{refs:[],busy:false,project:{...project,selectedFiles:[],guide:undefined}},
+ projectBusy:{refs:[],busy:false,project:{...project,busy:true,operation:'UI specimen: operation in progress'}},
+ projectGroup:{refs:[],busy:false,project:{...project,groups:[{title:'UI specimen — proposed file group',rationale:'UI specimen for route checks; no grouping request was made.',intentId:project.selectedIntent,paths:project.selectedFiles}],groupSnapshot:project.snapshot}},
+});
 const output='dist/gallery/preview';await mkdir(output,{recursive:true});
 for(const file of await readdir('dist')) if(/\.(js|css|woff2|png)$/.test(file)) await cp(`dist/${file}`,`${output}/${file}`);
 await cp('dist/media',`${output}/media`,{recursive:true});

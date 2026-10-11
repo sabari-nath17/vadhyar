@@ -1,0 +1,2642 @@
+[
+  {
+    "theme": "light",
+    "scene": "confirm",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Is this your rule?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "light",
+    "scene": "understand",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "How does this work?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "light",
+    "scene": "sharing",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Send this to OpenAI?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "light",
+    "scene": "predict",
+    "action": {
+      "bottom": 664,
+      "height": 73,
+      "top": 591,
+      "width": 336
+    },
+    "heading": "Will it allow this?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 591,
+      "height": 429,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "light",
+    "scene": "observe",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "What happened?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "light",
+    "scene": "change",
+    "action": {
+      "bottom": 664,
+      "height": 73,
+      "top": 591,
+      "width": 336
+    },
+    "heading": "Try one small change",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 591,
+      "height": 429,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "light",
+    "scene": "verify",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Does your change follow the rule?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "light",
+    "scene": "imported",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "How does this work?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "light",
+    "scene": "connect",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Connect OpenAI for guidance",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "light",
+    "scene": "loading",
+    "action": {
+      "bottom": 664,
+      "height": 86,
+      "top": 578,
+      "width": 336
+    },
+    "heading": "Preparing your explanation…",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 578,
+      "height": 416,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "light",
+    "scene": "stale",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "How does this work?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "light",
+    "scene": "error",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "How does this work?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "light",
+    "scene": "extracting",
+    "action": {
+      "bottom": 664,
+      "height": 73,
+      "top": 591,
+      "width": 336
+    },
+    "heading": "Finding the relevant code…",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 591,
+      "height": 429,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "light",
+    "scene": "unsaved",
+    "action": {
+      "bottom": 664,
+      "height": 73,
+      "top": 591,
+      "width": 336
+    },
+    "heading": "Will it allow this?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 591,
+      "height": 429,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "light",
+    "scene": "runnerError",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Does your change follow the rule?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "light",
+    "scene": "gated",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Is this your rule?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "light",
+    "scene": "project",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Start with your code",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 488,
+      "top": 118,
+      "width": 336
+    },
+    "top": {
+      "bottom": 116,
+      "height": 88,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "light",
+    "scene": "projectIdea",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Your idea",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "light",
+    "scene": "projectChanged",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Your idea",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "light",
+    "scene": "projectPlan",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Your idea",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "light",
+    "scene": "projectCheck",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Your idea",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "light",
+    "scene": "projectShare",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Send this to OpenAI?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 488,
+      "top": 118,
+      "width": 336
+    },
+    "top": {
+      "bottom": 116,
+      "height": 88,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "scene": "confirm",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Is this your rule?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "scene": "understand",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "How does this work?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "scene": "sharing",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Send this to OpenAI?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "scene": "predict",
+    "action": {
+      "bottom": 664,
+      "height": 73,
+      "top": 591,
+      "width": 336
+    },
+    "heading": "Will it allow this?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 591,
+      "height": 429,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "scene": "observe",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "What happened?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "scene": "change",
+    "action": {
+      "bottom": 664,
+      "height": 73,
+      "top": 591,
+      "width": 336
+    },
+    "heading": "Try one small change",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 591,
+      "height": 429,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "scene": "verify",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Does your change follow the rule?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "scene": "imported",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "How does this work?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "scene": "connect",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Connect OpenAI for guidance",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "scene": "loading",
+    "action": {
+      "bottom": 664,
+      "height": 86,
+      "top": 578,
+      "width": 336
+    },
+    "heading": "Preparing your explanation…",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 578,
+      "height": 416,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "scene": "stale",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "How does this work?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "scene": "error",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "How does this work?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "scene": "extracting",
+    "action": {
+      "bottom": 664,
+      "height": 73,
+      "top": 591,
+      "width": 336
+    },
+    "heading": "Finding the relevant code…",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 591,
+      "height": 429,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "scene": "unsaved",
+    "action": {
+      "bottom": 664,
+      "height": 73,
+      "top": 591,
+      "width": 336
+    },
+    "heading": "Will it allow this?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 591,
+      "height": 429,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "scene": "runnerError",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Does your change follow the rule?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "scene": "gated",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Is this your rule?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "scene": "project",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Start with your code",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 488,
+      "top": 118,
+      "width": 336
+    },
+    "top": {
+      "bottom": 116,
+      "height": 88,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "scene": "projectIdea",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Your idea",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "scene": "projectChanged",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Your idea",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "scene": "projectPlan",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Your idea",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "scene": "projectCheck",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Your idea",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "scene": "projectShare",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Send this to OpenAI?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 488,
+      "top": 118,
+      "width": 336
+    },
+    "top": {
+      "bottom": 116,
+      "height": 88,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "scene": "confirm",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Is this your rule?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "scene": "understand",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "How does this work?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "scene": "sharing",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Send this to OpenAI?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "scene": "predict",
+    "action": {
+      "bottom": 664,
+      "height": 73,
+      "top": 591,
+      "width": 336
+    },
+    "heading": "Will it allow this?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 591,
+      "height": 429,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "scene": "observe",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "What happened?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "scene": "change",
+    "action": {
+      "bottom": 664,
+      "height": 73,
+      "top": 591,
+      "width": 336
+    },
+    "heading": "Try one small change",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 591,
+      "height": 429,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "scene": "verify",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Does your change follow the rule?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "scene": "imported",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "How does this work?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "scene": "connect",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Connect OpenAI for guidance",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "scene": "loading",
+    "action": {
+      "bottom": 664,
+      "height": 86,
+      "top": 578,
+      "width": 336
+    },
+    "heading": "Preparing your explanation…",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 578,
+      "height": 416,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "scene": "stale",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "How does this work?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "scene": "error",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "How does this work?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "scene": "extracting",
+    "action": {
+      "bottom": 664,
+      "height": 73,
+      "top": 591,
+      "width": 336
+    },
+    "heading": "Finding the relevant code…",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 591,
+      "height": 429,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "scene": "unsaved",
+    "action": {
+      "bottom": 664,
+      "height": 73,
+      "top": 591,
+      "width": 336
+    },
+    "heading": "Will it allow this?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 591,
+      "height": 429,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "scene": "runnerError",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Does your change follow the rule?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "scene": "gated",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Is this your rule?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "scene": "project",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Start with your code",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 488,
+      "top": 118,
+      "width": 336
+    },
+    "top": {
+      "bottom": 116,
+      "height": 88,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "scene": "projectIdea",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Your idea",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "scene": "projectChanged",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Your idea",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "scene": "projectPlan",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Your idea",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "scene": "projectCheck",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Your idea",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "scene": "projectShare",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Send this to OpenAI?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 488,
+      "top": 118,
+      "width": 336
+    },
+    "top": {
+      "bottom": 116,
+      "height": 88,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "scene": "confirm",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Is this your rule?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "scene": "understand",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "How does this work?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "scene": "sharing",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Send this to OpenAI?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "scene": "predict",
+    "action": {
+      "bottom": 664,
+      "height": 73,
+      "top": 591,
+      "width": 336
+    },
+    "heading": "Will it allow this?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 591,
+      "height": 429,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "scene": "observe",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "What happened?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "scene": "change",
+    "action": {
+      "bottom": 664,
+      "height": 73,
+      "top": 591,
+      "width": 336
+    },
+    "heading": "Try one small change",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 591,
+      "height": 429,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "scene": "verify",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Does your change follow the rule?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "scene": "imported",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "How does this work?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "scene": "connect",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Connect OpenAI for guidance",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "scene": "loading",
+    "action": {
+      "bottom": 664,
+      "height": 86,
+      "top": 578,
+      "width": 336
+    },
+    "heading": "Preparing your explanation…",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 578,
+      "height": 416,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "scene": "stale",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "How does this work?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "scene": "error",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "How does this work?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "scene": "extracting",
+    "action": {
+      "bottom": 664,
+      "height": 73,
+      "top": 591,
+      "width": 336
+    },
+    "heading": "Finding the relevant code…",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 591,
+      "height": 429,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "scene": "unsaved",
+    "action": {
+      "bottom": 664,
+      "height": 73,
+      "top": 591,
+      "width": 336
+    },
+    "heading": "Will it allow this?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 591,
+      "height": 429,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "scene": "runnerError",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Does your change follow the rule?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "scene": "gated",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Is this your rule?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "scene": "project",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Start with your code",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 488,
+      "top": 118,
+      "width": 336
+    },
+    "top": {
+      "bottom": 116,
+      "height": 88,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "scene": "projectIdea",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Your idea",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "scene": "projectChanged",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Your idea",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "scene": "projectPlan",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Your idea",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "scene": "projectCheck",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Your idea",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 444,
+      "top": 162,
+      "width": 336
+    },
+    "top": {
+      "bottom": 160,
+      "height": 132,
+      "top": 28,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "scene": "projectShare",
+    "action": {
+      "bottom": 664,
+      "height": 58,
+      "top": 606,
+      "width": 336
+    },
+    "heading": "Send this to OpenAI?",
+    "overflow": false,
+    "panel": {
+      "bottom": 664,
+      "height": 640,
+      "top": 24,
+      "width": 360
+    },
+    "task": {
+      "bottom": 606,
+      "height": 488,
+      "top": 118,
+      "width": 336
+    },
+    "top": {
+      "bottom": 116,
+      "height": 88,
+      "top": 28,
+      "width": 336
+    }
+  }
+]

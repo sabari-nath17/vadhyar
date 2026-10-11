@@ -1,0 +1,34 @@
+{
+  "recordedAt": "2026-10-11T02:38:25.201620+00:00",
+  "boundary": "Renderer-only localhost preview: host messages recorded; no API, storage, credentials or project operations executed. Existing recorded checks remain separate. Native entry validated against manifest only.",
+  "sources": {
+    "src/panel/app.tsx": "f9c913e924d19512f01859ee4fe91450f4ec029207f5537c369b382724adec7e",
+    "src/panel/assets.d.ts": "3f7b11f44304c9eb86f205b7e5ad42c41890341e881435572420f7ff2e9ab664",
+    "src/panel/change.tsx": "eddaaa8ec328ef95ccd480c533c01d0b660b6babb9eb6ef7dfaf339ef46b767e",
+    "src/panel/fonts.css": "38359c1825eec51bcfa779dfa85226817c592dd17133c695bbeca4aded413b5e",
+    "src/panel/home.tsx": "5cae743fbbd7cd9b86a4d7077a7b3884ef436c7c6207dd2ed49c0eb39eb3af0f",
+    "src/panel/lesson-shell.tsx": "58334e1f530324c815157982956ce4a3f560381c7af68b2422043ba00c8e934b",
+    "src/panel/project.tsx": "36c45348bca2f3c97ef0d74b3d2a2f5d73e5b17e7c443e4d2bb01731b0d0f5f6",
+    "src/panel/results.tsx": "ebaa7b7ade36ee5941904f8c42127ec68cac8cbcaf3ebb5cad0a10a8e972990d",
+    "src/panel/reuse-controls.tsx": "06915b01b8c37a0ca9c1132dbe88e254d84f52318d72895ea4435b7c33b7b8ff",
+    "src/panel/snake-game.tsx": "b1a2e74d68fb4b34b50f844b12252fe9fcb181d404609495b2b88d2b9de7c7bd",
+    "src/panel/snake.ts": "c84fb8f38776f681bd57dbe61237660d863e3f402f32087767a562fc712cf786",
+    "src/panel/style.css": "d201540e40a44e6da79cbc4f955d516e297f1962b2810ec7ead85de69789ff74",
+    "src/panel/tokens.css": "084d70e2fba7bb0352f617596b170bfe0511c710a194ed359a7ccd54f7d8a7fe",
+    "src/panel/ui.tsx": "e22796cd2a61eff051b9904aa666b47fe8bc1852f2cedf27fd120b64c4503b44",
+    "src/panel/understand.tsx": "b79a9f275420fd44bf66ea7f4355b1cd8b505e375557f77d4c84af08223d667b",
+    "src/panel/v2/components.tsx": "e0c948e30bb6c94ef8228f493895cb5693ca0458f1b5f6f8b16fe00c817f5e01",
+    "src/panel/v2/evidence.ts": "0f2143887cc2189056c383114b232cb7c5cc5c189409854bcc95c0d0acaeeb74",
+    "src/panel/v2/fonts.css": "4a8a4261cc43de51823e5f9669b33e188a161f8c7b3e03ba2de6eea3a8c941f3",
+    "src/panel/v2/gallery.tsx": "6ee5012cd1951dbe13e5ac97a2a07132f11a4f39229002563c8af4ffaebe3603",
+    "src/panel/v2/sound.ts": "4e8836e15e86cb2b4a4496eac83cc30e4dd8cfda7cd830a53b33380c670730f4",
+    "src/panel/v2/style.css": "7936f0703b22720d8e4f3811a402f05893a47b12054e76eb4f4f6a21dad03ef7",
+    "src/panel/v2/tokens.css": "1d61aec0ea0929b87286609dabdac0ab70017ab59af233799c438cd7d2f7665c",
+    "src/panel/workflow.ts": "9bc77e5321eee545a54b3919f2c6b19f750000bb1c1fdad9ae1bfd62da3d578a"
+  },
+  "browserWitnesses": 55,
+  "nativeCommands": [
+    "vadhyar.open",
+    "vadhyar.project"
+  ]
+}

@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useState, type ButtonHTMLAttributes, type ReactNode, type KeyboardEvent as ReactKeyboardEvent } from 'react';
+import { createContext, useContext, useEffect, useId, useRef, useState, type ButtonHTMLAttributes, type ReactNode, type KeyboardEvent as ReactKeyboardEvent } from 'react';
 import { lessonSteps, proofLabels, type Proof } from './evidence.js';
 
 export type Tone = 'ok' | 'bad' | 'hint';
@@ -75,8 +75,10 @@ export function Bloom({ animate }: { animate: boolean }) { return <svg className
 export function ProofSticker({ proof, earned }: { proof: Proof; earned: readonly Proof[] }) { if (!earned.includes(proof)) return null; return <figure className="vd2-proof"><img src={`./media/stickers/${proof}.svg`} alt="" /><figcaption>{proofLabels[proof]}</figcaption></figure>; }
 export function Disclosure({ title, children }: { title: string; children: ReactNode }) { return <details className="vd2-disclosure"><summary>{title}</summary><div>{children}</div></details>; }
 
+export const TaskNotices = createContext<ReactNode>(null);
 export function Task({ title, pose, art, children, action }: { title: string; pose?: Pose; art?: ReactNode; children: ReactNode; action: ReactNode }) {
-  return <><div className="vd2-task-scroll" onKeyDown={primaryOnEnter}><div className="vd2-task-layout"><div className="vd2-task-copy"><h2 tabIndex={-1}>{title}</h2>{children}</div>{(pose || art) && <aside className="vd2-task-guide">{art ?? (pose && <Guide pose={pose} large />)}</aside>}</div></div><ActionBar>{action}</ActionBar></>;
+  const notices = useContext(TaskNotices);
+  return <><div className="vd2-task-scroll" onKeyDown={primaryOnEnter}><div className="vd2-task-layout"><div className="vd2-task-copy"><h2 tabIndex={-1}>{title}</h2>{notices}{children}</div>{(pose || art) && <aside className="vd2-task-guide">{art ?? (pose && <Guide pose={pose} large />)}</aside>}</div></div><ActionBar>{action}</ActionBar></>;
 }
 
 export function StartSheet({ id, title, pose, open = true, children, action, onClose }: { id?: string; title: string; pose?: Pose; open?: boolean; children: ReactNode; action: ReactNode; onClose: () => void }) {

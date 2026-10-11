@@ -1,0 +1,167 @@
+
+> vadhyar@0.1.0 test
+> vitest run --reporter=verbose --no-file-parallelism --testTimeout=15000
+
+
+ RUN  v5.0.3 /Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2
+
+ ✓ tests/ownership-runner.test.ts > full ownership suite distinguishes seed 356ms
+ ✓ tests/ownership-runner.test.ts > full ownership suite distinguishes correct edit 263ms
+ ✓ tests/ownership-runner.test.ts > full ownership suite distinguishes deny-all edit 318ms
+ ✓ tests/ownership-runner.test.ts > full ownership suite distinguishes throwing source 289ms
+ ✓ tests/ownership-runner.test.ts > full ownership reports cannot pass with missing, skipped or inconsistent cases 1ms
+ ✓ tests/ownership-runner.test.ts > executes only the counterexample and distinguishes seed 259ms
+ ✓ tests/ownership-runner.test.ts > executes only the counterexample and distinguishes correct edit 256ms
+ ✓ tests/ownership-runner.test.ts > executes only the counterexample and distinguishes throwing source 256ms
+ ✓ tests/ownership-runner.test.ts > executes only the counterexample and distinguishes hung source 20015ms
+ ✓ tests/ownership-runner.test.ts > rejects missing observations, unexpected case coverage and inconsistent process status 3ms
+ ✓ tests/ownership-runner.test.ts > refuses changed trusted definitions and an absent or stale prediction before execution 279ms
+ ✓ tests/resume-host.test.ts > reopens the existing NovaDesk panel in its current editor column 10ms
+ ✓ tests/resume-host.test.ts > starts a separate archived transfer only after current ownership passes, then restores its prediction, edits and four real checks 1113ms
+ ✓ tests/resume-host.test.ts > resumes the saved prediction, actual counterexample, diff, full run and local reflection across controller restarts and panel reopen 609ms
+ ✓ tests/resume-host.test.ts > resumes an interrupted check as an execution problem without inventing an outcome 281ms
+ ✓ tests/resume-host.test.ts > persists execution errors separately and does not restore them as learner verdicts 309ms
+ ✓ tests/resume-host.test.ts > restores legacy hints and runs as historical while recovering their exact baseline without inventing the missing observation 1089ms
+ ✓ tests/resume-host.test.ts > does not attach evidence from a prior requirement revision to a changed requirement 25ms
+ ✓ tests/resume-host.test.ts > marks outcomes historical and rejects guidance when the trusted case definitions change 275ms
+ ✓ tests/resume-host.test.ts > retains an actual outcome as historical when source changes while the runner executes 270ms
+ ✓ tests/transfer-runner.test.ts > runs only the saved archived case before an edit and preserves ownership coverage on a full transfer rerun 989ms
+ ✓ tests/transfer-runner.test.ts > rejects reduced or inconsistent transfer coverage and changed trusted transfer definitions 253ms
+ ✓ tests/scenario-contract.test.ts > trusted ownership scenario > pins its harness and identifies its requirement and three ordinary cases 1ms
+ ✓ tests/scenario-contract.test.ts > trusted ownership scenario > distinguishes seed using the real fixed harness 268ms
+ ✓ tests/scenario-contract.test.ts > trusted ownership scenario > distinguishes correct edit using the real fixed harness 269ms
+ ✓ tests/scenario-contract.test.ts > trusted ownership scenario > distinguishes deny-all edit using the real fixed harness 282ms
+ ✓ tests/project-controller.test.ts > works outside NovaDesk, preserves intent revisions, invalidates context and restores memory 106ms
+ ✓ tests/project-controller.test.ts > rejects unconfirmed intent, stale previews, dirty source and unmapped paths 27ms
+ ✓ tests/project-controller.test.ts > captures agent events exactly once and keeps captured intent unconfirmed 23ms
+ ✓ tests/project-controller.test.ts > runs only an explicitly selected existing script and never invents requirement coverage 195ms
+ ✓ tests/project-controller.test.ts > links an imported requirement to its document and blocks guidance after PRD drift 44ms
+ ✓ tests/project-controller.test.ts > requires an enabled integration for captured requests and keeps unknown groups unconfirmed 62ms
+ ✓ tests/v2-project-preview.test.ts > records real project captures, revisions and a script result with explicitly mocked guidance 215ms
+ ✓ tests/reuse-host.test.ts > derives the evidence timeline and inert Markdown handover from persisted records and preserves cancelled exports 52ms
+ ✓ tests/reuse-host.test.ts > imports, confirms, restores, invalidates and returns to the prepared requirement without losing history 28ms
+ ✓ tests/reuse-host.test.ts > marks saved source links and explanations stale after disk edits, dirty buffers and requirement revisions 11ms
+ ✓ tests/reuse-host.test.ts > restores recorded explanations as historical when their source or requirement differs 11ms
+ ✓ tests/reuse-host.test.ts > uses native confirmation and clears only NovaDesk memory without changing credentials or Project Guide 11ms
+ ✓ tests/reuse-host.test.ts > reveals memory even with corrupt session data and reports a clear failure without replacing valid records 3ms
+ ✓ tests/reuse-host.test.ts > navigates, exports, confirms overwrite, and rejects changed saved source or requirement 11ms
+ ✓ tests/reuse-host.test.ts > cancels imports without changing the session and rejects outside or dirty specifications 9ms
+ ✓ tests/project-capture.test.ts > records agent requests locally with restrictive permissions and stable event retry IDs 81ms
+ ✓ tests/project-capture.test.ts > rejects invalid and private-looking capture input 75ms
+ ✓ tests/release.test.ts > prepares a new demo with the exact disclosed seed and refuses to overwrite a saved attempt 107ms
+ ✓ tests/project-model.test.ts > captures multiple files, additions and deletions without dependencies, secrets or symlinks 18ms
+ ✓ tests/project-model.test.ts > preserves confirmed intent revisions and previous valid storage after a rejected write 5ms
+ ✓ tests/project-model.test.ts > detects Git-tracked deletions 41ms
+ ✓ tests/project-model.test.ts > excludes private-looking and oversized content without exposing it 7ms
+ ✓ tests/project-model.test.ts > deduplicates source history and preserves memory when a source blob is lost 9ms
+ ✓ tests/project-model.test.ts > rejects private-looking intent titles 0ms
+ ✓ tests/project-model.test.ts > proposes source matches without modifying or confirming the intention 6ms
+ ✓ tests/project-model.test.ts > enforces the snapshot byte limit for non-ASCII source 15ms
+ ✓ tests/session-controls.test.ts > clears only NovaDesk-owned data and leaves Project Guide and other stored files alone 15ms
+ ✓ tests/session-controls.test.ts > retains primary records after partial native deletion and preserves interrupted recovery data 11ms
+ ✓ tests/session-controls.test.ts > restores the previous valid files when native removal fails 6ms
+ ✓ tests/session-controls.test.ts > never overwrites a later valid record during clear recovery 6ms
+ ✓ tests/session-controls.test.ts > refuses a symlink or ambiguous scratch folder before moving any records 6ms
+ ✓ tests/session-controls.test.ts > validates recorded explanations without accepting corrupt output or changing valid records after a failed save 9ms
+ ✓ tests/session.test.ts > round-trips exact snapshots and preserves the old record after a rejected or failed write 15ms
+ ✓ tests/session.test.ts > records actual hint use, exact native-diff snapshots and a correlated full ownership result 7ms
+ ✓ tests/session.test.ts > saves a prediction before execution while preserving existing checkpoint records 3ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > preserves every current host, contract, project controller and fixture byte 2ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > uses one registry while keeping the host stage IDs 0ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > uses actual allowed stages rather than inventing an unlocked sequence 3ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > separates scrollable task content from the visible action 1ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > keeps exact sharing context and never enables a malformed preview 1ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > renders actual source links and preserves their stale gate 0ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > accepts actual browser message records without running a case before save acknowledgement 2ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > keeps all baseline UI actions available 1ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > shows the user rule and honest feature availability on the path 1ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > withholds completion claims and export without current recorded evidence 2ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > shows the missing-key and stale-code recovery without an automatic send 1ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > preserves the keyboard guard, typed newline and serialized prediction boundary 0ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > includes reduced-motion overrides and only local fonts/art 0ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > opens Snake immediately from the path while retaining the quiet settings disclosure 3ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > keeps the generated character ink on its light face in every theme 0ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > explains the real project features before the optional practice example 2ms
+ ✓ tests/session-resume.test.ts > migrates legacy records in memory without rewriting the session or adjacent evidence 15ms
+ ✓ tests/session-resume.test.ts > rejects corrupt and unsupported stored records without erasing their recoverable bytes 1ms
+ ✓ tests/session-resume.test.ts > round-trips an observed attempt, stage, baseline and reflection with validated identities 6ms
+ ✓ tests/v2-simplification.test.tsx > simplified shell retains the current product > pins the rule and code-evidence control above the lesson 1ms
+ ✓ tests/v2-simplification.test.tsx > simplified shell retains the current product > keeps locked segments as interactive explanations, not silent disabled controls 3ms
+ ✓ tests/v2-simplification.test.tsx > simplified shell retains the current product > records all supplied features plus the newer current controls before UI changes 1ms
+ ✓ tests/v2-simplification.test.tsx > simplified shell retains the current product > shows the prediction, observed code and expected rule in one flat ledger 1ms
+ ✓ tests/v2-simplification.test.tsx > simplified shell retains the current product > opens evidence as a sheet without losing the underlying task 1ms
+ ✓ tests/v2-simplification.test.tsx > simplified shell retains the current product > makes hint review a direct action without an extra disclosure 1ms
+ ✓ tests/v2-simplification.test.tsx > simplified shell retains the current product > gives Project Guide the same pinned idea, status and progress shell 2ms
+ ✓ tests/v2-simplification.test.tsx > simplified shell retains the current product > makes saved ideas directly selectable in the idea task 25ms
+ ✓ tests/v2-simplification.test.tsx > simplified shell retains the current product > keeps recovery messages inside the scrolling task, above the pinned action 0ms
+ ✓ tests/v2-simplification.test.tsx > simplified shell retains the current product > supports high contrast light explicitly in the gallery and theme tokens 0ms
+ ✓ tests/coach-reliability.test.ts > rejects unsupported positive verification claims while accepting a clear evidence limitation 6ms
+ ✓ tests/coach-reliability.test.ts > grounds progressive transfer guidance in the disclosed lifecycle challenge, without a completed fix 2ms
+ ✓ tests/coach-reliability.test.ts > rejects malformed completed-response metadata before publishing coaching output 17ms
+ ✓ tests/coach-reliability.test.ts > keeps HTTP 401 as a sanitized execution error with no automatic retry 2ms
+ ✓ tests/coach-reliability.test.ts > keeps HTTP 403 as a sanitized execution error with no automatic retry 1ms
+ ✓ tests/coach-reliability.test.ts > keeps HTTP 429 as a sanitized execution error with no automatic retry 2ms
+ ✓ tests/coach-reliability.test.ts > keeps HTTP 503 as a sanitized execution error with no automatic retry 7ms
+ ✓ tests/coach-reliability.test.ts > keeps cancellation, connection failure and malformed JSON as errors, never accepted explanations 7ms
+ ✓ tests/coach-eval.test.ts > runs synthetic validator cases and fails explicitly when live credentials are absent 5ms
+ ✓ tests/coach-eval.test.ts > uses production request builders and validators for explanations and progressive hints (mock HTTP) 9ms
+ ✓ tests/coach-eval.test.ts > keeps api-error as a failed evaluation without passing output (mock HTTP) 2ms
+ ✓ tests/coach-eval.test.ts > keeps invalid-output as a failed evaluation without passing output (mock HTTP) 2ms
+ ✓ tests/reuse.test.ts > imports requirements and scenarios while ignoring fenced headings and rejecting ambiguous titles 3ms
+ ✓ tests/reuse.test.ts > persists selected source/revision/scenarios and prior requirements without claiming executable coverage 39ms
+ ✓ tests/reuse.test.ts > exports only the CodeTour safe subset with current references and inert text 1ms
+ ✓ tests/project-coach.test.ts > requires confirmed intent, bounds context and rejects foreign citations and omitted grouping files 4ms
+ ✓ tests/project-coach.test.ts > supports planning before source exists while keeping explanations grounded 0ms
+ ✓ tests/project-coach.test.ts > rejects duplicate group files and non-relative paths 0ms
+ ✓ tests/project-coach.test.ts > uses the real SDK Responses request and structured formats for group and plan (mock HTTP) 10ms
+ ✓ tests/v2-feature-parity.test.ts > current panel feature parity evidence > retains all 28 supplied rows and newer controls within the declared route budget 3ms
+ ✓ tests/v2-feature-parity.test.ts > current panel feature parity evidence > requires new browser evidence whenever the renderer changes and validates every recorded message 8ms
+ ✓ tests/v2-feature-parity.test.ts > current panel feature parity evidence > keeps every recorded 360px state within the footer and scrolling-task budgets 2ms
+ ✓ tests/v2-foundations.test.ts > V2 token and authored asset boundaries > keeps light text and UI borders above their contrast floor 1ms
+ ✓ tests/v2-foundations.test.ts > V2 token and authored asset boundaries > keeps dark text and UI borders above their contrast floor 0ms
+ ✓ tests/v2-foundations.test.ts > V2 token and authored asset boundaries > keeps high contrast dark text and UI borders above their contrast floor 0ms
+ ✓ tests/v2-foundations.test.ts > V2 token and authored asset boundaries > keeps high contrast light text and UI borders above their contrast floor 0ms
+ ✓ tests/v2-foundations.test.ts > V2 token and authored asset boundaries > ships the full inert SVG asset set without scripts, links or baked text 6ms
+ ✓ tests/v2-foundations.test.ts > V2 token and authored asset boundaries > includes the descending hand in both square brand emblems 0ms
+ ✓ tests/v2-foundations.test.ts > V2 token and authored asset boundaries > redefines the surface-dependent selected color inside the dark theme 0ms
+ ✓ tests/graphify.test.ts > validates the actual no-cluster 0.9.84 shape and selects grounded entrypoint references 3ms
+ ✓ tests/graphify.test.ts > rejects foreign paths, unknown edges, invalid spans and unsupported provenance 1ms
+ ✓ tests/graphify.test.ts > requires an absolute Graphify executable and reports a missing prerequisite without fabricating a graph 3ms
+ ✓ tests/source-boundary.test.ts > host source boundary > retains current graph links when refreshing or adding a hint reference, without duplicates or stale links 1ms
+ ✓ tests/source-boundary.test.ts > host source boundary > rejects arbitrary message fields and executable paths 2ms
+ ✓ tests/source-boundary.test.ts > host source boundary > opens only a current, bounded host reference and rejects escaping symlinks 3ms
+ ✓ tests/hints.test.ts > previews progressive hint context from the requirement, current source, prediction and observation 4ms
+ ✓ tests/hints.test.ts > blocks missing/stale observations, invalid progression and secret-bearing reasoning 0ms
+ ✓ tests/hints.test.ts > validates hint level/IDs and rejects code, extra executable fields, refusals and incomplete output 2ms
+ ✓ tests/coach.test.ts > coach transmission and response boundary > previews only the prepared requirement/source and current IDs; rejects stale or secret-bearing context 2ms
+ ✓ tests/coach.test.ts > coach transmission and response boundary > accepts structured grounded text and rejects refusal, incomplete, unknown IDs and executable fields 2ms
+ ✓ tests/v2-sound.test.ts > does not open audio when sound is off and survives unavailable audio 2ms
+ ✓ tests/v2-sound.test.ts > plays a bounded local tone and closes its audio context 1ms
+ ✓ tests/v2-sound.test.ts > reads titles and examples from the actual requirement without supplying a demo fallback 1ms
+ ✓ tests/v2-evidence.test.ts > V2 recorded-evidence presentation > derives registry length and actual matched case counts 2ms
+ ✓ tests/v2-evidence.test.ts > V2 recorded-evidence presentation > withholds achievements for stale or incomplete verification 0ms
+ ✓ tests/v2-evidence.test.ts > V2 recorded-evidence presentation > requires the host current-check flag even when source hashes match 0ms
+ ✓ tests/v2-evidence.test.ts > V2 recorded-evidence presentation > uses the recorded transfer cases and rejects duplicate or contradictory results 0ms
+ ✓ tests/v2-evidence.test.ts > V2 recorded-evidence presentation > never infers independent authorship or source-open history 0ms
+ ✓ tests/v2-evidence.test.ts > V2 recorded-evidence presentation > requires a correlated prediction saved before execution 0ms
+ ✓ tests/panel-workflow.test.ts > panel workflow derives steps and evidence from host state > locks future stages until their real prerequisites exist 1ms
+ ✓ tests/panel-workflow.test.ts > panel workflow derives steps and evidence from host state > never treats an earlier source or requirement as a current passed run 0ms
+ ✓ tests/panel-workflow.test.ts > panel workflow derives steps and evidence from host state > uses the restored stage only while its real prerequisites are available 0ms
+ ✓ tests/panel-workflow.test.ts > panel workflow derives steps and evidence from host state > summarizes the exact sharing payload and rejects malformed context 0ms
+ ✓ tests/panel-workflow.test.ts > panel workflow derives steps and evidence from host state > shows requirement prose from the actual document, excluding metadata 0ms
+ ✓ tests/snake.test.ts > local Snake Easter egg > starts with food outside the body and freezes before play or while paused 1ms
+ ✓ tests/snake.test.ts > local Snake Easter egg > moves one cell without growing and prevents reversal within a tick 0ms
+ ✓ tests/snake.test.ts > local Snake Easter egg > grows on food and keeps new food outside the snake 0ms
+ ✓ tests/snake.test.ts > local Snake Easter egg > ends on walls or the body, but permits entering a vacated tail cell 0ms
+ ✓ tests/snake.test.ts > local Snake Easter egg > wins without looping when the final free cell is collected 0ms
+ ✓ tests/fixture-baseline.test.ts > NovaDesk disclosed role-only seed (not ownership-policy verification) > allows the owning client on an active milestone 1ms
+ ✓ tests/fixture-baseline.test.ts > NovaDesk disclosed role-only seed (not ownership-policy verification) > SEEDED BUG: allows a different client on an active milestone 0ms
+ ✓ tests/fixture-baseline.test.ts > NovaDesk disclosed role-only seed (not ownership-policy verification) > denies a freelancer on an active milestone 0ms
+
+ Test Files  30 passed (30)
+      Tests  152 passed (152)
+   Start at  08:11:20
+   Duration  34.00s (tests 94%, import 5%, transform 1%)
+
+    Isolate  30 workers spawned · ~68ms startup each (spawn + environment, per file)
+             at least ~1.96s faster with isolate: false — reuses workers across files instead of one per file

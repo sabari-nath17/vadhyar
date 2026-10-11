@@ -124,8 +124,8 @@ blockquote { margin: 8px 0 0; padding-inline-start: 12px; border-left: 2px solid
 .vd-learning .vd2-progress .vd2-label { position: absolute; top: 2px; left: 0; pointer-events: none; font: 600 12px/16px var(--interface); }
 .vd-learning .vd2-segments { height: 44px; }
 .vd-learning .vd2-segment { height: 44px; align-items: end; padding-bottom: 6px; }
-.vd-stage { padding-top: 8px; }
-.vd-stage .vd2-actionbar { padding: 8px 0; display: flex; align-items: start; gap: 8px; }
+.vd-stage { padding-top: 2px; }
+.vd-stage .vd2-actionbar { padding: 4px 0; display: flex; align-items: start; gap: 8px; }
 .vd-stage .vd2-actionbar > .vd2-control { flex: 1; min-width: 0; gap: 2px; }
 .vd-stage .vd2-actionbar .vd2-caption { font-size: 12px; line-height: 13px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .vd-stage .vd2-actionbar .vd2-button { padding: 8px; min-height: 48px; }

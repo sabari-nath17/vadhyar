@@ -1,0 +1,266 @@
+[
+  {
+    "theme": "light",
+    "width": 320,
+    "file": "light-320.png",
+    "action": {
+      "height": 73,
+      "width": 312
+    },
+    "overflow": false,
+    "panel": {
+      "height": 640,
+      "width": 320
+    },
+    "task": {
+      "height": 429,
+      "width": 312
+    },
+    "top": {
+      "height": 132,
+      "width": 312
+    }
+  },
+  {
+    "theme": "light",
+    "width": 360,
+    "file": "light-360.png",
+    "action": {
+      "height": 73,
+      "width": 336
+    },
+    "overflow": false,
+    "panel": {
+      "height": 640,
+      "width": 360
+    },
+    "task": {
+      "height": 429,
+      "width": 336
+    },
+    "top": {
+      "height": 132,
+      "width": 336
+    }
+  },
+  {
+    "theme": "light",
+    "width": 720,
+    "file": "light-720.png",
+    "action": {
+      "height": 73,
+      "width": 696
+    },
+    "overflow": false,
+    "panel": {
+      "height": 640,
+      "width": 720
+    },
+    "task": {
+      "height": 429,
+      "width": 696
+    },
+    "top": {
+      "height": 132,
+      "width": 696
+    }
+  },
+  {
+    "theme": "dark",
+    "width": 320,
+    "file": "dark-320.png",
+    "action": {
+      "height": 73,
+      "width": 312
+    },
+    "overflow": false,
+    "panel": {
+      "height": 640,
+      "width": 320
+    },
+    "task": {
+      "height": 429,
+      "width": 312
+    },
+    "top": {
+      "height": 132,
+      "width": 312
+    }
+  },
+  {
+    "theme": "dark",
+    "width": 360,
+    "file": "dark-360.png",
+    "action": {
+      "height": 73,
+      "width": 336
+    },
+    "overflow": false,
+    "panel": {
+      "height": 640,
+      "width": 360
+    },
+    "task": {
+      "height": 429,
+      "width": 336
+    },
+    "top": {
+      "height": 132,
+      "width": 336
+    }
+  },
+  {
+    "theme": "dark",
+    "width": 720,
+    "file": "dark-720.png",
+    "action": {
+      "height": 73,
+      "width": 696
+    },
+    "overflow": false,
+    "panel": {
+      "height": 640,
+      "width": 720
+    },
+    "task": {
+      "height": 429,
+      "width": 696
+    },
+    "top": {
+      "height": 132,
+      "width": 696
+    }
+  },
+  {
+    "theme": "hc",
+    "width": 320,
+    "file": "hc-320.png",
+    "action": {
+      "height": 73,
+      "width": 312
+    },
+    "overflow": false,
+    "panel": {
+      "height": 640,
+      "width": 320
+    },
+    "task": {
+      "height": 429,
+      "width": 312
+    },
+    "top": {
+      "height": 132,
+      "width": 312
+    }
+  },
+  {
+    "theme": "hc",
+    "width": 360,
+    "file": "hc-360.png",
+    "action": {
+      "height": 73,
+      "width": 336
+    },
+    "overflow": false,
+    "panel": {
+      "height": 640,
+      "width": 360
+    },
+    "task": {
+      "height": 429,
+      "width": 336
+    },
+    "top": {
+      "height": 132,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc",
+    "width": 720,
+    "file": "hc-720.png",
+    "action": {
+      "height": 73,
+      "width": 696
+    },
+    "overflow": false,
+    "panel": {
+      "height": 640,
+      "width": 720
+    },
+    "task": {
+      "height": 429,
+      "width": 696
+    },
+    "top": {
+      "height": 132,
+      "width": 696
+    }
+  },
+  {
+    "theme": "hc-light",
+    "width": 320,
+    "file": "hc-light-320.png",
+    "action": {
+      "height": 73,
+      "width": 312
+    },
+    "overflow": false,
+    "panel": {
+      "height": 640,
+      "width": 320
+    },
+    "task": {
+      "height": 429,
+      "width": 312
+    },
+    "top": {
+      "height": 132,
+      "width": 312
+    }
+  },
+  {
+    "theme": "hc-light",
+    "width": 360,
+    "file": "hc-light-360.png",
+    "action": {
+      "height": 73,
+      "width": 336
+    },
+    "overflow": false,
+    "panel": {
+      "height": 640,
+      "width": 360
+    },
+    "task": {
+      "height": 429,
+      "width": 336
+    },
+    "top": {
+      "height": 132,
+      "width": 336
+    }
+  },
+  {
+    "theme": "hc-light",
+    "width": 720,
+    "file": "hc-light-720.png",
+    "action": {
+      "height": 73,
+      "width": 696
+    },
+    "overflow": false,
+    "panel": {
+      "height": 640,
+      "width": 720
+    },
+    "task": {
+      "height": 429,
+      "width": 696
+    },
+    "top": {
+      "height": 132,
+      "width": 696
+    }
+  }
+]

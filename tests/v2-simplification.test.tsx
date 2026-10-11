@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { describe, expect, it } from 'vitest';
-import { ProgressSegments } from '../src/panel/v2/components.js';
+import { ProgressSegments, Task, TaskNotices } from '../src/panel/v2/components.js';
 import { Observation } from '../src/panel/results.js';
 import { EvidenceReview } from '../src/panel/home.js';
 import { Change } from '../src/panel/change.js';
@@ -66,5 +66,14 @@ describe('simplified shell retains the current product', () => {
     const html = renderToStaticMarkup(<ProjectPanel state={state} send={() => {}} setupKey={() => {}} />);
     expect(html).toContain('Saved ideas');
     expect(html).not.toContain('<summary>Saved ideas');
+  });
+  it('keeps recovery messages inside the scrolling task, above the pinned action', () => {
+    const html = renderToStaticMarkup(<TaskNotices.Provider value={<p>Saved input retained after an error.</p>}><Task title="My current task" action={<button>Next</button>}><p>My work</p></Task></TaskNotices.Provider>);
+    expect(html.indexOf('vd2-task-scroll')).toBeLessThan(html.indexOf('Saved input retained'));
+    expect(html.indexOf('Saved input retained')).toBeLessThan(html.indexOf('vd2-actionbar'));
+  });
+  it('supports high contrast light explicitly in the gallery and theme tokens', () => {
+    expect(readFileSync('src/panel/v2/tokens.css','utf8')).toContain('.vd-theme-hc-light');
+    expect(readFileSync('src/panel/v2/gallery.tsx','utf8')).toContain('High contrast light');
   });
 });

@@ -49,6 +49,7 @@ export function Reflection({ state, send }: { state: PanelState; send: Send }) {
   const [text, setText] = useState('');
   const [saving, setSaving] = useState(false);
   const pending = useRef<{ text: string; count: number } | undefined>(undefined);
+  useEffect(() => { setText(''); setSaving(false); pending.current = undefined; }, [state.sessionCleared, state.exercise]);
   useEffect(() => {
     if (!pending.current) return;
     if ((state.reflections?.length ?? 0) > pending.current.count && state.reflections?.at(-1)?.text === pending.current.text) {

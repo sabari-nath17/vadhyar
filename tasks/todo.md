@@ -553,3 +553,17 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - Next: continue the separately authorized main slices. Reconcile public main before later publication without replacing working files or rewriting history. Installer remains scoped to the included milestone learning project; current unpublished enhancements remain separate.
 
 - Final public documentation checkpoint verified: `866666a1cecb92f56752d9eec3c25d25cb0b64f1`. Website source remains the wording checkpoint; the local parent index remains empty. The owned local preview server was stopped after live acceptance.
+
+## 2026-10-11 08:10:40 IST — UI state, contrast and feature-route completion
+
+- Change/reason: keep errors within the task, shorten consent/check labels, support both high-contrast variants and resume confirmed lessons directly.
+- Files: panel shell/components, project/results UI, tokens/gallery, preview, feature inventory, UI evidence and review workflow.
+- Checks: typecheck, lint and build passed; full serial 149/149 tests, focused parity checks recorded separately; 88 measured states and 55 actual browser route witnesses.
+- Limits: renderer preview only, no new API calls or host changes; native editor/beginner acceptance and remote CI are unverified.
+- Publication: user authorized only the separate `codex/updaeted-ui` branch; no main-branch merge.
+
+Codex implemented and checked the UI. Human visual approval remains pending. Next: commit this isolated milestone, build the local review package, upload the authorized branch and record the remote SHA.
+
+### 2026-10-11 08:12:53 IST — final isolated UI gate
+
+Typecheck, lint and build passed. Full serial suite: 152/152 across 30 files in 34.00s. Feature parity: 53 entries, 55 browser witnesses, 88 state/theme measurements. Installer packaging succeeded; native install/host and beginner acceptance remain unverified. Codex reviewed the diff; human visual review remains pending. Publication is authorized only to codex/updaeted-ui.
