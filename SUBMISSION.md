@@ -8,7 +8,7 @@ Prepared repository/release handoff following the organizer template. GitHub pub
 - **Team name:** Vadhyar.
 - **Short description:** A local VS Code learning companion that connects confirmed intentions to code, records a prediction before execution, guides a developer-performed change, and preserves actual check evidence.
 - **Code repository URL:** https://github.com/sabari-nath17/vadhyar
-- **Final submitted implementation commit SHA:** Release verification pending; the frozen implementation SHA will be recorded after commit.
+- **Final submitted implementation commit SHA:** [`4f36cedcb93940e526165fbf94d6681542f54066`](https://github.com/sabari-nath17/vadhyar/tree/4f36cedcb93940e526165fbf94d6681542f54066) — immutable tag `v0.1.1`; prepared for organizer submission, receipt pending.
 - **Working demo URL or local demo steps:** [Frozen release v0.1.1](https://github.com/sabari-nath17/vadhyar/releases/tag/v0.1.1), [installation](docs/installation.md), [NovaDesk demo/reset](docs/demo.md), [second-project demo](docs/strengthen-demo.md).
 - **Demo access requirements:** macOS Apple Silicon, VS Code 1.140.0+, pinned external Graphify, trusted disposable folder. Live coaching requires account/model access and a key entered only in the masked SecretStorage prompt. No credential is supplied.
 
@@ -40,11 +40,20 @@ Team names and roles below were supplied and confirmed by the user. Aravind’s 
 - [x] Team list has two supplied participants, within the maximum of four.
 - [x] Codex usage is documented.
 - [x] Repository, description and reproducible local demo instructions are supplied.
-- [ ] Final README/setup, installer and exact checkpoint verified together.
+- [x] Final README/setup, installer and exact checkpoint verified together; four downloaded release assets match local checksums and GitHub digests.
 - [x] Fresh release checks and known limits recorded.
 - [x] Meaningful changes have dated development records and checkpoints.
-- [ ] Final implementation committed/pushed and exact SHA recorded.
+- [x] Final implementation committed/pushed with normal Git pushes and exact SHA recorded; earlier published history is preserved.
 - [x] Limited credential-pattern/package scan completed; two credential-shaped rejection-test fixtures were identified, with no matches outside those tests. This is not an exhaustive secret audit.
 - [ ] Organizers' announced submission method and timing completed. The user reports submission opens after 08:00 AM IST. No form/link or receipt has been supplied; no organizer submission is being made during preparation.
 
-Event reference: [DevDay Exchange Community: Kochi](https://luma.com/z10nz8gp); organizer template records wrap-up by **10:00 AM IST, 11 October 2026**. The user reports submission opens after **08:00 AM IST**. The repository is being prepared before that window; no completed organizer submission or on-time claim is made without receipt.
+Event reference: [DevDay Exchange Community: Kochi](https://luma.com/z10nz8gp); organizer template records wrap-up by **10:00 AM IST, 11 October 2026**. The user reports submission opens after **08:00 AM IST**. The release was frozen/published before that opening; organizer hand-in remains pending. No completed organizer submission or on-time claim is made without receipt.
+
+## Frozen release identity
+
+- Implementation: `4f36cedcb93940e526165fbf94d6681542f54066` / `v0.1.1`. Main-branch follow-up changes are documentation only.
+- [Matching macOS-arm64 installer](https://github.com/sabari-nath17/vadhyar/releases/download/v0.1.1/vadhyar-0.1.1-darwin-arm64.vsix).
+- [Matching source ZIP](https://github.com/sabari-nath17/vadhyar/releases/download/v0.1.1/vadhyar-0.1.1-source.zip), [manifest](https://github.com/sabari-nath17/vadhyar/releases/download/v0.1.1/release-manifest.json) and [SHA256SUMS](https://github.com/sabari-nath17/vadhyar/releases/download/v0.1.1/SHA256SUMS).
+- [Post-freeze submission packet](https://github.com/sabari-nath17/vadhyar/releases/download/v0.1.1/submission-v0.1.1.md) carries the full implementation SHA; the in-commit template cannot contain its own future commit ID.
+- [All 51 requested features and evidence boundaries](docs/feature-coverage.md) and [publication proof](docs/submission-evidence/publication.json).
+- Organizer form/eligibility/receipt remain separate and unchecked. No submission has been attempted.
