@@ -59,6 +59,7 @@ export function Chip({ children, icon = 'check' }: { children: ReactNode; icon?:
 export function Banner({ tone, title, children, action }: { tone: Tone; title: string; children: ReactNode; action?: ReactNode }) { return <aside className={`vd2-banner vd2-tone-${tone}`}><Glyph name={tone === 'ok' ? 'check' : tone === 'hint' ? 'bulb' : 'close'} /><div><h3>{title}</h3><p>{children}</p>{action}</div></aside>; }
 export function RequirementFrame({ rule, children, compact = false }: { rule: string; children?: ReactNode; compact?: boolean }) { return <section className={`vd2-requirement ${compact ? 'vd2-compact' : ''}`} aria-label="Requirement"><p className="vd2-label">Your rule</p><h2>{rule}</h2>{children}</section>; }
 export function Guide({ pose, large = false }: { pose: Pose; large?: boolean }) { return <img className={`vd2-guide ${large ? 'vd2-guide-large' : ''}`} src={`./media/guide/${pose}.svg`} alt={`The Guide, ${pose === 'key' ? 'holding a key' : pose}`} />; }
+export function Bloom({ animate }: { animate: boolean }) { return <svg className={`vd2-bloom ${animate ? 'vd2-bloom-once' : ''}`} width="160" height="160" viewBox="0 0 240 240" fill="none" stroke="var(--text)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><use href="./media/guide/celebrate.svg#rays" />{['left','right','center'].map(side => <use key={side} className={`vd2-petal-${side}`} href={`./media/guide/bloom.svg#petal-${side}`} />)}{['pot','eyes','hand'].map(part => <use key={part} href={`./media/guide/celebrate.svg#${part}`} />)}<path d="M113 136q7 6 14 0" /></svg>; }
 export function ProofSticker({ proof, earned }: { proof: Proof; earned: readonly Proof[] }) { if (!earned.includes(proof)) return null; return <figure className="vd2-proof"><img src={`./media/stickers/${proof}.svg`} alt="" /><figcaption>{proofLabels[proof]}</figcaption></figure>; }
 export function Disclosure({ title, children }: { title: string; children: ReactNode }) { return <details className="vd2-disclosure"><summary>{title}</summary><div>{children}</div></details>; }
 
@@ -66,9 +67,9 @@ export function Task({ title, pose, children, action }: { title: string; pose?: 
   return <><div className="vd2-task-scroll"><div className="vd2-task-layout"><div className="vd2-task-copy"><h2 tabIndex={-1}>{title}</h2>{children}</div>{pose && <aside className="vd2-task-guide"><Guide pose={pose} large /></aside>}</div></div><ActionBar>{action}</ActionBar></>;
 }
 
-export function StartSheet({ title, children, action, onClose }: { title: string; children: ReactNode; action: ReactNode; onClose: () => void }) {
+export function StartSheet({ id, title, children, action, onClose }: { id?: string; title: string; children: ReactNode; action: ReactNode; onClose: () => void }) {
   const sheet = useRef<HTMLDialogElement>(null);
-  const id = useId();
+  const titleId = useId();
   useEffect(() => {
     const previous = document.activeElement;
     const dialog = sheet.current;
@@ -76,5 +77,5 @@ export function StartSheet({ title, children, action, onClose }: { title: string
     dialog?.querySelector<HTMLElement>('h2')?.focus();
     return () => { dialog?.close(); if (previous instanceof HTMLElement && previous.isConnected) previous.focus(); };
   }, []);
-  return <dialog ref={sheet} className="vd2-startsheet" aria-labelledby={id} onCancel={event => { event.preventDefault(); onClose(); }}><div className="vd2-start-copy"><Guide pose="welcome" /><h2 id={id} tabIndex={-1}>{title}</h2>{children}</div><ActionBar>{action}</ActionBar></dialog>;
+  return <dialog id={id} ref={sheet} className="vd2-startsheet" aria-labelledby={titleId} onCancel={event => { event.preventDefault(); onClose(); }}><div className="vd2-start-copy"><Guide pose="welcome" /><h2 id={titleId} tabIndex={-1}>{title}</h2>{children}</div><ActionBar>{action}</ActionBar></dialog>;
 }

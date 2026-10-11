@@ -15,7 +15,7 @@ export function Icon({ name }: { name: 'settings' | 'source' | 'check' | 'fail' 
     fail: 'm6 6 12 12M6 18 18 6',
     egg: 'M12 3C8 3 5 11 5 15a7 7 0 0 0 14 0c0-4-3-12-7-12Z',
   };
-  return <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={paths[name]} /></svg>;
+  return <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={paths[name]} /></svg>;
 }
 export function SourceLinks({ refs, busy, current, send }: { refs: SourceRef[]; busy: boolean; current?: boolean; send: Send }) {
   if (busy) return null;
@@ -23,7 +23,7 @@ export function SourceLinks({ refs, busy, current, send }: { refs: SourceRef[]; 
 }
 export function SharingPreview({ preview, kind, busy, hasKey, send }: { preview: ContextPreview; kind: 'explain' | 'hint'; busy: boolean; hasKey?: boolean; send: Send }) {
   const selected = sharingSummary(preview.text);
-  return <Task title="Send this to OpenAI?" pose="key" action={<><Control className="vd-primary" disabled={busy || !selected} reason={busy ? 'Wait for this request to finish.' : 'Refresh the sharing preview first.'} onClick={() => send(!hasKey && kind === 'explain' ? { type: 'setupKey' } : { type: kind, identity: preview.identity })}>{busy ? kind === 'hint' ? 'Getting your hint…' : 'Reading your code…' : kind === 'explain' ? hasKey ? 'Send for an explanation' : 'Connect OpenAI' : hasKey ? 'Send for a hint' : 'Connect OpenAI and request a hint'}</Control>{busy && <Control onClick={() => send({ type: 'cancelExplain' })}>Cancel request</Control>}</>}>
+  return <Task title={busy ? kind === 'hint' ? 'Getting your hint…' : 'Preparing your explanation…' : 'Send this to OpenAI?'} pose={busy ? 'thinking' : 'key'} action={<><Control className="vd-primary" disabled={busy || !selected} reason={busy ? 'Wait for this request to finish.' : 'Refresh the sharing preview first.'} onClick={() => send(!hasKey ? { type: 'setupKey' } : { type: kind, identity: preview.identity })}>{busy ? kind === 'hint' ? 'Getting your hint…' : 'Reading your code…' : !hasKey ? 'Connect OpenAI' : kind === 'explain' ? 'Send for an explanation' : 'Send for a hint'}</Control>{busy && <Control onClick={() => send({ type: 'cancelExplain' })}>Cancel request</Control>}</>}>
     <p>OpenAI will receive the rule, code and connections below{kind === 'hint' ? ', plus your guess, the observed result and earlier hints' : ''}. Sharing happens only after you choose Send.</p>
     <section className="vd-consent" aria-label="Context sharing preview"><p className="vd-teaching">{selected?.requirement ?? 'No valid summary is available. Refresh the preview.'}</p>{selected && <ul className="vd-selected-files">{selected.files.map(file => <li key={file}><code>{file}</code></li>)}</ul>}
     <p className="vd-muted">Model: <code>{preview.model}</code>. A paid API request may apply.</p>

@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | 2.2.0 |
+| **Version** | 2.3.0 |
 | **Scope** | The Vadhyar VS Code panel (React): path home, lessons, feedback, completion, evidence, states, assets |
 | **Audience** | Codex or any engineer building the UI. You MAY generate images, SVG, sounds and scaffolding. You MUST NOT change host behavior. |
 | **Relationship to `design.md` 1.1.0** | v2 **adds an experience layer** on top of it. Where they conflict, v2 wins (see §15). Everything not mentioned here (consent, state catalog, accessibility, editor integration, logo placement) is inherited unchanged. §4 repeats the essentials so this file works alone. |
@@ -308,9 +308,11 @@ No owl or lookalike. No Feather or duolingo-sans. No hearts, XP, streak, rank or
 - Confirm sheet tint and lip colors pass 4.5:1 in the real panel.
 - Decide when streaks or return reminders become real (needs session resume).
 - Path content beyond Rule 1 depends on Transfer and Build Guide support.
-- Phases 0–3, the §10 vector set and lesson shell are implemented in an isolated checkout. Browser gallery checks are recorded; native lesson integration and human usability acceptance remain unverified.
+- Phases 0–4, the §10 vector set and lesson shell are implemented in an isolated checkout. Browser gallery checks are recorded; native lesson integration and human usability acceptance remain unverified.
 
 ## 18. Changelog
+
+- **2.3.0**: actual examples, explicit recovery, optional local sound, settings focus and one brief SVG bloom.
 
 - **2.2.0**: path, native start sheet, evidence-bounded completion, proof review and simpler existing Project Guide.
 
@@ -356,3 +358,12 @@ No subagents are allowed in this side conversation. Code review uses the Superpo
 - Completion requires the host trusted-current flag, matching inputs and the complete recorded ownership/transfer case set. Unknown hints stay unknown. No independent-authorship or source-open sticker is inferred.
 - The initial sample has no title field; the path reads its actual Markdown heading. User rule titles take precedence.
 - Project Guide has four local tasks while keeping all existing actions, reviewed sharing, native check confirmation and original state guards.
+
+### Phase 4 rulings
+
+- Existing contextStale covers dirty/stale input, but the panel contract exposes no separate dirty flag. Show “Save any edits, then refresh”; never invent a claim that unsaved edits were detected.
+- Example rows preserve the actual requirement/scenario wording and stay labelled expected, not executed. They are expanded in Confirm; no natural-language verdict parser is added.
+- Key connection remains separate from reviewed Send for both explanation and hints. Source IDs, exact context and host-owned approvals are unchanged.
+- Sound is off by default, local to the open panel and never fetched/persisted. Bloom recombines the generated SVG part IDs, once per current passed record while this panel is open; opening saved history does not emit sound.
+- API cancellation uses the original action; extraction has no invented cancel control. Runner errors never become failed learner answers or passing results.
+- Reduced-motion CSS is implemented; OS/media and audible hardware acceptance remain unverified. Browser review cannot establish those native preferences.

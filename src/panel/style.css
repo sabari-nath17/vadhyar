@@ -20,10 +20,6 @@
 fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 12px; }
 legend { margin-bottom: 12px; font-weight: 700; }
 label { display: block; }
-.vd-settings:not([open]) { display: none; }
-.vd-settings[open] { position: absolute; inset: 72px 16px 16px; z-index: 5; overflow-y: auto; padding: 16px; background: var(--canvas); border: 2px solid var(--border); border-radius: 16px; }
-.vd-settings > summary { font-weight: 700; margin-bottom: 16px; }
-.vd-settings .vd2-control, .vd-settings p, .vd-settings details { margin-block: 12px; }
 .vd-details { border-top: 2px solid var(--border); }
 summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; gap: 8px; list-style: none; font-size: 13px; }
 summary::-webkit-details-marker { display: none; }
@@ -91,3 +87,19 @@ blockquote { margin: 8px 0 0; padding-inline-start: 12px; border-left: 2px solid
 .vd2-project-nav button { font-size: 13px; padding: 8px 4px; }
 .vd2-project-nav [aria-current] { border-color: var(--selection-border); background: var(--selected); color: var(--text); }
 #project-intent { display: grid; gap: 8px; }
+.vd2-task-scroll { padding-top: 4px; padding-left: 4px; }
+.vd2-node-current .vd2-node-art { animation: vd2-ring 900ms ease-out 3; }
+.vd2-bloom { justify-self: center; overflow: visible; }
+.vd2-bloom use { transform-origin: 120px 173px; }
+.vd2-bloom-once .vd2-petal-left { animation: vd2-left 900ms ease-out 1; }
+.vd2-bloom-once .vd2-petal-right { animation: vd2-right 900ms ease-out 1; }
+.vd2-bloom-once .vd2-petal-center { animation: vd2-center 900ms ease-out 1; }
+.vd2-loading { display: grid; gap: 12px; }
+.vd2-loading span { min-height: 24px; border: 2px solid var(--border); border-radius: 12px; background: var(--card); }
+@keyframes vd2-ring { from { outline: 2px solid var(--primary); outline-offset: 0; } to { outline: 2px solid transparent; outline-offset: 8px; } }
+@keyframes vd2-left { from { transform: rotate(12deg); } to { transform: rotate(0); } }
+@keyframes vd2-right { from { transform: rotate(-12deg); } to { transform: rotate(0); } }
+@keyframes vd2-center { from { transform: scaleY(.8); } to { transform: scaleY(1); } }
+
+.vd-notice { max-height: 12dvh; overflow-y: auto; flex-shrink: 0; }
+.vd-screen-home .vd2-task-copy > h2, .vd-screen-complete .vd2-task-copy > h2 { font: 600 var(--display-size)/1.15 var(--heritage); letter-spacing: -.02em; }

@@ -1,0 +1,42 @@
+[
+  {
+    "animation": "vd2-left",
+    "duration": "0.9s",
+    "href": "./media/guide/bloom.svg#petal-left",
+    "iterations": "1",
+    "rect": {
+      "h": 46.3814697265625,
+      "w": 50.228782653808594
+    }
+  },
+  {
+    "animation": "vd2-right",
+    "duration": "0.9s",
+    "href": "./media/guide/bloom.svg#petal-right",
+    "iterations": "1",
+    "rect": {
+      "h": 46.38143157958984,
+      "w": 50.228782653808594
+    }
+  },
+  {
+    "animation": "vd2-center",
+    "duration": "0.9s",
+    "href": "./media/guide/bloom.svg#petal-center",
+    "iterations": "1",
+    "rect": {
+      "h": 63.07206344604492,
+      "w": 38.006591796875
+    }
+  },
+  {
+    "animation": "none",
+    "duration": "0s",
+    "href": "./media/guide/bloom.svg#pot",
+    "iterations": "1",
+    "rect": {
+      "h": 23.33333396911621,
+      "w": 61.33333587646485
+    }
+  }
+]

@@ -1,7 +1,7 @@
 import type { PanelState } from '../shared.js';
 import { steps, suggestedStep, requirementProse, requirementTitle } from './workflow.js';
 import { Control, type Send } from './ui.js';
-import { Task, PathNode, Chip, Guide, StartSheet, ProofSticker } from './v2/components.js';
+import { Task, PathNode, Chip, Guide, StartSheet, ProofSticker, Bloom } from './v2/components.js';
 import { recordedSummary } from './v2/evidence.js';
 
 export function PathHome({ state, start, proof, takeBreak, challenge }: { state: PanelState; start: () => void; proof: () => void; takeBreak: () => void; challenge: () => void }) {
@@ -29,10 +29,10 @@ export function LessonStart({ state, begin, close }: { state: PanelState; begin:
   </StartSheet>;
 }
 
-export function Completion({ state, home, proof, challenge }: { state: PanelState; home: () => void; proof: () => void; challenge: () => void }) {
+export function Completion({ state, home, proof, challenge, bloom = false }: { state: PanelState; home: () => void; proof: () => void; challenge: () => void; bloom?: boolean }) {
   const summary = recordedSummary(state);
-  return <Task title={summary.passed ? 'Your saved code follows this rule' : 'This result needs a refresh'} pose={summary.passed ? 'celebrate' : 'pointing'} action={<Control className="vd-primary" onClick={home}>Back to my path</Control>}>
-    {summary.passed ? <><p>{summary.matched} of {summary.total} recorded cases match.</p><div className="vd2-proof-list">{summary.earned.map(item => <ProofSticker key={item} proof={item} earned={summary.earned} />)}</div><Chip icon="bulb">Coach hints: {summary.hints ?? 'not recorded'}</Chip><p className="vd2-caption">These checks show this behavior. Authorship, outside help and learning gains are not established.</p></> : <p>The code, rule or check definitions changed. Your earlier evidence is still available.</p>}
+  return <Task title={summary.passed ? 'Your saved code follows this rule' : 'This result needs a refresh'} pose={summary.passed ? undefined : 'pointing'} action={<Control className="vd-primary" onClick={home}>Back to my path</Control>}>
+    {summary.passed ? <><Bloom animate={bloom} /><p>{summary.matched} of {summary.total} recorded cases match.</p><div className="vd2-proof-list">{summary.earned.map(item => <ProofSticker key={item} proof={item} earned={summary.earned} />)}</div><Chip icon="bulb">Coach hints: {summary.hints ?? 'not recorded'}</Chip><p className="vd2-caption">These checks show this behavior. Authorship, outside help and learning gains are not established.</p></> : <p>The code, rule or check definitions changed. Your earlier evidence is still available.</p>}
     <Control onClick={proof}>Show my proof</Control>
     {summary.passed && state.exercise !== 'transfer' && <Control disabled={state.busy} onClick={challenge}>Try the next rule</Control>}
   </Task>;

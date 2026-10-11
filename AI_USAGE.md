@@ -1,5 +1,9 @@
 # AI usage record
 
+## 2026-10-11T06:24:09+05:30 — V2 Phase 4 assistance
+
+Codex used existing Task/Control/platform dialog/WebAudio; kept all host bytes and contracts. In-thread review only. Corrected a React ref type failure. Full 131/131, state matrix and off-by-default sound verified; tone tests use a fake AudioContext. No API, key prompt, global settings or main checkout mutation.
+
 ## 2026-10-11T06:11:05+05:30 — V2 Phase 3 assistance
 
 Codex implemented the authorized presentation in the isolated branch using existing actions and platform dialog focus. In-thread review; no subagents, new requests or host changes. Two evidence regressions failed before correction; full 127/127 passes. Recorded preview is not live/API/learner evidence; human acceptance pending.

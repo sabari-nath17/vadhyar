@@ -1,0 +1,15 @@
+{
+  "soundOff": "false",
+  "settingsFocus": {
+    "focused": "Open settings",
+    "modal": false
+  },
+  "actions": [
+    {
+      "type": "ready"
+    },
+    {
+      "type": "cancelExplain"
+    }
+  ]
+}

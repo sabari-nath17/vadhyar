@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { ProjectAction, ProjectState } from '../project/shared.js';
 import { SnakeGame } from './snake-game.js';
 import { Control, Icon } from './ui.js';
@@ -10,7 +10,15 @@ export function ProjectPanel({ state, send, setupKey }: { state: ProjectState; s
   const [title, setTitle] = useState(''), [request, setRequest] = useState(''), [expected, setExpected] = useState('');
   const [replaces, setReplaces] = useState<string | undefined>();
   const [view, setView] = useState(0), [editing, setEditing] = useState(false), [settingsOpen, setSettingsOpen] = useState(false);
+  const [saving, setSaving] = useState(false);
+  const pending = useRef<{id?:string;title:string;request:string;expected:string} | undefined>(undefined);
   const intent = state.intents.find(item => item.id === state.selectedIntent);
+  useEffect(() => {
+    const sent = pending.current;
+    if (!sent) return;
+    if (intent && intent.id !== sent.id && intent.title === sent.title && intent.request === sent.request && intent.expected === sent.expected) { pending.current=undefined; setSaving(false); setEditing(false); setReplaces(undefined); }
+    else if (state.error) { pending.current=undefined; setSaving(false); }
+  }, [state.intents, state.selectedIntent, state.error]);
   const currentGuide = !state.error && !state.specificationStale && state.guide?.snapshot === state.snapshot && state.guide?.intentRevision === intent?.revision && !state.dirty;
   const currentCheck = !state.error && !state.checkDefinitionStale && !state.dirty && state.checkResult?.snapshot === state.snapshot && state.checkResult?.intentRevision === intent?.revision;
   const edit = !intent || editing || Boolean(replaces) || !intent.expected;
@@ -20,7 +28,7 @@ export function ProjectPanel({ state, send, setupKey }: { state: ProjectState; s
   let action = <Control className="vd-primary" disabled={blocked} reason={reason} onClick={() => send({type:'projectStart'})}>Start tracking my code</Control>;
   if (state.started) {
     if (preview) action = <><Control className="vd-primary" disabled={blocked} reason={reason} onClick={() => send({type:'projectSend',identity:preview.identity})}>{state.busy ? state.operation : 'Send this to OpenAI'}</Control>{state.busy && <Control onClick={() => send({type:'projectCancel'})}>Cancel request</Control>}</>;
-    else if (view === 0) action = edit ? <Control className="vd-primary" type="submit" form="project-intent" disabled={state.busy || !title.trim() || !request.trim()} reason="Add a name and say what you want first.">Save my idea</Control> : !intent?.confirmedAt ? <Control className="vd-primary" disabled={state.busy || !intent?.expected} reason="Say how your idea should behave first." onClick={() => intent && send({type:'projectConfirmIntent',id:intent.id,revision:intent.revision})}>Confirm my idea</Control> : <Control className="vd-primary" onClick={() => setView(1)}>See what changed</Control>;
+    else if (view === 0) action = edit ? <Control className="vd-primary" type="submit" form="project-intent" disabled={state.busy || saving || !title.trim() || !request.trim()} reason={saving ? 'Wait for the editor to save this idea.' : 'Add a name and say what you want first.'}>{saving ? 'Saving my idea…' : 'Save my idea'}</Control> : !intent?.confirmedAt ? <Control className="vd-primary" disabled={state.busy || !intent?.expected} reason="Say how your idea should behave first." onClick={() => intent && send({type:'projectConfirmIntent',id:intent.id,revision:intent.revision})}>Confirm my idea</Control> : <Control className="vd-primary" onClick={() => setView(1)}>See what changed</Control>;
     else if (view === 1) action = <Control className="vd-primary" disabled={blocked} reason={reason} onClick={() => { if (!state.selectedFiles.length) send({type:'projectSelectFiles'}); else setView(2); }}>{state.selectedFiles.length ? 'Understand these files' : 'Choose relevant files'}</Control>;
     else if (view === 2) action = currentGuide ? <Control className="vd-primary" onClick={() => setView(3)}>Check my changes</Control> : <Control className="vd-primary" disabled={blocked || !intent?.confirmedAt} reason={!intent?.confirmedAt ? 'Confirm your idea first.' : reason} onClick={() => send(state.selectedFiles.length ? {type:'projectPreview',operation:'explain'} : {type:'projectSuggestFiles'})}>{state.selectedFiles.length ? 'Review before explaining' : 'Find the code for my idea'}</Control>;
     else action = <Control className="vd-primary" disabled={state.busy || Boolean(state.check && state.dirty)} reason={reason} onClick={() => send(state.check ? {type:'projectRunCheck'} : {type:'projectSelectCheck'})}>{state.check ? `Run ${state.check.script}` : 'Choose a check'}</Control>;
@@ -42,7 +50,7 @@ export function ProjectPanel({ state, send, setupKey }: { state: ProjectState; s
       </> : <>
       {view === 0 && <>
         {intent && !edit && <><RequirementFrame rule={intent.title}><p>{intent.request}</p><p>It should: {intent.expected}</p></RequirementFrame><Chip icon={intent.confirmedAt ? 'check' : 'clock'}>{intent.confirmedAt ? 'You confirmed this idea' : 'Needs your confirmation'}</Chip><p className="vd-muted">{intent.origin === 'agent' ? 'Captured coding request' : intent.origin === 'specification' ? 'Imported rule' : 'Entered by you'}</p><Control onClick={() => { setTitle(intent.title); setRequest(intent.request); setExpected(intent.expected); setReplaces(intent.id); }}>Change my idea</Control></>}
-        {edit ? <form id="project-intent" onSubmit={event => { event.preventDefault(); if (state.busy || !title.trim() || !request.trim()) return; send({type:'projectAddIntent',intent:{title,request,expected,origin:'manual'},replaces}); setReplaces(undefined); setEditing(false); }}>
+        {edit ? <form id="project-intent" onSubmit={event => { event.preventDefault(); if (state.busy || saving || !title.trim() || !request.trim()) return; pending.current={id:intent?.id,title:title.trim(),request:request.trim(),expected:expected.trim()}; setSaving(true); send({type:'projectAddIntent',intent:{title,request,expected,origin:'manual'},replaces}); }}>
           <label htmlFor="feature-title">Give it a name</label><input className="vd-project-input" id="feature-title" value={title} onChange={event => setTitle(event.target.value)} maxLength={120} required />
           <label htmlFor="feature-request">What do you want to build?</label><textarea id="feature-request" value={request} onChange={event => setRequest(event.target.value)} maxLength={6000} required />
           <label htmlFor="feature-expected">What should happen? When should it say no?</label><textarea id="feature-expected" value={expected} onChange={event => setExpected(event.target.value)} maxLength={6000} />

@@ -1,5 +1,9 @@
 # Vadhyar slice task record
 
+## 2026-10-11T06:24:09+05:30 — V2 Phase 4 complete
+
+Previous checkpoint 20e5a96. State presentation, local sound, reduced-motion guards and one brief bloom implemented. Full 131/131; evidence docs/design-v2/phase-4/README.md. Next: Phase 5 keyboard, final screenshots, labelled rehearsal and package. Native editor/media/audio checks remain pending; no merge or push.
+
 ## 2026-10-11T06:11:05+05:30 — V2 Phase 3 complete
 
 Baseline a92eb5d. Path/start/completion/evidence, existing transfer and simpler separate Project Guide presentation implemented. Full 127/127; all immutable hashes and original action types preserved. docs/design-v2/phase-3/README.md. Next: Phase 4 gates, motion and local sound; no main merge or push.

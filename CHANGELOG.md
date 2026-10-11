@@ -1,5 +1,9 @@
 # Change log
 
+## 2026-10-11T06:24:09+05:30 — V2 Phase 4
+
+Clear missing-key/stale/loading/error controls, expanded actual examples, acknowledged idea saves, native settings sheet, local optional tones and brief SVG bloom. Panel-only behavior; typecheck/lint/build, focused 20/20 and full 131/131 pass. 27 captures and strict cancel action; native/media/audio acceptance pending.
+
 ## 2026-10-11T06:11:05+05:30 — V2 Phase 3
 
 Path, start/resume, completion, evidence and Project Guide task presentation. Source: panel app/home/project/results/workflow and V2 evidence/components/CSS. Reason: one clear task without losing current features. Typecheck/lint/build, focused 21/21, full 127/127; 36 captures. Native acceptance and human usability pending.

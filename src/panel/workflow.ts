@@ -33,6 +33,13 @@ export function requirementTitle(requirement: PanelState['requirement']): string
   return requirement ? requirement.title || requirement.text.split('\n').find(line => line.startsWith('# '))?.slice(2).trim() || requirementProse(requirement.text) : 'Read your rule';
 }
 
+export function requirementCases(requirement: PanelState['requirement']) {
+  return requirement?.scenarios ?? requirement?.text.split('\n').flatMap(line => {
+    const match = /^[-*]\s+\*\*([^*]+)\*\*:?\s*(.+)$/.exec(line.trim());
+    return match ? [{title:match[1].replace(/:$/, '').replaceAll('-', ' '),text:match[2]}] : [];
+  }) ?? [];
+}
+
 export function completedSteps(state: PanelState): Step[] {
   const done: Step[] = state.confirmed ? ['confirm'] : [];
   if (state.explanation && state.explanationCurrent) done.push('understand');

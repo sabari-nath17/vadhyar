@@ -7,6 +7,7 @@ import { steps } from '../src/panel/workflow.js';
 import { lessonSteps } from '../src/panel/v2/evidence.js';
 import { ProgressSegments, Task } from '../src/panel/v2/components.js';
 import { SharingPreview, SourceLinks } from '../src/panel/ui.js';
+import { Understand } from '../src/panel/understand.js';
 import { PathHome, Completion, EvidenceReview } from '../src/panel/home.js';
 import { panelAction } from '../src/shared.js';
 import type { SourceRef, PanelState } from '../src/shared.js';
@@ -69,6 +70,12 @@ describe('V2 panel keeps real host boundaries and simple task slots', () => {
     expect(markup).toContain('result needs a refresh');expect(markup).not.toContain('All cases match');expect(markup).not.toContain('Try the next rule');
     const evidence=render(<EvidenceReview state={{refs:[],busy:false}} send={()=>{}} back={()=>{}} />);
     expect(evidence).toContain('No saved proof');expect(evidence).toContain('aria-disabled="true"');
+  });
+  it('shows the missing-key and stale-code recovery without an automatic send', () => {
+    const noKey=render(<Understand state={{refs:[],busy:false,hasKey:false}} send={()=>{}} next={()=>{}} />);
+    expect(noKey).toContain('Connect OpenAI for guidance');expect(noKey).not.toContain('Send for an explanation');
+    const stale=render(<Understand state={{refs:[],busy:false,hasKey:true,contextStale:true}} send={()=>{}} next={()=>{}} />);
+    expect(stale).toContain('Your code needs a refresh');expect(stale).toContain('Read the saved code');
   });
 
 });

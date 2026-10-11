@@ -1,0 +1,218 @@
+[
+  {
+    "scene": "loading",
+    "theme": "light",
+    "brokenImages": 0,
+    "errors": [],
+    "heading": "Preparing your explanation…",
+    "primaries": 1,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "scene": "loading",
+    "theme": "dark",
+    "brokenImages": 0,
+    "errors": [],
+    "heading": "Preparing your explanation…",
+    "primaries": 1,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "scene": "loading",
+    "theme": "hc",
+    "brokenImages": 0,
+    "errors": [],
+    "heading": "Preparing your explanation…",
+    "primaries": 1,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "scene": "extracting",
+    "theme": "light",
+    "brokenImages": 0,
+    "errors": [],
+    "heading": "Finding the relevant code…",
+    "primaries": 1,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "scene": "extracting",
+    "theme": "dark",
+    "brokenImages": 0,
+    "errors": [],
+    "heading": "Finding the relevant code…",
+    "primaries": 1,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "scene": "extracting",
+    "theme": "hc",
+    "brokenImages": 0,
+    "errors": [],
+    "heading": "Finding the relevant code…",
+    "primaries": 1,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "scene": "error",
+    "theme": "light",
+    "brokenImages": 0,
+    "errors": [
+      "Preview example: explanation request could not complete.Your typed answer is kept here.Refresh saved context"
+    ],
+    "heading": "How does this work?",
+    "primaries": 1,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "scene": "error",
+    "theme": "dark",
+    "brokenImages": 0,
+    "errors": [
+      "Preview example: explanation request could not complete.Your typed answer is kept here.Refresh saved context"
+    ],
+    "heading": "How does this work?",
+    "primaries": 1,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "scene": "error",
+    "theme": "hc",
+    "brokenImages": 0,
+    "errors": [
+      "Preview example: explanation request could not complete.Your typed answer is kept here.Refresh saved context"
+    ],
+    "heading": "How does this work?",
+    "primaries": 1,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "scene": "unsaved",
+    "theme": "light",
+    "brokenImages": 0,
+    "errors": [
+      "UI specimen: this source has unsaved edits. Save and refresh before checking.Your typed answer is kept here.Refresh saved context"
+    ],
+    "heading": "Will it allow this?",
+    "primaries": 1,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "scene": "unsaved",
+    "theme": "dark",
+    "brokenImages": 0,
+    "errors": [
+      "UI specimen: this source has unsaved edits. Save and refresh before checking.Your typed answer is kept here.Refresh saved context"
+    ],
+    "heading": "Will it allow this?",
+    "primaries": 1,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "scene": "unsaved",
+    "theme": "hc",
+    "brokenImages": 0,
+    "errors": [
+      "UI specimen: this source has unsaved edits. Save and refresh before checking.Your typed answer is kept here.Refresh saved context"
+    ],
+    "heading": "Will it allow this?",
+    "primaries": 1,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "scene": "runnerError",
+    "theme": "light",
+    "brokenImages": 0,
+    "errors": [
+      "Checks could not runUI specimen: the check runner timed out. No behavior was recorded.No learner-answer verdict was recorded."
+    ],
+    "heading": "Does your change follow the rule?",
+    "primaries": 1,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "scene": "runnerError",
+    "theme": "dark",
+    "brokenImages": 0,
+    "errors": [
+      "Checks could not runUI specimen: the check runner timed out. No behavior was recorded.No learner-answer verdict was recorded."
+    ],
+    "heading": "Does your change follow the rule?",
+    "primaries": 1,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "scene": "runnerError",
+    "theme": "hc",
+    "brokenImages": 0,
+    "errors": [
+      "Checks could not runUI specimen: the check runner timed out. No behavior was recorded.No learner-answer verdict was recorded."
+    ],
+    "heading": "Does your change follow the rule?",
+    "primaries": 1,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "scene": "gated",
+    "theme": "light",
+    "brokenImages": 0,
+    "errors": [],
+    "heading": "Is this your rule?",
+    "primaries": 1,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "scene": "gated",
+    "theme": "dark",
+    "brokenImages": 0,
+    "errors": [],
+    "heading": "Is this your rule?",
+    "primaries": 1,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "scene": "gated",
+    "theme": "hc",
+    "brokenImages": 0,
+    "errors": [],
+    "heading": "Is this your rule?",
+    "primaries": 1,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360
+  }
+]

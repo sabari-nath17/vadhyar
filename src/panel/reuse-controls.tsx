@@ -6,7 +6,7 @@ export function RequirementImport({ state, send }: { state: PanelState; send: Se
     <Control disabled={state.busy} onClick={() => send({ type: 'importRequirement' })}>Import requirement</Control>
     {state.requirement?.checksAvailable === false && <>
       <p>Imported: {state.requirement.title}. Scenarios are descriptive; no executable checks are mapped.</p>
-      <details><summary>Imported scenarios ({state.requirement.scenarios?.length ?? 0})</summary>
+      <details><summary>Imported scenarios ({state.requirement.scenarios?.length ?? 'not recorded'})</summary>
         {state.requirement.scenarios?.map(scenario => <section key={scenario.title}><h3>{scenario.title}</h3><pre>{scenario.text}</pre><p>Not verified</p></section>)}
       </details>
     </>}

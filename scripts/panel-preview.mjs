@@ -29,6 +29,10 @@ const scenes={
  loading:{...common,stage:'understand',preview:context,busy:true},
  stale:{...common,stage:'understand',contextStale:true,referencesCurrent:false,graphCurrent:false},
  error:{...common,stage:'understand',error:'Preview example: explanation request could not complete.'},
+ extracting:{...common,stage:'understand',busy:true,graph:undefined,graphCurrent:false},
+ unsaved:{...common,stage:'predict',contextStale:true,error:'UI specimen: this source has unsaved edits. Save and refresh before checking.'},
+ runnerError:{...common,...record.corrected,stage:'verify',diff,baselineHash:record.seed.sourceHash,ownershipCurrent:false,ownershipRun:{...record.corrected.ownershipRun,kind:'timeout',message:'UI specimen: the check runner timed out. No behavior was recorded.'}},
+ gated:{...common,confirmed:false,stage:'predict'},
  project:{refs:[],busy:false,project:{name:'Vadhyar UI specimen',busy:false,started:false,fileCount:0,omitted:[],changes:[],intents:[],files:[],selectedFiles:[],captureConnected:false}},
 };
 const output='dist/gallery/preview';await mkdir(output,{recursive:true});
