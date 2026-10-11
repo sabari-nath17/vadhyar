@@ -104,3 +104,27 @@ Codex used Vadhyar Build, Skill Router, Ponytail, API and Interface Design, Incr
 Two live production Project Guide operations in the labelled disposable TopicProof-T1 host used configured `gpt-6-astra`: a topic proposal and a focused source-grounded explanation. The production SecretStorage path supplied the existing key; its value was never read by acceptance tools, logged, copied, displayed or requested. These operations are not the separate live Promptfoo quality evaluation. The disposable changes and intention were developer-prepared acceptance material, not evidence of learner authorship or learning gains.
 
 Topic decisions are validated against exact current source; the model's requirement/rationale is a proposal requiring confirmation. Real Graphify static links are separated from inferred edges and runtime/whole-project claims. Automated validation and native mechanics do not establish teaching quality. See [actual acceptance and limits](docs/learning-topics-evidence/README.md).
+
+
+<!-- Preserved publication records from canonical GitHub history. -->
+
+## 2026-10-11T04:49:13+05:30 — Landing and installer publication side task
+
+Codex planned and implemented the static design-v2 landing, corrected runtime Vitest packaging, wrote installation docs, exercised source/browser/installed-package checks, and prepared authorized GitHub/Vercel publication in an isolated clone of committed S7. No agents or parent WIP were used. Human review pending. Package limitations and historical versus new acceptance are disclosed in docs/landing-release.md. No API credential values were read or published; no new OpenAI runtime request was made.
+
+
+## 2026-10-11T04:57:58+05:30 — Public Vadhyar wording
+
+Codex applied the user-requested public wording correction, retained the release scope, and added a regression assertion. No extension behavior, API call, package binary or historical evidence changed. Human review pending.
+
+## 2026-10-11T07:38:58+05:30 — Frozen release and template handoff
+
+Codex inspected current/canonical history and the organizer template, isolated release work from the ongoing redesign, preserved and merged published history, copied the completed safety patch only after matching recorded hashes, reviewed its diff, updated release/setup/team records and ran fresh verification. GitHub publication is authorized by the current user request; no organizer submission was attempted before the reported 08:00 IST opening.
+
+Executed: typecheck/lint/build, 38 focused and 134 full tests, six offline validators, production audit, ZIP/runtime/lock checks, isolated official CLI install and real installed fixture/dependency runner checks. Corrected verifier assumptions about Git worktree index paths and installed folder names; no product change was inferred from those errors. Credential-pattern findings were existing rejection-test fixtures, not silently treated as a zero-match scan.
+
+The user confirmed Team Vadhyar and both participants' roles. Code/human teaching-quality review remains pending; developer verification is not learner mastery. No new OpenAI call, SecretStorage value access, UI redesign, credential copying or active-session reload. Fresh results: docs/submission-evidence/verification.json; final GitHub/tag and artifact identities are recorded after publication.
+
+- 2026-10-11T07:46:56+05:30: the user confirmed retaining Aravind’s unresolved public GitHub handle as explicitly unverified. Updated release-only metadata and the stale S7-specific publication instruction; no global Git configuration or existing author history was changed. New release commits use the owner’s verified GitHub noreply identity.
+
+- 2026-10-11T07:50:29+05:30: at the user’s 07:50 IST cutoff, the separate redesign was at 6c24897c474ded0c67f86a1fc3d8fd08439e5bdf with an ongoing test edit; its own ledger still required four-theme/all-state review, final parity, an updated package and native acceptance. Selected the verified original panel for v0.1.1, preserving all redesign work separately. Completed S8–S13, Project Guide/T1 and the reviewed safety patch are included. README now follows the exact supplied overview/run/status structure; no source behavior changed. Organizer submission remains pending until the announced window and method.

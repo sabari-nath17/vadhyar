@@ -1,6 +1,6 @@
 {
   "name": "vadhyar",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "license": "UNLICENSED",
   "type": "module",
@@ -22,7 +22,7 @@
     "eval:coach": "node scripts/eval-coach.mjs",
     "vscode:prepublish": "npm run build",
     "demo:prepare": "node scripts/prepare-demo.mjs",
-    "package:vsix": "vsce package --target darwin-arm64 --out dist/vadhyar-0.1.0-darwin-arm64.vsix --skip-license --no-rewrite-relative-links"
+    "package:vsix": "vsce package --target darwin-arm64 --out dist/vadhyar-0.1.1-darwin-arm64.vsix --skip-license --no-rewrite-relative-links"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
@@ -118,7 +118,14 @@
     "docs/assets/vadhyar-banner.jpg",
     "docs/s13-evidence/release.json",
     "docs/installation.md",
-    "docs/landing-release.md"
+    "docs/landing-release.md",
+    "SUBMISSION.md",
+    "docs/submission-release.md",
+    "docs/red-team-review.md",
+    "docs/red-team-evidence/checks.json",
+    "docs/learning-topics-evidence/README.md",
+    "docs/learning-topics-evidence/acceptance.json",
+    "docs/submission-evidence/verification.json"
   ],
   "dependencies": {
     "openai": "7.32.0",

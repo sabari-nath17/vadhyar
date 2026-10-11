@@ -1,45 +1,50 @@
 # Vadhyar — project submission
 
+Prepared repository/release handoff following the organizer template. GitHub publication does not by itself confirm organizer receipt.
+
 ## Project
 
-- **Project name:** Vadhyar
-- **Short description:** A VS Code learning prototype that connects a requirement to AI-built code and helps a beginner understand, change, and verify one feature themselves.
+- **Project name:** Vadhyar — Understand what you build.
+- **Team name:** Vadhyar.
+- **Short description:** A local VS Code learning companion that connects confirmed intentions to code, records a prediction before execution, guides a developer-performed change, and preserves actual check evidence.
 - **Code repository URL:** https://github.com/sabari-nath17/vadhyar
-- **Final submitted implementation commit SHA:** Not submitted. Local checkpoint `21fdcc9` does not contain the mixed S8–S13 working tree. A reviewed clean checkpoint and authorized publication remain outstanding.
-- **Working demo URL or local demo steps:** [Local candidate setup](docs/release.md), [complete demo/reset](docs/demo.md), [installed NovaDesk evidence](docs/s13-evidence/release.json), [second-project rehearsal](docs/strengthen-demo.md). The public website/S7 installer has the narrower scope recorded in [landing release](docs/landing-release.md).
-- **Demo access requirements:** Trusted prepared NovaDesk, installed pinned Graphify and user API key entered only in VS Code SecretStorage; never include credentials.
+- **Final submitted implementation commit SHA:** Release verification pending; the frozen implementation SHA will be recorded after commit.
+- **Working demo URL or local demo steps:** [Frozen release v0.1.1](https://github.com/sabari-nath17/vadhyar/releases/tag/v0.1.1), [installation](docs/installation.md), [NovaDesk demo/reset](docs/demo.md), [second-project demo](docs/strengthen-demo.md).
+- **Demo access requirements:** macOS Apple Silicon, VS Code 1.140.0+, pinned external Graphify, trusted disposable folder. Live coaching requires account/model access and a key entered only in the masked SecretStorage prompt. No credential is supplied.
 
 ## Participants
 
+Team names and roles below were supplied and confirmed by the user. Aravind’s supplied handle does not resolve as a public GitHub profile; the user explicitly asked to retain it as unverified.
+
 | Participant name | GitHub handle | Contribution |
 | --- | --- | --- |
-| To be confirmed | sabari-nath17 | Repository owner; project contributions will be recorded during development |
-
-Final team membership is not yet recorded. Maximum team size: four.
+| SabariNath S A | [sabari-nath17](https://github.com/sabari-nath17) | Vibecoding management, project logic and vision |
+| Aravind | `aravindksubash17` (unverified) | Research, presentation deck and design assistance |
 
 ## Run and demonstrate
 
-- **Prerequisites and versions:** Node 26.7.0/npm 11.19.0, VS Code 1.140.0 arm64, Python 3.13.15 with isolated graphifyy 0.9.84 verified.
-- **Install and start commands:** Install `dist/vadhyar-0.1.0-darwin-arm64.vsix`; configure the external Graphify executable; prepare a new folder with `npm run demo:prepare -- /absolute/new/NovaDesk-demo-001`; open it and run **Vadhyar: Understand this change**. See [setup](docs/release.md).
-- **Required configuration:** No credentials for fixture/AST extraction or trusted runner/diff; masked SecretStorage key setup is implemented. Live Explain and first hint succeeded with configured gpt-6-astra; other account/model access is unverified.
-- **Demo walkthrough:** Requirement, source walkthrough, prediction, ownership counterexample, learner fix, actual checks, archived-milestone challenge, evidence summary.
-- **Checks performed and results:** Latest combined tree: typecheck/lint/build, 111/111 tests (24 files, 26.20 s), 31 focused checks and 6/6 offline coach cases passed. S13 installed-profile real Graphify produced four references/three relationships; live explanation/hint validated. Delegated developer edits changed failed ownership/archive counterexamples into actual three/four-case passes. Native diff, reflection, 14-row timeline, exact export and window/extension-host resume verified. H1 added one disclosed unrelated JavaScript project's imported intention, selected source, live grounded explanation, real failed/passed reviewed script, diff and resume; installed VSIX rerun passed its three cases. [Core evidence](docs/s13-evidence/release.json), [latest acceptance](docs/strengthen-evidence/acceptance.json).
-- **Known limitations:** macOS-arm64/VS Code 1.140.0 only. Graphify and paid account/model access are prerequisites. Existing named-profile SecretStorage presence was used without copying the key; fully isolated user-data native playback was unavailable. Human teaching-quality/learning claims, separate live evaluation, CodeTour playback, connected capture, live Project Guide grouping/build-plan operations and other repository types remain unverified. H2–H5 optional additions are deferred. Seven high development-tool advisories remain; production audit is zero. Backup is explicitly an edited still-frame NovaDesk native recap, not continuous/live recording or the H1 demonstration. Mixed work remains uncommitted.
-- **Libraries and APIs:** Actual pins and remaining reuse/distribution boundaries in [source decisions](docs/reuse-sources.md).
-- **AI usage:** [AI_USAGE.md](AI_USAGE.md)
-- **Development record:** [CHANGELOG.md](CHANGELOG.md)
+- **Prerequisites and versions:** Node 26.7.0/npm 11.19.0 verified; supported Node ^22.22.0 / ^24 / >=26; VS Code 1.140.0 arm64; Python 3.10+ (3.13.15 recorded) and graphifyy 0.9.84.
+- **Install command:** `code --install-extension /absolute/path/to/vadhyar-0.1.1-darwin-arm64.vsix`. Use separate user-data/extensions-dir options to preserve an ongoing demo.
+- **Required environment variable names:** None for the installed local workflow. API key is in SecretStorage; vadhyar.graphifyPath and vadhyar.model are application settings. Separate development live evaluation requires OPENAI_API_KEY and VADHYAR_EVAL_MODEL; it is unrun in this release.
+- **Start command:** `node scripts/prepare-demo.mjs /absolute/new/NovaDesk-demo-001`, then `code --new-window /absolute/new/NovaDesk-demo-001` and **Vadhyar: Understand this change**.
+- **Demo walkthrough:** Confirm intention → validated source → save prediction → execute disclosed ownership counterexample → grounded hint → developer edit/save → native diff → actual three-case rerun → archived follow-up/four cases → inspect/resume evidence. Experimental Project Guide uses a distinct supporting SeatCheck fixture, reviewed real source and a selected/confirmed existing project test.
+- **Checks performed and results:** Typecheck/lint/build exit 0; 38/38 focused checks, 134/134 full tests (29 files, 33.87 s), 6/6 offline validators; production audit zero vulnerabilities. Clean-profile CLI install and eight installed file hashes passed. The installed fixed harnesses/dependencies executed the disclosed ownership failure and corrected three/four-case passes through the checked runner functions, outside VS Code. [Fresh evidence](docs/submission-evidence/verification.json); prior S13/H1/T1 native/live acceptance is separately dated historical evidence.
+- **Known limitations or incomplete features:** macOS-arm64 only; prepared NovaDesk and one unrelated fixture are not universal support; script success is not complete PRD compliance; live teaching quality, connected capture and native CodeTour playback are unverified. Panel-v2 and the ongoing video are excluded. Fresh native acceptance of the safety patch remains separate from automated/package checks. No mastery/authorship claims.
+- **Libraries, APIs, and public datasets used:** [Source register](docs/reuse-sources.md), [selective reuse](docs/selective-reuse.md), [third-party notices](THIRD_PARTY_NOTICES.md). Graphify, Vitest, OpenAI SDK/Responses, React, Zod and esbuild; CodeTour safe format/schema and OpenSpec convention; development-only Promptfoo.
+- **AI usage record:** [AI_USAGE.md](AI_USAGE.md).
+- **Development change log:** [CHANGELOG.md](CHANGELOG.md).
 
 ## Submission checklist
 
-- [ ] The project implementation started from scratch at the event.
-- [ ] Participation was solo or in a team of no more than four.
-- [x] Codex development usage is documented.
-- [ ] The code repository, short description and working demo are supplied.
-- [ ] README setup and demo instructions match the submitted code.
-- [x] Actual checks and known limitations are documented.
-- [ ] Meaningful changes are documented and committed throughout development.
-- [ ] Final implementation is committed and pushed, and its SHA is recorded.
-- [ ] No credentials or private data are included.
-- [ ] The organizers' submission method and timing have been followed.
+- [ ] Event-start/eligibility attestation confirmed by participants.
+- [x] Team list has two supplied participants, within the maximum of four.
+- [x] Codex usage is documented.
+- [x] Repository, description and reproducible local demo instructions are supplied.
+- [ ] Final README/setup, installer and exact checkpoint verified together.
+- [x] Fresh release checks and known limits recorded.
+- [x] Meaningful changes have dated development records and checkpoints.
+- [ ] Final implementation committed/pushed and exact SHA recorded.
+- [x] Limited credential-pattern/package scan completed; two credential-shaped rejection-test fixtures were identified, with no matches outside those tests. This is not an exhaustive secret audit.
+- [ ] Organizers' announced submission method and timing completed. The user reports submission opens after 08:00 AM IST. No form/link or receipt has been supplied; no organizer submission is being made during preparation.
 
-The strengthening brief's submission cutoff is **11 October 2026, 06:00 AM IST**. Event reference: [DevDay Exchange Community: Kochi](https://luma.com/z10nz8gp); its separately recorded wrap-up is **10:00 AM IST**. Local readiness is not organizer-confirmed submission.
+Event reference: [DevDay Exchange Community: Kochi](https://luma.com/z10nz8gp); organizer template records wrap-up by **10:00 AM IST, 11 October 2026**. The user reports submission opens after **08:00 AM IST**. The repository is being prepared before that window; no completed organizer submission or on-time claim is made without receipt.

@@ -192,8 +192,11 @@ export function createProjectController(context: vscode.ExtensionContext, publis
      if (picked) await persist({ ...record, check: { script: picked.label, packageHash: manifest.hash } });
    } else if (action.type === 'projectRunCheck') {
      if (!record.check || !record.current || dirty()) throw new Error('Choose a project check and save source first.');
-     const consent = await vscode.window.showWarningMessage(`Run npm run ${record.check.script} in ${basename(root())}? This executes trusted project code, is not sandboxed, and may change files.`, { modal: true }, 'Run selected check');
-     if (consent) {
+     const approvedSnapshot = record.current.id;
+     const consent = await vscode.window.showWarningMessage(`Run npm run --ignore-scripts ${record.check.script} in ${basename(root())}? Only the selected script runs; automatic npm pre/post hooks are disabled. This executes trusted project code, is not sandboxed, and may change files.`, { modal: true }, 'Run selected check');
+     if (consent === 'Run selected check') {
+       await refresh();
+       if (dirty() || record.current?.id !== approvedSnapshot) throw new Error('Project changed or has unsaved edits while confirming. Save, refresh and review the check again.');
        request = new AbortController(); busy = true; operation = 'Running the selected project check…'; emit();
        try {
          const result = await runProjectScript(root(), record.check.script, record.check.packageHash, record.current.id, record.intents.find(item => item.id === record!.selectedIntent)?.revision, request.signal);

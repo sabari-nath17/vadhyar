@@ -1,7 +1,7 @@
 # Vadhyar stack and evidence rules
 
 - V1: one prepared NovaDesk TypeScript workspace, one ownership requirement and an archived-milestone transfer task.
-- Current authorization: S7 progressive hints, learner edit, native diff and full ownership rerun only; stop before S8. Use configured vadhyar.model; no push.
+- Current release scope: freeze the completed learning loop and reviewed safety patch at v0.1.1; preserve the separate redesign and active sessions. GitHub publication is authorized; organizer submission stays separate.
 - The learner edits source; the runtime coach has no edit, shell or arbitrary-command tool.
 - Use strict TypeScript, Vitest and one root npm lockfile; add later dependencies only when needed.
 - The fixture intentionally checks client role without ownership; label its baseline behavior honestly.

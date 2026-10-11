@@ -5,9 +5,10 @@ import { extname, join, resolve } from 'node:path';
 import { promisify } from 'node:util';
 import { z } from 'zod';
 import { hash } from '../extension/source.js';
+import { privateText } from '../extension/privacy.js';
 import { checkSchema, fileSchema, guideSchema, intentInput, intentSchema, pathSchema, snapshotSchema, topicSchema, sha, type FileChange, type Intent, type Snapshot } from './shared.js';
 
-export const privateText = /(\bsk-(?:proj-)?[A-Za-z0-9_-]{16,}|-----BEGIN [A-Z ]*PRIVATE KEY|(?:api[_-]?key|secret|password|token)\s*[:=]\s*["'][^"']+["'])/i;
+export { privateText };
 const extensions = new Set(['.ts', '.tsx', '.js', '.jsx', '.mjs', '.cjs', '.py', '.go', '.rs', '.java', '.kt', '.swift', '.rb', '.php', '.cs', '.c', '.cpp', '.h', '.vue', '.svelte', '.html', '.css', '.scss', '.sql', '.md', '.json', '.yaml', '.yml', '.toml']);
 const excluded = new Set(['node_modules', 'dist', 'build', 'coverage', 'vendor', 'venv', '__pycache__', 'target', 'graft', 'media', 'evals']);
 export function supportedPath(path: string): boolean {

@@ -1,3 +1,5 @@
+> Historical S13/H1 local candidate record. For the frozen published 0.1.1 source, matching installer and current setup use [submission-release.md](submission-release.md) and [installation.md](installation.md). Prior checks below belong to their recorded builds.
+
 # Local release candidate
 
 V1 is the prepared NovaDesk learning loop. Project Guide remains separately experimental. This local artifact is built from the current mixed, uncommitted tree, not from the older `21fdcc9` checkpoint. Nothing is committed, pushed or published by this release pass.

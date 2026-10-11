@@ -1,0 +1,119 @@
+{
+  "recordedAtIST": "2026-10-11T07:16:52+05:30",
+  "baseCommit": "102a1ecce30f8bd512f4ba46bbcbac181438ae9a",
+  "branch": "codex/panel-v2-phase0",
+  "verificationScope": "Isolated git-archive checkpoint plus only the owned side-review changes; not the concurrently edited panel-v2 build.",
+  "ownedFileSHA256": {
+    "src/extension/coach.ts": "b2bbf2cb80edd63fff478a75da144f13b3d73d8daed579d3dfba04c8ea9ed868",
+    "src/project/model.ts": "0748d0bfd1f501342e402e33e99a0e62a1f1981a17c3e4251b52b07e7cccbe16",
+    "src/project/checks.ts": "06ba06d26890c77b27434fc51ee82827207ea40a3a957251d88a0f9cc6603dce",
+    "src/project/controller.ts": "dc0753146fd3823c74b7759263e294b8e35b81eb5108dd4038000f5401b3207c",
+    "tests/project-controller.test.ts": "42bbe8c7a8ba54121c835f4a6cdb258e81e9f4be7ec4807474272207174cdc8a",
+    "src/extension/privacy.ts": "5ee6cf7457cab0ee0fc64b1127a52095a7e7c54d76ab17fea41d25709ed47295",
+    "tests/red-team-privacy.test.ts": "aa7ccdb44a2f3552c48a978c330d99e14f17f21fe2025776e20dcc3f9fc8d6b3",
+    "tests/red-team-checks.test.ts": "e98c35c81e599a984e6fdac489fba1a34959c259e260be72de238bdadbd745e6",
+    "tests/red-team-check-process.test.ts": "b73ba6ac8b32d176dee5ea708b7263c886fffb6d38a0223cbfa363d59555e4d9"
+  },
+  "beforeFix": {
+    "command": "npm run test -- tests/red-team-privacy.test.ts tests/red-team-checks.test.ts tests/red-team-check-process.test.ts tests/project-controller.test.ts",
+    "passed": 12,
+    "failed": 12,
+    "files": 4,
+    "exitCode": 1
+  },
+  "afterFix": {
+    "privacyFocused": {
+      "passed": 27,
+      "files": 4,
+      "exitCode": 0
+    },
+    "safetyFocusedFirst": {
+      "passed": 25,
+      "failed": 1,
+      "reason": "Existing real-subprocess test exceeded its 5-second limit during concurrent typecheck/lint; no test limit changed."
+    },
+    "safetyFocusedRerun": {
+      "passed": 26,
+      "files": 5,
+      "durationSeconds": 3.14,
+      "exitCode": 0
+    },
+    "typecheck": {
+      "command": "npm run typecheck",
+      "exitCode": 0
+    },
+    "lint": {
+      "command": "npm run lint",
+      "exitCode": 0
+    },
+    "build": {
+      "command": "npm run build",
+      "exitCode": 0
+    },
+    "full": {
+      "command": "npm test",
+      "passed": 134,
+      "files": 29,
+      "startIST": "2026-10-11T07:13:22+05:30",
+      "durationSeconds": 26.82,
+      "exitCode": 0
+    },
+    "offlineCoach": {
+      "command": "npm run eval:coach -- --offline",
+      "passed": 6,
+      "failed": 0,
+      "errors": 0,
+      "apiRequests": 0,
+      "exitCode": 0
+    }
+  },
+  "native": "No native session was opened, reloaded or changed. Dialog behavior is tested through the existing mock VS Code boundary; npm fixture processes and filesystem changes are real.",
+  "notVerified": [
+    "Parent panel-v2 UI/combined build",
+    "Fresh native acceptance or installed package of this patch",
+    "Live model or human teaching quality",
+    "Connected agent capture",
+    "CodeTour playback",
+    "Windows execution/process-tree behavior"
+  ],
+  "git": "No stage/commit/push; parent branch/index preserved.",
+  "appliedCheckout": {
+    "recordedAtIST": "2026-10-11T07:25:32+05:30",
+    "focused": {
+      "command": "npm run test -- tests/red-team-privacy.test.ts tests/red-team-checks.test.ts tests/red-team-check-process.test.ts tests/project-controller.test.ts tests/second-project.test.ts",
+      "passed": 26,
+      "files": 5,
+      "durationSeconds": 1.91,
+      "exitCode": 0
+    },
+    "checks": [
+      {
+        "command": "npm run typecheck",
+        "startIST": "2026-10-11T07:18:42+05:30",
+        "elapsedSeconds": 4.55,
+        "exitCode": 0
+      },
+      {
+        "command": "npm run lint",
+        "startIST": "2026-10-11T07:18:47+05:30",
+        "elapsedSeconds": 1.69,
+        "exitCode": 0
+      },
+      {
+        "command": "npm test",
+        "startIST": "2026-10-11T07:18:48+05:30",
+        "elapsedSeconds": 29.25,
+        "exitCode": 0
+      }
+    ],
+    "full": {
+      "passed": 134,
+      "files": 29,
+      "durationSeconds": 28.8,
+      "startIST": "2026-10-11T07:18:49+05:30"
+    },
+    "build": "Only built the isolated copy; did not overwrite checkout dist or reload any native session.",
+    "ownedSourceHashesUnchanged": true,
+    "index": "Empty, preserved; no stage/commit/push."
+  }
+}

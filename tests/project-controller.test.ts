@@ -95,3 +95,16 @@ it('rejects a proposed topic when the source changes during the requirement pick
  await expect(controller.act({ type: 'projectUseGroup', index: 0 })).rejects.toThrow(/changed.*clarif/i);
  expect(controller.inspect().topic).toBeUndefined();
 });
+
+it.each(['dirty', 'saved'])('rejects %s source changes while native check confirmation is open', async mode => {
+ await writeFile(join(host.root, 'package.json'), JSON.stringify({ scripts: { test: 'node -e "require(\'node:fs\').writeFileSync(\'ran.txt\', \'executed\')"' } }));
+ host.pick.mockResolvedValue({ label: 'test' }); await controller.act({ type: 'projectSelectCheck' });
+ host.warning.mockImplementationOnce(async () => {
+   if (mode === 'dirty') host.documents = [{ isDirty: true, uri: { scheme: 'file', fsPath: join(host.root, 'src/a.ts') } }];
+   else await writeFile(join(host.root, 'src/a.ts'), 'export const a = 3;\n');
+   return 'Run selected check';
+ });
+ await expect(controller.act({ type: 'projectRunCheck' })).rejects.toThrow(/changed|save|unsaved/i);
+ expect(controller.inspect().checkResult).toBeUndefined();
+ await expect(readFile(join(host.root, 'ran.txt'), 'utf8')).rejects.toMatchObject({ code: 'ENOENT' });
+});

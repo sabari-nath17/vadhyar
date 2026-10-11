@@ -555,3 +555,33 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - Remaining: file-level static dependency limits, broader language/framework support, new native keyboard/theme matrices and human teaching-quality review. Connected capture, native CodeTour playback and separate live coach quality evaluation remain unverified. This follow-up needs a clearly owned checkpoint and new installed package acceptance before publication; H2–H5 remain deferred.
 
 - 2026-10-11T06:47:31+05:30: final disclosure correction distinguishes unshared source **contents** from caller/path metadata included in the focused preview. Native coverage disclosure was reopened and verified with the corrected bundle; historical controls still disabled, with no new API call/extraction. Latest focused **26/26 / 5 files** at **06:44:29 IST**, typecheck/lint/build exit 0, full **118/118 / 26 files / 23.69 s** at **06:44:34 IST**. Runtime/controller hash unchanged; final panel hash and evidence updated. Six offline validators and the changed-target detector remain green.
+
+
+<!-- Preserved publication records from canonical GitHub history. -->
+
+## 2026-10-11T04:49:13+05:30 — Authorized landing / installer side task
+
+- Scope: completed S7 (`21fdcc9`) plus packaging, static website and installation documentation. Parent work/index/branch preserved; release operations occur in an isolated clone.
+- Implemented: flat design-v2 static page, labelled six-stage example, local assets, themes/accessibility, real GitHub VSIX destination and complete prerequisites/setup.
+- Executed: source typecheck/lint/build and 36/36; website contract/browser/contrast; clean-profile CLI installation; installed real runner single/full cases and Graphify 0.9.84 (four references/three edges). No new API call or installed native loop.
+- Publication: explicitly authorized for this task. Website public alias returns 200; final versioned GitHub release/download and redeployment acceptance follow publication. See docs/landing-release.md.
+- Next: continue the parent's independently authorized development slices; first public installer is the narrower S7 demo. No parent stage/commit/reset/push was performed.
+
+
+## 2026-10-11T04:57:58+05:30 — Public Vadhyar wording
+
+Public Vadhyar wording updated on the landing/README/setup/release copy. No source behavior or prior evidence rewritten. Website contract passes; publication and final live acceptance recorded after deployment.
+
+## 2026-10-11T07:38:58+05:30 — Isolated GitHub / installer freeze
+
+- Authorized scope: finalize the GitHub page/checkpoint, matching installer and prepared submission; keep a stable demo while ChatGPT continues panel-v2. Original checkout remains codex/panel-v2-phase0 / 102a1ec with its index, mixed work and active learning records preserved. No unrelated source changes or recordings are staged.
+- Release worktree: codex/submission-v0.1.1. Merge preserves 102a1ec and canonical main 866666a histories. .ignore/Graft artifacts remain; upstream publication records and older 0.1.0 remain available. Old VSCE ignore file is superseded only in the release by the existing explicit package allowlist.
+- Reuse: completed reviewed/hash-matched Red Team safety files, full NovaDesk loop, experimental Project Guide and historical S13/H1/T1 evidence. Release scope rules, README/setup/SUBMISSION, version 0.1.1 and evidence are aligned with the template. Team Vadhyar / SabariNath S A / Aravind and contributions were user-confirmed.
+- Fresh baseline: clean install 717 packages; typecheck/lint/build exit 0; focused 38/38; full 134/134 / 29 files / 33.87 s with one worker; six offline validators / zero OpenAI requests; production audit zero. All executed in the release worktree, not inferred from earlier reports.
+- Package/install: ZIP/production exclusions, fonts/runtime/harness/lock and eight installed hashes passed. Isolated official CLI install succeeded with only Vadhyar. Production runner functions with installed fixtures/dependencies outside VS Code observed the seed fail and developer variants pass three/four cases. Prepared source unchanged; no native panel acceptance inferred.
+- Documentation links/rule lengths and limited credential-pattern review passed; only two existing rejection-test fixtures matched. Original branch/HEAD/index and protected session/source hashes unchanged 4/4. Fresh native playback, live coach/human quality, CodeTour and connected capture remain unverified.
+- Evidence: docs/submission-evidence/verification.json. Final code tag, normal push, final VSIX/source checksums and downloaded-asset acceptance follow in a publication record. Organizer submission is separate and pending: user says it opens after 08:00 IST; no form/link or receipt yet.
+
+- 2026-10-11T07:46:56+05:30: user confirmed Team Vadhyar roles and retaining Aravind’s handle as unverified. Stable candidate/package/source checks passed; final choice waits for the user’s 07:50 IST redesign cutoff. Current redesign has ongoing edits and separately pending native acceptance. No organizer submission or active-session reload.
+
+- 2026-10-11T07:50:29+05:30: at the user’s 07:50 IST cutoff, the separate redesign was at 6c24897c474ded0c67f86a1fc3d8fd08439e5bdf with an ongoing test edit; its own ledger still required four-theme/all-state review, final parity, an updated package and native acceptance. Selected the verified original panel for v0.1.1, preserving all redesign work separately. Completed S8–S13, Project Guide/T1 and the reviewed safety patch are included. README now follows the exact supplied overview/run/status structure; no source behavior changed. Organizer submission remains pending until the announced window and method.

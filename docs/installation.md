@@ -1,85 +1,57 @@
-# Install Vadhyar 0.1.0
+# Install the frozen Vadhyar 0.1.1 demo
 
-**VS Code learning companion for macOS on Apple Silicon.** Requires VS Code 1.140.0 or newer and Python 3.10+. This release packages the completed S7 source checkpoint. Later Project Guide, transfer, resume and design-v2 extension work are not part of this installer. The landing page follows design-v2 visually; its walkthrough is an illustration.
+Supported target: **macOS Apple Silicon (`darwin-arm64`) and VS Code 1.140.0+**. Other platforms are unverified. This source tag and installer include NovaDesk S8–S13, H1/T1 Project Guide work and the reviewed safety patch. Panel-v2 is separate.
 
-## 1. Download and install
+## Download and install
 
-Download `vadhyar-0.1.0.vsix` from [the GitHub release](https://github.com/sabari-nath17/vadhyar/releases/tag/v0.1.0).
-
-In VS Code, open **Extensions**, choose the **⋯** menu, then **Install from VSIX…** and select the file. If requested, reload VS Code. This is a GitHub-distributed VSIX, not a Marketplace listing. Installation does not automatically configure Graphify or an API key.
-
-Optional CLI installation, when `code` is on PATH:
+Download [vadhyar-0.1.1-darwin-arm64.vsix](https://github.com/sabari-nath17/vadhyar/releases/download/v0.1.1/vadhyar-0.1.1-darwin-arm64.vsix). Verify its SHA-256 against the release's SHA256SUMS or release-manifest.json. Use **Extensions → ⋯ → Install from VSIX…**; reload only the intended demo window if requested.
 
 ```sh
-code --install-extension ~/Downloads/vadhyar-0.1.0.vsix
+code --install-extension /absolute/path/to/vadhyar-0.1.1-darwin-arm64.vsix
 ```
 
-## 2. Get the prepared project
-
-Clone the versioned source, then open only the prepared folder:
+To protect ongoing development/learning windows, install into a separate user-data and extension directory:
 
 ```sh
-git clone --branch v0.1.0 --depth 1 https://github.com/sabari-nath17/vadhyar.git
-cd vadhyar
+code --user-data-dir /absolute/new/vadhyar-demo-profile --extensions-dir /absolute/new/vadhyar-demo-extensions --install-extension /absolute/path/to/vadhyar-0.1.1-darwin-arm64.vsix
 ```
 
-You may instead download the release source ZIP and open the included project folder containing `vadhyar-requirement.md`. Trust it only after inspecting the source. The actors are simulated; this is not an authentication system. The ownership bug is deliberately seeded.
+The isolated profile has separate storage and may need native secure key entry for live coaching. Never copy credential databases or paste keys into chat/files. Existing user sessions are not a demo reset target.
 
-The VSIX includes the pinned Vitest 5.0.3 runtime and trusted harness, so the installer does not require `npm ci` for its checks.
-
-## 3. Set up Graphify
-
-This release expects Graphify at the installed extension's `.venv-graphify/bin/graphify`. With the default macOS extension folder:
+## Prepare the disclosed sample
 
 ```sh
-python3 -m venv "$HOME/.vscode/extensions/sabari-nath17.vadhyar-0.1.0/.venv-graphify"
-"$HOME/.vscode/extensions/sabari-nath17.vadhyar-0.1.0/.venv-graphify/bin/pip" install 'graphifyy==0.9.84'
-"$HOME/.vscode/extensions/sabari-nath17.vadhyar-0.1.0/.venv-graphify/bin/graphify" --version
+git clone --branch v0.1.1 --depth 1 https://github.com/sabari-nath17/vadhyar.git vadhyar-demo
+cd vadhyar-demo
+node scripts/prepare-demo.mjs /absolute/new/NovaDesk-demo-001
+code --new-window /absolute/new/NovaDesk-demo-001
 ```
 
-Expected: `graphify 0.9.84`. If your VS Code uses a custom extension directory, replace the extension path above with its actual installed folder. Updates reinstalling the extension may require recreating this environment. Do not place this environment in the sample project's folder; extraction uses the extension-owned executable.
+Use the same user-data/extensions-dir options when opening an isolated demo. The destination must not exist; another new folder repeats the original seed without overwriting a saved attempt. NovaDesk deliberately omits ownership in its starting function. Actors are simulated.
 
-## 4. Open and configure Vadhyar
+## Configure Graphify
 
-Open the Command Palette (**Cmd+Shift+P**) and run **Vadhyar: Understand this change**.
-
-1. Review and confirm the prepared requirement.
-2. Save a source checkpoint; refresh source relationships and confirm their mapping.
-3. For explanations and hints, run **Vadhyar: Set OpenAI API key securely**. Enter your own key in the native masked prompt. It is stored in VS Code SecretStorage.
-4. Set `vadhyar.model` to a Responses API model available to your OpenAI account. The release's initial default is `gpt-6-astra`; model access is account-dependent. No automatic model fallback occurs.
-5. Preview the exact context before sending an explanation or hint request. API usage is charged separately by OpenAI; a ChatGPT subscription does not supply API credentials.
-6. Save a prediction, run the prepared different-client case, inspect the result and make your own source edit. Save, open the native diff and run all three ownership cases.
-
-A failed ownership case is expected on the original seed. Passing the baseline test suite does not prove that the ownership rule is correct.
-
-## Data and privacy
-
-Code checkpoints, predictions, hints, diffs and run records use workspace-scoped VS Code extension storage. The API key uses SecretStorage. Coaching sends the selected preview context to OpenAI after approval. The landing website has no login, analytics, form backend or AI requests. Snapshots start when captured; they do not recover earlier AI conversations or establish authorship.
-
-## Troubleshooting
-
-| Symptom | Action |
-|---|---|
-| VS Code refuses installation | Check Help → About. The manifest requires 1.140.0+, macOS Apple Silicon. Do not force installation on an older editor. |
-| Command not visible | Confirm the installed extension is enabled, then reload VS Code. Open the included project folder containing `vadhyar-requirement.md` in a trusted local window. |
-| Graphify extraction fails | Verify the installed extension path, isolated executable and `graphify 0.9.84`; inspect the actionable panel message. |
-| Runner cannot produce a result | Reinstall the original VSIX and preserve its trusted fixtures; inspect the prepared source for exceptions. Do not treat execution errors as a passing case. |
-| API model/key error | Check your API account, billing and accessible model; enter the key only in the native masked prompt. |
-| Source is stale or unsaved | Save the file, refresh context, then review the current diff and rerun. |
-
-## Build from source
-
-The source build needs Node `^22.13.0 || ^24.0.0 || >=26.0.0` and the locked dependencies:
+Use a new separate Python environment; do not put it inside the learner project or relocate an existing environment.
 
 ```sh
-npm ci
-npm run typecheck
-npm run lint
-npm run test
-npm run build
-npx @vscode/vsce@4.0.0 package --target darwin-arm64 --out vadhyar-0.1.0.vsix --skip-license
+python3 -m venv "$HOME/.local/share/vadhyar-graphify-0.9.84"
+"$HOME/.local/share/vadhyar-graphify-0.9.84/bin/pip" install 'graphifyy==0.9.84'
+"$HOME/.local/share/vadhyar-graphify-0.9.84/bin/pip" check
+GRAPHIFY_NO_AUTO_REFRESH=1 "$HOME/.local/share/vadhyar-graphify-0.9.84/bin/graphify" --version
 ```
 
-`--skip-license` records that no project-wide license has been selected; it does not license third-party material or bypass the packager's secret scan. Third-party notices remain in the source. Do not assume the public repository grants a blanket reuse license.
+Expected version: **graphify 0.9.84**. Set VS Code User Settings `vadhyar.graphifyPath` to its absolute bin/graphify path. Empty uses the source checkout development environment, which is not bundled in the VSIX. No executable arguments may be placed in that setting.
 
-Windows, Linux, Intel Mac and browser-based VS Code installation are unverified and are not distributed by this release. Runtime API and human learning quality are separate from packaging checks.
+## Open the learning workflow
+
+Trust only the prepared folder. Run **Vadhyar: Understand this change**. Confirm the requirement, capture source, refresh real relationships and confirm the proposed mapping. Follow [the walkthrough](demo.md).
+
+Local predictions, fixed checks, diff, transfer, reflection and memory need no API key. For live explanations/hints use **Vadhyar: Set OpenAI API key securely**; type only in the masked native prompt. SecretStorage keeps the key out of the panel and child processes. Review exact context before every required sharing action. Configure `vadhyar.model` to an account-supported Responses model; no automatic fallback. API charges are separate.
+
+**Vadhyar: Open Project Guide** opens the experimental ordinary-project workflow. Choose and explicitly confirm an existing npm check; implicit npm pre/post hooks are disabled. A selected script may still modify files or run commands. Its successful exit is not full PRD verification.
+
+## Preserve and reset safely
+
+Close/reopen restores workspace-local evidence; relevant edits make earlier results historical. **Clear NovaDesk session** has a native confirmation and preserves source, Project Guide and credentials. It does not restore the seed. For a clean demo, use a new prepared folder. Do not clear/reload an active learner session.
+
+[Exact frozen release](submission-release.md) · [Attribution](../THIRD_PARTY_NOTICES.md) · [Recorded historical native evidence](s13-evidence/release.json). The previous [0.1.0 installer](https://github.com/sabari-nath17/vadhyar/releases/tag/v0.1.0) remains available with its earlier S7 scope.

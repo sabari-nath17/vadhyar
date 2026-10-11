@@ -199,3 +199,30 @@ Packaged the real Vitest runtime, added explicit application Graphify setup and 
 - Topics now disclose their proposed requirement, exact decision, selection reason, extracted static references and unreviewed context. Requirement confirmation is explicit; unknown connections remain unresolved.
 - Saved one source/requirement-bound topic and focused explanation; old records remain compatible. Native panel reopen/restart and historical link blocking were verified in a disposable workspace.
 - Typecheck/lint/build, 118 tests and six offline validators passed. Two live production coaching operations and real Graphify 0.9.84 passed native acceptance. New keyboard/theme matrices, other platforms and human teaching-quality review remain unverified. The 06:00 IST brief cutoff had passed; this is follow-up work, not a submission claim or a repackaged release.
+
+
+<!-- Preserved publication records from canonical GitHub history. -->
+
+## 2026-10-11T04:49:13+05:30 — Landing website and early GitHub installer
+
+- Changed: website/, docs/installation.md, docs/landing-release.md, README, package manifest/lock (pinned runtime Vitest), .vscodeignore, .gitignore and publication records.
+- Why: deliver the user-authorized public website, real download and reproducible setup without publishing ongoing parent changes.
+- Checks: clean source typecheck/lint/build, 36/36 product tests; static contract, four browser widths/two themes, keyboard/reduced motion, contrast; real isolated VSIX install/installed runner and Graphify extraction.
+- Limits: macOS Apple Silicon, S7 NovaDesk demo only; no new API or human learning validation; no blanket license selected. Public verification follows publication; see release acceptance.
+
+
+## 2026-10-11T04:57:58+05:30 — Public Vadhyar wording
+
+Changed public website, installation guide, README and GitHub release copy to describe Vadhyar without the retired sample labels, as requested. Preserved supported-project boundaries and the existing installer; added a static copy regression check. Browser checks, installation/runtime acceptance and source suite remain recorded separately.
+
+## 2026-10-11T07:38:58+05:30 — Freeze Vadhyar 0.1.1 for submission preparation
+
+- Reused completed checkpoint 102a1ec plus the finished hash-checked safety patch; merged canonical GitHub main 866666a in a separate release worktree, retaining both histories. Panel-v2 and ongoing footage are excluded.
+- Versioned the macOS-arm64 installer, aligned README/setup/SUBMISSION with the organizer template, and recorded Team Vadhyar with user-confirmed names/roles. Preserved the earlier public 0.1.0 and original development index/sessions.
+- Safety behavior retained: common quoted-credential guard, revalidation after native check approval, disabled implicit npm pre/post hooks, and execution errors for cancelled/abnormal exits. Selected project scripts still execute trusted code and may modify files.
+- Fresh checks: typecheck/lint/build exit 0; 38 focused/134 full tests; 6 offline validators; production audit zero; package integrity/exclusions and clean CLI install/eight file matches passed. Actual installed fixtures/dependencies produced the disclosed failure and corrected three/four-case passes outside VS Code.
+- Files: release docs, package version/allowlist, .customrules scope, preserved upstream records, completed source/test safety files and docs/submission-evidence/verification.json. Final immutable SHA and artifact hashes follow in external release metadata. Native/live/human acceptance remains separately historical/unverified; organizer submission stays pending until after 08:00 IST and the announced form.
+
+- 2026-10-11T07:46:56+05:30: retained the user-supplied Aravind handle with an explicit unverified label; updated the historical S7-only push instruction to the authorization rule. Repository About topics now identify the VS Code, developer-education and hackathon scope.
+
+- 2026-10-11T07:50:29+05:30: at the user’s 07:50 IST cutoff, the separate redesign was at 6c24897c474ded0c67f86a1fc3d8fd08439e5bdf with an ongoing test edit; its own ledger still required four-theme/all-state review, final parity, an updated package and native acceptance. Selected the verified original panel for v0.1.1, preserving all redesign work separately. Completed S8–S13, Project Guide/T1 and the reviewed safety patch are included. README now follows the exact supplied overview/run/status structure; no source behavior changed. Organizer submission remains pending until the announced window and method.
