@@ -31,8 +31,8 @@ export function LessonStart({ state, begin, close }: { state: PanelState; begin:
 
 export function Completion({ state, home, proof, challenge, bloom = false }: { state: PanelState; home: () => void; proof: () => void; challenge: () => void; bloom?: boolean }) {
   const summary = recordedSummary(state);
-  return <Task title={summary.passed ? 'Your saved code follows this rule' : 'This result needs a refresh'} pose={summary.passed ? undefined : 'pointing'} action={<Control className="vd-primary" onClick={home}>Back to my path</Control>}>
-    {summary.passed ? <><Bloom animate={bloom} /><p>{summary.matched} of {summary.total} recorded cases match.</p><div className="vd2-proof-list">{summary.earned.map(item => <ProofSticker key={item} proof={item} earned={summary.earned} />)}</div><Chip icon="bulb">Coach hints: {summary.hints ?? 'not recorded'}</Chip><p className="vd2-caption">These checks show this behavior. Authorship, outside help and learning gains are not established.</p></> : <p>The code, rule or check definitions changed. Your earlier evidence is still available.</p>}
+  return <Task title={summary.passed ? 'Your saved code follows this rule' : 'This result needs a refresh'} pose={summary.passed ? undefined : 'pointing'} art={summary.passed ? <Bloom animate={bloom} /> : undefined} action={<Control className="vd-primary" onClick={home}>Back to my path</Control>}>
+    {summary.passed ? <><p>{summary.matched} of {summary.total} recorded cases match.</p><div className="vd2-proof-list">{summary.earned.map(item => <ProofSticker key={item} proof={item} earned={summary.earned} />)}</div><Chip icon="bulb">Coach hints: {summary.hints ?? 'not recorded'}</Chip><p className="vd2-caption">These checks show this behavior. Authorship, outside help and learning gains are not established.</p></> : <p>The code, rule or check definitions changed. Your earlier evidence is still available.</p>}
     <Control onClick={proof}>Show my proof</Control>
     {summary.passed && state.exercise !== 'transfer' && <Control disabled={state.busy} onClick={challenge}>Try the next rule</Control>}
   </Task>;

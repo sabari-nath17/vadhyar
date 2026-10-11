@@ -1,8 +1,16 @@
-import { useEffect, useId, useRef, type ButtonHTMLAttributes, type ReactNode } from 'react';
+import { useEffect, useId, useRef, type ButtonHTMLAttributes, type ReactNode, type KeyboardEvent as ReactKeyboardEvent } from 'react';
 import { lessonSteps, proofLabels, type Proof } from './evidence.js';
 
 export type Tone = 'ok' | 'bad' | 'hint';
 export type Pose = 'welcome' | 'thinking' | 'pointing' | 'curious' | 'aha' | 'celebrate' | 'resting' | 'key';
+function primaryOnEnter(event: ReactKeyboardEvent<HTMLElement>) {
+  if (event.key !== 'Enter' || event.ctrlKey || event.metaKey || event.altKey || event.shiftKey) return;
+  const target = event.target;
+  if (!(target instanceof HTMLElement) || target.isContentEditable || target.closest('.snake-board') || /^(BUTTON|TEXTAREA|SELECT|SUMMARY|A)$/.test(target.tagName) || target instanceof HTMLInputElement && target.type !== 'radio') return;
+  event.preventDefault();
+  const scope = event.currentTarget.closest('dialog') ?? event.currentTarget.closest('.vd-stage') ?? event.currentTarget;
+  scope.querySelector<HTMLButtonElement>('.vd2-button-primary')?.click();
+}
 export function Glyph({ name }: { name: 'check' | 'close' | 'lock' | 'bulb' | 'source' | 'settings' | 'clock' | 'play' | 'lotus' }) {
   const paths = {
     play: 'm8 5 11 7-11 7Z', lotus: 'M12 18C5 16 2 11 3 6c6 1 9 5 9 12Zm0 0c7-2 10-7 9-12-6 1-9 5-9 12Zm0 0c-5-4-5-10 0-15 5 5 5 11 0 15ZM5 19h14l-2 3H7Z',
@@ -47,7 +55,7 @@ export function FeedbackSheet({ tone, title, text, children, onClose }: { tone: 
     heading.current?.focus();
     return () => { if (previous instanceof HTMLElement && previous.isConnected && document.activeElement === document.body) previous.focus(); };
   }, [title]);
-  return <section className={`vd2-sheet vd2-tone-${tone}`} aria-label="Code feedback" onKeyDown={event => { if (event.key === 'Escape') onClose?.(); }}><div className="vd2-sheet-copy"><Glyph name={tone === 'ok' ? 'check' : tone === 'hint' ? 'bulb' : 'close'} /><div><h2 ref={heading} tabIndex={-1}>{title}</h2><p aria-live="polite">{text}</p></div></div><ActionBar>{children}</ActionBar></section>;
+  return <section className={`vd2-sheet vd2-tone-${tone}`} aria-label="Code feedback" onKeyDown={event => { primaryOnEnter(event); if (event.key === 'Escape') onClose?.(); }}><div className="vd2-sheet-copy"><Glyph name={tone === 'ok' ? 'check' : tone === 'hint' ? 'bulb' : 'close'} /><div><h2 ref={heading} tabIndex={-1}>{title}</h2><p aria-live="polite">{text}</p></div></div><ActionBar>{children}</ActionBar></section>;
 }
 
 export function PathNode({ state, label, description, onSelect }: { state: 'current' | 'done' | 'locked' | 'planned' | 'break'; label: string; description: string; onSelect?: () => void }) {
@@ -59,12 +67,12 @@ export function Chip({ children, icon = 'check' }: { children: ReactNode; icon?:
 export function Banner({ tone, title, children, action }: { tone: Tone; title: string; children: ReactNode; action?: ReactNode }) { return <aside className={`vd2-banner vd2-tone-${tone}`}><Glyph name={tone === 'ok' ? 'check' : tone === 'hint' ? 'bulb' : 'close'} /><div><h3>{title}</h3><p>{children}</p>{action}</div></aside>; }
 export function RequirementFrame({ rule, children, compact = false }: { rule: string; children?: ReactNode; compact?: boolean }) { return <section className={`vd2-requirement ${compact ? 'vd2-compact' : ''}`} aria-label="Requirement"><p className="vd2-label">Your rule</p><h2>{rule}</h2>{children}</section>; }
 export function Guide({ pose, large = false }: { pose: Pose; large?: boolean }) { return <img className={`vd2-guide ${large ? 'vd2-guide-large' : ''}`} src={`./media/guide/${pose}.svg`} alt={`The Guide, ${pose === 'key' ? 'holding a key' : pose}`} />; }
-export function Bloom({ animate }: { animate: boolean }) { return <svg className={`vd2-bloom ${animate ? 'vd2-bloom-once' : ''}`} width="160" height="160" viewBox="0 0 240 240" fill="none" stroke="var(--text)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><use href="./media/guide/celebrate.svg#rays" />{['left','right','center'].map(side => <use key={side} className={`vd2-petal-${side}`} href={`./media/guide/bloom.svg#petal-${side}`} />)}{['pot','eyes','hand'].map(part => <use key={part} href={`./media/guide/celebrate.svg#${part}`} />)}<path d="M113 136q7 6 14 0" /></svg>; }
+export function Bloom({ animate }: { animate: boolean }) { return <svg className={`vd2-bloom ${animate ? 'vd2-bloom-once' : ''}`} width="160" height="160" viewBox="0 0 240 240" fill="none" stroke="#2C3539" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><use href="./media/guide/celebrate.svg#rays" />{['left','right','center'].map(side => <use key={side} className={`vd2-petal-${side}`} href={`./media/guide/bloom.svg#petal-${side}`} />)}{['pot','eyes','hand'].map(part => <use key={part} href={`./media/guide/celebrate.svg#${part}`} />)}<path d="M113 136q7 6 14 0" /></svg>; }
 export function ProofSticker({ proof, earned }: { proof: Proof; earned: readonly Proof[] }) { if (!earned.includes(proof)) return null; return <figure className="vd2-proof"><img src={`./media/stickers/${proof}.svg`} alt="" /><figcaption>{proofLabels[proof]}</figcaption></figure>; }
 export function Disclosure({ title, children }: { title: string; children: ReactNode }) { return <details className="vd2-disclosure"><summary>{title}</summary><div>{children}</div></details>; }
 
-export function Task({ title, pose, children, action }: { title: string; pose?: Pose; children: ReactNode; action: ReactNode }) {
-  return <><div className="vd2-task-scroll"><div className="vd2-task-layout"><div className="vd2-task-copy"><h2 tabIndex={-1}>{title}</h2>{children}</div>{pose && <aside className="vd2-task-guide"><Guide pose={pose} large /></aside>}</div></div><ActionBar>{action}</ActionBar></>;
+export function Task({ title, pose, art, children, action }: { title: string; pose?: Pose; art?: ReactNode; children: ReactNode; action: ReactNode }) {
+  return <><div className="vd2-task-scroll" onKeyDown={primaryOnEnter}><div className="vd2-task-layout"><div className="vd2-task-copy"><h2 tabIndex={-1}>{title}</h2>{children}</div>{(pose || art) && <aside className="vd2-task-guide">{art ?? (pose && <Guide pose={pose} large />)}</aside>}</div></div><ActionBar>{action}</ActionBar></>;
 }
 
 export function StartSheet({ id, title, children, action, onClose }: { id?: string; title: string; children: ReactNode; action: ReactNode; onClose: () => void }) {
@@ -77,5 +85,5 @@ export function StartSheet({ id, title, children, action, onClose }: { id?: stri
     dialog?.querySelector<HTMLElement>('h2')?.focus();
     return () => { dialog?.close(); if (previous instanceof HTMLElement && previous.isConnected) previous.focus(); };
   }, []);
-  return <dialog id={id} ref={sheet} className="vd2-startsheet" aria-labelledby={titleId} onCancel={event => { event.preventDefault(); onClose(); }}><div className="vd2-start-copy"><Guide pose="welcome" /><h2 id={titleId} tabIndex={-1}>{title}</h2>{children}</div><ActionBar>{action}</ActionBar></dialog>;
+  return <dialog id={id} ref={sheet} className="vd2-startsheet" aria-labelledby={titleId} onKeyDown={primaryOnEnter} onCancel={event => { event.preventDefault(); onClose(); }}><div className="vd2-start-copy"><Guide pose="welcome" /><h2 id={titleId} tabIndex={-1}>{title}</h2>{children}</div><ActionBar>{action}</ActionBar></dialog>;
 }

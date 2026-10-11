@@ -4,9 +4,9 @@ import { boardSize, newSnake, stepSnake, turnSnake, type Direction } from './sna
 
 const directions: Record<string, Direction> = { arrowup: 'up', w: 'up', arrowdown: 'down', s: 'down', arrowleft: 'left', a: 'left', arrowright: 'right', d: 'right' };
 
-export function SnakeGame() {
-  const [open, setOpen] = useState(false);
-  return <details className="snake-egg" onToggle={event => setOpen(event.currentTarget.open)}><summary aria-label="Take a short break"><Icon name="egg" />Take a short break</summary>{open && <SnakeBoard />}</details>;
+export function SnakeGame({ defaultOpen = false }: { defaultOpen?: boolean }) {
+  const [open, setOpen] = useState(defaultOpen);
+  return <details className="snake-egg" open={open} onToggle={event => setOpen(event.currentTarget.open)}><summary aria-label="Take a short break"><Icon name="egg" />Take a short break</summary>{open && <SnakeBoard />}</details>;
 }
 
 function SnakeBoard() {
@@ -43,7 +43,7 @@ function SnakeBoard() {
         <button onClick={() => { setGame(newSnake()); board.current?.focus(); }}>New game</button>
       </div>
       {(game.status === 'running' || game.status === 'paused') && <div className="snake-controls" role="group" aria-label="Snake directions">
-        {(['up', 'left', 'down', 'right'] as const).map((direction, index) => <button key={direction} aria-label={`Move ${direction}`} onClick={() => { setGame(current => turnSnake({ ...current, status: 'running' }, direction)); board.current?.focus(); }}><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true" ><g transform={`rotate(${[0, 270, 180, 90][index]}, 12, 12)`}><path d="m6 10 6-6 6 6m-6-6v16" /></g></svg></button>)}
+        {(['up', 'left', 'down', 'right'] as const).map((direction, index) => <button key={direction} aria-label={`Move ${direction}`} onClick={() => { setGame(current => turnSnake({ ...current, status: 'running' }, direction)); board.current?.focus(); }}><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true" ><g transform={`rotate(${[0, 270, 180, 90][index]}, 12, 12)`}><path d="m6 10 6-6 6 6m-6-6v16" /></g></svg></button>)}
       </div>}
       <p>This game stays in the panel. It makes no API calls and its score is separate from learning progress.</p>
     </section>;

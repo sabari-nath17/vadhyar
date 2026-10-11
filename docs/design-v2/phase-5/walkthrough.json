@@ -1,0 +1,20 @@
+{
+  "kind": "Screen-capture walkthrough, not continuous native recording",
+  "width": 360,
+  "height": 640,
+  "theme": "dark",
+  "environment": "Recorded developer preview; no API, storage, runner or source editing performed during capture",
+  "frames": [
+    "home",
+    "start",
+    "rule",
+    "sharing",
+    "predict",
+    "observe",
+    "change",
+    "verify",
+    "completion",
+    "evidence"
+  ],
+  "scope": "User navigation and labelled specimen selection. Runner results are from the preserved Phase 0 developer record."
+}

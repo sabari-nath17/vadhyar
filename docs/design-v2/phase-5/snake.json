@@ -1,0 +1,34 @@
+[
+  {
+    "theme": "light",
+    "boardVisible": true,
+    "bodyText": "#2C3539",
+    "card": "#FFFFFF",
+    "scrollWidth": 360,
+    "snakeBackground": "rgba(0, 0, 0, 0)",
+    "snakeText": "rgb(44, 53, 57)",
+    "width": 360,
+    "enterStaysOnBreak": true,
+    "escapePaused": true
+  },
+  {
+    "theme": "dark",
+    "boardBackground": "rgb(38, 42, 45)",
+    "boardVisible": true,
+    "scrollWidth": 360,
+    "text": "rgb(244, 239, 230)",
+    "themeCard": "#262A2D",
+    "themeText": "#F4EFE6",
+    "width": 360
+  },
+  {
+    "theme": "hc",
+    "boardBackground": "rgb(0, 0, 0)",
+    "boardVisible": true,
+    "scrollWidth": 360,
+    "text": "rgb(255, 255, 255)",
+    "themeCard": "#000000",
+    "themeText": "#FFFFFF",
+    "width": 360
+  }
+]

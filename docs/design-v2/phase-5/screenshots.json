@@ -1,0 +1,416 @@
+[
+  {
+    "theme": "light",
+    "bloomParts": [
+      {
+        "h": 12,
+        "id": "./media/guide/celebrate.svg#rays",
+        "w": 46.66666793823242
+      },
+      {
+        "h": 48.789451599121094,
+        "id": "./media/guide/bloom.svg#petal-left",
+        "w": 52.38585662841797
+      },
+      {
+        "h": 48.789451599121094,
+        "id": "./media/guide/bloom.svg#petal-right",
+        "w": 52.38585662841797
+      },
+      {
+        "h": 59.48575973510742,
+        "id": "./media/guide/bloom.svg#petal-center",
+        "w": 38.006591796875
+      },
+      {
+        "h": 23.33333396911621,
+        "id": "./media/guide/celebrate.svg#pot",
+        "w": 61.33333587646485
+      },
+      {
+        "h": 3.3333334922790527,
+        "id": "./media/guide/celebrate.svg#eyes",
+        "w": 18.666667938232425
+      },
+      {
+        "h": 59.44443893432617,
+        "id": "./media/guide/celebrate.svg#hand",
+        "w": 28.14815330505371
+      }
+    ],
+    "height": 640,
+    "ink": "#2C3539",
+    "missingImages": 0,
+    "primaryInView": true,
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "theme": "dark",
+    "bloomParts": [
+      {
+        "h": 12,
+        "id": "./media/guide/celebrate.svg#rays",
+        "w": 46.66666793823242
+      },
+      {
+        "h": 46.559226989746094,
+        "id": "./media/guide/bloom.svg#petal-left",
+        "w": 50.388938903808594
+      },
+      {
+        "h": 46.559226989746094,
+        "id": "./media/guide/bloom.svg#petal-right",
+        "w": 50.388938903808594
+      },
+      {
+        "h": 62.814598083496094,
+        "id": "./media/guide/bloom.svg#petal-center",
+        "w": 38.006591796875
+      },
+      {
+        "h": 23.33333396911621,
+        "id": "./media/guide/celebrate.svg#pot",
+        "w": 61.33333587646485
+      },
+      {
+        "h": 3.3333334922790527,
+        "id": "./media/guide/celebrate.svg#eyes",
+        "w": 18.666667938232425
+      },
+      {
+        "h": 59.44443893432617,
+        "id": "./media/guide/celebrate.svg#hand",
+        "w": 28.14815330505371
+      }
+    ],
+    "height": 640,
+    "ink": "#2C3539",
+    "missingImages": 0,
+    "primaryInView": true,
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "theme": "hc",
+    "bloomParts": [
+      {
+        "h": 12,
+        "id": "./media/guide/celebrate.svg#rays",
+        "w": 46.66666793823242
+      },
+      {
+        "h": 47.7449951171875,
+        "id": "./media/guide/bloom.svg#petal-left",
+        "w": 51.453575134277344
+      },
+      {
+        "h": 47.7449951171875,
+        "id": "./media/guide/bloom.svg#petal-right",
+        "w": 51.45359420776367
+      },
+      {
+        "h": 61.0684814453125,
+        "id": "./media/guide/bloom.svg#petal-center",
+        "w": 38.006591796875
+      },
+      {
+        "h": 23.33333396911621,
+        "id": "./media/guide/celebrate.svg#pot",
+        "w": 61.33333587646485
+      },
+      {
+        "h": 3.3333334922790527,
+        "id": "./media/guide/celebrate.svg#eyes",
+        "w": 18.666667938232425
+      },
+      {
+        "h": 59.44443893432617,
+        "id": "./media/guide/celebrate.svg#hand",
+        "w": 28.14815330505371
+      }
+    ],
+    "height": 640,
+    "ink": "#2C3539",
+    "missingImages": 0,
+    "primaryInView": true,
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "theme": "light",
+    "bloomParts": [
+      {
+        "h": 12,
+        "id": "./media/guide/celebrate.svg#rays",
+        "w": 46.66666793823242
+      },
+      {
+        "h": 47.338340759277344,
+        "id": "./media/guide/bloom.svg#petal-left",
+        "w": 51.08917236328125
+      },
+      {
+        "h": 47.338340759277344,
+        "id": "./media/guide/bloom.svg#petal-right",
+        "w": 51.08917236328125
+      },
+      {
+        "h": 61.673095703125,
+        "id": "./media/guide/bloom.svg#petal-center",
+        "w": 38.006591796875
+      },
+      {
+        "h": 23.33333396911621,
+        "id": "./media/guide/celebrate.svg#pot",
+        "w": 61.33333587646485
+      },
+      {
+        "h": 3.3333334922790527,
+        "id": "./media/guide/celebrate.svg#eyes",
+        "w": 18.666667938232425
+      },
+      {
+        "h": 59.44443893432617,
+        "id": "./media/guide/celebrate.svg#hand",
+        "w": 28.14815330505371
+      }
+    ],
+    "height": 640,
+    "ink": "#2C3539",
+    "missingImages": 0,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "dark",
+    "bloomParts": [
+      {
+        "h": 12,
+        "id": "./media/guide/celebrate.svg#rays",
+        "w": 46.66666793823242
+      },
+      {
+        "h": 48.81547164916992,
+        "id": "./media/guide/bloom.svg#petal-left",
+        "w": 52.40899658203125
+      },
+      {
+        "h": 48.81547164916992,
+        "id": "./media/guide/bloom.svg#petal-right",
+        "w": 52.40899658203125
+      },
+      {
+        "h": 59.445762634277344,
+        "id": "./media/guide/bloom.svg#petal-center",
+        "w": 38.006591796875
+      },
+      {
+        "h": 23.33333396911621,
+        "id": "./media/guide/celebrate.svg#pot",
+        "w": 61.33333587646485
+      },
+      {
+        "h": 3.3333334922790527,
+        "id": "./media/guide/celebrate.svg#eyes",
+        "w": 18.666667938232425
+      },
+      {
+        "h": 59.44443893432617,
+        "id": "./media/guide/celebrate.svg#hand",
+        "w": 28.14815330505371
+      }
+    ],
+    "height": 640,
+    "ink": "#2C3539",
+    "missingImages": 0,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "hc",
+    "bloomParts": [
+      {
+        "h": 12,
+        "id": "./media/guide/celebrate.svg#rays",
+        "w": 46.66666793823242
+      },
+      {
+        "h": 47.53959274291992,
+        "id": "./media/guide/bloom.svg#petal-left",
+        "w": 51.26960372924805
+      },
+      {
+        "h": 47.53959274291992,
+        "id": "./media/guide/bloom.svg#petal-right",
+        "w": 51.26959228515625
+      },
+      {
+        "h": 61.37469482421875,
+        "id": "./media/guide/bloom.svg#petal-center",
+        "w": 38.006591796875
+      },
+      {
+        "h": 23.33333396911621,
+        "id": "./media/guide/celebrate.svg#pot",
+        "w": 61.33333587646485
+      },
+      {
+        "h": 3.3333334922790527,
+        "id": "./media/guide/celebrate.svg#eyes",
+        "w": 18.666667938232425
+      },
+      {
+        "h": 59.44443893432617,
+        "id": "./media/guide/celebrate.svg#hand",
+        "w": 28.14815330505371
+      }
+    ],
+    "height": 640,
+    "ink": "#2C3539",
+    "missingImages": 0,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360
+  },
+  {
+    "theme": "light",
+    "bloomParts": [
+      {
+        "h": 12,
+        "id": "./media/guide/celebrate.svg#rays",
+        "w": 46.66666793823242
+      },
+      {
+        "h": 47.3455810546875,
+        "id": "./media/guide/bloom.svg#petal-left",
+        "w": 51.095664978027344
+      },
+      {
+        "h": 47.3455810546875,
+        "id": "./media/guide/bloom.svg#petal-right",
+        "w": 51.095664978027344
+      },
+      {
+        "h": 61.66243743896485,
+        "id": "./media/guide/bloom.svg#petal-center",
+        "w": 38.006591796875
+      },
+      {
+        "h": 23.33333396911621,
+        "id": "./media/guide/celebrate.svg#pot",
+        "w": 61.33333587646485
+      },
+      {
+        "h": 3.3333334922790527,
+        "id": "./media/guide/celebrate.svg#eyes",
+        "w": 18.666667938232425
+      },
+      {
+        "h": 59.44443893432617,
+        "id": "./media/guide/celebrate.svg#hand",
+        "w": 28.14815330505371
+      }
+    ],
+    "height": 640,
+    "ink": "#2C3539",
+    "missingImages": 0,
+    "primaryInView": true,
+    "scrollWidth": 720,
+    "width": 720
+  },
+  {
+    "theme": "dark",
+    "bloomParts": [
+      {
+        "h": 12,
+        "id": "./media/guide/celebrate.svg#rays",
+        "w": 46.66666793823242
+      },
+      {
+        "h": 47.34798431396485,
+        "id": "./media/guide/bloom.svg#petal-left",
+        "w": 51.097862243652344
+      },
+      {
+        "h": 47.34798431396485,
+        "id": "./media/guide/bloom.svg#petal-right",
+        "w": 51.097862243652344
+      },
+      {
+        "h": 61.65885543823242,
+        "id": "./media/guide/bloom.svg#petal-center",
+        "w": 38.006591796875
+      },
+      {
+        "h": 23.33333396911621,
+        "id": "./media/guide/celebrate.svg#pot",
+        "w": 61.33333587646485
+      },
+      {
+        "h": 3.3333334922790527,
+        "id": "./media/guide/celebrate.svg#eyes",
+        "w": 18.666667938232425
+      },
+      {
+        "h": 59.44443893432617,
+        "id": "./media/guide/celebrate.svg#hand",
+        "w": 28.14815330505371
+      }
+    ],
+    "height": 640,
+    "ink": "#2C3539",
+    "missingImages": 0,
+    "primaryInView": true,
+    "scrollWidth": 720,
+    "width": 720
+  },
+  {
+    "theme": "hc",
+    "bloomParts": [
+      {
+        "h": 12,
+        "id": "./media/guide/celebrate.svg#rays",
+        "w": 46.66666793823242
+      },
+      {
+        "h": 47.53997802734375,
+        "id": "./media/guide/bloom.svg#petal-left",
+        "w": 51.26993942260742
+      },
+      {
+        "h": 47.53997802734375,
+        "id": "./media/guide/bloom.svg#petal-right",
+        "w": 51.26993942260742
+      },
+      {
+        "h": 61.37410736083984,
+        "id": "./media/guide/bloom.svg#petal-center",
+        "w": 38.006591796875
+      },
+      {
+        "h": 23.33333396911621,
+        "id": "./media/guide/celebrate.svg#pot",
+        "w": 61.33333587646485
+      },
+      {
+        "h": 3.3333334922790527,
+        "id": "./media/guide/celebrate.svg#eyes",
+        "w": 18.666667938232425
+      },
+      {
+        "h": 59.44443893432617,
+        "id": "./media/guide/celebrate.svg#hand",
+        "w": 28.14815330505371
+      }
+    ],
+    "height": 640,
+    "ink": "#2C3539",
+    "missingImages": 0,
+    "primaryInView": true,
+    "scrollWidth": 720,
+    "width": 720
+  }
+]

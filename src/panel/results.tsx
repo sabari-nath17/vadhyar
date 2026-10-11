@@ -56,7 +56,7 @@ function Reflection({ state, send }: { state: PanelState; send: Send }) {
     <p>What changed in your reasoning? Save this note to keep it when you return. It is not sent to the coach.</p>
     <form onSubmit={event => {
       event.preventDefault();
-      if (!text.trim() || saving || !state.sourceHash || !state.requirement) return;
+      if (!text.trim() || state.busy || saving || !state.ownershipCurrent || !state.sourceHash || !state.requirement) return;
       pending.current = { text: text.trim(), count: state.reflections?.length ?? 0 }; setSaving(true);
       send({ type: 'saveReflection', text, sourceHash: state.sourceHash, requirementRevision: state.requirement.revision });
     }}>

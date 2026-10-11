@@ -1,0 +1,27 @@
+{
+  "before": [
+    {
+      "type": "ready"
+    }
+  ],
+  "afterNewline": {
+    "actions": [
+      {
+        "type": "ready"
+      }
+    ],
+    "value": "A recorded keyboard check of my reasoning.\n"
+  },
+  "after": [
+    {
+      "type": "ready"
+    },
+    {
+      "type": "savePrediction",
+      "predictedApproval": false,
+      "reasoning": "A recorded keyboard check of my reasoning.\n",
+      "sourceHash": "eda0127427545d06c9e2ff88bd51d6022674f43dbd1ccbd56da5f6c8ae3e7fd3",
+      "requirementRevision": "c455503e7dd3d132533643ffac28b908a553596f8ad47e2959db46daf74c864d"
+    }
+  ]
+}

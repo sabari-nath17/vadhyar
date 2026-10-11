@@ -5,9 +5,10 @@ import { describe, expect, it } from 'vitest';
 import { hash } from '../src/extension/source.js';
 import { steps } from '../src/panel/workflow.js';
 import { lessonSteps } from '../src/panel/v2/evidence.js';
-import { ProgressSegments, Task } from '../src/panel/v2/components.js';
+import { Bloom, ProgressSegments, Task } from '../src/panel/v2/components.js';
 import { SharingPreview, SourceLinks } from '../src/panel/ui.js';
 import { Understand } from '../src/panel/understand.js';
+import { SnakeGame } from '../src/panel/snake-game.js';
 import { PathHome, Completion, EvidenceReview } from '../src/panel/home.js';
 import { panelAction } from '../src/shared.js';
 import type { SourceRef, PanelState } from '../src/shared.js';
@@ -76,6 +77,28 @@ describe('V2 panel keeps real host boundaries and simple task slots', () => {
     expect(noKey).toContain('Connect OpenAI for guidance');expect(noKey).not.toContain('Send for an explanation');
     const stale=render(<Understand state={{refs:[],busy:false,hasKey:true,contextStale:true}} send={()=>{}} next={()=>{}} />);
     expect(stale).toContain('Your code needs a refresh');expect(stale).toContain('Read the saved code');
+  });
+  it('preserves the keyboard guard, typed newline and serialized prediction boundary', () => {
+    const keys=JSON.parse(readFileSync('docs/design-v2/phase-5/keyboard.json','utf8'));
+    expect(keys.before).toEqual([{type:'ready'}]);expect(keys.afterNewline.actions).toEqual(keys.before);
+    expect(keys.afterNewline.value.endsWith('\n')).toBe(true);
+    for(const action of keys.after) expect(panelAction.safeParse(action).success).toBe(true);
+    expect(keys.after.at(-1).reasoning).toBe(keys.afterNewline.value);expect(keys.after.at(-1).predictedApproval).toBe(false);
+    expect(keys.after.some((item:{type:string})=>item.type==='runCounterexample')).toBe(false);
+  });
+  it('includes reduced-motion overrides and only local fonts/art', () => {
+    const css=readFileSync('src/panel/v2/style.css','utf8');
+    expect(css).toContain('@media (prefers-reduced-motion: reduce)');expect(css).toContain('animation: none !important');expect(css).toContain('transform: none');
+    expect(readFileSync('src/panel/v2/fonts.css','utf8')).not.toMatch(/https?:|@import/);
+    expect(readFileSync('src/panel/v2/components.tsx','utf8')).not.toContain('dangerouslySetInnerHTML');
+  });
+  it('opens Snake immediately from the path while retaining the quiet settings disclosure', () => {
+    expect(render(<SnakeGame defaultOpen />)).toContain('Snake game board');
+    expect(render(<SnakeGame />)).not.toContain('Snake game board');
+    expect(readFileSync('src/panel/style.css','utf8')).toContain('body { --vd-border: var(--border)');
+  });
+  it('keeps the generated character ink on its light face in every theme', () => {
+    expect(render(<Bloom animate={false} />)).toContain('stroke="#2C3539"');
   });
 
 });

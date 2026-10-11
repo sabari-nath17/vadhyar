@@ -1,5 +1,11 @@
 # AI usage record
 
+## 2026-10-11T06:47:54+05:30 — V2 Phase 5 assistance and review
+
+Codex applied the current skill routing, Superpowers review/verification checklist, Ponytail, Impeccable/animation guidance and Computer Use to finish guarded UI navigation, inspect actual browser screenshots and package locally. The final character-ink test failed before the one-line correction, then focused and full checks passed. All 135 tests, typecheck/lint/builds and static package assertions are actual executions. Browser captures use labelled recorded developer checks and illustrative state/graph specimens; scene selection is disclosed, not treated as host/API/learner behavior. The 35-second GIF is assembled from actual captures, not a continuous native recording.
+
+Human review and redesigned native editor/theme/OS/audio/screen-reader acceptance remain pending. No subagents, live API request, credential retrieval, new network dependency, main edit/merge or push. Imported baseline work retains its earlier authorship/status. The pre-UI archive was rehashed against its manifest; all 236 files were already verified at capture.
+
 ## 2026-10-11T06:24:09+05:30 — V2 Phase 4 assistance
 
 Codex used existing Task/Control/platform dialog/WebAudio; kept all host bytes and contracts. In-thread review only. Corrected a React ref type failure. Full 131/131, state matrix and off-by-default sound verified; tone tests use a fake AudioContext. No API, key prompt, global settings or main checkout mutation.

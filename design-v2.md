@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | 2.3.0 |
+| **Version** | 2.4.0 |
 | **Scope** | The Vadhyar VS Code panel (React): path home, lessons, feedback, completion, evidence, states, assets |
 | **Audience** | Codex or any engineer building the UI. You MAY generate images, SVG, sounds and scaffolding. You MUST NOT change host behavior. |
 | **Relationship to `design.md` 1.1.0** | v2 **adds an experience layer** on top of it. Where they conflict, v2 wins (see §15). Everything not mentioned here (consent, state catalog, accessibility, editor integration, logo placement) is inherited unchanged. §4 repeats the essentials so this file works alone. |
@@ -238,7 +238,7 @@ Review every asset at 360px and 32px; outlines consistent; no text baked in; no 
 
 ## 11. Demo mode and hackathon polish
 
-- **Demo mode** (Settings toggle): resets to a prepared state; when the network or key is unavailable, uses a **recorded response clearly labelled "Recorded response"**. Never presented as live.
+- **Planned demo mode:** a Settings toggle could reset a prepared state and use a clearly labelled recorded response. The current host has neither action, so this UI revision keeps both visibly planned in Settings. Rehearsal uses the existing fresh-workspace preparation command and separate labelled developer preview; API errors remain errors.
 - **Golden path (about 90 seconds):** path home → tap START → confirm → explanation → predict → the Observe sheet reveal → hint → edit and save → verify rows tick Teal → completion bloom and honest summary → Evidence review.
 - The first 10 seconds MUST look finished: wordmark, Guide, path with a single glowing START.
 - Keyboard: `1`/`2` choose answers, `Enter` triggers the primary, `Esc` closes sheets.
@@ -253,7 +253,7 @@ Review every asset at 360px and 32px; outlines consistent; no text baked in; no 
 | 2 | Lesson shell: ProgressSegments, ActionBar, FeedbackSheet; wire steps to **existing host actions unchanged** | Each step works at 360×640 without scrolling the primary |
 | 3 | Path home, Start sheet, Completion, Evidence review | Full golden path runs end to end |
 | 4 | Gates and states, motion, sound toggle, reduced motion | Every `design.md` §6 state appears and recovers |
-| 5 | Demo mode, accessibility pass, screenshots (320/360/720 × 3 themes), short screen recording | QA checklist (§13) passes |
+| 5 | Demo preparation, accessibility pass, screenshots (320/360/720 × 3 themes), labelled screen-capture walkthrough | Presentation QA is recorded; native QA gaps stay explicit; demo reset/fallback remain planned |
 
 Constraints: do not change consent, validation or storage behavior; no new network calls; no runtime font fetch; keep the panel inside its slots; update this file with any deviation.
 
@@ -308,9 +308,11 @@ No owl or lookalike. No Feather or duolingo-sans. No hearts, XP, streak, rank or
 - Confirm sheet tint and lip colors pass 4.5:1 in the real panel.
 - Decide when streaks or return reminders become real (needs session resume).
 - Path content beyond Rule 1 depends on Transfer and Build Guide support.
-- Phases 0–4, the §10 vector set and lesson shell are implemented in an isolated checkout. Browser gallery checks are recorded; native lesson integration and human usability acceptance remain unverified.
+- Phases 0–5 presentation work, the §10 vector set and lesson shell are implemented in an isolated checkout. Browser checks and a local review VSIX are recorded; native acceptance of this renderer and human usability remain unverified. Demo reset and recorded-response fallback are planned.
 
 ## 18. Changelog
+
+- **2.4.0**: guarded Enter navigation, immediate optional Snake break, theme-safe character ink, final width/theme review, labelled capture walkthrough and local package. Demo reset/fallback remain visibly planned to preserve host behavior.
 
 - **2.3.0**: actual examples, explicit recovery, optional local sound, settings focus and one brief SVG bloom.
 
@@ -367,3 +369,11 @@ No subagents are allowed in this side conversation. Code review uses the Superpo
 - Sound is off by default, local to the open panel and never fetched/persisted. Bloom recombines the generated SVG part IDs, once per current passed record while this panel is open; opening saved history does not emit sound.
 - API cancellation uses the original action; extraction has no invented cancel control. Runner errors never become failed learner answers or passing results.
 - Reduced-motion CSS is implemented; OS/media and audible hardware acceptance remain unverified. Browser review cannot establish those native preferences.
+
+### Phase 5 rulings and deviations
+
+- Resetting a workspace and replacing API results require host actions that do not exist. Under the user's host-preservation rule, neither is added. Settings labels them planned. The existing `demo:prepare` command creates a fresh folder exclusively; it never resets an existing folder.
+- Available Computer Use controls do not record continuous video. A 35-second GIF assembled from actual screen captures replaces the short screen recording. It is labelled a **screen-capture walkthrough**, uses recorded developer results and presentation specimens, and does not establish live API, runner or native editor behavior.
+- Enter invokes the current primary from headings/answer choices. Editable fields, native controls, modified keys and the Snake board retain their own behavior. Submission guards match disabled primary guards; saving never implies a host acknowledgement.
+- Completion uses one generated character in the task artwork slot. Its fixed slate ink matches the generated SVGs, preserving face detail over the light petals in dark/high-contrast themes. Snake's inherited color aliases resolve on the theme-owning body.
+- Final review package stays local and platform-specific. Existing pre-v2 native evidence is historical; it is not reused as acceptance of this renderer. Keyboard with real host acknowledgements, native theme/OS motion/audio/screen-reader behavior and human ease-of-use acceptance remain pending.

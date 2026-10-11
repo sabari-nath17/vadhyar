@@ -20,12 +20,18 @@ The public 0.1.0 installer packages the completed **S7 milestone learning workfl
 
 ## V2 design preview
 
-An isolated **Phase 0 component gallery** is available with `npm run gallery -- --port 4187`, then open `http://127.0.0.1:4187/gallery/`. Use `npm run build:gallery` for static output. It has bundled fonts, the generated guide artwork and light/dark/high-contrast foundations; it does not send host actions or present a live learner session. [Phase 0 screenshots and checks](docs/design-v2/phase-0/README.md) · [V2 specification](design-v2.md). The real lesson renderer can be reviewed without API or storage activity: run `npm run build`, then `node scripts/panel-preview.mjs`, and open `/gallery/preview/index.html` on that gallery server. These views are visibly labelled recorded developer previews. [Phase 2 review](docs/design-v2/phase-2/README.md) · [Phase 3 path and proof](docs/design-v2/phase-3/README.md) · [Phase 4 states](docs/design-v2/phase-4/README.md).
+**The guided UI lives on the isolated `codex/design-v2-phase-0` branch.** It includes the path, one-task lessons, proof review, state recovery, bundled artwork/fonts and optional local Snake/sound. Host actions, consent, validation and storage are unchanged from the current app snapshot. [Review and backup handoff](docs/design-v2/README.md) · [V2 specification and deviations](design-v2.md).
+
+For the component library, run `npm run gallery -- --port 4187` and open `http://127.0.0.1:4187/gallery/`. For the actual renderer in a labelled developer preview, run `npm run build`, then `node scripts/panel-preview.mjs`, and open `/gallery/preview/index.html` on the gallery server. The preview makes no API/storage/runner calls; it uses recorded checks and explicitly labelled presentation specimens. `npm run build:gallery` creates static gallery output.
+
+The local review installer can be reproduced with `npm exec -- vsce package --target darwin-arm64 --out dist/vadhyar-v2-review-darwin-arm64.vsix --skip-license --no-rewrite-relative-links` after the build. This remains a local review package, distinct from the public S7 installer. [Final screenshots, package checks and walkthrough](docs/design-v2/phase-5/README.md). Native acceptance of the redesigned panel is pending. Demo reset and recorded-answer fallback remain visibly planned in Settings.
 
 <details>
 <summary>Project setup, status and development records</summary>
 
 ## Current progress
+
+The following native milestones describe the preserved **pre-v2 app baseline**, not acceptance of the redesigned renderer.
 
 **Local V1 release candidate.** S1b–S13 implement the NovaDesk loop, archived transfer, persistence, stale evidence, local reflection and handover. The installed macOS-arm64 candidate exercised real Graphify, live explanation/hint, both failed counterexamples, native edits/diffs, three/four-case passes and extension-host resume. Edits in that rehearsal were delegated developer tests. [Install/setup](docs/release.md), [demo/reset](docs/demo.md), [actual evidence](docs/s13-evidence/release.json). The candidate is uncommitted and distinct from the older public S7 installer.
 

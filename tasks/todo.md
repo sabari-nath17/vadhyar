@@ -1,5 +1,11 @@
 # Vadhyar slice task record
 
+## 2026-10-11T06:47:54+05:30 — V2 Phase 5 presentation complete; native acceptance pending
+
+Previous checkpoint **1eeb331**. Current local milestone contains final UI guards, Snake access/theme correction, character ink, final matrices, walkthrough/spec deviations and review package/docs. Full **135/135 across 27 files**, 23.61 s, start 06:44:42 IST; typecheck/lint/extension/gallery builds passed. Static package boundary/resource checks passed, with the existing large dependency-file advisory. Phase 5 evidence: docs/design-v2/phase-5/README.md. The completed milestone is the commit containing this record; no merge or push.
+
+Next authorized follow-up is acceptance in a separately owned native profile/workspace: real approvals, save acknowledgement, reviewed live coaching, source/diff/checks/resume/clear, Project Guide, native theme/OS motion/sound/screen-reader and human usability. None are certified by these previews. Demo reset/fallback remain planned; the available controls permit a screenshot GIF, not continuous recording. Primary checkout/session are untouched by this side work. The verified backup and safe restoration steps are in docs/design-v2/README.md.
+
 ## 2026-10-11T06:24:09+05:30 — V2 Phase 4 complete
 
 Previous checkpoint 20e5a96. State presentation, local sound, reduced-motion guards and one brief bloom implemented. Full 131/131; evidence docs/design-v2/phase-4/README.md. Next: Phase 5 keyboard, final screenshots, labelled rehearsal and package. Native editor/media/audio checks remain pending; no merge or push.

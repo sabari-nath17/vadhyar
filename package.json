@@ -119,7 +119,10 @@
     "docs/assets/vadhyar-banner.jpg",
     "docs/s13-evidence/release.json",
     "docs/installation.md",
-    "docs/landing-release.md"
+    "docs/landing-release.md",
+    "design-v2.md",
+    "PRODUCT.md",
+    "docs/design-v2/**"
   ],
   "dependencies": {
     "openai": "7.32.0",

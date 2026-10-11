@@ -1,5 +1,11 @@
 # Change log
 
+## 2026-10-11T06:47:54+05:30 — V2 Phase 5 presentation and local review package
+
+Changed: guarded Enter handling, matching form readiness guards, single completion artwork slot with original SVG ink, immediate Snake path entry and theme-correct aliases; local packaging includes the review/spec docs. Files: panel app/home/results/snake-game/style and v2/components, v2-panel tests, package.json, design-v2, README and docs/design-v2. Reason: simple navigation with intact host acknowledgement and readable dark/HC artwork. Final typecheck/lint/build/gallery build and **135/135 tests in 27 files** pass (23.61 s). Nine completion and nine path captures, Snake theme/keyboard checks and a labelled 35-second screenshot walkthrough are recorded. Static VSIX inspection verifies 26 SVGs, four runtime fonts, three license files, bundled prepared checks and unchanged manifest/23 immutable source boundaries.
+
+Limits/deviations: demo reset and recorded-answer fallback stay visibly planned under the host-preservation rule; screenshot GIF replaces continuous video. The existing dependency package produces a large file-count advisory; runtime pruning is outside this UI scope. No redesigned native install/live API/OS media/audio/screen-reader/human acceptance claim, main merge or push. Backup is verified; see docs/design-v2/README.md.
+
 ## 2026-10-11T06:24:09+05:30 — V2 Phase 4
 
 Clear missing-key/stale/loading/error controls, expanded actual examples, acknowledged idea saves, native settings sheet, local optional tones and brief SVG bloom. Panel-only behavior; typecheck/lint/build, focused 20/20 and full 131/131 pass. 27 captures and strict cancel action; native/media/audio acceptance pending.
