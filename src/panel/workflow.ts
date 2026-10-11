@@ -2,12 +2,12 @@ import { availableSteps, type PanelState } from '../shared.js';
 export { availableSteps } from '../shared.js';
 
 export const steps = [
-  { id: 'confirm', name: 'Confirm' },
-  { id: 'understand', name: 'Understand' },
-  { id: 'predict', name: 'Predict' },
-  { id: 'observe', name: 'Observe' },
-  { id: 'change', name: 'Change' },
-  { id: 'verify', name: 'Verify' },
+  { id: 'confirm', name: 'Your rule' },
+  { id: 'understand', name: 'How it works' },
+  { id: 'predict', name: 'Your guess' },
+  { id: 'observe', name: 'What happened' },
+  { id: 'change', name: 'Try a change' },
+  { id: 'verify', name: 'Check it' },
 ] as const;
 export type Step = typeof steps[number]['id'];
 

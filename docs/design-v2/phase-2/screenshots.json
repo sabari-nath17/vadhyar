@@ -1,0 +1,95 @@
+{
+  "capturedAt": "2026-10-11T00:13:03.667Z",
+  "views": [
+    {
+      "theme": "light",
+      "actionTop": 559.75,
+      "fonts": "loaded",
+      "height": 640,
+      "primaryBottom": 624,
+      "reasonBottom": 482.6875,
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "theme": "dark",
+      "actionTop": 559.75,
+      "fonts": "loaded",
+      "height": 640,
+      "primaryBottom": 624,
+      "reasonBottom": 482.6875,
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "theme": "hc",
+      "actionTop": 559.75,
+      "fonts": "loaded",
+      "height": 640,
+      "primaryBottom": 624,
+      "reasonBottom": 482.6875,
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "theme": "light",
+      "actionTop": 559.75,
+      "fonts": "loaded",
+      "height": 640,
+      "primaryBottom": 624,
+      "reasonBottom": 482.6875,
+      "scrollWidth": 360,
+      "width": 360
+    },
+    {
+      "theme": "dark",
+      "actionTop": 559.75,
+      "fonts": "loaded",
+      "height": 640,
+      "primaryBottom": 624,
+      "reasonBottom": 482.6875,
+      "scrollWidth": 360,
+      "width": 360
+    },
+    {
+      "theme": "hc",
+      "actionTop": 559.75,
+      "fonts": "loaded",
+      "height": 640,
+      "primaryBottom": 624,
+      "reasonBottom": 482.6875,
+      "scrollWidth": 360,
+      "width": 360
+    },
+    {
+      "theme": "light",
+      "actionTop": 559.75,
+      "fonts": "loaded",
+      "height": 640,
+      "primaryBottom": 624,
+      "reasonBottom": 495.9791870117187,
+      "scrollWidth": 720,
+      "width": 720
+    },
+    {
+      "theme": "dark",
+      "actionTop": 559.75,
+      "fonts": "loaded",
+      "height": 640,
+      "primaryBottom": 624,
+      "reasonBottom": 495.9791870117187,
+      "scrollWidth": 720,
+      "width": 720
+    },
+    {
+      "theme": "hc",
+      "actionTop": 559.75,
+      "fonts": "loaded",
+      "height": 640,
+      "primaryBottom": 624,
+      "reasonBottom": 495.9791870117187,
+      "scrollWidth": 720,
+      "width": 720
+    }
+  ]
+}

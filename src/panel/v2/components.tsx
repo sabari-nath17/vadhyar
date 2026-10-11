@@ -15,16 +15,16 @@ export function Glyph({ name }: { name: 'check' | 'close' | 'lock' | 'bulb' | 's
   return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={paths[name]} /></svg>;
 }
 
-export function StickerButton({ variant = 'secondary', unavailable, reason, busy, operation, children, onClick, ...props }: ButtonHTMLAttributes<HTMLButtonElement> & { variant?: 'primary' | 'secondary' | 'quiet'; unavailable?: boolean; reason?: string; busy?: boolean; operation?: string }) {
+export function StickerButton({ variant = 'secondary', unavailable, reason, busy, operation, children, onClick, className, ...props }: ButtonHTMLAttributes<HTMLButtonElement> & { variant?: 'primary' | 'secondary' | 'quiet'; unavailable?: boolean; reason?: string; busy?: boolean; operation?: string }) {
   const id = useId();
   const blocked = unavailable || busy;
-  return <div className="vd2-control"><button {...props} className={`vd2-button vd2-button-${blocked ? 'unavailable' : variant}`} aria-disabled={blocked || undefined} aria-busy={busy || undefined} aria-describedby={blocked ? id : props['aria-describedby']} onClick={event => { if (blocked) { event.preventDefault(); return; } onClick?.(event); }}>{busy ? operation ?? 'Preparing current context…' : children}</button>{blocked && <p className="vd2-caption" id={id}>{reason ?? 'Available after the current operation finishes.'}</p>}</div>;
+  return <div className="vd2-control"><button {...props} className={`vd2-button vd2-button-${blocked ? 'unavailable' : variant} ${className ?? ''}`} aria-disabled={blocked || undefined} aria-busy={busy || undefined} aria-describedby={blocked ? id : props['aria-describedby']} onClick={event => { if (blocked) { event.preventDefault(); return; } onClick?.(event); }}>{busy ? operation ?? 'Preparing current context…' : children}</button>{blocked && <p className="vd2-caption" id={id}>{reason ?? 'Available after the current operation finishes.'}</p>}</div>;
 }
 
 export function ActionBar({ children }: { children: ReactNode }) { return <footer className="vd2-actionbar">{children}</footer>; }
 
-export function ProgressSegments({ current, done, onChoose, onClose }: { current: number; done: readonly number[]; onChoose: (index: number) => void; onClose: () => void }) {
-  return <nav className="vd2-progress" aria-label="Lesson progress"><button className="vd2-iconbutton" aria-label="Close lesson" onClick={onClose}><Glyph name="close" /></button><div><p className="vd2-label">Step {current + 1} of {lessonSteps.length} · {lessonSteps[current]}</p><div className="vd2-segments">{lessonSteps.map((name, index) => <button key={name} className={`vd2-segment ${current === index ? 'vd2-current' : done.includes(index) ? 'vd2-done' : ''}`} aria-current={current === index ? 'step' : undefined} aria-label={`${name}${!done.includes(index) && current !== index ? ' — available after earlier steps' : ''}`} aria-disabled={!done.includes(index) && current !== index || undefined} onClick={() => { if (done.includes(index) || current === index) onChoose(index); }}><span /></button>)}</div></div></nav>;
+export function ProgressSegments({ current, done, available, busy = false, onChoose, onClose }: { current: number; done: readonly number[]; available?: readonly number[]; busy?: boolean; onChoose: (index: number) => void; onClose: () => void }) {
+  return <nav className="vd2-progress" aria-label="Lesson progress"><button className="vd2-iconbutton" aria-label="Close lesson" onClick={onClose}><Glyph name="close" /></button><div><p className="vd2-label">Step {current + 1} of {lessonSteps.length} · {lessonSteps[current]}</p><div className="vd2-segments">{lessonSteps.map((name, index) => <button key={name} className={`vd2-segment ${current === index ? 'vd2-current' : done.includes(index) ? 'vd2-done' : ''}`} aria-current={current === index ? 'step' : undefined} aria-label={`${name}${busy || !(available ?? [...done, current]).includes(index) ? ' — available after earlier steps' : ''}`} aria-disabled={busy || !(available ?? [...done, current]).includes(index) || undefined} onClick={() => { if (!busy && (available ?? [...done, current]).includes(index)) onChoose(index); }}><span /></button>)}</div></div></nav>;
 }
 
 export function AnswerCard({ label, number, name, value, selected, choose }: { label: string; number: number; name: string; value: string; selected: boolean; choose: () => void }) {
@@ -61,3 +61,7 @@ export function RequirementFrame({ rule, children, compact = false }: { rule: st
 export function Guide({ pose, large = false }: { pose: Pose; large?: boolean }) { return <img className={`vd2-guide ${large ? 'vd2-guide-large' : ''}`} src={`./media/guide/${pose}.svg`} alt={`The Guide, ${pose === 'key' ? 'holding a key' : pose}`} />; }
 export function ProofSticker({ proof, earned }: { proof: Proof; earned: readonly Proof[] }) { if (!earned.includes(proof)) return null; return <figure className="vd2-proof"><img src={`./media/stickers/${proof}.svg`} alt="" /><figcaption>{proofLabels[proof]}</figcaption></figure>; }
 export function Disclosure({ title, children }: { title: string; children: ReactNode }) { return <details className="vd2-disclosure"><summary>{title}</summary><div>{children}</div></details>; }
+
+export function Task({ title, pose, children, action }: { title: string; pose?: Pose; children: ReactNode; action: ReactNode }) {
+  return <><div className="vd2-task-scroll"><div className="vd2-task-layout"><div className="vd2-task-copy"><h2 tabIndex={-1}>{title}</h2>{children}</div>{pose && <aside className="vd2-task-guide"><Guide pose={pose} large /></aside>}</div></div><ActionBar>{action}</ActionBar></>;
+}

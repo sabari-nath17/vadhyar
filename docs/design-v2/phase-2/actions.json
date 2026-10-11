@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-11T00:16:13.355Z",
+  "scope": "Recorded renderer bridge only. No host/API/storage action executed.",
+  "sharing": [
+    {
+      "type": "ready"
+    },
+    {
+      "type": "explain",
+      "identity": "ce3b0280c427800ef95f623f89ddbb83089d7f43c483ceffcd4fb207c139d456"
+    }
+  ],
+  "source": [
+    {
+      "type": "ready"
+    },
+    {
+      "type": "openSource",
+      "id": "preview-source"
+    }
+  ],
+  "prediction": [
+    {
+      "type": "ready"
+    },
+    {
+      "type": "savePrediction",
+      "predictedApproval": false,
+      "reasoning": "Developer UI check: this client does not own it.1",
+      "sourceHash": "eda0127427545d06c9e2ff88bd51d6022674f43dbd1ccbd56da5f6c8ae3e7fd3",
+      "requirementRevision": "c455503e7dd3d132533643ffac28b908a553596f8ad47e2959db46daf74c864d"
+    }
+  ],
+  "typed": {
+    "answer": "deny",
+    "reason": "Developer UI check: this client does not own it.1"
+  }
+}

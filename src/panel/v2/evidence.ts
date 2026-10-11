@@ -1,6 +1,7 @@
 import type { PanelState } from '../../shared.js';
+import { steps } from '../workflow.js';
 
-export const lessonSteps = ['Your rule', 'How it works', 'Your guess', 'What happened', 'Try a change', 'Check it'] as const;
+export const lessonSteps = steps.map(step => step.name);
 export const proofLabels = {
   'predicted-first': 'Predicted first',
   'found-the-bug': 'Found the bug',

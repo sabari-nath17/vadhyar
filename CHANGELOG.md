@@ -1,5 +1,9 @@
 # Change log
 
+## 2026-10-11T06:00:14+05:30 — V2 Phase 2 lesson shell
+
+Changed the panel and its existing UI callers to one task at a time with plain labels, visible footer actions and safe common controls. Retained all 41 literal actions; host/shared/project/fixture hashes unchanged against 29db3ef. Added local SVG build/package inclusion, TSX test discovery and developer-only recorded preview. Typecheck/lint/build and full 123/123 pass; nine screenshot views and 36 gate/task checks. Fixed prediction overflow; actual native window acceptance remains unverified. No API call or push.
+
 ## 2026-10-11T05:26:53+05:30 — Preserve current app before V2 integration
 
 Imported the verified current primary source/UI snapshot into the isolated branch to retain newer capabilities before Phase 2. Main checkout untouched; immutable host/shared/project/fixture hashes recorded in docs/design-v2/current-app-snapshot.json. Typecheck/lint, focused 22/22 and full 115/115 pass. This checkpoint preserves existing human/parent work; it does not claim that work as new V2 implementation. Next: lesson shell and UI callers only; no push or external request.

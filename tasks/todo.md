@@ -1,5 +1,13 @@
 # Vadhyar slice task record
 
+## 2026-10-11T06:00:14+05:30 — V2 Phase 2 completed
+
+Baseline 29db3ef; all 41 literal action types retained, immutable host hashes intact. Full 123/123, typecheck/lint/build pass. Evidence docs/design-v2/phase-2/README.md. Next: Phase 3 path, start/completion/evidence navigation and simpler Project Guide presentation using its existing actions. Native isolated window still needs acceptance; no main checkout merge or push.
+
+## 2026-10-11T05:28:59+05:30 — V2 Phase 2 authorized scope
+
+Current app baseline: 29db3ef (115/115 tests). Scope: lesson shell and existing panel callers, plain step labels, safe shared controls, local SVG build/package inclusion, focused UI tests and browser screenshots. Preserve every action in shared.ts and project/shared.ts and every host/shared/project/fixture byte in current-app-snapshot.json. No new request, approval shortcut or storage format. Native API calls are not part of verification; prerecorded evidence must be labelled. Phase 3 adds home/completion/evidence navigation; Phase 4 covers remaining state presentation.
+
 ## 2026-10-11T05:26:53+05:30 — Preserve current app before V2 integration
 
 Imported the verified current primary source/UI snapshot into the isolated branch to retain newer capabilities before Phase 2. Main checkout untouched; immutable host/shared/project/fixture hashes recorded in docs/design-v2/current-app-snapshot.json. Typecheck/lint, focused 22/22 and full 115/115 pass. This checkpoint preserves existing human/parent work; it does not claim that work as new V2 implementation. Next: lesson shell and UI callers only; no push or external request.

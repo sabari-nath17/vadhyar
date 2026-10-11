@@ -1,5 +1,9 @@
 # AI usage record
 
+## 2026-10-11T06:00:14+05:30 — V2 Phase 2 implementation and checks
+
+Codex reused the current app handlers and v2 primitives, simplified learner copy and layout, added eight UI boundary tests, corrected test discovery, and used Computer Use to capture real bundle rendering and message payloads in a labelled recorded preview. No new API response or host operation is claimed. In-thread review; human and native theme acceptance remain pending. Existing parent work and main checkout preserved.
+
 ## 2026-10-11T05:26:53+05:30 — Preserve current app before V2 integration
 
 Imported the verified current primary source/UI snapshot into the isolated branch to retain newer capabilities before Phase 2. Main checkout untouched; immutable host/shared/project/fixture hashes recorded in docs/design-v2/current-app-snapshot.json. Typecheck/lint, focused 22/22 and full 115/115 pass. This checkpoint preserves existing human/parent work; it does not claim that work as new V2 implementation. Next: lesson shell and UI callers only; no push or external request.

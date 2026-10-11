@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | 2.0.1 |
+| **Version** | 2.1.0 |
 | **Scope** | The Vadhyar VS Code panel (React): path home, lessons, feedback, completion, evidence, states, assets |
 | **Audience** | Codex or any engineer building the UI. You MAY generate images, SVG, sounds and scaffolding. You MUST NOT change host behavior. |
 | **Relationship to `design.md` 1.1.0** | v2 **adds an experience layer** on top of it. Where they conflict, v2 wins (see §15). Everything not mentioned here (consent, state catalog, accessibility, editor integration, logo placement) is inherited unchanged. §4 repeats the essentials so this file works alone. |
@@ -308,10 +308,11 @@ No owl or lookalike. No Feather or duolingo-sans. No hearts, XP, streak, rank or
 - Confirm sheet tint and lip colors pass 4.5:1 in the real panel.
 - Decide when streaks or return reminders become real (needs session resume).
 - Path content beyond Rule 1 depends on Transfer and Build Guide support.
-- Phase 0 foundations and the §10 vector set are implemented in an isolated checkout. Browser gallery checks are recorded; native lesson integration and human usability acceptance remain unverified.
+- Phases 0–2, the §10 vector set and lesson shell are implemented in an isolated checkout. Browser gallery checks are recorded; native lesson integration and human usability acceptance remain unverified.
 
 ## 18. Changelog
 
+- **2.1.0**: six-step lesson shell and real action wiring; plain task copy, fixed prediction form fit, local SVG packaging; current host capabilities preserved.
 - **2.0.1**: Phase 0/1 implementation and accessibility adjustments; plain-language labels; inert planned nodes; no invented execution order or authorship statistics. Assets generated before screens as explicitly requested.
 - **2.0.0**: first release of the guided-lesson experience layer.
 
@@ -338,3 +339,10 @@ The brand hex values stay fixed. Semantic values were adjusted after measured fa
 The user explicitly required §10 SVGs **before screens**, so asset creation precedes the Phase 0 gallery. The separate Phase 1 gate is asset review. The 26 SVGs were inspected at 32px and 360px; full screenshot matrices are saved per phase. No new runtime dependency, font fetch or external request is introduced.
 
 No subagents are allowed in this side conversation. Code review uses the Superpowers review checklist in-thread; it is not an independent reviewer or human acceptance.
+
+### Phase 2 rulings
+
+- The visible step registry uses the same host IDs and availability rules. Task content scrolls independently of the ActionBar. Prediction omits the Guide to fit choices and the reason field together at 320/360; the assets remain available in other tasks.
+- The current Explain contract supplies `summary` and source-linked `steps`, not separately classified Purpose/Logic/Result fields. Show those actual fields and preserve walkthrough navigation; do not fabricate categories or measured consequences.
+- Existing Project Guide stays available through the editor's existing command; the NovaDesk panel has no action for opening it. Phase 3 must explain that entrypoint rather than invent a working host message.
+- Browser previews are labelled recorded/developer specimens. No live API/storage/runner behavior is inferred from them. Native host/theme acceptance is still required before a native QA claim.

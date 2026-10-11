@@ -1,0 +1,546 @@
+{
+  "capturedAt": "2026-10-11T00:12:30.915Z",
+  "scope": "Real renderer with recorded developer scenario and labelled gate specimens; no host/API execution",
+  "views": [
+    {
+      "scene": "confirm",
+      "theme": "light",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Confirm my rule"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "understand",
+      "theme": "light",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Use these code links"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "sharing",
+      "theme": "light",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Send for an explanation"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "predict",
+      "theme": "light",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 599.1041870117188,
+          "disabled": "true",
+          "text": "Save my guess and check"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "observe",
+      "theme": "light",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 625.3738822937012,
+          "disabled": null,
+          "text": "Find out why"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "change",
+      "theme": "light",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 582.2083740234375,
+          "disabled": "true",
+          "text": "Compare my change"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "verify",
+      "theme": "light",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Try the next rule"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "imported",
+      "theme": "light",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Review what will be shared"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "connect",
+      "theme": "light",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Connect OpenAI"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "loading",
+      "theme": "light",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 538.8541870117188,
+          "disabled": "true",
+          "text": "Reading your code…"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "stale",
+      "theme": "light",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Read the saved code"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "error",
+      "theme": "light",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Review what will be shared"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "confirm",
+      "theme": "dark",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Confirm my rule"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "understand",
+      "theme": "dark",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Use these code links"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "sharing",
+      "theme": "dark",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Send for an explanation"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "predict",
+      "theme": "dark",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 599.1041870117188,
+          "disabled": "true",
+          "text": "Save my guess and check"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "observe",
+      "theme": "dark",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 631.2017631530762,
+          "disabled": null,
+          "text": "Find out why"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "change",
+      "theme": "dark",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 582.2083740234375,
+          "disabled": "true",
+          "text": "Compare my change"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "verify",
+      "theme": "dark",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Try the next rule"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "imported",
+      "theme": "dark",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Review what will be shared"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "connect",
+      "theme": "dark",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Connect OpenAI"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "loading",
+      "theme": "dark",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 538.8541870117188,
+          "disabled": "true",
+          "text": "Reading your code…"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "stale",
+      "theme": "dark",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Read the saved code"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "error",
+      "theme": "dark",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Review what will be shared"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "confirm",
+      "theme": "hc",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Confirm my rule"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "understand",
+      "theme": "hc",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Use these code links"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "sharing",
+      "theme": "hc",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Send for an explanation"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "predict",
+      "theme": "hc",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 599.1041870117188,
+          "disabled": "true",
+          "text": "Save my guess and check"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "observe",
+      "theme": "hc",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 634.4598388671875,
+          "disabled": null,
+          "text": "Find out why"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "change",
+      "theme": "hc",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 582.2083740234375,
+          "disabled": "true",
+          "text": "Compare my change"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "verify",
+      "theme": "hc",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Try the next rule"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "imported",
+      "theme": "hc",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Review what will be shared"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "connect",
+      "theme": "hc",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Connect OpenAI"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "loading",
+      "theme": "hc",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 538.8541870117188,
+          "disabled": "true",
+          "text": "Reading your code…"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "stale",
+      "theme": "hc",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Read the saved code"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    },
+    {
+      "scene": "error",
+      "theme": "hc",
+      "height": 640,
+      "imagesLoaded": true,
+      "mainActions": [
+        {
+          "bottom": 624,
+          "disabled": null,
+          "text": "Review what will be shared"
+        }
+      ],
+      "overflow": false,
+      "width": 360
+    }
+  ]
+}

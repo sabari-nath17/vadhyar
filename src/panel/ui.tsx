@@ -1,11 +1,11 @@
-import { useId, type ButtonHTMLAttributes } from 'react';
+import { type ButtonHTMLAttributes } from 'react';
+import { StickerButton, Task } from './v2/components.js';
 import { sharingSummary } from './workflow.js';
 import type { ContextPreview, PanelAction, SourceRef } from '../shared.js';
 
 export type Send = (action: PanelAction) => void;
 export function Control({ disabled, reason = 'Available after the current operation finishes.', className, onClick, children, ...props }: ButtonHTMLAttributes<HTMLButtonElement> & { reason?: string }) {
-  const id = useId();
-  return <><button {...props} className={disabled ? className?.replace('vd-primary', 'vd-unavailable') : className} aria-disabled={disabled || undefined} aria-describedby={disabled ? id : props['aria-describedby']} onClick={event => { if (disabled) { event.preventDefault(); return; } onClick?.(event); }}>{children}</button>{disabled && <p id={id} className="vd-muted vd-unavailable-reason">{reason}</p>}</>;
+  return <StickerButton {...props} className={className} variant={className?.includes('vd-primary') ? 'primary' : className?.includes('vd-icon-button') ? 'quiet' : 'secondary'} unavailable={disabled} reason={reason} onClick={onClick}>{children}</StickerButton>;
 }
 export function Icon({ name }: { name: 'settings' | 'source' | 'check' | 'fail' | 'egg' }) {
   const paths = {
@@ -23,13 +23,10 @@ export function SourceLinks({ refs, busy, current, send }: { refs: SourceRef[]; 
 }
 export function SharingPreview({ preview, kind, busy, hasKey, send }: { preview: ContextPreview; kind: 'explain' | 'hint'; busy: boolean; hasKey?: boolean; send: Send }) {
   const selected = sharingSummary(preview.text);
-  return <section className="vd-consent" aria-label="Context sharing preview">
-    <h3>Review before sharing</h3>
-    <p>Send the selected requirement, source and relationships to OpenAI{kind === 'hint' ? ', along with your prediction, observed result and earlier hints' : ''}.</p>
-    <p className="vd-teaching">{selected?.requirement ?? 'Context summary unavailable. Refresh the preview before sharing.'}</p>{selected && <ul className="vd-selected-files">{selected.files.map(file => <li key={file}><code>{file}</code></li>)}</ul>}
+  return <Task title="Send this to OpenAI?" pose="key" action={<><Control className="vd-primary" disabled={busy || !selected} reason={busy ? 'Wait for this request to finish.' : 'Refresh the sharing preview first.'} onClick={() => send(!hasKey && kind === 'explain' ? { type: 'setupKey' } : { type: kind, identity: preview.identity })}>{busy ? kind === 'hint' ? 'Getting your hint…' : 'Reading your code…' : kind === 'explain' ? hasKey ? 'Send for an explanation' : 'Connect OpenAI' : hasKey ? 'Send for a hint' : 'Connect OpenAI and request a hint'}</Control>{busy && <Control onClick={() => send({ type: 'cancelExplain' })}>Cancel request</Control>}</>}>
+    <p>OpenAI will receive the rule, code and connections below{kind === 'hint' ? ', plus your guess, the observed result and earlier hints' : ''}. Sharing happens only after you choose Send.</p>
+    <section className="vd-consent" aria-label="Context sharing preview"><p className="vd-teaching">{selected?.requirement ?? 'No valid summary is available. Refresh the preview.'}</p>{selected && <ul className="vd-selected-files">{selected.files.map(file => <li key={file}><code>{file}</code></li>)}</ul>}
     <p className="vd-muted">Model: <code>{preview.model}</code>. A paid API request may apply.</p>
-    <details className="vd-details"><summary>Exact context and instructions</summary><pre>{preview.instruction}</pre><pre>{preview.text}</pre></details>
-    <Control className="vd-primary" disabled={busy || !selected} reason={busy ? 'Available after this request finishes.' : 'Available after a valid sharing preview is prepared.'} onClick={() => send(!hasKey && kind === 'explain' ? { type: 'setupKey' } : { type: kind, identity: preview.identity })}>{kind === 'explain' ? hasKey ? 'Send this context for an explanation' : 'Connect OpenAI' : hasKey ? 'Send this context for a hint' : 'Connect OpenAI and request hint'}</Control>
-    {busy && <Control onClick={() => send({ type: 'cancelExplain' })}>Cancel {kind === 'hint' ? 'hint request' : 'explanation'}</Control>}
-  </section>;
+    <details className="vd-details"><summary>Exactly what will be shared</summary><pre>{preview.instruction}</pre><pre>{preview.text}</pre></details></section>
+  </Task>;
 }
