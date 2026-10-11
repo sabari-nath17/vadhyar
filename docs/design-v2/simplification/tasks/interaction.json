@@ -1,0 +1,13 @@
+{
+  "recordedAt": "2026-10-11T02:00:46.118Z",
+  "draftAfterReopen": {
+    "actions": [
+      {
+        "type": "ready"
+      }
+    ],
+    "draft": "UI check: keep this unsaved draft while I view the record."
+  },
+  "field": "learning-reflection",
+  "scope": "Recorded browser preview; no host/API/storage operations"
+}

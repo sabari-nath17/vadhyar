@@ -19,7 +19,8 @@ export function Change({ state, send }: { state: PanelState; send: Send }) {
       {!state.busy && state.referencesCurrent && evidence.sourceHash === state.sourceHash && evidence.requirementRevision === state.requirement?.revision && state.refs.some(ref => ref.id === evidence.result.hint.sourceRefId) && <Control onClick={() => send({ type: 'openSource', id: evidence.result.hint.sourceRefId })}>Open hint source</Control>}
       {(state.contextStale || evidence.sourceHash !== state.sourceHash || evidence.requirementRevision !== state.requirement?.revision) && <p className="vd-stale-text">This hint describes an earlier version.</p>}
     </section>)}
-    <details className="vd-details"><summary>Need a hint?</summary><p>The coach guides your reasoning; you make the edit. Each request shares your prediction and observed result.</p>{(state.hints?.length ?? 0) < 3 ? !state.busy && <Control disabled={state.busy || state.contextStale || state.checksSupported !== true || !state.sourceHash || !state.confirmed} onClick={() => send({ type: 'previewHint' })}>Review before getting a hint</Control> : <p>All three hint levels used. Continue with your saved edit.</p>}</details>
+    {(state.hints?.length ?? 0) < 3 ? <Control disabled={state.busy || state.contextStale || state.checksSupported !== true || !state.sourceHash || !state.confirmed} reason="Confirm the rule, save the code and restore trusted checks first." onClick={() => send({ type: 'previewHint' })}>Review before getting a hint</Control> : <p>All three hint levels used. Continue with your saved edit.</p>}
+    <p className="vd2-caption">The coach guides; you edit. Review the context before sharing your guess and result.</p>
     {state.diff && <p className="vd-muted">Comparison opened{diffCurrent ? ' for your saved code' : ' for an earlier version'}. It starts from your captured code.</p>}
     {!changed && <p className="vd-muted">Save a change before comparing it.</p>}
   </Task>;

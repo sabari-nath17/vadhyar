@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | 2.5.0 |
+| **Version** | 2.6.0 |
 | **Scope** | The Vadhyar VS Code panel (React): path home, lessons, feedback, completion, evidence, states, assets |
 | **Audience** | Codex or any engineer building the UI. You MAY generate images, SVG, sounds and scaffolding. You MUST NOT change host behavior. |
 | **Relationship to `design.md` 1.1.0** | v2 **adds an experience layer** on top of it. Where they conflict, v2 wins (see §15). Everything not mentioned here (consent, state catalog, accessibility, editor integration, logo placement) is inherited unchanged. §4 repeats the essentials so this file works alone. |
@@ -399,4 +399,14 @@ The supplied [simplification plan](simplification-plan.md) wins for density and 
 - The developer screenshot toolbar is 24px outside the app viewport. Browser captures use a 640px app area plus that labelled toolbar.
 - Claude Superpowers is applied to the already authorized written plan and existing `codex/` branch. The user already requested execution, so a second plan-approval prompt is not introduced. No Claude-specific configuration is installed. Reviews are in-thread; independent review remains pending.
 
-Evidence: [shell phase](docs/design-v2/simplification/shell/README.md). The flat ledger and Evidence sheet follow in the next slice.
+Evidence: [shell phase](docs/design-v2/simplification/shell/README.md) and [task/evidence phase](docs/design-v2/simplification/tasks/README.md).
+
+### Flat tasks and saved-record sheet
+
+- Observe uses one definition-list ledger: Predicted / Code did / Rule says. The expected binary outcome is derived from the runner's observed approval and match verdict, not from an invented test result. Execution counts and original prediction text remain recorded evidence.
+- The result card opens on request as a native dialog; the task keeps one pinned action. This replaces the automatic nested feedback footer to meet the supplied density plan.
+- The global code-status control opens the saved-record sheet over the current task. Timeline and handover contains saved events, export and reflection; Technical details contains all existing identities, provenance and operation metadata. Arrow keys switch tabs. Closing the sheet restores focus and the same lesson.
+- Reflection drafts survive switching tabs and closing/reopening the sheet in this panel lifetime. They are not persisted or sent to the coach; saved notes still require the existing host gate and acknowledgement. Panel reload discards unsaved drafts.
+- Hint review is a direct button. All sharing consent and existing validation remain unchanged.
+- Deviation from §7's narrow 96px Guide: lesson art is 64px beside the question below 720px, preserving task space. Wide art remains 160px; the welcome and completion artwork remain their specified sizes. Administrative and evidence sheets omit decorative art.
+- Project Guide route simplification, four-theme contrast and automated route parity remain the next gates. Native acceptance and human beginner usability remain pending.

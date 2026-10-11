@@ -79,15 +79,16 @@ export function Task({ title, pose, art, children, action }: { title: string; po
   return <><div className="vd2-task-scroll" onKeyDown={primaryOnEnter}><div className="vd2-task-layout"><div className="vd2-task-copy"><h2 tabIndex={-1}>{title}</h2>{children}</div>{(pose || art) && <aside className="vd2-task-guide">{art ?? (pose && <Guide pose={pose} large />)}</aside>}</div></div><ActionBar>{action}</ActionBar></>;
 }
 
-export function StartSheet({ id, title, children, action, onClose }: { id?: string; title: string; children: ReactNode; action: ReactNode; onClose: () => void }) {
+export function StartSheet({ id, title, pose, open = true, children, action, onClose }: { id?: string; title: string; pose?: Pose; open?: boolean; children: ReactNode; action: ReactNode; onClose: () => void }) {
   const sheet = useRef<HTMLDialogElement>(null);
   const titleId = useId();
   useEffect(() => {
+    if (!open) return;
     const previous = document.activeElement;
     const dialog = sheet.current;
     dialog?.showModal();
     dialog?.querySelector<HTMLElement>('h2')?.focus();
     return () => { dialog?.close(); if (previous instanceof HTMLElement && previous.isConnected) previous.focus(); };
-  }, []);
-  return <dialog id={id} ref={sheet} className="vd2-startsheet" aria-labelledby={titleId} onKeyDown={primaryOnEnter} onCancel={event => { event.preventDefault(); onClose(); }}><div className="vd2-start-copy"><Guide pose="welcome" /><h2 id={titleId} tabIndex={-1}>{title}</h2>{children}</div><ActionBar>{action}</ActionBar></dialog>;
+  }, [open]);
+  return <dialog id={id} ref={sheet} className="vd2-startsheet" aria-labelledby={titleId} onKeyDown={primaryOnEnter} onCancel={event => { event.preventDefault(); onClose(); }}><div className="vd2-start-copy">{pose && <Guide pose={pose} />}<h2 id={titleId} tabIndex={-1}>{title}</h2>{children}</div><ActionBar>{action}</ActionBar></dialog>;
 }

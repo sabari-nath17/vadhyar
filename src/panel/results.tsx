@@ -10,19 +10,23 @@ export function Observation({ state }: { state: PanelState }) {
   if (!result) return null;
   if (result.kind !== 'completed') return <div className="vd-banner vd-fail" role="alert"><h3>Checks could not run</h3><p>{result.message}</p><p>No observed approval was recorded. Retry the saved case.</p></div>;
   const current = state.counterexampleCurrent === true && result.sourceHash === state.sourceHash && result.requirementRevision === state.requirement?.revision;
+  // The runner records a binary approval outcome and whether it matched the rule.
+  const expected = result.requirementPassed ? result.observedApproval : !result.observedApproval;
   return <>
-    {state.prediction && <section className="vd-prediction"><p className="vd-label">You predicted · locked</p><h3>{state.prediction.predictedApproval ? 'Approval allowed' : 'Approval denied'}</h3><blockquote>{state.prediction.reasoning}</blockquote></section>}
-    <section className={`vd-executed ${!current ? 'vd-stale' : result.requirementPassed ? 'vd-pass' : 'vd-fail'} vd-reveal`}>
-      <p className="vd-label">Executed · {current ? 'current code and checks' : 'earlier source or checks'} · {result.requirementPassed ? 'matches rule' : 'breaks rule'}</p>
-      <h3><Icon name={result.requirementPassed ? 'check' : 'fail'} /> {result.observedApproval ? 'Approval allowed' : 'Approval denied'}</h3>
-      <p>{result.caseId === 'owner-client-archived' ? 'Even the owning client must be denied for an archived milestone.' : 'The different client must be denied.'} One case executed; {result.skippedCases} skipped.</p>
-      {!current && <p>Historical observation. Inspect the saved diff and rerun all checks to verify current code.</p>}
-    </section>
+    <p className="vd2-caption">Executed · {current ? 'current code and checks' : 'earlier source or checks'}</p>
+    <dl className="vd-observation-ledger">
+      <div><dt>Predicted</dt><dd>{state.prediction ? state.prediction.predictedApproval ? 'Allow approval' : 'Stop approval' : 'Not recorded'}</dd></div>
+      <div><dt>Code did</dt><dd><Icon name={result.requirementPassed ? 'check' : 'fail'} /> {result.observedApproval ? 'Allowed approval' : 'Stopped approval'}</dd></div>
+      <div><dt>Rule says</dt><dd>{expected ? 'Allow approval' : 'Stop approval'}</dd></div>
+    </dl>
+    <p className={current && result.requirementPassed ? 'vd-pass-text' : current ? 'vd-fail-text' : 'vd-stale-text'}>{current ? result.requirementPassed ? 'This case follows your rule.' : 'This case breaks your rule.' : 'Earlier result. Check your saved change before trusting it.'}</p>
     {state.prediction && result.observedApproval !== state.prediction.predictedApproval && <p className="vd-disagreement"><span aria-hidden="true">≠</span> The code behaved differently from your prediction.</p>}
+    {state.prediction && <details className="vd-details"><summary>Why you made that guess</summary><blockquote>{state.prediction.reasoning}</blockquote></details>}
+    <p className="vd2-caption">{result.executedCases} case{result.executedCases === 1 ? '' : 's'} executed; {result.skippedCases} skipped.</p>
     <p className="vd-muted">An observed result does not establish understanding.</p>
   </>;
 }
-export function Verification({ state, send, complete }: { state: PanelState; send: Send; complete: () => void }) {
+export function Verification({ state, send, complete, notes }: { state: PanelState; send: Send; complete: () => void; notes: () => void }) {
   const run = state.ownershipRun;
   const current = currentRun(state);
   const summary = recordedSummary(state);
@@ -37,11 +41,11 @@ export function Verification({ state, send, complete }: { state: PanelState; sen
     </section>}
     {run && run.kind !== 'completed' && <div className="vd-banner vd-fail" role="alert"><h3>Checks could not run</h3><p>{run.message}</p><p>No learner-answer verdict was recorded.</p></div>}
     <p className="vd-muted">Passing these cases is evidence of behavior, not mastery. Outside help is unknown.</p>
-    <Reflection state={state} send={send} />
+    <Control onClick={notes}>Save what I noticed</Control>
   </Task>;
 }
 
-function Reflection({ state, send }: { state: PanelState; send: Send }) {
+export function Reflection({ state, send }: { state: PanelState; send: Send }) {
   const [text, setText] = useState('');
   const [saving, setSaving] = useState(false);
   const pending = useRef<{ text: string; count: number } | undefined>(undefined);
@@ -52,7 +56,7 @@ function Reflection({ state, send }: { state: PanelState; send: Send }) {
       setText(current => current.trim() === saved ? '' : current); setSaving(false); pending.current = undefined;
     } else if (state.error) { setSaving(false); pending.current = undefined; }
   }, [state.reflections, state.error]);
-  return <details className="vd-details"><summary>What did you notice? · saved here</summary>
+  return <section className="vd-reflection"><h3>What did you notice?</h3>
     <p>What changed in your reasoning? Save this note to keep it when you return. It is not sent to the coach.</p>
     <form onSubmit={event => {
       event.preventDefault();
@@ -65,5 +69,5 @@ function Reflection({ state, send }: { state: PanelState; send: Send }) {
       <Control type="submit" disabled={state.busy || saving || !text.trim() || !state.ownershipCurrent} reason={saving ? 'Your note is being saved.' : 'Write a note after running current trusted checks on this source.'}>{saving ? 'Saving reflection…' : 'Save my note'}</Control>
     </form>
     {state.reflections?.map(item => <section key={item.id}><p>{item.text}</p><p className="vd-muted">Saved {new Date(item.recordedAt).toLocaleString()}{item.sourceHash !== state.sourceHash || item.requirementRevision !== state.requirement?.revision ? ' · earlier source or requirement' : ''}</p></section>)}
-  </details>;
+  </section>;
 }

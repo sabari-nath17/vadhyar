@@ -1,4 +1,6 @@
 import { TechnicalDetails } from './lesson-shell.js';
+import { useState } from 'react';
+import { Reflection } from './results.js';
 import type { PanelState } from '../shared.js';
 import { steps, suggestedStep, requirementProse, requirementTitle } from './workflow.js';
 import { Control, type Send } from './ui.js';
@@ -23,7 +25,7 @@ export function PathHome({ state, start, proof, takeBreak, challenge }: { state:
 
 export function LessonStart({ state, begin, close }: { state: PanelState; begin: () => void; close: () => void }) {
   const step = steps.find(item => item.id === suggestedStep(state));
-  return <StartSheet title={requirementTitle(state.requirement)} onClose={close} action={<><Control className="vd-primary" disabled={state.busy || !state.requirement} reason="Wait for your saved rule to load." onClick={begin}>{state.confirmed ? 'Continue' : 'Start'}</Control><Control onClick={close}>Not now</Control></>}>
+  return <StartSheet title={requirementTitle(state.requirement)} pose="welcome" onClose={close} action={<><Control className="vd-primary" disabled={state.busy || !state.requirement} reason="Wait for your saved rule to load." onClick={begin}>{state.confirmed ? 'Continue' : 'Start'}</Control><Control onClick={close}>Not now</Control></>}>
     <p>Find the code. Make a guess. Try a change and check it.</p>
     {state.confirmed && <p className="vd2-caption">Saved step: {step?.name}. {state.contextStale ? 'Refresh the saved code before using earlier results.' : 'Currentness is checked again before each action.'}</p>}
     <div className="vd2-step-chips">{steps.map(item => <Chip key={item.id} icon="clock">{item.name}</Chip>)}</div>
@@ -40,11 +42,24 @@ export function Completion({ state, home, proof, challenge, bloom = false }: { s
   </Task>;
 }
 
-export function EvidenceReview({ state, send, back }: { state: PanelState; send: Send; back: () => void }) {
-  return <Task title="Your proof" action={<Control className="vd-primary" onClick={back}>Back</Control>}>
+export function EvidenceReview({ state, send, back, open = true }: { state: PanelState; send: Send; back: () => void; open?: boolean }) {
+  const [tab, setTab] = useState<'timeline' | 'technical'>('timeline');
+  return <StartSheet id="vd-evidence" title="Your saved record" open={open} onClose={back} action={<Control className="vd-primary" onClick={back}>Back to my task</Control>}>
+    <div className="vd-evidence-tabs" role="tablist" aria-label="Saved record views" onKeyDown={event => {
+      if (!['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+      event.preventDefault();
+      const next = event.key === 'Home' ? 'timeline' : event.key === 'End' ? 'technical' : tab === 'timeline' ? 'technical' : 'timeline';
+      setTab(next); event.currentTarget.querySelector<HTMLElement>(`#vd-${next}-tab`)?.focus();
+    }}>
+      <Control id="vd-timeline-tab" role="tab" aria-selected={tab === 'timeline'} aria-controls="vd-timeline" tabIndex={tab === 'timeline' ? 0 : -1} onClick={() => setTab('timeline')}>Timeline and handover</Control>
+      <Control id="vd-technical-tab" role="tab" aria-selected={tab === 'technical'} aria-controls="vd-technical" tabIndex={tab === 'technical' ? 0 : -1} onClick={() => setTab('technical')}>Technical details</Control>
+    </div>
+    <section id="vd-timeline" role="tabpanel" aria-labelledby="vd-timeline-tab" hidden={tab !== 'timeline'}>
     <p>Only saved events appear here. Earlier authorship and outside help are unknown.</p>
-    {state.evidence?.length ? <ol className="vd2-evidence-list">{state.evidence.map(item => <li key={item.id}><h3>{item.title}</h3><p className="vd2-caption"><time dateTime={item.at}>{new Date(item.at).toLocaleString()}</time> · {item.current ? 'Matches current inputs' : 'Historical or unverified for current inputs'}</p><p>{item.detail}</p><details className="vd-details"><summary>More detail</summary><p>Rule revision: <code>{item.requirementRevision}</code></p>{item.sourceHash && <p>Source: <code>{item.sourceHash}</code></p>}<p>Record: <code>{item.id}</code></p></details></li>)}</ol> : <p>No saved proof yet. Confirm your rule and save a code snapshot to begin.</p>}
-    <details className="vd-details"><summary>Technical details</summary><TechnicalDetails state={state} /></details>
+    {state.evidence?.length ? <ol className="vd2-evidence-list">{state.evidence.map(item => <li key={item.id}><h3>{item.title}</h3><p className="vd2-caption"><time dateTime={item.at}>{new Date(item.at).toLocaleString()}</time> · {item.current ? 'Matches current inputs' : 'Historical or unverified for current inputs'}</p><p>{item.detail}</p></li>)}</ol> : <p>No saved proof yet. Confirm your rule and save a code snapshot to begin.</p>}
     <Control disabled={state.busy || state.contextStale || !state.evidence?.length} reason="Refresh saved context with recorded evidence first." onClick={() => send({type:'exportHandover'})}>Export my proof</Control>
-  </Task>;
+    <Reflection state={state} send={send} />
+    </section>
+    <section id="vd-technical" role="tabpanel" aria-labelledby="vd-technical-tab" hidden={tab !== 'technical'}><TechnicalDetails state={state} /></section>
+  </StartSheet>;
 }

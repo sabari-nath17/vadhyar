@@ -1,5 +1,9 @@
 # AI usage record
 
+## 2026-10-11T07:31:33+05:30 — Task simplification and adversarial review
+
+Codex applied Red Team Review to route depth, product/practice scope and evidence clarity, then implemented the authorized UI corrections with existing components and platform dialogs. Three failing assertions preceded the flat ledger, sheet and direct hint action. Typechecking caught use of an extra runner-record field absent from the panel contract; corrected it to derive the binary expectation from the existing outcome/verdict. Full 142/142 and typecheck/lint/build pass. Browser interactions verified tab keyboard use, return to the same lesson and draft retention without sending or storing the note. Screenshot counts describe actual captures; scene/model/graph specimens remain labelled. In-thread review only; human/native acceptance pending. No subagents, OpenAI call, credential retrieval, host change or primary-checkout mutation.
+
 ## 2026-10-11T07:13:40+05:30 — Pinned shell
 
 Codex applied Superpowers/Claude Superpowers test-first discipline: two new shell assertions failed before implementation, then focused 19/19 passed. Browser measured the real renderer at four widths and three themes; the locked segment sent no unauthorized action. The full test run had three 5-second timeouts, preserved in the report. No independent/native review.

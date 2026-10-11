@@ -1,0 +1,128 @@
+[
+  {
+    "width": 320,
+    "theme": "light",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/tasks/320-light.png",
+    "metrics": {
+      "action": 66,
+      "height": 664,
+      "main": 640,
+      "overflow": false,
+      "task": 430,
+      "top": 136,
+      "width": 320
+    }
+  },
+  {
+    "width": 320,
+    "theme": "dark",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/tasks/320-dark.png",
+    "metrics": {
+      "action": 66,
+      "height": 664,
+      "main": 640,
+      "overflow": false,
+      "task": 430,
+      "top": 136,
+      "width": 320
+    }
+  },
+  {
+    "width": 320,
+    "theme": "hc",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/tasks/320-hc.png",
+    "metrics": {
+      "action": 66,
+      "height": 664,
+      "main": 640,
+      "overflow": false,
+      "task": 430,
+      "top": 136,
+      "width": 320
+    }
+  },
+  {
+    "width": 360,
+    "theme": "light",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/tasks/360-light.png",
+    "metrics": {
+      "action": 66,
+      "height": 664,
+      "main": 640,
+      "overflow": false,
+      "task": 430,
+      "top": 136,
+      "width": 360
+    }
+  },
+  {
+    "width": 360,
+    "theme": "dark",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/tasks/360-dark.png",
+    "metrics": {
+      "action": 66,
+      "height": 664,
+      "main": 640,
+      "overflow": false,
+      "task": 430,
+      "top": 136,
+      "width": 360
+    }
+  },
+  {
+    "width": 360,
+    "theme": "hc",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/tasks/360-hc.png",
+    "metrics": {
+      "action": 66,
+      "height": 664,
+      "main": 640,
+      "overflow": false,
+      "task": 430,
+      "top": 136,
+      "width": 360
+    }
+  },
+  {
+    "width": 720,
+    "theme": "light",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/tasks/720-light.png",
+    "metrics": {
+      "action": 66,
+      "height": 664,
+      "main": 640,
+      "overflow": false,
+      "task": 430,
+      "top": 136,
+      "width": 720
+    }
+  },
+  {
+    "width": 720,
+    "theme": "dark",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/tasks/720-dark.png",
+    "metrics": {
+      "action": 66,
+      "height": 664,
+      "main": 640,
+      "overflow": false,
+      "task": 430,
+      "top": 136,
+      "width": 720
+    }
+  },
+  {
+    "width": 720,
+    "theme": "hc",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/tasks/720-hc.png",
+    "metrics": {
+      "action": 66,
+      "height": 664,
+      "main": 640,
+      "overflow": false,
+      "task": 430,
+      "top": 136,
+      "width": 720
+    }
+  }
+]

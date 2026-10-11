@@ -1,5 +1,9 @@
 # Vadhyar slice task record
 
+## 2026-10-11T07:31:33+05:30 — Task/evidence simplification complete
+
+Previous checkpoint 0eebb81. Scope: flat Observe ledger, on-request feedback dialog, persistent tabbed saved-record sheet, reflection and direct hint route; narrow art is 64px beside the heading. All current host bytes stay pinned to 29db3ef. Latest full **142/142**, typecheck/lint/build pass; nine required task screenshots and tab/focus/draft checks are in docs/design-v2/simplification/tasks. The milestone commit contains this record. Next: Project Guide route parity, four-theme contrast, UI route checks and updated local VSIX. The user requested continuing improvements after the red-team assessment. No merge/push or primary/session change. Human beginner/native acceptance remains unverified.
+
 ## 2026-10-11T07:13:40+05:30 — Pinned shell
 
 Shell slice: pin current context, relocate existing admin actions and explain locked steps. Parity baseline is 9a4a3f9. Focused tests 19/19; typecheck/lint/build pass; twelve captures recorded. Full serial rerun passed 139/139 in 40.69 s. Next authorized slice is ledger/Evidence simplification; no host changes, merge or push.

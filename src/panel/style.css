@@ -130,4 +130,21 @@ blockquote { margin: 8px 0 0; padding-inline-start: 12px; border-left: 2px solid
 .vd-stage .vd2-actionbar .vd2-caption { font-size: 12px; line-height: 13px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .vd-stage .vd2-actionbar .vd2-button { padding: 8px; min-height: 48px; }
 .vd-technical { display: grid; gap: 16px; }
+.vd-observation-ledger { margin: 0; }
+.vd-observation-ledger > div { display: grid; grid-template-columns: 100px minmax(0,1fr); gap: 8px; padding: 12px 0; border-bottom: 2px solid var(--border); }
+.vd-observation-ledger dt { color: var(--muted); }
+.vd-observation-ledger dd { margin: 0; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.vd-evidence-tabs { display: flex; gap: 8px; }
+.vd-evidence-tabs > .vd2-control { flex: 1; }
+.vd-evidence-tabs [aria-selected="true"] { color: var(--text); background: var(--selected); border-color: var(--selection-border); }
+[role="tabpanel"], .vd-reflection, .vd-reflection form { display: grid; gap: 12px; }
+[role="tabpanel"][hidden] { display: none; }
+@media (max-width: 719px) {
+  .vd2-task-layout { position: relative; }
+  .vd2-task-guide { position: absolute; right: 0; top: 0; }
+  .vd2-task-guide .vd2-guide { width: 64px; height: 64px; }
+  .vd2-task-layout:has(.vd2-task-guide) .vd2-task-copy > h2 { padding-right: 72px; min-height: 64px; display: flex; align-items: center; }
+  .vd-screen-complete .vd2-task-guide { position: static; }
+  .vd-screen-complete .vd2-task-copy > h2 { padding-right: 0; }
+}
 @media (max-width: 339px) { .vd-learning { padding-inline: 4px; } }

@@ -1,5 +1,9 @@
 # Change log
 
+## 2026-10-11T07:31:33+05:30 — Flat task and saved-record routes
+
+Replaced nested result cards with an evidence-derived comparison, moved proof/reflection to a tabbed sheet over the current task, shortened hint access and sized narrow lesson art beside the question. Existing actions and save/check acknowledgement remain unchanged. Scope: six panel files, presentation regressions, specification/docs and browser evidence. Three assertions failed before implementation; typecheck/lint/build, focused 33/33 and full **142/142 in 28 files, 32.77 s** pass. Nine 320/360/720 × light/dark/HC task captures fit 136px top / 66px action / 430px task without overflow. Tab keys, focus return and unsaved-note retention checked in the recorded preview. Native/human acceptance remains pending; no host/API/dependency change, merge or push.
+
 ## 2026-10-11T07:13:40+05:30 — Pinned shell
 
 Pinned shell and feature-preserving administration sheets. Scope: panel React/CSS, tests, specification and screenshots. Focused 19/19; typecheck/lint/build pass. Full default suite reported three development timeout failures; serial rerun passed 139/139 in 40.69 s. No host/contract/fixture change.
