@@ -78,3 +78,8 @@ This repository follows the [organizer's documentation template](https://github.
 [Website](https://vadhyar-website.vercel.app) uses an illustrative walkthrough and may link the narrower [0.1.0 S7 installer](https://github.com/sabari-nath17/vadhyar/releases/tag/v0.1.0). That historical release remains available. Use **0.1.1** for the frozen full learning-loop candidate; the redesign is not included.
 
 [AI assistance](AI_USAGE.md) · [Development changes](CHANGELOG.md) · [Slice evidence](tasks/todo.md) · [Implementation plan](docs/implementation-plan.md).
+
+
+## Pitch deck
+
+The [final hackathon presentation](docs/pitch/README.md) is available as a [PDF](docs/pitch/Vadhyar-Hackathon-final.pdf) and an [editable PowerPoint](docs/pitch/Vadhyar-Hackathon-final.pptx).

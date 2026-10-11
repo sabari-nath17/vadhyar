@@ -611,3 +611,10 @@ Public Vadhyar wording updated on the landing/README/setup/release copy. No sour
 - Reviewed setup implementation checkpoint: `851d613`; canonical main advanced to `3a60bb8` with publication/feature-inventory documents only. Reconciled those records by preserving both append-only histories; extension, helper, tests, package and fixture inputs are unchanged by this documentation merge. Pending explicit push approval; no organizer submission performed by this side task.
 
 - 2026-10-11T08:16:17+05:30: user explicitly approved publication. Normal push published setup checkpoint `609c4a558b1a61109937058a6d2b30fae4fda473` to canonical GitHub main. Remote SHA verified; public helper, guide and evidence bytes match the tested local files. Frozen 0.1.1 VSIX size/SHA-256 unchanged. No force push, active-session reload, OpenAI request or organizer submission. Next: native presentation replay and judge-platform/model-account confirmation; other platforms remain unverified.
+
+## 2026-10-11T08:27:03+05:30 — Side request: publish pitch deck
+
+- Scope: unchanged final PDF/PowerPoint, `docs/pitch/README.md`, root README, CHANGELOG, AI_USAGE and this record only. Explicit user upload authorization supersedes the earlier no-push constraint solely for these presentation files/records.
+- Source: final Vadhyar hackathon export prepared 11 October 2026; 25 slides. PDF basic signature and PowerPoint archive integrity passed. No source, build, installer or runtime change.
+- Checkpoint: this upload commit is based on remote main `f1436c17396dd73d80816af79958af047222be07`; its exact SHA is in repository Git history. Remote file hashes will be checked after publishing and reported in the chat.
+- Preservation: working checkout, local branch, staging index and active build work are untouched. Next: use the published deck; ongoing implementation belongs to the parent task.

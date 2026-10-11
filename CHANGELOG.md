@@ -4,6 +4,14 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-11T08:27:03+05:30 — Publish final pitch deck
+
+- Changed: added unchanged final PDF and PowerPoint exports plus download links in `docs/pitch/README.md` and the root README. Updated AI/task records in the same upload commit.
+- Why: make the hackathon presentation accessible from the canonical GitHub repository.
+- Checks: local PowerPoint ZIP integrity and 25-slide structure passed; PDF header/end marker checked. Publication uses the existing remote main tree and reviews only the seven intended file paths.
+- Limits: presentation upload only; no application tests, API calls, installer changes or new validation of deck claims. Ongoing local source, index and branch are outside this commit.
+
+
 ## 2026-10-11T01:31:17.000+05:30 — Project Guide for evolving local projects
 
 - Changed: added five `src/project/` modules, `src/panel/project.tsx`, `scripts/capture-intent.mjs`, four test files, implementation/usage guides and a synthetic capture. Integrated existing host commands, SDK export, shared panel state, stylesheet and package metadata; updated README/design/earlier guide plan and records.
