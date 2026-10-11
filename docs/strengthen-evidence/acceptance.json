@@ -1,0 +1,194 @@
+{
+  "recordedAtIST": "2026-10-11T05:42:34+05:30",
+  "slice": "H1",
+  "scope": "One disclosed unrelated JavaScript fixture; experimental Project Guide",
+  "branch": "codex/s0b-s1a",
+  "baseCommit": "21fdcc9",
+  "workingTree": "mixed uncommitted; no commit/push",
+  "preparedMaterial": [
+    "SeatCheck source, specification and existing npm test were created for developer acceptance; zero-seat seed intentionally fails"
+  ],
+  "canonicalContracts": "Existing ProjectController/projectAction/ProjectPanel, projectPreview/requestCoach, version-1 project storage; no new controller or execution protocol",
+  "fixes": [
+    "Native /var versus /private/var file-picker alias accepted after realpath while preserving workspace, hidden-file, size and final-symlink boundaries",
+    "Validated Project Guide source/diff opens native editor on the left and retains the panel alongside it; repeated Open retains its column"
+  ],
+  "checks": {
+    "typecheck": 0,
+    "lint": 0,
+    "build": 0,
+    "focused": {
+      "passed": 31,
+      "files": 5
+    },
+    "full": {
+      "passed": 111,
+      "files": 24,
+      "durationSeconds": 26.2,
+      "startIST": "2026-10-11 05:39:33"
+    },
+    "offlineCoach": {
+      "passed": 6,
+      "failed": 0,
+      "errors": 0,
+      "apiCalls": 0
+    }
+  },
+  "native": {
+    "host": "VS Code 1.140.0 Extension Development Host, owned SeatCheck-H1 workspace",
+    "trust": "Exact disposable folder only, enforced",
+    "intent": {
+      "title": "Reserve only an available seat",
+      "request": "### Requirement: Reserve only an available seat\nAllow a reservation only when at least one seat remains.\n\n#### Scenario: Available capacity\nWith two seats remaining, allow a reservation.\n\n#### Scenario: Full event\nWith zero seats remaining, deny a reservation.\n\n#### Scenario: Invalid negative capacity\nWith negative remaining capacity, deny a reservation.",
+      "expected": "Available capacity: With two seats remaining, allow a reservation.\nFull event: With zero seats remaining, deny a reservation.\nInvalid negative capacity: With negative remaining capacity, deny a reservation.",
+      "origin": "specification",
+      "id": "d7b46263-fb53-412f-9466-b68990eff237",
+      "revision": "e8a64a95a79dd80e72e0294f7c6a60b88b0c012662a0c9a8bb35be4ea2c50fb5",
+      "createdAt": "2026-10-10T23:59:59.902Z",
+      "confirmedAt": "2026-10-11T00:00:00.960Z",
+      "sourcePath": "feature.md",
+      "sourceHash": "5e8cd6c4bf4c95095d019d17c4cf66ef649c2313941b1941ab6b27fa6d5ecd0a"
+    },
+    "selectedFiles": [
+      "src/reservation.js"
+    ],
+    "source": {
+      "beforeSha256": "d01db588aaaf366f4358b9e85006750508324089b68b1204e762254549d1b85b",
+      "afterSha256": "f16f640b45bdb1c07b78399ba91f16303dccb499e7e681330e4c1dd7177aa4e6",
+      "baselineSnapshot": "0de04638765ac47e339fc0d15cf6f5f512321d858625e74065543085e4dc2f4a",
+      "currentSnapshot": "bffd257b68a52e04e3c43a09ad97eec7f7c2288ceb5a7468c1ade2ff45aa1d1a"
+    },
+    "explanation": {
+      "responseId": "resp_0c4adec92239f5ee016acad1bdb9f487d29c63879d2cb68572",
+      "model": "gpt-6-astra",
+      "latencyMs": 8377,
+      "totalTokens": 1078,
+      "validated": true,
+      "sourceCitations": "src/reservation.js lines 2 and 3; native line 3 opened",
+      "statusAfterEdit": "historical; not a runtime observation"
+    },
+    "checkRuns": [
+      {
+        "snapshot": "0de04638765ac47e339fc0d15cf6f5f512321d858625e74065543085e4dc2f4a",
+        "intentRevision": "e8a64a95a79dd80e72e0294f7c6a60b88b0c012662a0c9a8bb35be4ea2c50fb5",
+        "script": "test",
+        "packageHash": "5b78b4cc59c091c85ffecd21de4eecc438b7f332334ab643fb47b1e42a28b65c",
+        "exitCode": 1,
+        "kind": "completed",
+        "latencyMs": 304,
+        "output": ""
+      },
+      {
+        "snapshot": "bffd257b68a52e04e3c43a09ad97eec7f7c2288ceb5a7468c1ade2ff45aa1d1a",
+        "intentRevision": "e8a64a95a79dd80e72e0294f7c6a60b88b0c012662a0c9a8bb35be4ea2c50fb5",
+        "script": "test",
+        "packageHash": "5b78b4cc59c091c85ffecd21de4eecc438b7f332334ab643fb47b1e42a28b65c",
+        "exitCode": 0,
+        "kind": "completed",
+        "latencyMs": 272,
+        "output": ""
+      }
+    ],
+    "observedOutput": {
+      "seed": {
+        "pass": 2,
+        "fail": 1
+      },
+      "savedEdit": {
+        "pass": 3,
+        "fail": 0
+      },
+      "provenance": "Actual native panel stdout and screenshots; raw command output intentionally not persisted by Project Guide"
+    },
+    "command": "Existing package script test: node --test tests/reservation.test.js; selected through native picker and confirmed for each execution",
+    "diff": "Actual baseline >= versus saved > shown in native diff alongside guide",
+    "resume": {
+      "panelCloseReopen": true,
+      "developerReloadWindow": true,
+      "semanticIntentGuideAndRunRecordsPreserved": true,
+      "runCountBefore": 2,
+      "runCountAfter": 2,
+      "extraAPICalls": 0,
+      "currentExitRestored": 0,
+      "rawStdoutRestored": false
+    },
+    "credentials": "Existing SecretStorage entry used only by intended product request; no key prompt/read/copy/log",
+    "editAuthorship": "Explicitly delegated developer acceptance edit in disposable copy, not learner-authorship/mastery evidence"
+  },
+  "limits": [
+    "One prepared JavaScript/npm project does not prove universal repository support",
+    "Project checks report actual exits, never certify requirement coverage",
+    "No general prediction/counterexample mapping or runtime trace added",
+    "Grouping/build-plan coach operations not exercised live",
+    "Connected agent capture unverified",
+    "CodeTour playback unverified: extension not installed in intended profile",
+    "Separate live Promptfoo quality evaluation unrun: separately configured environment credentials/model absent",
+    "Human teaching quality and independent learner transfer pending",
+    "H2 explain-back/direct journey links and H3-H5 deferred to preserve release verification time"
+  ],
+  "installedAcceptance": {
+    "recordedAtIST": "2026-10-11T05:44:40+05:30",
+    "installExitCode": 0,
+    "host": "Regular named empty-origin VS Code profile, no extensionDevelopmentPath",
+    "profile": "Vadhyar-S13-isolated-trlo6ga4",
+    "restoredEarlierTwoRuns": true,
+    "restoredIntentAndHistoricalGuide": true,
+    "additionalManuallyConfirmedRun": {
+      "snapshot": "bffd257b68a52e04e3c43a09ad97eec7f7c2288ceb5a7468c1ade2ff45aa1d1a",
+      "intentRevision": "e8a64a95a79dd80e72e0294f7c6a60b88b0c012662a0c9a8bb35be4ea2c50fb5",
+      "script": "test",
+      "packageHash": "5b78b4cc59c091c85ffecd21de4eecc438b7f332334ab643fb47b1e42a28b65c",
+      "exitCode": 0,
+      "kind": "completed",
+      "latencyMs": 276,
+      "output": ""
+    },
+    "observedActualStdout": {
+      "pass": 3,
+      "fail": 0
+    },
+    "sourceDiffAlongsideGuide": true,
+    "codeAndLock": {
+      "dist/extension.cjs": {
+        "checkout": "b2655de8478ec7635b163349c324a14ba8a32b9d818aff91db6947e545040bd2",
+        "installed": "b2655de8478ec7635b163349c324a14ba8a32b9d818aff91db6947e545040bd2"
+      },
+      "dist/panel.js": {
+        "checkout": "fc06c81d6dc8909514ec82ed58402fff5b045302b5c7bba23d9d17f4c8db0f64",
+        "installed": "fc06c81d6dc8909514ec82ed58402fff5b045302b5c7bba23d9d17f4c8db0f64"
+      },
+      "dist/panel.css": {
+        "checkout": "bde8e03eed575e2c17f7af3cd29df390e888432928dd6a4da0c66e53dad8ebc1",
+        "installed": "bde8e03eed575e2c17f7af3cd29df390e888432928dd6a4da0c66e53dad8ebc1"
+      },
+      "package-lock.json": {
+        "checkout": "e2c33c640a75e377d1389280b86d303a3e27d00f178224b6793a6ca1bd4db873",
+        "installed": "e2c33c640a75e377d1389280b86d303a3e27d00f178224b6793a6ca1bd4db873"
+      }
+    },
+    "extraAPICalls": 0,
+    "nativeGroupLayout": "Joined empty groups through native View control in owned workspace only; validated diff moved guide to group 2",
+    "screenshot": "native-installed-vsix.png",
+    "novaDeskResume": {
+      "stage": "verify",
+      "cases": 4,
+      "requirementPassed": true,
+      "reflectionRestored": true,
+      "newAPICalls": 0,
+      "newRuns": 0,
+      "sessionAndGateABytesUnchanged": true,
+      "protectedDisposableRecords": {
+        "session.json": "931a47733b36eae056f1709632851c5877554ad4dea9614f40025814402a7642",
+        "gate-a.json": "3bb425952658e3d1d4339b61b4f914fc737cecb0aa52dcda1e13d23a05678154"
+      },
+      "screenshot": "native-installed-novadesk-resume.png"
+    }
+  },
+  "preservation": {
+    "activeS7SessionSourceAndGateAHashes": "unchanged 3/3",
+    "novaDeskRepositorySeed": "unchanged",
+    "projectGuideRecords": "preserved, own new disposable session only",
+    "credentialValueHandling": "none",
+    "commitPush": "none"
+  }
+}

@@ -21,3 +21,11 @@ For each actual dependency/adaptation record: project, exact package version or 
 S4 actual integration: graphifyy==0.9.84 installed into .venv-graphify, Python 3.13.15, no project code copied from upstream. See pinned CLI revision above in tasks/todo.md; package notices include LICENSE/LICENSE-MIT/NOTICE (distribution audit still deferred). Actual unclustered output has AST nodes/contains edges, no schema-version field; adapter validates that shape and records the independently checked CLI version. Real host produced four references/three relationships and native navigation. GRAPHIFY_NO_AUTO_REFRESH=1 plus a fresh HOME prevents global skill refresh/config inheritance.
 
 S5 actual dependency: official npm `openai@7.32.0`, Apache-2.0, with package LICENSE installed; no SDK implementation copied or modified. Responses API and zodTextFormat implement the official Structured Outputs contract. Official model/Structured Outputs pages were read before integration. Zod response/current-ID tests and real panel preview pass; one actual gpt-6-astra response passed strict schema/current-ID checks (8,732 ms; 1,850 tokens), and all three citations navigated real source. This verifies this account/model request, not comparative model quality or other-model access.
+
+## Implemented selective reuse — 2026-10-11T00:39:00+05:30
+
+CodeTour format export/navigation and OpenSpec requirement import are implemented locally; Promptfoo 0.124.1 is a direct development dependency. Pinned revisions, copied schema/license notices and exact verification boundaries are in [selective reuse](selective-reuse.md). This updates the earlier planning-only decisions above. Graphify/Vitest and native snapshots/diffs remain.
+
+## S13 runtime distribution
+
+Vitest 5.0.3 is now a production dependency because the installed trusted runner needs its real CLI and native peers. VSCE 4.0.0 remains a pinned development packager; Promptfoo remains excluded from runtime. Graphify 0.9.84 is an explicit separate installation. The macOS-arm64 artifact includes pinned production peers, bundled UI/font resources and [third-party notices](../THIRD_PARTY_NOTICES.md). Project code has UNLICENSED status; this local package is not an invented open-source license grant. No upstream implementation was modified for this slice.

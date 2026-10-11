@@ -1,6 +1,6 @@
 import { execFile } from 'node:child_process';
 import { mkdir, mkdtemp, readFile, stat, writeFile } from 'node:fs/promises';
-import { join } from 'node:path';
+import { isAbsolute, join } from 'node:path';
 import { promisify } from 'node:util';
 import { z } from 'zod';
 import { hash, type PreparedFile } from './source.js';
@@ -49,6 +49,7 @@ export function validateGraph(raw: unknown, source: PreparedFile): GraphEvidence
 }
 
 export async function extractGraph(executable: string, storage: string, source: PreparedFile): Promise<GraphEvidence> {
+  if (typeof executable !== 'string' || !isAbsolute(executable) || executable.includes('\0')) throw new Error('Set vadhyar.graphifyPath to the absolute executable in an isolated graphifyy==0.9.84 environment.');
   await mkdir(storage, { recursive: true });
   const output = await mkdtemp(join(storage, 'graph-'));
   const input = join(output, 'input');
@@ -59,7 +60,7 @@ export async function extractGraph(executable: string, storage: string, source: 
     const version = await run(executable, ['--version'], options);
     if (version.stdout.trim() !== 'graphify 0.9.84') throw new Error('version');
     await run(executable, ['extract', input, '--code-only', '--no-cluster', '--out', output], options);
-  } catch { throw new Error('Graphify extraction failed. Install isolated graphifyy==0.9.84; check the pinned executable and timeout.'); }
+  } catch { throw new Error('Graphify extraction failed. Install isolated graphifyy==0.9.84 and set vadhyar.graphifyPath to its absolute executable; check the version and timeout.'); }
   const file = join(output, 'graphify-out/graph.json');
   if ((await stat(file)).size > 500_000) throw new Error('Graphify output exceeds the supported size.');
   return validateGraph(JSON.parse(await readFile(file, 'utf8')), source);

@@ -2,14 +2,15 @@
   "name": "vadhyar",
   "version": "0.1.0",
   "private": true,
+  "license": "UNLICENSED",
   "type": "module",
-  "description": "NovaDesk learning fixture with a disclosed seeded ownership bug",
+  "description": "Learn the disclosed NovaDesk ownership rule through source-grounded coaching, saved predictions, native edits and real checks; Project Guide is experimental.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sabari-nath17/vadhyar.git"
   },
   "engines": {
-    "node": "^22.13.0 || ^24.0.0 || >=26.0.0",
+    "node": "^22.22.0 || ^24.0.0 || >=26.0.0",
     "vscode": "^1.140.0"
   },
   "scripts": {
@@ -17,7 +18,11 @@
     "lint": "eslint src scripts novadesk/src tests fixtures vitest.config.ts eslint.config.mjs --max-warnings=0",
     "test": "vitest run --reporter=verbose",
     "build": "node scripts/build.mjs",
-    "test:host": "node scripts/test-host.mjs"
+    "test:host": "node scripts/test-host.mjs",
+    "eval:coach": "node scripts/eval-coach.mjs",
+    "vscode:prepublish": "npm run build",
+    "demo:prepare": "node scripts/prepare-demo.mjs",
+    "package:vsix": "vsce package --target darwin-arm64 --out dist/vadhyar-0.1.0-darwin-arm64.vsix --skip-license --no-rewrite-relative-links"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
@@ -25,11 +30,12 @@
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "@types/vscode": "1.140.0",
+    "@vscode/vsce": "4.0.0",
     "esbuild": "0.28.2",
     "eslint": "10.12.0",
+    "promptfoo": "0.124.1",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.71.1",
-    "vitest": "5.0.3"
+    "typescript-eslint": "8.71.1"
   },
   "displayName": "Vadhyar",
   "publisher": "sabari-nath17",
@@ -38,7 +44,9 @@
     "Education"
   ],
   "activationEvents": [
-    "onCommand:vadhyar.open"
+    "onCommand:vadhyar.open",
+    "onCommand:vadhyar.project",
+    "onCommand:vadhyar.captureIntent"
   ],
   "extensionKind": [
     "workspace"
@@ -46,7 +54,7 @@
   "capabilities": {
     "untrustedWorkspaces": {
       "supported": false,
-      "description": "Runs only in a trusted prepared NovaDesk workspace."
+      "description": "Source capture and existing checks require a trusted local workspace."
     }
   },
   "contributes": {
@@ -58,25 +66,65 @@
       {
         "command": "vadhyar.setupKey",
         "title": "Vadhyar: Set OpenAI API key securely"
+      },
+      {
+        "command": "vadhyar.project",
+        "title": "Vadhyar: Open Project Guide"
       }
     ],
     "configuration": {
       "title": "Vadhyar",
       "properties": {
+        "vadhyar.graphifyPath": {
+          "type": "string",
+          "default": "",
+          "scope": "application",
+          "description": "Absolute Graphify executable from an isolated graphifyy==0.9.84 installation. Empty uses the source checkout's .venv-graphify development environment."
+        },
         "vadhyar.model": {
           "type": "string",
           "default": "gpt-6-astra",
           "scope": "application",
-          "description": "OpenAI model for Explain. No automatic fallback; account access must be verified."
+          "description": "OpenAI model for explanations and project guidance. No automatic fallback; account access must be verified."
         }
       }
     }
   },
   "packageManager": "npm@11.19.0",
+  "files": [
+    "dist/extension.cjs",
+    "dist/panel.js",
+    "dist/panel.css",
+    "dist/*.woff2",
+    "dist/*.png",
+    "package-lock.json",
+    "fixtures/novadesk/**",
+    "fixtures/seat-check/**",
+    "novadesk/**",
+    "node_modules/**",
+    "scripts/prepare-demo.mjs",
+    "media/fonts/*-OFL.txt",
+    "docs/third-party/*.txt",
+    "THIRD_PARTY_NOTICES.md",
+    "README.md",
+    "CHANGELOG.md",
+    "docs/release.md",
+    "docs/demo.md",
+    "docs/strengthen-demo.md",
+    "docs/strengthen-evidence/acceptance.json",
+    "docs/selective-reuse.md",
+    "docs/project-guide.md",
+    "docs/coach-quality.md",
+    "docs/assets/vadhyar-banner.jpg",
+    "docs/s13-evidence/release.json",
+    "docs/installation.md",
+    "docs/landing-release.md"
+  ],
   "dependencies": {
     "openai": "7.32.0",
     "react": "19.3.0",
     "react-dom": "19.3.0",
+    "vitest": "5.0.3",
     "zod": "4.6.5"
   }
 }

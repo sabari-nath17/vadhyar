@@ -19,5 +19,20 @@
   "trustedHashes": {
     "fixtures/novadesk/ownership.test.ts": "dc87ff8d98ebedfab92d542af877cd0f1c82a3ea82760c449a95d817c5750bcf",
     "fixtures/novadesk/vitest.config.ts": "b9f0a437f70f6db5a16d404388f85fc04e1d95a5d2e2791b1e037d59a2add753"
+  },
+  "transfer": {
+    "suite": "transfer",
+    "requirementPath": "vadhyar-transfer.md",
+    "caseIds": [
+      "owner-client-active",
+      "other-client-active",
+      "freelancer-active",
+      "owner-client-archived"
+    ],
+    "trustedHashes": {
+      "fixtures/novadesk/transfer.test.ts": "f4efdec1df42ab6e97f4bf1b1a21f5846be43873c3a235b36d9a629866c5c170",
+      "fixtures/novadesk/transfer.config.ts": "7b6ef205a22cbe87b13c9bc4c71ed6777701d30ee6665b9c68d5c0add3a92ad8",
+      "fixtures/novadesk/transfer.md": "6705e110bc2989d4f5a4575682e5f091d9498c2e0e98a7e97ca535940902415d"
+    }
   }
 }

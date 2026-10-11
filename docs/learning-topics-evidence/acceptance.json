@@ -1,0 +1,281 @@
+{
+  "slice": "T1 grounded learning topics",
+  "recordedAtIST": "2026-10-11T06:47:31+05:30",
+  "delivery": "Follow-up after the 2026-10-11 06:00 IST brief cutoff; mixed tree uncommitted/unpushed; no new packaged-release claim.",
+  "fixture": {
+    "name": "TopicProof-T1",
+    "prepared": true,
+    "developerEdits": true,
+    "learnerAuthorshipClaim": false,
+    "rootFilesCaptured": 5,
+    "modelReviewedFiles": 1,
+    "unreviewedCapturedFiles": 4,
+    "codeExecutionCasesRun": 0
+  },
+  "native": {
+    "host": "VS Code 1.140.0 macOS arm64 Extension Development Host",
+    "profile": "Vadhyar-S13-isolated-trlo6ga4",
+    "trustedOnlyDisposableFolder": true,
+    "realControls": true,
+    "liveProductionOperations": [
+      "group",
+      "explain"
+    ],
+    "configuredModel": "gpt-6-astra",
+    "newCredentialPrompt": false,
+    "credentialValueReadByAcceptance": false,
+    "separateLiveCoachEvaluationRun": false,
+    "requirementUnmatchedRemainsUnconfirmed": true,
+    "requirementExplicitlyConfirmed": true,
+    "decisionNavigation": {
+      "path": "src/reserve.js",
+      "line": 2,
+      "selectedActualLine": true
+    },
+    "callerNavigation": {
+      "path": "src/checkout.js",
+      "line": 3,
+      "selectedActualLine": true
+    },
+    "fiveDisclosuresObserved": true,
+    "resume": {
+      "panelReopen": true,
+      "extensionRestart": true,
+      "pidBefore": 64984,
+      "pidAfter": 71444,
+      "topicIdentityRestored": "495c8df1b511a6356a5dc33e914b8058dbc9509ee55bc413a8e686376dd8c322",
+      "liveResponseRestored": "resp_0c04c7fb7e9d31c7016acadfc255f887d291589ae78486efd4",
+      "guideCount": 1,
+      "graphDirectoryCount": 1
+    },
+    "stale": {
+      "afterAnotherSavedSourceEdit": true,
+      "currentSnapshot": "67b45c2d973f665b6b2bedd4c933ebaf02353972eb537c65e0e5cf7925f3f357",
+      "topicSnapshot": "de4af764ea705b000877fd8bda778d92320a1d488f4fdc35971429596d56e7ae",
+      "oldDecisionAndAllThreeCallerImportTargetsDisabled": true,
+      "oldExplanationMarkedHistorical": true
+    },
+    "theme": "existing native dark",
+    "keyboardMatrix": "unverified; native shortcut automation returned unchanged state; mouse/accessibility controls exercised instead",
+    "initialAcceptanceDriver": "CLI extensionTestsPath attempt did not start and was cancelled; it is not acceptance evidence",
+    "finalCoverageWordingObserved": "Captured source contents not shared with the model; focused preview still includes path/static relationship metadata."
+  },
+  "graphify": {
+    "version": "0.9.84",
+    "actualExtraction": true,
+    "codeOnly": true,
+    "networkDeniedOnMacOS": true,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "nodeCount": 10,
+    "edgeCount": 9,
+    "mappedFiles": 4,
+    "topicIncomingExtractedLinks": 3,
+    "inferredEdgesExcluded": 0,
+    "runtimeTrace": false
+  },
+  "liveEvidence": {
+    "topic": {
+      "title": "Enforcing positive integer seat counts",
+      "rationale": "The supplied before/current comparison changes the boundary from seats >= 0 to seats > 0 while retaining the integer check. Investigating this condition teaches how integer validation and a strict lower bound combine to accept two seats and reject zero, directly matching the supplied positive-seat requirement. Please confirm this requirement connection before teaching; this is a proposed topic, not automatic approval.",
+      "intentId": "5632e4e3-0f8e-45d5-a71a-20c806ad7b7f",
+      "paths": [
+        "src/reserve.js"
+      ],
+      "decision": {
+        "path": "src/reserve.js",
+        "line": 2,
+        "code": "  return Number.isInteger(seats) && seats > 0;"
+      },
+      "identity": "495c8df1b511a6356a5dc33e914b8058dbc9509ee55bc413a8e686376dd8c322",
+      "snapshot": "de4af764ea705b000877fd8bda778d92320a1d488f4fdc35971429596d56e7ae",
+      "baseline": "e51d4c1c865ae839201b2aa1027d0ff1d21a88f1facf99827121cb884000ca9f",
+      "requirementId": "5632e4e3-0f8e-45d5-a71a-20c806ad7b7f",
+      "requirementRevision": "25fe808462f5e876ae15419848c87264e14843f34a4230d63651dca9ce883987",
+      "confirmedAt": "2026-10-11T01:00:28.071Z",
+      "reviewedPaths": [
+        "src/reserve.js"
+      ],
+      "unreviewedPaths": [
+        "package.json",
+        "requirement.md",
+        "src/checkout.js",
+        "src/unrelated.js"
+      ],
+      "omitted": [],
+      "change": "changed-span",
+      "relationships": {
+        "status": "extracted",
+        "snapshot": "de4af764ea705b000877fd8bda778d92320a1d488f4fdc35971429596d56e7ae",
+        "version": "0.9.84",
+        "extractedAt": "2026-10-11T00:59:09.769Z",
+        "files": [
+          "package.json",
+          "src/checkout.js",
+          "src/reserve.js",
+          "src/unrelated.js"
+        ],
+        "links": [
+          {
+            "fromPath": "src/checkout.js",
+            "fromSymbol": "checkout.js",
+            "toPath": "src/reserve.js",
+            "toSymbol": "reserve.js",
+            "line": 1,
+            "relation": "imports_from"
+          },
+          {
+            "fromPath": "src/checkout.js",
+            "fromSymbol": "checkout.js",
+            "toPath": "src/reserve.js",
+            "toSymbol": "canReserve()",
+            "line": 1,
+            "relation": "imports"
+          },
+          {
+            "fromPath": "src/checkout.js",
+            "fromSymbol": "confirmReservation()",
+            "toPath": "src/reserve.js",
+            "toSymbol": "canReserve()",
+            "line": 3,
+            "relation": "calls"
+          }
+        ],
+        "inferredEdges": 0,
+        "reason": ""
+      }
+    },
+    "guide": {
+      "snapshot": "de4af764ea705b000877fd8bda778d92320a1d488f4fdc35971429596d56e7ae",
+      "intentRevision": "25fe808462f5e876ae15419848c87264e14843f34a4230d63651dca9ce883987",
+      "operation": "explain",
+      "result": {
+        "summary": "The condition in src/reserve.js:2 directly matches the confirmed positive-seat requirement: numeric 2 returns true, while 0 returns false.",
+        "purpose": "canReserve checks whether a seat count is a positive integer. It returns a boolean decision; it does not itself create a reservation.",
+        "logic": "At src/reserve.js:2, Number.isInteger(seats) rejects fractions and non-number values such as the string \"2\". The && operator requires both checks to pass, and seats > 0 excludes zero and negative numbers.",
+        "consequence": "Two seats satisfy both checks; zero fails the strict positive bound. This enforces the requirement at this function's boundary. Saved dependency evidence links checkout to this function, but that static evidence does not establish that every reservation path uses or honors its result.",
+        "steps": [
+          {
+            "title": "Locate the decision",
+            "text": "The exported function takes seats as its input and returns the validation result.",
+            "path": "src/reserve.js",
+            "line": 1
+          },
+          {
+            "title": "Reason through the boundary",
+            "text": "For 2, both the integer check and the positive check are true. For 0, the integer check is true but 0 > 0 is false, so the combined result is false.",
+            "path": "src/reserve.js",
+            "line": 2
+          }
+        ],
+        "questions": [
+          "The saved static evidence records an import in src/checkout.js:1 and a call from confirmReservation at line 3, but that file's contents were not supplied. Does checkout actually block reservation when canReserve returns false, and can any reservation path bypass that check?"
+        ],
+        "plan": [],
+        "prompt": ""
+      },
+      "responseId": "resp_0c04c7fb7e9d31c7016acadfc255f887d291589ae78486efd4",
+      "model": "gpt-6-astra",
+      "latencyMs": 7629,
+      "totalTokens": 1778,
+      "topicIdentity": "495c8df1b511a6356a5dc33e914b8058dbc9509ee55bc413a8e686376dd8c322"
+    },
+    "intention": {
+      "title": "Positive seat capacity",
+      "request": "Allow a reservation only for a positive integer number of seats.",
+      "expected": "Two seats can be reserved. Zero seats must be rejected.",
+      "origin": "manual",
+      "id": "5632e4e3-0f8e-45d5-a71a-20c806ad7b7f",
+      "revision": "25fe808462f5e876ae15419848c87264e14843f34a4230d63651dca9ce883987",
+      "createdAt": "2026-10-11T00:47:26.592Z",
+      "confirmedAt": "2026-10-11T00:48:35.453Z"
+    },
+    "selectedFiles": [
+      "src/reserve.js"
+    ],
+    "currentSnapshot": "de4af764ea705b000877fd8bda778d92320a1d488f4fdc35971429596d56e7ae",
+    "baseline": "e51d4c1c865ae839201b2aa1027d0ff1d21a88f1facf99827121cb884000ca9f"
+  },
+  "checkedBundleHashes": {
+    "extension.cjs": "09ec538227d9dae7e58cffb3065eef2c5d6a823f1d1e6b70f4cefc2578d85110",
+    "panel.js": "36b3d3988ae2f9ab0b12fded53f4aae22327fe32dd6df020f0f0af0b14486206",
+    "panel.css": "bde8e03eed575e2c17f7af3cd29df390e888432928dd6a4da0c66e53dad8ebc1"
+  },
+  "checks": {
+    "typecheck": "exit 0",
+    "lint": "exit 0",
+    "build": "exit 0",
+    "focused": {
+      "tests": 26,
+      "files": 5,
+      "startIST": "2026-10-11T06:44:29+05:30"
+    },
+    "full": {
+      "passed": 118,
+      "files": 26,
+      "durationSeconds": 23.69,
+      "startIST": "2026-10-11T06:44:34+05:30"
+    },
+    "offlineCoach": {
+      "passed": 6,
+      "failed": 0,
+      "errors": 0,
+      "liveRequests": 0
+    },
+    "impeccableChangedTargetDetector": "[]; exit 0",
+    "gitDiffCheck": "exit 0"
+  },
+  "preservation": {
+    "activeS7RecordsAndSourcesAndRootSeed": [
+      {
+        "file": "session.json",
+        "sha256": "b28d1128b800edda0ffeeddd7f79ab790e63f161b2f6c03449a13ba25cefe1bb",
+        "unchanged": true
+      },
+      {
+        "file": "gate-a.json",
+        "sha256": "a36403ddcc92a3c6960975cd076d9d1c784e30ff7938a93f96f74a5ff6cbbeb2",
+        "unchanged": true
+      },
+      {
+        "file": "approval.ts",
+        "sha256": "d41e8c0de5bd6baac8e64c1cd9f79ae7e2b5ea0f117e3a7b0f88ca142a1214db",
+        "unchanged": true
+      },
+      {
+        "file": "approval.ts",
+        "sha256": "eda0127427545d06c9e2ff88bd51d6022674f43dbd1ccbd56da5f6c8ae3e7fd3",
+        "unchanged": true
+      }
+    ],
+    "previousReleaseArtifacts": [
+      {
+        "name": "vadhyar-0.1.0-darwin-arm64.vsix",
+        "sha256": "e91caa95ecc1eec480a45f4a55cbc236ed492fdeb29c4028b32cc2282e90fb78",
+        "matchesPriorManifest": true
+      },
+      {
+        "name": "vadhyar-source.zip",
+        "sha256": "69446dd77dd7b9b4fa39243ab1fcbcf81fb763c7ee3e6ae42586a77e2f769c08",
+        "matchesPriorManifest": true
+      },
+      {
+        "name": "vadhyar-native-backup.mp4",
+        "sha256": "72e48f6b606126c5b0b907bef1c470e3d08b21db764b433b1035717196f8f966",
+        "matchesPriorManifest": true
+      }
+    ],
+    "projectGuideOldRecords": "backward-compatible automated load tests passed",
+    "credentials": "existing production SecretStorage get only; no store/delete/change"
+  },
+  "limits": [
+    "File-level static references do not prove that a particular condition executes.",
+    "Absent/dynamic/callback/framework edges and unreviewed source remain unknown.",
+    "Requirement/rationale connections are model proposals until confirmed, not executed verification.",
+    "Old records without topics load; accepted topic is additive.",
+    "No new cross-platform, four-theme/width or native keyboard matrix acceptance.",
+    "No human teaching-quality review, learning-gain or authorship claim.",
+    "Connected agent capture, native CodeTour playback and separate live coach quality evaluation remain unverified.",
+    "Current source is not packaged, committed, pushed or submitted."
+  ]
+}

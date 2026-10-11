@@ -1,10 +1,12 @@
-# Vadhyar Build Guide — proposed next mode
+# Vadhyar Build Guide — original plan and implementation boundary
+
+Current implementation: [Project Guide](project-guide.md) now supplies workspace snapshots, evolving intentions, reviewed source selection/grouping, structured explanations and copyable build prompts, with explicit existing-check execution. The original roadmap below remains context; it is not a claim that arbitrary-project teaching scenarios or live acceptance have shipped.
 
 ## Job
 
 Help a beginner turn one feature idea into a clear requirement, a small build plan and a focused prompt, then understand the code that results. The user chooses whether to send the prompt to their coding agent. Vadhyar provides guidance and records evidence; it has no code-editing authority.
 
-This extends the current post-build handover. Current confirmed milestones cover NovaDesk source explanation, checkpoints and prediction/counterexample. Hint, diff and full-rerun code is present as work in progress; that alone does not establish live acceptance. A general project guide, arbitrary PRD import and prompt-generation operation are not implemented.
+This extends the post-build handover. Recorded S5/S7 acceptance covers the prepared NovaDesk learning loop. General workspace guidance, Markdown intention import and prompt generation are now implemented with product and synthetic UI checks; fresh live API/native acceptance for that mode remains separate.
 
 ## Smallest useful flow
 

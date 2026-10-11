@@ -1,0 +1,8 @@
+{
+  "name": "vadhyar-seat-check-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/reservation.test.js"
+  }
+}

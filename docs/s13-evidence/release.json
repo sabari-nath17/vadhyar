@@ -1,0 +1,187 @@
+{
+  "recordedAt": "2026-10-10T23:46:01.784683+00:00",
+  "stage": "S13",
+  "scope": "NovaDesk-first local macOS Apple-silicon release candidate; Project Guide experimental",
+  "provenance": {
+    "branch": "codex/s0b-s1a",
+    "baseCommit": "21fdcc9fde4c8f7d4b16155b122939ad1c8700a1",
+    "remoteMainObserved": "866666a1cecb92f56752d9eec3c25d25cb0b64f1",
+    "workingTree": "mixed uncommitted",
+    "commitPushPublish": "none by this release pass",
+    "publicRelease": "Existing public 0.1.0 is the separately published S7 package, not this candidate"
+  },
+  "platform": {
+    "os": "macOS",
+    "target": "darwin-arm64",
+    "vscode": "1.140.0",
+    "buildNode": "26.7.0",
+    "npm": "11.19.0",
+    "python": "3.13.15",
+    "graphify": "0.9.84",
+    "embeddedRunnerNode": "24.21.0",
+    "vitest": "5.0.3"
+  },
+  "checks": {
+    "typecheck": 0,
+    "lint": 0,
+    "build": 0,
+    "fullTests": {
+      "passed": 106,
+      "files": 23,
+      "durationSeconds": 23.25,
+      "startIST": "2026-10-11 05:13:08"
+    },
+    "focusedS13": {
+      "passed": 6,
+      "files": 3
+    },
+    "offlineCoach": {
+      "passed": 6,
+      "failed": 0,
+      "errors": 0,
+      "openaiCalls": 0
+    },
+    "auditProduction": {
+      "vulnerabilities": 0
+    },
+    "auditDevelopment": {
+      "high": 7,
+      "affected": "Promptfoo and proxy/FTP dependencies",
+      "forceFix": "not run"
+    }
+  },
+  "install": {
+    "name": "Vadhyar-S13-isolated-trlo6ga4",
+    "workspace": "/var/folders/sf/n25n_n_95s3bcrss73_y4rph0000gn/T/vh-s13-installed-trlo6ga4/NovaDesk-S13-Profile",
+    "installExitCode": 0,
+    "extensionDevelopmentPath": false,
+    "reason": "Native automation only binds the primary Code process. Official --profile creates a fresh empty profile without reloading existing windows.",
+    "recordedAt": "2026-10-10T23:22:49.361586+00:00",
+    "beforeExtensions": [],
+    "afterExtensions": [
+      "sabari-nath17.vadhyar@0.1.0"
+    ]
+  },
+  "testedCandidateSha256": "166313c90e8cf8d9b9d69390e8c97c3e278775a9a7b3b41c2d4dc0c4e499e0e8",
+  "testedCodeAndLock": {
+    "dist/extension.cjs": {
+      "checkout": "7da867a375f0e95e5f89270857e852172c50fea704af2c1e227708232baa1ac8",
+      "installed": "7da867a375f0e95e5f89270857e852172c50fea704af2c1e227708232baa1ac8"
+    },
+    "dist/panel.js": {
+      "checkout": "fc06c81d6dc8909514ec82ed58402fff5b045302b5c7bba23d9d17f4c8db0f64",
+      "installed": "fc06c81d6dc8909514ec82ed58402fff5b045302b5c7bba23d9d17f4c8db0f64"
+    },
+    "dist/panel.css": {
+      "checkout": "bde8e03eed575e2c17f7af3cd29df390e888432928dd6a4da0c66e53dad8ebc1",
+      "installed": "bde8e03eed575e2c17f7af3cd29df390e888432928dd6a4da0c66e53dad8ebc1"
+    },
+    "package-lock.json": {
+      "checkout": "e2c33c640a75e377d1389280b86d303a3e27d00f178224b6793a6ca1bd4db873",
+      "installed": "e2c33c640a75e377d1389280b86d303a3e27d00f178224b6793a6ca1bd4db873"
+    }
+  },
+  "native": {
+    "sourceNavigation": true,
+    "graphify": {
+      "actualReferences": 4,
+      "actualRelationships": 3
+    },
+    "trust": "Exact disposable folder trusted through normal VS Code control, enforced",
+    "credentialBoundary": "Native SecretStorage presence only; named profiles share the existing application secret entry. No key read, printed or copied. Fully isolated user-data install succeeded but its UI was not targetable, so no native acceptance claimed for that instance.",
+    "explanation": {
+      "responseId": "resp_04510892b99a7d29016acac953e24887d2a9bd2d414cb67a1f",
+      "model": "gpt-6-astra",
+      "latencyMs": 9266,
+      "inputTokens": 1468,
+      "outputTokens": 364
+    },
+    "hint": {
+      "responseId": "resp_0db69dbd9acdeec9016acac9a32be887d2af937f0fbb9834c9",
+      "model": "gpt-6-astra",
+      "level": 1,
+      "latencyMs": 6015,
+      "inputTokens": 1053,
+      "outputTokens": 120
+    },
+    "editAuthorship": "Explicitly delegated developer acceptance edits, not learner-authorship or mastery evidence",
+    "timelineAndExport": {
+      "verifiedAt": "2026-10-10T23:43:57.651Z",
+      "timelineRows": 14,
+      "reportBytes": 9437,
+      "exportMatchesProduction": true,
+      "predictionsBeforeRuns": true,
+      "trustedFingerprintsMatch": true,
+      "currentRows": [
+        {
+          "id": "requirement-6705e110bc2989d4f5a4575682e5f091d9498c2e0e98a7e97ca535940902415d",
+          "kind": "requirement"
+        },
+        {
+          "id": "67200a9d-ad80-4c8a-9986-b677e7cbdb58",
+          "kind": "diff"
+        },
+        {
+          "id": "dd3c145f-f7cb-42ba-af3c-b102ea12c38c",
+          "kind": "ownership"
+        },
+        {
+          "id": "35911d0d-a092-4ab1-81a5-ff2108fb34d1",
+          "kind": "reflection"
+        }
+      ],
+      "fullRuns": [
+        {
+          "id": "547c8aeb-d91e-4dd9-9ff3-0d34883fce85",
+          "suite": "ownership",
+          "exitCode": 0,
+          "cases": 3,
+          "latencyMs": 518
+        },
+        {
+          "id": "dd3c145f-f7cb-42ba-af3c-b102ea12c38c",
+          "suite": "transfer",
+          "exitCode": 0,
+          "cases": 4,
+          "latencyMs": 405
+        }
+      ],
+      "hints": 1,
+      "temporaryAssertionCorrection": "Transfer fingerprint is the ordered concatenation of both trusted test files, not the transfer test file alone; incorrect temporary assertion failed before this production-helper check."
+    },
+    "restart": {
+      "windowClosedAndReopened": true,
+      "before": {
+        "sessionSha256": "931a47733b36eae056f1709632851c5877554ad4dea9614f40025814402a7642",
+        "gateSha256": "3bb425952658e3d1d4339b61b4f914fc737cecb0aa52dcda1e13d23a05678154",
+        "activityCount": 8,
+        "stage": "verify"
+      },
+      "after": {
+        "sessionSha256": "931a47733b36eae056f1709632851c5877554ad4dea9614f40025814402a7642",
+        "gateSha256": "3bb425952658e3d1d4339b61b4f914fc737cecb0aa52dcda1e13d23a05678154"
+      },
+      "newHostEvents": [
+        "2026-10-11 05:05:37.500 [info] Extension host with pid 853 started",
+        "2026-10-11 05:05:59.479 [info] ExtensionService#_doActivateExtension sabari-nath17.vadhyar, startup: false, activationEvent: 'onCommand:vadhyar.open'"
+      ],
+      "workspaceTrust": "Native Manage Workspace Trust: You trust this folder; exact folder only",
+      "codeTourPlayback": "Not verified: CodeTour is not installed in the empty named profile"
+    }
+  },
+  "backup": {
+    "path": "dist/vadhyar-native-backup.mp4",
+    "format": "labelled edited still-frame native recap",
+    "freshLiveReplay": false
+  },
+  "limits": [
+    "Human teaching-quality and learner-transfer study pending",
+    "Separate live Promptfoo evaluation unrun: its environment credentials/model absent",
+    "CodeTour playback unverified: extension not installed in intended profile",
+    "Connected agent capture unverified",
+    "Other OS/architectures unverified",
+    "Primary VS Code process not restarted in S13 to preserve S7; owned window and its extension host restarted",
+    "Final artifact hashes are in dist/release-manifest.json, outside packaged evidence to avoid a self-referential checksum"
+  ],
+  "deliveryGate": "Passed for the local macOS-arm64 installed core; final code/panel/lock hashes match rehearsed core. Final artifact checksums/install record are supplied separately in dist/release-manifest.json."
+}
