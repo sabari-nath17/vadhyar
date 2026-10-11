@@ -1,5 +1,9 @@
 # AI usage record
 
+## 2026-10-11T06:11:05+05:30 — V2 Phase 3 assistance
+
+Codex implemented the authorized presentation in the isolated branch using existing actions and platform dialog focus. In-thread review; no subagents, new requests or host changes. Two evidence regressions failed before correction; full 127/127 passes. Recorded preview is not live/API/learner evidence; human acceptance pending.
+
 ## 2026-10-11T06:00:14+05:30 — V2 Phase 2 implementation and checks
 
 Codex reused the current app handlers and v2 primitives, simplified learner copy and layout, added eight UI boundary tests, corrected test discovery, and used Computer Use to capture real bundle rendering and message payloads in a labelled recorded preview. No new API response or host operation is claimed. In-thread review; human and native theme acceptance remain pending. Existing parent work and main checkout preserved.

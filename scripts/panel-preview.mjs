@@ -9,12 +9,14 @@ const startLine = content.split('\n').findIndex(line => line.includes('function 
 if (!startLine || digest(content)!==record.seed.sourceHash) throw new Error('The recorded developer scenario no longer matches the seed. Rerecord it first.');
 const refs=[{id:'preview-source',path:'src/approval.ts',symbol:'canApproveMilestone',startLine,endLine:startLine+3,hash:digest(content)}];
 const graph={version:'UI specimen · not a new extraction',identity:digest('ui-example'),sourceHash:digest(content),extractedAt:record.capturedAt,refs,relationships:[]};
-const common={...record.seed,ownershipRun:undefined,counterexample:undefined,prediction:undefined,sourceHash:digest(content),refs,graph,graphCurrent:true,mappingConfirmed:true,referencesCurrent:true,checksSupported:true,checkpointCount:captured.checkpoints.filter(point=>point.hash===digest(content)).length,checkpointHash:digest(content),hasKey:true,baselineHash:digest(content),exercise:'ownership'};
+const evidence=[record.seed.counterexample,record.corrected.ownershipRun].map((run,index)=>({id:run.id,kind:index?'ownership':'counterexample',at:run.finishedAt,title:index?'Recorded corrected-source check':'Recorded seed counterexample',detail:index?`${run.cases.length} cases executed; ${run.cases.filter(item=>item.status==='passed').length} matched.`:`Code ${run.observedApproval?'allowed':'denied'} approval.`,sourceHash:run.sourceHash,requirementRevision:run.requirementRevision,current:false}));
+const common={...record.seed,ownershipRun:undefined,counterexample:undefined,prediction:undefined,evidence,sourceHash:digest(content),refs,graph,graphCurrent:true,mappingConfirmed:true,referencesCurrent:true,checksSupported:true,checkpointCount:captured.checkpoints.filter(point=>point.hash===digest(content)).length,checkpointHash:digest(content),hasKey:true,baselineHash:digest(content),exercise:'ownership'};
 const context={identity:digest(content+record.seed.requirement.text),model:'UI preview · not a live request',instruction:'Developer-only specimen. The real host supplies its bounded prompt.',text:JSON.stringify({requirement:{path:'vadhyar-requirement.md',text:record.seed.requirement.text},source:{path:'src/approval.ts',content},relationships:[]},null,2)};
 const correctedContent=content.replace("return actor.role === 'client';","return actor.role === 'client' && actor.id === _milestone.ownerClientId;");
 if(digest(correctedContent)!==record.corrected.sourceHash) throw new Error('Corrected source identity does not match the recorded runner result.');
 const diff={id:'recorded-developer-diff',type:'diff',predictionId:record.seed.prediction.id,recordedAt:record.capturedAt,sourceHash:record.corrected.sourceHash,requirementRevision:record.seed.requirement.revision,before:{content,hash:digest(content)},after:{content:correctedContent,hash:digest(correctedContent)}};
 const scenes={
+ home:{...common,confirmed:false,stage:'confirm'},
  confirm:{...common,confirmed:false,stage:'confirm'},
  understand:{...common,stage:'understand',mappingConfirmed:false},
  sharing:{...common,stage:'understand',preview:context},
@@ -27,6 +29,7 @@ const scenes={
  loading:{...common,stage:'understand',preview:context,busy:true},
  stale:{...common,stage:'understand',contextStale:true,referencesCurrent:false,graphCurrent:false},
  error:{...common,stage:'understand',error:'Preview example: explanation request could not complete.'},
+ project:{refs:[],busy:false,project:{name:'Vadhyar UI specimen',busy:false,started:false,fileCount:0,omitted:[],changes:[],intents:[],files:[],selectedFiles:[],captureConnected:false}},
 };
 const output='dist/gallery/preview';await mkdir(output,{recursive:true});
 for(const file of await readdir('dist')) if(/\.(js|css|woff2|png)$/.test(file)) await cp(`dist/${file}`,`${output}/${file}`);

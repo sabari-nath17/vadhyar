@@ -1,5 +1,9 @@
 # Vadhyar slice task record
 
+## 2026-10-11T06:11:05+05:30 — V2 Phase 3 complete
+
+Baseline a92eb5d. Path/start/completion/evidence, existing transfer and simpler separate Project Guide presentation implemented. Full 127/127; all immutable hashes and original action types preserved. docs/design-v2/phase-3/README.md. Next: Phase 4 gates, motion and local sound; no main merge or push.
+
 ## 2026-10-11T06:00:14+05:30 — V2 Phase 2 completed
 
 Baseline 29db3ef; all 41 literal action types retained, immutable host hashes intact. Full 123/123, typecheck/lint/build pass. Evidence docs/design-v2/phase-2/README.md. Next: Phase 3 path, start/completion/evidence navigation and simpler Project Guide presentation using its existing actions. Native isolated window still needs acceptance; no main checkout merge or push.

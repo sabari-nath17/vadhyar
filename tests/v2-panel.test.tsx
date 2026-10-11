@@ -7,8 +7,9 @@ import { steps } from '../src/panel/workflow.js';
 import { lessonSteps } from '../src/panel/v2/evidence.js';
 import { ProgressSegments, Task } from '../src/panel/v2/components.js';
 import { SharingPreview, SourceLinks } from '../src/panel/ui.js';
+import { PathHome, Completion, EvidenceReview } from '../src/panel/home.js';
 import { panelAction } from '../src/shared.js';
-import type { SourceRef } from '../src/shared.js';
+import type { SourceRef, PanelState } from '../src/shared.js';
 
 const render = (element: Parameters<typeof renderToStaticMarkup>[0]) => renderToStaticMarkup(element);
 describe('V2 panel keeps real host boundaries and simple task slots', () => {
@@ -52,7 +53,22 @@ describe('V2 panel keeps real host boundaries and simple task slots', () => {
   it('keeps all baseline UI actions available', () => {
     const coverage=JSON.parse(readFileSync('docs/design-v2/phase-2/action-coverage.json','utf8'));
     expect(coverage.lost).toEqual([]);
-    for(const name of coverage.before) expect(coverage.after).toContain(name);
+    const files=['app','home','project','change','results','understand','reuse-controls','ui'].map(name=>readFileSync(`src/panel/${name}.tsx`,'utf8')).join('\n');
+    for(const name of coverage.before) expect(files,name).toContain(`'${name}'`);
+  });
+  it('shows the user rule and honest feature availability on the path', () => {
+    const state = {refs:[],busy:false,requirement:{title:'My own booking rule',text:'Only the owner may cancel.',checksAvailable:false}} as PanelState;
+    const markup=render(<PathHome state={state} start={()=>{}} proof={()=>{}} takeBreak={()=>{}} challenge={()=>{}} />);
+    expect(markup).toContain('My own booking rule');expect(markup).toContain('Explanation only');expect(markup).not.toContain('NovaDesk');
+    expect(markup).toContain('Vadhyar: Open Project Guide');expect(markup).not.toContain('PLANNED');
+    expect(markup).not.toContain('Found the bug');expect(markup).not.toContain('Fixed it yourself');
+  });
+  it('withholds completion claims and export without current recorded evidence', () => {
+    const record=JSON.parse(readFileSync('docs/design-v2/phase-0/recorded-checks.json','utf8'));
+    const markup=render(<Completion state={{...record.corrected,ownershipCurrent:false}} home={()=>{}} proof={()=>{}} challenge={()=>{}} />);
+    expect(markup).toContain('result needs a refresh');expect(markup).not.toContain('All cases match');expect(markup).not.toContain('Try the next rule');
+    const evidence=render(<EvidenceReview state={{refs:[],busy:false}} send={()=>{}} back={()=>{}} />);
+    expect(evidence).toContain('No saved proof');expect(evidence).toContain('aria-disabled="true"');
   });
 
 });

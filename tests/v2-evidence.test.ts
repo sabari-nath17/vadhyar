@@ -4,6 +4,8 @@ import type { PanelState } from '../src/shared.js';
 import { lessonSteps, recordedSummary } from '../src/panel/v2/evidence.js';
 
 const record = JSON.parse(readFileSync(new URL('../docs/design-v2/phase-0/recorded-checks.json', import.meta.url), 'utf8')) as { seed: PanelState; corrected: PanelState };
+record.seed.ownershipCurrent = true;
+record.corrected.ownershipCurrent = true;
 describe('V2 recorded-evidence presentation', () => {
   it('derives registry length and actual matched case counts', () => {
     expect(lessonSteps).toHaveLength(6);
@@ -18,6 +20,21 @@ describe('V2 recorded-evidence presentation', () => {
     if (state.ownershipRun?.kind !== 'completed') throw new Error('Recorded runner evidence missing.');
     state.ownershipRun.cases.pop();
     expect(recordedSummary(state).complete).toBe(false);
+  });
+  it('requires the host current-check flag even when source hashes match', () => {
+    expect(recordedSummary({ ...record.corrected, ownershipCurrent: undefined }).passed).toBe(false);
+    expect(recordedSummary({ ...record.corrected, ownershipCurrent: false }).earned).not.toContain('all-cases-match');
+  });
+  it('uses the recorded transfer cases and rejects duplicate or contradictory results', () => {
+    const state = structuredClone(record.corrected);
+    if (state.ownershipRun?.kind !== 'completed') throw new Error('Recorded runner evidence missing.');
+    state.ownershipRun.suiteId = 'transfer';
+    state.ownershipRun.cases.push({id:'owner-client-archived',expectedApproval:false,observedApproval:false,status:'passed'});
+    expect(recordedSummary(state)).toMatchObject({passed:true,total:4,matched:4});
+    state.ownershipRun.cases[3] = {...state.ownershipRun.cases[0]};
+    expect(recordedSummary(state).complete).toBe(false);
+    state.ownershipRun.cases[3] = {id:'owner-client-archived',expectedApproval:false,observedApproval:true,status:'passed'};
+    expect(recordedSummary(state).passed).toBe(false);
   });
   it('never infers independent authorship or source-open history', () => {
     expect(recordedSummary(record.corrected).earned).not.toContain('fixed-it-yourself');

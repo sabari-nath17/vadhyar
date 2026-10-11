@@ -29,6 +29,10 @@ export function requirementProse(text: string): string {
   return text.split('\n').map(line => line.trim()).find(line => line && !/^(#|ID:|Revision:|Source(?: revision)?:|[-*] )/.test(line)) ?? 'Refresh the project to read its requirement.';
 }
 
+export function requirementTitle(requirement: PanelState['requirement']): string {
+  return requirement ? requirement.title || requirement.text.split('\n').find(line => line.startsWith('# '))?.slice(2).trim() || requirementProse(requirement.text) : 'Read your rule';
+}
+
 export function completedSteps(state: PanelState): Step[] {
   const done: Step[] = state.confirmed ? ['confirm'] : [];
   if (state.explanation && state.explanationCurrent) done.push('understand');

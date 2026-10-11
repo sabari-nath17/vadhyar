@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { PanelState } from '../shared.js';
 import { Task } from './v2/components.js';
+import { recordedSummary } from './v2/evidence.js';
 import { currentRun } from './workflow.js';
 import { Control, Icon, type Send } from './ui.js';
 
@@ -21,20 +22,21 @@ export function Observation({ state }: { state: PanelState }) {
     <p className="vd-muted">An observed result does not establish understanding.</p>
   </>;
 }
-export function Verification({ state, send }: { state: PanelState; send: Send }) {
+export function Verification({ state, send, complete }: { state: PanelState; send: Send; complete: () => void }) {
   const run = state.ownershipRun;
   const current = currentRun(state);
-  return <Task title="Does your change follow the rule?" pose={current && run?.kind === 'completed' && run.requirementPassed ? 'aha' : 'pointing'} action={<><Control className={state.exercise !== 'transfer' && current && run?.kind === 'completed' && run.requirementPassed ? undefined : 'vd-primary'} disabled={state.busy || state.contextStale || state.checksSupported !== true || !state.diff || state.diff.sourceHash !== state.sourceHash} reason="Open the saved comparison and restore trusted checks first." onClick={() => send({ type: 'runOwnership' })}>{state.ownershipRunning ? 'Checking your code…' : 'Check again'}</Control>{state.exercise !== 'transfer' && current && run?.kind === 'completed' && run.requirementPassed && <Control className="vd-primary" disabled={state.busy} onClick={() => send({ type: 'startTransfer' })}>Try the next rule</Control>}</>}>
+  const summary = recordedSummary(state);
+  return <Task title="Does your change follow the rule?" pose={summary.passed ? 'aha' : 'pointing'} action={<><Control className={summary.passed ? undefined : 'vd-primary'} disabled={state.busy || state.contextStale || state.checksSupported !== true || !state.diff || state.diff.sourceHash !== state.sourceHash} reason="Open the saved comparison and restore trusted checks first." onClick={() => send({ type: 'runOwnership' })}>{state.ownershipRunning ? 'Checking your code…' : 'Check again'}</Control>{summary.passed && <Control className="vd-primary" onClick={complete}>See my summary</Control>}</>}>
     <p>These are the results from the saved code.</p>
     {!run && <p>No full check result yet. Open the saved diff in Change, then run the ownership checks.</p>}
     {run?.kind === 'completed' && <section className={`vd-executed ${current && run.requirementPassed ? 'vd-pass' : current ? 'vd-fail' : 'vd-stale'} vd-reveal`}>
       <p className="vd-label">Executed · {current ? 'current code and checks' : 'earlier source or checks'}</p>
       <h3><Icon name={run.requirementPassed ? 'check' : 'fail'} />{!current ? 'Result needs a refresh' : run.requirementPassed ? 'Checks passed' : 'Checks break the rule'}</h3>
       <ul className="vd-cases">{run.cases.map(item => <li key={item.id}><span className={item.status === 'passed' ? 'vd-pass-text' : 'vd-fail-text'}><Icon name={item.status === 'passed' ? 'check' : 'fail'} /> {item.status === 'passed' ? 'Matches rule' : 'Breaks rule'}</span><strong>{item.id.replaceAll('-', ' ')}</strong><span>Required: {item.expectedApproval ? 'allow' : 'deny'} · Observed: {item.observedApproval ? 'allow' : 'deny'}</span></li>)}</ul>
-      <p>{run.cases.length} cases executed, none skipped. {state.hints?.length ?? 0} hints used.</p>
+      <p>{run.cases.length} cases executed, none skipped. Coach hints: {summary.hints ?? 'not recorded'}.</p>
     </section>}
     {run && run.kind !== 'completed' && <div className="vd-banner vd-fail" role="alert"><h3>Checks could not run</h3><p>{run.message}</p><p>No learner-answer verdict was recorded.</p></div>}
-    <p className="vd-muted">Passing these cases is evidence of behavior, not mastery. {state.exercise === 'transfer' ? `${state.hints?.length ?? 0} coach hints recorded in this transfer. External assistance is unknown.` : 'Try the archived-milestone rule next, using your own edit.'}</p>
+    <p className="vd-muted">Passing these cases is evidence of behavior, not mastery. Outside help is unknown.</p>
     <Reflection state={state} send={send} />
   </Task>;
 }

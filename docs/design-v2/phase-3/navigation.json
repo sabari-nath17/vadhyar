@@ -1,0 +1,10 @@
+{
+  "focusRestored": {
+    "focused": "Continue my rule",
+    "modal": false
+  },
+  "draft": {
+    "reason": "My unsaved thought stays while I look around.",
+    "selected": "deny"
+  }
+}

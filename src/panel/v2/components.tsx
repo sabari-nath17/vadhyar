@@ -65,3 +65,16 @@ export function Disclosure({ title, children }: { title: string; children: React
 export function Task({ title, pose, children, action }: { title: string; pose?: Pose; children: ReactNode; action: ReactNode }) {
   return <><div className="vd2-task-scroll"><div className="vd2-task-layout"><div className="vd2-task-copy"><h2 tabIndex={-1}>{title}</h2>{children}</div>{pose && <aside className="vd2-task-guide"><Guide pose={pose} large /></aside>}</div></div><ActionBar>{action}</ActionBar></>;
 }
+
+export function StartSheet({ title, children, action, onClose }: { title: string; children: ReactNode; action: ReactNode; onClose: () => void }) {
+  const sheet = useRef<HTMLDialogElement>(null);
+  const id = useId();
+  useEffect(() => {
+    const previous = document.activeElement;
+    const dialog = sheet.current;
+    dialog?.showModal();
+    dialog?.querySelector<HTMLElement>('h2')?.focus();
+    return () => { dialog?.close(); if (previous instanceof HTMLElement && previous.isConnected) previous.focus(); };
+  }, []);
+  return <dialog ref={sheet} className="vd2-startsheet" aria-labelledby={id} onCancel={event => { event.preventDefault(); onClose(); }}><div className="vd2-start-copy"><Guide pose="welcome" /><h2 id={id} tabIndex={-1}>{title}</h2>{children}</div><ActionBar>{action}</ActionBar></dialog>;
+}

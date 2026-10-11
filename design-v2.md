@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | 2.1.0 |
+| **Version** | 2.2.0 |
 | **Scope** | The Vadhyar VS Code panel (React): path home, lessons, feedback, completion, evidence, states, assets |
 | **Audience** | Codex or any engineer building the UI. You MAY generate images, SVG, sounds and scaffolding. You MUST NOT change host behavior. |
 | **Relationship to `design.md` 1.1.0** | v2 **adds an experience layer** on top of it. Where they conflict, v2 wins (see §15). Everything not mentioned here (consent, state catalog, accessibility, editor integration, logo placement) is inherited unchanged. §4 repeats the essentials so this file works alone. |
@@ -308,9 +308,11 @@ No owl or lookalike. No Feather or duolingo-sans. No hearts, XP, streak, rank or
 - Confirm sheet tint and lip colors pass 4.5:1 in the real panel.
 - Decide when streaks or return reminders become real (needs session resume).
 - Path content beyond Rule 1 depends on Transfer and Build Guide support.
-- Phases 0–2, the §10 vector set and lesson shell are implemented in an isolated checkout. Browser gallery checks are recorded; native lesson integration and human usability acceptance remain unverified.
+- Phases 0–3, the §10 vector set and lesson shell are implemented in an isolated checkout. Browser gallery checks are recorded; native lesson integration and human usability acceptance remain unverified.
 
 ## 18. Changelog
+
+- **2.2.0**: path, native start sheet, evidence-bounded completion, proof review and simpler existing Project Guide.
 
 - **2.1.0**: six-step lesson shell and real action wiring; plain task copy, fixed prediction form fit, local SVG packaging; current host capabilities preserved.
 - **2.0.1**: Phase 0/1 implementation and accessibility adjustments; plain-language labels; inert planned nodes; no invented execution order or authorship statistics. Assets generated before screens as explicitly requested.
@@ -346,3 +348,11 @@ No subagents are allowed in this side conversation. Code review uses the Superpo
 - The current Explain contract supplies `summary` and source-linked `steps`, not separately classified Purpose/Logic/Result fields. Show those actual fields and preserve walkthrough navigation; do not fabricate categories or measured consequences.
 - Existing Project Guide stays available through the editor's existing command; the NovaDesk panel has no action for opening it. Phase 3 must explain that entrypoint rather than invent a working host message.
 - Browser previews are labelled recorded/developer specimens. No live API/storage/runner behavior is inferred from them. Native host/theme acceptance is still required before a native QA claim.
+
+### Phase 3 rulings
+
+- Existing transfer and Project Guide predate this UI change: transfer is locked by its actual prerequisite, not labelled Planned; the separate guide uses the current editor command. No new roadmap feature is invented to fill a path.
+- Home and screen navigation are local presentation state. Saved stage/records retain the existing host storage. Closing a lesson retains the draft while the panel remains open; it does not newly persist unsaved text.
+- Completion requires the host trusted-current flag, matching inputs and the complete recorded ownership/transfer case set. Unknown hints stay unknown. No independent-authorship or source-open sticker is inferred.
+- The initial sample has no title field; the path reads its actual Markdown heading. User rule titles take precedence.
+- Project Guide has four local tasks while keeping all existing actions, reviewed sharing, native check confirmation and original state guards.

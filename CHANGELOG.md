@@ -1,5 +1,9 @@
 # Change log
 
+## 2026-10-11T06:11:05+05:30 — V2 Phase 3
+
+Path, start/resume, completion, evidence and Project Guide task presentation. Source: panel app/home/project/results/workflow and V2 evidence/components/CSS. Reason: one clear task without losing current features. Typecheck/lint/build, focused 21/21, full 127/127; 36 captures. Native acceptance and human usability pending.
+
 ## 2026-10-11T06:00:14+05:30 — V2 Phase 2 lesson shell
 
 Changed the panel and its existing UI callers to one task at a time with plain labels, visible footer actions and safe common controls. Retained all 41 literal actions; host/shared/project/fixture hashes unchanged against 29db3ef. Added local SVG build/package inclusion, TSX test discovery and developer-only recorded preview. Typecheck/lint/build and full 123/123 pass; nine screenshot views and 36 gate/task checks. Fixed prediction overflow; actual native window acceptance remains unverified. No API call or push.

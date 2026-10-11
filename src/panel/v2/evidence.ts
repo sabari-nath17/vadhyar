@@ -7,21 +7,21 @@ export const proofLabels = {
   'found-the-bug': 'Found the bug',
   'fixed-it-yourself': 'Fixed it yourself',
   'all-cases-match': 'All cases match',
-  'no-hints': 'No hints',
+  'no-hints': 'No coach hints',
 } as const;
 export type Proof = keyof typeof proofLabels;
 
 export function recordedSummary(state: PanelState) {
   const run = state.ownershipRun;
-  const current = run?.kind === 'completed' && run.sourceHash === state.sourceHash && run.requirementRevision === state.requirement?.revision;
+  const current = state.ownershipCurrent === true && !state.contextStale && run?.kind === 'completed' && run.sourceHash === state.sourceHash && run.requirementRevision === state.requirement?.revision;
   const cases = run?.kind === 'completed' ? run.cases : [];
-  const expectedIds = ['owner-client-active', 'other-client-active', 'freelancer-active'];
+  const expectedIds = ['owner-client-active', 'other-client-active', 'freelancer-active', ...(run?.suiteId === 'transfer' ? ['owner-client-archived'] : [])];
   const complete = current && run?.kind === 'completed' && cases.length === expectedIds.length && expectedIds.every(id => cases.some(item => item.id === id)) && cases.every(item => (item.status === 'passed') === (item.observedApproval === item.expectedApproval));
   const passed = Boolean(complete && run?.kind === 'completed' && run.requirementPassed && run.exitCode === 0 && cases.every(item => item.status === 'passed'));
   const prediction = state.prediction;
   const observed = state.counterexample;
-  const predictedFirst = Boolean(prediction && observed && prediction.id === observed.predictionId && prediction.sourceHash === observed.sourceHash && prediction.requirementRevision === observed.requirementRevision && Date.parse(prediction.savedAt) <= Date.parse(observed.startedAt));
-  const hints = state.hints?.filter(item => item.predictionId === prediction?.id).length;
+  const predictedFirst = Boolean(prediction && observed && prediction.id === observed.predictionId && prediction.sourceHash === observed.sourceHash && prediction.requirementRevision === observed.requirementRevision && prediction.requirementRevision === state.requirement?.revision && Date.parse(prediction.savedAt) <= Date.parse(observed.startedAt));
+  const hints = state.hints?.filter(item => item.predictionId === prediction?.id && item.requirementRevision === state.requirement?.revision).length;
   const earned: Proof[] = [];
   if (predictedFirst) earned.push('predicted-first');
   if (passed) earned.push('all-cases-match');

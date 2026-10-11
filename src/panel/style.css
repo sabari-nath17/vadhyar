@@ -73,3 +73,21 @@ blockquote { margin: 8px 0 0; padding-inline-start: 12px; border-left: 2px solid
 #prediction-form fieldset { gap: 8px; }
 #prediction-form .vd2-answer { min-height: 48px; padding: 8px 12px; }
 #prediction-form textarea { height: 64px; }
+.vd2-startsheet { inset: auto 0 0; margin: 0 auto; width: min(100%,720px); max-height: min(90dvh,800px); padding: 0; background: var(--canvas); color: var(--text); border: 2px solid var(--border); border-radius: 16px 16px 0 0; overflow-y: auto; animation: vd2-sheet var(--sheet) ease-out; }
+.vd2-startsheet::backdrop { background: var(--canvas); opacity: .88; }
+.vd2-start-copy { padding: 16px; display: grid; gap: 16px; }
+.vd2-start-copy .vd2-guide { justify-self: center; }
+.vd2-home-intro { display: flex; gap: 16px; align-items: center; }
+.vd2-home-intro p { max-width: 26ch; }
+.vd2-home-intro img { flex: 0 0 96px; }
+.vd2-path { display: grid; justify-items: center; gap: 24px; padding-block: 24px; }
+.vd2-path > :nth-child(2n) { margin-left: 40px; }
+.vd2-path > :nth-child(2n+1) { margin-right: 40px; }
+.vd2-path-info { max-width: 260px; display: grid; gap: 8px; text-align: center; }
+.vd2-step-chips, .vd2-proof-list { display: flex; flex-wrap: wrap; gap: 12px; }
+.vd2-evidence-list { padding: 0; margin: 0; list-style: none; display: grid; gap: 24px; }
+.vd2-evidence-list li { display: grid; gap: 12px; border-bottom: 2px solid var(--border); padding-bottom: 16px; }
+.vd2-project-nav { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 4px; }
+.vd2-project-nav button { font-size: 13px; padding: 8px 4px; }
+.vd2-project-nav [aria-current] { border-color: var(--selection-border); background: var(--selected); color: var(--text); }
+#project-intent { display: grid; gap: 8px; }

@@ -20,8 +20,8 @@ function Gallery() {
   const [gate, setGate] = useState('No key');
   const feedbackControl = useRef<HTMLSelectElement>(null);
   function closeSheet() { setSheet(false); feedbackControl.current?.focus(); }
-  const seed = recordedSummary(record.seed as PanelState);
-  const corrected = recordedSummary(record.corrected as PanelState);
+  const seed = recordedSummary({ ...record.seed, ownershipCurrent: true } as PanelState);
+  const corrected = recordedSummary({ ...record.corrected, ownershipCurrent: true } as PanelState);
   const example = () => setNotice('Gallery interaction only. No host action, check or API request was made.');
   function themeChange(value: string) { setTheme(value); document.body.className = `vd-theme-${value}`; }
   let body: ReactNode;
