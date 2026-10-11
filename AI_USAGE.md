@@ -1,5 +1,9 @@
 # AI usage record
 
+## 2026-10-11T07:13:40+05:30 — Pinned shell
+
+Codex applied Superpowers/Claude Superpowers test-first discipline: two new shell assertions failed before implementation, then focused 19/19 passed. Browser measured the real renderer at four widths and three themes; the locked segment sent no unauthorized action. The full test run had three 5-second timeouts, preserved in the report. No independent/native review.
+
 ## 2026-10-11T07:04:41+05:30 — Simplification baseline
 
 Codex read the new UI simplification attachment and traced current presentation controls. The baseline records reachability gaps rather than claiming they are fixed. New browser/CI parity checks remain upcoming. No native or independent human review claimed.

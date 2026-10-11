@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, type ButtonHTMLAttributes, type ReactNode, type KeyboardEvent as ReactKeyboardEvent } from 'react';
+import { useEffect, useId, useRef, useState, type ButtonHTMLAttributes, type ReactNode, type KeyboardEvent as ReactKeyboardEvent } from 'react';
 import { lessonSteps, proofLabels, type Proof } from './evidence.js';
 
 export type Tone = 'ok' | 'bad' | 'hint';
@@ -31,8 +31,12 @@ export function StickerButton({ variant = 'secondary', unavailable, reason, busy
 
 export function ActionBar({ children }: { children: ReactNode }) { return <footer className="vd2-actionbar">{children}</footer>; }
 
-export function ProgressSegments({ current, done, available, busy = false, onChoose, onClose }: { current: number; done: readonly number[]; available?: readonly number[]; busy?: boolean; onChoose: (index: number) => void; onClose: () => void }) {
-  return <nav className="vd2-progress" aria-label="Lesson progress"><button className="vd2-iconbutton" aria-label="Close lesson" onClick={onClose}><Glyph name="close" /></button><div><p className="vd2-label">Step {current + 1} of {lessonSteps.length} · {lessonSteps[current]}</p><div className="vd2-segments">{lessonSteps.map((name, index) => <button key={name} className={`vd2-segment ${current === index ? 'vd2-current' : done.includes(index) ? 'vd2-done' : ''}`} aria-current={current === index ? 'step' : undefined} aria-label={`${name}${busy || !(available ?? [...done, current]).includes(index) ? ' — available after earlier steps' : ''}`} aria-disabled={busy || !(available ?? [...done, current]).includes(index) || undefined} onClick={() => { if (!busy && (available ?? [...done, current]).includes(index)) onChoose(index); }}><span /></button>)}</div></div></nav>;
+export function ProgressSegments({ current, done, available, busy = false, onChoose, onClose, onLocked }: { current: number; done: readonly number[]; available?: readonly number[]; busy?: boolean; onChoose: (index: number) => void; onClose: () => void; onLocked?: (index: number) => void }) {
+  const [message, setMessage] = useState('');
+  return <><nav className="vd2-progress" aria-label="Lesson progress"><button className="vd2-iconbutton" aria-label="Close lesson" onClick={onClose}><Glyph name="close" /></button><div><p className="vd2-label">{lessonSteps[current]} · {current + 1} of {lessonSteps.length}</p><div className="vd2-segments">{lessonSteps.map((name, index) => {
+    const locked = busy || !(available ?? [...done, current]).includes(index);
+    return <button key={name} className={`vd2-segment ${current === index ? 'vd2-current' : done.includes(index) ? 'vd2-done' : ''}`} aria-current={current === index ? 'step' : undefined} aria-label={`${name}${locked ? ' — available after earlier steps' : ''}`} data-locked={locked || undefined} onClick={() => { if (!locked) onChoose(index); else if (onLocked) onLocked(index); else setMessage(busy ? 'Finish the current operation first.' : `${name} is available after earlier steps.`); }}><span /></button>;
+  })}</div></div></nav>{message && <p role="status" className="vd2-caption">{message}</p>}</>;
 }
 
 export function AnswerCard({ label, number, name, value, selected, choose }: { label: string; number: number; name: string; value: string; selected: boolean; choose: () => void }) {

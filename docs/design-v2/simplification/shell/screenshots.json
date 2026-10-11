@@ -1,0 +1,158 @@
+[
+  {
+    "width": 320,
+    "theme": "light",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/shell/confirm-320-light.jpg",
+    "measured": {
+      "action": 66,
+      "appHeight": 640,
+      "overflow": false,
+      "task": 430,
+      "top": 136,
+      "width": 320
+    }
+  },
+  {
+    "width": 320,
+    "theme": "dark",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/shell/confirm-320-dark.jpg",
+    "measured": {
+      "action": 66,
+      "appHeight": 640,
+      "overflow": false,
+      "task": 430,
+      "top": 136,
+      "width": 320
+    }
+  },
+  {
+    "width": 320,
+    "theme": "hc",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/shell/confirm-320-hc.jpg",
+    "measured": {
+      "action": 66,
+      "appHeight": 640,
+      "overflow": false,
+      "task": 430,
+      "top": 136,
+      "width": 320
+    }
+  },
+  {
+    "width": 360,
+    "theme": "light",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/shell/confirm-360-light.jpg",
+    "measured": {
+      "action": 66,
+      "appHeight": 640,
+      "overflow": false,
+      "task": 430,
+      "top": 136,
+      "width": 360
+    }
+  },
+  {
+    "width": 360,
+    "theme": "dark",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/shell/confirm-360-dark.jpg",
+    "measured": {
+      "action": 66,
+      "appHeight": 640,
+      "overflow": false,
+      "task": 430,
+      "top": 136,
+      "width": 360
+    }
+  },
+  {
+    "width": 360,
+    "theme": "hc",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/shell/confirm-360-hc.jpg",
+    "measured": {
+      "action": 66,
+      "appHeight": 640,
+      "overflow": false,
+      "task": 430,
+      "top": 136,
+      "width": 360
+    }
+  },
+  {
+    "width": 720,
+    "theme": "light",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/shell/confirm-720-light.jpg",
+    "measured": {
+      "action": 66,
+      "appHeight": 640,
+      "overflow": false,
+      "task": 430,
+      "top": 136,
+      "width": 720
+    }
+  },
+  {
+    "width": 720,
+    "theme": "dark",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/shell/confirm-720-dark.jpg",
+    "measured": {
+      "action": 66,
+      "appHeight": 640,
+      "overflow": false,
+      "task": 430,
+      "top": 136,
+      "width": 720
+    }
+  },
+  {
+    "width": 720,
+    "theme": "hc",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/shell/confirm-720-hc.jpg",
+    "measured": {
+      "action": 66,
+      "appHeight": 640,
+      "overflow": false,
+      "task": 430,
+      "top": 136,
+      "width": 720
+    }
+  },
+  {
+    "width": 760,
+    "theme": "light",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/shell/confirm-760-light.jpg",
+    "measured": {
+      "action": 66,
+      "appHeight": 640,
+      "overflow": false,
+      "task": 430,
+      "top": 136,
+      "width": 760
+    }
+  },
+  {
+    "width": 760,
+    "theme": "dark",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/shell/confirm-760-dark.jpg",
+    "measured": {
+      "action": 66,
+      "appHeight": 640,
+      "overflow": false,
+      "task": 430,
+      "top": 136,
+      "width": 760
+    }
+  },
+  {
+    "width": 760,
+    "theme": "hc",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/shell/confirm-760-hc.jpg",
+    "measured": {
+      "action": 66,
+      "appHeight": 640,
+      "overflow": false,
+      "task": 430,
+      "top": 136,
+      "width": 760
+    }
+  }
+]

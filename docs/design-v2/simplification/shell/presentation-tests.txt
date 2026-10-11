@@ -1,0 +1,42 @@
+
+> vadhyar@0.1.0 test
+> vitest run --reporter=verbose tests/v2-simplification.test.tsx tests/v2-panel.test.tsx tests/v2-foundations.test.ts tests/v2-evidence.test.ts
+
+
+ RUN  v5.0.3 /Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2
+
+ ✓ tests/v2-foundations.test.ts > V2 token and authored asset boundaries > keeps light text and UI borders above their contrast floor 2ms
+ ✓ tests/v2-foundations.test.ts > V2 token and authored asset boundaries > keeps dark text and UI borders above their contrast floor 1ms
+ ✓ tests/v2-foundations.test.ts > V2 token and authored asset boundaries > ships the full inert SVG asset set without scripts, links or baked text 10ms
+ ✓ tests/v2-foundations.test.ts > V2 token and authored asset boundaries > includes the descending hand in both square brand emblems 0ms
+ ✓ tests/v2-foundations.test.ts > V2 token and authored asset boundaries > redefines the surface-dependent selected color inside the dark theme 0ms
+ ✓ tests/v2-evidence.test.ts > V2 recorded-evidence presentation > derives registry length and actual matched case counts 3ms
+ ✓ tests/v2-evidence.test.ts > V2 recorded-evidence presentation > withholds achievements for stale or incomplete verification 1ms
+ ✓ tests/v2-evidence.test.ts > V2 recorded-evidence presentation > requires the host current-check flag even when source hashes match 0ms
+ ✓ tests/v2-evidence.test.ts > V2 recorded-evidence presentation > uses the recorded transfer cases and rejects duplicate or contradictory results 0ms
+ ✓ tests/v2-evidence.test.ts > V2 recorded-evidence presentation > never infers independent authorship or source-open history 1ms
+ ✓ tests/v2-evidence.test.ts > V2 recorded-evidence presentation > requires a correlated prediction saved before execution 1ms
+ ✓ tests/v2-simplification.test.tsx > simplified shell retains the current product > pins the rule and code-evidence control above the lesson 3ms
+ ✓ tests/v2-simplification.test.tsx > simplified shell retains the current product > keeps locked segments as interactive explanations, not silent disabled controls 7ms
+ ✓ tests/v2-simplification.test.tsx > simplified shell retains the current product > records all supplied features plus the newer current controls before UI changes 2ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > preserves every current host, contract, project controller and fixture byte 8ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > uses one registry while keeping the host stage IDs 1ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > uses actual allowed stages rather than inventing an unlocked sequence 6ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > separates scrollable task content from the visible action 1ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > keeps exact sharing context and never enables a malformed preview 2ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > renders actual source links and preserves their stale gate 1ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > accepts actual browser message records without running a case before save acknowledgement 4ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > keeps all baseline UI actions available 3ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > shows the user rule and honest feature availability on the path 2ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > withholds completion claims and export without current recorded evidence 3ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > shows the missing-key and stale-code recovery without an automatic send 2ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > preserves the keyboard guard, typed newline and serialized prediction boundary 1ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > includes reduced-motion overrides and only local fonts/art 1ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > opens Snake immediately from the path while retaining the quiet settings disclosure 5ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > keeps the generated character ink on its light face in every theme 0ms
+ ✓ tests/v2-panel.test.tsx > V2 panel keeps real host boundaries and simple task slots > explains the real project features before the optional practice example 5ms
+
+ Test Files  4 passed (4)
+      Tests  30 passed (30)
+   Start at  07:14:30
+   Duration  405ms (import 50%, transform 36%, tests 12%, worker 2%)

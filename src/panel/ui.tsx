@@ -5,7 +5,7 @@ import type { ContextPreview, PanelAction, SourceRef } from '../shared.js';
 
 export type Send = (action: PanelAction) => void;
 export function Control({ disabled, reason = 'Available after the current operation finishes.', className, onClick, children, ...props }: ButtonHTMLAttributes<HTMLButtonElement> & { reason?: string }) {
-  return <StickerButton {...props} className={className} variant={className?.includes('vd-primary') ? 'primary' : className?.includes('vd-icon-button') ? 'quiet' : 'secondary'} unavailable={disabled} reason={reason} onClick={onClick}>{children}</StickerButton>;
+  return <StickerButton {...props} className={className} variant={className?.includes('vd-primary') ? 'primary' : className?.includes('vd-icon-button') ? 'quiet' : 'secondary'} unavailable={disabled} reason={reason} title={disabled ? reason : props.title} onClick={onClick}>{children}</StickerButton>;
 }
 export function Icon({ name }: { name: 'settings' | 'source' | 'check' | 'fail' | 'egg' }) {
   const paths = {

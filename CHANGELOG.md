@@ -1,5 +1,9 @@
 # Change log
 
+## 2026-10-11T07:13:40+05:30 — Pinned shell
+
+Pinned shell and feature-preserving administration sheets. Scope: panel React/CSS, tests, specification and screenshots. Focused 19/19; typecheck/lint/build pass. Full default suite reported three development timeout failures; serial rerun passed 139/139 in 40.69 s. No host/contract/fixture change.
+
 ## 2026-10-11T07:04:41+05:30 — Simplification baseline
 
 Parity baseline: saved the supplied simplification plan, recorded all 28 requested features and newer controls before further UI edits, and added the manual review checklist. Communication follow-up is checkpointed with this baseline. Latest current UI checks: 136/136; immutable host remains 29db3ef. No merge or push.

@@ -27,7 +27,7 @@ describe('V2 panel keeps real host boundaries and simple task slots', () => {
   it('uses actual allowed stages rather than inventing an unlocked sequence', () => {
     const markup=render(<ProgressSegments current={0} done={[]} available={[0,1,2]} onChoose={()=>{}} onClose={()=>{}} />);
     expect(markup).toContain('aria-label="Your guess"');
-    expect(markup).toContain('aria-label="What happened — available after earlier steps" aria-disabled="true"');
+    expect(markup).toContain('aria-label="What happened — available after earlier steps" data-locked="true"');
   });
   it('separates scrollable task content from the visible action', () => {
     const markup=render(<Task title="A real question" pose="curious" action={<button>My next step</button>}><p>Current project content</p></Task>);
@@ -56,7 +56,7 @@ describe('V2 panel keeps real host boundaries and simple task slots', () => {
   it('keeps all baseline UI actions available', () => {
     const coverage=JSON.parse(readFileSync('docs/design-v2/phase-2/action-coverage.json','utf8'));
     expect(coverage.lost).toEqual([]);
-    const files=['app','home','project','change','results','understand','reuse-controls','ui'].map(name=>readFileSync(`src/panel/${name}.tsx`,'utf8')).join('\n');
+    const files=['app','home','project','change','results','understand','reuse-controls','ui','lesson-shell'].map(name=>readFileSync(`src/panel/${name}.tsx`,'utf8')).join('\n');
     for(const name of coverage.before) expect(files,name).toContain(`'${name}'`);
   });
   it('shows the user rule and honest feature availability on the path', () => {

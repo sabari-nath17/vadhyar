@@ -1,3 +1,4 @@
+import { TechnicalDetails } from './lesson-shell.js';
 import type { PanelState } from '../shared.js';
 import { steps, suggestedStep, requirementProse, requirementTitle } from './workflow.js';
 import { Control, type Send } from './ui.js';
@@ -43,6 +44,7 @@ export function EvidenceReview({ state, send, back }: { state: PanelState; send:
   return <Task title="Your proof" action={<Control className="vd-primary" onClick={back}>Back</Control>}>
     <p>Only saved events appear here. Earlier authorship and outside help are unknown.</p>
     {state.evidence?.length ? <ol className="vd2-evidence-list">{state.evidence.map(item => <li key={item.id}><h3>{item.title}</h3><p className="vd2-caption"><time dateTime={item.at}>{new Date(item.at).toLocaleString()}</time> · {item.current ? 'Matches current inputs' : 'Historical or unverified for current inputs'}</p><p>{item.detail}</p><details className="vd-details"><summary>More detail</summary><p>Rule revision: <code>{item.requirementRevision}</code></p>{item.sourceHash && <p>Source: <code>{item.sourceHash}</code></p>}<p>Record: <code>{item.id}</code></p></details></li>)}</ol> : <p>No saved proof yet. Confirm your rule and save a code snapshot to begin.</p>}
+    <details className="vd-details"><summary>Technical details</summary><TechnicalDetails state={state} /></details>
     <Control disabled={state.busy || state.contextStale || !state.evidence?.length} reason="Refresh saved context with recorded evidence first." onClick={() => send({type:'exportHandover'})}>Export my proof</Control>
   </Task>;
 }

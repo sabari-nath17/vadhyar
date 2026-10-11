@@ -1,5 +1,9 @@
 # Vadhyar slice task record
 
+## 2026-10-11T07:13:40+05:30 — Pinned shell
+
+Shell slice: pin current context, relocate existing admin actions and explain locked steps. Parity baseline is 9a4a3f9. Focused tests 19/19; typecheck/lint/build pass; twelve captures recorded. Full serial rerun passed 139/139 in 40.69 s. Next authorized slice is ledger/Evidence simplification; no host changes, merge or push.
+
 ## 2026-10-11T07:04:41+05:30 — Simplification baseline
 
 Current slice: simplify presentation in the isolated design branch. First commit preserves current communication follow-up and parity baseline. Next: compact pinned shell, flat tasks, Evidence sheet, four-theme contrast and parity verification. Host/fixtures remain frozen; no merge/push.

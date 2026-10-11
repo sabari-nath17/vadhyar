@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | 2.4.1 |
+| **Version** | 2.5.0 |
 | **Scope** | The Vadhyar VS Code panel (React): path home, lessons, feedback, completion, evidence, states, assets |
 | **Audience** | Codex or any engineer building the UI. You MAY generate images, SVG, sounds and scaffolding. You MUST NOT change host behavior. |
 | **Relationship to `design.md` 1.1.0** | v2 **adds an experience layer** on top of it. Where they conflict, v2 wins (see §15). Everything not mentioned here (consent, state catalog, accessibility, editor integration, logo placement) is inherited unchanged. §4 repeats the essentials so this file works alone. |
@@ -385,3 +385,18 @@ No subagents are allowed in this side conversation. Code review uses the Superpo
 The user asked whether the experience communicates the product and its features. The first screen now states the outcome, then prominently explains **Your own project** before the separate **Guided practice** path. Practice buttons explicitly say practice; imported explanation-only rules retain their actual rule label. Project Guide's opening copy names understanding, a build plan and a copyable prompt. These are existing capabilities, not new promises of general requirement verification.
 
 The existing host exposes Project Guide through a separate editor command and does not enable command links in the prepared panel. Show the actual command as instructions; do not invent an interactive switch. A one-click mode launcher remains outside this host-preserving UI change. The [feature map](docs/design-v2/phase-5/features.md) distinguishes available controls, scopes and planned capabilities. Native/human ease-of-use acceptance still remains pending.
+
+
+## UI simplification follow-up
+
+The supplied [simplification plan](simplification-plan.md) wins for density and feature placement. The [committed inventory](feature-parity.json) preserves all supplied entries and newer features.
+
+- Pin wordmark, recorded code status, rule preview and compact progress above the scrollable task. At 360px, the top including its inset is 136px.
+- Put rule administration and snapshots in the rule sheet, and setup/refresh/memory/requirement/export/break controls in More options. Controls keep their existing host action and guard.
+- Locked progress segments are interactive help buttons; they explain the prerequisite without changing the host stage.
+- Preserve exact recorded prediction text. Rehearsal provenance is not rewritten into a learner claim.
+- Runtime extraction remains explicit; the existing combined prediction-save/check flow still waits for host acknowledgement. No native source-selection or host changes are authorized.
+- The developer screenshot toolbar is 24px outside the app viewport. Browser captures use a 640px app area plus that labelled toolbar.
+- Claude Superpowers is applied to the already authorized written plan and existing `codex/` branch. The user already requested execution, so a second plan-approval prompt is not introduced. No Claude-specific configuration is installed. Reviews are in-thread; independent review remains pending.
+
+Evidence: [shell phase](docs/design-v2/simplification/shell/README.md). The flat ledger and Evidence sheet follow in the next slice.

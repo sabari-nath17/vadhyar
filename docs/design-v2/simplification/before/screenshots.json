@@ -1,0 +1,62 @@
+[
+  {
+    "width": 360,
+    "theme": "light",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/before/observe-360-light.jpg",
+    "measured": {
+      "height": 640,
+      "overflow": false,
+      "width": 360
+    }
+  },
+  {
+    "width": 360,
+    "theme": "dark",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/before/observe-360-dark.jpg",
+    "measured": {
+      "height": 640,
+      "overflow": false,
+      "width": 360
+    }
+  },
+  {
+    "width": 360,
+    "theme": "hc",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/before/observe-360-hc.jpg",
+    "measured": {
+      "height": 640,
+      "overflow": false,
+      "width": 360
+    }
+  },
+  {
+    "width": 760,
+    "theme": "light",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/before/observe-760-light.jpg",
+    "measured": {
+      "height": 640,
+      "overflow": false,
+      "width": 760
+    }
+  },
+  {
+    "width": 760,
+    "theme": "dark",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/before/observe-760-dark.jpg",
+    "measured": {
+      "height": 640,
+      "overflow": false,
+      "width": 760
+    }
+  },
+  {
+    "width": 760,
+    "theme": "hc",
+    "path": "/Users/sabarismac/.codex/worktrees/vadhyar-design-v2/Vadhyar 2/docs/design-v2/simplification/before/observe-760-hc.jpg",
+    "measured": {
+      "height": 640,
+      "overflow": false,
+      "width": 760
+    }
+  }
+]
