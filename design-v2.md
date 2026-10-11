@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | 2.4.0 |
+| **Version** | 2.4.1 |
 | **Scope** | The Vadhyar VS Code panel (React): path home, lessons, feedback, completion, evidence, states, assets |
 | **Audience** | Codex or any engineer building the UI. You MAY generate images, SVG, sounds and scaffolding. You MUST NOT change host behavior. |
 | **Relationship to `design.md` 1.1.0** | v2 **adds an experience layer** on top of it. Where they conflict, v2 wins (see §15). Everything not mentioned here (consent, state catalog, accessibility, editor integration, logo placement) is inherited unchanged. §4 repeats the essentials so this file works alone. |
@@ -312,6 +312,8 @@ No owl or lookalike. No Feather or duolingo-sans. No hearts, XP, streak, rank or
 
 ## 18. Changelog
 
+- **2.4.1**: upfront own-project purpose/entrypoint and explicitly labelled guided practice; clearer Project Guide start copy. Existing actions and feature capabilities are unchanged.
+
 - **2.4.0**: guarded Enter navigation, immediate optional Snake break, theme-safe character ink, final width/theme review, labelled capture walkthrough and local package. Demo reset/fallback remain visibly planned to preserve host behavior.
 
 - **2.3.0**: actual examples, explicit recovery, optional local sound, settings focus and one brief SVG bloom.
@@ -377,3 +379,9 @@ No subagents are allowed in this side conversation. Code review uses the Superpo
 - Enter invokes the current primary from headings/answer choices. Editable fields, native controls, modified keys and the Snake board retain their own behavior. Submission guards match disabled primary guards; saving never implies a host acknowledgement.
 - Completion uses one generated character in the task artwork slot. Its fixed slate ink matches the generated SVGs, preserving face detail over the light petals in dark/high-contrast themes. Snake's inherited color aliases resolve on the theme-owning body.
 - Final review package stays local and platform-specific. Existing pre-v2 native evidence is historical; it is not reused as acceptance of this renderer. Keyboard with real host acknowledgements, native theme/OS motion/audio/screen-reader behavior and human ease-of-use acceptance remain pending.
+
+### Feature communication follow-up
+
+The user asked whether the experience communicates the product and its features. The first screen now states the outcome, then prominently explains **Your own project** before the separate **Guided practice** path. Practice buttons explicitly say practice; imported explanation-only rules retain their actual rule label. Project Guide's opening copy names understanding, a build plan and a copyable prompt. These are existing capabilities, not new promises of general requirement verification.
+
+The existing host exposes Project Guide through a separate editor command and does not enable command links in the prepared panel. Show the actual command as instructions; do not invent an interactive switch. A one-click mode launcher remains outside this host-preserving UI change. The [feature map](docs/design-v2/phase-5/features.md) distinguishes available controls, scopes and planned capabilities. Native/human ease-of-use acceptance still remains pending.

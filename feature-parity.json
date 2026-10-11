@@ -1,0 +1,1214 @@
+{
+  "version": 1,
+  "status": "baseline before simplification",
+  "baselineCommit": "d044979 plus communication follow-up",
+  "hostBaseline": "29db3ef",
+  "scope": "Presentation routes only. Host permissions, confirmations and execution remain unchanged.",
+  "features": [
+    {
+      "id": "open",
+      "inventoryRow": 1,
+      "feature": "Open Vadhyar",
+      "hostAction": [
+        "vadhyar.open"
+      ],
+      "route": [
+        "Editor command: Vadhyar: Understand this change"
+      ],
+      "maxTaps": 0,
+      "preconditions": "native command",
+      "baseline": {
+        "route": [
+          "Editor command: Vadhyar: Understand this change"
+        ],
+        "taps": 0,
+        "status": "requires simplification"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "key",
+      "inventoryRow": 2,
+      "feature": "Secure API setup",
+      "hostAction": [
+        "setupKey"
+      ],
+      "route": [
+        "Open settings",
+        "Connect OpenAI"
+      ],
+      "maxTaps": 2,
+      "preconditions": "not busy",
+      "baseline": {
+        "route": [
+          "Open settings",
+          "Connect OpenAI"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "rule",
+      "inventoryRow": 3,
+      "feature": "Current requirement",
+      "hostAction": [],
+      "route": [
+        "Your rule"
+      ],
+      "maxTaps": 2,
+      "preconditions": "requirement loaded",
+      "baseline": {
+        "route": [
+          "Your rule"
+        ],
+        "taps": 1,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "confirm",
+      "inventoryRow": 4,
+      "feature": "Requirement confirmation",
+      "hostAction": [
+        "confirmRequirement"
+      ],
+      "route": [
+        "Your rule",
+        "Confirm my rule"
+      ],
+      "maxTaps": 2,
+      "preconditions": "unconfirmed requirement loaded",
+      "baseline": {
+        "route": [
+          "Your rule",
+          "Confirm my rule"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "import",
+      "inventoryRow": 5,
+      "feature": "Requirement import",
+      "hostAction": [
+        "importRequirement"
+      ],
+      "route": [
+        "Your rule",
+        "Show the full rule and examples",
+        "Import requirement"
+      ],
+      "maxTaps": 2,
+      "preconditions": "not busy",
+      "baseline": {
+        "route": [
+          "Your rule",
+          "Show the full rule and examples",
+          "Import requirement"
+        ],
+        "taps": 3,
+        "status": "requires simplification"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "prepared",
+      "inventoryRow": 6,
+      "feature": "Prepared requirement selection",
+      "hostAction": [
+        "usePreparedRequirement"
+      ],
+      "route": [
+        "Your rule",
+        "Show the full rule and examples",
+        "Use prepared requirement"
+      ],
+      "maxTaps": 2,
+      "preconditions": "not busy",
+      "baseline": {
+        "route": [
+          "Your rule",
+          "Show the full rule and examples",
+          "Use prepared requirement"
+        ],
+        "taps": 3,
+        "status": "requires simplification"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "cases",
+      "inventoryRow": 7,
+      "feature": "Acceptance scenarios",
+      "hostAction": [],
+      "route": [
+        "Your rule"
+      ],
+      "maxTaps": 2,
+      "preconditions": "requirement scenarios loaded",
+      "baseline": {
+        "route": [
+          "Your rule"
+        ],
+        "taps": 1,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "snapshot",
+      "inventoryRow": 8,
+      "feature": "Source checkpoint",
+      "hostAction": [
+        "checkpoint"
+      ],
+      "route": [
+        "Your rule",
+        "Save a code snapshot",
+        "Save this code"
+      ],
+      "maxTaps": 2,
+      "preconditions": "confirmed and not busy",
+      "baseline": {
+        "route": [
+          "Your rule",
+          "Save a code snapshot",
+          "Save this code"
+        ],
+        "taps": 3,
+        "status": "requires simplification"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "connections",
+      "inventoryRow": 9,
+      "feature": "Source relationships",
+      "hostAction": [
+        "refreshGraph"
+      ],
+      "route": [
+        "How it works",
+        "Find the code"
+      ],
+      "maxTaps": 2,
+      "preconditions": "confirmed current source",
+      "baseline": {
+        "route": [
+          "How it works",
+          "Find the code"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "mapping",
+      "inventoryRow": 10,
+      "feature": "Mapping confirmation",
+      "hostAction": [
+        "confirmMapping"
+      ],
+      "route": [
+        "How it works",
+        "Use these code links"
+      ],
+      "maxTaps": 2,
+      "preconditions": "current graph, unconfirmed mapping",
+      "baseline": {
+        "route": [
+          "How it works",
+          "Use these code links"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "source",
+      "inventoryRow": 11,
+      "feature": "Source navigation",
+      "hostAction": [
+        "openSource"
+      ],
+      "route": [
+        "How it works",
+        "Source chip"
+      ],
+      "maxTaps": 2,
+      "preconditions": "current validated references",
+      "baseline": {
+        "route": [
+          "How it works",
+          "Source chip"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "sharing",
+      "inventoryRow": 12,
+      "feature": "Context preview",
+      "hostAction": [
+        "previewExplain",
+        "explain",
+        "cancelExplain"
+      ],
+      "route": [
+        "How it works",
+        "Review what will be shared"
+      ],
+      "maxTaps": 2,
+      "preconditions": "confirmed current source and mapping",
+      "baseline": {
+        "route": [
+          "How it works",
+          "Review what will be shared"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "explain",
+      "inventoryRow": 13,
+      "feature": "AI explanation",
+      "hostAction": [],
+      "route": [
+        "How it works"
+      ],
+      "maxTaps": 2,
+      "preconditions": "recorded explanation",
+      "baseline": {
+        "route": [
+          "How it works"
+        ],
+        "taps": 1,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "walkthrough",
+      "inventoryRow": 14,
+      "feature": "Ordered walkthrough",
+      "hostAction": [
+        "walkthroughStep"
+      ],
+      "route": [
+        "How it works",
+        "Take me through the code"
+      ],
+      "maxTaps": 2,
+      "preconditions": "current explanation, references and walkthrough",
+      "baseline": {
+        "route": [
+          "How it works",
+          "Take me through the code"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "export-tour",
+      "inventoryRow": 15,
+      "feature": "Walkthrough export",
+      "hostAction": [
+        "exportWalkthrough"
+      ],
+      "route": [
+        "How it works",
+        "Take me through the code",
+        "Export walkthrough"
+      ],
+      "maxTaps": 2,
+      "preconditions": "current walkthrough",
+      "baseline": {
+        "route": [
+          "How it works",
+          "Take me through the code",
+          "Export walkthrough"
+        ],
+        "taps": 3,
+        "status": "requires simplification"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "prediction",
+      "inventoryRow": 16,
+      "feature": "Prediction",
+      "hostAction": [],
+      "route": [
+        "Your guess"
+      ],
+      "maxTaps": 2,
+      "preconditions": "prepared checks supported",
+      "baseline": {
+        "route": [
+          "Your guess"
+        ],
+        "taps": 1,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "lock",
+      "inventoryRow": 17,
+      "feature": "Prediction locking",
+      "hostAction": [
+        "savePrediction"
+      ],
+      "route": [
+        "Your guess",
+        "Save my guess and check"
+      ],
+      "maxTaps": 2,
+      "preconditions": "prediction input complete, current trusted source",
+      "baseline": {
+        "route": [
+          "Your guess",
+          "Save my guess and check"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "counterexample",
+      "inventoryRow": 18,
+      "feature": "Counterexample",
+      "hostAction": [
+        "runCounterexample"
+      ],
+      "route": [
+        "Your guess",
+        "Run the saved check"
+      ],
+      "maxTaps": 2,
+      "preconditions": "host-acknowledged saved prediction",
+      "baseline": {
+        "route": [
+          "Your guess",
+          "Run the saved check"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "comparison",
+      "inventoryRow": 19,
+      "feature": "Prediction comparison",
+      "hostAction": [],
+      "route": [
+        "What happened"
+      ],
+      "maxTaps": 2,
+      "preconditions": "completed recorded counterexample",
+      "baseline": {
+        "route": [
+          "What happened"
+        ],
+        "taps": 1,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "hint",
+      "inventoryRow": 20,
+      "feature": "Progressive hints",
+      "hostAction": [
+        "previewHint",
+        "hint",
+        "cancelExplain"
+      ],
+      "route": [
+        "Try a change",
+        "Need a hint?",
+        "Review before getting a hint"
+      ],
+      "maxTaps": 2,
+      "preconditions": "current supported source, fewer than three recorded hints",
+      "baseline": {
+        "route": [
+          "Try a change",
+          "Need a hint?",
+          "Review before getting a hint"
+        ],
+        "taps": 3,
+        "status": "requires simplification"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "edit",
+      "inventoryRow": 21,
+      "feature": "Learner edit",
+      "hostAction": [
+        "openSource"
+      ],
+      "route": [
+        "Try a change",
+        "Source chip"
+      ],
+      "maxTaps": 2,
+      "preconditions": "current references",
+      "baseline": {
+        "route": [
+          "Try a change",
+          "Source chip"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "diff",
+      "inventoryRow": 22,
+      "feature": "Native diff",
+      "hostAction": [
+        "openDiff"
+      ],
+      "route": [
+        "Try a change",
+        "Compare my change"
+      ],
+      "maxTaps": 2,
+      "preconditions": "changed saved source, baseline available",
+      "baseline": {
+        "route": [
+          "Try a change",
+          "Compare my change"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "verify",
+      "inventoryRow": 23,
+      "feature": "Full verification",
+      "hostAction": [
+        "runOwnership"
+      ],
+      "route": [
+        "Check it",
+        "Check again"
+      ],
+      "maxTaps": 2,
+      "preconditions": "current saved comparison and trusted checks",
+      "baseline": {
+        "route": [
+          "Check it",
+          "Check again"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "evidence",
+      "inventoryRow": 24,
+      "feature": "Evidence summary",
+      "hostAction": [],
+      "route": [
+        "Open settings",
+        "Show my proof"
+      ],
+      "maxTaps": 2,
+      "preconditions": "always; empty state is explicit",
+      "baseline": {
+        "route": [
+          "Open settings",
+          "Show my proof"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "technical",
+      "inventoryRow": 25,
+      "feature": "Technical details",
+      "hostAction": [],
+      "route": [
+        "Open settings",
+        "More detail"
+      ],
+      "maxTaps": 2,
+      "preconditions": "always; absent fields stay unavailable",
+      "baseline": {
+        "route": [
+          "Open settings",
+          "More detail"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "refresh",
+      "inventoryRow": 26,
+      "feature": "Refresh controls",
+      "hostAction": [
+        "ready"
+      ],
+      "route": [
+        "Open settings",
+        "Read saved code"
+      ],
+      "maxTaps": 2,
+      "preconditions": "not busy",
+      "baseline": {
+        "route": [
+          "Open settings",
+          "Read saved code"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "snake",
+      "inventoryRow": 27,
+      "feature": "Snake break",
+      "hostAction": [],
+      "route": [
+        "Open settings",
+        "Snake"
+      ],
+      "maxTaps": 2,
+      "preconditions": "local game only",
+      "baseline": {
+        "route": [
+          "Open settings",
+          "Snake"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "disclosure",
+      "inventoryRow": 28,
+      "feature": "Prepared/imported scope disclosure",
+      "hostAction": [],
+      "route": [
+        "Your rule"
+      ],
+      "maxTaps": 2,
+      "preconditions": "requirement loaded",
+      "baseline": {
+        "route": [
+          "Your rule"
+        ],
+        "taps": 1,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "transfer",
+      "inventoryRow": null,
+      "feature": "Follow-up challenge",
+      "hostAction": [
+        "startTransfer"
+      ],
+      "route": [
+        "Close lesson",
+        "Try the next rule"
+      ],
+      "maxTaps": 2,
+      "preconditions": "current complete ownership verification",
+      "baseline": {
+        "route": [
+          "Close lesson",
+          "Try the next rule"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "reflection",
+      "inventoryRow": null,
+      "feature": "Saved reflection",
+      "hostAction": [
+        "saveReflection"
+      ],
+      "route": [
+        "Check it",
+        "What did you notice? \u00b7 saved here",
+        "Save my note"
+      ],
+      "maxTaps": 2,
+      "preconditions": "current check result and nonempty note",
+      "baseline": {
+        "route": [
+          "Check it",
+          "What did you notice? \u00b7 saved here",
+          "Save my note"
+        ],
+        "taps": 3,
+        "status": "requires simplification"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "handover",
+      "inventoryRow": null,
+      "feature": "Handover export",
+      "hostAction": [
+        "exportHandover"
+      ],
+      "route": [
+        "Open settings",
+        "Show my proof",
+        "Export my proof"
+      ],
+      "maxTaps": 2,
+      "preconditions": "current context and recorded evidence",
+      "baseline": {
+        "route": [
+          "Open settings",
+          "Show my proof",
+          "Export my proof"
+        ],
+        "taps": 3,
+        "status": "requires simplification"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "memory",
+      "inventoryRow": null,
+      "feature": "Memory location",
+      "hostAction": [
+        "showMemoryLocation"
+      ],
+      "route": [
+        "Open settings",
+        "Show memory location"
+      ],
+      "maxTaps": 2,
+      "preconditions": "not busy",
+      "baseline": {
+        "route": [
+          "Open settings",
+          "Show memory location"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "clear",
+      "inventoryRow": null,
+      "feature": "Clear prepared session",
+      "hostAction": [
+        "clearNovaDeskSession"
+      ],
+      "route": [
+        "Open settings",
+        "Clear prepared exercise"
+      ],
+      "maxTaps": 2,
+      "preconditions": "not busy; native confirmation remains required",
+      "baseline": {
+        "route": [
+          "Open settings",
+          "Clear prepared exercise"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "sound",
+      "inventoryRow": null,
+      "feature": "Optional local sound",
+      "hostAction": [],
+      "route": [
+        "Open settings",
+        "Sound: off"
+      ],
+      "maxTaps": 2,
+      "preconditions": "local panel setting",
+      "baseline": {
+        "route": [
+          "Open settings",
+          "Sound: off"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "planned-demo",
+      "inventoryRow": null,
+      "feature": "Planned demo preparation",
+      "hostAction": [],
+      "route": [
+        "Open settings",
+        "Demo preparation"
+      ],
+      "maxTaps": 2,
+      "preconditions": "visibly planned, not executable",
+      "baseline": {
+        "route": [
+          "Open settings",
+          "Demo preparation"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "project-start",
+      "inventoryRow": null,
+      "feature": "Project tracking",
+      "hostAction": [
+        "projectStart"
+      ],
+      "route": [
+        "Editor command: Vadhyar: Open Project Guide",
+        "Start tracking my code"
+      ],
+      "maxTaps": 2,
+      "preconditions": "trusted supported saved project",
+      "baseline": {
+        "route": [
+          "Editor command: Vadhyar: Open Project Guide",
+          "Start tracking my code"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "project-refresh",
+      "inventoryRow": null,
+      "feature": "Project refresh",
+      "hostAction": [
+        "projectReady"
+      ],
+      "route": [
+        "What changed",
+        "Read saved changes"
+      ],
+      "maxTaps": 2,
+      "preconditions": "project started",
+      "baseline": {
+        "route": [
+          "What changed",
+          "Read saved changes"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "project-intent",
+      "inventoryRow": null,
+      "feature": "Create/change idea",
+      "hostAction": [
+        "projectAddIntent"
+      ],
+      "route": [
+        "Your idea",
+        "Save my idea"
+      ],
+      "maxTaps": 2,
+      "preconditions": "title and request supplied",
+      "baseline": {
+        "route": [
+          "Your idea",
+          "Save my idea"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "project-import",
+      "inventoryRow": null,
+      "feature": "Import PRD rule",
+      "hostAction": [
+        "projectImportIntent"
+      ],
+      "route": [
+        "Your idea",
+        "Import a rule from my PRD"
+      ],
+      "maxTaps": 2,
+      "preconditions": "project started",
+      "baseline": {
+        "route": [
+          "Your idea",
+          "Import a rule from my PRD"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "project-select",
+      "inventoryRow": null,
+      "feature": "Select saved idea",
+      "hostAction": [
+        "projectSelectIntent"
+      ],
+      "route": [
+        "Your idea",
+        "Saved ideas",
+        "Saved idea button"
+      ],
+      "maxTaps": 2,
+      "preconditions": "saved idea exists",
+      "baseline": {
+        "route": [
+          "Your idea",
+          "Saved ideas",
+          "Saved idea button"
+        ],
+        "taps": 3,
+        "status": "requires simplification"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "project-confirm",
+      "inventoryRow": null,
+      "feature": "Confirm idea",
+      "hostAction": [
+        "projectConfirmIntent"
+      ],
+      "route": [
+        "Your idea",
+        "Confirm my idea"
+      ],
+      "maxTaps": 2,
+      "preconditions": "unconfirmed idea with expected behavior",
+      "baseline": {
+        "route": [
+          "Your idea",
+          "Confirm my idea"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "project-files",
+      "inventoryRow": null,
+      "feature": "Select relevant files",
+      "hostAction": [
+        "projectSelectFiles"
+      ],
+      "route": [
+        "What changed",
+        "Choose relevant files"
+      ],
+      "maxTaps": 2,
+      "preconditions": "supported project files",
+      "baseline": {
+        "route": [
+          "What changed",
+          "Choose relevant files"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "project-suggest",
+      "inventoryRow": null,
+      "feature": "Suggest relevant files",
+      "hostAction": [
+        "projectSuggestFiles"
+      ],
+      "route": [
+        "How it works",
+        "Find the code for my idea"
+      ],
+      "maxTaps": 2,
+      "preconditions": "confirmed idea, no selected files",
+      "baseline": {
+        "route": [
+          "How it works",
+          "Find the code for my idea"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "project-diff",
+      "inventoryRow": null,
+      "feature": "Project native diff",
+      "hostAction": [
+        "projectOpenDiff"
+      ],
+      "route": [
+        "What changed",
+        "Open this change"
+      ],
+      "maxTaps": 2,
+      "preconditions": "saved changed file",
+      "baseline": {
+        "route": [
+          "What changed",
+          "Open this change"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "project-source",
+      "inventoryRow": null,
+      "feature": "Project source navigation",
+      "hostAction": [
+        "projectOpenSource"
+      ],
+      "route": [
+        "What changed",
+        "Open selected source",
+        "Selected source button"
+      ],
+      "maxTaps": 2,
+      "preconditions": "selected saved source",
+      "baseline": {
+        "route": [
+          "What changed",
+          "Open selected source",
+          "Selected source button"
+        ],
+        "taps": 3,
+        "status": "requires simplification"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "project-preview",
+      "inventoryRow": null,
+      "feature": "Project guidance/grouping/plan preview",
+      "hostAction": [
+        "projectPreview"
+      ],
+      "route": [
+        "How it works",
+        "Review a build plan and prompt"
+      ],
+      "maxTaps": 2,
+      "preconditions": "confirmed idea, current selected source",
+      "baseline": {
+        "route": [
+          "How it works",
+          "Review a build plan and prompt"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "project-send",
+      "inventoryRow": null,
+      "feature": "Project approved API request",
+      "hostAction": [
+        "projectSend"
+      ],
+      "route": [
+        "Send this to OpenAI"
+      ],
+      "maxTaps": 2,
+      "preconditions": "host-issued sharing identity",
+      "baseline": {
+        "route": [
+          "Send this to OpenAI"
+        ],
+        "taps": 1,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "project-cancel",
+      "inventoryRow": null,
+      "feature": "Cancel project operation",
+      "hostAction": [
+        "projectCancel"
+      ],
+      "route": [
+        "Check it",
+        "Cancel operation"
+      ],
+      "maxTaps": 2,
+      "preconditions": "operation in progress",
+      "baseline": {
+        "route": [
+          "Check it",
+          "Cancel operation"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "project-group",
+      "inventoryRow": null,
+      "feature": "Use proposed grouping",
+      "hostAction": [
+        "projectUseGroup"
+      ],
+      "route": [
+        "What changed",
+        "Use these proposed files"
+      ],
+      "maxTaps": 2,
+      "preconditions": "recorded current grouping",
+      "baseline": {
+        "route": [
+          "What changed",
+          "Use these proposed files"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "project-prompt",
+      "inventoryRow": null,
+      "feature": "Copy proposed prompt",
+      "hostAction": [
+        "projectCopyPrompt"
+      ],
+      "route": [
+        "How it works",
+        "My proposed coding prompt",
+        "Copy this prompt"
+      ],
+      "maxTaps": 2,
+      "preconditions": "current guide with prompt",
+      "baseline": {
+        "route": [
+          "How it works",
+          "My proposed coding prompt",
+          "Copy this prompt"
+        ],
+        "taps": 3,
+        "status": "requires simplification"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "project-check-select",
+      "inventoryRow": null,
+      "feature": "Select existing check",
+      "hostAction": [
+        "projectSelectCheck"
+      ],
+      "route": [
+        "Check it",
+        "Choose a different check"
+      ],
+      "maxTaps": 2,
+      "preconditions": "project started",
+      "baseline": {
+        "route": [
+          "Check it",
+          "Choose a different check"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "project-check-run",
+      "inventoryRow": null,
+      "feature": "Run existing check",
+      "hostAction": [
+        "projectRunCheck"
+      ],
+      "route": [
+        "Check it",
+        "Run selected check"
+      ],
+      "maxTaps": 2,
+      "preconditions": "approved check; native confirmation remains required",
+      "baseline": {
+        "route": [
+          "Check it",
+          "Run selected check"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    },
+    {
+      "id": "project-capture",
+      "inventoryRow": null,
+      "feature": "Agent intent capture bridge",
+      "hostAction": [
+        "projectConnectCapture"
+      ],
+      "route": [
+        "Open project options",
+        "Enable agent capture bridge"
+      ],
+      "maxTaps": 2,
+      "preconditions": "supported integration only",
+      "baseline": {
+        "route": [
+          "Open project options",
+          "Enable agent capture bridge"
+        ],
+        "taps": 2,
+        "status": "control inspected"
+      },
+      "pathHomeAllowance": 1
+    }
+  ]
+}

@@ -1,5 +1,13 @@
 # AI usage record
 
+## 2026-10-11T07:04:41+05:30 — Simplification baseline
+
+Codex read the new UI simplification attachment and traced current presentation controls. The baseline records reachability gaps rather than claiming they are fixed. New browser/CI parity checks remain upcoming. No native or independent human review claimed.
+
+## 2026-10-11T06:58:24+05:30 — Feature communication audit
+
+After the user questioned feature clarity, Codex inspected the existing entrypoints, project actions and host options, corrected the own-project/practice hierarchy and clarified Project Guide's purpose. The host has no open-project panel action or enabled command links, so the actual editor command is shown rather than an invented clickable launcher. A failing orientation test preceded the copy/layout correction. Latest typecheck/lint/builds and **136/136** passed; Computer Use captured nine measured home views plus three labelled Project Guide introductions. No new feature, response, authorship claim, API call, credential handling or host edit. Human/native usability acceptance remains pending.
+
 ## 2026-10-11T06:47:54+05:30 — V2 Phase 5 assistance and review
 
 Codex applied the current skill routing, Superpowers review/verification checklist, Ponytail, Impeccable/animation guidance and Computer Use to finish guarded UI navigation, inspect actual browser screenshots and package locally. The final character-ink test failed before the one-line correction, then focused and full checks passed. All 135 tests, typecheck/lint/builds and static package assertions are actual executions. Browser captures use labelled recorded developer checks and illustrative state/graph specimens; scene selection is disclosed, not treated as host/API/learner behavior. The 35-second GIF is assembled from actual captures, not a continuous native recording.

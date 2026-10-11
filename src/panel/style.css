@@ -79,7 +79,7 @@ blockquote { margin: 8px 0 0; padding-inline-start: 12px; border-left: 2px solid
 .vd2-path { display: grid; justify-items: center; gap: 24px; padding-block: 24px; }
 .vd2-path > :nth-child(2n) { margin-left: 40px; }
 .vd2-path > :nth-child(2n+1) { margin-right: 40px; }
-.vd2-path-info { max-width: 260px; display: grid; gap: 8px; text-align: center; }
+.vd2-path-info { display: grid; gap: 8px; padding: 16px; border: var(--bd) solid var(--border); border-radius: var(--r-card); background: var(--card); }
 .vd2-step-chips, .vd2-proof-list { display: flex; flex-wrap: wrap; gap: 12px; }
 .vd2-evidence-list { padding: 0; margin: 0; list-style: none; display: grid; gap: 24px; }
 .vd2-evidence-list li { display: grid; gap: 12px; border-bottom: 2px solid var(--border); padding-bottom: 16px; }

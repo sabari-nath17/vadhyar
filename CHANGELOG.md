@@ -1,5 +1,13 @@
 # Change log
 
+## 2026-10-11T07:04:41+05:30 — Simplification baseline
+
+Parity baseline: saved the supplied simplification plan, recorded all 28 requested features and newer controls before further UI edits, and added the manual review checklist. Communication follow-up is checkpointed with this baseline. Latest current UI checks: 136/136; immutable host remains 29db3ef. No merge or push.
+
+## 2026-10-11T06:58:24+05:30 — Feature communication follow-up
+
+Changed home/project copy and the existing home information layout so own-project features lead and the prepared exercise is explicitly guided practice. Preserved all actions and immutable host boundaries. Added one orientation regression (failed first), then typecheck/lint/extension/gallery builds and **136/136 tests in 27 files** passed (27.63 s; start 06:55:37 IST). Nine refreshed home views and three Project Guide intro views show visible entries/primary and no overflow. Updated design-v2 2.4.1 and feature map; all actual feature/output limits remain explicit. Source: panel home/project/style, v2-panel test and review/spec records. Native one-click mode switching is unavailable in the current host; native/human acceptance remains pending. No merge, push, API or new network call.
+
 ## 2026-10-11T06:47:54+05:30 — V2 Phase 5 presentation and local review package
 
 Changed: guarded Enter handling, matching form readiness guards, single completion artwork slot with original SVG ink, immediate Snake path entry and theme-correct aliases; local packaging includes the review/spec docs. Files: panel app/home/results/snake-game/style and v2/components, v2-panel tests, package.json, design-v2, README and docs/design-v2. Reason: simple navigation with intact host acknowledgement and readable dark/HC artwork. Final typecheck/lint/build/gallery build and **135/135 tests in 27 files** pass (23.61 s). Nine completion and nine path captures, Snake theme/keyboard checks and a labelled 35-second screenshot walkthrough are recorded. Static VSIX inspection verifies 26 SVGs, four runtime fonts, three license files, bundled prepared checks and unchanged manifest/23 immutable source boundaries.

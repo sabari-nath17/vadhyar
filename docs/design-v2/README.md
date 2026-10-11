@@ -2,7 +2,7 @@
 
 ## What changed
 
-The isolated `codex/design-v2-phase-0` branch implements the guided presentation in `src/panel/`: one task and one dominant next action, a home path, start/resume sheet, six existing lesson stages, recorded proof, clear recovery and optional local Snake/sound. Project Guide keeps its existing separate editor entrypoint and four simpler task views. The original wordmark is unchanged; fonts and 26 SVGs are bundled locally.
+The isolated `codex/design-v2-phase-0` branch implements the guided presentation in `src/panel/`: one task and one dominant next action, a home path, start/resume sheet, six existing lesson stages, recorded proof, clear recovery and optional local Snake/sound. The entrance now explains own-project features before the separate guided practice. Project Guide keeps its existing separate editor entrypoint and four simpler task views. The original wordmark is unchanged; fonts and 26 SVGs are bundled locally.
 
 The current app was preserved at **29db3ef** before UI integration. The [snapshot](current-app-snapshot.json) pins all 23 host/shared/project/fixture files. Tests verify these bytes and all original UI actions stay intact. Earlier native milestones belong to that baseline and do not certify the new renderer. This branch has not been merged or pushed.
 

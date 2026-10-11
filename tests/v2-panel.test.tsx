@@ -9,6 +9,7 @@ import { Bloom, ProgressSegments, Task } from '../src/panel/v2/components.js';
 import { SharingPreview, SourceLinks } from '../src/panel/ui.js';
 import { Understand } from '../src/panel/understand.js';
 import { SnakeGame } from '../src/panel/snake-game.js';
+import { ProjectPanel } from '../src/panel/project.js';
 import { PathHome, Completion, EvidenceReview } from '../src/panel/home.js';
 import { panelAction } from '../src/shared.js';
 import type { SourceRef, PanelState } from '../src/shared.js';
@@ -99,6 +100,15 @@ describe('V2 panel keeps real host boundaries and simple task slots', () => {
   });
   it('keeps the generated character ink on its light face in every theme', () => {
     expect(render(<Bloom animate={false} />)).toContain('stroke="#2C3539"');
+  });
+  it('explains the real project features before the optional practice example', () => {
+    const home=render(<PathHome state={{refs:[],busy:false}} start={()=>{}} proof={()=>{}} takeBreak={()=>{}} challenge={()=>{}} />);
+    expect(home).toContain('Understand your code');expect(home).toContain('Your own project');
+    expect(home.indexOf('Your own project')).toBeLessThan(home.indexOf('Guided practice'));
+    expect(home).toContain('next coding prompt');expect(home).toContain('editor command menu');
+    const project=render(<ProjectPanel state={{name:'My hobby app',busy:false,started:false,fileCount:0,omitted:[],changes:[],intents:[],files:[],selectedFiles:[],captureConnected:false}} send={()=>{}} setupKey={()=>{}} />);
+    expect(project).toContain('understand a change');expect(project).toContain('a plan and prompt');
+    expect(project).toContain('My hobby app');expect(project).not.toContain('NovaDesk');
   });
 
 });

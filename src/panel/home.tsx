@@ -7,13 +7,14 @@ import { recordedSummary } from './v2/evidence.js';
 export function PathHome({ state, start, proof, takeBreak, challenge }: { state: PanelState; start: () => void; proof: () => void; takeBreak: () => void; challenge: () => void }) {
   const summary = recordedSummary(state);
   const imported = state.requirement?.checksAvailable === false;
-  return <Task title="Your path" action={<Control className="vd-primary" disabled={state.busy || !state.requirement} reason="Wait for your saved rule to load." onClick={start}>{state.confirmed ? 'Continue my rule' : 'Start with my rule'}</Control>}>
-    <div className="vd2-home-intro"><Guide pose="welcome" /><p>One rule. One small change. See what your code does.</p></div>
+  return <Task title="Understand your code" action={<Control className="vd-primary" disabled={state.busy || !state.requirement} reason="Wait for your saved rule to load." onClick={start}>{imported ? state.confirmed ? 'Continue my rule' : 'Start with my rule' : state.confirmed ? 'Continue practice' : 'Start guided practice'}</Control>}>
+    <div className="vd2-home-intro"><Guide pose="welcome" /><p>See how your code works. Plan or try your next change.</p></div>
+    <section className="vd2-path-info"><h3>Your own project</h3><p>Keep your idea. Track changes. Explain code or plan your next coding prompt.</p><p className="vd2-caption">Open the editor command menu:</p><code>Vadhyar: Open Project Guide</code><p className="vd2-caption">Experimental · uses your existing checks.</p></section>
+    <h3>{imported ? 'Your selected rule' : 'Guided practice'}</h3>
     <Chip icon="source">Saved in this workspace</Chip>
     <div className="vd2-path"><PathNode state={summary.passed ? 'done' : 'current'} label={requirementTitle(state.requirement)} description={imported ? 'Explanation only · no prepared checks for this rule.' : state.requirement ? 'Prepared exercise · intentional bug in the original sample.' : 'Your project rule will appear here.'} onSelect={start} />
       {imported ? <PathNode state="locked" label="Try a change" description="This imported rule has no approved check mapping." /> : state.exercise !== 'transfer' && <PathNode state={summary.passed ? 'current' : 'locked'} label="Try the next rule" description={summary.passed ? 'Available · a small follow-up change.' : 'Finish the current saved-code checks first.'} onSelect={challenge} />}
       <PathNode state="break" label="Take a break" description="Play Snake. Your lesson stays here." onSelect={takeBreak} />
-      <section className="vd2-path-info"><h3>Use your own project</h3><p className="vd2-caption">Available from the editor: run “Vadhyar: Open Project Guide”. It keeps your project separate from this exercise.</p></section>
     </div>
     <Control onClick={proof}>Show my proof</Control>
   </Task>;

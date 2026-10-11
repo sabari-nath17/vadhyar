@@ -1,5 +1,15 @@
 # Vadhyar slice task record
 
+## 2026-10-11T07:04:41+05:30 — Simplification baseline
+
+Current slice: simplify presentation in the isolated design branch. First commit preserves current communication follow-up and parity baseline. Next: compact pinned shell, flat tasks, Evidence sheet, four-theme contrast and parity verification. Host/fixtures remain frozen; no merge/push.
+
+## 2026-10-11T06:58:24+05:30 — Feature orientation completed
+
+Previous local checkpoint **d044979**. User steering: communicate the real product/features. Scope was home/project copy and the existing home info layout, one UI regression, screenshots/spec/review records. Latest **136/136**, typecheck/lint/extension/gallery builds pass. Entry labels/primary visible in all nine measured home views; Project Guide intro checked in three themes. Source and all original actions retain their immutable baseline gates. Updated local review package follows this milestone; no main merge or push. See docs/design-v2/phase-5/features.md and orientation-tests.txt.
+
+Remaining: existing command-based own-project navigation, redesigned native-host/live API/OS/audio/screen-reader and human ease-of-use acceptance. Demo reset/fallback, general PRD auditing/alternative implementations/universal capture/OAuth remain planned. The source/UI backup remains verified and preserved.
+
 ## 2026-10-11T06:47:54+05:30 — V2 Phase 5 presentation complete; native acceptance pending
 
 Previous checkpoint **1eeb331**. Current local milestone contains final UI guards, Snake access/theme correction, character ink, final matrices, walkthrough/spec deviations and review package/docs. Full **135/135 across 27 files**, 23.61 s, start 06:44:42 IST; typecheck/lint/extension/gallery builds passed. Static package boundary/resource checks passed, with the existing large dependency-file advisory. Phase 5 evidence: docs/design-v2/phase-5/README.md. The completed milestone is the commit containing this record; no merge or push.

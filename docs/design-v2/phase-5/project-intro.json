@@ -1,0 +1,26 @@
+[
+  {
+    "theme": "light",
+    "primaryCount": 1,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360,
+    "scope": "Unstarted, labelled presentation specimen. No capture, API or storage."
+  },
+  {
+    "theme": "dark",
+    "primaryCount": 1,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360,
+    "scope": "Unstarted, labelled presentation specimen. No capture, API or storage."
+  },
+  {
+    "theme": "hc",
+    "primaryCount": 1,
+    "primaryInView": true,
+    "scrollWidth": 360,
+    "width": 360,
+    "scope": "Unstarted, labelled presentation specimen. No capture, API or storage."
+  }
+]
