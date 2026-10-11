@@ -16,6 +16,8 @@ Built for [DevDay Exchange Community Hackathon: Kochi](https://luma.com/z10nz8gp
 - **Working demo:** [Frozen 0.1.1 installer and source](https://github.com/sabari-nath17/vadhyar/releases/tag/v0.1.1), [installation](docs/installation.md), [NovaDesk walkthrough/reset](docs/demo.md), [separate-project walkthrough](docs/strengthen-demo.md).
 - **Technology stack:** TypeScript, React, native VS Code APIs, Zod, esbuild, Vitest, Graphify 0.9.84 and the official OpenAI Responses API SDK. Promptfoo is development-only.
 
+**Frozen implementation:** [`4f36cedcb93940e526165fbf94d6681542f54066`](https://github.com/sabari-nath17/vadhyar/tree/4f36cedcb93940e526165fbf94d6681542f54066) · [Complete 51-feature inventory and evidence](docs/feature-coverage.md) · [Prepared submission record](SUBMISSION.md). Later main-branch documentation does not change this installer/source checkpoint.
+
 ## Install and demonstrate
 
 **Judges: start with [the automated setup and prerequisite checklist](docs/judge-setup.md).** It installs the frozen VSIX and pinned Graphify into new isolated folders and checks real extraction/runner behavior. The supported target is **macOS Apple Silicon**; other systems are unverified. Live coaching still needs secure native key entry and account/model access.
@@ -39,7 +41,7 @@ The checked unrelated SeatCheck project demonstrates that workflow on one distin
 
 ### Run the project
 
-1. **Prerequisites and versions:** macOS Apple Silicon; VS Code 1.140.0+; Node `^22.22.0 || ^24.0.0 || >=26.0.0`; Python 3.10+ and separately installed `graphifyy==0.9.84`. Fresh release tools: Node 26.7.0/npm 11.19.0 and VS Code 1.140.0; packaging verification used Python 3.14.7. Native Graphify acceptance previously recorded Python 3.13.15.
+1. **Prerequisites and versions:** macOS Apple Silicon; VS Code 1.140.0+ (enable **Shell Command: Install 'code' command in PATH** for the CLI examples); Node `^22.22.0 || ^24.0.0 || >=26.0.0`; Python 3.10+ and separately installed `graphifyy==0.9.84`. Fresh release tools: Node 26.7.0/npm 11.19.0 and VS Code 1.140.0; packaging verification used Python 3.14.7. Native Graphify acceptance previously recorded Python 3.13.15.
 2. **Dependency installation:** `npm ci`. The VSIX includes its pinned production runner dependencies; installed demo checks do not require npm ci.
 3. **Environment setup:** set the application-level `vadhyar.graphifyPath` and `vadhyar.model`. The installed workflow requires no environment variables or .env file. Live coaching uses a key entered only in the native masked prompt and stored in VS Code SecretStorage; model/account access and API charges are separate.
 4. **Start the project:** `npm run build`, then launch a disposable workspace with `code --new-window --extensionDevelopmentPath="$PWD" /absolute/new/NovaDesk-demo-001`. Do not reload the active learner's window.
@@ -49,7 +51,7 @@ The checked unrelated SeatCheck project demonstrates that workflow on one distin
 npm run typecheck
 npm run lint
 npm run build
-npm test
+npm test -- --maxWorkers=1
 npm run eval:coach -- --offline
 npm run package:vsix
 ```

@@ -129,6 +129,16 @@ The user confirmed Team Vadhyar and both participants' roles. Code/human teachin
 
 - 2026-10-11T07:50:29+05:30: at the user’s 07:50 IST cutoff, the separate redesign was at 6c24897c474ded0c67f86a1fc3d8fd08439e5bdf with an ongoing test edit; its own ledger still required four-theme/all-state review, final parity, an updated package and native acceptance. Selected the verified original panel for v0.1.1, preserving all redesign work separately. Completed S8–S13, Project Guide/T1 and the reviewed safety patch are included. README now follows the exact supplied overview/run/status structure; no source behavior changed. Organizer submission remains pending until the announced window and method.
 
+## 2026-10-11T07:59:52+05:30 — Verified GitHub checkpoint and matching release
+
+- Published implementation `4f36cedcb93940e526165fbf94d6681542f54066` / immutable `v0.1.1` using normal pushes; old main/history and 0.1.0 preserved. VSIX and exact source ZIP match the frozen checkpoint; four downloaded assets match local SHA256SUMS and GitHub digests. Isolated final CLI install, eight core hashes, six packaged documents and source manifest fields passed.
+- Completed the exact supplied README overview/run/status format and a source-linked 51-item feature inventory. NovaDesk S8–S13, experimental Project Guide/T1 and reviewed safety fixes are present. Redesign remained unverified at 07:50 IST and was preserved separately. Main follow-up is documentation only.
+- Verification tooling corrections handled VSCE lowercase readme/changelog names, fonts under dist, source-only AI_USAGE, the native CLI path and VS Code-added manifest __metadata. An attempted byte comparison while a download was still running was discarded; only completed downloads support publication acceptance. No product behavior change was inferred.
+- Fresh code results remain 38 focused / 134 full tests, six offline validators, typecheck/lint/build exit 0 and zero production audit vulnerabilities. No additional API call, credential value access, active-session reload or parent index change. Native safety-patched replay, live build-plan acceptance, connected capture, CodeTour playback and human review remain unverified.
+- User-confirmed team/roles preserved; Aravind handle retained explicitly unverified. Organizer hand-in is separate, pending the announced after-08:00 window/method and eligibility confirmation.
+
+- 2026-10-11T08:01:15+05:30: post-freeze submission packet uploaded and downloaded; exact bytes and GitHub SHA256 digest match. Release now has five verified assets (four original artifacts plus the exact-SHA submission packet). No organizer receipt is inferred.
+
 
 ## 2026-10-11T08:10:08+05:30 — judge setup side conversation
 

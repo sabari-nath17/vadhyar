@@ -57,3 +57,7 @@ Local predictions, fixed checks, diff, transfer, reflection and memory need no A
 Close/reopen restores workspace-local evidence; relevant edits make earlier results historical. **Clear NovaDesk session** has a native confirmation and preserves source, Project Guide and credentials. It does not restore the seed. For a clean demo, use a new prepared folder. Do not clear/reload an active learner session.
 
 [Exact frozen release](submission-release.md) · [Attribution](../THIRD_PARTY_NOTICES.md) · [Recorded historical native evidence](s13-evidence/release.json). The previous [0.1.0 installer](https://github.com/sabari-nath17/vadhyar/releases/tag/v0.1.0) remains available with its earlier S7 scope.
+
+## macOS CLI availability
+
+The examples use `code`. In VS Code, run **Shell Command: Install 'code' command in PATH** if it is unavailable. Alternatively replace `code` with the quoted native path `"/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"`. Release installation verification used that native path in separate user-data/extensions directories; it did not change your PATH, active profile or learner session.

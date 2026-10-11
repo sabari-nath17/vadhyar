@@ -50,3 +50,11 @@ Release preparation timestamp: 2026-10-11T07:29:55+05:30. The fresh gates below 
 Team **Vadhyar**: SabariNath S A (`sabari-nath17`) — vibecoding management, project logic and vision; Aravind (`aravindksubash17`, user-supplied and explicitly unverified) — research, presentation deck and design assistance. These roles were confirmed by the user. Submission opens after **08:00 AM IST** according to the user; organizer form/receipt is not supplied and no organizer submission has been attempted.
 
 - 2026-10-11T07:50:29+05:30: at the user’s 07:50 IST cutoff, the separate redesign was at 6c24897c474ded0c67f86a1fc3d8fd08439e5bdf with an ongoing test edit; its own ledger still required four-theme/all-state review, final parity, an updated package and native acceptance. Selected the verified original panel for v0.1.1, preserving all redesign work separately. Completed S8–S13, Project Guide/T1 and the reviewed safety patch are included. README now follows the exact supplied overview/run/status structure; no source behavior changed. Organizer submission remains pending until the announced window and method.
+
+## Verified publication — 2026-10-11T07:59:52+05:30
+
+- Frozen implementation/tag: [`4f36cedcb93940e526165fbf94d6681542f54066`](https://github.com/sabari-nath17/vadhyar/tree/4f36cedcb93940e526165fbf94d6681542f54066) / `v0.1.1`. Normal main/tag pushes preserved canonical history.
+- [Published prerelease](https://github.com/sabari-nath17/vadhyar/releases/tag/v0.1.1): VSIX, exact Git source ZIP, manifest and SHA256SUMS. All four downloaded assets are byte-identical to local originals; both ZIPs pass integrity and GitHub digests match. Source archive matches 272 tracked files; eight installed core hashes remain unchanged.
+- [Complete 51-feature inventory](feature-coverage.md) identifies source/actions and historical, automated or unverified evidence per item. The agent capture helper is source-distributed; installed host command/event-file support is present, connected capture unverified.
+- [Current publication proof](submission-evidence/publication.json). Main-branch documentation records the frozen source identity; it does not move the code tag or replace the installer. The older 0.1.0 remains available.
+- Organizer submission remains pending; no form/link/receipt or eligibility attestation supplied. No fresh native/live claim is added.
