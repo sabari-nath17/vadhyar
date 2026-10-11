@@ -23,7 +23,7 @@ Built for [DevDay Exchange Community Hackathon: Kochi](https://luma.com/z10nz8gp
 | **Try the next change yourself** | Attempt the archived-milestone follow-up while preserving ownership behavior. Hint use is recorded; a rehearsal does not establish independent mastery. |
 | **Keep an inspectable learning record** | Reopen saved context, distinguish current evidence from stale history, add a reflection and inspect the evidence journey or Markdown handover. |
 
-These are the **prepared NovaDesk learning workflow**. [All recorded features and verification boundaries](docs/feature-coverage.md) are listed separately.
+These features form the **prepared NovaDesk learning workflow**. [All recorded features and verification boundaries](docs/feature-coverage.md) are listed separately.
 
 ### Project Guide — experimental
 
