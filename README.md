@@ -18,6 +18,8 @@ Built for [DevDay Exchange Community Hackathon: Kochi](https://luma.com/z10nz8gp
 
 ## Install and demonstrate
 
+**Judges: start with [the automated setup and prerequisite checklist](docs/judge-setup.md).** It installs the frozen VSIX and pinned Graphify into new isolated folders and checks real extraction/runner behavior. The supported target is **macOS Apple Silicon**; other systems are unverified. Live coaching still needs secure native key entry and account/model access.
+
 [Download the macOS Apple Silicon VSIX](https://github.com/sabari-nath17/vadhyar/releases/download/v0.1.1/vadhyar-0.1.1-darwin-arm64.vsix) · [Exact artifact/source identities](https://github.com/sabari-nath17/vadhyar/releases/download/v0.1.1/release-manifest.json).
 
 Install using **Extensions → ⋯ → Install from VSIX…**. Prepare a fresh disclosed NovaDesk fixture, trust that folder and run **Vadhyar: Understand this change**.

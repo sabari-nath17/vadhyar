@@ -2,6 +2,8 @@
 
 Supported target: **macOS Apple Silicon (`darwin-arm64`) and VS Code 1.140.0+**. Other platforms are unverified. This source tag and installer include NovaDesk S8–S13, H1/T1 Project Guide work and the reviewed safety patch. Panel-v2 is separate.
 
+For the shortest supported setup, use [the judge setup helper](judge-setup.md) from the latest source checkout. It installs and checks pinned Graphify as well as the unchanged frozen 0.1.1 VSIX. The frozen tag predates the helper; use the latest source for that command. Manual steps follow.
+
 ## Download and install
 
 Download [vadhyar-0.1.1-darwin-arm64.vsix](https://github.com/sabari-nath17/vadhyar/releases/download/v0.1.1/vadhyar-0.1.1-darwin-arm64.vsix). Verify its SHA-256 against the release's SHA256SUMS or release-manifest.json. Use **Extensions → ⋯ → Install from VSIX…**; reload only the intended demo window if requested.
