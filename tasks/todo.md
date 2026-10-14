@@ -566,3 +566,15 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - Preview: run `node prototype/build.mjs` and `node prototype/serve.mjs`; http://127.0.0.1:4173. The current local launcher is running for review.
 - Next authorized evaluation: inspect the mock with the chosen campus-builder/mentor audience and compare matched content with an editor plus worksheet. No interviews/trial have run.
 - Next implementation slice requires its own scope/acceptance: protected local host/controller using portable capture and fixed NovaDesk case runner, exact identities, saved-file scope, execution consent, authenticated actions and stale/error/reconnect handling. No LMS, automated grade, credentials/OAuth, universal execution or mastery claims are added.
+
+
+## 2026-10-14 20:01:14 IST — Generic companion completed milestone
+
+- [x] Host-approved real project default; optional prepared example with separate records.
+- [x] Disk metadata index, paged files, bounded source/full hash; native saved additions/modifications/deletions, durable selected contexts and stopped-host reconciliation.
+- [x] Source/requirement/case-driven prediction → freshly source-bound declared observation → actual refresh → scoped command/manual evidence plus human verdict → reflection → separate case; historical evidence and activity-only XP.
+- [x] Optional OpenAI session-key/model setup, exact excerpt consent, structured scoped interpretation, persistence/export and failure/cancellation isolation.
+- [x] Fixed six reproduced logic gaps: source/observation mismatch, lost Reflect-stage verification, dependency/check freshness and preflight consent, invalid excerpts, distinct/atomic history retention, reset identity. Also corrected retry/lost-status/draft/pagination/teaching-result paths and UTF-8 input bounds.
+- [x] 42 owned model/activity tests, 22 host cases (21 full plus new preflight regression), 19 provider and 1 static-server test; combined prototype 53 cases; root 134 checks; staged typecheck/lint/build; 42 browser fixture checks pass. Final 10,001-file benchmark and 110 protected file identities verified.
+- Checkpoint: this entry accompanies the local generic-companion milestone; find its exact SHA with `git log --all --grep="feat: add project-independent local companion"`. No push. Prior prepared checkpoint 636eb73 retained.
+- Next slice: human review and a real OpenAI representative input; shared extension/tool-recorder adapters and standalone installer; larger-repository/OS benchmarks and an explicit retention budget. Duolingo UI and browser-reuse checkpoints remain separately owned. Profiles, automatic chapters, review scheduling and additional providers are planned, not shipped here.

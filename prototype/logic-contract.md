@@ -1,6 +1,6 @@
 # Product logic and implementability
 
-14 October 2026. This contract distinguishes the working prepared mock from the smallest real repository slice. Codex independently reviewed current source and callers; real browser-service acceptance is not complete.
+14 October 2026. The prepared mock section remains the optional example contract. The generic local companion is now implemented and verified within the boundaries in [the feature contract](feature-contract.md). Source browsing, durable recording and explicit script/provider operations replace the prior static-only boundary; production readiness is not claimed.
 
 ## Working mock: inputs and outputs
 
@@ -21,32 +21,17 @@ Restoration rejects impossible earlier predictions, missing prerequisites, contr
 
 Optional hint count does not represent all assistance: prepared explanations and proposed conditions were already available. Outside assistance, authorship, course permission and human review remain unverified. A mentor can discuss the recorded reasoning and check scope; they cannot treat this export as a tamper-proof exam or competence certificate.
 
-## Real browser slice: implementable with existing components, acceptance pending
+## Working generic companion
 
-Use one trusted prepared NovaDesk workspace, one confirmed ownership requirement and saved edits made in the learner's editor. The standalone browser shows saved disk content; it cannot claim to know another editor's unsaved buffers.
+The default opens a host-approved real project; no NovaDesk ownership constant drives its source, requirement, case or lesson records. A user confirms the requirement and case. Prediction is immutable before the declared observation. A fresh source read must match that prediction before an observation can be recorded; empty/out-of-file excerpts are rejected. The learner edits in the original tool; a running recorder follows eligible saved changes and keeps bounded durable metadata/selected source contexts. The active question refreshes explicitly, so its original source and prediction do not change silently.
 
-| Existing source candidate | Actual capability | Required browser integration |
-|---|---|---|
-| [project model](../src/project/model.ts) | Node file capture, limits, hashes, diffs and atomic storage patterns | Host-owned approved root and portable storage location; bounded snapshot routes |
-| [prepared source](../src/extension/source.ts) | Prepared-file allowlist and source references | Host resolves opaque source IDs; browser cannot choose arbitrary paths |
-| [fixed checks](../src/extension/checks.ts) | NovaDesk case observations, fixed IDs, validated structured reports, fingerprints, timeout/error handling | Local service owns execution and results; pin runner dependencies and require explicit consent |
-| [generic project checks](../src/project/checks.ts) | Existing-script execution and bounded exit/output status | Display separately; generic success cannot establish a confirmed requirement |
-| [shared evidence types](../src/shared.ts) | Prediction/run identities and explicit outcome categories | Typed, bounded service messages validated at both boundaries |
-| [project controller](../src/project/controller.ts) | Orchestration patterns | Replace VS Code trust/pickers/storage/watchers/navigation/SecretStorage coupling; do not import it wholesale into a browser |
+Manual evidence, observations and requirement verdicts are self-reports. A fresh saved-source match cannot prove which runtime/deployed build was observed, and older saved observations have not been retroactively checked. A real existing project check supplies command status/output/file/source/manifest identity with freshness checks, timeout and stale/error states; it cannot establish that the requirement or the whole project is correct. Recorded eligible dependency/config/check changes or incomplete watch coverage make command evidence stale. Accepted verification survives a later source refresh in history, including before reflection is saved. Failed and uncertain verdicts can lead to reflection. A separate case answer records reasoning/assistance and does not certify independent transfer.
 
-No new database, graph engine or universal code-execution service is necessary for this slice. Existing portable components make the design credible; tests in the current extension are not evidence that this missing browser integration already works.
+OpenAI explanations require explicit connection/model selection and a preview of the selected source/requirement/case. Credentials stay in host memory, generation is bounded and source-rechecked, and structured citations stay in the captured range. Generated interpretations persist separately from checks and retain historical source labels. Provider failure does not stop recording. Actual live model access and teaching quality are not tested.
 
-## Minimum real-service acceptance
+Storage corruption is preserved; sequential reset/tab conflicts are detected, genuine write failure retains visible work with export/retry. Temporary reads recover; permanent lost run status stays unknown until explicitly cleared. Source refresh respects unsaved drafts. Simultaneous multi-tab writes remain non-atomic.
 
-1. A loopback-only service owns an approved repository root. Establish fresh session authentication, exact Host/Origin checks, bounded bodies and action schemas. Reject arbitrary browser-supplied paths, executables and arguments. Reject unpaired clients and expired/replayed authorization.
-2. Save the confirmed requirement, exact relevant saved source, scenario inputs and trusted-check/config identities with the prediction. Restart recovers the same evidence. Preserve previous valid data after save/execution failures.
-3. Execute the fixed different-client counterexample against that captured saved source. Show the actual observed outcome separately from the intended outcome. Model text cannot decide pass/fail.
-4. Detect an actual saved learner diff, then run all expected ordinary cases. A missing/malformed report, crash, timeout, changed check definitions or a relevant edit during consent/execution becomes error/stale, never pass.
-5. Refresh/reconnect rescans actual contents and requirements. Content identities invalidate changed relevant evidence; unchanged contents do not create artificial new revisions. Earlier records remain inspectable as historical.
-6. Show saved-files-only scope and obtain execution consent, then revalidate before starting. Trusted repository execution is not a hostile-code sandbox. Simulated approval actors do not prove application authentication.
-7. Keep coaching optional. A remote request requires an exact context preview and approval, service-owned credentials, exclusions for secrets/solutions and renewed approval if context expands. Provider activation and cost are not assumed.
-
-The authentication/bootstrap exchange, portable host controller and its reconnect/consent behavior still require a focused implementation spike and adversarial/native browser tests. The mock's static asset server intentionally grants no repository or command authority. This contract is implementable scope, not a production-readiness claim.
+For exact routes, limits, measured scale, acceptance and pending adapters use [feature-contract.md](feature-contract.md), [README](README.md) and the [generic specification](../docs/superpowers/specs/2026-10-14-project-agnostic.md). The original extension remains separately implemented; this launcher does not claim a completed shared bridge.
 
 ## Product decision gate
 

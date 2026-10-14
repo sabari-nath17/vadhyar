@@ -202,6 +202,11 @@ This follow-up passed typecheck/lint/build, all **118 tests** and six offline co
 
 ## Working browser mock — 14 October 2026
 
-A separate [Vadhyar prototype](prototype/README.md) now implements six destinations, a prepared ownership learning loop, local records and a connected website view. Start it from the repository root with `node prototype/build.mjs` then `node prototype/serve.mjs`; open http://127.0.0.1:4173. It uses existing dependencies and leaves the extension/website bundles unchanged.
+The separate [Vadhyar prototype](prototype/README.md) provides six destinations, source-driven questions, local records and a connected website view. Run `node prototype/launch.mjs --project /absolute/path/to/a/trusted/project`; open http://127.0.0.1:4173. The prepared ownership lesson remains an optional example. It uses existing dependencies and leaves the extension/website bundles unchanged.
 
 The [research and revised product decisions](docs/research/2026-10-14-industry-learning/README.md), [UI critique](prototype/ui-review.md) and [logic/implementation contract](prototype/logic-contract.md) distinguish a working mock from real repository authority or measured learning. Prepared browser checks are not project test execution. Records are local, self-recorded discussion material; use one recording tab and export before reset.
+
+
+## Local project companion prototype
+
+The browser prototype now opens a trusted local project, follows eligible saved changes, keeps durable metadata/selected-source contexts, and records source-driven questions with scoped manual/script evidence. OpenAI teaching is optional and explicitly consented; its key stays only in host memory. Run `node prototype/launch.mjs --project /absolute/path/to/project`. [Setup, limits and checks](prototype/README.md), [feature contract](prototype/feature-contract.md). NovaDesk remains an optional separate example. This is the source-checkout launcher, not a completed standalone installer or shared extension/plugin bridge.

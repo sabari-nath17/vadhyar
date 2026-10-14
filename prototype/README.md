@@ -1,53 +1,51 @@
-# Vadhyar working browser mock
+# Vadhyar local project companion prototype
 
-A local, interactive prototype for reasoning about one consequential code decision. Six destinations: Today, Learn, Practice, Project, Progress and Notebook. “About Vadhyar” opens the website view and returns to the same learning space.
+A local launcher and learning website for the learner's own saved code. Real projects are the default; NovaDesk is an optional labelled example with separate records. Keep building in the usual editor or coding tool: the running recorder follows eligible saved files automatically.
 
 ## Run
 
-From the repository root, use the existing installed dependencies:
+Use the installed repository dependencies and a supported Node.js runtime (tested on Node26.7.0/macOS):
 
 ```sh
-node prototype/build.mjs
-node prototype/serve.mjs
+node prototype/launch.mjs --project /absolute/path/to/a/trusted/project
 ```
 
-Open [the local prototype](http://127.0.0.1:4173). The server binds to `127.0.0.1` and serves only its compiled assets. `VADHYAR_MOCK_PORT` may select another local port. Stop the server with the terminal's interrupt action. Root extension bundles are unaffected.
+Without `--project`, the launcher uses the current folder. It builds only the prototype and binds to [127.0.0.1:4173](http://127.0.0.1:4173). `VADHYAR_MOCK_PORT` selects another local port. Stop with the terminal interrupt action. This is the source-checkout installation path; a standalone installer and shared VS Code/plugin connection remain future work. Root extension bundles are unaffected.
 
-## Try the complete slice
+## Complete a question
 
-Start the prepared NovaDesk ownership lesson. Confirm the rule, inspect its condition, record a prediction and reasoning, then reveal the prepared different-client result. Run mock checks before selecting the ownership condition to see the disclosed failure. Select the condition, rerun the three browser cases, save a reflection and answer the separate archived-state question. Review the exact original prediction in Progress; search/export reflections and personal notes in Notebook.
+Choose a source file in Project, confirm a requirement and a concrete case, then save a prediction before the observation. Observe in your own editor/running application and report the outcome. Recording that observation freshly checks the saved source against your prediction; a changed file needs an explicit fresh attempt and retains the original answer. The observed runtime/build is still self-reported. Save any edit in the original tool; the website reports the new recorded version automatically. Explicitly refresh the active question to compare changed or unchanged source. Its original prediction stays immutable.
 
-Project can simulate a later revision. The earlier attempt stays historical and cannot continue against the new source. Start a fresh lesson to investigate that revision. Guided/developer choices adjust explanatory presentation; both keep the same evidence prerequisites. Preferences change the displayed goal; they do not infer ability.
+Verify with manual evidence or an explicitly approved existing root-package check. Command status and the human requirement verdict are separate. Failed or uncertain verdicts can still produce useful reflection. Save a reflection, record a separate case, review Progress/Notebook and export the complete record. XP counts learning activities; saves and generated code do not earn rewards, and XP is not an ability score.
 
-## Limits that matter
+OpenAI is the first teaching adapter. Enter your own key in the local website, select an available model and approve the exact source excerpt before requesting an explanation. Keys stay only in protected host memory for the running session, never in browser/history storage. Restart requires reconnecting. A successful model listing does not prove every model supports Responses/structured output. Explanations retain source identity and coverage; earlier ones become historical. No live API access or teaching quality was verified in this build; provider tests/browser QA use an injected fixture transport. Recording works without a provider and after provider failure.
 
-- Prepared excerpts and simulated actors only. No repository access, file editing, actual project test scripts, authentication or AI API integration.
-- Selecting the condition evaluates a fixed browser rule on three active-milestone cases. The archived answer is recorded separately; no learner-authored archived guard is executed.
-- No grade, mastery, authorship, hiring signal, learning gain or institution approval is established. Practice supplies no in-app hints; outside assistance is self-declared and unverified.
-- Records use this browser's local storage under `vadhyar.mock.v1`. Use one tab for recording. Optimistic identity/version checks detect sequential conflicts, including resets, but simultaneous cross-tab read/write transactions are not atomic.
-- Malformed data is retained and blocks overwriting. Genuine storage failures keep validated work in the current tab with a warning, export and retry. Closing/reloading unsaved work can lose it; browser unload prompts depend on the browser.
-- Reset removes only this prototype's key after an in-product confirmation. Export first. Notes are plain user text, not a tamper-proof institutional assessment record.
-- Development diagnostics disclose operation categories only. This mock makes no model requests and has no credentials. No analytics or external fonts are loaded.
+## Recording and storage
 
-## Checks
+- File metadata is streamed into a disk SQLite index. Browser pages contain at most100 files (default50); selected source reads contain at most200 lines/40,000characters plus a full-file hash. No whole-repository model upload.
+- Native recursive watching updates eligible saved additions, modifications and deletions. Initial metadata capture is a baseline, separate from later development events. AI-session completion and successful build/check status remain distinct, and AI-tool hooks are not connected.
+- Hidden, vendor, generated, binary, symlink and common private-file/content patterns are excluded. Counts represent encountered entries, including excluded folders without scanning their descendants. This is not comprehensive secret classification; review an excerpt before sharing.
+- Durable data defaults to `~/Library/Application Support/Vadhyar/prototype/<project-id>/files.sqlite` on macOS (`~/.local/share/Vadhyar/prototype` on Linux; LOCALAPPDATA on Windows). Directory700/database600. Metadata events retain the latest10,000; selected source retains the latest20 distinct hash/range contexts per file. Content history begins when a file is selected, not for every file in the baseline.
+- Watchers can coalesce rapid saves; not every keystroke/intermediate version is guaranteed. Depth64, device/OS watch limits and disk capacity bound coverage. Watch errors are visible; metadata/source history survives restart, including reconciliation of changes made while stopped. No global history byte quota is configured.
+- Learning records use browser storage under `vadhyar.project.v1.<project-id>`; the prepared example retains `vadhyar.mock.v1`. Up to20 earlier attempts,20 refreshes per attempt,5 teaching interpretations per attempt and3MB per project record. Export before an explicit project-only reset. Reset atomically saves a new record identity so an earlier serial-zero tab cannot restore deleted progress. Source history is retained separately.
+- Corrupt records remain untouched. Storage failures keep validated work in the tab with export/retry; sequential conflicts/reset generations are detected. Simultaneous cross-tab writes are not atomic: use one tab. Local records are editable and not an institutional assessment ledger.
+
+## Execution boundary
+
+Only existing root `package.json` scripts with test/check/lint/typecheck names are exposed by this adapter. The user approves the exact command and current source/manifest identities. No installs, arbitrary browser commands or npm pre/post hooks. Jobs have bounded output and a30-second budget; recorded eligible source/dependency/config/check changes during execution, or incomplete watch coverage, produce stale evidence. Queued saves settle before the exact approved source/manifest is revalidated. Freshness covers observed eligible files, not all excluded files or runtime inputs. Execution is trusted repository code on this computer, not a hostile-code sandbox. Other language runners remain pending; source browsing and manual learning are language independent for readable text.
+
+Transient status reads retry without repeating execution. Permanently lost check status can be cleared explicitly; its outcome stays unknown. Changed-source refresh asks before discarding unsaved text. Accepted verification is archived before changed-source refresh, including at the reflection stage; copied historical predictions/activities count once. Old saved observations have not been retroactively validated. Generated interpretations survive navigation/reload and are labelled assistance, not checks; cancelling a request cannot undo usage already incurred.
+
+## Verification
 
 ```sh
 npx tsc -p prototype/tsconfig.json
 npx eslint prototype/src prototype/*.ts prototype/*.mjs
 npx vitest run --config prototype/vitest.config.ts
 node prototype/build.mjs
-node --test prototype/server.test.mjs
+node --test prototype/project-service.test.mjs prototype/teaching-service.test.mjs prototype/server.test.mjs
 ```
 
-Domain tests cover gating, immutable source context, corrupted/inconsistent restores, historical revisions, storage failure/recovery, reset/tab conflicts and review export. The server test covers asset serving, Host/method/path restrictions and escaping symlinks. Root checks remain separate. Browser QA and limitations are recorded in the root project records.
+[Feature contract and handoff](feature-contract.md) records the implemented boundaries and pending adapters. [Project-independent specification](../docs/superpowers/specs/2026-10-14-project-agnostic.md) and [plan](../docs/superpowers/plans/2026-10-14-project-agnostic.md) describe this slice. [Research](../docs/research/2026-10-14-industry-learning/README.md), [roasted findings](../docs/research/2026-10-14-industry-learning/decisions.md), [logic contract](logic-contract.md), [design references](DESIGN.md) and [original UI review](ui-review.md) retain provenance. The separate Duolingo UI chat owns the next visual proposal; this checkpoint's later changes fix feature behavior.
 
-## Design and source credits
-
-- [Evidence review and research limitations](../docs/research/2026-10-14-industry-learning/README.md)
-- [Roasted findings and revised product decisions](../docs/research/2026-10-14-industry-learning/decisions.md)
-- [Mock specification](../docs/superpowers/specs/2026-10-14-browser-mock-design.md)
-- [Implementation plan](../docs/superpowers/plans/2026-10-14-browser-mock.md)
-- [UI critique and corrections](ui-review.md)
-- [Product logic and real-browser acceptance](logic-contract.md)
-
-The original wordmark comes from `website/assets/vadhyar-logo.png`. Inter, Playfair Display and JetBrains Mono fonts are reused from the repository with their OFL notices in `assets/`. React, Zod, TypeScript, esbuild and Vitest reuse existing dependencies. `Control` reuses the existing panel button and unavailable-reason pattern; existing panel source is unchanged. The visual concept and lotus/books illustration were generated using Codex's built-in image generation; the illustration is an asset, not a screenshot substituted for functioning UI. No upstream product or research implementation code was copied.
+Original wordmark, generated lotus/books illustration and repository fonts/OFL notices are retained. House Control, React, Zod, OpenAI SDK, esbuild and Vitest reuse the installed stack. Research establishes design hypotheses, not product demand or learning benefit. The optional prepared lesson still discloses its seeded ownership bug; it cannot be mistaken for recorded source or actual project execution.

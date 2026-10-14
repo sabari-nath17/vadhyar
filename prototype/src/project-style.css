@@ -1,0 +1,90 @@
+/* Source views remain bounded even when the project grows. */
+.connect-screen { max-width: 850px; margin: 60px auto; padding: 24px; }
+.connect-screen .brand { width: 180px; margin-bottom: 48px; }
+.project-explorer { display: grid; grid-template-columns: minmax(220px, 285px) minmax(0, 1fr); gap: 28px; align-items: start; }
+.project-files { border: 1px solid var(--line, #dcded4); border-radius: 12px; background: #f3f3ec; padding: 18px; min-width: 0; }
+.project-files ul { list-style: none; margin: 12px -8px 18px; padding: 0; max-height: 485px; overflow: auto; }
+.file-count { color: #64695d; font-size: 12px; }
+.file-option { display: flex; align-items: flex-start; gap: 10px; width: 100%; min-height: 54px; padding: 12px 8px; text-align: left; border: 1px solid transparent; border-radius: 7px; background: transparent; font-size: 13px; }
+.file-option > span { min-width: 0; overflow-wrap: anywhere; }
+.file-option small { display: block; margin-top: 4px; color: #64695d; font-size: 11px; }
+.file-option .nav-icon { flex: 0 0 16px; width: 16px; height: 16px; margin-top: 2px; }
+.file-option:hover, .file-option.selected { background: #e5e9dc; border-color: #b4bca6; }
+.project-files .disclosure { margin-bottom: 0; }
+.selected-source, .lesson-context { min-width: 0; }
+.selected-source .project-rule { margin-top: 22px; }
+.source-range { display: flex; align-items: end; gap: 12px; margin-bottom: 14px; }
+.source-range .field { margin: 0; max-width: 130px; }
+.real-source .source-title { align-items: start; gap: 14px; flex-wrap: wrap; }
+.real-source .source-title > span:first-child { min-width: 0; overflow-wrap: anywhere; }
+.real-source pre { max-height: 430px; overflow: auto; margin-bottom: 0; }
+.real-source code { font-size: 12px; }
+.source-foot { padding: 10px 16px; border-top: 1px solid #dddcd0; font-family: Inter, sans-serif; font-size: 11px; color: #626859; overflow-wrap: anywhere; }
+.source-empty { min-height: 480px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.source-empty > svg { width: 38px; height: 38px; margin-bottom: 20px; }
+.source-empty .muted { font-size: 12px; }
+.project-status { flex-wrap: wrap; }
+.project-status > div { flex: 1; min-width: 160px; overflow-wrap: anywhere; }
+.real-project-label { max-width: 48%; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.generic-lesson-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.generic-lesson .lesson-task { min-width: 0; }
+.generic-lesson .lesson-top .chip { max-width: 65%; overflow-wrap: anywhere; white-space: normal; }
+.generic-lesson .lesson-context h3 { font-size: 19px; line-height: 1.5; }
+.generic-lesson .lesson-context .evidence-note { margin-bottom: 18px; }
+.generic-lesson .lesson-task .field { margin-top: 20px; }
+.generic-lesson .lesson-task .text-button { display: block; margin-top: 18px; }
+.saved-thought { border-left: 3px solid #a5b095; padding: 6px 0 6px 16px; margin: 20px 0; background: #f4f5ed; }
+.saved-thought p { margin-bottom: 5px; }
+.source-refresh-state { font-size: 12px; margin: 18px 0; color: #4b593f; }
+.run-result { margin-top: 18px; }
+.run-result pre, .record-source { overflow: auto; max-height: 260px; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; }
+.generic-evidence { display: grid; grid-template-columns: minmax(140px, 1fr) 2fr; gap: 12px 20px; line-height: 1.6; font-size: 13px; }
+.generic-evidence dt { color: #64695d; }
+.generic-evidence dd { margin: 0; overflow-wrap: anywhere; }
+.project-records .attempt-record { margin-bottom: 20px; }
+.project-records h2, .project-records details p { overflow-wrap: anywhere; }
+.project-records summary { cursor: pointer; padding: 14px 0; font-size: 13px; }
+.companion-status { display: flex; flex-wrap: wrap; gap: 10px 24px; margin: 20px 0; font-size: 12px; }
+.change-feed { margin-top: 24px; border-top: 1px solid #dedfd5; padding-top: 20px; }
+.change-feed ul { list-style: none; padding: 0; }
+.change-feed li { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid #e5e5da; font-size: 12px; }
+.change-feed li > span { overflow-wrap: anywhere; min-width: 0; }
+.change-feed time { flex-shrink: 0; color: #64695d; }
+.source-update { margin: 18px 0; }
+.teaching-panel { margin-top: 22px; padding: 22px; background: #f1f3e8; border: 1px solid #d1d8c4; border-radius: 10px; }
+.teaching-panel h3 { font-size: 24px; margin-top: 0; }
+.teaching-panel p { font-size: 13px; }
+.teaching-panel .field { margin-top: 16px; }
+.teaching-panel li { font-size: 13px; margin-bottom: 10px; }
+.teaching-panel code { overflow-wrap: anywhere; }
+.activity-reward { display: flex; align-items: center; gap: 8px; margin: 20px 0; font-size: 12px; color: #4b593f; }
+.activity-reward strong { font-size: 21px; }
+@media (max-width: 1000px) {
+ .project-explorer { grid-template-columns: minmax(180px, 235px) minmax(0, 1fr); gap: 18px; }
+ .generic-lesson-grid { grid-template-columns: 1fr; }
+ .lesson-context { display: grid; grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+ .connect-screen { margin: 24px auto; }
+ .project-explorer { grid-template-columns: 1fr; }
+ .project-files ul { max-height: 215px; }
+ .project-files .field, .project-files .disclosure { width: 100%; }
+ .file-option, .file-option small, .source-foot, .file-count { font-size: 12px; }
+ .file-option { min-height: 52px; }
+ .real-source code { font-size: 12px; }
+ .real-source .source-title { font-size: 12px; }
+ .real-source .line-number { font-size: 11px; min-width: 28px; }
+ .source-empty { min-height: 270px; }
+ .real-project-label { font-size: 10px; max-width: 44%; }
+ .generic-lesson .lesson-task { padding: 22px 18px; }
+ .generic-lesson .lesson-task p, .generic-lesson .lesson-context p, .generic-lesson .disclosure, .project-files .disclosure { font-size: 12px; }
+ .generic-lesson .stepper li { font-size: 10px; }
+ .generic-evidence { grid-template-columns: 1fr; gap: 5px; font-size: 12px; }
+ .generic-evidence dd { margin-bottom: 12px; }
+ .teaching-panel { padding: 18px; }
+ .change-feed li { font-size: 12px; }
+ .project-status small { font-size: 12px; }
+}
+.source-versions { margin-top: 12px; padding: 12px 16px; border: 1px solid #dedfd5; border-radius: 8px; font-size: 12px; }
+.source-versions summary { cursor: pointer; min-height: 32px; padding-block: 8px; }
+.source-versions details { border-top: 1px solid #dedfd5; padding-top: 5px; }

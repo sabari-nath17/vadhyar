@@ -1,16 +1,17 @@
 import { createServer } from 'node:http';
 import { readFile, realpath } from 'node:fs/promises';
 import { fileURLToPath, URL } from 'node:url';
-import { join, sep } from 'node:path';
+import { join, sep, resolve } from 'node:path';
 import process from 'node:process';
 const directory = fileURLToPath(new URL('dist/', import.meta.url));
 const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.png': 'image/png', '.woff2': 'font/woff2' };
-export function mockServer() {
+export function mockServer({ service } = {}) {
  return createServer(async (request, response) => {
-  response.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'");
+  response.setHeader('Content-Security-Policy', `default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src ${service ? "'self'" : "'none'"}; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'`);
   response.setHeader('X-Content-Type-Options', 'nosniff'); response.setHeader('Cache-Control', 'no-store');
   const host = request.headers.host ?? '';
-  if (!/^127\.0\.0\.1:\d+$/.test(host)) { response.writeHead(403); response.end('Invalid host'); return; }
+  if (host !== `127.0.0.1:${request.socket.localPort}`) { response.writeHead(403); response.end('Invalid host'); return; }
+  if (service && await service.handle(request, response)) return;
   if (!['GET', 'HEAD'].includes(request.method ?? '')) { response.writeHead(405, { Allow: 'GET, HEAD' }); response.end(); return; }
   try {
    const path = decodeURIComponent((request.url ?? '/').split('?')[0]);
@@ -23,9 +24,24 @@ export function mockServer() {
   } catch { response.writeHead(404); response.end('Not found'); }
  });
 }
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
+export async function launchProject() {
  const port = Number(process.env.VADHYAR_MOCK_PORT ?? 4173);
  if (!Number.isInteger(port) || port < 1024 || port > 65535) throw new Error('Choose a valid local prototype port (1024–65535).');
- const server = mockServer(); server.on('error', () => { process.stderr.write('Prototype server could not start. Check the port and build output.\n'); process.exitCode = 1; });
- server.listen(port, '127.0.0.1', () => process.stdout.write(`Vadhyar mock: http://127.0.0.1:${port}\n`));
+ const args = process.argv.slice(2);
+ if (args.length && (args.length !== 2 || args[0] !== '--project')) throw new Error('Use --project followed by one trusted local folder.');
+ const root = resolve(args[1] ?? process.cwd());
+ const { createProjectService } = await import('./project-service.mjs');
+ const { createTeachingService } = await import('./teaching-service.mjs');
+ let service;
+ const teaching = createTeachingService({ readSource: (...values) => service.readSource(...values) });
+ service = await createProjectService({ root, origin: `http://127.0.0.1:${port}`, handleExtraApi: teaching.handle });
+ const server = mockServer({ service });
+ const stop = async () => { teaching.close(); await service.close(); server.close(); };
+ process.once('SIGINT', () => { void stop(); }); process.once('SIGTERM', () => { void stop(); });
+ server.on('error', () => { process.stderr.write('Project companion could not start. Check the port, project folder and build output.\n'); process.exitCode = 1; void stop(); });
+ server.listen(port, '127.0.0.1', () => process.stdout.write(`Vadhyar companion: http://127.0.0.1:${port}\n`));
+ return { server, service, teaching, stop };
+}
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+ try { await launchProject(); } catch { process.stderr.write('Project companion setup failed. Use --project with an existing trusted folder and supported Node.js.\n'); process.exitCode = 1; }
 }
