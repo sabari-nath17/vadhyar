@@ -1,4 +1,6 @@
-# Hackathon rules
+# Historical hackathon rules
+
+Archived provenance for Vadhyar's original DevDay Kochi build, 10–11 October 2026. The event-only instructions below are retained as recorded; they do not govern ongoing product development. Current guidance is in [AGENTS.md](AGENTS.md) and [.customrules](.customrules).
 
 ## Event
 

@@ -1,9 +1,9 @@
 # Vadhyar development instructions
 
-- Read [RULES.md](RULES.md), [.customrules](.customrules), [the plan](docs/implementation-plan.md) and [the slice record](tasks/todo.md) before work.
+- Read [.customrules](.customrules), [the plan](docs/implementation-plan.md) and [the slice record](tasks/todo.md) before work.
 - Canonical repository: https://github.com/sabari-nath17/vadhyar.git. Inspect status, remotes and history before reconciling work.
-- Build implementation from scratch at the event; libraries/APIs/datasets are allowed with source attribution.
-- Follow organizer instructions; the event wraps up by 10:00 AM IST on 11 October 2026.
+- Develop Vadhyar as an ongoing product; attribute reused libraries/APIs/datasets and preserve source provenance.
+- Preserve its DevDay Kochi origin; [RULES.md](RULES.md) and [SUBMISSION.md](SUBMISSION.md) are historical event records, not current development gates.
 - Preserve user/teammate changes, `.ignore`, Graft artifacts and prior task evidence.
 - Scope one authorized slice, its callers, tests, config and exact verification before coding.
 - Apply Ponytail: existing patterns, platform features, installed dependencies, minimum new code.
@@ -22,11 +22,11 @@
 - Aim for meaningful commits about every 30 minutes while building; this is a convention, not an event rule.
 - Use descriptive commits; never fabricate/backdate records or create empty cadence commits.
 - Preserve shared history: no force-push, destructive reset or unrelated cleanup; explain recovery targets first.
-- Push checkpoints only when explicitly authorized; repository publication and organizer submission are separate.
+- Push checkpoints and publish releases only when explicitly authorized.
 - Keep credentials, QR codes and private data out of source/logs; sanitized examples only.
 - Enable verbose development diagnostics while logging only timings, operation IDs and redacted error categories.
 - For non-trivial ongoing work, consult `/Users/sabarismac/Documents/Second Brain/Second Brain/README_FOR_AI.md` and `Home.md`, then relevant notes under its AGENTS rules.
 - Do not scan the whole vault, modify raw sources or retrieve secrets; read sensitive notes only when required.
-- Before submission, complete [SUBMISSION.md](SUBMISSION.md), verify setup/demo/limits, update records and commit.
-- Follow the actual submission method; record its verified commit SHA and push only with authorization.
+- Before publishing a release, verify setup/demo/limits and the exact artifact; update records and commit.
+- Record the verified release commit SHA; historical organizer submission status stays in its archive.
 - Keep this file and `.customrules` under 50 lines; put detailed plans and task state elsewhere.

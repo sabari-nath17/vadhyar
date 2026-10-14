@@ -1,5 +1,14 @@
 # Vadhyar slice task record
 
+## Ongoing product positioning — 2026-10-14T16:13:56+05:30
+
+- Authorization: side-conversation user requested proper GitHub updates that remove hackathon constraints from current positioning while preserving the origin.
+- Scope: README, AGENTS, .customrules, RULES, SUBMISSION, AI_USAGE, CHANGELOG and this record; GitHub About/topics metadata. Based on canonical main `23c63ee1199b3925cd36edf1207ca8029362431a`.
+- Result: product-focused entry points and current guidance; original event rules/submission content retained with archive notices; published release/source checkpoint preserved.
+- Checks: scoped diff, archive-body preservation, relative links, instruction line limits and About/topics read-back. Documentation-only; app tests not rerun. Human review pending.
+- Checkpoint: the isolated documentation commit containing this entry; review/integrate its PR before main reflects the change. The active local prototype and shared Git index remain untouched.
+- Next: continue the separately authorized product work, keep implementation/evidence boundaries truthful, and publish each reviewed product milestone through its own scoped change.
+
 ## Project Guide — 2026-10-11T01:31:17.000+05:30
 
 - Authorization: user requested implementation of multiple-file changes, evolving/new feature intentions, build guidance and related logical fixes after the side-conversation boundary. This additional mode does not declare original S8 or later prepared-learning gates complete.

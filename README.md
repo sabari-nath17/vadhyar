@@ -6,7 +6,7 @@
 
 Help a beginner connect an AI-built feature to their intention, investigate one decision, make their own change, and inspect the checks that actually ran.
 
-Built for [DevDay Exchange Community Hackathon: Kochi](https://luma.com/z10nz8gp), 10–11 October 2026. [Event rules](RULES.md) · [Agent instructions](AGENTS.md) · [Submission](SUBMISSION.md).
+[Development instructions](AGENTS.md) · [Product plan](docs/implementation-plan.md) · [Current work](tasks/todo.md).
 
 **Requirement → relevant source → prediction → observed behavior → your edit → executed checks → independent follow-up.**
 
@@ -40,11 +40,11 @@ The unrelated **SeatCheck** supporting fixture exercises project tracking, sourc
 
 - **Project name:** Vadhyar.
 - **Short description:** A local VS Code learning companion for beginners building with AI. It connects their intention to source, helps them reason before making their own edit, and preserves evidence of the checks that actually ran.
-- **Team:** Vadhyar — SabariNath S A ([sabari-nath17](https://github.com/sabari-nath17)) and Aravind (`aravindksubash17`, unverified handle supplied by the user). Two participants; maximum four. [Confirmed contributions](SUBMISSION.md#participants).
+- **Contributors:** SabariNath S A ([sabari-nath17](https://github.com/sabari-nath17)) and Aravind (`aravindksubash17`, unverified handle supplied by the user). [Historical contribution record](SUBMISSION.md#participants).
 - **Working demo:** [Frozen 0.1.1 installer and source](https://github.com/sabari-nath17/vadhyar/releases/tag/v0.1.1), [installation](docs/installation.md), [NovaDesk walkthrough/reset](docs/demo.md), [separate-project walkthrough](docs/strengthen-demo.md).
 - **Technology stack:** TypeScript, React, native VS Code APIs, Zod, esbuild, Vitest, Graphify 0.9.84 and the official OpenAI Responses API SDK. Promptfoo is development-only.
 
-**Frozen implementation:** [`4f36cedcb93940e526165fbf94d6681542f54066`](https://github.com/sabari-nath17/vadhyar/tree/4f36cedcb93940e526165fbf94d6681542f54066) · [Complete 51-feature inventory and evidence](docs/feature-coverage.md) · [Prepared submission record](SUBMISSION.md). Later main-branch documentation does not change this installer/source checkpoint.
+**v0.1.1 source checkpoint:** [`4f36cedcb93940e526165fbf94d6681542f54066`](https://github.com/sabari-nath17/vadhyar/tree/4f36cedcb93940e526165fbf94d6681542f54066) · [Complete 51-feature inventory and evidence](docs/feature-coverage.md) · [Prepared submission record](SUBMISSION.md). Later main-branch documentation does not change this installer/source checkpoint.
 
 ## See Vadhyar in VS Code
 
@@ -137,7 +137,11 @@ The six offline evaluator cases validate synthetic responses, not live teaching 
 
 See [AI_USAGE.md](AI_USAGE.md) for AI assistance and [CHANGELOG.md](CHANGELOG.md) for the development record.
 
-This repository follows the [organizer's documentation template](https://github.com/anima-regem/devday-kochi-hackathon-template/tree/416329035c57c5cc82e42289bcf38d9cf5587011): project overview, real run commands, current status, [RULES.md](RULES.md), [AGENTS.md](AGENTS.md), [AI_USAGE.md](AI_USAGE.md), [CHANGELOG.md](CHANGELOG.md), [SUBMISSION.md](SUBMISSION.md) and the PR checklist. No new repository or shared-history rewrite was used. Organizer receipt/eligibility is separate from repository publication.
+## Project origins
+
+Vadhyar was originally developed for the [DevDay Exchange Community Hackathon: Kochi](https://luma.com/z10nz8gp), held on 10–11 October 2026. It now continues as an ongoing product project.
+
+The original [event rules](RULES.md), [submission record](SUBMISSION.md) and [organizer documentation template](https://github.com/anima-regem/devday-kochi-hackathon-template/tree/416329035c57c5cc82e42289bcf38d9cf5587011) remain as historical provenance. Their deadlines, team limits and event-only requirements do not govern ongoing development. Organizer receipt/eligibility is separate from repository publication. Current work follows [AGENTS.md](AGENTS.md), [.customrules](.customrules) and the [task record](tasks/todo.md).
 
 ## Website and earlier release
 
@@ -146,6 +150,6 @@ This repository follows the [organizer's documentation template](https://github.
 [AI assistance](AI_USAGE.md) · [Development changes](CHANGELOG.md) · [Slice evidence](tasks/todo.md) · [Implementation plan](docs/implementation-plan.md).
 
 
-## Pitch deck
+## Historical event pitch deck
 
 The [final hackathon presentation](docs/pitch/README.md) is available as a [PDF](docs/pitch/Vadhyar-Hackathon-final.pdf) and an [editable PowerPoint](docs/pitch/Vadhyar-Hackathon-final.pptx).

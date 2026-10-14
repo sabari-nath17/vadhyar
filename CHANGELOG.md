@@ -1,8 +1,17 @@
 # Change log
 
-Record each meaningful project change during the event, newest first. Update this file in the same commit as the change. Use a real timestamp with timezone, for example `YYYY-MM-DDTHH:MM:SS+05:30`.
+Record each meaningful project change throughout development, newest first. Update this file in the same commit as the change. Use a real timestamp with timezone, for example `YYYY-MM-DDTHH:MM:SS+05:30`.
 
-## Event build log
+## Ongoing development
+
+## 2026-10-14T16:13:56+05:30 — Separate product development from hackathon provenance
+
+- Changed: Product-focused GitHub About/topics and README; current development/release guidance in AGENTS and .customrules; explicit archive notices in RULES/SUBMISSION; ongoing AI-usage, changelog and task records.
+- Why: Continue Vadhyar as a product while preserving that it was originally developed for the DevDay Kochi hackathon.
+- Checks: Reviewed the exact eight-file documentation diff; preserved archive bodies/event facts/release evidence; relative Markdown links and under-50-line instruction files checked; About/topics read-back matched. No application code or dependency change, and no app tests rerun.
+- Scope: Documentation branch based on `23c63ee1199b3925cd36edf1207ca8029362431a`; ongoing prototype work in the shared checkout is separate. Human review pending.
+
+## Historical event build log
 
 ## 2026-10-11T08:27:03+05:30 — Publish final pitch deck
 

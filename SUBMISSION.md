@@ -1,4 +1,6 @@
-# Vadhyar — project submission
+# Vadhyar — historical hackathon submission record
+
+This archive preserves the original event handoff and its recorded verification limits. It is not the current product release checklist; historical deadlines and eligibility conditions do not apply to ongoing development.
 
 Prepared repository/release handoff following the organizer template. GitHub publication does not by itself confirm organizer receipt.
 
