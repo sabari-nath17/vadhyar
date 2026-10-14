@@ -1,0 +1,128 @@
+{
+  "sourceCommit": "2465b5d04505c88babc6ed1f018070844b5d5dce",
+  "sha256": "d5cdf484c3aa0cc9bdbc6f5efd17b628730122794b15c951301d32d73b7dd78d",
+  "nodeVersion": "24.19.0",
+  "regularMembers": 24,
+  "declaredFiles": 23,
+  "appleDoubleMembers": 0,
+  "ownerGroup": "0/0",
+  "inputHashesVerified": 453,
+  "runtimeDependencies": [
+    "openai",
+    "typescript",
+    "zod"
+  ],
+  "clientDependencies": [
+    "@xyflow/react",
+    "@xyflow/system",
+    "classcat",
+    "d3-color",
+    "d3-dispatch",
+    "d3-drag",
+    "d3-ease",
+    "d3-interpolate",
+    "d3-selection",
+    "d3-timer",
+    "d3-transition",
+    "d3-zoom",
+    "react",
+    "react-dom",
+    "scheduler",
+    "use-sync-external-store",
+    "zod",
+    "zustand"
+  ],
+  "compilerConfigs": {
+    "tsconfig.json": "bb76a00e6fc5cc33e2ac35858761622337ac2c83458d143176ba64dfb4b053ae",
+    "prototype/tsconfig.json": "aeb3e2aaa8d81f29f0291efa5086636d13202d66918ccfe9c08efb1ecb8fc054"
+  },
+  "jsxGlobalReactReferences": 0,
+  "renderedAcceptance": "pending root CUA",
+  "port": 4188,
+  "serviceSmoke": "passed",
+  "checkedAt": "2026-10-14T20:24:37.938Z",
+  "checks": [
+    "invalid Host rejected",
+    "installed index and CSP",
+    "asset runtime/dist/app.css",
+    "asset runtime/dist/app.js",
+    "asset runtime/dist/assets/inter-normal-400.woff2",
+    "asset runtime/dist/assets/inter-normal-500.woff2",
+    "asset runtime/dist/assets/inter-normal-600.woff2",
+    "asset runtime/dist/assets/jetbrains-mono-normal-400.woff2",
+    "asset runtime/dist/assets/lesson-guide.png",
+    "asset runtime/dist/assets/logo.png",
+    "asset runtime/dist/assets/playfair-display-normal-600.woff2",
+    "source API requires session",
+    "same-origin session handshake",
+    "cross-origin API rejected",
+    "watching ready fixture",
+    "captured exact source src/capacity.ts",
+    "captured exact source src/reservations.ts",
+    "two-file protected knowledge",
+    "provider stays disconnected",
+    "no automatic fixture execution",
+    "check refuses missing consent",
+    "explicit fixture execution acknowledged",
+    "actual synthetic check passed/current",
+    "one command only",
+    "manifest path not served",
+    "app license available in archive"
+  ],
+  "host": "http://127.0.0.1:4188",
+  "fixtureProjectId": "a9f9b4b129b722dd98e3baac682a181283af849b700e5b69cf734a9207e8af29",
+  "sourceFileIds": [
+    {
+      "fileId": "787afc44b75227fc3e7a1c728fb9b4e677ab958cda2036c92ecb4e6fe7c768ba",
+      "sourceHash": "af881777c1eee9711a0abbc4f917859b1e701d908669b2b79b7cf5344d1912bd",
+      "startLine": 1
+    },
+    {
+      "fileId": "abdd772fc8db62639f81b398314daf16a382a23342f2995784cdd084abc1b098",
+      "sourceHash": "486f36cfc338d1f5aa86ef7cd18f3142c1ecc3f28da1ef2cc7d45b6c186aa6f7",
+      "startLine": 1
+    }
+  ],
+  "executedCheck": {
+    "scriptId": "test",
+    "status": "passed",
+    "freshness": "current",
+    "exitCode": 0,
+    "output": "Synthetic reservation checks passed.",
+    "executionCount": 1
+  },
+  "installerCases": {
+    "passed": 4,
+    "nodeVersion": "24.19.0",
+    "log": "/tmp/vadhyar-browser-2465b5d-installer-checks.log"
+  },
+  "harnessCorrection": "The HTTP harness initially compared the synthetic counter to '1\\n'; the fixture writes '1'. All preceding source/knowledge/consent/run assertions passed. Counter, non-served manifest, MIT license and installed hashes were then independently verified; the command was not repeated.",
+  "limits": [
+    "Synthetic fixture only; no user repository commands or provider calls.",
+    "Final rendered browser acceptance is separately owned by root and pending.",
+    "Windows and signing remain unverified."
+  ],
+  "originalLocalReceiptSha256": "dae9f919a988ba82c1f2ced20af61b0dae25991a2886e7f950a5b6cec791d8c2",
+  "publicationSanitization": "Local filesystem/process identifiers omitted; original specialist receipt retained locally.",
+  "rootRenderedAcceptance": {
+    "checkedAt": "2026-10-15T02:02:10+05:30",
+    "sourceCommit": "2465b5d04505c88babc6ed1f018070844b5d5dce",
+    "artifactSha256": "d5cdf484c3aa0cc9bdbc6f5efd17b628730122794b15c951301d32d73b7dd78d",
+    "fixture": "Synthetic Reservation Demo",
+    "routes": [
+      "Path",
+      "Project",
+      "Notebook"
+    ],
+    "source": "src/capacity.ts 1-3; full-file hash and text match",
+    "captureCount": 1,
+    "analysis": "selected-source proposal available; canReserve complete declaration",
+    "export": "actual browser download; exact fixture source verified",
+    "newBrowserWarnings": 0,
+    "newBrowserErrors": 0,
+    "learnerOutcomes": "not tested",
+    "providerRequests": 0,
+    "screenshot": "installed-project.jpg",
+    "readingExport": "reading-bundle.json"
+  }
+}

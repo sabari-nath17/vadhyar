@@ -992,7 +992,7 @@
   },
   "githubPublicationSlice": {
     "authorizedAtDate": "2026-10-15",
-    "updatedAtIST": "2026-10-15T01:23:23+05:30",
+    "updatedAtIST": "2026-10-15T02:02:10+05:30",
     "userAuthorizedPushAllUpdatedProjectWork": true,
     "userSelectedLicense": "MIT",
     "rootScope": [
@@ -1019,6 +1019,16 @@
       "outputs/"
     ],
     "privateVulnerabilityReporting": "enabled and verified",
-    "publicationStatus": "pending final source/reconciliation/artifact/hosted checks"
+    "publicationStatus": "published verified browser prerelease; reviewed source pushed; final records checkpoint follows required branch checks",
+    "releaseTag": "browser-v0.1.0",
+    "releaseSourceCommit": "2465b5d04505c88babc6ed1f018070844b5d5dce",
+    "archiveSha256": "d5cdf484c3aa0cc9bdbc6f5efd17b628730122794b15c951301d32d73b7dd78d",
+    "releaseURL": "https://github.com/sabari-nath17/vadhyar/releases/tag/browser-v0.1.0",
+    "actualSourceCiRun": 38631043086,
+    "installerTests": 4,
+    "rootRenderedGate": "passed; Path/Project/Notebook/source capture-analysis-export",
+    "downloadedFreshInstall": "passed",
+    "mainProtectedWithAdminEnforcement": true,
+    "publicationEvidence": "docs/browser-release-evidence.json"
   }
 }

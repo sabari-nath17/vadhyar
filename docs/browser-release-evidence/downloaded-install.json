@@ -1,0 +1,9 @@
+{
+  "archiveSha256": "d5cdf484c3aa0cc9bdbc6f5efd17b628730122794b15c951301d32d73b7dd78d",
+  "checksumSha256": "852c993292a2d7bbe94c01a73eef00b4d1a3f3559c011e4d1cef66485c3e9c3b",
+  "downloadedExactBytes": true,
+  "sourceCommit": "2465b5d04505c88babc6ed1f018070844b5d5dce",
+  "freshDownloadedCliInstall": "passed",
+  "installedManifestFiles": 23,
+  "node": "24.19.0"
+}

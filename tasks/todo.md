@@ -979,3 +979,12 @@ Public Vadhyar wording updated on the landing/README/setup/release copy. No sour
 - Refused first archive `49fae74b52d2324ffc28f40f8ab50e9dbe2eb69098d422ec190dd0782b75fd97` before release: actual 4188 startup blank, `React is not defined`. Source CI/HTTP/manifest checks remain separately successful, not client acceptance.
 - Minimal script-only correction copies/hashes both source tsconfigs; real packaged-entry regression failed red then passed green. Node 24.19.0 typecheck/lint and 4 installer tests passed; independent diff review found no blocker. Primary JS/CSS identities unchanged.
 - Next: build replacement from this clean correction checkpoint, independently verify manifest/inputs, reload actual installed browser and review its routes/console, then publish/verify exact downloads after current hosted gates. No browser tag/release published yet.
+
+
+## 2026-10-15T02:02:10+05:30 — Browser GitHub publication completed
+
+- Published: [browser-v0.1.0](https://github.com/sabari-nath17/vadhyar/releases/tag/browser-v0.1.0), immutable tested source `2465b5d04505c88babc6ed1f018070844b5d5dce`, archive `d5cdf484c3aa0cc9bdbc6f5efd17b628730122794b15c951301d32d73b7dd78d`. Exact GitHub digest/downloads + fresh downloaded CLI installation passed.
+- Gates passed: 4 installer cases, 453-identity independent review, 26 installed HTTP/service checks (one approved synthetic command), actual Path/Project/Notebook + exact capture/analysis/export, zero new browser warnings/errors. Hosted release-source CI all 3 quality targets/triage/portable artifact passed; PR-only dependency review skipped on push and not relabelled as executed.
+- Repository: professional README/images/setup/contributing/security/templates, MIT detected, description/topics/current download homepage, private reports/dependency security settings verified. Main now requires GitHub Actions checks even for admins; no force push/deletion. All local branch commits already reachable on origin; this final evidence checkpoint must pass branch CI before main fast-forward.
+- Evidence: docs/browser-release-evidence.json and docs/browser-release-evidence/. Raw local runtime/media/rejected archive and original specialist receipts preserved. Historical native release tag/assets unchanged by these operations.
+- Stop after the required final records push: readiness automation stays PAUSED; no new product/roadmap work. Human review, three exact deferred development findings (expiry 29 October), Windows/signing/live teacher/learner evidence remain separate.

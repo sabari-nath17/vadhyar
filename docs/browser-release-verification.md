@@ -40,3 +40,16 @@ The first committed browser archive passed its manifest/HTTP and hosted source g
 ## Recovery
 
 Stop only the new instance with Ctrl+C and return to a prior installation directory/port if needed. Export before clearing browser records; removing an installation does not erase recorder or browser storage. Prior VSIX releases and source history remain available. Never force-push or replace an existing release artifact silently.
+
+
+## Published preview — 2026-10-15T02:02:10+05:30
+
+**[Browser 0.1.0](https://github.com/sabari-nath17/vadhyar/releases/tag/browser-v0.1.0) is published as a prerelease** from immutable source `2465b5d04505c88babc6ed1f018070844b5d5dce`. Archive SHA-256: `d5cdf484c3aa0cc9bdbc6f5efd17b628730122794b15c951301d32d73b7dd78d` (4,287,839 bytes). GitHub asset digests and both completed downloads match the locally reviewed bytes; a second fresh CLI installation from those downloads verifies all 23 installed manifest files.
+
+The replacement passed four installer cases, independent review of 24 regular members/453 source/config/input identities and the exact MIT/vendor/donor/font notices. The actual installed browser rendered Path, Project and Notebook; selected `src/capacity.ts`, captured/analyzed its complete declaration and exported one exact range, with zero new browser warnings/errors. The synthetic fixture's one approved command is separate from that source reading; no model call or learner-efficacy claim. The [installed-runtime receipt](browser-release-evidence/installed-runtime.json), [independent artifact receipt](browser-release-evidence/independent-artifact.json), [exact reading export](browser-release-evidence/reading-bundle.json) and [downloaded-install receipt](browser-release-evidence/downloaded-install.json) retain their scopes.
+
+![Fresh installed browser reading the synthetic Reservation Demo source](browser-release-evidence/installed-project.jpg)
+
+[Hosted source CI](https://github.com/sabari-nath17/vadhyar/actions/runs/38631043086) passed Linux/Node24, macOS/Node24, macOS/Node26, dependency risk triage and portable packaging. PR-only dependency review was skipped on this push; it is configured and required for future pull requests, not claimed exercised here. Main protection requires these checks from GitHub Actions, including administrators, with force pushes/deletion disabled; [actual settings](browser-release-evidence/github-settings.json). MIT detection, description/topics, current download homepage, private reports, dependency alerts/security updates and existing secret scanning/push protection were verified. Every local branch commit is reachable on GitHub; local runtime copies/raw media remain deliberately ignored. Legacy native tags/assets match their recorded immutable identities/digests.
+
+The following documentation checkpoint records these completed publication events; the release tag remains bound to its original tested build source. Product work and the readiness heartbeat remain stopped. Human review, untested Windows/native signing and the disclosed expiring development dependency risk remain open.

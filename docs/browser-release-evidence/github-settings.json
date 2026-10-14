@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-10-15T02:02:10+05:30",
+  "mainProtected": true,
+  "requiredChecks": [
+    {
+      "context": "Quality (ubuntu-latest, Node 24)",
+      "app_id": 15368
+    },
+    {
+      "context": "Quality (macos-latest, Node 24)",
+      "app_id": 15368
+    },
+    {
+      "context": "Quality (macos-latest, Node 26)",
+      "app_id": 15368
+    },
+    {
+      "context": "Dependency risk triage",
+      "app_id": 15368
+    },
+    {
+      "context": "Dependency review",
+      "app_id": 15368
+    }
+  ],
+  "strictUpToDate": true,
+  "adminsEnforced": true,
+  "forcePushAllowed": false,
+  "branchDeletionAllowed": false,
+  "conversationResolutionRequired": true,
+  "privateVulnerabilityReporting": "enabled and verified",
+  "dependabotAlerts": "enabled and verified",
+  "dependabotSecurityUpdates": "enabled and verified",
+  "secretScanning": "enabled",
+  "pushProtection": "enabled",
+  "repositoryLicense": "MIT",
+  "homepage": "https://github.com/sabari-nath17/vadhyar/releases/tag/browser-v0.1.0"
+}

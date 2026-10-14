@@ -88,12 +88,36 @@
     "prototype/dist/app.css": "0c07e8b499bb2f34b3eb43fbb5af021b0b3ca0dbd82a74c06088869277eca44c"
   },
   "publication": {
-    "state": "held for exact committed packaging correction and rendered acceptance",
+    "state": "published prerelease; downloaded bytes and fresh installation verified",
+    "recordedAt": "2026-10-15T02:02:10+05:30",
+    "url": "https://github.com/sabari-nath17/vadhyar/releases/tag/browser-v0.1.0",
     "browserTag": "browser-v0.1.0",
+    "sourceCommit": "2465b5d04505c88babc6ed1f018070844b5d5dce",
+    "archiveSha256": "d5cdf484c3aa0cc9bdbc6f5efd17b628730122794b15c951301d32d73b7dd78d",
+    "archiveBytes": 4287839,
+    "githubDigestMatches": true,
+    "downloadedExactBytes": true,
+    "freshDownloadedInstall": "passed",
+    "hostedReleaseSourceCi": {
+      "runId": 38631043086,
+      "url": "https://github.com/sabari-nath17/vadhyar/actions/runs/38631043086",
+      "conclusion": "success",
+      "qualityTargets": [
+        "Linux/Node24",
+        "macOS/Node24",
+        "macOS/Node26"
+      ],
+      "dependencyTriage": "passed with native full audit findings retained",
+      "portableArtifact": "passed",
+      "prOnlyDependencyReview": "skipped on push; not claimed executed"
+    },
+    "installerTests": 4,
+    "independentInputIdentities": 453,
     "legacyTagsPreserved": [
       "v0.1.0",
       "v0.1.1"
-    ]
+    ],
+    "allLocalBranchCommitsOnOrigin": true
   },
   "limits": [
     "No live teacher or independent learner outcome acceptance",
@@ -129,5 +153,66 @@
     },
     "scope": "copy exact root and prototype JSX configs into isolated build and retain their SHA identities",
     "independentReview": "no blocker; rendered browser acceptance remains pending"
+  },
+  "rootRenderedAcceptance": {
+    "checkedAt": "2026-10-15T02:02:10+05:30",
+    "sourceCommit": "2465b5d04505c88babc6ed1f018070844b5d5dce",
+    "artifactSha256": "d5cdf484c3aa0cc9bdbc6f5efd17b628730122794b15c951301d32d73b7dd78d",
+    "fixture": "Synthetic Reservation Demo",
+    "routes": [
+      "Path",
+      "Project",
+      "Notebook"
+    ],
+    "source": "src/capacity.ts 1-3; full-file hash and text match",
+    "captureCount": 1,
+    "analysis": "selected-source proposal available; canReserve complete declaration",
+    "export": "actual browser download; exact fixture source verified",
+    "newBrowserWarnings": 0,
+    "newBrowserErrors": 0,
+    "learnerOutcomes": "not tested",
+    "providerRequests": 0,
+    "screenshot": "browser-release-evidence/installed-project.jpg",
+    "readingExport": "browser-release-evidence/reading-bundle.json",
+    "disposableHostStoppedAfterQa": true,
+    "primaryServedAssetIdentitiesUnchanged": true
+  },
+  "githubSettings": {
+    "checkedAt": "2026-10-15T02:02:10+05:30",
+    "mainProtected": true,
+    "requiredChecks": [
+      {
+        "context": "Quality (ubuntu-latest, Node 24)",
+        "app_id": 15368
+      },
+      {
+        "context": "Quality (macos-latest, Node 24)",
+        "app_id": 15368
+      },
+      {
+        "context": "Quality (macos-latest, Node 26)",
+        "app_id": 15368
+      },
+      {
+        "context": "Dependency risk triage",
+        "app_id": 15368
+      },
+      {
+        "context": "Dependency review",
+        "app_id": 15368
+      }
+    ],
+    "strictUpToDate": true,
+    "adminsEnforced": true,
+    "forcePushAllowed": false,
+    "branchDeletionAllowed": false,
+    "conversationResolutionRequired": true,
+    "privateVulnerabilityReporting": "enabled and verified",
+    "dependabotAlerts": "enabled and verified",
+    "dependabotSecurityUpdates": "enabled and verified",
+    "secretScanning": "enabled",
+    "pushProtection": "enabled",
+    "repositoryLicense": "MIT",
+    "homepage": "https://github.com/sabari-nath17/vadhyar/releases/tag/browser-v0.1.0"
   }
 }

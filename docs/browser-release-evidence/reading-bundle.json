@@ -1,0 +1,80 @@
+{
+  "projectId": "a9f9b4b129b722dd98e3baac682a181283af849b700e5b69cf734a9207e8af29",
+  "captures": [
+    {
+      "source": {
+        "projectId": "a9f9b4b129b722dd98e3baac682a181283af849b700e5b69cf734a9207e8af29",
+        "fileId": "787afc44b75227fc3e7a1c728fb9b4e677ab958cda2036c92ecb4e6fe7c768ba",
+        "path": "src/capacity.ts",
+        "language": "TypeScript",
+        "startLine": 1,
+        "endLine": 3,
+        "sourceHash": "af881777c1eee9711a0abbc4f917859b1e701d908669b2b79b7cf5344d1912bd",
+        "text": "export function canReserve(remaining: number, requested: number): boolean {\n  return requested > 0 && remaining >= requested;\n}",
+        "truncated": false,
+        "capturedAt": "2026-10-14T20:23:57.042Z",
+        "fileBytes": 128
+      }
+    }
+  ],
+  "knowledge": {
+    "projectId": "a9f9b4b129b722dd98e3baac682a181283af849b700e5b69cf734a9207e8af29",
+    "knowledgeId": "092af2d8d63a3b2e1a280d89c3c59ca382ffa83703647578a1c110a2226abe57",
+    "analysisVersion": 2,
+    "generatedAt": "2026-10-14T20:24:17.252Z",
+    "files": [
+      {
+        "projectId": "a9f9b4b129b722dd98e3baac682a181283af849b700e5b69cf734a9207e8af29",
+        "fileId": "787afc44b75227fc3e7a1c728fb9b4e677ab958cda2036c92ecb4e6fe7c768ba",
+        "sourceHash": "af881777c1eee9711a0abbc4f917859b1e701d908669b2b79b7cf5344d1912bd",
+        "startLine": 1,
+        "endLine": 3,
+        "status": "ready",
+        "concepts": [
+          {
+            "id": "concept-0",
+            "name": "canReserve",
+            "kind": "function",
+            "startLine": 1,
+            "endLine": 3
+          }
+        ],
+        "relationships": [],
+        "order": [
+          "concept-0"
+        ],
+        "omittedConcepts": 0,
+        "catalog": [
+          {
+            "id": "concept-0",
+            "name": "canReserve",
+            "kind": "function",
+            "startLine": 1,
+            "endLine": 3,
+            "scope": "top level",
+            "complete": true
+          }
+        ],
+        "omittedDeclarations": 0,
+        "message": "Proposed reading order: selected entry, then supporting declarations. Static calls and type references are bound only within this capture; external, member, callback execution and dynamic relationships remain unknown. This is not a runtime trace or requirement verification.",
+        "contextId": "3a4512329c5a819bc302ead1f4bb3f424b247dc6ead085160baa13f28db4bcde",
+        "path": "src/capacity.ts",
+        "truncated": false,
+        "capturedAt": "2026-10-14T20:24:17.248Z",
+        "fileBytes": 128,
+        "unresolvedModuleReferences": 0
+      }
+    ],
+    "relationships": [],
+    "order": [
+      "3a4512329c5a819bc302ead1f4bb3f424b247dc6ead085160baa13f28db4bcde"
+    ],
+    "limits": [
+      "Selected saved excerpts only: up to five captured ranges, 200 lines and 40,000 characters per range, 100 visible declarations and five graph concepts per excerpt. Incomplete declarations, omitted entries and truncated captures remain visible.",
+      "Relative import and re-export links are file relationships, not cross-file function calls or runtime traces. External, missing, ambiguous, dynamic, require, namespace/member dispatch and configured-alias relationships are outside coverage.",
+      "Sequential source captures and rechecks are not an atomic whole-project snapshot or a continued freshness guarantee. Unsaved buffers, unselected source and runtime/environment state are outside this evidence.",
+      "The reading order is a static proposal. It does not confirm requirements, execute checks, advance learning stages or establish mastery. No source is sent to a provider by this operation."
+    ]
+  },
+  "status": "View-local captured evidence; freshness is not guaranteed."
+}

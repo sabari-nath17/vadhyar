@@ -269,3 +269,12 @@ The remaining active implementation owners received the stop boundary. Product Q
 To launch the source checkout, follow [prototype setup](../prototype/README.md): from this repository run `npm run prototype:start -- --project /absolute/path/to/a/trusted/project`; omit the project argument to study Vadhyar itself. Default loopback port is 4173; preserve any existing session and choose an unused `VADHYAR_MOCK_PORT` for a separate host. This handoff does not claim a new launch in the user's running session.
 
 The manager's final documentation checkpoint contains its own register/receipt and only exact additive handoff segments in README, prototype README, CHANGELOG, AI_USAGE and todo. Older mixed/other-owner changes stay unstaged and unchanged. Final documentation checks cover local links, JSON, diff whitespace and 32/21 rule-file lines. Product checkpoint remains `88a8d69cc8ce0d00352d26c8f4fd59191a1dbeaf`; the subsequent documentation-only checkpoint does not change tested product bytes. Human review and real learner efficacy are unverified.
+
+
+## GitHub publication closeout — 2026-10-15T02:02:10+05:30
+
+The user reopened work solely for professional GitHub setup, images/instructions, installer, explicit updated-work push and MIT licensing. Normal history reconciliation retained canonical native releases/judge/pitch evidence and current browser/privacy/QC corrections. Every local branch commit is represented on origin; runtime copies/raw media remain local, with curated public screenshots.
+
+Browser-v0.1.0 is published from immutable `2465b5d` with exact downloaded-byte/fresh-install, four installer-case, independent 453-input and actual rendered-route/source-capture-analysis-export acceptance. A missing-config packaging error was caught by the real browser gate before publication, rejected and minimally corrected; earlier passing HTTP/source CI is not relabelled as client acceptance. [Publication evidence](browser-release-evidence.json) preserves exact identities, hosted results, settings and open limits.
+
+Main requires CI including administrators and prevents force pushes/deletion. The final documentation checkpoint follows the required branch checks/main fast-forward; product implementation and readiness monitoring remain stopped afterward. Human review/live learning/Windows/signing remain unverified, and the exact development-tool dependency deferral remains disclosed with expiry. No owner chat is restarted for optional feature work.

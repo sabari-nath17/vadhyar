@@ -1,0 +1,53 @@
+{
+  "status": "STRUCTURAL GATE PASS; rendered route/console acceptance remains separate root evidence",
+  "sha256": "d5cdf484c3aa0cc9bdbc6f5efd17b628730122794b15c951301d32d73b7dd78d",
+  "sourceCommit": "2465b5d04505c88babc6ed1f018070844b5d5dce",
+  "regularMembers": 24,
+  "declaredFiles": 23,
+  "directories": 4,
+  "owners": "0:0",
+  "appleDouble": 0,
+  "manifestHashMatches": 23,
+  "buildInputMatches": 388,
+  "clientSourceMatches": 65,
+  "sourceLockMatches": true,
+  "configHashes": "both exact committed react-jsx configurations",
+  "packagedEntry": "actual render entry present; no unbound React.createElement or React.Fragment",
+  "MIT": "exact committed LICENSE",
+  "notices": "all runtime/client primary license texts, runtime vendor notices, both donor texts and font OFLs retained",
+  "runtimeVendorLicenseNoticeFilesVerified": 7,
+  "fontOFLFilesVerified": 3,
+  "excludedPackages": [
+    "basic-ftp",
+    "jks-js",
+    "node-forge",
+    "promptfoo"
+  ],
+  "runtimePackages": [
+    "openai",
+    "typescript",
+    "zod"
+  ],
+  "clientPackages": [
+    "@xyflow/react",
+    "@xyflow/system",
+    "classcat",
+    "d3-color",
+    "d3-dispatch",
+    "d3-drag",
+    "d3-ease",
+    "d3-interpolate",
+    "d3-selection",
+    "d3-timer",
+    "d3-transition",
+    "d3-zoom",
+    "react",
+    "react-dom",
+    "scheduler",
+    "use-sync-external-store",
+    "zod",
+    "zustand"
+  ],
+  "originalLocalReceiptSha256": "15b11bb7cb55db374e4d4ac5bc8d9cb116ee655bfdd1d113df791c1ce3c40397",
+  "publicationSanitization": "Local archive path omitted; original receipt retained locally."
+}
