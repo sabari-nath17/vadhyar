@@ -6,9 +6,9 @@ Record each meaningful project change throughout development, newest first. Upda
 
 ## 2026-10-14T16:13:56+05:30 — Separate product development from hackathon provenance
 
-- Changed: Product-focused GitHub About/topics and README; current development/release guidance in AGENTS and .customrules; explicit archive notices in RULES/SUBMISSION; ongoing AI-usage, changelog and task records.
+- Changed: Product-focused GitHub About/topics and README; current development/release guidance in AGENTS and .customrules plus a development-schedule estimate in the implementation plan; explicit archive notices in RULES/SUBMISSION; ongoing AI-usage, changelog and task records.
 - Why: Continue Vadhyar as a product while preserving that it was originally developed for the DevDay Kochi hackathon.
-- Checks: Reviewed the exact eight-file documentation diff; preserved archive bodies/event facts/release evidence; relative Markdown links and under-50-line instruction files checked; About/topics read-back matched. No application code or dependency change, and no app tests rerun.
+- Checks: Reviewed the exact nine-file documentation diff; preserved archive bodies/event facts/release evidence; relative Markdown links and under-50-line instruction files checked; About/topics read-back matched. No application code or dependency change, and no app tests rerun.
 - Scope: Documentation branch based on `23c63ee1199b3925cd36edf1207ca8029362431a`; ongoing prototype work in the shared checkout is separate. Human review pending.
 
 ## Historical event build log
