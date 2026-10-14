@@ -1,6 +1,6 @@
 # Third-party notices
 
-The local Vadhyar prototype declares `UNLICENSED`; this is not an open-source license grant. No Marketplace publication is part of this build.
+Current Vadhyar source is licensed under [MIT](LICENSE), as explicitly approved by the project owner. Third-party components retain the licenses and notices below. The historical 0.1.1 VSIX remains an unchanged artifact with its original metadata; no Marketplace publication is claimed.
 
 | Shipped material | Version / source | Notice |
 | --- | --- | --- |

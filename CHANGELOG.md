@@ -1,8 +1,25 @@
 # Change log
 
-Record each meaningful project change during the event, newest first. Update this file in the same commit as the change. Use a real timestamp with timezone, for example `YYYY-MM-DDTHH:MM:SS+05:30`.
+Record each meaningful project change throughout development, newest first. Update this file in the same commit as the change. Use a real timestamp with timezone, for example `YYYY-MM-DDTHH:MM:SS+05:30`.
 
-## Event build log
+## Ongoing development
+
+## 2026-10-14T16:13:56+05:30 — Separate product development from hackathon provenance
+
+- Changed: Product-focused GitHub About/topics and README; current development/release guidance in AGENTS and .customrules plus a development-schedule estimate in the implementation plan; explicit archive notices in RULES/SUBMISSION; ongoing AI-usage, changelog and task records.
+- Why: Continue Vadhyar as a product while preserving that it was originally developed for the DevDay Kochi hackathon.
+- Checks: Reviewed the exact nine-file documentation diff; preserved archive bodies/event facts/release evidence; relative Markdown links and under-50-line instruction files checked; About/topics read-back matched. No application code or dependency change, and no app tests rerun.
+- Scope: Documentation branch based on `23c63ee1199b3925cd36edf1207ca8029362431a`; ongoing prototype work in the shared checkout is separate. Human review pending.
+
+## Historical event build log
+
+## 2026-10-11T08:27:03+05:30 — Publish final pitch deck
+
+- Changed: added unchanged final PDF and PowerPoint exports plus download links in `docs/pitch/README.md` and the root README. Updated AI/task records in the same upload commit.
+- Why: make the hackathon presentation accessible from the canonical GitHub repository.
+- Checks: local PowerPoint ZIP integrity and 25-slide structure passed; PDF header/end marker checked. Publication uses the existing remote main tree and reviews only the seven intended file paths.
+- Limits: presentation upload only; no application tests, API calls, installer changes or new validation of deck claims. Ongoing local source, index and branch are outside this commit.
+
 
 ## 2026-10-11T01:31:17.000+05:30 — Project Guide for evolving local projects
 
@@ -465,3 +482,66 @@ UI-owned current prototype/design handoffs now agree with the root desktop contr
 - Presentation: concise README, unchanged actual screenshot gallery/provenance, preserved local/remote README histories, first-question guide, MIT license, contribution/security/issue/PR guides, pinned CI and Dependabot. Private vulnerability reporting enabled and verified. Historical research/proposals remain labelled; generated copied runtimes/raw recordings stay local under ignored output directories.
 - Dependencies: one targeted basic-ftp5.3.1→6.2.3 override plus root MIT lock metadata. Native full audit now3high optional development findings with no forge patch; production0. Exact temporary risk gate expires29October2026IST, preserves native exit1/0/raw reports and rejects scope/version/advisory/count/chain/expiry drift. Three policy regressions and an isolated expiry mutation pass; no forced upgrade or clean-full-audit claim.
 - State: local preparation checkpoint; user-authorized push/release and hosted CI are still pending. Node24.19macOS installer development gates and independent reviews pass. Live provider/human efficacy/Windows/native signing/full accessibility remain unverified. Actual final commit/artifact/GitHub identities will be verified before completion.
+
+<!-- Preserved publication records from canonical GitHub history. -->
+
+## 2026-10-11T04:49:13+05:30 — Landing website and early GitHub installer
+
+- Changed: website/, docs/installation.md, docs/landing-release.md, README, package manifest/lock (pinned runtime Vitest), .vscodeignore, .gitignore and publication records.
+- Why: deliver the user-authorized public website, real download and reproducible setup without publishing ongoing parent changes.
+- Checks: clean source typecheck/lint/build, 36/36 product tests; static contract, four browser widths/two themes, keyboard/reduced motion, contrast; real isolated VSIX install/installed runner and Graphify extraction.
+- Limits: macOS Apple Silicon, S7 NovaDesk demo only; no new API or human learning validation; no blanket license selected. Public verification follows publication; see release acceptance.
+
+
+## 2026-10-11T04:57:58+05:30 — Public Vadhyar wording
+
+Changed public website, installation guide, README and GitHub release copy to describe Vadhyar without the retired sample labels, as requested. Preserved supported-project boundaries and the existing installer; added a static copy regression check. Browser checks, installation/runtime acceptance and source suite remain recorded separately.
+
+## 2026-10-11T07:38:58+05:30 — Freeze Vadhyar 0.1.1 for submission preparation
+
+- Reused completed checkpoint 102a1ec plus the finished hash-checked safety patch; merged canonical GitHub main 866666a in a separate release worktree, retaining both histories. Panel-v2 and ongoing footage are excluded.
+- Versioned the macOS-arm64 installer, aligned README/setup/SUBMISSION with the organizer template, and recorded Team Vadhyar with user-confirmed names/roles. Preserved the earlier public 0.1.0 and original development index/sessions.
+- Safety behavior retained: common quoted-credential guard, revalidation after native check approval, disabled implicit npm pre/post hooks, and execution errors for cancelled/abnormal exits. Selected project scripts still execute trusted code and may modify files.
+- Fresh checks: typecheck/lint/build exit 0; 38 focused/134 full tests; 6 offline validators; production audit zero; package integrity/exclusions and clean CLI install/eight file matches passed. Actual installed fixtures/dependencies produced the disclosed failure and corrected three/four-case passes outside VS Code.
+- Files: release docs, package version/allowlist, .customrules scope, preserved upstream records, completed source/test safety files and docs/submission-evidence/verification.json. Final immutable SHA and artifact hashes follow in external release metadata. Native/live/human acceptance remains separately historical/unverified; organizer submission stays pending until after 08:00 IST and the announced form.
+
+- 2026-10-11T07:46:56+05:30: retained the user-supplied Aravind handle with an explicit unverified label; updated the historical S7-only push instruction to the authorization rule. Repository About topics now identify the VS Code, developer-education and hackathon scope.
+
+- 2026-10-11T07:50:29+05:30: at the user’s 07:50 IST cutoff, the separate redesign was at 6c24897c474ded0c67f86a1fc3d8fd08439e5bdf with an ongoing test edit; its own ledger still required four-theme/all-state review, final parity, an updated package and native acceptance. Selected the verified original panel for v0.1.1, preserving all redesign work separately. Completed S8–S13, Project Guide/T1 and the reviewed safety patch are included. README now follows the exact supplied overview/run/status structure; no source behavior changed. Organizer submission remains pending until the announced window and method.
+
+## 2026-10-11T07:59:52+05:30 — Verified GitHub checkpoint and matching release
+
+- Published implementation `4f36cedcb93940e526165fbf94d6681542f54066` / immutable `v0.1.1` using normal pushes; old main/history and 0.1.0 preserved. VSIX and exact source ZIP match the frozen checkpoint; four downloaded assets match local SHA256SUMS and GitHub digests. Isolated final CLI install, eight core hashes, six packaged documents and source manifest fields passed.
+- Completed the exact supplied README overview/run/status format and a source-linked 51-item feature inventory. NovaDesk S8–S13, experimental Project Guide/T1 and reviewed safety fixes are present. Redesign remained unverified at 07:50 IST and was preserved separately. Main follow-up is documentation only.
+- Verification tooling corrections handled VSCE lowercase readme/changelog names, fonts under dist, source-only AI_USAGE, the native CLI path and VS Code-added manifest __metadata. An attempted byte comparison while a download was still running was discarded; only completed downloads support publication acceptance. No product behavior change was inferred.
+- Fresh code results remain 38 focused / 134 full tests, six offline validators, typecheck/lint/build exit 0 and zero production audit vulnerabilities. No additional API call, credential value access, active-session reload or parent index change. Native safety-patched replay, live build-plan acceptance, connected capture, CodeTour playback and human review remain unverified.
+- User-confirmed team/roles preserved; Aravind handle retained explicitly unverified. Organizer hand-in is separate, pending the announced after-08:00 window/method and eligibility confirmation.
+
+- 2026-10-11T08:01:15+05:30: post-freeze submission packet uploaded and downloaded; exact bytes and GitHub SHA256 digest match. Release now has five verified assets (four original artifacts plus the exact-SHA submission packet). No organizer receipt is inferred.
+
+
+## 2026-10-11T08:10:08+05:30 — isolated judge setup for frozen 0.1.1
+
+Added `scripts/setup-judge.mjs` and focused tests to make the supported judge setup reproducible without changing the frozen runtime. Checks OS/CPU/versions, verifies release bytes/SHA-256, installs Graphify 0.9.84 in a new environment, uses an isolated VS Code profile and records real extraction/packaged-runner diagnostics. Existing folders are refused; no credential handling, automatic trust or GUI reload. README and installation link the new judge guide; actual results are in `docs/judge-setup-evidence.json`.
+
+Executed: fresh installation through the official VS Code CLI, pip check/version, real network-denied Graphify extraction (4 nodes/3 edges/zero model tokens), expected disclosed seed outcome (2 passes/1 ownership failure), 4 focused and 138 full tests, typecheck/lint/build and 6 offline validators. Initial lint error about preserving caught errors was fixed, then lint passed. Preserved 4 protected source/session records and original Git index/branch/HEAD. Limits: macOS Apple Silicon test only; judge OS unknown; new native panel/live API acceptance not run. The frozen tag/VSIX remain unchanged; this new helper is on the setup branch pending publication.
+
+- 2026-10-11T08:16:17+05:30: published the approved judge setup to GitHub main at `609c4a5`. Verified remote SHA and exact public helper/guide/evidence bytes; frozen 0.1.1 installer checksum unchanged. This follow-up records publication only; no runtime changes or extra OpenAI calls.
+
+
+## 2026-10-11T09:06:47+05:30 — Feature highlights and real product screenshots
+
+- Added a concise NovaDesk feature table and a separate experimental Project Guide overview to README; preserved setup, participant, frozen-release and final pitch-deck records. Embedded five original VS Code captures with captions that disclose seeded bugs, developer edits and result scope.
+- Files: README.md, docs/product-screenshots/ (evidence and five JPEGs), docs/judge-setup.md and append-only assistance/task records. The setup guide now notes an observed deeply nested macOS profile/socket-path launch failure and short-path recovery. Runtime, installer and release tag are unchanged.
+- Fresh native observations: confirmed requirement/checkpoint/Graphify mapping and source navigation; saved prediction followed by a failed ownership counterexample; native developer diff and three matching trusted checks. Unrelated SeatCheck: baseline, imported/revised/confirmed intention, selected source, developer diff, native command approval and actual existing test (3 passed, 0 failed, exit 0).
+- Checks: five captures visually inspected and decoded metadata verified at 2940 × 1846; 58 local documentation/image targets exist; rule lengths 32/21; diff whitespace and limited new-document credential-pattern checks passed. Three core bundles byte-match the installed 0.1.1 release. Four protected source/session hashes and original branch/HEAD/index remain unchanged.
+- Limits: Extension Development Host footage, macOS arm64; no new OpenAI request, independent learner/mastery claim or full-suite rerun for this documentation-only change. Project Guide remains experimental; raw observed project-check output is explicitly not saved.
+
+- 2026-10-11T09:08:56+05:30: normally published screenshot/feature checkpoint `d88bc857c94e0d31ba463ee505793bae6e71e805` to canonical GitHub main. All 11 published file bytes match the reviewed local files; live GitHub browser inspection confirmed all 5 product images loaded at 2940 × 1846 and both expanded evidence sections render. No runtime/installer/tag, API credential or active learner-session change.
+
+
+## 2026-10-15T01:33:40+05:30 — Reconcile canonical GitHub history
+
+Merged canonical main `dcbdb0e` into the reviewed local browser checkpoint `e2de46c` without replacing either history. Preserved the published 0.1.1 native version/package allowlist, judge helper/tests, submission/pitch/native captures and append-only evidence. Browser distribution remains separately versioned 0.1.0. Resolved rule/README/license/lockfile records to current explicitly authorized MIT/push scope; corrected the current third-party-notices project license statement while retaining vendor licenses and historical release metadata.
+
+Checks: no unresolved conflicts, unchanged ten current Ponytail/QC source files and privacy runner relative to the preparation checkpoint, lockfile-only regeneration, staged whitespace review and rule limits. Fresh clean-install source/installer checks and public publication are pending; historical results remain separately dated.

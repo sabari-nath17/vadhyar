@@ -1,8 +1,14 @@
 # AI usage record
 
-Use Codex during the hackathon and briefly document its actual contribution here. Add a row after each meaningful task or milestone. Keep summaries concise and omit secrets, private data, and full chat transcripts.
+Briefly document actual Codex assistance throughout ongoing product development. Add a row after each meaningful task or milestone. Keep summaries concise and omit secrets, private data, and full chat transcripts.
 
-## Event build log
+## Ongoing development
+
+### 2026-10-14T16:13:56+05:30 — Product positioning and historical provenance
+
+Codex updated the GitHub About description/topics and prepared a documentation-only change from canonical main `23c63ee1199b3925cd36edf1207ca8029362431a`. It made product development the README focus, moved the event to an origin section, removed event-only operating gates and the plan’s event-schedule assumption, and labelled event rules/submission records as historical. Existing release evidence, event facts and contribution records are preserved. No application code, shared working-tree files or Git index were changed by this side-conversation task. Human file-level review remains pending. Validation: scoped diff review, unchanged archive bodies, Markdown links, instruction line limits and GitHub About/topics read-back. App tests were not rerun for this documentation change.
+
+## Historical event build log
 
 ### 2026-10-11T01:31:17.000+05:30 — Project Guide
 
@@ -344,3 +350,61 @@ Checks after this change: project API 3/3; P08 regression and dependency/config/
 - Native helper lanes: runtime/installer implementation; CI/community files; independent source/publication/privacy/artifact review. Separate human-authorized Check file base with Ponytail chat used its root+3implementation agents and Engineering/Product Quality/UI reviewers; simulated founder review is AI, not human acceptance. Exclusive source ownership and serialized staging preserved.
 - Corrections: shared-client rebuild mistake detected; exact old ignored assets restored after refusing a mismatched candidate. Installer now builds in isolation, hashes verified buffers before install, normalizes tar metadata and uses generic setup failures. Two real-process privacy tests were red before sticky recognition; independent artifact review found/closed AppleDouble. Audit reviewers found/closed inconsistent counts and missing/cyclic advisory-chain acceptance; mutation caught removed expiry refusal.
 - Actual gates: known quality340cases+types/lints/isolated builds, installer3Node24cases, risk-policy3cases/lint/mutation, nativefull3high/prod0triage, actionlint/YAML/negativecontrol and front-door57links. These are preparation receipts; final reconciled source/archive/upload/hosted-job verification remains pending. No live provider, native-editor or human learning study performed in this slice.
+
+<!-- Preserved publication records from canonical GitHub history. -->
+
+## 2026-10-11T04:49:13+05:30 — Landing and installer publication side task
+
+Codex planned and implemented the static design-v2 landing, corrected runtime Vitest packaging, wrote installation docs, exercised source/browser/installed-package checks, and prepared authorized GitHub/Vercel publication in an isolated clone of committed S7. No agents or parent WIP were used. Human review pending. Package limitations and historical versus new acceptance are disclosed in docs/landing-release.md. No API credential values were read or published; no new OpenAI runtime request was made.
+
+
+## 2026-10-11T04:57:58+05:30 — Public Vadhyar wording
+
+Codex applied the user-requested public wording correction, retained the release scope, and added a regression assertion. No extension behavior, API call, package binary or historical evidence changed. Human review pending.
+
+## 2026-10-11T07:38:58+05:30 — Frozen release and template handoff
+
+Codex inspected current/canonical history and the organizer template, isolated release work from the ongoing redesign, preserved and merged published history, copied the completed safety patch only after matching recorded hashes, reviewed its diff, updated release/setup/team records and ran fresh verification. GitHub publication is authorized by the current user request; no organizer submission was attempted before the reported 08:00 IST opening.
+
+Executed: typecheck/lint/build, 38 focused and 134 full tests, six offline validators, production audit, ZIP/runtime/lock checks, isolated official CLI install and real installed fixture/dependency runner checks. Corrected verifier assumptions about Git worktree index paths and installed folder names; no product change was inferred from those errors. Credential-pattern findings were existing rejection-test fixtures, not silently treated as a zero-match scan.
+
+The user confirmed Team Vadhyar and both participants' roles. Code/human teaching-quality review remains pending; developer verification is not learner mastery. No new OpenAI call, SecretStorage value access, UI redesign, credential copying or active-session reload. Fresh results: docs/submission-evidence/verification.json; final GitHub/tag and artifact identities are recorded after publication.
+
+- 2026-10-11T07:46:56+05:30: the user confirmed retaining Aravind’s unresolved public GitHub handle as explicitly unverified. Updated release-only metadata and the stale S7-specific publication instruction; no global Git configuration or existing author history was changed. New release commits use the owner’s verified GitHub noreply identity.
+
+- 2026-10-11T07:50:29+05:30: at the user’s 07:50 IST cutoff, the separate redesign was at 6c24897c474ded0c67f86a1fc3d8fd08439e5bdf with an ongoing test edit; its own ledger still required four-theme/all-state review, final parity, an updated package and native acceptance. Selected the verified original panel for v0.1.1, preserving all redesign work separately. Completed S8–S13, Project Guide/T1 and the reviewed safety patch are included. README now follows the exact supplied overview/run/status structure; no source behavior changed. Organizer submission remains pending until the announced window and method.
+
+## 2026-10-11T07:59:52+05:30 — Verified GitHub checkpoint and matching release
+
+- Published implementation `4f36cedcb93940e526165fbf94d6681542f54066` / immutable `v0.1.1` using normal pushes; old main/history and 0.1.0 preserved. VSIX and exact source ZIP match the frozen checkpoint; four downloaded assets match local SHA256SUMS and GitHub digests. Isolated final CLI install, eight core hashes, six packaged documents and source manifest fields passed.
+- Completed the exact supplied README overview/run/status format and a source-linked 51-item feature inventory. NovaDesk S8–S13, experimental Project Guide/T1 and reviewed safety fixes are present. Redesign remained unverified at 07:50 IST and was preserved separately. Main follow-up is documentation only.
+- Verification tooling corrections handled VSCE lowercase readme/changelog names, fonts under dist, source-only AI_USAGE, the native CLI path and VS Code-added manifest __metadata. An attempted byte comparison while a download was still running was discarded; only completed downloads support publication acceptance. No product behavior change was inferred.
+- Fresh code results remain 38 focused / 134 full tests, six offline validators, typecheck/lint/build exit 0 and zero production audit vulnerabilities. No additional API call, credential value access, active-session reload or parent index change. Native safety-patched replay, live build-plan acceptance, connected capture, CodeTour playback and human review remain unverified.
+- User-confirmed team/roles preserved; Aravind handle retained explicitly unverified. Organizer hand-in is separate, pending the announced after-08:00 window/method and eligibility confirmation.
+
+- 2026-10-11T08:01:15+05:30: post-freeze submission packet uploaded and downloaded; exact bytes and GitHub SHA256 digest match. Release now has five verified assets (four original artifacts plus the exact-SHA submission packet). No organizer receipt is inferred.
+
+
+## 2026-10-11T08:10:08+05:30 — judge setup side conversation
+
+Codex used Vadhyar Build, Skill Router, Ponytail, Incremental Implementation, documentation and Superpowers verification to add one standard-library installation helper, tests and evidence in a separate canonical GitHub clone. No sub-agents or parent UI/video work. Fresh pinned Graphify installation and real extraction, frozen checksum/official CLI installation, packaged seeded ownership checks and 138 source tests were executed. Six synthetic offline coach validators passed; no OpenAI call, credential value access, credential copying or active-session reload. Caught-error lint handling was corrected before final verification. Human review pending; platform/model/account limits are explicit, and no universal compatibility or learner-mastery claim is made.
+
+- 2026-10-11T08:16:17+05:30: after explicit user approval, Codex normally pushed the reviewed setup-only checkpoint `609c4a5`, verified GitHub main and public file bytes, and confirmed the frozen VSIX digest. Human publication approval is separate from pending code/teaching-quality review. No credential value access, parent-session changes, OpenAI request or organizer submission.
+
+### 2026-10-11T08:27:03+05:30 — Pitch deck upload
+
+User explicitly authorized publishing the deck to GitHub. Codex located the latest final 25-slide exports, checked basic package integrity, added download links and prepared a narrowly scoped remote commit from canonical main. The deck content was not rewritten; human content review remains separate. No credentials were printed, no application tests/API requests were made, and no ongoing local build changes were staged or published.
+
+
+## 2026-10-11T09:06:47+05:30 — README feature and screenshot side request
+
+Codex used Skill Router, Vadhyar Build, documentation, Demo Readiness, Computer and verification-before-completion capabilities to capture the actual released interface in disposable NovaDesk/SeatCheck workspaces and improve its GitHub presentation. No sub-agents, generated product imagery, runtime edits, API requests or credential-value access. Native actions used existing approval/check/navigation controls; source edits and the prediction were Codex developer rehearsals, not independent learner work. Human content/teaching-quality review remains pending.
+
+Fresh verification: five original 2940 × 1846 JPEGs visually inspected and image metadata checked; 58 local links, rule limits, whitespace and limited document secret-pattern review passed. Native ownership checks matched 3/3 after the disclosed developer edit; SeatCheck's approved existing test passed 3/3 with exit 0. Three runtime bundles match the installed 0.1.1 package, and protected active learner/source records plus parent Git state are unchanged. Full automated source checks and live teaching evidence remain separately dated. The isolated clone had no usable Graft index; targeted source lookup used the existing search fallback, with no index or dependency upgrade.
+
+- 2026-10-11T09:08:56+05:30: normally published screenshot/feature checkpoint `d88bc857c94e0d31ba463ee505793bae6e71e805` to canonical GitHub main. All 11 published file bytes match the reviewed local files; live GitHub browser inspection confirmed all 5 product images loaded at 2940 × 1846 and both expanded evidence sections render. No runtime/installer/tag, API credential or active learner-session change.
+
+
+## 2026-10-15T01:33:40+05:30 — Canonical history reconciliation
+
+Codex merged canonical main into the locally reviewed publication checkpoint using a normal merge. It preserved both append-only histories and upstream native/judge/submission files, retained the current browser/privacy corrections, regenerated the pinned lockfile after restoring native version 0.1.1, and aligned the project notice with the user's explicit MIT choice. Independent CI/document and privacy/package reviews are running read-only. No force push, destructive reset, active-session reload, credential-value access, release replacement or provider request occurred. Human code/teaching review remains pending; fresh isolated final checks precede publication.

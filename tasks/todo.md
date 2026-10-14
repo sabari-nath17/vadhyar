@@ -1,5 +1,14 @@
 # Vadhyar slice task record
 
+## Ongoing product positioning — 2026-10-14T16:13:56+05:30
+
+- Authorization: side-conversation user requested proper GitHub updates that remove hackathon constraints from current positioning while preserving the origin.
+- Scope: README, AGENTS, .customrules, RULES, SUBMISSION, AI_USAGE, CHANGELOG, docs/implementation-plan.md and this record; GitHub About/topics metadata. Based on canonical main `23c63ee1199b3925cd36edf1207ca8029362431a`.
+- Result: product-focused entry points and current guidance; original event rules/submission content retained with archive notices; published release/source checkpoint preserved.
+- Checks: scoped diff, archive-body preservation, relative links, instruction line limits and About/topics read-back. Documentation-only; app tests not rerun. Human review pending.
+- Checkpoint: the isolated documentation commit containing this entry; review/integrate its PR before main reflects the change. The active local prototype and shared Git index remain untouched.
+- Next: continue the separately authorized product work, keep implementation/evidence boundaries truthful, and publish each reviewed product milestone through its own scoped change.
+
 ## Project Guide — 2026-10-11T01:31:17.000+05:30
 
 - Authorization: user requested implementation of multiple-file changes, evolving/new feature intentions, build guidance and related logical fixes after the side-conversation boundary. This additional mode does not declare original S8 or later prepared-learning gates complete.
@@ -871,3 +880,87 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - [x] Targeted FTP lock fix and explicit three-finding temporary development risk policy; native reports/status remain visible, unknown/runtime/expired cases refuse. Human review still pending.
 - [ ] Reconcile origin/main without force push, validate exact final source and clean archive, publish reviewed commits/browser-v0.1.0 assets, verify download hashes and hosted CI/default repo presentation.
 - Next: finish only this authorized distribution/publication slice. No installer framework rewrite, provider trial, learner recruitment, unrelated cleanup or raw/private-data publication.
+
+<!-- Preserved publication records from canonical GitHub history. -->
+
+## 2026-10-11T04:49:13+05:30 — Authorized landing / installer side task
+
+- Scope: completed S7 (`21fdcc9`) plus packaging, static website and installation documentation. Parent work/index/branch preserved; release operations occur in an isolated clone.
+- Implemented: flat design-v2 static page, labelled six-stage example, local assets, themes/accessibility, real GitHub VSIX destination and complete prerequisites/setup.
+- Executed: source typecheck/lint/build and 36/36; website contract/browser/contrast; clean-profile CLI installation; installed real runner single/full cases and Graphify 0.9.84 (four references/three edges). No new API call or installed native loop.
+- Publication: explicitly authorized for this task. Website public alias returns 200; final versioned GitHub release/download and redeployment acceptance follow publication. See docs/landing-release.md.
+- Next: continue the parent's independently authorized development slices; first public installer is the narrower S7 demo. No parent stage/commit/reset/push was performed.
+
+
+## 2026-10-11T04:57:58+05:30 — Public Vadhyar wording
+
+Public Vadhyar wording updated on the landing/README/setup/release copy. No source behavior or prior evidence rewritten. Website contract passes; publication and final live acceptance recorded after deployment.
+
+## 2026-10-11T07:38:58+05:30 — Isolated GitHub / installer freeze
+
+- Authorized scope: finalize the GitHub page/checkpoint, matching installer and prepared submission; keep a stable demo while ChatGPT continues panel-v2. Original checkout remains codex/panel-v2-phase0 / 102a1ec with its index, mixed work and active learning records preserved. No unrelated source changes or recordings are staged.
+- Release worktree: codex/submission-v0.1.1. Merge preserves 102a1ec and canonical main 866666a histories. .ignore/Graft artifacts remain; upstream publication records and older 0.1.0 remain available. Old VSCE ignore file is superseded only in the release by the existing explicit package allowlist.
+- Reuse: completed reviewed/hash-matched Red Team safety files, full NovaDesk loop, experimental Project Guide and historical S13/H1/T1 evidence. Release scope rules, README/setup/SUBMISSION, version 0.1.1 and evidence are aligned with the template. Team Vadhyar / SabariNath S A / Aravind and contributions were user-confirmed.
+- Fresh baseline: clean install 717 packages; typecheck/lint/build exit 0; focused 38/38; full 134/134 / 29 files / 33.87 s with one worker; six offline validators / zero OpenAI requests; production audit zero. All executed in the release worktree, not inferred from earlier reports.
+- Package/install: ZIP/production exclusions, fonts/runtime/harness/lock and eight installed hashes passed. Isolated official CLI install succeeded with only Vadhyar. Production runner functions with installed fixtures/dependencies outside VS Code observed the seed fail and developer variants pass three/four cases. Prepared source unchanged; no native panel acceptance inferred.
+- Documentation links/rule lengths and limited credential-pattern review passed; only two existing rejection-test fixtures matched. Original branch/HEAD/index and protected session/source hashes unchanged 4/4. Fresh native playback, live coach/human quality, CodeTour and connected capture remain unverified.
+- Evidence: docs/submission-evidence/verification.json. Final code tag, normal push, final VSIX/source checksums and downloaded-asset acceptance follow in a publication record. Organizer submission is separate and pending: user says it opens after 08:00 IST; no form/link or receipt yet.
+
+- 2026-10-11T07:46:56+05:30: user confirmed Team Vadhyar roles and retaining Aravind’s handle as unverified. Stable candidate/package/source checks passed; final choice waits for the user’s 07:50 IST redesign cutoff. Current redesign has ongoing edits and separately pending native acceptance. No organizer submission or active-session reload.
+
+- 2026-10-11T07:50:29+05:30: at the user’s 07:50 IST cutoff, the separate redesign was at 6c24897c474ded0c67f86a1fc3d8fd08439e5bdf with an ongoing test edit; its own ledger still required four-theme/all-state review, final parity, an updated package and native acceptance. Selected the verified original panel for v0.1.1, preserving all redesign work separately. Completed S8–S13, Project Guide/T1 and the reviewed safety patch are included. README now follows the exact supplied overview/run/status structure; no source behavior changed. Organizer submission remains pending until the announced window and method.
+
+## 2026-10-11T07:59:52+05:30 — Verified GitHub checkpoint and matching release
+
+- Published implementation `4f36cedcb93940e526165fbf94d6681542f54066` / immutable `v0.1.1` using normal pushes; old main/history and 0.1.0 preserved. VSIX and exact source ZIP match the frozen checkpoint; four downloaded assets match local SHA256SUMS and GitHub digests. Isolated final CLI install, eight core hashes, six packaged documents and source manifest fields passed.
+- Completed the exact supplied README overview/run/status format and a source-linked 51-item feature inventory. NovaDesk S8–S13, experimental Project Guide/T1 and reviewed safety fixes are present. Redesign remained unverified at 07:50 IST and was preserved separately. Main follow-up is documentation only.
+- Verification tooling corrections handled VSCE lowercase readme/changelog names, fonts under dist, source-only AI_USAGE, the native CLI path and VS Code-added manifest __metadata. An attempted byte comparison while a download was still running was discarded; only completed downloads support publication acceptance. No product behavior change was inferred.
+- Fresh code results remain 38 focused / 134 full tests, six offline validators, typecheck/lint/build exit 0 and zero production audit vulnerabilities. No additional API call, credential value access, active-session reload or parent index change. Native safety-patched replay, live build-plan acceptance, connected capture, CodeTour playback and human review remain unverified.
+- User-confirmed team/roles preserved; Aravind handle retained explicitly unverified. Organizer hand-in is separate, pending the announced after-08:00 window/method and eligibility confirmation.
+
+- 2026-10-11T08:01:15+05:30: post-freeze submission packet uploaded and downloaded; exact bytes and GitHub SHA256 digest match. Release now has five verified assets (four original artifacts plus the exact-SHA submission packet). No organizer receipt is inferred.
+
+
+## J1 — isolated judge setup — 2026-10-11T08:10:08+05:30
+
+- User asked for dependency installation and reliable judge setup; judge OS answered **Unknown**. Scoped one helper/docs slice in a separate canonical `main` clone at `4f36cedcb93940e526165fbf94d6681542f54066`, branch `codex/judge-setup`; original parent work is not reconciled or overwritten. Plan preceded edits at the side-task workspace's `JUDGE_SETUP_PLAN.md`; repo scope/gates are in [judge setup](../docs/judge-setup.md).
+- Added a standard-library `--check`/`--install /absolute/NEW/folder` helper. Fixed checksum/size of the unchanged released 0.1.1 darwin-arm64 VSIX; isolated profile/extensions/Graphify; prerequisite/version checks, explicit unsupported-platform refusal and no existing-folder reset. No runtime/panel/protocol/package/lockfile changes. Graphify path is configured in that profile's User Settings.
+- Actual fresh setup passed on macOS arm64 / Node 26.7.0 / Python 3.14.7 / VS Code 1.140.0. Graphify 0.9.84 installed from PyPI, `pip check` passed, real extraction with network denied produced **4 nodes/3 edges/zero model tokens**. Official CLI installed the exact checksum-verified VSIX. Packaged trusted runner exited **1** as expected for the disclosed bug: owner passes, different client fails its requirement (actual approval true), freelancer passes. This is an installation diagnostic, not a saved learner attempt or a passing ownership requirement.
+- Focused **4/4 / 1 file**; latest full suite **138/138 / 30 files / 25.31 s**, start **08:11:05 IST**; typecheck/lint/build exit 0; offline coach **6/6**, zero errors/live requests. Initial caught-error lint failure fixed then rechecked. Diff/whitespace inspected; [machine-readable results](../docs/judge-setup-evidence.json).
+- Preservation verified: **4/4** protected source/session records unchanged; original Git index, branch and HEAD unchanged. No key requested/read/copied, live API request, GUI launch/reload, universal-platform claim, frozen-tag/binary change or push.
+- Remaining gate: new native panel/live account/model acceptance and judge-platform compatibility. Other OS/CPU paths remain unverified and are rejected by setup. Publish this exclusively owned reviewed checkpoint only with explicit authorization; organizer submission is separate.
+
+- Final diff review corrected an assumed Python 3.13 label to the actual fresh Python **3.14.7** record and removed that recommendation from prerequisite error text. No installation logic changed; final typecheck/lint and full 138 tests re-ran successfully.
+
+- Reviewed setup implementation checkpoint: `851d613`; canonical main advanced to `3a60bb8` with publication/feature-inventory documents only. Reconciled those records by preserving both append-only histories; extension, helper, tests, package and fixture inputs are unchanged by this documentation merge. Pending explicit push approval; no organizer submission performed by this side task.
+
+- 2026-10-11T08:16:17+05:30: user explicitly approved publication. Normal push published setup checkpoint `609c4a558b1a61109937058a6d2b30fae4fda473` to canonical GitHub main. Remote SHA verified; public helper, guide and evidence bytes match the tested local files. Frozen 0.1.1 VSIX size/SHA-256 unchanged. No force push, active-session reload, OpenAI request or organizer submission. Next: native presentation replay and judge-platform/model-account confirmation; other platforms remain unverified.
+
+## 2026-10-11T08:27:03+05:30 — Side request: publish pitch deck
+
+- Scope: unchanged final PDF/PowerPoint, `docs/pitch/README.md`, root README, CHANGELOG, AI_USAGE and this record only. Explicit user upload authorization supersedes the earlier no-push constraint solely for these presentation files/records.
+- Source: final Vadhyar hackathon export prepared 11 October 2026; 25 slides. PDF basic signature and PowerPoint archive integrity passed. No source, build, installer or runtime change.
+- Checkpoint: this upload commit is based on remote main `f1436c17396dd73d80816af79958af047222be07`; its exact SHA is in repository Git history. Remote file hashes will be checked after publishing and reported in the chat.
+- Preservation: working checkout, local branch, staging index and active build work are untouched. Next: use the published deck; ongoing implementation belongs to the parent task.
+
+
+## 2026-10-11T09:06:47+05:30 — GitHub feature highlights and product captures
+
+- Authorized side-request scope: README feature presentation, five actual product images, capture evidence and append-only records in an exclusively owned canonical clone, branch `codex/readme-product-screenshots`, documentation base `7aa0184`. No parent implementation/recording work or Git index touched. Frozen implementation remains `4f36ced` / 0.1.1.
+- Native gate: disposable NovaDesk requirement/checkpoint, real Graphify 0.9.84 mapping, validated source navigation, saved developer prediction, executed different-client failure, developer edit/native diff and all three ownership cases matching their rules. No hints/API used in this pass.
+- Separate-project image gate: disposable SeatCheck baseline (4 files), requirement import/confirmation, second confirmed concise intention revision with original history retained, selected real source, tracked developer diff and native-confirmed existing test. Actual result: 3 passed, 0 failed, exit 0. The panel correctly states no requirement-coverage verdict and raw output not saved.
+- All five captures are original full-window JPEGs, visually inspected at 2940 × 1846; README captions disclose prepared material, developer assistance and experimental Project Guide coverage. Evidence: [capture record](../docs/product-screenshots/README.md).
+- Checks passed: 58 local link targets, five image metadata checks, 3/3 released bundle byte matches, rule limits (32/21), diff whitespace and limited new-document credential-pattern check. Parent branch/HEAD/index and 4/4 protected source/session records are unchanged. Prior full-suite results were not relabeled as fresh.
+- Corrected the screenshot filename extension to match the capture API's JPEG bytes without editing/re-encoding the images. Recorded an observed deep-profile IPC launch error and supported short-path recovery in the judge guide.
+- Pending publication verification: normal push only, verify remote commit and exact image/document bytes. Runtime/package/tag remain unchanged; no new live coach, restart, CodeTour, connected-agent or independent-learning acceptance claimed.
+
+- 2026-10-11T09:08:56+05:30: normally published screenshot/feature checkpoint `d88bc857c94e0d31ba463ee505793bae6e71e805` to canonical GitHub main. All 11 published file bytes match the reviewed local files; live GitHub browser inspection confirmed all 5 product images loaded at 2940 × 1846 and both expanded evidence sections render. No runtime/installer/tag, API credential or active learner-session change.
+
+
+## 2026-10-15T01:33:40+05:30 — Current GitHub publication slice
+
+- Reviewed local preparation checkpoint: `e2de46c056e6e2ba07dc706c4958b720b215c9c5`. Canonical `dcbdb0ef5249007b7fbdc53eecdc23b259930448` is reconciled with a normal merge; current quality/privacy source files are preserved.
+- Explicit user authorization: professional repository/images/setup/portable installer, push updated local work and add MIT. Prior no-push constraints apply to historical slices only.
+- Preserved: published v0.1.1 native assets/history, judge setup, pitch/native images, local raw recordings/runtime workspaces and existing learner sessions. Raw `output/` and `outputs/` remain local and ignored; curated public images are in docs/assets.
+- Next gate: clean isolated pinned install; actual root/browser/service/installer/policy checks and builds; exact-source portable release; normal push; hosted CI and downloaded public-asset verification.
+- Checkpoint outcomes and public source/release identities will be appended after their actual execution.

@@ -34,3 +34,7 @@ graphify-out/
 # Curated public screenshots live in docs/assets instead.
 /output/
 /outputs/
+
+# Local release output and deployment credentials.
+*.vsix
+.vercel/
