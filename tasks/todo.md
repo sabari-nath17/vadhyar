@@ -645,3 +645,17 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - Actual proof: 30 focused unit + 11 HTTP cases pass, prototype typecheck/focused lint pass; foreign project 404 before source reads, deadline 408 after 12,003 ms then clean recovery. Actual launcher 200→edit/stale409→recapture200 with changed knowledgeId; provider disconnected, scripts unexecuted, unique fixture/server/recorder data cleaned. Independent review corrected a direct-parser/DTO span gap and found no remaining actionable issue.
 - Checkpoint: scoped local milestone `feat: add bounded source knowledge backend`, based on the feature-owned preflight checkpoint `6a160c9` and logic checkpoint `e7e6c20`; exact exported index passed 87 unit/64 service tests, typecheck, lint and build; preserve all other working/staged records. No push. [Backend contract](../docs/backend-knowledge.md), [mapping/notices](../docs/backend-knowledge-provenance.json), [execution evidence](../docs/backend-knowledge-evidence.json).
 - Next: UI owner can explicitly consume the validated helper for selected-file context; a multi-file picker, generated curriculum/provider sharing, runtime coverage and learning-efficacy validation remain pending. Source knowledge is not a current-runtime, requirement or mastery verdict.
+
+## 2026-10-14 21:21:31 IST — Apply desktop logic throughout the current design
+
+- User steering: implement logic findings in every affected surface; challenges the mobile-phone interface for a local-only coding companion.
+- Root implemented: desktop/editor/terminal same-computer use case and primary desktop/split-window probes; secondary narrow/zoom reflow; finding closure requires actual affected implementation/callers/UI/records/docs/checks. README points to the enforced contract.
+- Independent source audit: desktop216pxsidebar/two-column lesson exists; no phone-only learning/connection flow. UI owner owns current handoff mobile labels, master-review priority, artifact/reference naming explanations and rendered desktop/split-window proof. Feature/reuse owners retain loopback guards and matching setup capability claims.
+- Checkpoint: root docs/records stay in working tree while UI owns the shared index. No staging/push, source ownership transfer or historical artifact deletion. Next: inspect owner-applied diff/desktop evidence, update finding status, then save only this chat's exact documentation changes after index release.
+
+## 2026-10-14 21:33:59 IST — Desktop device-priority correction applied
+
+- [x] User-requested desktop use case enforced in root behavior contract, C24, README and finding-closure rule.
+- [x] UI-owned prototype/design handoffs inspected after actual edits:desktop1440primary,1024/700–900coding panel, secondary narrow/zoom reflow, historical -mobile names, current implementation authorization. Source already uses desktop sidebar/two-column layout; no phone-specific flow or transport.
+- [x] Local root links/unique C/D IDs/diff/rule-line checks pass. Root-only milestone preserves other writers and historical evidence. No push.
+- Next: UI owner finishes its actual implementation receipt/desktop/accessibility acceptance and checkpoint; feature owner verifies the combined final artifact. Other compound C-row claims remain bounded by actual evidence, not this device-wording correction.

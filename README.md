@@ -226,3 +226,7 @@ The [product behavior contract](docs/product-logic-contract.md) defines the curr
 ## Selected-source knowledge backend
 
 The local companion now exposes a protected source-knowledge API for one to five explicitly selected saved excerpts. It reuses the PocketFlow concept/order adaptation and returns source-bound static import/re-export links and a reading path. [API, ownership, provenance and limits](docs/backend-knowledge.md). The current browser source explorer retains its single-file controls; a multi-file course or picker is not implied by the API.
+
+### Desktop use case
+
+Vadhyar is a local desktop/laptop learning workspace used alongside the learner's editor and terminal on the same computer. Full desktop and practical split windows govern the design. Narrow-window and zoom reflow keep that workspace usable; they do not provide phone access. The [behavior contract](docs/product-logic-contract.md) and [logic board](docs/logic-board.md) require findings to reach their actual affected callers, screens, records and checks before closure.

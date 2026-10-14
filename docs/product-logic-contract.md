@@ -6,6 +6,8 @@
 
 The [feature handoff](../prototype/feature-contract.md), [runtime DTOs](../prototype/src/project-types.ts), [learning transitions](../prototype/src/project-learning.ts), [approved design](design/2026-10-14-duolingo-minimal/DESIGN.md) and [logic board](logic-board.md) are the source references. Preserve the existing interfaces and storage keys. **Implemented** means source behavior was inspected; **required UI behavior** means it must be implemented and exercised before the new UI is accepted. A written rule alone is not an implemented feature.
 
+**Primary device and use case:** a desktop/laptop browser on the same computer as the learner's project, used alongside their code editor and terminal. Full desktop and practical split windows are the primary design/acceptance targets; use 1024/1440px and approximately 700–900px as concrete layout probes. Keep the question, captured source and evidence usable there. 320/390px probes cover a very narrow browser pane and zoom/reflow robustness; they are not a second phone product or equal-priority phone master screen. Do not add phone-specific onboarding, navigation journeys, device frames, pairing or mobile availability claims. Existing narrow-window reflow remains useful without adding phone connectivity.
+
 ## 1. Independent facts; no single success flag
 
 | Fact | Authority | Meaning / limit |
@@ -160,12 +162,14 @@ These are concrete journeys to run on an approved disposable project after imple
 | C21 | Corrupt storage, failed writes, stale serial-zero tab and failed reset: raw/saved/visible work preserved appropriately |
 | C22 | More than 20 unrelated feed events after selected-file change: no false unchanged/current label; direct/per-file drift detection still works |
 | C23 | Polling/feed unavailable after healthy state: recording/currentness becomes unknown; historical data is clearly retained |
-| C24 | Keyboard/narrow desktop/reduced motion: every control/dialog/source-map action works without hidden blocking errors or document overflow |
+| C24 | Desktop-first 1024/1440px and practical 700–900px split-window use, keyboard and reduced motion: question/source/evidence and every control/dialog/source-map action stay usable. 320/390px and zoom are secondary reflow probes, not phone support; no hidden blocking errors or document overflow. |
 | C25 | Prepared records migrated through new navigation: their pages/modes/notes preserved, examples labelled, no merging with generic data |
 
 ## 9. Ownership, gaps and release boundary
 
 Root owns this contract and the logic board. UI owner owns components, navigation, operation fences, truthful status/retention labels and browser/accessibility acceptance. Feature owner owns launcher/setup and additive job/source-freshness contracts, domain/host validation and their regression tests. Reuse owner owns source/map adaptations and bounded provenance. Shared schema/caller changes are coordinated before writing; Git staging remains serialized. No push.
+
+A finding is closed only when its affected implementation, callers, UI labels/disabled reasons, persisted/restored/exported evidence, current design/setup documentation and focused verification agree. An owner acknowledgement or a note in this contract is insufficient. Apply only the parts actually affected: the desktop/phone finding requires consistent desktop priority and capability wording, not deletion of working reflow CSS or a new connection feature. Preserve historical receipts while correcting the current contract.
 
 At initial contract creation, **required implementation refinements** are: attempt-bound asynchronous saves, same-page draft protection, operation-specific retry, unknown recording/loading labels, honest non-retained teaching display, acknowledged-job reload recovery, selected-source detection outside the short event feed, and honest freshness after terminal command completion. Assign their exact callers and tests; do not declare them complete merely because this document exists.
 
