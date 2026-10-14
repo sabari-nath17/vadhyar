@@ -5,7 +5,7 @@ Preserved from the local working tree before the professional browser-release re
 ---
 
 <p align="center">
-  <img src="docs/assets/vadhyar-banner.jpg" alt="Vadhyar — Understand what you build" width="600" />
+  <img src="../../docs/assets/vadhyar-banner.jpg" alt="Vadhyar — Understand what you build" width="600" />
 </p>
 
 # Vadhyar

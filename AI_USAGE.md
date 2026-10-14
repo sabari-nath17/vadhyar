@@ -408,3 +408,8 @@ Fresh verification: five original 2940 × 1846 JPEGs visually inspected and imag
 ## 2026-10-15T01:33:40+05:30 — Canonical history reconciliation
 
 Codex merged canonical main into the locally reviewed publication checkpoint using a normal merge. It preserved both append-only histories and upstream native/judge/submission files, retained the current browser/privacy corrections, regenerated the pinned lockfile after restoring native version 0.1.1, and aligned the project notice with the user's explicit MIT choice. Independent CI/document and privacy/package reviews are running read-only. No force push, destructive reset, active-session reload, credential-value access, release replacement or provider request occurred. Human code/teaching review remains pending; fresh isolated final checks precede publication.
+
+
+## 2026-10-15T01:38:02+05:30 — Fresh publication-gate execution
+
+Codex executed a fresh pinned dependency install and all nine source/build/installer/risk/offline gate commands in an isolated committed clone. Actual totals: 141 root, 128 browser, 75 service, 3 installer and 3 policy cases, plus six offline validators; zero provider requests/errors. Full native audit exit 1 (three explicitly deferred development findings) and production exit 0 are retained distinctly. Independent AI reviews checked the merged source identities, package/lock preservation and documentation/CI; the docs reviewer corrected only two archived image URLs. Protected current-host bundle identities match the prior accepted baseline. Human review and live teaching/learning efficacy remain pending.

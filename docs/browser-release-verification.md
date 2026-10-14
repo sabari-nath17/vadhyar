@@ -11,6 +11,10 @@
 - An independent artifact review verified the allowlisted manifest/hashes, complete MIT/vendor notices, no undeclared AppleDouble metadata and normalized archive ownership. The packager builds in isolation; its regression protects the existing served browser bundle.
 - CI syntax, official action pins, YAML/forms and a deliberate invalid-matrix control were checked. Hosted job results remain visible in [GitHub Actions](https://github.com/sabari-nath17/vadhyar/actions/workflows/ci.yml); a local workflow check is not a claim that a hosted run passed.
 
+## Final clean-source gate
+
+At 2026-10-15T01:38:02+05:30, clean merged source `1e067cb5daf188b798f8b825f82529b479927551` passed fresh Node 24.19.0 / npm 11.19.0 installation (737 packages), root typecheck/lint/build and **141 root, 128 browser, 75 service, 3 installer and 3 risk-policy cases**, plus six offline evaluator fixtures with zero provider requests. Builds and fixtures ran in a disposable clone; both primary hosted asset hashes remained unchanged. The [machine-readable receipt](browser-release-evidence.json) distinguishes the native full audit's three high development findings from zero production findings. Later archive/publication identities remain separately recorded.
+
 ## Dependency decision
 
 The targeted FTP dependency correction changes only `basic-ftp` from 5.3.1 to 6.2.3. The native production audit has no findings; the full development audit retains three high findings in an optional Promptfoo certificate-import chain with no published node-forge patch.

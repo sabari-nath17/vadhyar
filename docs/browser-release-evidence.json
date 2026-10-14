@@ -1,0 +1,103 @@
+{
+  "sourceCommit": "1e067cb5daf188b798f8b825f82529b479927551",
+  "node": "v24.19.0",
+  "npm": "11.19.0",
+  "results": [
+    {
+      "name": "root-typecheck",
+      "exitCode": 0,
+      "seconds": 3.4
+    },
+    {
+      "name": "root-lint",
+      "exitCode": 0,
+      "seconds": 1.49
+    },
+    {
+      "name": "root-tests",
+      "exitCode": 0,
+      "seconds": 34.83
+    },
+    {
+      "name": "root-build",
+      "exitCode": 0,
+      "seconds": 0.95
+    },
+    {
+      "name": "browser-checks",
+      "exitCode": 0,
+      "seconds": 63.85
+    },
+    {
+      "name": "installer-checks",
+      "exitCode": 0,
+      "seconds": 2.11
+    },
+    {
+      "name": "policy-tests",
+      "exitCode": 0,
+      "seconds": 0.07
+    },
+    {
+      "name": "dependency-triage",
+      "exitCode": 0,
+      "seconds": 2.04
+    },
+    {
+      "name": "offline-coach",
+      "exitCode": 0,
+      "seconds": 2.12
+    }
+  ],
+  "recordedAt": "2026-10-15T01:38:02+05:30",
+  "platform": "macOS arm64",
+  "cleanInstall": {
+    "packages": 737,
+    "command": "npm ci --ignore-scripts --no-audit",
+    "separateNativeAudit": true
+  },
+  "counts": {
+    "root": 141,
+    "browser": 128,
+    "localServices": 75,
+    "installer": 3,
+    "riskPolicy": 3,
+    "offlineValidators": 6
+  },
+  "fullAudit": {
+    "exitCode": 1,
+    "high": 3,
+    "scope": "exact temporary development evaluation chain only"
+  },
+  "productionAudit": {
+    "exitCode": 0,
+    "findings": 0
+  },
+  "liveProviderRequests": 0,
+  "independentAiReview": "merge/source/privacy/package and CI/docs; human review pending",
+  "docs": {
+    "activeAndHistoricalLocalTargetsReviewed": 289,
+    "archivedTargetsRecheckedAfterBannerCorrection": 98,
+    "ruleLineCounts": {
+      "AGENTS.md": 32,
+      ".customrules": 21
+    }
+  },
+  "primaryHostAssetsPreserved": {
+    "prototype/dist/app.js": "385faae51ce4f1a4d321385d36384bd4ef5495ede7dc01e5a2c0c520684603b2",
+    "prototype/dist/app.css": "0c07e8b499bb2f34b3eb43fbb5af021b0b3ca0dbd82a74c06088869277eca44c"
+  },
+  "publication": {
+    "state": "pending actual upload and download verification",
+    "browserTag": "browser-v0.1.0",
+    "legacyTagsPreserved": [
+      "v0.1.0",
+      "v0.1.1"
+    ]
+  },
+  "limits": [
+    "No live teacher or independent learner outcome acceptance",
+    "Windows execution, native signing and notarization unverified",
+    "Hosted runner results and final archive identities recorded separately after execution"
+  ]
+}

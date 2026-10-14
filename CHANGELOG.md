@@ -545,3 +545,10 @@ Executed: fresh installation through the official VS Code CLI, pip check/version
 Merged canonical main `dcbdb0e` into the reviewed local browser checkpoint `e2de46c` without replacing either history. Preserved the published 0.1.1 native version/package allowlist, judge helper/tests, submission/pitch/native captures and append-only evidence. Browser distribution remains separately versioned 0.1.0. Resolved rule/README/license/lockfile records to current explicitly authorized MIT/push scope; corrected the current third-party-notices project license statement while retaining vendor licenses and historical release metadata.
 
 Checks: no unresolved conflicts, unchanged ten current Ponytail/QC source files and privacy runner relative to the preparation checkpoint, lockfile-only regeneration, staged whitespace review and rule limits. Fresh clean-install source/installer checks and public publication are pending; historical results remain separately dated.
+
+
+## 2026-10-15T01:38:02+05:30 — Final merged source verification
+
+Fresh isolated Node 24.19.0 / pinned npm 11.19.0 install at `1e067cb` passed: root typecheck/lint/build, 141 root tests, 128 browser tests, 75 service tests, 3 installer cases, 3 risk-policy cases and six offline coach fixtures (zero errors/provider requests). The FTP override is installed and the evaluator still works. Native full audit retains exactly three high development findings; production has zero findings, with exact policy/expiry retained. Existing host JS/CSS hashes are unchanged.
+
+Files: docs/browser-release-evidence.json, docs/browser-release-verification.md and two archived README banner links, plus these milestone records. Independent merge/privacy/package and CI/docs reviews found no new blocker; 289 local targets reviewed and 98 archived targets rechecked after correcting two image paths. Whitespace/rule limits passed. Final exact-source package, hosted checks and publication follow this clean checkpoint; Windows/signing/live teacher/human review remain unverified.

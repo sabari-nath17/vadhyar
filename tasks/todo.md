@@ -964,3 +964,11 @@ Public Vadhyar wording updated on the landing/README/setup/release copy. No sour
 - Preserved: published v0.1.1 native assets/history, judge setup, pitch/native images, local raw recordings/runtime workspaces and existing learner sessions. Raw `output/` and `outputs/` remain local and ignored; curated public images are in docs/assets.
 - Next gate: clean isolated pinned install; actual root/browser/service/installer/policy checks and builds; exact-source portable release; normal push; hosted CI and downloaded public-asset verification.
 - Checkpoint outcomes and public source/release identities will be appended after their actual execution.
+
+
+## 2026-10-15T01:38:02+05:30 — Publication gate passed locally
+
+- Source checked: `1e067cb5daf188b798f8b825f82529b479927551`, fresh isolated Node 24.19.0 / npm 11.19.0, 737 pinned packages.
+- Passed: both typechecks/lints/builds; 141 root + 128 browser + 75 service + 3 installer + 3 risk-policy cases; 6 offline evaluator fixtures, zero live provider requests. Native full audit 3 high development findings (exit 1) under exact unexpired policy; production 0 (exit 0).
+- Independent source/privacy/package/CI/document review: no new blocker. Fixed/rechecked two archived banner links; protected primary-host JS/CSS hashes unchanged. Evidence: docs/browser-release-evidence.json.
+- Next: create archive from this following clean documentation checkpoint, independently inspect/install it; normally push all current project history; publish browser prerelease; verify hosted jobs, remote contents and downloaded assets; record exact public identities.

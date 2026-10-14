@@ -5,7 +5,7 @@ Preserved from GitHub main dcbdb0e before history reconciliation on 15 October 2
 ---
 
 <p align="center">
-  <img src="docs/assets/vadhyar-banner.jpg" alt="Vadhyar — Understand what you build" width="600" />
+  <img src="../../docs/assets/vadhyar-banner.jpg" alt="Vadhyar — Understand what you build" width="600" />
 </p>
 
 # Vadhyar — Understand what you build
