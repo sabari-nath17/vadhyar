@@ -85,7 +85,7 @@ export async function createProjectService({ root, origin, storageRoot, handleEx
  const insert = db.prepare('INSERT INTO files VALUES (?, ?, ?, ?, ?, ?) ON CONFLICT(id) DO UPDATE SET size=excluded.size, language=excluded.language, fingerprint=excluded.fingerprint, seen=excluded.seen');
  const find = db.prepare('SELECT * FROM files WHERE id = ?');
  const page = db.prepare('SELECT id, path, size, language FROM files WHERE path > ? COLLATE BINARY AND instr(lower(path), lower(?)) > 0 ORDER BY path COLLATE BINARY LIMIT ?');
- const getMeta = db.prepare('SELECT value FROM meta WHERE key = ?'); const setMeta = db.prepare('INSERT INTO meta VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value=excluded.value');
+ const getMeta = db.prepare('SELECT value FROM meta WHERE key = ?'); const setMeta = db.prepare('INSERT INTO meta VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value=excluded.value'); const latestChange = db.prepare('SELECT COALESCE(MAX(seq), 0) AS seq FROM changes');
  if (getMeta.get('eventLedgerVersion')?.value !== '2') {
   const baselineTime = getMeta.get('baselineCapturedAt')?.value;
   if (baselineTime) db.prepare("DELETE FROM changes WHERE kind='added' AND capturedAt<=? AND fileId IN (SELECT id FROM baseline)").run(baselineTime);
@@ -323,10 +323,10 @@ export async function createProjectService({ root, origin, storageRoot, handleEx
   const context = runContexts.get(run.id); if (!context?.covered) return 'unknown';
   try {
    const covered = await settleRecorder();
-   if (project.revision !== context.revision) return 'stale';
+   if (latestChange.get().seq !== context.changeSequence) return 'stale';
    const file = find.get(run.fileId); if (!file) return 'unknown';
    const current = await source(file, 1, 1, false), available = await scripts();
-   if (current.sourceHash !== run.sourceHash || !available.scripts.some(script => script.id === run.scriptId && script.manifestHash === run.manifestHash) || project.revision !== context.revision) return 'stale';
+   if (current.sourceHash !== run.sourceHash || !available.scripts.some(script => script.id === run.scriptId && script.manifestHash === run.manifestHash) || latestChange.get().seq !== context.changeSequence) return 'stale';
    return covered && !closed && project.status === 'ready' && project.watching && project.watchError === null && !pending.size && !processingChanges ? 'current' : 'unknown';
   } catch { return 'unknown'; }
  }
@@ -334,13 +334,13 @@ export async function createProjectService({ root, origin, storageRoot, handleEx
   if (active) fail(409, 'check_busy', 'A project check is already in progress.');
   active = true;
   try {
-   const contextCovered = await settleRecorder(); const contextRevision = project.revision;
+   const contextCovered = await settleRecorder(); const contextChangeSequence = latestChange.get().seq;
    const file = find.get(consent.fileId); if (!file) fail(404, 'unknown_file', 'Choose a file from the current project.');
    const snapshot = await source(file, 1, 160, false); const available = await scripts(); const script = available.scripts.find(script => script.id === consent.scriptId);
    if (!script || script.manifestHash !== consent.manifestHash || snapshot.sourceHash !== consent.sourceHash) fail(409, 'stale_consent', 'The selected source or command changed. Refresh them and approve the current command.');
    while (runs.size >= 20) { const oldest = runs.keys().next().value; runs.delete(oldest); runContexts.delete(oldest); }
    const run = { id: randomUUID(), projectId: project.id, fileId: file.id, scriptId: script.id, sourceHash: consent.sourceHash, manifestHash: consent.manifestHash, status: 'running', output: '', exitCode: null, startedAt: new Date().toISOString(), finishedAt: null };
-   runs.set(run.id, run); runContexts.set(run.id, { covered: contextCovered, revision: contextRevision });
+   runs.set(run.id, run); runContexts.set(run.id, { covered: contextCovered, changeSequence: contextChangeSequence });
    const environment = Object.fromEntries(['PATH', 'HOME', 'TMPDIR', 'TEMP', 'TMP', 'SystemRoot'].flatMap(name => process.env[name] ? [[name, process.env[name]]] : []));
    const child = spawn(process.platform === 'win32' ? 'npm.cmd' : 'npm', ['--ignore-scripts', 'run', script.id], { cwd: approvedRoot, shell: false, env: { ...environment, CI: 'true', npm_config_ignore_scripts: 'true' }, detached: process.platform !== 'win32', stdio: ['ignore', 'pipe', 'pipe'] });
    let rawOutput = '', timedOut = false, cancelled = false, finished = false, withheld = false;
@@ -354,7 +354,7 @@ export async function createProjectService({ root, origin, storageRoot, handleEx
      if (finished) return; finished = true; clearTimeout(timer);
      let finalStatus = status;
      if (status === 'passed' || status === 'failed') {
-      try { const contextStillCovered = await settleRecorder(); const current = await source(file, 1, 160, false); const currentScripts = await scripts(); if (!contextCovered || !contextStillCovered || project.status !== 'ready' || !project.watching || pending.size || processingChanges || project.revision !== contextRevision || current.sourceHash !== consent.sourceHash || !currentScripts.scripts.some(script => script.id === consent.scriptId && script.manifestHash === consent.manifestHash)) finalStatus = 'stale'; }
+      try { const contextStillCovered = await settleRecorder(); const current = await source(file, 1, 160, false); const currentScripts = await scripts(); if (!contextCovered || !contextStillCovered || project.status !== 'ready' || !project.watching || pending.size || processingChanges || latestChange.get().seq !== contextChangeSequence || current.sourceHash !== consent.sourceHash || !currentScripts.scripts.some(script => script.id === consent.scriptId && script.manifestHash === consent.manifestHash)) finalStatus = 'stale'; }
       catch { finalStatus = 'stale'; }
      }
      run.status = finalStatus; run.exitCode = exitCode; run.finishedAt = new Date().toISOString(); active = false; stopRun = undefined; resolve();

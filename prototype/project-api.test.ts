@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { getSourceState, sourceFreshness } from './src/project-api.js';
+import { getCapturedSource, getSource, getSourceState, sourceFreshness } from './src/project-api.js';
 import type { SourceSnapshot } from './src/project-types.js';
 
 const fileId = 'a'.repeat(64), sourceHash = 'b'.repeat(64);
@@ -25,6 +25,22 @@ describe('point-in-time selected source state', () => {
    fetch.mockResolvedValue(new Response(JSON.stringify({ error: { code: 'source_busy', message: 'Current source cannot be established.' } }), { status: 503 }));
    await expect(getSourceState(source.projectId, fileId)).rejects.toMatchObject({ status: 503, code: 'source_busy' });
    expect(fetch).toHaveBeenCalledTimes(3);
+  } finally { fetch.mockRestore(); }
+ });
+ it('preserves the 160-line legacy default while allowing explicit 200-line browsing and captured ranges', async () => {
+  const fetch = vi.spyOn(globalThis, 'fetch');
+  try {
+   fetch.mockImplementation(async () => new Response(JSON.stringify(source), { status: 200 }));
+   await getSource(source.projectId, fileId);
+   expect(new URL(String(fetch.mock.calls[0][0]), 'http://127.0.0.1').searchParams.get('lines')).toBe('160');
+   fetch.mockClear();
+   await getSource(source.projectId, fileId, 1, 200);
+   expect(new URL(String(fetch.mock.calls[0][0]), 'http://127.0.0.1').searchParams.get('lines')).toBe('200');
+   fetch.mockClear();
+   await getCapturedSource({ ...source, startLine: 20, endLine: 179 });
+   const requested = new URL(String(fetch.mock.calls[0][0]), 'http://127.0.0.1').searchParams;
+   expect(requested.get('start')).toBe('20');
+   expect(requested.get('lines')).toBe('160');
   } finally { fetch.mockRestore(); }
  });
 });

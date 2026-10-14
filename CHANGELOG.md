@@ -290,3 +290,11 @@ UI-owned current prototype/design handoffs now agree with the root desktop contr
 - **Files:** `prototype/src/project-learning.ts`, `prototype/project-learning.test.ts`, `prototype/teaching-service.mjs`, `prototype/teaching-service.test.mjs`, `prototype/project-service.mjs`, `prototype/project-service.test.mjs`, `prototype/feature-contract.md`, `prototype/README.md`, `README.md`, `docs/implementation-plan.md`, `AI_USAGE.md`, and `tasks/todo.md`.
 - **Checks:** root typecheck/lint/build and 134 tests; prototype:check with 98 learning and 66 service tests; focused 41 domain, 20 teaching-service and 34 project-service cases; same-browser two-host browser repro passed.
 - **Limits:** provider use, learning gains, phone access and full C01–C25 coverage remain unverified. P07 actual-repository source navigation is the next gate. No push.
+
+## 2026-10-14 23:33 IST — Exact source ranges and check freshness
+
+- **Changed:** legacy source reads keep their 160-line default; project browsing can request up to 200 lines explicitly, and teaching rereads the approved start/end range before and after provider work. Check freshness now follows the monotonic recorded-file change sequence, so reading a new range does not mark unchanged code stale.
+- **Reason:** actual-repository lessons need complete bounded excerpts, while browsing/history revisions must not invalidate a check that still matches the project source and command manifest.
+- **Files:** `prototype/src/project-api.ts`, `prototype/project-api.test.ts`, `prototype/project-service.mjs`, `prototype/project-service.test.mjs`, `prototype/teaching-service.mjs`, `prototype/teaching-service.test.mjs`, `CHANGELOG.md`, `AI_USAGE.md`, and `tasks/todo.md`.
+- **Checks:** project API tests 3/3; source-range freshness regression and dependency/config/manifest stale cases 5/5; prototype TypeScript check; `git diff --check`. The full combined prototype suite remains pending the source/UI integration checkpoint.
+- **Limits:** Product Quality's independent rerun is pending. P07 remains open until parser attribution/captured-source selection fixes and the visible multi-file reading bundle are integrated. No live OpenAI request or learner study was performed; no push.

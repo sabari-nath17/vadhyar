@@ -135,6 +135,7 @@ test('source reads only known safe files, retain a full-file identity, bound exc
   await f.login(); const current = await f.call('/api/projects/current'); assert.equal(current.code, 200); const project = current.data; const page = await f.call(`/api/projects/${project.id}/files`); assert.equal(page.code, 200); const files = page.data.files; const file = files.find(file => file.path === 'long.unknown');
   const base = `/api/projects/${project.id}/source?fileId=${file.id}`;
   const result = await f.call(base + '&start=2&lines=2'); assert.equal(result.code, 200); sourceSnapshotSchema.parse(result.data); assert.equal(result.data.text, 'line 2\nline 3'); assert.equal(result.data.sourceHash, hash(content)); assert.equal(result.data.endLine, 3); assert.equal(result.data.truncated, true);
+  const maximum = await f.call(base + '&start=1&lines=200'); assert.equal(maximum.code, 200); assert.equal(maximum.data.endLine, 200); assert.equal(maximum.data.text.split('\n').length, 200);
   assert.equal((await f.call(base + '&lines=201')).code, 400); assert.equal((await f.call(base + '&start=-1')).code, 400);
   const beyond = await f.call(base + '&start=9999'); assert.equal(beyond.code, 416); assert.ok(!JSON.stringify(beyond.data).includes(f.root));
   assert.equal((await f.call(`/api/projects/${project.id}/source?fileId=../../etc/passwd`)).code, 400);
@@ -428,6 +429,22 @@ test('completed run freshness is revalidated without rewriting its execution fac
    const after = (await f.call(`${runs}/${started.data.id}`)).data; assert.equal(after.status, 'passed'); assert.equal(after.exitCode, 0); assert.equal(after.freshness, 'stale'); assert.equal(after.output, completed.output); assert.equal(after.startedAt, completed.startedAt); assert.equal(after.finishedAt, completed.finishedAt); assert.equal(after.sourceHash, completed.sourceHash);
   } finally { await f.close(); }
  });
+});
+
+test('reading a new selected file during and after a check preserves current freshness and its execution record', async () => {
+ const f = await fixture({ 'answer.mjs': 'export const answer = 42;\n', 'helper.mjs': 'export const enabled = true;\nexport const label = "ready";\n', 'package.json': JSON.stringify({ scripts: { test: 'node check.mjs' } }), 'check.mjs': "await new Promise(resolve => setTimeout(resolve, 1000)); console.log('checked');" });
+ try {
+  await f.login(); const project = (await f.call('/api/projects/current')).data; const files = (await f.call(`/api/projects/${project.id}/files`)).data.files; const answer = files.find(file => file.path === 'answer.mjs'), helper = files.find(file => file.path === 'helper.mjs');
+  const source = (await f.call(`/api/projects/${project.id}/source?fileId=${answer.id}`)).data; const revisionBeforeRun = (await f.call('/api/projects/current')).data.revision; const script = (await f.call(`/api/projects/${project.id}/scripts`)).data.scripts[0]; const runs = `/api/projects/${project.id}/runs`;
+  const started = await f.call(runs, { method: 'POST', body: { scriptId: script.id, fileId: answer.id, sourceHash: source.sourceHash, manifestHash: script.manifestHash, approved: true } }); assert.equal(started.code, 202);
+  const during = await f.call(`/api/projects/${project.id}/source?fileId=${helper.id}&start=1&lines=1`); assert.equal(during.code, 200);
+  const duringRevision = (await f.call('/api/projects/current')).data.revision; assert.ok(duringRevision > revisionBeforeRun);
+  let completed;
+  for (let i = 0; i < 100; i++) { completed = (await f.call(`${runs}/${started.data.id}`)).data; if (completed.status !== 'running') break; await new Promise(resolve => setTimeout(resolve, 30)); }
+  assert.equal(completed.status, 'passed'); assert.equal(completed.freshness, 'current');
+  await f.call(`/api/projects/${project.id}/source?fileId=${helper.id}&start=2&lines=1`);
+  const after = (await f.call(`${runs}/${started.data.id}`)).data; assert.equal(after.status, 'passed'); assert.equal(after.exitCode, 0); assert.equal(after.output, completed.output); assert.equal(after.freshness, 'current');
+ } finally { await f.close(); }
 });
 
 test('a completed passed receipt becomes unknown when watcher coverage is lost without rewriting its execution fact', async () => {

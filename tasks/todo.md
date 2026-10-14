@@ -667,3 +667,11 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - [x] Root typecheck/lint/build and 134 tests; prototype check with 98 learning and 66 service tests; focused 41 domain, 20 teaching-service, 34 project-service and 7 receipt tests; independent two-host browser recheck.
 - **Checkpoint:** local commit `fix: preserve concise learning inputs and parallel project sessions`; no push.
 - **Next:** P07 bounded source-reading support for the actual repository. Reuse owns the bounded reading/parser/knowledge lane, UI owns source selection and exact-range consumers, and root owns optional requested-line-count plumbing plus teaching-range alignment. Preserve the 160-line default for legacy callers and carry any explicit range length through freshness checks. Do not infer runtime, mastery or whole-repository coverage.
+
+## 2026-10-14 23:33 IST — Engineering source-range and freshness checkpoint
+
+- [x] P07 root plumbing: preserve the 160-line legacy default, allow explicit 200-line browsing, and carry the approved line count/end line through both OpenAI source reads. The browser/API and teaching-range checks passed.
+- [x] P08 false-stale fix: new source-range/history captures during or after an unchanged project check preserve its `passed/current` receipt. Actual source, dependency, config and manifest drift still become stale; lost watcher coverage remains unknown. The regression failed before the change and passed after it.
+- Checks: project API 3/3; P08 reading-during/after and existing drift cases 5/5; prototype TypeScript check and whitespace validation pass. Full combined prototype and independent Product Quality recheck are still pending.
+- Checkpoint: root-owned range and freshness code/tests are prepared for an exact-path local checkpoint; no push.
+- Next: Source Intelligence owns the callback-attribution and captured-source-selection regressions; UI owns expanded source navigation and mounting the multi-file reading bundle. Product Quality then verifies the actual `Record observation` question against the integrated visible app, followed by the full suite and final combined acceptance. P07 is not yet closed.

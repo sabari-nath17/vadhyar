@@ -181,3 +181,9 @@ Codex independently inspected the owner-applied desktop priority, current implem
 Codex corrected concise factual-answer validation in the lesson domain and teaching boundary, and isolated local browser sessions by validated port. The source, tests and feature handoff were edited in the feature lane while the UI and product-quality chats retained their file ownership. Product Quality independently reproduced and browser-checked the two-host session collision; UI owner reports the returned-check receipt remains exportable and verification stays locked until attachment. Human review of the code and learner experience remains pending.
 
 Checks: root typecheck/lint/build and 134/134 tests; prototype typecheck/lint/build with 98 learning and 66 local-service tests; focused 41/41 domain, 20/20 teaching-service, 34/34 project-service and 7/7 receipt tests. No live OpenAI request or learner-efficacy study was performed. P07 actual-repository reading remains open; no push.
+
+## 2026-10-14 23:33 IST — Exact source ranges and check freshness
+
+Codex added explicit source-range transport while preserving the legacy 160-line default. The teaching service carries the exact selected line range through both source reads and rejects a changed end line before accepting the explanation. A regression first reproduced the false-stale result, then bound check freshness to the local recorded-file change sequence rather than browser-history revisions. Actual tracked-file, dependency, config and manifest changes still invalidate freshness; watcher loss remains unknown.
+
+Checks after this change: project API 3/3; P08 regression and dependency/config/manifest stale cases 5/5; prototype TypeScript check and diff whitespace pass. Product Quality's independent browser/HTTP retest and the full combined suite remain pending source/UI integration. Human review is pending. No live OpenAI call, participant study, credential inspection, push or publication occurred.

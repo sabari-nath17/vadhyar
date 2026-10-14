@@ -8,7 +8,7 @@ import { z } from 'zod';
 const identity = z.string().regex(/^[a-f0-9]{64}$/);
 const modelId = z.string().regex(/^[A-Za-z0-9._:/-]{1,120}$/);
 const connectSchema = z.object({ key: z.string().trim().regex(/^[!-~]{8,512}$/), model: modelId.optional() }).strict();
-const explainSchema = z.object({ fileId: identity, sourceHash: identity, startLine: z.number().int().min(1).max(999_999_999), requirement: z.string().trim().min(8).max(4000), caseInput: z.string().trim().min(1).max(2000), model: modelId, approved: z.literal(true) }).strict();
+const explainSchema = z.object({ fileId: identity, sourceHash: identity, startLine: z.number().int().min(1).max(999_999_999), endLine: z.number().int().min(1).max(999_999_999).optional(), lines: z.number().int().min(1).max(200).optional(), requirement: z.string().trim().min(8).max(4000), caseInput: z.string().trim().min(1).max(2000), model: modelId, approved: z.literal(true) }).strict();
 const sourceSchema = z.object({ fileId: identity, sourceHash: identity, path: z.string().min(1).max(8192), language: z.string().max(40), startLine: z.number().int().positive(), endLine: z.number().int().nonnegative(), text: z.string().min(1).max(40_000) }).passthrough();
 const explanationSchema = z.object({ summary: z.string().min(1).max(3000), conditions: z.array(z.object({ startLine: z.number().int().positive(), endLine: z.number().int().positive(), explanation: z.string().min(1).max(1200) }).strict()).max(12), questions: z.array(z.string().min(1).max(500)).max(8), limits: z.array(z.string().min(1).max(500)).min(1).max(8) }).strict();
 const responseSchema = z.object({ status: z.literal('completed'), output_text: z.string().min(1).max(24_000), output: z.array(z.object({ type: z.string().max(100), content: z.array(z.object({ type: z.string().max(100) }).passthrough()).max(20).optional() }).passthrough()).max(32) }).passthrough();
@@ -67,9 +67,9 @@ export function createTeachingService({ readSource, clientFactory = options => n
  }
  async function selected(data) {
   let source;
-  try { source = sourceSchema.parse(await readSource(data.fileId, data.startLine, 160)); }
+  try { source = sourceSchema.parse(await readSource(data.fileId, data.startLine, data.lines ?? 160)); }
   catch { fail(409, 'source_unavailable', 'The selected source could not be read safely. Refresh it before requesting teaching.'); }
-  if (source.fileId !== data.fileId || source.sourceHash !== data.sourceHash || source.startLine !== data.startLine || source.endLine < source.startLine) fail(409, 'stale_source', 'The selected source changed or has an invalid range. Refresh it and approve the current excerpt.');
+  if (source.fileId !== data.fileId || source.sourceHash !== data.sourceHash || source.startLine !== data.startLine || source.endLine < source.startLine || data.endLine !== undefined && source.endLine !== data.endLine) fail(409, 'stale_source', 'The selected source changed or has an invalid range. Refresh it and approve the current excerpt.');
   return source;
  }
  async function handle(req, res) {
