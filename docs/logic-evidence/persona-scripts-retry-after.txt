@@ -1,0 +1,70 @@
+- link "Skip to question":
+  - /url: "#main"
+- banner:
+  - 'img "Vadhyar: understand what you build"'
+  - generic: BookingDesk / src/booking.mjs
+  - list "Learning activities":
+    - generic: "Predict: recorded activity"
+    - generic: "Observe: recorded activity"
+    - generic: "Change: recorded activity"
+    - generic: "Verify: current activity"
+    - generic: "Reflect: upcoming activity"
+    - generic: "Separate case: upcoming activity"
+  - generic: Verify · 4 of 6
+  - button "Close lesson and return to Path":
+- main:
+  - paragraph: VERIFY · STEP 4 OF 6
+  - heading "What does the evidence support?" [level=1]
+  - paragraph: Keep the check result and your requirement verdict separate.
+  - generic "Your confirmed rule and case"
+  - generic: Saved source unchanged · captured a1eeb6545bbb
+  - group "Verification evidence":
+    - button "Manual evidence"
+    - button "Existing project check" [pressed]
+  - paragraph: Run only an approved existing root-package check. It executes trusted repository code on this computer.
+  - text: Existing check
+  - combobox "Existing check":
+    - option "check" [selected]
+  - code: node check.mjs
+  - button "Review and run check":
+    - text: Review and run check
+  - text: Requirement verdict · your assessment
+  - combobox "Requirement verdict · your assessment":
+    - option "Uncertain" [selected]
+    - option "Satisfied for the checked case"
+    - option "Not satisfied"
+  - text: Why does the evidence support that verdict?
+  - textbox "Why does the evidence support that verdict?":
+    - /placeholder: Explain what was established and what is still uncertain.
+    - text: No execution has occurred; discovering checks does not verify the booking rule.
+  - text: Assistance used · self-declared
+  - textbox "Assistance used · self-declared":
+    - /placeholder: Describe AI, people, documentation, or no additional help.
+    - text: none
+  - button "Refresh source again":
+    - text: Refresh source again
+  - paragraph: Learning records are saved in this browser.
+  - complementary:
+    - generic "YOUR CAPTURED SOURCE src/booking.mjs":
+      - generic: YOUR CAPTURED SOURCE
+      - strong: src/booking.mjs
+    - generic "Selected project source":
+      - generic: "1"
+      - code: "export function canBook(seats) {"
+      - generic: "2"
+      - code: return seats > 0;
+      - generic: "3"
+      - code: "}"
+    - paragraph: Captured 14/10/2026, 23:06:51 · explicit refresh
+    - generic "Source details"
+    - generic "Open source walkthrough":
+      - text: Open source walkthrough
+    - button "Browse project source":
+      - text: Browse project source
+    - generic "Ask a teacher · optional":
+      - text: Ask a teacher · optional
+- contentinfo:
+  - paragraph: Record the evidence, scope and assistance you used.
+  - button "Record scoped verification" [disabled]:
+    - text: Record scoped verification
+  - paragraph: Read a current host receipt before recording command evidence.

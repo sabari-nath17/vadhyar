@@ -1,16 +1,20 @@
 # Vadhyar logic board
 
-14 October 2026, IST. Owner: **Verify Vadhyar product logic**. This is the acceptance register for the three user-designated chats. Findings below describe the inspected working tree, not a published release. Source and design owners keep their existing files; this board owns review and verification only. No push or network exposure is authorized by this review.
+14 October 2026, IST. Owner: **Product Quality Lead — Vadhyar**. This is the acceptance register for the three user-designated chats. Findings below describe the inspected working tree, not a published release. Source and design owners keep their existing files; this board owns review and verification only. No push or network exposure is authorized by this review.
 
 ## Workstreams and decision rights
 
 | Chat | Owns | Required handoff |
 | --- | --- | --- |
-| [Plan Duolingo-inspired Vadhyar UI](thread://01a13a8b-f169-77f3-b663-0f7ef970a747?hostId=local) | Approved design implementation, navigation, components and styles | Layout labels and stage/status meaning match supported behavior |
-| [Complete browser code reuse](thread://01a13a7c-3a80-7710-a464-98f6657227ab?hostId=local) | Captured source viewer, walkthrough, concepts and map adaptations | Empty/stale/partial source is handled honestly; browsing never executes or advances a lesson |
-| [Plan Vadhyar rebuild workflow](thread://01a138f7-13d0-78e0-b3b3-abe8c8e23cf8?hostId=local) | Generic project service, recorder, learning state, provider and feature callers | Reproduced defects fixed at their shared cause with focused regressions |
+| [UI/UX Lead — Vadhyar](thread://01a13a8b-f169-77f3-b663-0f7ef970a747?hostId=local) | Approved design implementation, navigation, components and styles | Layout labels and stage/status meaning match supported behavior |
+| [Source Intelligence Lead — Vadhyar](thread://01a13a7c-3a80-7710-a464-98f6657227ab?hostId=local) | Captured source viewer, walkthrough, concepts and map adaptations | Empty/stale/partial source is handled honestly; browsing never executes or advances a lesson |
+| [Engineering Lead — Vadhyar](thread://01a138f7-13d0-78e0-b3b3-abe8c8e23cf8?hostId=local) | Generic project service, recorder, learning state, provider and feature callers | Reproduced defects fixed at their shared cause with focused regressions |
 
 The logic board reads actual changes and evidence before closing a finding. A message delivered, an owner response, a passing old suite and a proposed fix are separate from a verified correction. Shared records are append-only by each owner; staging and commits remain serialized by their owners.
+
+## Latest checkpoint status
+
+The current coordinated implementation includes concise-input/parallel-session correction `f1b959e`, exact-range/change-sequence freshness `894a5ab`, desktop UI/recovery `7ff1036` and bounded source reading `5bb7708`. Earlier pending-checkpoint statements below are historical receipts. Source/backend checks do not close P07: the mounted, real-project in-app comprehension trace remains the current acceptance gate.
 
 ## Initial findings
 
@@ -142,3 +146,24 @@ The user explicitly challenged why a local-only product needs a mobile-phone int
 UI owner applied the correction to the [current prototype design](../prototype/DESIGN.md) and [design handoff](design/2026-10-14-duolingo-minimal/DESIGN.md): primary desktop plus coding split-window use; narrow-window/zoom robustness as secondary; no phone product or transport claim. Root inspected the updated documents: desktop-first beside the coding tool, 1440px primary master, 1024px and 700–900px coding-panel targets, historical narrow-filename explanation and implementation authorization all agree with the audited desktop source. Feature/reuse owners received the matching setup/backend boundary. Root added the explicit use case, README guidance and closure rule. Historical assets/receipts remain preserved. The device-priority correction is applied; the newly referenced implementation receipt and final rendered/accessibility acceptance remain UI-owned and pending, so C24 and the other compound rows are not blanket-closed.
 
 No new product-suite success is claimed by defining these rules. Existing feature checkpoint `5e2ebc9` and reuse checkpoint `b571397` are actual local owner commits; the redesigned UI acceptance must refer to its own current artifact. Shared index was released by the reuse owner, but active UI/feature writers may create later staged work; inspect before any root checkpoint. No push, phone mode, live provider request, vault edit or memory update.
+
+
+## Persona mock testing — 14 October 2026
+
+The user expanded this chat from individual invariants to founder, student and developer understanding gaps. The [persona audit](persona-logic-audit.md) records root browser use, independent role hypotheses, five reproduced findings and owner correction gates. A disposable booking question completed through actual source change and a passed check while preserving an uncertain verdict, original prediction, separate-case limits, export and reload. A second no-teacher, unchanged-source question retained an explicit inability-to-execute report and manual uncertainty. P01–P05 remain open until current corrections are rechecked.
+
+Correction to the earlier generalized helper-text statement: current teacher setup reproduces “Available after the current operation finishes” for an empty key with no pending operation. The earlier C12 receipt correction remains scoped to historical check status; it does not establish correct disabled reasons for every button. P05 now covers that separate flaw.
+
+A sixth persona finding P06 is reproduced with two controlled local projects: opening OtherDesk4189 overwrites the shared session cookie and BookingDesk4187 immediately rejects source access. Feature owns per-origin cookie isolation with unchanged authorization. This explains a real parallel-use failure; it remains open until a two-host browser recheck passes.
+
+P01–P05 current-bundle browser rechecks now pass, including concise values plus blank refusal and export/reload, visible path scope/zero-match recovery, observation/optional-teacher guidance, exact rule/case disclosure at Change/Verify/Reflect and correct missing-key reason. Actual corrected1440×1000CSSpx Path has no document overflow. P06 remains feature-owned; root will close it only after the two-host recheck. Focused domain/teaching checks are separate from final combined owner validation.
+
+P06 final per-port session cookie correction now passes both restarted controlled browser hosts: each retained authorization for listing, selection and explicit excerpt reload; no session_required/reconnect, record loss or run replay. Feature owns the shared code/regression; root saved before/after browser receipts.
+
+Latest user steering requires actual working-repository comprehension. P07 is reproduced: the186-line ProjectLesson component is cut by default160-line capture, and its walkthrough returns no concepts. The [actual-repository audit](persona-logic-audit.md) records441eligible entries (including documents), an observation/check flow comprehension rubric and exclusive reuse/UI ownership for a bounded reading-bundle/source-anchor correction. It remains open until the actual app supports the explanation with cited complete-enough source and explicit gaps.
+
+Independent current-bundle management M02/M03 probes pass: a refused valid fixture interpretation survives teacher collapse, Close/Browse/Keep working, exact export and changed-source review while the separately saved question is untouched; replacement generation is blocked. Check discovery separately renders pending, failed, successful empty and successful populated retry with preserved draft and0executionPOSTs. These runtime corrections supplement the [persona audit](persona-logic-audit.md); capacity/quota/legacy variants retain their separately stated limits. P07 remains open.
+
+P08 is reproduced during reading integration: unchanged-source range capture increments metadata revision and falsely makes passed/current execution evidence stale. Engineering owns separating the actual eligible-file change identity from history/capture revisions in both completion and post-result freshness. The [actual HTTP receipt](logic-evidence/persona-read-only-freshness-before.json) preserves passed status and unchanged source hash. P08 remains open until readonly capture stays current while genuine mutations stay stale.
+
+P08 independent post-result HTTP correction now passes on exact service bytes matching894a5ab: metadata revision4→5 after reading unchanged source, same passed/current result. Output was root-observed; the saved JSON establishes status/freshness and unchanged identity rather than output equality. [After receipt](logic-evidence/persona-read-only-freshness-after.json). Engineering separately passes58service cases including during-run reads, real drift and watch-loss. P07 actual-app comprehension remains open.

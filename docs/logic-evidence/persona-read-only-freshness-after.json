@@ -1,0 +1,15 @@
+{
+  "before": {
+    "status": "passed",
+    "freshness": "current"
+  },
+  "after": {
+    "status": "passed",
+    "freshness": "current"
+  },
+  "sameSourceHash": true,
+  "revisionBefore": 4,
+  "revisionAfter": 5,
+  "action": "read another source range, no source write",
+  "assertions": "passed/current retained"
+}

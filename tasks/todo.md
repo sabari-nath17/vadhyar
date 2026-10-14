@@ -718,3 +718,11 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - [x] Exact owned source checkpoint/check gate based on feature894a5ab and UI7ff1036: corrected exported index verified at2026-10-14T23:52:27+05:30,126unit/74service plus typecheck/lint/build. Scoped local milestone: feat: add bounded real-repository source reading; exact SHA in Git history/handoff.
 - [ ] UI mount addon and Product Quality actual Record observation browser acceptance remain separately owned. Index remains owner-serialized.
 - Evidence: [contract](../docs/source-reading.md), [reuse mapping](../docs/source-reading-provenance.json), [execution receipt](../docs/source-reading-evidence.json). No push. Next broader curriculum/provider/mastery work remains outside this slice.
+
+
+## 2026-10-15 00:00:59 IST — Product Quality persona checkpoint
+
+- [x] P01–P06 correction rechecks, completed/no-teacher/manual question export/reload, M02 rejected teaching conflict/leave/refresh/export, M03 pending/503/retry/empty discovery and zero execution POSTs, P08 unchanged-read passed/current probe.
+- [x] Root-only evidence, current roles and historical/current checkpoint boundaries recorded; local links, JSON and rule limits reviewed. Code owners retain their scopes; shared index serialized.
+- [ ] P07 mounted actual-repository retained source trace: observation entry/callback/GET/transition/storage, cited evidence and uncertainty, captured search vs explicit recapture/export. Source/backend5bb7708 alone does not satisfy it.
+- Next: UI mounts existing bundle, root performs app acceptance, engineering final stable checks/primary-host receipt. Stop at the manager's human-authorized MVP boundary; no roadmap expansion/push. This scoped documentation checkpoint is recorded by its commit in Git history.

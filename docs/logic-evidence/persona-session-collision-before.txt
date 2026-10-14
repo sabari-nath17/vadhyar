@@ -1,0 +1,51 @@
+- link "Skip to content":
+  - /url: "#main"
+- complementary:
+  - button "Vadhyar path":
+    - 'img "Vadhyar: understand what you build"'
+  - navigation "Main navigation":
+    - button "Path":
+      - generic: Path
+    - button "Project":
+      - generic: Project
+    - button "Notebook":
+      - generic: Notebook
+- banner:
+  - strong: BookingDesk
+  - generic: /
+  - text: Project
+  - button "Settings":
+- main:
+  - alert:
+    - strong: Local connection needs attention
+    - paragraph: Open a local project session before reading source.
+    - button "Reconnect local service"
+    - button "Download saved backup"
+    - button "Export visible record"
+    - button "Reload saved record"
+    - button "Reset this project record"
+  - heading "Begin with the source." [level=1]
+  - paragraph: Confirm one rule and one case in BookingDesk.
+  - strong: BookingDesk
+  - text: · 5 indexed files
+  - generic: Initial scan complete · 0 excluded entries
+  - complementary "Project files":
+    - text: Find a file
+    - textbox "Find a file":
+      - /placeholder: Search paths in your project
+      - text: booking
+    - paragraph: Search matches file paths. Find the feature in your coding tool, then search its filename here.
+    - generic: 1 files on this page
+    - list:
+      - button "src/booking.mjs JavaScript · 55 bytes" [active]:
+        - text: src/booking.mjs
+        - generic: JavaScript · 55 bytes
+    - paragraph: Metadata only. Hidden, vendor, generated and private files are excluded. Eligible saves update the index while recording is available.
+  - alert:
+    - paragraph: Open a local project session before reading source.
+    - button "Retry selected source"
+  - heading "Start with one useful file." [level=2]
+  - paragraph: Choose source from your project. A focused excerpt is enough to begin.
+  - generic: Browsing source stays local. Teaching asks for sharing approval separately.
+  - generic "Recording status unknown":
+    - text: Recording status unknown

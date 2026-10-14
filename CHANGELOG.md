@@ -337,3 +337,10 @@ UI-owned current prototype/design handoffs now agree with the root desktop contr
 - Files: source parser/walkthrough/schema/handler; knowledge schema/analysis/service/client; new bundle/helper and focused tests; [current contract](docs/source-reading.md), [upstream mapping/notices](docs/source-reading-provenance.json) and [execution evidence](docs/source-reading-evidence.json). No new dependency or upstream import.
 - Checks:57focused units;14protected knowledge HTTP tests; parser/walkthrough integration; typecheck, scoped lint,52local links and retained notice fingerprint. Actual approved repository through isolated authenticated host returns five contexts and six static module links with complete observe/act/record/storage anchors; no source/provider/command execution. Earlier combined116unit/73service pass is historical; corrected exact exported index verified at2026-10-14T23:52:27+05:30 passes126unit/74service plus typecheck/lint/build.
 - Corrections/limits: independently found anonymous callback attribution and captured-search/fresh-read confusion fixed and re-reviewed; captures are view-local/exportable, selected static evidence remains incomplete. UI initial/source/mount milestones serialize separately; browser learner trace/human review pending. No push.
+
+
+## 2026-10-15 00:00:59 IST — Persona logic and recovery evidence
+
+- Change/reason: record real mock-use gaps and independent correction receipts, including port collision, concise facts, missing case context, optional teacher, check discovery, rejected interpretation retention and readonly source freshness. Distinguish synthetic runtime, source-only, owner-suite and actual-repository evidence.
+- Files: docs/logic-board.md, docs/persona-logic-audit.md, docs/logic-evidence/persona-* and these additive records. Production fixes remain in their owners' scoped checkpoints.
+- Checks: local links resolve, receipt JSON parses, rule files under50lines; browser source catalogue now exposes observe95–105 on the real repository. P07 retained UI explanation/storage trace and final combined gate still open. No new dependency, live provider or push.
