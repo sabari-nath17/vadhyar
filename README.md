@@ -236,3 +236,10 @@ Vadhyar is a local desktop/laptop learning workspace used alongside the learner'
 ### Parallel local project sessions — 2026-10-14
 
 Each local project host has a port-specific session-cookie name, so separately launched loopback projects can remain open in one browser without replacing each other's login. Host, origin and project checks remain active. See [prototype setup and limits](prototype/README.md).
+
+
+### Verified local MVP — 2026-10-15T00:38:03+05:30
+
+The desktop source-checkout MVP is verified at `88a8d69cc8ce0d00352d26c8f4fd59191a1dbeaf`; further product implementation is stopped for now at the user's request. Real-project cross-file reading, preserved prediction/observation/change records, scoped checks/reflection, resume/export and bounded recovery have actual receipts; typecheck/lint/build and 126 unit/74 service cases pass on matching product bytes. [Final app acceptance](docs/logic-evidence/persona-real-reader-acceptance.json), [launch instructions](prototype/README.md), [ownership and stopping register](docs/workflow-management.md).
+
+Reading bundles retain up to five exact captured ranges while browsing and require export before leaving. Source links are structural; observation and human verdicts remain labelled. This is a same-computer desktop checkout, with optional live teacher quality, standalone installation, shared adapters, comprehensive fault/accessibility/device coverage and human learning efficacy unverified. No publication or push.

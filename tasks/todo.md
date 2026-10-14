@@ -736,3 +736,12 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - [x] Root full126unit/74service/typecheck/lint/build, final scoped CSS owner checks, measured1440×1000/no overflow, final rendered screenshot and console[]; local links/JSON/rule limits/staged review.
 - [x] Bounded P07 maintainer acceptance closed; exact identity/evidence in docs/logic-evidence/persona-real-reader-acceptance.json and cited explanation. Human efficacy/provider/full accessibility remain distinct limits.
 - Next: release index to Engineering for final stable artifact/launch/README handoff; manager owns once-ready MVP notification/stop. Preserve4173 existing session, no roadmap expansion or push. This addon checkpoint's exact SHA is in Git history and owner handoff.
+
+
+## 2026-10-15T00:38:03+05:30 — Verified local MVP / stop boundary
+
+- [x] Core product checkpoint `88a8d69cc8ce0d00352d26c8f4fd59191a1dbeaf` verified by Product Quality, Engineering and manager's matching-byte/receipt inspection: integrated real-project reader, useful cited observation flow, retained learning evidence, scoped verification/reflection/resume/export and bounded recovery.
+- [x] Typecheck/lint/build, 126 unit/74 service cases pass on matching bytes; desktop render/focus, failed-range preservation and explicit stale recapture/replacement/export pass.
+- [x] Product implementation stopped; active owners notified. Owned 4186 verification host/tab disposed; user's 4173 session untouched. Readiness heartbeat PAUSED through the app, avoiding repeat notices. No push.
+- [x] Manager documentation checkpoint stages only its register/receipt and exact additive records/setup handoff, preserving older mixed changes.
+- Next slice: **none until the user resumes**. Live provider quality, installer/adapters, broader faults/accessibility/devices, legacy capacity and human learning study remain separate disclosed follow-ups.

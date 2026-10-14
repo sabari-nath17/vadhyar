@@ -65,3 +65,10 @@ The launcher mounts `GET /api/projects/:projectId/knowledge?selection=<JSON arra
 ## Local session isolation — 2026-10-14
 
 Each loopback port has its own HttpOnly session-cookie name. You can keep separately launched project hosts open in one browser; same-origin, host and project checks still apply.
+
+
+## Verified desktop MVP and captured reading — 2026-10-15T00:38:03+05:30
+
+Checkpoint `88a8d69cc8ce0d00352d26c8f4fd59191a1dbeaf` mounts the bounded reader in Project. Add up to five displayed ranges, inspect their exact captured versions, search captured lines, explicitly recapture/replace saved ranges and export before leaving this view. Static links and a suggested reading order retain incomplete/unsupported labels. Failed loads preserve the bundle; stale analysis refuses current results until explicit replacement. [Actual app acceptance](../docs/logic-evidence/persona-real-reader-acceptance.json) and [cited feature explanation](../docs/logic-evidence/persona-real-feature-explanation.md).
+
+The existing Run command above is the source-checkout launch path. Preserve an open session; choose an unused `VADHYAR_MOCK_PORT` for a separate host. Product work is stopped at this local MVP. Combined matching-byte typecheck/lint/build, 126 unit/74 service cases and bounded desktop/persona recovery pass; live provider quality, full fault/accessibility/device coverage, installer/bridges and real learner efficacy remain unverified.
