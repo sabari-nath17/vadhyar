@@ -1,8 +1,14 @@
 # AI usage record
 
-Use Codex during the hackathon and briefly document its actual contribution here. Add a row after each meaningful task or milestone. Keep summaries concise and omit secrets, private data, and full chat transcripts.
+Briefly document actual Codex assistance throughout ongoing product development. Add a row after each meaningful task or milestone. Keep summaries concise and omit secrets, private data, and full chat transcripts.
 
-## Event build log
+## Ongoing development
+
+### 2026-10-14T16:13:56+05:30 — Product positioning and historical provenance
+
+Codex updated the GitHub About description/topics and prepared a documentation-only change from canonical main `23c63ee1199b3925cd36edf1207ca8029362431a`. It made product development the README focus, moved the event to an origin section, removed event-only operating gates and the plan’s event-schedule assumption, and labelled event rules/submission records as historical. Existing release evidence, event facts and contribution records are preserved. No application code, shared working-tree files or Git index were changed by this side-conversation task. Human file-level review remains pending. Validation: scoped diff review, unchanged archive bodies, Markdown links, instruction line limits and GitHub About/topics read-back. App tests were not rerun for this documentation change.
+
+## Historical event build log
 
 ### 2026-10-11T01:31:17.000+05:30 — Project Guide
 

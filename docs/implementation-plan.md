@@ -109,7 +109,7 @@ Each slice produces an observable capability. Keep existing project task records
 | 5. Usability and review | Use frontend-ui-engineering, impeccable and code-review-and-quality. Complete panel states and exercise the real extension host. | Keyboard/focus/theme checks pass; stale/error states are understandable; actual editor run succeeds. | 1.5 h |
 | 6. Package and rehearse | Use documentation-and-adrs, sales-demo-script, demo-readiness and shipping-and-launch. Package VSIX, document prerequisites/notices, rehearse reset, record backup. | Fresh demo copy installs and runs; live path and labelled backup are usable. **Gate D.** | 2 h |
 
-Allow another 1–2 hours for integration problems if the event schedule permits. Reserve the final quarter of available time for verification, packaging and rehearsal; shrink visual polish first. Do not drop real API usage, actual execution, source evidence or the learner's edit to meet a deadline. If a mandatory integration fails, report the blocked gate and the actual reduced demo capability.
+Allow another 1–2 hours for integration problems if the development schedule permits. Reserve the final quarter of available time for verification, packaging and rehearsal; shrink visual polish first. Do not drop real API usage, actual execution, source evidence or the learner's edit to meet a deadline. If a mandatory integration fails, report the blocked gate and the actual reduced demo capability.
 
 Use planning-and-task-breakdown throughout and debugging-and-error-recovery on observed failures. Companion skills are loaded by stage, not all at once. No additional agent or separate task is authorized by this plan.
 
