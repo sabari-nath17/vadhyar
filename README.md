@@ -214,3 +214,11 @@ The browser prototype now opens a trusted local project, follows eligible saved 
 ## Browser source walkthrough adoption — 14 October 2026
 
 The local-project browser now adapts Learn Claude Code's source viewer and manual step controls, ports PocketFlow's concept/relationship/order workflow, and renders a focused read-only map using React Flow `12.12.0`. Select a JS/TS file in Project, then **Explore source concepts**. Exact upstream-file mappings, modifications, retained notices and actual integration limits are in [browser reuse](docs/browser-reuse.md). A changed file rejects its earlier source hash; the map never determines runtime behavior, a requirement verdict or learning progress.
+
+### Cross-chat product logic board
+
+The [logic board](docs/logic-board.md) tracks the phone/local-hosting boundary, source-version learning loop and independently reproduced corrections across the three browser workstreams. Read its verified/open statuses and limits before treating a design or green suite as product acceptance.
+
+### Browser behavior contract
+
+The [product behavior contract](docs/product-logic-contract.md) defines the current redesign's screen actions, lesson stages, source-version rules, persistence and failure recovery, with25concrete acceptance journeys. The [logic board](docs/logic-board.md) tracks implementation evidence and pending owner work.

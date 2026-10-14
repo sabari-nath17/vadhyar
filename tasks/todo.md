@@ -586,3 +586,28 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - Evidence: [implementation and limits](../docs/browser-reuse.md), [adoption register](../docs/browser-reuse-provenance.json), [actual verification](../docs/browser-reuse-evidence.json). Focused11/11, endpoint1/1, prototype53/53, Node44/44, root134/134 plus typecheck/lint/build; browser1440/320/391 CSS widths, saved prediction preserved through stale rejection/recovery.
 - Checkpoint: generic browser baseline is 5e2ebc9; owned local milestone is feat: integrate browser source walkthrough reuse; only adaptation paths/owned shared-file hunks are staged. No push; unrelated work remains local. Actual commit identity is recorded in the handoff.
 - Limits/next: one approved JS/TS excerpt with at most five named top-level concepts; imports/member/dynamic/runtime behavior and pedagogical effectiveness remain unverified. New live provider/native extraction and broader concept coverage require their own validation. Preserve the disclosed fixture bug and historical learning records.
+
+## 2026-10-14 19:47:54 IST — Cross-chat product logic board
+
+- Authorized: use Verify Vadhyar product logic as the review board for Plan Duolingo-inspired Vadhyar UI, Complete browser code reuse and Plan Vadhyar rebuild workflow; coordinate corrections within each owner scope.
+- Delivered: [acceptance register](../docs/logic-board.md), assumption flips, exact source-version decision rules and six disposable reproductions. Phone unsupported; narrow UI is same-computer layout. Host recording and browser-address learning persistence remain distinct.
+- Verification: initial focused52/52 passed while missing cases reproduced; subsequent observation/history/reset/empty-source corrections independently pass as scoped in the board. Root viewer11/11, board links4/4 and rule-line/diff checks passed. L3 execution consent and L5 failed replacement preservation remain open at this timestamp; corrected design validation receipt is pending.
+- Checkpoint: root-owned board/additive records remain local and unstaged while feature/reuse owners serialize their checkpoints. Root did not modify their implementation or index. No push.
+- Next: verify remaining corrections and final receipts, update board statuses, then save an explicitly scoped documentation checkpoint after owner staging is released. Do not erase existing task evidence.
+
+## 2026-10-14 20:02:24 IST — Logic-board closeout verified
+
+- All initialL1–L6 current-working-tree corrections independently verified; implementation fixes retained with feature/reuse owners. Root contributed only the named30-line consent-window test block, approved for the feature milestone.
+- Root verification:53/53unit,41/41local-service tests, new consent regression1/1, prototype typecheck/lint/build and diff checks. Five design SVGs/six PNG structures and27direct links verified; changed-source path visually inspected; refreshed design receipt30links/11contrast pairs remains proposal evidence.
+- [Logic board](../docs/logic-board.md) records source-version/device/storage/evidence invariants, six findings, actual acceptance and limits. Earlier open entries remain historical at their timestamps.
+- Checkpoint: implementation/reuse milestone serialization remains owner-managed; root index unchanged, own documentation unstaged, root test may enter feature checkpoint. No push.
+- Next: preserve the approved contract in the separately authorized UI slice, verify the complete redesigned journey when implemented, and only add phone access through an explicit separately scoped connection contract. Root docs checkpoint waits until shared staging is released.
+
+## 2026-10-14 20:23:06 IST — Full redesign behavior contract established
+
+- User authorized: properly establish all logics while the approved new design is completed. Root owns [behavior contract](../docs/product-logic-contract.md) and [logic board](../docs/logic-board.md); UI/feature/reuse owners keep their implementation files.
+- Delivered: full screen/action/data-owner/prerequisite/persistence/recovery mapping, actual six-stage lesson semantics, source drift before/during/after execution, unknown outcomes and25acceptance probes. D1–D8 tracks pending refinements and required UI guarantees.
+- Independent review: late Q1 observation can attach to Q2 on the same source under old caller contract; unknown recorder/status, same-page drafts, wrong retry/foreign versions and pending execution require corrected UI semantics. Archived resume, semantic transfer, every-run retention and universal hosting/size remain unsupported.
+- Validation: local links/unique acceptance IDs/diff/rule lines checked. No new product checks or final redesigned browser acceptance asserted. Actual feature5e2ebc9 and reuseb571397 checkpoints inspected.
+- Checkpoint: root contract/board/records saved locally; source owners are implementing assigned refinements and may stage concurrently, so root checks shared index before any milestone. No push.
+- Next: owners adopt exact contract and return concrete D1–D8/test/artifact receipts; root reviews all25required journeys against implemented UI rather than static proposals. Newly authorized knowledge service contributes its exact interface separately.

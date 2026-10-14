@@ -126,3 +126,19 @@ Actual checks: 27 generic model + 13 prepared + 2 activity; host full 21 plus 1 
 - Assisted implementation: adapted viewer/controls, deterministic TypeScript port of PocketFlow workflow/order validation, published React Flow map, strict endpoint/source identity validation, small integration tests, retained licenses and actual adoption records. Existing provider/Graphify and learner evidence authority stay intact.
 - Verification: focused11/11, protected endpoint1/1, prototype units53/53, combined Node44/44 and root134/134; typecheck/lint/build and live rendered browser integration with observed widths, keyboard/text/map selection and stale-source recovery. QA corrected source contrast/number wrapping, shadowing/merged-name classification and map routing/label space.
 - Human requested implementation; file/teaching review pending. Saved predictions used by QA are developer-entered fixture records, not novice/independent-learning results. Existing concurrent work preserved; no credentials or live provider call, publication, push or event submission.
+
+## 2026-10-14 19:47:54 IST — Cross-chat product logic board
+
+Codex applied Skill Router, assumption-audit and ai-code-review; three read-only reviewers challenged access, dynamic evidence and source/storage behavior. It inspected current source/history and the three authorized chats, sent bounded repros to their owners, saved `docs/logic-board.md`, and independently reran11 source-viewer tests. Reviewers reproduced bugs despite52 older focused tests passing. Corrections and remaining proof obligations are distinguished in the board; end-to-end-verifier was read, but no new full browser-journey claim is made by this board.
+
+Human review of the corrected implementation/design is pending. Automated source review and disposable tests do not establish mastery, phone connectivity or live teaching quality. Root made documentation/coordination changes only and preserved the active shared index; feature/reuse owners own actual code. No credentials accessed, external publication, push, vault edit or memory write.
+
+## 2026-10-14 20:02:24 IST — Logic-board verification closeout
+
+Correction to the earlier root scope record: root additionally authored one isolated appended consent-window regression in `prototype/project-service.test.mjs`, after notifying the feature owner of exclusive block ownership. It reused the existing fixture, preserved all prior bytes and proved rejection before an unapproved marker plus clean fresh-consent recovery (1/1). Feature owner is explicitly authorized to include this block in its milestone. Independent review verified all six fixes; root ran53unit/41service plus typecheck/lint/build and inspected current design delivery. Human implementation/design review and the new full browser journey remain pending; no production source edit, live API, push, vault or memory change by root.
+
+## 2026-10-14 20:23:06 IST — Product behavior contract for approved redesign
+
+Codex used refreshed Skill Router metadata, API & Interface Design, Design Handoff Brief, Assumption Audit and prior AI Code Review guidance. Two read-only reviewers independently checked stage/data/screen semantics and reproduced the same-source/different-question delayed-observation gap. Root wrote only contract/board and additive records, coordinated UI/feature/reuse ownership, and corrected four overly broad draft claims (export scope, capacity recovery, staticexample/runtimeexample and JSONcode-unit storage bound). Post-terminal command freshness was added as an explicit acceptance case.
+
+Human review remains pending. A specification and independent source review do not establish implemented D1–D8 behavior, new UI usability, live teaching or learning gains. Existing actual local checkpoints5e2ebc9/b571397 are preserved; no root code edit, credential access, push, phone/network exposure, vault or memory update in this slice.

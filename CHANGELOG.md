@@ -226,3 +226,22 @@ Packaged the real Vitest runtime, added explicit application Graphify setup and 
 - Files: prototype source-concepts/walkthrough contracts, SourceViewer/StepControls/SourceWalkthrough/styles, walkthrough-service and tests; owned ProjectSource/launcher seams; package/lock, build/server notice artifacts, tsconfig, retained MIT notices and browser-reuse records. Concurrent generic recorder/provider/design changes stay separately owned.
 - Checks: focused11/11; authenticated endpoint1/1; prototype units53/53; combined Node44/44; root134/134/typecheck/lint/build; real browser1440/320/391 CSS widths, navigation/prediction gate, stale map removal, prediction retention and recovery. Final typecheck/lint/notice checks and checkpoint are in docs/browser-reuse-evidence.json.
 - Limits: one bounded JS/TS excerpt, static relationships/proposed order; lexical coloring is approximate. NovaDesk QA uses the disclosed role-only bug, simulated actors and a disposable copy. Human review/teaching efficacy/live coaching/native extension acceptance remain unverified. Post-event work; no push or submission.
+
+## 2026-10-14 19:47:54 IST — Cross-chat product logic board
+
+- Added `docs/logic-board.md` for the user-designated UI, browser-reuse and rebuild chats, with owner boundaries, six reproduced defects, dynamic-code rules and acceptance receipts. Reason: challenge contradictory product assumptions and close actual logic gaps before broader UI implementation.
+- Files: board plus additive README, AI_USAGE and task-record links. Independent auditors used disposable fixtures only; shared implementation corrections remain with their existing owners.
+- Checks: board local links4/4, AGENTS/.customrules32/21 lines and diff whitespace; root source-viewer tests11/11. Further reviewer results and open consent/history cases are recorded with their scope in the board.
+- Limits: concurrent working tree; phone access, live model quality and learning efficacy unverified. Implementation owner checkpoints/final combined acceptance are pending at this record; no push/deployment/vault/memory update.
+
+## 2026-10-14 20:02:24 IST — Cross-chat logic verification completed
+
+All six board repros now pass after owner corrections: source-observation identity, accepted verification preservation, dependency drift/execution consent, empty source gates, distinct/atomic history, and reset generation. Corrected UI contracts/exports received structural and changed-path visual review. Root added one30-line consent-window regression using the existing service fixture; no production implementation was changed by root. Files: `docs/logic-board.md`, named appended block in `prototype/project-service.test.mjs`, additive review records. Checks: prototype typecheck/lint/build,53unit+41service tests, new focused regression1/1, root links/SVG/PNG/diff checks. No new full browser journey, phone connection, live provider or learning-efficacy acceptance claimed. Owner checkpoint serialization remains pending; no push.
+
+## 2026-10-14 20:23:06 IST — Browser redesign behavior contract
+
+- Defined the complete current-design behavior in `docs/product-logic-contract.md`: independent status/data facts, screen/control prerequisites and saved output, stage and dynamic-source rules, execution/unknown outcomes, cancellation/storage recovery and25acceptance journeys. Added D1–D8 owner assignments to `docs/logic-board.md`; preserve accepted six-defect baseline.
+- Reason: the approved new UI must preserve implementable source/data/operation semantics, including delayed operations on different questions, draft protection, truthful recorder state, retry/version ownership, pending-job reload and post-terminal freshness.
+- Files: contract, board and additive README/AI-use/task records. Two read-only independent reviewers checked semantic consistency; corrected export/capacity/example provenance and JSON code-unit limits.
+- Checks: local source links and25unique acceptance IDs validated, diff whitespace and rule-file line limits; no new application-suite or redesigned-UI pass claimed for this documentation slice.
+- Limits: D1–D8 implementation and new-UI acceptance remain owner-managed/pending. Newly authorized knowledge backend requires its own interface/provenance/consent proof before surfaced capability claims. No push, provider request, phone exposure, vault or memory write.
