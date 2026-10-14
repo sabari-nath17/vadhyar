@@ -1,29 +1,46 @@
-# Vadhyar prototype design
+# Vadhyar browser design
 
-## Direction and references
+## Current direction — approved and implemented 14 October 2026
 
-Keep the existing original wordmark, warm parchment, muted olive controls, serif content headings and restrained monospace source. This refinement makes a real local project the default and moves the prepared NovaDesk lesson to an optional example. Source, requirement, case and evidence remain together; no inferred mastery or invented repository graph.
+A **desktop-first learning companion beside the learner’s existing coding tool**. The main target is a full desktop window at 1440px or 1024px, with a practical 700–900px coding panel. Smaller widths are resilience checks for desktop windows and zoom. The local host remains on the same computer’s loopback address; no phone, LAN, tunnel or pairing flow is implemented.
 
-Inspected on 14 October 2026 using live browser screenshots and primary documentation:
+The [approved design](../docs/design/2026-10-14-duolingo-minimal/DESIGN.md) and [implementation acceptance](../docs/design/2026-10-14-duolingo-minimal/implementation.md) are the current browser references. The static PNG/SVG concepts remain reference artifacts. The user requested implementation; the final diff and rendered result await human review.
 
-- [shadcn sidebar-11 file explorer](https://ui.shadcn.com/view/new-york-v4/sidebar-11): adapt separate navigation and source surfaces, selected-file contrast and path context. Its generic placeholder content and dark palette are intentionally not adopted.
-- [Component Gallery tree-view examples and guidance](https://component.gallery/components/tree-view/): adapt filter/search, clear selection and ample touch areas. This slice exposes a paginated flat file list, so use native list/button semantics rather than misleading tree roles or an incomplete tree keyboard model.
-- [shadcn sidebar anatomy](https://ui.shadcn.com/docs/components/base/sidebar): reuse the idea of stable project context and separate desktop/mobile navigation behavior. Existing house controls and dependencies remain in use; no third-party component code copied.
+Four inspected references informed this direction:
+
+- [Duolingo learning path](https://blog.duolingo.com/new-duolingo-home-screen-design/#quick-overview-what-are-the-big-changes): one next activity, labeled nodes and readable earlier records.
+- [Duolingo core tabs](https://blog.duolingo.com/core-tabs-redesign/#4-flat-minimal-layout-with-heavy-white-space): flat surfaces, generous space and a restrained type system.
+- [Component Gallery progress indicators](https://component.gallery/components/progress-indicator/): completed, current, upcoming and historical labels.
+- [Motion Primitives transition panel](https://motion-primitives.com/docs/transition-panel): keep the task in place during explicit advancement. Its code/dependency was not imported; reference timing/performance was not measured.
 
 ## Tokens and layout
 
-Existing prototype tokens: parchment #faf8f3, olive #4b593f, muted gold #866238, dark ink. Inter interface/body, Playfair Display headings, JetBrains Mono source. Reuse the current 8/16/24/32 spacing rhythm, generous desktop margins and existing six-destination shell. Source explorer is a narrow file list plus flexible selected-source panel; text wraps around long project names and paths, code scrolls inside its panel. At narrow widths the file list precedes the source and the existing compact navigation remains usable. No whole-repository tree rendering.
+Parchment #F4EFE6, ink #2C3539, ochre #D9A05B with #725023 outline and bottom lip, recorded-activity teal #6A8A82, muted #4E5659 and outline #8B8273. Use the bundled Inter 400/500/600 for interface/body, Playfair 600 for confirmed rules and JetBrains Mono for source at 13px or larger. Keep the original wordmark and its aspect ratio. The small original lotus is a vector icon; the main app has no large books illustration.
 
-## Components and states
+The connected shell has **Path, Project, Notebook**. The desktop sidebar is 216px. The focused lesson removes global navigation, keeps a six-part progress indicator and close action, and places the task beside captured source at wide desktop sizes. At 700–1099px, the source disclosure follows the task. Native scrolling and a bounded action footer retain access to long questions and evidence. Smaller windows reflow the same desktop journey.
 
-Today offers one main action: choose source for a question. Project/Learn exposes explicit search, bounded result pages, indexing status, selected source range and a confirmed requirement/case. Lesson states preserve prediction, self-reported observation, source refresh, scoped script/manual evidence, human verdict, reflection and a separate learner-defined case. Project name, paths, source, requirement and records are data. The optional prepared example retains a visible label and separate saved data.
+## Components, data and states
 
-Show loading, empty search, source not readable, API error, partial index and unavailable script states. Do not replace error evidence with a success illustration. Storage corruption stays recoverable; unsaved work has export/retry and navigation protection. Script consent displays the exact command and source/manifest identities. Exit status and requirement verdict are separate.
+Path derives Predict → Observe → Change → Verify → Reflect → Separate case from validated attempt state. Reflection alone does not complete the separate case. Earlier nodes read captured records; later nodes explain prerequisites. Guided/Review is an in-memory presentation choice, without gate bypass or ability inference.
+
+Project retains bounded search/pages, source ranges, the reused source walkthrough/map, captured versions and confirmed rule/case setup. Notebook consolidates question history and reflections, search and complete export. The optional prepared example remains separately labeled, with its existing saved pages, modes and authored notes; its application/data are not merged or reset.
+
+Generic predictions remain free text plus reasoning. The static SeatCheck radio choices are example-specific and are not inferred from arbitrary project prose. Every observation is labeled self-reported. Command status, available host freshness and the human requirement verdict remain separate. Uncertain and unmet verdicts stay visible through reflection, completion and Path.
+
+Captured source has identity/range/time. A direct source-state read supplies selected-file drift; a short event feed cannot prove freshness. Project-status failure/reconnect makes recording and receipt coverage unknown immediately. Explicit refresh preserves original prediction and archives accepted prior evidence. Every async lesson save is fenced to the originating view, attempt and source.
+
+A check intent is persisted before POST. Reload resumes acknowledged GET status only; lost starts/jobs require explicit clear and never replay automatically. New command verification rereads its host receipt. Failed checks and honest error/timeout coverage can lead to scoped uncertain/unmet reflection. Source sharing and execution retain separate exact review dialogs. Teaching cancellation, failed retention and individual export remain visible. A non-retained teacher response joins the lesson’s guarded export state, stays visible outside the disclosure and cannot be silently replaced by a new generation. Check discovery distinguishes loading, read failure and confirmed empty, with retry/manual fallback.
+
+Drafts have Keep working / explicit discard / export, including same-page no-op navigation. Browser write failures keep valid work in this tab and change save labels accordingly; backups and visible exports remain distinct. No autosave, sync, mastery, unlimited scale or whole-project/runtime correctness is implied.
 
 ## Accessibility and motion
 
-Native labels, form controls, button semantics, dialogs with Escape, heading focus, skip link and visible keyboard focus. Aim for at least 44px actionable rows/controls, 12px minimum mobile support copy and readable source; selected states use text and shape as well as color. Keep current subtle hover/focus transitions only; no decorative entrance/scroll animation. Existing prefers-reduced-motion disables transitions. Live motion references were not inspected because no new animation is being introduced.
+Native labels, buttons/selects/textareas, skip link, visible focus and dialogs with Escape/focus return. Targets are at least 48px; the principal action is 56–60px. Source scrolls within its own keyboard-focusable region. State has text/shape as well as color.
 
-## Verification
+Pointer press uses an 80ms bottom-lip contraction; explicit pointer stage advancement uses 180ms opacity. Keyboard advancement is immediate. Source/map navigation is immediate. Actual result arrival may fade for 160ms. Reduced-motion CSS removes transitions and animations. No ambient loops, fabricated check sequence or sound was added.
 
-Compare existing concept and final rendered desktop/mobile views for brand, typography, spacing, selected-state clarity and source containment. Test current real-project flow plus separate non-NovaDesk fixtures, source changes, failure/timeout evidence, malformed storage, keyboard and touch-sized narrow layout. Synthetic scale measurements bound claims; no unlimited-size guarantee.
+## Verification and history
+
+The [acceptance receipt](../docs/design/2026-10-14-duolingo-minimal/implementation.md) distinguishes actual browser probes from domain/service checks and unverified hardware/assistive-technology states. Final desktop concepts and current rendered screenshots were inspected together; 900px coding-panel, 1024px desktop and minimum-window checks supplement that comparison.
+
+The 19:22:29 IST proposal was planning-only. The 19:56:45 IST correction clarified captured context, browser-local learning storage and same-computer access. Those original static artifacts and [static receipt](../docs/design/2026-10-14-duolingo-minimal/validation.json) remain historical evidence. Files named *-mobile are legacy narrow-window illustrations; their names do not establish a phone product target. The approved implementation now supersedes the earlier proposal status.

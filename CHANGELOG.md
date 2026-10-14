@@ -298,3 +298,34 @@ UI-owned current prototype/design handoffs now agree with the root desktop contr
 - **Files:** `prototype/src/project-api.ts`, `prototype/project-api.test.ts`, `prototype/project-service.mjs`, `prototype/project-service.test.mjs`, `prototype/teaching-service.mjs`, `prototype/teaching-service.test.mjs`, `CHANGELOG.md`, `AI_USAGE.md`, and `tasks/todo.md`.
 - **Checks:** project API tests 3/3; source-range freshness regression and dependency/config/manifest stale cases 5/5; prototype TypeScript check; `git diff --check`. The full combined prototype suite remains pending the source/UI integration checkpoint.
 - **Limits:** Product Quality's independent rerun is pending. P07 remains open until parser attribution/captured-source selection fixes and the visible multi-file reading bundle are integrated. No live OpenAI request or learner study was performed; no push.
+
+## 2026-10-14 19:22:29 IST — Duolingo-inspired minimal browser UX proposal
+
+- Change: added a proposed browser design handoff and static desktop/mobile screens, a source-bounded reference register, light-theme contrast data and artifact validation; linked the proposal from prototype/DESIGN.md.
+- Reason: the user requested a minimal, distinctive Duolingo-inspired UX while feature and browser reuse work continue in parallel.
+- Files: docs/design/2026-10-14-duolingo-minimal/ and additive prototype/DESIGN.md, AI_USAGE.md and tasks/todo.md records.
+- Checks/limits: current Today/Project and four reference pages inspected; four SVGs and five raster exports reviewed, 15 initial local links valid and nine contrast pairs passing. This is a design proposal; no redesigned application, runtime UI acceptance or learning-gain claim. No staging, commit or push by this chat.
+
+## 2026-10-14 19:56:45 IST — Design-owned logic correction: desktop access and captured evidence
+
+- Change/reason: corrected proposed device/storage/source-status semantics against the current implementation and independent logic review. Preserve native file watching; describe explicit lesson refresh; identify browser-local learning records; show prior-version evidence as historical. Narrow layouts do not imply phone connectivity.
+- Files: docs/design/2026-10-14-duolingo-minimal/ and additive prototype/DESIGN.md, AI_USAGE.md and tasks/todo.md owner records. Added path-source-changed SVG/PNG; existing exports and validation regenerated.
+- Checks/limits: five SVGs, six rasters, visual final-label inspection, local links and eleven color pairs. No app/state-machine change, source repair certification, physical-device access or redesigned runtime acceptance. No stage/commit/push by this design lane.
+
+## 2026-10-14 21:40:28 IST — Approved desktop learning UI implemented
+
+- Change: connected Path/Project/Notebook, state-derived six-activity path, focused task/captured-source lesson, ochre action footer, desktop/panel reflow, original wordmark/lotus and existing bundled fonts. Generic predictions remain free text; no new dependency or roadmap surface.
+- Reason: implement the user-approved Duolingo-inspired direction for a same-computer coding companion, retaining source/evidence/consent and recoverable browser records.
+- Files: prototype/src/Workspace.tsx, LearningPath.tsx, learning-path.ts, ProjectLesson.tsx, ProjectExplorer.tsx, CompanionStatus.tsx, TeachingPanel.tsx, ui.tsx, project-style.css; prototype/learning-path.test.ts, prototype/DESIGN.md and docs/design/2026-10-14-duolingo-minimal. Preserved source/domain/host/reuse owners and the optional prepared app/data.
+- Checks: final prototype check passed typecheck/lint,90unit/build/64service; focused path/domain43; final path-rail-only correction rebuilt and rendered. CUA real fixture six-stage journey, failed/unmet reflection, draft/record export, unchanged/changed refresh, reload GET-only resume and host loss;5explicit consents/5execution markers. Measured1440/1024desktop,900panel and320/391window robustness; final concept/render comparison,57local links and32/21rule lines.
+- Corrections: stale receipt coverage after host polling failure, historical lost-running copy, same-page/late-response guards, operation-specific retries, explicit unsaved/non-retained labels, separate-case completion, unresolved verdict visibility and source review after completion.
+- Limits: [exact acceptance/matrix](docs/design/2026-10-14-duolingo-minimal/implementation.md) distinguishes browser, regression/source and unverified cases. No live OpenAI, physical touch/screen-reader/OS reduced-motion/full200%zoom/performance certification; no phone/LAN flow, learning proof, push or deployment. Final human review remains pending.
+
+## 2026-10-14 23:40:14 IST — Desktop UI recovery and exact-range alignment
+
+- Change: completed the approved desktop Path/Project/Notebook and focused six-activity lesson; original brand/fonts, flat parchment surfaces, labeled path and tactile action retained. Captured source wraps authored lines so the deciding comparison remains visible.
+- Recovery: refused command receipts stay separately held/exportable, continue GET-only through terminal output and cannot advance verification; non-retained teacher responses stay visible, block replacement and join leave/refresh/export guards. Check discovery distinguishes loading, read failure and confirmed empty with retry/manual fallback.
+- Range alignment: new browsing explicitly requests200 lines; observation/refresh reread the stored exact range; teacher consent sends its actual line count/endLine. Filename guidance, short factual answers, confirmed rule/case access and optional teacher guidance are included.
+- Files: owned prototype UI/registry/check-receipt helper and tests; prototype/DESIGN.md; docs/design/2026-10-14-duolingo-minimal and these three milestone records.
+- Checks: owner-rendered desktop/window, lesson/notebook/reload/host-loss, real newer-tab check/teacher refusal and delayed/503/empty check-list probes; sanitized durable recovery-evidence.json. Exact staged-tree export passed typecheck, lint, 99 unit tests, build and 70 service tests; no failures/skips. Log: /tmp/vadhyar-ui-20261014/checks-exact-ui-index.log..
+- Limits: final human review, live provider, physical touch/screen reader/OS reduced motion/full200% zoom/performance unverified. P07 reader mount/actual-repository acceptance remains a separate additive gate. Local checkpoint only; no push.
