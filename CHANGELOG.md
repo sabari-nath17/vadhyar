@@ -245,3 +245,9 @@ All six board repros now pass after owner corrections: source-observation identi
 - Files: contract, board and additive README/AI-use/task records. Two read-only independent reviewers checked semantic consistency; corrected export/capacity/example provenance and JSON code-unit limits.
 - Checks: local source links and25unique acceptance IDs validated, diff whitespace and rule-file line limits; no new application-suite or redesigned-UI pass claimed for this documentation slice.
 - Limits: D1–D8 implementation and new-UI acceptance remain owner-managed/pending. Newly authorized knowledge backend requires its own interface/provenance/consent proof before surfaced capability claims. No push, provider request, phone exposure, vault or memory write.
+
+## 2026-10-14 20:46:02 IST — Redesign logic verification receipts
+
+- Updated the root behavior contract and logic board with independent D1–D8 source review, K01 authority and K06 deadline corrections, and C13 error/timeout composition proof. Reason: preserve honest uncertainty and prevent late/foreign/stale evidence from appearing as current learning.
+- Files: root board/contract plus this additive log, AI-use and task record. Current 42 domain/API/activity and seven loaded-snapshot host cases pass; protected knowledge API zero-read regression1/1 and knowledge units14/14 pass; independent host-shaped command matrix8/8 passes. New UI completed verdict/reason is source-verified.
+- Documentation links/unique C/D/K IDs, diff whitespace and 32/21-line rule limits pass. Root source implementation remains untouched. New UI browser/accessibility/retention/provider journeys remain owner-managed acceptance; these proofs do not establish all25journeys, live teaching, learning efficacy or phone use. No push.

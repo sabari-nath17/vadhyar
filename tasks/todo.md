@@ -611,3 +611,10 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - Validation: local links/unique acceptance IDs/diff/rule lines checked. No new product checks or final redesigned browser acceptance asserted. Actual feature5e2ebc9 and reuseb571397 checkpoints inspected.
 - Checkpoint: root contract/board/records saved locally; source owners are implementing assigned refinements and may stage concurrently, so root checks shared index before any milestone. No push.
 - Next: owners adopt exact contract and return concrete D1–D8/test/artifact receipts; root reviews all25required journeys against implemented UI rather than static proposals. Newly authorized knowledge service contributes its exact interface separately.
+
+## 2026-10-14 20:46:02 IST — Redesign source logic verification boundary
+
+- [x] Contract established:25new-UI acceptance journeys and7knowledge backend gates, preserving nine independent status/data facts.
+- [x] D1–D8 corrective wiring inspected; focused domain/host/backend cases and actual host-shaped C13 matrix pass within recorded snapshots. Completed unresolved verdict/reason visible in current source; phone remains unsupported.
+- [x] Root initial documentation checkpoint e32c64be3cf9de7115733488f852a31eb894f52e preserves only root-owned documents and exact additive records; this receipt accompanies its follow-up documentation milestone. Shared source and owner records remain preserved. No push.
+- Next: UI/feature owners return actual C01–C25 redesigned-browser coverage, final rendered/accessibility proof and their local implementation checkpoint identities; reuse owner returns final backend evidence/provenance. Keep pending/partial cases explicit, preserve old receipts, and never substitute old green suites/static illustrations for new UI acceptance.
