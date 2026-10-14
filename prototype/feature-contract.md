@@ -1,6 +1,6 @@
 # Feature contract for the UI and adapter lanes
 
-14 October 2026. Default data is a host-approved real local project. Prepared NovaDesk is an optional separate example. This document is the feature handoff; the Duolingo-inspired UI proposal remains separately owned and unapproved for implementation here.
+14 October 2026. Default data is a host-approved real local project. Prepared NovaDesk is an optional separate example. This document is the feature handoff; the user-approved Duolingo-inspired UI implementation remains owned by the design chat.
 
 ## Working service and record boundaries
 
@@ -16,7 +16,7 @@ Project-only reset atomically saves a new record identity, rejecting stale seria
 
 Workspace reconnect/polling continues after temporary errors, with a visible error and reconnect action. Source selection/search/pagination uses request identities so a slow older page cannot replace new search results. Explicit refresh preserves unchanged drafts and asks before changed-source draft loss. Fields match domain bounds.
 
-ProjectLesson separates source-version state, AI-session signal, command status and human verdict. Status polling retries GET only; unknown_run/404 has an explicit clear action and unknown outcome. A new check always needs new consent. Completed field saves clear their draft; unchanged refresh does not. Unfinished runs/teaching requests participate in navigation protection.
+ProjectLesson separates source-version state, AI-session signal, command status, current coverage and human verdict. The optional run freshness field is current/stale/unknown: later recorded dependency/config/manifest drift changes coverage without rewriting the execution result. New passed/failed verification needs current coverage; error/timeout with unknown coverage allows only uncertain/not-satisfied assessments. Status polling retries GET only; unknown_run/404 has an explicit clear action and unknown outcome. A new check always needs new consent. Completed field saves clear their draft; unchanged refresh does not. Unfinished runs/teaching requests participate in navigation protection.
 
 TeachingPanel receives source, requirement, case, saved teaching wrappers, onResult and onBusy. A result is recorded through the validated action before later navigation. Capacity failures keep the returned interpretation visible and individually exportable. Leaving aborts the request; cancellation cannot reverse usage already incurred. Cap5 should prevent an unnecessary sixth paid request.
 
@@ -29,3 +29,14 @@ Observed one run on this Mac:10,001 actual synthetic files,3,647,780 indexed byt
 Implemented tests cover source/session/Origin/path/symlink/body limits, independently named projects/languages, real synthetic script pass/fail/stale/timeout, watcher failure, restart/range retention, malformed records, stage gates, storage recovery, consent/cancellation/provider failure, source-linked output and historical interpretations. Browser fixture QA covers the entire generic loop, automatic external write, scoped script/manual evidence, declared uncertainty, saved interpretation, export/search/reload, transient and lost status, draft refresh, pending teaching and stale pagination at desktop/narrow sizes. Provider transport is injected, not live OpenAI.
 
 Not implemented here: a standalone distributable installer, shared existing-extension recorder bridge, coding-tool intent/session hooks, Git history import, account/profile persistence, automatic feature chapters, spaced review queues, Ollama, ChatGPT sign-in or GitHub App. The separate reuse chat owns its source viewer/concept-map adapter and evidence. Demand, real learner outcomes and million-file repositories are unverified.
+
+
+## Local completion contracts
+
+`npm run prototype:start` builds and launches the current Vadhyar folder; `prototype:build` builds only, and `prototype:check` checks the local code/services without live provider credentials.
+
+Authenticated `GET /api/projects/:id/source-state?fileId=opaqueId` returns `{fileId,status:available|unavailable,sourceHash:hash|null}` from a direct bounded full-file read. It returns no source text and does not alter history, selected ranges or revision. Unavailable/error means unknown currentness. This replaces inference from absence in the recent 20-event feed. Delegated project routes are checked against the approved project before any source read.
+
+Old learning records default `pendingCheck` and `checkResult` to null. A new command stores an attempt/source/script/manifest-bound starting operation before POST. Accepted job IDs resume through GET after reload; a missing acknowledgement or lost host job stays unknown. Explicit clear archives the raw receipt/uncertain operation and creates a new active continuation. Changed-source refresh archives dependent command evidence before clearing it. These operations award no XP and cannot advance a learning stage. A known starting/running operation or unknown operation blocks a verdict until finished or explicitly cleared. Late responses must match the original attempt and operation.
+
+The browser redesign and source-knowledge adapter have separate owners and verification receipts. Refer to [the behavior contract](../docs/product-logic-contract.md) for the combined UI acceptance journeys. A source-checkout prototype is not a standalone installer, phone server or installed editor bridge.

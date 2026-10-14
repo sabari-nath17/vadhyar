@@ -12,3 +12,10 @@ User authorized working prototype implementation and explicitly requires removin
 Acceptance: actual source and user-defined rules work without NovaDesk-specific logic; page/excerpt bounds prevent whole-project browser loading; passing scripts never imply requirement or mastery proof; no extra filesystem authority through browser input; previous prepared data and shared dirty work preserved. Arbitrary language execution adapters, dependency graphs, additional providers/tool adapters, full hostile-code isolation, formal learner outcomes and million-file benchmarks are outside this slice.
 
 Later authorized refinement includes native watching/durable selected contexts and optional explicitly consented OpenAI teaching. The user subsequently assigned UI/UX to the separate Duolingo design chat. This slice finishes feature correctness; retain its design proposal separately.
+
+
+## Authorized local-folder prototype completion — 14 October 2026
+
+The user authorized parallel completion with the UI, reuse and logic chats. Root owns local start/build/check commands and additive model/API recovery; UI owns approved rendering and its consumers; reuse owns source knowledge adapters; logic owns the shared behavior contract. Preserve serialized Git staging and the existing local records.
+
+Acceptance: `npm run prototype:start` studies this repository; point-in-time source identity does not depend on the recent activity feed; acknowledged checks survive browser reload through saved GET-only job pointers; lost submission/restart results stay unknown; async completions bind to the originating attempt; completed command exit/output is distinct from freshness at later verification. Run focused regressions, then the complete rendered journey against the stable combined UI. No new provider, LAN exposure, deployment, standalone installer or unrelated extension change is included.

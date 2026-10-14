@@ -95,8 +95,8 @@ export async function createProjectService({ root, origin, storageRoot, handleEx
  const currentCounts = db.prepare('SELECT COUNT(*) AS count, COALESCE(SUM(size),0) AS bytes FROM files').get();
  const revision = Number(getMeta.get('revision')?.value ?? 0); if (!Number.isSafeInteger(revision) || revision < 0) throw new Error('The recorder revision is invalid; its data was preserved.');
  const project = { id: projectId, name: basename(approvedRoot).slice(0, 200) || 'Project', status: 'indexing', indexedFiles: currentCounts.count, skippedFiles: 0, scanErrors: 0, totalBytes: currentCounts.bytes, revision, watching: false, watchError: null };
- const session = randomBytes(32).toString('hex'); const runs = new Map(); let closed = false, active = false, stopRun, runFinished = Promise.resolve();
- let openSources = 0, watcher, watchTimer, watchHealth, watchFinished = Promise.resolve(), processingChanges = false;
+ const session = randomBytes(32).toString('hex'); const runs = new Map(), runContexts = new Map(); let closed = false, active = false, stopRun, runFinished = Promise.resolve();
+ let openSources = 0, sourceStateReading = false, watcher, watchTimer, watchHealth, watchFinished = Promise.resolve(), processingChanges = false;
  const pending = new Set(); let generation = randomUUID(); const firstScan = getMeta.get('baselineCapturedAt') === undefined; let buildingBaseline = firstScan, scannedEntries = 0, scanTransaction = false;
  const fingerprint = stat => `${stat.dev}:${stat.ino}:${stat.size}:${stat.mtimeNs}:${stat.ctimeNs}`;
  function advanceRevision() { project.revision++; setMeta.run('revision', String(project.revision)); }
@@ -300,6 +300,34 @@ export async function createProjectService({ root, origin, storageRoot, handleEx
   for (const path of [approvedRoot, directory, process.env.HOME].filter(Boolean)) text = text.split(path).join('[local path]');
   return text.slice(-24_000);
  }
+ async function sourceState(fileId) {
+  const file = find.get(fileId), tracked = knownTracked.get(fileId);
+  if (!file && !tracked) fail(404, 'unknown_file', 'The requested file is not known to this project.');
+  if (sourceStateReading) fail(503, 'source_state_busy', 'A current-source read is already in progress. Try again.');
+  sourceStateReading = true;
+  try {
+   try {
+    const current = await source(file ?? { id: fileId, path: tracked.path, language: 'Text' }, 1, 1, false);
+    return { fileId, sourceHash: current.sourceHash, status: 'available' };
+   } catch (error) {
+    if (error instanceof ApiError && error.status === 422) return { fileId, sourceHash: null, status: 'unavailable' };
+    fail(503, 'source_state_unknown', 'Current source identity could not be established. Try again.');
+   }
+  } finally { sourceStateReading = false; }
+ }
+ async function runFreshness(run) {
+  if (run.status === 'stale') return 'stale';
+  if (run.status !== 'passed' && run.status !== 'failed') return 'unknown';
+  const context = runContexts.get(run.id); if (!context?.covered) return 'unknown';
+  try {
+   const covered = await settleRecorder();
+   if (project.revision !== context.revision) return 'stale';
+   const file = find.get(run.fileId); if (!file) return 'unknown';
+   const current = await source(file, 1, 1, false), available = await scripts();
+   if (current.sourceHash !== run.sourceHash || !available.scripts.some(script => script.id === run.scriptId && script.manifestHash === run.manifestHash) || project.revision !== context.revision) return 'stale';
+   return covered && !closed && project.status === 'ready' && project.watching && project.watchError === null && !pending.size && !processingChanges ? 'current' : 'unknown';
+  } catch { return 'unknown'; }
+ }
  async function startRun(consent) {
   if (active) fail(409, 'check_busy', 'A project check is already in progress.');
   active = true;
@@ -308,9 +336,9 @@ export async function createProjectService({ root, origin, storageRoot, handleEx
    const file = find.get(consent.fileId); if (!file) fail(404, 'unknown_file', 'Choose a file from the current project.');
    const snapshot = await source(file, 1, 160, false); const available = await scripts(); const script = available.scripts.find(script => script.id === consent.scriptId);
    if (!script || script.manifestHash !== consent.manifestHash || snapshot.sourceHash !== consent.sourceHash) fail(409, 'stale_consent', 'The selected source or command changed. Refresh them and approve the current command.');
-   while (runs.size >= 20) runs.delete(runs.keys().next().value);
+   while (runs.size >= 20) { const oldest = runs.keys().next().value; runs.delete(oldest); runContexts.delete(oldest); }
    const run = { id: randomUUID(), projectId: project.id, fileId: file.id, scriptId: script.id, sourceHash: consent.sourceHash, manifestHash: consent.manifestHash, status: 'running', output: '', exitCode: null, startedAt: new Date().toISOString(), finishedAt: null };
-   runs.set(run.id, run);
+   runs.set(run.id, run); runContexts.set(run.id, { covered: contextCovered, revision: contextRevision });
    const environment = Object.fromEntries(['PATH', 'HOME', 'TMPDIR', 'TEMP', 'TMP', 'SystemRoot'].flatMap(name => process.env[name] ? [[name, process.env[name]]] : []));
    const child = spawn(process.platform === 'win32' ? 'npm.cmd' : 'npm', ['--ignore-scripts', 'run', script.id], { cwd: approvedRoot, shell: false, env: { ...environment, CI: 'true', npm_config_ignore_scripts: 'true' }, detached: process.platform !== 'win32', stdio: ['ignore', 'pipe', 'pipe'] });
    let rawOutput = '', timedOut = false, cancelled = false, finished = false, withheld = false;
@@ -332,7 +360,7 @@ export async function createProjectService({ root, origin, storageRoot, handleEx
     child.once('error', () => { run.output = 'The selected project check could not start.'; void finish('error', null); });
     child.once('close', code => { void finish(timedOut ? 'timeout' : cancelled || code === null ? 'error' : code === 0 ? 'passed' : 'failed', code); });
    });
-   return { ...run };
+   return { ...run, freshness: 'unknown' };
   } catch (error) { active = false; throw error; }
  }
  async function handle(request, response) {
@@ -352,9 +380,11 @@ export async function createProjectService({ root, origin, storageRoot, handleEx
    const cookie = /(?:^|;\s*)vadhyar_project_session=([^;]*)/.exec(request.headers.cookie ?? '')?.[1] ?? '';
    if (!/^[a-f0-9]{64}$/.test(cookie) || !timingSafeEqual(Buffer.from(cookie), Buffer.from(session))) fail(401, 'session_required', 'Open a local project session before reading source.');
    if (method !== 'GET' && requestOrigin !== origin) fail(403, 'invalid_origin', 'This operation requires the approved browser origin.');
+   const requestedProject = /^\/api\/projects\/([^/]+)\//.exec(route);
+   if (requestedProject && requestedProject[1] !== project.id) fail(404, 'unknown_project', 'The requested project is not open in this session.');
    if (await handleExtraApi?.(request, response)) return true;
    if (route === '/api/projects/current') { if (method !== 'GET') fail(405, 'invalid_method', 'Use GET to read the project.'); query(url, []); send(response, 200, { ...project }); return true; }
-   const match = /^\/api\/projects\/([a-f0-9]{64})\/(files|source|scripts|runs|changes|versions)(?:\/([a-f0-9-]{36}))?$/.exec(route);
+   const match = /^\/api\/projects\/([a-f0-9]{64})\/(files|source|source-state|scripts|runs|changes|versions)(?:\/([a-f0-9-]{36}))?$/.exec(route);
    if (!match || match[1] !== project.id) fail(404, 'unknown_project', 'The requested project is not open in this session.');
    const [, , kind, runId] = match;
    if (kind === 'runs' && !runId && method === 'POST') {
@@ -372,6 +402,9 @@ export async function createProjectService({ root, origin, storageRoot, handleEx
     query(url, ['fileId', 'start', 'lines']); const id = identity.safeParse(url.searchParams.get('fileId')); if (!id.success) fail(400, 'invalid_file', 'Choose a file from the current project.');
     const file = find.get(id.data); if (!file) fail(404, 'unknown_file', 'The requested file is not in this project index.');
     send(response, 200, await source(file, integer(url.searchParams.get('start'), 1, 999_999_999), integer(url.searchParams.get('lines'), 160, 200)));
+   } else if (kind === 'source-state' && !runId) {
+    query(url, ['fileId']); const id = identity.safeParse(url.searchParams.get('fileId')); if (!id.success) fail(400, 'invalid_file', 'Choose a known project file.');
+    send(response, 200, await sourceState(id.data));
    } else if (kind === 'scripts' && !runId) { query(url, []); send(response, 200, await scripts()); }
    else if (kind === 'changes' && !runId) {
     query(url, ['cursor', 'limit']); const cursor = url.searchParams.get('cursor'); const limit = integer(url.searchParams.get('limit'), 50, 100); let seq = Number.MAX_SAFE_INTEGER;
@@ -385,7 +418,7 @@ export async function createProjectService({ root, origin, storageRoot, handleEx
     const versions = db.prepare('SELECT snapshot FROM versions WHERE fileId=? ORDER BY seq DESC LIMIT ?').all(id.data, integer(url.searchParams.get('limit'), 20, 20)).map(row => sourceSnapshotSchema.parse(JSON.parse(row.snapshot)));
     send(response, 200, { versions });
    }
-   else if (kind === 'runs' && runId) { query(url, []); const run = runs.get(runId); if (!run) fail(404, 'unknown_run', 'The requested check is no longer in this local session.'); send(response, 200, { ...run }); }
+   else if (kind === 'runs' && runId) { query(url, []); const run = runs.get(runId); if (!run) fail(404, 'unknown_run', 'The requested check is no longer in this local session.'); send(response, 200, { ...run, freshness: await runFreshness(run) }); }
    else fail(404, 'unknown_operation', 'This project operation was not found.');
   } catch (error) {
    const safe = error instanceof ApiError ? error : new ApiError(500, 'operation_failed', 'The local project operation failed. Existing learning records were preserved.');

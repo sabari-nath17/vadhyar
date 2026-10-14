@@ -22,7 +22,10 @@
     "eval:coach": "node scripts/eval-coach.mjs",
     "vscode:prepublish": "npm run build",
     "demo:prepare": "node scripts/prepare-demo.mjs",
-    "package:vsix": "vsce package --target darwin-arm64 --out dist/vadhyar-0.1.0-darwin-arm64.vsix --skip-license --no-rewrite-relative-links"
+    "package:vsix": "vsce package --target darwin-arm64 --out dist/vadhyar-0.1.0-darwin-arm64.vsix --skip-license --no-rewrite-relative-links",
+    "prototype:start": "node prototype/launch.mjs",
+    "prototype:build": "node prototype/build.mjs",
+    "prototype:check": "node prototype/check.mjs"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",

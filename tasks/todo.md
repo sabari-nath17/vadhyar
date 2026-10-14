@@ -618,3 +618,15 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - [x] D1–D8 corrective wiring inspected; focused domain/host/backend cases and actual host-shaped C13 matrix pass within recorded snapshots. Completed unresolved verdict/reason visible in current source; phone remains unsupported.
 - [x] Root initial documentation checkpoint e32c64be3cf9de7115733488f852a31eb894f52e preserves only root-owned documents and exact additive records; this receipt accompanies its follow-up documentation milestone. Shared source and owner records remain preserved. No push.
 - Next: UI/feature owners return actual C01–C25 redesigned-browser coverage, final rendered/accessibility proof and their local implementation checkpoint identities; reuse owner returns final backend evidence/provenance. Keep pending/partial cases explicit, preserve old receipts, and never substitute old green suites/static illustrations for new UI acceptance.
+
+
+## 2026-10-14 20:57:19 IST — Local prototype recovery contract milestone
+
+- [x] Add local prototype start/build/check commands; failure stops checks rather than reporting success.
+- [x] Direct source-state identity independent of clipped activity feeds; protected project routing before delegated capture.
+- [x] Compatible pending-check/receipt fields, saved before submission; GET-only acknowledged-job resume, explicit unknown/clear/archive, no automatic replay or XP.
+- [x] Origin attempt/operation guards; terminal evidence immutable; later observed dependency/config/manifest drift revalidated separately.
+- [x] Honest error/timeout unknown-coverage reflection without a positive satisfied claim; old stored verification remains compatible.
+- [x] Combined typecheck/lint/build, 90 unit and 64 service cases, independent bounded code review and fail-stop probe pass. New UI's first full fixture journey passed 30 checks; interrupted-run/final combined acceptance is the remaining handoff gate.
+- Checkpoint: local `feat: add local prototype recovery contracts`; exact SHA is in Git history. UI and source-knowledge owner checkpoints follow this API/model baseline. No push.
+- Next required closeout: finish interruption/currentness/browser cases; save separate knowledge/UI checkpoints; rebuild/start the complete combined prototype in this Vadhyar folder; record final actual receipts. Production-only roadmap items remain explicitly outside this prototype slice.

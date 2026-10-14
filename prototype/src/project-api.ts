@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { filesPageSchema, projectChangesSchema, projectVersionsSchema, projectInfoSchema, projectRunSchema, scriptsSchema, sourceSnapshotSchema, type SourceSnapshot, type ProjectScript } from './project-types.js';
+import { filesPageSchema, projectSourceStateSchema, projectChangesSchema, projectVersionsSchema, projectInfoSchema, projectRunSchema, scriptsSchema, sourceSnapshotSchema, type SourceSnapshot, type ProjectSourceState, type ProjectScript } from './project-types.js';
 const errorSchema = z.object({ error: z.object({ message: z.string().max(1000), code: z.string().max(80).optional() }).passthrough() }).passthrough();
 export class ProjectApiError extends Error { constructor(public status: number, public code: string, message: string) { super(message); } }
 export async function projectRequest<T>(path: string, schema: z.ZodType<T>, body?: unknown, signal?: AbortSignal): Promise<T> {
@@ -19,3 +19,8 @@ export const getRun = (projectId: string, runId: string) => projectRequest(`/api
 
 export const getChanges = (projectId: string) => projectRequest(`/api/projects/${projectId}/changes?limit=20`, projectChangesSchema);
 export const getVersions = (projectId: string, fileId: string) => projectRequest(`/api/projects/${projectId}/versions?${new URLSearchParams({fileId,limit:'20'})}`, projectVersionsSchema);
+
+export const getSourceState = (projectId: string, fileId: string, signal?: AbortSignal) => projectRequest(`/api/projects/${projectId}/source-state?${new URLSearchParams({ fileId })}`, projectSourceStateSchema, undefined, signal);
+export function sourceFreshness(source: SourceSnapshot, state: ProjectSourceState | null): 'current' | 'changed' | 'unknown' {
+ return !state || state.fileId !== source.fileId || state.status === 'unavailable' ? 'unknown' : state.sourceHash === source.sourceHash ? 'current' : 'changed';
+}

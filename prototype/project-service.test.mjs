@@ -70,6 +70,20 @@ test('delegated API handlers receive only authenticated same-origin operations a
  } finally { await f.close(); }
 });
 
+test('delegated project handlers cannot read source for a different project route', async () => {
+ let delegatedReads = 0, selectedFileId;
+ const f = await fixture(undefined, undefined, { handleExtraApi: async (req, res) => {
+  if (!/^\/api\/projects\/[^/]+\/knowledge$/.test(req.url)) return false;
+  delegatedReads++; await f.service.readSource(selectedFileId); res.writeHead(200, { 'Content-Type': 'application/json' }); res.end('{"ok":true}'); return true;
+ } });
+ try {
+  await f.login(); const project = (await f.call('/api/projects/current')).data; selectedFileId = (await f.call(`/api/projects/${project.id}/files`)).data.files[0].id;
+  for (const wrongId of ['0'.repeat(64), 'not-the-approved-project']) { const rejected = await f.call(`/api/projects/${wrongId}/knowledge`); assert.equal(rejected.code, 404); assert.equal(rejected.data.error.code, 'unknown_project'); assert.equal(delegatedReads, 0); }
+  assert.equal((await f.call(`/api/projects/${project.id}/knowledge`)).code, 200); assert.equal(delegatedReads, 1);
+  assert.equal((await f.call('/api/projects/current')).data.id, project.id); assert.equal(delegatedReads, 1);
+ } finally { await f.close(); }
+});
+
 test('project metadata is independent, paginated and excludes hidden, generated, private, binary and linked paths', async () => {
  const f = await fixture({ 'alpha.py': 'print(1)', 'beta.rs': 'fn main() {}', 'nested/gamma.xyz': 'readable\n', '.env': 'password="private"', 'node_modules/lib.js': 'ignored', 'dist/out.js': 'ignored', 'credentials.json': '{}', 'photo.png': Buffer.from([1, 2, 0]) });
  const g = await fixture({ 'different.go': 'package main\n' });
@@ -322,4 +336,118 @@ test('failed context replacement preserves the retained captures, recorder revis
   assert.deepEqual((await f.call(versionsPath)).data.versions, before); assert.equal((await f.call('/api/projects/current')).data.revision, revision);
   assert.equal((await f.call(`/api/projects/${project.id}/source?fileId=${other.id}&start=6&lines=1`)).code, 422); assert.equal(database.prepare('SELECT COUNT(*) AS count FROM tracked').get().count, 1); assert.equal((await f.call('/api/projects/current')).data.revision, revision);
  } finally { database?.exec('DROP TRIGGER IF EXISTS reject_context'); database?.close(); await f.close(); }
+});
+
+test('source-state authenticates known file IDs and reads a full identity without changing selected history or range', async () => {
+ const content = 'line 1\nline 2\nline 3\nline 4\n'; const f = await fixture({ 'answer.py': content });
+ try {
+  await f.login(); const project = (await f.call('/api/projects/current')).data; const file = (await f.call(`/api/projects/${project.id}/files`)).data.files[0]; const state = `/api/projects/${project.id}/source-state?fileId=${file.id}`;
+  await f.call(`/api/projects/${project.id}/source?fileId=${file.id}&start=3&lines=2`); const versionsPath = `/api/projects/${project.id}/versions?fileId=${file.id}`; const before = (await f.call(versionsPath)).data; const revision = (await f.call('/api/projects/current')).data.revision;
+  const result = await f.call(state); assert.equal(result.code, 200); assert.deepEqual(result.data, { fileId: file.id, sourceHash: hash(content), status: 'available' });
+  assert.deepEqual((await f.call(versionsPath)).data, before); assert.equal((await f.call('/api/projects/current')).data.revision, revision);
+  assert.equal((await f.call(state, { authenticated: false })).code, 401); assert.equal((await f.call(state, { headers: { Origin: 'https://attacker.example' } })).code, 403);
+  assert.equal((await f.call(state, { method: 'POST', body: {} })).code, 405); assert.equal((await f.call(state + '&path=/etc/passwd')).code, 400); assert.equal((await f.call(state + `&fileId=${file.id}`)).code, 400);
+  assert.equal((await f.call(`/api/projects/${project.id}/source-state?fileId=${'0'.repeat(64)}`)).code, 404); assert.equal((await f.call(`/api/projects/${project.id}/source-state?fileId=../answer.py`)).code, 400);
+ } finally { await f.close(); }
+});
+
+test('source-state reads through partial and failed history capture independently of a clipped activity feed', async () => {
+ const initial = 'print(0)\nprint(1)\nprint(2)\nprint(3)\n'; const changed = initial.replace('print(0)', 'print(9)'); const f = await fixture({ 'answer.py': initial, 'blocked/value.py': 'print(1)\n' }, root => chmod(join(root, 'blocked'), 0o000)); let database;
+ try {
+  await f.login(); const project = (await f.call('/api/projects/current')).data; const file = (await f.call(`/api/projects/${project.id}/files?q=answer.py`)).data.files[0]; const versionsPath = `/api/projects/${project.id}/versions?fileId=${file.id}`; const state = `/api/projects/${project.id}/source-state?fileId=${file.id}`;
+  await f.call(`/api/projects/${project.id}/source?fileId=${file.id}&start=3&lines=2`); const before = (await f.call(versionsPath)).data;
+  database = new DatabaseSync(join(f.storageRoot, project.id, 'files.sqlite')); database.exec("CREATE TRIGGER reject_capture BEFORE INSERT ON versions BEGIN SELECT RAISE(ABORT,'fixture capture failure'); END");
+  await writeFile(join(f.root, 'answer.py'), changed);
+  let changes;
+  for (let i = 0; i < 100; i++) { changes = (await f.call(`/api/projects/${project.id}/changes`)).data.changes; if (changes.some(change => change.fileId === file.id && change.kind === 'modified')) break; await new Promise(resolve => setTimeout(resolve, 40)); }
+  assert.ok(changes.some(change => change.fileId === file.id && change.kind === 'modified'));
+  await Promise.all(Array.from({ length: 26 }, (_, i) => writeFile(join(f.root, `unrelated-${i}.txt`), 'unrelated\n')));
+  for (let i = 0; i < 100; i++) { changes = (await f.call(`/api/projects/${project.id}/changes?limit=20`)).data.changes; if (changes.length === 20 && !changes.some(change => change.fileId === file.id) && (await f.call('/api/projects/current')).data.indexedFiles === 27) break; await new Promise(resolve => setTimeout(resolve, 40)); }
+  assert.equal(changes.length, 20); assert.ok(!changes.some(change => change.fileId === file.id));
+  assert.equal((await f.call(`/api/projects/${project.id}/files?q=answer.py`)).data.files[0].size, file.size); assert.equal((await f.call('/api/projects/current')).data.status, 'partial');
+  const revision = (await f.call('/api/projects/current')).data.revision; const result = await f.call(state); assert.equal(result.code, 200); assert.deepEqual(result.data, { fileId: file.id, sourceHash: hash(changed), status: 'available' }); assert.notEqual(result.data.sourceHash, before.versions[0].sourceHash);
+  assert.deepEqual((await f.call(versionsPath)).data, before); assert.equal((await f.call('/api/projects/current')).data.revision, revision);
+ } finally { database?.exec('DROP TRIGGER IF EXISTS reject_capture'); database?.close(); await chmod(join(f.root, 'blocked'), 0o700); await f.close(); }
+});
+
+test('source-state withholds private, binary and unreadable identities and recognizes a tracked deleted source', async () => {
+ const f = await fixture({ 'answer.py': 'print(42)\n', 'candidate.py': 'api_key="fixture-only"\n', 'binary.txt': Buffer.from([65, 0, 66]), 'unreadable.py': 'print(1)\n' });
+ try {
+  await f.login(); const project = (await f.call('/api/projects/current')).data; const files = (await f.call(`/api/projects/${project.id}/files`)).data.files; const file = files.find(file => file.path === 'answer.py'); await f.call(`/api/projects/${project.id}/source?fileId=${file.id}`);
+  await chmod(join(f.root, 'unreadable.py'), 0o000);
+  for (const path of ['candidate.py', 'binary.txt', 'unreadable.py']) { const current = files.find(file => file.path === path); const result = await f.call(`/api/projects/${project.id}/source-state?fileId=${current.id}`); assert.equal(result.code, 200); assert.deepEqual(result.data, { fileId: current.id, sourceHash: null, status: 'unavailable' }); }
+  await rm(join(f.root, 'answer.py')); await new Promise(resolve => setTimeout(resolve, 250)); const deleted = await f.call(`/api/projects/${project.id}/source-state?fileId=${file.id}`); assert.equal(deleted.code, 200); assert.deepEqual(deleted.data, { fileId: file.id, sourceHash: null, status: 'unavailable' });
+ } finally { await chmod(join(f.root, 'unreadable.py'), 0o600); await f.close(); }
+});
+
+test('source-state permits one concurrent status read and returns an honest unknown error for busy reads', async () => {
+ const content = 'x'.repeat(12000000); const f = await fixture({ 'answer.txt': content });
+ try {
+  await f.login(); const project = (await f.call('/api/projects/current')).data; const file = (await f.call(`/api/projects/${project.id}/files`)).data.files[0]; const state = `/api/projects/${project.id}/source-state?fileId=${file.id}`;
+  const results = await Promise.all([f.call(state), f.call(state)]); assert.deepEqual(results.map(result => result.code).sort(), [200, 503]); assert.deepEqual(results.find(result => result.code === 200).data, { fileId: file.id, sourceHash: hash(content), status: 'available' });
+  assert.equal((await f.call(`/api/projects/${project.id}/versions?fileId=${file.id}`)).data.versions.length, 0);
+ } finally { await f.close(); }
+});
+
+test('completed run freshness is revalidated without rewriting its execution fact after dependency, config or manifest drift', async t => {
+ for (const target of ['dep.mjs', 'settings.json', 'package.json']) await t.test(target, async () => {
+  const f = await fixture({ 'answer.mjs': "export {allow} from './dep.mjs';\n", 'dep.mjs': 'export const allow = true;\n', 'settings.json': '{"enabled":true}\n', 'package.json': JSON.stringify({ scripts: { test: 'node check.mjs' } }), 'check.mjs': "console.log('checked current source');" });
+  try {
+   await f.login(); const project = (await f.call('/api/projects/current')).data; const file = (await f.call(`/api/projects/${project.id}/files?q=answer.mjs`)).data.files[0]; const source = (await f.call(`/api/projects/${project.id}/source?fileId=${file.id}`)).data; const script = (await f.call(`/api/projects/${project.id}/scripts`)).data.scripts[0]; const runs = `/api/projects/${project.id}/runs`;
+   const started = await f.call(runs, { method: 'POST', body: { scriptId: script.id, fileId: file.id, sourceHash: source.sourceHash, manifestHash: script.manifestHash, approved: true } }); assert.equal(started.code, 202); assert.equal(started.data.freshness, 'unknown');
+   let completed;
+   for (let i = 0; i < 100; i++) { completed = (await f.call(`${runs}/${started.data.id}`)).data; if (completed.status !== 'running') break; await new Promise(resolve => setTimeout(resolve, 30)); }
+   assert.equal(completed.status, 'passed'); assert.equal(completed.freshness, 'current');
+   const revision = (await f.call('/api/projects/current')).data.revision; await f.call(`/api/projects/${project.id}/source-state?fileId=${file.id}`); assert.equal((await f.call('/api/projects/current')).data.revision, revision); assert.equal((await f.call(`${runs}/${started.data.id}`)).data.freshness, 'current');
+   await writeFile(join(f.root, target), target === 'package.json' ? JSON.stringify({ scripts: { test: 'node -e "console.log(1)"' } }) : target === 'dep.mjs' ? 'export const allow = false;\n' : '{"enabled":false}\n');
+   const after = (await f.call(`${runs}/${started.data.id}`)).data; assert.equal(after.status, 'passed'); assert.equal(after.exitCode, 0); assert.equal(after.freshness, 'stale'); assert.equal(after.output, completed.output); assert.equal(after.startedAt, completed.startedAt); assert.equal(after.finishedAt, completed.finishedAt); assert.equal(after.sourceHash, completed.sourceHash);
+  } finally { await f.close(); }
+ });
+});
+
+test('a completed passed receipt becomes unknown when watcher coverage is lost without rewriting its execution fact', async () => {
+ const f = await fixture({ 'answer.py': 'print(42)\n', 'package.json': JSON.stringify({ scripts: { test: 'node -e "console.log(42)"' } }) }); const moved = f.root + '-moved';
+ try {
+  await f.login(); const project = (await f.call('/api/projects/current')).data; const file = (await f.call(`/api/projects/${project.id}/files?q=answer.py`)).data.files[0]; const source = (await f.call(`/api/projects/${project.id}/source?fileId=${file.id}`)).data; const script = (await f.call(`/api/projects/${project.id}/scripts`)).data.scripts[0]; const runs = `/api/projects/${project.id}/runs`;
+  const started = await f.call(runs, { method: 'POST', body: { scriptId: script.id, fileId: file.id, sourceHash: source.sourceHash, manifestHash: script.manifestHash, approved: true } }); assert.equal(started.code, 202);
+  let completed;
+  for (let i = 0; i < 100; i++) { completed = (await f.call(`${runs}/${started.data.id}`)).data; if (completed.status !== 'running') break; await new Promise(resolve => setTimeout(resolve, 30)); }
+  assert.equal(completed.status, 'passed'); assert.equal(completed.freshness, 'current'); const revision = (await f.call('/api/projects/current')).data.revision;
+  await rename(f.root, moved); let coverage;
+  for (let i = 0; i < 150; i++) { coverage = (await f.call('/api/projects/current')).data; if (!coverage.watching) break; await new Promise(resolve => setTimeout(resolve, 40)); }
+  assert.equal(coverage.watching, false); assert.equal(coverage.watchError, 'watch_failed'); await rename(moved, f.root);
+  assert.equal((await f.call('/api/projects/current')).data.revision, revision);
+  const after = (await f.call(`${runs}/${started.data.id}`)).data; assert.deepEqual(after, { ...completed, freshness: 'unknown' });
+  assert.equal((await f.call(`/api/projects/${project.id}/source-state?fileId=${file.id}`)).data.sourceHash, source.sourceHash);
+ } finally { await rename(moved, f.root).catch(() => {}); await f.close(); }
+});
+
+
+test('manifest replacement during recorder settling is rejected before execution', async () => {
+ const manifest = JSON.stringify({ scripts: { test: 'node check.mjs' } });
+ const f = await fixture({ 'answer.mjs': 'export const answer = 42;\n', 'check.mjs': 'console.log("approved check");\n', 'changed.mjs': 'import { writeFileSync } from "node:fs"; writeFileSync("unapproved.marker", "ran");\n', 'package.json': manifest });
+ try {
+  await f.login();
+  const project = (await f.call('/api/projects/current')).data;
+  const file = (await f.call(`/api/projects/${project.id}/files?q=answer`)).data.files[0];
+  const source = (await f.call(`/api/projects/${project.id}/source?fileId=${file.id}`)).data;
+  const script = (await f.call(`/api/projects/${project.id}/scripts`)).data.scripts[0];
+  const runs = `/api/projects/${project.id}/runs`;
+  const consent = { scriptId: script.id, fileId: file.id, sourceHash: source.sourceHash, manifestHash: script.manifestHash, approved: true };
+  const pending = f.call(runs, { method: 'POST', body: consent });
+  await new Promise(resolve => setTimeout(resolve, 60));
+  await writeFile(join(f.root, 'package.json'), JSON.stringify({ scripts: { test: 'node changed.mjs' } }));
+  const rejected = await pending;
+  assert.equal(rejected.code, 409); assert.equal(rejected.data.error.code, 'stale_consent'); assert.equal(rejected.data.id, undefined);
+  await new Promise(resolve => setTimeout(resolve, 350));
+  await assert.rejects(readFile(join(f.root, 'unapproved.marker')), { code: 'ENOENT' });
+  await writeFile(join(f.root, 'package.json'), manifest);
+  const current = (await f.call(`/api/projects/${project.id}/scripts`)).data.scripts[0];
+  const started = await f.call(runs, { method: 'POST', body: { ...consent, manifestHash: current.manifestHash } });
+  assert.equal(started.code, 202);
+  let result;
+  for (let i = 0; i < 100; i++) { result = (await f.call(`${runs}/${started.data.id}`)).data; if (result.status !== 'running') break; await new Promise(resolve => setTimeout(resolve, 30)); }
+  assert.equal(result.status, 'passed'); assert.match(result.output, /approved check/);
+  await assert.rejects(readFile(join(f.root, 'unapproved.marker')), { code: 'ENOENT' });
+ } finally { await f.close(); }
 });
