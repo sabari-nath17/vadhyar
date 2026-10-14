@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-15T00:44:02+05:30",
+  "implementationCheckpoint": "88a8d69cc8ce0d00352d26c8f4fd59191a1dbeaf",
+  "ownership": {
+    "ProjectExplorer": "Product Quality four-line mount after explicit takeover",
+    "project-style": "UI owner ten frozen scoped reader rules"
+  },
+  "renderProbe": {
+    "origin": "http://127.0.0.1:4186",
+    "temporaryHost": "stopped after QA; existing4173 user session untouched",
+    "actualCssViewport": [
+      1707,
+      960
+    ],
+    "documentWidth": 1707,
+    "source": "prototype/src/ProjectLesson.tsx",
+    "capturedLines": [
+      1,
+      190
+    ],
+    "sourceHash": "8dacf84f8e9201ece3d75ca934074d8bcdb8049f2cf5c4265642e348ac5136a3",
+    "searchQuery": "getCapturedSource",
+    "matchingCapturedLines": [
+      3,
+      99,
+      110
+    ],
+    "searchHeightPx": 50.92708587646485,
+    "searchFontPx": 16,
+    "actionGapPx": 10,
+    "actionWrap": "wrap",
+    "keyboardFocusAfterTab": "BUTTON: prototype/src/ProjectLesson.tsx \u00b7 captured line3; solid focus outline"
+  },
+  "focusedChecks": {
+    "typecheck": "passed",
+    "sourceLint": "passed",
+    "readingTests": 11,
+    "build": "passed"
+  },
+  "productQualityReceipt": "../../logic-evidence/persona-real-reader-acceptance.json",
+  "productQualityScope": "Actual five contexts across four files, observation/persistence explanation, exact range navigation, retained search/explicit recapture, export, failed read, stale replacement, keyboard and styled1440 view. Bounded simulation, not real learner efficacy.",
+  "uiDomFingerprint": "c7dc1ce101348385cf1fbec45b3996353ce8ff8b254dedf0dad7e54540e9e5cd",
+  "uiKeyboardFingerprint": "b6cbd0481430b3b6510720f5594d0693909ec3e0da1b3de5727a8051e3f541c7",
+  "styleSha256": "f652233333a735ad0cab9560c48d7425ecefc5ef40f836beec779dfae79dc04c",
+  "limits": [
+    "Live provider, screen reader, physical touch, full200% zoom, frame profiling and learning efficacy not established by these probes.",
+    "Narrow-window evidence belongs to the earlier desktop UI receipt; this reader style probe was1707px and Product Quality additionally1440px."
+  ]
+}
