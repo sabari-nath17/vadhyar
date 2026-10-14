@@ -40,3 +40,9 @@ Authenticated `GET /api/projects/:id/source-state?fileId=opaqueId` returns `{fil
 Old learning records default `pendingCheck` and `checkResult` to null. A new command stores an attempt/source/script/manifest-bound starting operation before POST. Accepted job IDs resume through GET after reload; a missing acknowledgement or lost host job stays unknown. Explicit clear archives the raw receipt/uncertain operation and creates a new active continuation. Changed-source refresh archives dependent command evidence before clearing it. These operations award no XP and cannot advance a learning stage. A known starting/running operation or unknown operation blocks a verdict until finished or explicitly cleared. Late responses must match the original attempt and operation.
 
 The browser redesign and source-knowledge adapter have separate owners and verification receipts. Refer to [the behavior contract](../docs/product-logic-contract.md) for the combined UI acceptance journeys. A source-checkout prototype is not a standalone installer, phone server or installed editor bridge.
+
+## P01/P06 verified corrections — 2026-10-14
+
+- Factual case, prediction and assistance fields accept concise nonblank text up to 2,000 characters; reasoning and explanatory evidence retain their minimum length.
+- The local API session-cookie name includes the validated port so browser cookies from two loopback projects do not collide. HttpOnly, SameSite=Strict, Path=/api, exact Host/Origin and project-boundary guards remain in place.
+- The same-browser two-host browser recheck and shared-cookie-jar regression pass. This verifies local session coexistence; it does not establish live-provider, phone or learning-efficacy behavior. P07's bounded actual-repository reading flow is still under implementation.

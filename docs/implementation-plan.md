@@ -154,3 +154,11 @@ Deliver one source project, a VSIX, setup/prerequisite guide, third-party attrib
 Deferred: general repository imports, full PRD drift auditing, generic course generation, alternative implementation recommendations, automatic repairs, live Git hooks, all-editor support, cloud sync and mutation-generated exercises.
 
 Material unresolved risks: Graphify installation/schema compatibility, API model access/latency, quality of hints, and beginner usability. The integration gate and pilot observations resolve different risks; neither substitutes for the other.
+
+## Browser feature corrections — P01/P06 — 2026-10-14
+
+P01 permits concise, nonblank factual answers for a case, prediction, or assistance note (1–2,000 characters); reasoning and explanatory evidence retain their 8-character minimum. Blank answers and oversized values remain rejected. P06 gives each validated loopback port a distinct session-cookie name, preserving the HttpOnly, SameSite=Strict, Path=/api, exact Host/Origin, session-token and project-boundary checks.
+
+Verification on the combined working tree: root typecheck, lint, build and 134 tests passed; `npm run prototype:check` passed typecheck, lint, build, 98 learning tests and 66 local-service tests. Focused checks passed 41 domain, 20 teaching-service and 34 project-service cases. The independent two-host browser repro on ports 4187/4189 confirmed both local projects could continue source reads and the first project's saved learning records remained intact.
+
+P07 remains open: bounded reading support for the actual repository's longer, connected source. No live provider, learning-efficacy, phone or full C01–C25 claim follows from these checks.

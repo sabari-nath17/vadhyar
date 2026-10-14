@@ -95,7 +95,9 @@ export async function createProjectService({ root, origin, storageRoot, handleEx
  const currentCounts = db.prepare('SELECT COUNT(*) AS count, COALESCE(SUM(size),0) AS bytes FROM files').get();
  const revision = Number(getMeta.get('revision')?.value ?? 0); if (!Number.isSafeInteger(revision) || revision < 0) throw new Error('The recorder revision is invalid; its data was preserved.');
  const project = { id: projectId, name: basename(approvedRoot).slice(0, 200) || 'Project', status: 'indexing', indexedFiles: currentCounts.count, skippedFiles: 0, scanErrors: 0, totalBytes: currentCounts.bytes, revision, watching: false, watchError: null };
- const session = randomBytes(32).toString('hex'); const runs = new Map(), runContexts = new Map(); let closed = false, active = false, stopRun, runFinished = Promise.resolve();
+ const session = randomBytes(32).toString('hex');
+ // Browser cookies are not scoped to a port.
+ const cookieName = `vadhyar_project_session_${base.port}`, runs = new Map(), runContexts = new Map(); let closed = false, active = false, stopRun, runFinished = Promise.resolve();
  let openSources = 0, sourceStateReading = false, watcher, watchTimer, watchHealth, watchFinished = Promise.resolve(), processingChanges = false;
  const pending = new Set(); let generation = randomUUID(); const firstScan = getMeta.get('baselineCapturedAt') === undefined; let buildingBaseline = firstScan, scannedEntries = 0, scanTransaction = false;
  const fingerprint = stat => `${stat.dev}:${stat.ino}:${stat.size}:${stat.mtimeNs}:${stat.ctimeNs}`;
@@ -375,9 +377,9 @@ export async function createProjectService({ root, origin, storageRoot, handleEx
     if (method !== 'POST') fail(405, 'invalid_method', 'Use POST to open a local session.');
     if (requestOrigin !== origin) fail(403, 'invalid_origin', 'Opening a session requires the approved browser origin.');
     query(url, []); if (!z.object({}).strict().safeParse(await body(request)).success) fail(400, 'invalid_body', 'The session request must be an empty JSON object.');
-    response.setHeader('Set-Cookie', `vadhyar_project_session=${session}; HttpOnly; SameSite=Strict; Path=/api`); send(response, 200, { ok: true }); return true;
+    response.setHeader('Set-Cookie', `${cookieName}=${session}; HttpOnly; SameSite=Strict; Path=/api`); send(response, 200, { ok: true }); return true;
    }
-   const cookie = /(?:^|;\s*)vadhyar_project_session=([^;]*)/.exec(request.headers.cookie ?? '')?.[1] ?? '';
+   const cookie = (request.headers.cookie ?? '').split(/;\s*/).find(value => value.startsWith(`${cookieName}=`))?.slice(cookieName.length + 1) ?? '';
    if (!/^[a-f0-9]{64}$/.test(cookie) || !timingSafeEqual(Buffer.from(cookie), Buffer.from(session))) fail(401, 'session_required', 'Open a local project session before reading source.');
    if (method !== 'GET' && requestOrigin !== origin) fail(403, 'invalid_origin', 'This operation requires the approved browser origin.');
    const requestedProject = /^\/api\/projects\/([^/]+)\//.exec(route);

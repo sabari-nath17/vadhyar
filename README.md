@@ -230,3 +230,7 @@ The local companion now exposes a protected source-knowledge API for one to five
 ### Desktop use case
 
 Vadhyar is a local desktop/laptop learning workspace used alongside the learner's editor and terminal on the same computer. Full desktop and practical split windows govern the design. Narrow-window and zoom reflow keep that workspace usable; they do not provide phone access. The [behavior contract](docs/product-logic-contract.md) and [logic board](docs/logic-board.md) require findings to reach their actual affected callers, screens, records and checks before closure.
+
+### Parallel local project sessions — 2026-10-14
+
+Each local project host has a port-specific session-cookie name, so separately launched loopback projects can remain open in one browser without replacing each other's login. Host, origin and project checks remain active. See [prototype setup and limits](prototype/README.md).

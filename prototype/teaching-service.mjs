@@ -8,7 +8,7 @@ import { z } from 'zod';
 const identity = z.string().regex(/^[a-f0-9]{64}$/);
 const modelId = z.string().regex(/^[A-Za-z0-9._:/-]{1,120}$/);
 const connectSchema = z.object({ key: z.string().trim().regex(/^[!-~]{8,512}$/), model: modelId.optional() }).strict();
-const explainSchema = z.object({ fileId: identity, sourceHash: identity, startLine: z.number().int().min(1).max(999_999_999), requirement: z.string().trim().min(8).max(4000), caseInput: z.string().trim().min(8).max(2000), model: modelId, approved: z.literal(true) }).strict();
+const explainSchema = z.object({ fileId: identity, sourceHash: identity, startLine: z.number().int().min(1).max(999_999_999), requirement: z.string().trim().min(8).max(4000), caseInput: z.string().trim().min(1).max(2000), model: modelId, approved: z.literal(true) }).strict();
 const sourceSchema = z.object({ fileId: identity, sourceHash: identity, path: z.string().min(1).max(8192), language: z.string().max(40), startLine: z.number().int().positive(), endLine: z.number().int().nonnegative(), text: z.string().min(1).max(40_000) }).passthrough();
 const explanationSchema = z.object({ summary: z.string().min(1).max(3000), conditions: z.array(z.object({ startLine: z.number().int().positive(), endLine: z.number().int().positive(), explanation: z.string().min(1).max(1200) }).strict()).max(12), questions: z.array(z.string().min(1).max(500)).max(8), limits: z.array(z.string().min(1).max(500)).min(1).max(8) }).strict();
 const responseSchema = z.object({ status: z.literal('completed'), output_text: z.string().min(1).max(24_000), output: z.array(z.object({ type: z.string().max(100), content: z.array(z.object({ type: z.string().max(100) }).passthrough()).max(20).optional() }).passthrough()).max(32) }).passthrough();

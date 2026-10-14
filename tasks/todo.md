@@ -659,3 +659,11 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - [x] UI-owned prototype/design handoffs inspected after actual edits:desktop1440primary,1024/700–900coding panel, secondary narrow/zoom reflow, historical -mobile names, current implementation authorization. Source already uses desktop sidebar/two-column layout; no phone-specific flow or transport.
 - [x] Local root links/unique C/D IDs/diff/rule-line checks pass. Root-only milestone preserves other writers and historical evidence. No push.
 - Next: UI owner finishes its actual implementation receipt/desktop/accessibility acceptance and checkpoint; feature owner verifies the combined final artifact. Other compound C-row claims remain bounded by actual evidence, not this device-wording correction.
+
+## 2026-10-14 23:04:43 IST — P01/P06 feature checkpoint
+
+- [x] P01: concise case, prediction and assistance values save/restore; blank/oversized factual values and too-short explanatory evidence remain blocked.
+- [x] P06: per-port session names preserve two simultaneously open local projects; existing origin, host, session and project isolation checks remain intact.
+- [x] Root typecheck/lint/build and 134 tests; prototype check with 98 learning and 66 service tests; focused 41 domain, 20 teaching-service, 34 project-service and 7 receipt tests; independent two-host browser recheck.
+- **Checkpoint:** local commit `fix: preserve concise learning inputs and parallel project sessions`; no push.
+- **Next:** P07 bounded source-reading support for the actual repository. Reuse owns the bounded reading/parser/knowledge lane, UI owns source selection and exact-range consumers, and root owns optional requested-line-count plumbing plus teaching-range alignment. Preserve the 160-line default for legacy callers and carry any explicit range length through freshness checks. Do not infer runtime, mastery or whole-repository coverage.

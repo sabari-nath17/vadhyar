@@ -4,25 +4,26 @@ import { identitySchema, projectRunSchema, sourceSnapshotSchema, teachingExplana
 export type TeachingExplanation = z.infer<typeof teachingExplanationSchema>;
 
 const text = z.string().trim().min(8).max(2000);
+const factualText = z.string().trim().min(1).max(2000);
 const verdict = z.enum(['satisfied', 'not-satisfied', 'uncertain']);
 const time = z.string().datetime();
 const HISTORY_LIMIT = 20;
 const RECORD_LIMIT = 3_000_000;
-const predictionSchema = z.object({ text, reasoning: text, sourceHash: identitySchema, recordedAt: time }).strict();
+const predictionSchema = z.object({ text: factualText, reasoning: text, sourceHash: identitySchema, recordedAt: time }).strict();
 const observationSchema = z.object({ kind: z.literal('self-reported'), text, sourceHash: identitySchema, recordedAt: time }).strict();
 const refreshSchema = z.object({ beforeHash: identitySchema, afterHash: identitySchema, changed: z.boolean(), recordedAt: time }).strict();
-const verificationFields = { sourceHash: identitySchema, verdict, reason: text, assistance: text, recordedAt: time };
+const verificationFields = { sourceHash: identitySchema, verdict, reason: text, assistance: factualText, recordedAt: time };
 const verificationSchema = z.discriminatedUnion('kind', [
  z.object({ kind: z.literal('script'), ...verificationFields, run: projectRunSchema }).strict(),
  z.object({ kind: z.literal('manual'), ...verificationFields, description: text, evidence: text, selfReported: z.literal(true) }).strict()
 ]);
-const transferSchema = z.object({ caseInput: text, prediction: text, reasoning: text, assistance: text, recordedAt: time }).strict();
+const transferSchema = z.object({ caseInput: factualText, prediction: factualText, reasoning: text, assistance: factualText, recordedAt: time }).strict();
 const pendingCheckSchema = z.object({ operationId: z.uuid(), status: z.enum(['starting', 'accepted', 'unknown']), id: z.uuid().nullable(), fileId: identitySchema, sourceHash: identitySchema, manifestHash: identitySchema, scriptId: z.string().min(1).max(80) }).strict();
 export type PendingCheck = z.infer<typeof pendingCheckSchema>;
 const attemptSchema = z.object({
  id: z.uuid(), stage: z.enum(['predict', 'observe', 'change', 'verify', 'reflect', 'complete']),
  baseline: sourceSnapshotSchema, current: sourceSnapshotSchema,
- requirement: z.string().trim().min(8).max(4000), caseInput: text,
+ requirement: z.string().trim().min(8).max(4000), caseInput: factualText,
  prediction: predictionSchema.nullable(), observation: observationSchema.nullable(),
  refreshes: z.array(refreshSchema).max(20), verification: verificationSchema.nullable(),
  reflection: z.object({ text, recordedAt: time }).strict().nullable(), transfer: transferSchema.nullable(),

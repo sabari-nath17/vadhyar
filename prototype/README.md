@@ -61,3 +61,7 @@ The exact library is pinned in the root lockfile. Node's TypeScript stripping ru
 ## Selected-source knowledge API
 
 The launcher mounts `GET /api/projects/:projectId/knowledge?selection=<JSON array>` after its existing approved-project, Host/Origin and session checks. Use `getSelectedKnowledge` with one to five captured `{fileId, sourceHash, startLine}` pins; it validates source-bound output and cancellation. Local analysis returns per-file concepts, selected static import/re-export file links and an entry-first reading path, with explicit limits and a12-second batch response budget. The existing browser viewer/map stays single-source. [Backend contract, retained source mapping and checks](../docs/backend-knowledge.md).
+
+## Local session isolation — 2026-10-14
+
+Each loopback port has its own HttpOnly session-cookie name. You can keep separately launched project hosts open in one browser; same-origin, host and project checks still apply.

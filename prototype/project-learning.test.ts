@@ -17,6 +17,28 @@ function acceptedCheck(status: ProjectRun['status'] = 'running') { const s = beg
 
 describe('project-independent learning records', () => {
  it('accepts different language/project sources without any sample-specific condition', () => { const a = started(); const b = started(otherProjectId); expect(a.attempt?.baseline.path).toBe('lib/cache.py'); expect(b.attempt?.baseline.path).toBe('src/search.rs'); expect(PROJECT_STORAGE_KEY(projectId)).not.toBe(PROJECT_STORAGE_KEY(otherProjectId)); });
+ it('persists concise factual inputs while keeping reasoning and self-reports bounded and explanatory', () => {
+  let state = projectTransition(newProjectState(projectId), { type: 'start', source: source(), requirement: 'A zero-seat booking must be blocked.', caseInput: 'seats=0' });
+  state = projectTransition(state, { type: 'predict', text: 'true', reasoning: 'The guard rejects the request when the available seat count is zero.' });
+  state = projectTransition(state, { type: 'observe', text: 'I ran the zero-seat case and saw the request rejected.', source: source() });
+  state = projectTransition(state, { type: 'refresh', source: source() });
+  state = projectTransition(state, { type: 'verifyManual', description: 'Called the reservation function with zero seats.', evidence: 'The function returned false for the selected case.', verdict: 'uncertain', reason: 'This confirms one case, while other callers remain unchecked.', assistance: 'none' });
+  state = projectTransition(state, { type: 'reflect', text: 'The one result matches my prediction, but it does not establish every booking path.' });
+  state = projectTransition(state, { type: 'transfer', caseInput: 'seats=-1', prediction: 'false', reasoning: 'A negative count also fails the positive-seat condition.', assistance: 'none' });
+  const st = storage(), saved = persistProjectState(st, state, 0);
+  const restored = restoreProjectState(st.getItem(PROJECT_STORAGE_KEY(projectId)), projectId);
+  expect(restored.error).toBeUndefined();
+  expect(saved.attempt?.caseInput).toBe('seats=0');
+  expect(restored.state.attempt?.prediction?.text).toBe('true');
+  expect(restored.state.attempt?.verification?.assistance).toBe('none');
+  expect(restored.state.attempt?.transfer).toMatchObject({ caseInput: 'seats=-1', prediction: 'false', assistance: 'none' });
+  expect(() => projectTransition(newProjectState(projectId), { type: 'start', source: source(), requirement: 'A zero-seat booking must be blocked.', caseInput: ' '.repeat(4) })).toThrow();
+  expect(() => projectTransition(started(), { type: 'predict', text: ' ', reasoning: 'The guard rejects the request when the available seat count is zero.' })).toThrow();
+  expect(() => projectTransition(started(), { type: 'predict', text: 'true', reasoning: 'short' })).toThrow();
+  expect(() => projectTransition(observed(), { type: 'verifyManual', description: 'Called the reservation function with zero seats.', evidence: 'The function returned false for the selected case.', verdict: 'uncertain', reason: 'This confirms one case, while other callers remain unchecked.', assistance: ' ' })).toThrow();
+  for (const fields of [{ caseInput: ' ', prediction: 'false', assistance: 'none' }, { caseInput: 'seats=-1', prediction: ' ', assistance: 'none' }, { caseInput: 'seats=-1', prediction: 'false', assistance: ' ' }]) expect(() => projectTransition(complete(), { type: 'transfer', ...fields, reasoning: 'A negative count also fails the positive-seat condition.' })).toThrow();
+  expect(() => projectTransition(complete(), { type: 'transfer', caseInput: 'seats=-1', prediction: 'false', reasoning: 'A negative count also fails the positive-seat condition.', assistance: 'none '.repeat(401) })).toThrow();
+ });
  it('requires prediction before observation and a fresh source before verification', () => { expect(() => projectTransition(started(), { type: 'observe', text: 'I observed the result in the existing project.', source: source() })).toThrow(/prediction/i); const s = projectTransition(started(), { type: 'predict', text: 'It rejects expired entries.', reasoning: 'The threshold comparison evaluates to true.' }); expect(() => projectTransition(s, { type: 'verifyRun', run: run(), verdict: 'satisfied', reason: 'The result matches my expectation for this case.', assistance: 'Documentation helped with this case.' })).toThrow(/refresh|observe/i); });
  it('retains the original prediction and clears dependent evidence after actual source change', () => { const s = complete(); const changed = projectTransition(s, { type: 'refresh', source: source(projectId, '2'.repeat(64)) }); expect(changed.attempt?.prediction).toEqual(s.attempt?.prediction); expect(changed.attempt?.current.sourceHash).toBe('2'.repeat(64)); expect(changed.attempt?.verification).toBeNull(); expect(changed.attempt?.reflection).toBeNull(); expect(changed.history.at(-1)).toEqual(s.attempt); expect(changed.attempt?.refreshes.at(-1)?.changed).toBe(true); });
  it('records unchanged refresh honestly and does not erase completed evidence', () => { const s = complete(); const next = projectTransition(s, { type: 'refresh', source: source() }); expect(next.attempt?.refreshes.at(-1)?.changed).toBe(false); expect(next.attempt?.reflection).toEqual(s.attempt?.reflection); });

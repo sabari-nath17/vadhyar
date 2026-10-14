@@ -282,3 +282,11 @@ All six board repros now pass after owner corrections: source-observation identi
 ## 2026-10-14 21:33:59 IST — Desktop use-case enforcement verified
 
 UI-owned current prototype/design handoffs now agree with the root desktop contract:1440primary,1024and700–900coding panel;320/390secondary reflow and legacy mobile filenames explicitly historical. Source audit confirms desktop sidebar/two-column base and no phone flow; no CSS rewrite or transport was needed. Root inspected applied wording and preserved pending rendered/accessibility/compound-row proof. Root links/unique C/D IDs/diff/rule-line checks pass. Only root documentation/records enter this milestone; no push.
+
+## 2026-10-14 23:04:43 IST — Concise learning inputs and parallel local sessions
+
+- **Changed:** concise nonblank case/prediction/assistance inputs now match the UI's 1–2,000 character bounds while reasoning/evidence remains explanatory; local project session-cookie names now include the validated port.
+- **Reason:** valid short factual answers were rejected, and same-host projects on different ports overwrote the browser's single fixed cookie name.
+- **Files:** `prototype/src/project-learning.ts`, `prototype/project-learning.test.ts`, `prototype/teaching-service.mjs`, `prototype/teaching-service.test.mjs`, `prototype/project-service.mjs`, `prototype/project-service.test.mjs`, `prototype/feature-contract.md`, `prototype/README.md`, `README.md`, `docs/implementation-plan.md`, `AI_USAGE.md`, and `tasks/todo.md`.
+- **Checks:** root typecheck/lint/build and 134 tests; prototype:check with 98 learning and 66 service tests; focused 41 domain, 20 teaching-service and 34 project-service cases; same-browser two-host browser repro passed.
+- **Limits:** provider use, learning gains, phone access and full C01–C25 coverage remain unverified. P07 actual-repository source navigation is the next gate. No push.

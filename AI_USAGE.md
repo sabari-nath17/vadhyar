@@ -175,3 +175,9 @@ Codex refreshed Skill Router and applied Assumption Audit/Design Handoff Brief t
 ## 2026-10-14 21:33:59 IST — Desktop use-case correction closeout
 
 Codex independently inspected the owner-applied desktop priority, current implementation authorization and historical narrow-filename explanation against the earlier read-only source audit. It closed the device-wording correction, preserving final UI receipt/accessibility and compound C-row limits as pending. Assumption Audit and Design Handoff Brief were applied through Skill Router; no phone implementation, CSS rewrite, live preview, production edit, credential, push, vault or memory change by this chat.
+
+## 2026-10-14 23:04:43 IST — P01/P06 feature corrections
+
+Codex corrected concise factual-answer validation in the lesson domain and teaching boundary, and isolated local browser sessions by validated port. The source, tests and feature handoff were edited in the feature lane while the UI and product-quality chats retained their file ownership. Product Quality independently reproduced and browser-checked the two-host session collision; UI owner reports the returned-check receipt remains exportable and verification stays locked until attachment. Human review of the code and learner experience remains pending.
+
+Checks: root typecheck/lint/build and 134/134 tests; prototype typecheck/lint/build with 98 learning and 66 local-service tests; focused 41/41 domain, 20/20 teaching-service, 34/34 project-service and 7/7 receipt tests. No live OpenAI request or learner-efficacy study was performed. P07 actual-repository reading remains open; no push.

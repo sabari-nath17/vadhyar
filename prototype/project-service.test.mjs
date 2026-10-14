@@ -45,16 +45,41 @@ test('API requires a same-origin browser session and rejects unknown methods, ho
   assert.equal((await f.call('/api/session', { method: 'POST', body: {}, headers: { Origin: 'https://attacker.example' } })).code, 403);
   assert.equal((await f.call('/api/session', { method: 'POST', body: {}, headers: { 'Sec-Fetch-Site': 'cross-site' } })).code, 403);
   assert.equal((await f.call('/api/session', { method: 'POST', body: {}, headers: { Host: 'attacker.example' } })).code, 403);
-  const login = await f.login(); assert.equal(login.code, 200); assert.match(login.headers['set-cookie'][0], /HttpOnly/); assert.match(login.headers['set-cookie'][0], /SameSite=Strict/);
+  const login = await f.login(); assert.equal(login.code, 200); assert.match(login.headers['set-cookie'][0], /HttpOnly/); assert.match(login.headers['set-cookie'][0], /SameSite=Strict/); assert.match(login.headers['set-cookie'][0], /Path=\/api/);
   assert.equal((await f.call('/api/projects/current')).code, 200);
   assert.equal((await f.call('/api/projects/current', { headers: { Origin: 'https://attacker.example' } })).code, 403);
-  assert.equal((await f.call('/api/projects/current', { headers: { Cookie: 'vadhyar_project_session=wrong' } })).code, 401);
-  assert.equal((await f.call('/api/projects/current', { headers: { Cookie: 'vadhyar_project_session=' + 'é'.repeat(64) } })).code, 401);
+  const cookiePair = login.headers['set-cookie'][0].split(';')[0], cookieName = cookiePair.slice(0, cookiePair.indexOf('='));
+  assert.equal((await f.call('/api/projects/current', { headers: { Cookie: `${cookieName}=wrong` } })).code, 401);
+  assert.equal((await f.call('/api/projects/current', { headers: { Cookie: `${cookieName}=${'é'.repeat(64)}` } })).code, 401);
   assert.equal((await f.call('/api/projects/current', { method: 'POST', body: {} })).code, 405);
   assert.equal((await f.call('/api/session', { method: 'POST', body: 'x'.repeat(17000) })).code, 413);
   assert.equal((await f.call('/api/session', { method: 'POST', body: { root: '/tmp' } })).code, 400);
   assert.equal((await f.call('/anything')).code, 404);
  } finally { await f.close(); }
+});
+
+test('separate local project hosts retain sessions in one browser cookie jar', async () => {
+ const first = await fixture({ 'booking.py': 'print("booking")\n' }); let second;
+ try {
+  second = await fixture({ 'other.py': 'print("other")\n' });
+  const firstLogin = await first.login(), secondLogin = await second.login(), jar = new Map();
+  for (const result of [firstLogin, secondLogin]) {
+   const pair = result.headers['set-cookie'][0].split(';')[0], separator = pair.indexOf('=');
+   jar.set(pair.slice(0, separator), pair.slice(separator + 1));
+  }
+  assert.equal(jar.size, 2, 'each local origin must use its own cookie name');
+  const sharedCookieHeader = [...jar].map(([name, value]) => `${name}=${value}`).join('; ');
+  const firstProject = (await first.call('/api/projects/current', { headers: { Cookie: sharedCookieHeader } })).data;
+  const secondProject = (await second.call('/api/projects/current', { headers: { Cookie: sharedCookieHeader } })).data;
+  assert.notEqual(firstProject.id, secondProject.id);
+  assert.equal((await first.call('/api/projects/current', { headers: { Cookie: sharedCookieHeader } })).code, 200);
+  assert.equal((await second.call('/api/projects/current', { headers: { Cookie: sharedCookieHeader } })).code, 200);
+  assert.equal((await first.call('/api/projects/current', { headers: { Cookie: `${[...jar.keys()][1]}=${[...jar.values()][1]}` } })).code, 401);
+  assert.equal((await second.call('/api/projects/current', { headers: { Cookie: `${[...jar.keys()][0]}=${[...jar.values()][0]}` } })).code, 401);
+  assert.equal((await second.call(`/api/projects/${firstProject.id}/files`, { headers: { Cookie: sharedCookieHeader } })).code, 404);
+ } finally {
+  await first.close(); if (second) await second.close();
+ }
 });
 
 test('delegated API handlers receive only authenticated same-origin operations and internal source reads remain bounded', async () => {
