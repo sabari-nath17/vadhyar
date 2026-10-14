@@ -17,7 +17,7 @@ const sha = value => createHash('sha256').update(value).digest('hex');
 async function harness(t, options = {}) {
  const directory = await mkdtemp(join(tmpdir(), 'vadhyar-knowledge-integration-')), root = join(directory, 'project');
  await mkdir(root);
- const files = { 'entry.ts': entry, 'rule.ts': rule, 'empty.ts': '', 'invalid.ts': 'export function broken( {', 'helper.py': 'def allows():\n    return True', 'config.ts': 'export const password = "fake-local-fixture-value";', 'credentials.ts': rule, 'package.json': JSON.stringify({ scripts: { test: 'node check.mjs' } }), 'check.mjs': 'import { writeFileSync } from "node:fs"; writeFileSync("executed.txt", "unexpected");', ...options.files };
+ const files = { 'entry.ts': entry, 'rule.ts': rule, 'empty.ts': '', 'invalid.ts': 'export const = ;', 'helper.py': 'def allows():\n    return True', 'config.ts': 'export const password = "fake-local-fixture-value";', 'credentials.ts': rule, 'package.json': JSON.stringify({ scripts: { test: 'node check.mjs' } }), 'check.mjs': 'import { writeFileSync } from "node:fs"; writeFileSync("executed.txt", "unexpected");', ...options.files };
  for (const [path, text] of Object.entries(files)) await writeFile(join(root, path), text);
  await mkdir(join(root, 'node_modules')); await writeFile(join(root, 'node_modules', 'vendor.ts'), rule);
  await mkdir(join(root, '.hidden')); await writeFile(join(root, '.hidden', 'hidden.ts'), rule);
@@ -50,9 +50,9 @@ async function harness(t, options = {}) {
  assert.equal(login.status, 200); cookie = login.headers['set-cookie'][0].split(';')[0];
  const project = (await call('/api/projects/current')).value;
  const indexed = (await call(`/api/projects/${project.id}/files?limit=100`)).value.files;
- const source = async (path, startLine = 1) => {
+ const source = async (path, startLine = 1, lines = 160) => {
   const file = indexed.find(file => file.path === path); assert.ok(file, `${path} is indexed`);
-  const result = await call(`/api/projects/${project.id}/source?fileId=${file.id}&start=${startLine}`);
+  const result = await call(`/api/projects/${project.id}/source?fileId=${file.id}&start=${startLine}&lines=${lines}`);
   assert.equal(result.status, 200); return result.value;
  };
  const selection = async (...paths) => {
@@ -69,14 +69,15 @@ test('real protected knowledge service returns bounded static source evidence wi
  const result = await h.call(h.route(selection));
  assert.equal(result.status, 200); assert.equal(result.headers['cache-control'], 'no-store');
  const knowledge = codebaseKnowledgeSchema.parse(result.value);
- assert.equal(knowledge.projectId, h.project.id); assert.equal(knowledge.analysisVersion, 1); assert.match(knowledge.knowledgeId, /^[a-f0-9]{64}$/);
+ assert.equal(knowledge.projectId, h.project.id); assert.equal(knowledge.analysisVersion, 2); assert.match(knowledge.knowledgeId, /^[a-f0-9]{64}$/);
  assert.deepEqual(knowledge.files.map(file => file.path), ['entry.ts', 'rule.ts']);
- assert.deepEqual(knowledge.order, selection.map(file => file.fileId));
- assert.deepEqual(knowledge.relationships, [{ from: selection[0].fileId, to: selection[1].fileId, kind: 'imports', line: 1 }]);
+ assert.deepEqual(knowledge.order, knowledge.files.map(file => file.contextId));
+ assert.deepEqual(knowledge.relationships, [{ from: knowledge.files[0].contextId, to: knowledge.files[1].contextId, kind: 'imports', line: 1 }]);
  assert.deepEqual(h.reads, [...selection, ...selection].map(file => [file.fileId, 1, 160]));
  for (const [index, file] of knowledge.files.entries()) {
   assert.equal(file.sourceHash, selection[index].sourceHash); assert.equal(file.truncated, false);
   assert.ok(file.concepts.length <= 5); assert.ok(file.capturedAt); assert.ok(file.fileBytes > 0);
+  assert.match(file.contextId, /^[a-f0-9]{64}$/); assert.equal(file.catalog.length, 1); assert.equal(file.catalog[0].complete, true); assert.equal(file.omittedDeclarations, 0);
  }
  assert.ok(knowledge.limits.length); assert.equal(knowledge.relationships.some(edge => edge.kind === 'calls'), false);
  assert.ok(!h.indexed.some(file => /credentials|escape|node_modules|\.hidden/.test(file.path)));
@@ -90,6 +91,7 @@ test('knowledge API validates sessions, Origin, Host, exact queries and strict b
  const h = await harness(t), selection = await h.selection('entry.ts', 'rule.ts'), route = h.route(selection);
  for (const [options, status] of [[{ authenticated: false }, 401], [{ headers: { Origin: 'https://attacker.example' } }, 403], [{ headers: { Host: 'attacker.example' } }, 403], [{ headers: { 'Sec-Fetch-Site': 'cross-site' } }, 403], [{ method: 'POST', body: '{}' }, 405], [{ method: 'DELETE' }, 405], [{ body: '{}' }, 400]]) assert.equal((await h.call(route, options)).status, status);
  const invalid = [[], Array(6).fill(selection[0]), [selection[0], selection[0]], [{ ...selection[0], extra: true }], [{ ...selection[0], fileId: '../../outside.ts' }], [{ ...selection[0], sourceHash: 'bad' }], [{ ...selection[0], startLine: 0 }], [{ ...selection[0], startLine: 1.5 }], [{ ...selection[0], startLine: 1_000_000_000 }], [{ ...selection[0], startLine: '1' }]];
+ invalid.push(...[0, 201, 1.5, '160'].map(lines => [{ ...selection[0], lines }]), [{ ...selection[0], focus: 'run-shell' }], [selection[0], { ...selection[0], lines: 160 }], [selection[0], { ...selection[0], startLine: 2, sourceHash: 'a'.repeat(64) }]);
  for (const value of invalid) assert.equal((await h.call(h.route(value))).status, 400, JSON.stringify(value));
  for (const path of [route + '&extra=true', route + '&selection=%5B%5D', `/api/projects/${h.project.id}/knowledge`, `/api/projects/${h.project.id}/knowledge?selection=not-json`, `/api/projects/${h.project.id}/knowledge?selection=${'x'.repeat(4097)}`]) assert.equal((await h.call(path)).status, 400);
  assert.equal(h.reads.length, 0);
@@ -130,7 +132,57 @@ test('empty, malformed, unsupported and partial excerpts retain explicit coverag
  assert.ok(knowledge.files.every(file => file.concepts.length === 0 && file.relationships.length === 0 && file.order.length === 0));
  assert.equal(knowledge.files[0].startLine, 1); assert.equal(knowledge.files[0].endLine, 0);
  assert.equal(knowledge.files[3].truncated, true); assert.equal(knowledge.files[3].endLine, 160);
- assert.deepEqual(knowledge.relationships, []); assert.deepEqual(knowledge.order, selection.map(file => file.fileId));
+ assert.deepEqual(knowledge.relationships, []); assert.deepEqual(knowledge.order, knowledge.files.map(file => file.contextId));
+});
+
+test('distinct default-160 and explicit-200 captures of the real lesson keep separate context identities and declaration coverage', async t => {
+ const code = await readFile(new globalThis.URL('./src/ProjectLesson.tsx', import.meta.url), 'utf8');
+ const h = await harness(t, { files: { 'ProjectLesson.tsx': code } });
+ const source = await h.source('ProjectLesson.tsx'), pin = { fileId: source.fileId, sourceHash: source.sourceHash, startLine: 1 };
+ const result = await h.call(h.route([pin, { ...pin, lines: 200 }])); assert.equal(result.status, 200);
+ const knowledge = codebaseKnowledgeSchema.parse(result.value), [partial, complete] = knowledge.files;
+ assert.equal(knowledge.analysisVersion, 2); assert.equal(partial.fileId, complete.fileId); assert.equal(partial.sourceHash, complete.sourceHash);
+ assert.notEqual(partial.contextId, complete.contextId); assert.deepEqual(knowledge.order, [partial.contextId, complete.contextId]);
+ assert.equal(partial.endLine, 160); assert.equal(partial.truncated, true); assert.equal(partial.status, 'partial');
+ assert.ok(partial.catalog.some(declaration => declaration.name === 'ProjectLesson' && !declaration.complete)); assert.deepEqual(partial.relationships, []);
+ assert.equal(complete.endLine, code.trimEnd().split('\n').length); assert.equal(complete.truncated, false); assert.equal(complete.status, 'ready');
+ assert.ok(complete.catalog.some(declaration => declaration.name === 'ProjectLesson' && declaration.complete));
+ assert.ok(complete.catalog.some(declaration => declaration.name === 'retryReceipt' && declaration.complete && declaration.scope.includes('ProjectLesson')));
+ assert.ok(complete.catalog.length > 5); assert.equal(complete.fileBytes, Buffer.byteLength(code));
+ assert.deepEqual(h.reads, [[pin.fileId, 1, 160], [pin.fileId, 1, 200], [pin.fileId, 1, 160], [pin.fileId, 1, 200]]);
+ const expanded = await h.call(h.route([{ ...pin, lines: 200 }])); assert.equal(expanded.status, 200); assert.equal(expanded.value.files[0].contextId, complete.contextId);
+});
+
+test('a partial capture of the real host factory preserves provenance and declaration metadata without a local call graph', async t => {
+ const code = await readFile(new globalThis.URL('./project-service.mjs', import.meta.url), 'utf8');
+ const h = await harness(t, { files: { 'host.mjs': code } }), selection = await h.selection('host.mjs');
+ const result = await h.call(h.route(selection)); assert.equal(result.status, 200);
+ const file = codebaseKnowledgeSchema.parse(result.value).files[0];
+ assert.equal(file.status, 'partial'); assert.equal(file.path, 'host.mjs'); assert.equal(file.startLine, 1); assert.equal(file.endLine, 160);
+ assert.equal(file.sourceHash, sha(code)); assert.equal(file.fileBytes, Buffer.byteLength(code)); assert.equal(file.truncated, true);
+ assert.ok(file.catalog.some(declaration => declaration.name === 'createProjectService' && !declaration.complete));
+ assert.deepEqual(file.relationships, []); assert.ok(file.message.length > 0);
+});
+
+test('explicit nested focus selects a complete catalogue declaration beyond the initial five-concept graph without changing capture identity', async t => {
+ const code = [...Array.from({ length: 7 }, (_, index) => `export function first${index}() { return ${index}; }`), 'export function host() { function nested() { return true; } return nested(); }'].join('\n');
+ const h = await harness(t, { files: { 'nested.ts': code } }), selection = await h.selection('nested.ts');
+ const result = await h.call(h.route(selection)); assert.equal(result.status, 200);
+ const initial = codebaseKnowledgeSchema.parse(result.value).files[0], nested = initial.catalog.find(declaration => declaration.name === 'nested'); assert.ok(nested);
+ assert.equal(nested.complete, true); assert.ok(nested.scope.includes('host')); assert.ok(!initial.concepts.some(concept => concept.id === nested.id));
+ const focused = await h.call(h.route([{ ...selection[0], focus: nested.id }])); assert.equal(focused.status, 200);
+ const selected = codebaseKnowledgeSchema.parse(focused.value).files[0];
+ assert.equal(selected.contextId, initial.contextId); assert.equal(selected.order[0], nested.id); assert.ok(selected.concepts.some(concept => concept.id === nested.id));
+ assert.deepEqual(selected.catalog, initial.catalog);
+ const missing = await h.call(h.route([{ ...selection[0], focus: 'concept-9999' }])); assert.equal(missing.status, 422); assert.equal(missing.value.files, undefined);
+});
+
+test('different requested lengths that collapse to one actual short-file context are rejected rather than assigned fabricated identities', async t => {
+ const h = await harness(t), [pin] = await h.selection('entry.ts');
+ const result = await h.call(h.route([pin, { ...pin, lines: 200 }]));
+ assert.equal(result.status, 422); assert.equal(result.value.files, undefined);
+ assert.deepEqual(h.reads, [[pin.fileId, 1, 160], [pin.fileId, 1, 200]]);
+ assert.equal((await h.call(h.route([pin]))).status, 200);
 });
 
 test('final capture pass rejects changes while another selected source is being read', async t => {

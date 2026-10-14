@@ -52,3 +52,7 @@ The adapter uses current protected source reads, strict source identities and an
 ## Source-knowledge backend extension — 14 October 2026
 
 The PocketFlow workflow port now also serves an authenticated, explicitly selected multi-file knowledge API. It reuses local concepts/order validation, adds captured relative import/re-export file edges and rereads source identities before returning. No upstream Python runtime, generated chapters, additional provider or new dependency is imported. [Implemented API and limits](backend-knowledge.md), [exact upstream-file mapping and retained notice](backend-knowledge-provenance.json), [actual integration evidence](backend-knowledge-evidence.json). The original research register remains unchanged.
+
+## P07 bounded reading extension — 14 October 2026
+
+The same local workflow now distinguishes selected captured ranges with knowledge version 2, exposes complete nested declaration anchors beyond the five-concept graph, and supports a view-local source reading bundle. [Current contract and limits](source-reading.md), [source mapping and modifications](source-reading-provenance.json), [verification record](source-reading-evidence.json). Retained captures and static source links do not establish runtime, requirement or learning outcomes; prior milestone receipts remain historical.

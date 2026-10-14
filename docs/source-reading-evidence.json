@@ -1,0 +1,792 @@
+{
+  "slice": "P07 bounded source reading",
+  "status": "Source/parser/backend/component exact-index gate passed; independent mounted actual-app acceptance pending.",
+  "source_baseline": "7ff10369a1a2653f708d4bb0e7e3bd169cde5b73",
+  "checks": {
+    "knowledge_client": {
+      "passed": 7,
+      "command": "node node_modules/vitest/vitest.mjs run --config prototype/vitest.config.ts prototype/knowledge-api.test.ts"
+    },
+    "source_knowledge": {
+      "passed": 20,
+      "receipt": "Owned worker and root focused run"
+    },
+    "knowledge_http": {
+      "passed": 14,
+      "receipt": "Owned worker and root protected-host run; actual 12-second timeout/cancel/recovery"
+    },
+    "reading_bundle": {
+      "passed": 11,
+      "receipt": "Owned worker and root focused run"
+    },
+    "typecheck": {
+      "passed": true,
+      "command": "node node_modules/typescript/bin/tsc -p prototype/tsconfig.json --noEmit"
+    },
+    "focused_lint": {
+      "passed": true,
+      "scope": "Knowledge schemas/analysis/handler/client/tests and new bundle/component/tests"
+    },
+    "full_prototype": {
+      "status": "historical pre-review-fix working-tree pass",
+      "unitPassed": 116,
+      "servicePassed": 73,
+      "typecheck": true,
+      "lint": true,
+      "build": true,
+      "finalCorrectedExactSnapshot": "Passed126unit/74service with typecheck/lint/build; see exact_index receipt."
+    },
+    "exact_index": {
+      "passed": true,
+      "verifiedAtIST": "2026-10-14T23:52:27+05:30",
+      "sourceBase": "7ff10369a1a2653f708d4bb0e7e3bd169cde5b73",
+      "command": "node prototype/check.mjs from exported exact Git index with installed dependencies",
+      "unitPassed": 126,
+      "servicePassed": 74,
+      "typecheck": true,
+      "lint": true,
+      "build": true,
+      "ownedSourceFingerprintMatch": true,
+      "intendedStagedPaths": 26
+    },
+    "independent_browser": {
+      "status": "pending Product Quality actual-repository Record observation trace"
+    },
+    "source_walkthrough": {
+      "passed": 19,
+      "receipt": "Owned parser worker focused suite; anonymous returned/passed callback and exact requested range regressions"
+    }
+  },
+  "executed_coverage": [
+    "Real ProjectLesson source copied into disposable protected-host fixtures: legacy160 partial and explicit200 complete captures have distinct actual context IDs",
+    "Real project host factory partial source retains visible declaration provenance and no local call/type graph",
+    "Nested complete focus beyond initial five concepts, consistent same-file ranges, duplicate actual-span rejection and malformed partial import exclusion",
+    "Session/Host/Origin/private/symlink/stale/foreign-project guards, cancellation, one in-flight request and timeout recovery",
+    "Component/helpers: five-capture cap, explicit replacement, consistent hashes, entry order, bounded local search, inert source labels and HTML escaping"
+  ],
+  "not_executed": [
+    "Live teaching provider",
+    "Human learning improvement study",
+    "VS Code/editor/Graphify runtime rerun",
+    "Whole-repository model upload or code execution by reading"
+  ],
+  "limits": [
+    "View-local captures require export before leaving/reload",
+    "Sequential rechecks are not an atomic project snapshot or continued freshness guarantee",
+    "Static imports/declarations are not runtime, callback, HTTP, requirement or mastery proof",
+    "Incomplete source recovery suppresses all local call/type edges"
+  ],
+  "source_fingerprints": {
+    "prototype/src/knowledge-types.ts": "200804c9c946efefa2a9247c4694f3ed90569c1dccc45bd7be24586cb4ee878c",
+    "prototype/src/source-knowledge.ts": "b2cde252dc628efe0d7030b4821a68dfb3090f090f22b2ef3e73a51afff4923e",
+    "prototype/knowledge-service.mjs": "badad13644b37744606c85723b93a02ef29ba2fa12bf4001442e7fea9d10d97b",
+    "prototype/src/knowledge-api.ts": "6936f70e3996ab79ab88c9aa99bef27ea0ebd1cf7aad4091eeaeb6a7bee93892",
+    "prototype/knowledge-api.test.ts": "d52e224c21d1fb5cf77c546dd8416cf68b749c0af02096420e10c61d40521e92",
+    "prototype/src/source-concepts.ts": "c28b0bc5cc8183a618dba98bc0c16a0488dd68d2323062d02dad8c9d7b98fe3c",
+    "prototype/src/walkthrough-types.ts": "c693d09eafb4620663a22493c87f31c22da11a945f647f3328ccb361a9489693",
+    "prototype/src/SourceWalkthrough.tsx": "f9a365287b00e71b1c616d6084f199f77f13661c1efe94cb184850d93a5ce974",
+    "prototype/source-concepts.test.ts": "bdff5b263ec399dcd6321d88fe41ec9fb3b1dfc4818ed31bd3ce5e33aa163bbd",
+    "prototype/walkthrough-service.mjs": "e5070fc4812679aaf523814b07623383080443c38ccc86b76feb46c73ec0ac77",
+    "prototype/walkthrough-service.test.mjs": "5a31b5409eaa0fc0724901a1e4078fba199276d9d3772c79b4a46bc251a48922",
+    "prototype/knowledge-service.test.mjs": "65aa6878d133c75b978580fb26af6ca78a6e5f4e7c31d1560f67037dc641dd77",
+    "prototype/source-knowledge.test.ts": "ec5bf5a6f6a6365692ca2e0624ad02dedc004ff08655c451ef9b6e2b4a6f85ff",
+    "prototype/src/SourceReadingBundle.tsx": "298e5a66320c76d8c127518e0563a6f86cd4c04c25a4aecbd18ed6bc5c9b33c3",
+    "prototype/src/reading-bundle.ts": "c8b64ea65e6ee523a86e8379a5358180f9c37447890acba4d19bd6b2d071b8aa",
+    "prototype/reading-bundle.test.ts": "30e0ebe00f9da2ad62e13f3c0fcf59ab491f6fbf0b8faf42cc0aad81b4b47b20"
+  },
+  "notice_fingerprint": {
+    "path": "docs/third-party/pocketflow-LICENSE.txt",
+    "sha256": "1a4929dfc1f558858148bd90814f0ddf13ca1811c3f389ccc271216d7bc4eb50"
+  },
+  "commit": "Local source milestone: feat: add bounded real-repository source reading; exact identity is in Git history and owner handoff.",
+  "pushed": false,
+  "human_review": "pending",
+  "actualRepositoryProtectedHost": {
+    "timestampIST": "2026-10-14 23:32:02",
+    "method": "Actual approved repository through temporary authenticated protected local host; isolated recorder directory",
+    "sourceExecuted": false,
+    "providerUsed": false,
+    "scriptJobsStarted": false,
+    "learnerStateChanged": false,
+    "responseStatus": 200,
+    "analysisVersion": 2,
+    "knowledgeId": "43528822918022e5ae13379e35b7befe03360ae6fd5b223320bd614a16b2d5ab",
+    "selectedContexts": [
+      {
+        "path": "prototype/src/ProjectLesson.tsx",
+        "fileId": "1a6ed76249189a7f1c615a0c6b3bdbd2f843f7805783e648c499ef4f43dbde5c",
+        "sourceHash": "8dacf84f8e9201ece3d75ca934074d8bcdb8049f2cf5c4265642e348ac5136a3",
+        "contextId": "75ac462d053a17bdc927a24178cbcbfc00ec69b7bfbfc6183c0b7932791d07e7",
+        "startLine": 1,
+        "endLine": 190,
+        "status": "ready",
+        "catalog": [
+          {
+            "name": "ProjectLesson",
+            "startLine": 13,
+            "endLine": 190,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "current",
+            "startLine": 33,
+            "endLine": 33,
+            "complete": true,
+            "scope": "ProjectLesson"
+          },
+          {
+            "name": "poll",
+            "startLine": 58,
+            "endLine": 86,
+            "complete": true,
+            "scope": "ProjectLesson > (anonymous function)"
+          },
+          {
+            "name": "save",
+            "startLine": 90,
+            "endLine": 90,
+            "complete": true,
+            "scope": "ProjectLesson"
+          },
+          {
+            "name": "retryReceipt",
+            "startLine": 91,
+            "endLine": 94,
+            "complete": true,
+            "scope": "ProjectLesson"
+          },
+          {
+            "name": "observe",
+            "startLine": 95,
+            "endLine": 105,
+            "complete": true,
+            "scope": "ProjectLesson"
+          },
+          {
+            "name": "refresh",
+            "startLine": 106,
+            "endLine": 118,
+            "complete": true,
+            "scope": "ProjectLesson"
+          },
+          {
+            "name": "apply",
+            "startLine": 113,
+            "endLine": 113,
+            "complete": true,
+            "scope": "ProjectLesson > refresh"
+          },
+          {
+            "name": "execute",
+            "startLine": 120,
+            "endLine": 137,
+            "complete": true,
+            "scope": "ProjectLesson"
+          },
+          {
+            "name": "valid",
+            "startLine": 139,
+            "endLine": 139,
+            "complete": true,
+            "scope": "ProjectLesson"
+          },
+          {
+            "name": "field",
+            "startLine": 140,
+            "endLine": 140,
+            "complete": true,
+            "scope": "ProjectLesson"
+          },
+          {
+            "name": "recordRun",
+            "startLine": 143,
+            "endLine": 157,
+            "complete": true,
+            "scope": "ProjectLesson"
+          },
+          {
+            "name": "advance",
+            "startLine": 158,
+            "endLine": 169,
+            "complete": true,
+            "scope": "ProjectLesson"
+          }
+        ],
+        "unresolvedModuleReferences": 8
+      },
+      {
+        "path": "prototype/src/Workspace.tsx",
+        "fileId": "4b56f1adcc261e710d2c9a4fb7bb142ac145d71c403ada2b80325a89868d88ec",
+        "sourceHash": "6a19e46e9a1de2c4beac513b757c8e41dda8276722c44d37bb0d0bc4093a890b",
+        "contextId": "e2cfc40458a2ef3a0a2f4ad3c915cdeea656c3e96b27d67c81de9e18a88a0a28",
+        "startLine": 1,
+        "endLine": 146,
+        "status": "ready",
+        "catalog": [
+          {
+            "name": "message",
+            "startLine": 16,
+            "endLine": 16,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "Destination",
+            "startLine": 17,
+            "endLine": 17,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "DraftStatus",
+            "startLine": 18,
+            "endLine": 18,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "WorkspaceApp",
+            "startLine": 20,
+            "endLine": 50,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "connect",
+            "startLine": 26,
+            "endLine": 32,
+            "complete": true,
+            "scope": "WorkspaceApp"
+          },
+          {
+            "name": "poll",
+            "startLine": 38,
+            "endLine": 43,
+            "complete": true,
+            "scope": "WorkspaceApp > (anonymous function)"
+          },
+          {
+            "name": "load",
+            "startLine": 51,
+            "endLine": 54,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "ConnectedWorkspace",
+            "startLine": 55,
+            "endLine": 141,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "ask",
+            "startLine": 68,
+            "endLine": 68,
+            "complete": true,
+            "scope": "ConnectedWorkspace"
+          },
+          {
+            "name": "leave",
+            "startLine": 69,
+            "endLine": 72,
+            "complete": true,
+            "scope": "ConnectedWorkspace"
+          },
+          {
+            "name": "navigate",
+            "startLine": 73,
+            "endLine": 76,
+            "complete": true,
+            "scope": "ConnectedWorkspace"
+          },
+          {
+            "name": "act",
+            "startLine": 77,
+            "endLine": 84,
+            "complete": true,
+            "scope": "ConnectedWorkspace"
+          },
+          {
+            "name": "begin",
+            "startLine": 85,
+            "endLine": 89,
+            "complete": true,
+            "scope": "ConnectedWorkspace"
+          },
+          {
+            "name": "run",
+            "startLine": 86,
+            "endLine": 86,
+            "complete": true,
+            "scope": "ConnectedWorkspace > begin"
+          },
+          {
+            "name": "listener",
+            "startLine": 91,
+            "endLine": 91,
+            "complete": true,
+            "scope": "ConnectedWorkspace > (anonymous function)"
+          },
+          {
+            "name": "listener",
+            "startLine": 95,
+            "endLine": 95,
+            "complete": true,
+            "scope": "ConnectedWorkspace > (anonymous function)"
+          },
+          {
+            "name": "backup",
+            "startLine": 101,
+            "endLine": 101,
+            "complete": true,
+            "scope": "ConnectedWorkspace"
+          },
+          {
+            "name": "retry",
+            "startLine": 102,
+            "endLine": 105,
+            "complete": true,
+            "scope": "ConnectedWorkspace"
+          },
+          {
+            "name": "reset",
+            "startLine": 106,
+            "endLine": 112,
+            "complete": true,
+            "scope": "ConnectedWorkspace"
+          },
+          {
+            "name": "exportRecord",
+            "startLine": 113,
+            "endLine": 113,
+            "complete": true,
+            "scope": "ConnectedWorkspace"
+          },
+          {
+            "name": "records",
+            "startLine": 114,
+            "endLine": 114,
+            "complete": true,
+            "scope": "ConnectedWorkspace"
+          },
+          {
+            "name": "ProjectRecords",
+            "startLine": 142,
+            "endLine": 146,
+            "complete": true,
+            "scope": "top level"
+          }
+        ],
+        "unresolvedModuleReferences": 10
+      },
+      {
+        "path": "prototype/src/project-api.ts",
+        "fileId": "46f6ec8ae0b29de1f750e76da6a7725d35f997a2d84d324515628642fbe9f601",
+        "sourceHash": "da549f9d85080c9e23f0704815537508e266ab4e46f2d160d219646915695fa7",
+        "contextId": "b6f01bd00633b343e1e3fa0c8ebbbe557ee2374eef7e56ff8db76854250fdded",
+        "startLine": 1,
+        "endLine": 27,
+        "status": "ready",
+        "catalog": [
+          {
+            "name": "ProjectApiError",
+            "startLine": 4,
+            "endLine": 4,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "projectRequest",
+            "startLine": 5,
+            "endLine": 11,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "connectProject",
+            "startLine": 12,
+            "endLine": 12,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "getProject",
+            "startLine": 13,
+            "endLine": 13,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "getFiles",
+            "startLine": 14,
+            "endLine": 14,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "getSource",
+            "startLine": 15,
+            "endLine": 15,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "getCapturedSource",
+            "startLine": 16,
+            "endLine": 16,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "getScripts",
+            "startLine": 17,
+            "endLine": 17,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "runScript",
+            "startLine": 18,
+            "endLine": 18,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "getRun",
+            "startLine": 19,
+            "endLine": 19,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "getChanges",
+            "startLine": 21,
+            "endLine": 21,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "getVersions",
+            "startLine": 22,
+            "endLine": 22,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "getSourceState",
+            "startLine": 24,
+            "endLine": 24,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "sourceFreshness",
+            "startLine": 25,
+            "endLine": 27,
+            "complete": true,
+            "scope": "top level"
+          }
+        ],
+        "unresolvedModuleReferences": 2
+      },
+      {
+        "path": "prototype/src/project-learning.ts",
+        "fileId": "bd6d94bf1d35c3a448009215e63e0d27c472ff98e7f6a3524da78b339bc1b9cf",
+        "sourceHash": "60c49f6a0d4187d7ce95895a9e4421b586f8a7897440c45296c424d6b3833019",
+        "contextId": "6ca4766e28cf8cc1ba091386d5824d7a03403d5696f6913ec0f3acaa72393d9b",
+        "startLine": 1,
+        "endLine": 200,
+        "status": "partial",
+        "catalog": [
+          {
+            "name": "TeachingExplanation",
+            "startLine": 4,
+            "endLine": 4,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "PendingCheck",
+            "startLine": 22,
+            "endLine": 22,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "fail",
+            "startLine": 33,
+            "endLine": 33,
+            "complete": true,
+            "scope": "(anonymous function)"
+          },
+          {
+            "name": "ProjectAttempt",
+            "startLine": 58,
+            "endLine": 58,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "ProjectState",
+            "startLine": 63,
+            "endLine": 63,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "ProjectAction",
+            "startLine": 64,
+            "endLine": 79,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "PROJECT_STORAGE_KEY",
+            "startLine": 80,
+            "endLine": 80,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "normalized",
+            "startLine": 81,
+            "endLine": 81,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "now",
+            "startLine": 82,
+            "endLine": 82,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "sameSelection",
+            "startLine": 83,
+            "endLine": 83,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "validRun",
+            "startLine": 84,
+            "endLine": 86,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "validReceipt",
+            "startLine": 87,
+            "endLine": 92,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "matchesCheck",
+            "startLine": 93,
+            "endLine": 93,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "sameReceiptIdentity",
+            "startLine": 94,
+            "endLine": 94,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "sameReceiptEvidence",
+            "startLine": 95,
+            "endLine": 95,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "validTeachingCitations",
+            "startLine": 96,
+            "endLine": 96,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "require",
+            "startLine": 97,
+            "endLine": 97,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "archive",
+            "startLine": 98,
+            "endLine": 102,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "newProjectState",
+            "startLine": 103,
+            "endLine": 103,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "projectTransition",
+            "startLine": 104,
+            "endLine": 193,
+            "complete": true,
+            "scope": "top level"
+          },
+          {
+            "name": "update",
+            "startLine": 115,
+            "endLine": 115,
+            "complete": true,
+            "scope": "projectTransition"
+          },
+          {
+            "name": "restoreProjectState",
+            "startLine": 194,
+            "endLine": 200,
+            "complete": false,
+            "scope": "top level"
+          },
+          {
+            "name": "fresh",
+            "startLine": 195,
+            "endLine": 195,
+            "complete": true,
+            "scope": "restoreProjectState"
+          }
+        ],
+        "unresolvedModuleReferences": 2
+      },
+      {
+        "path": "prototype/src/project-learning.ts",
+        "fileId": "bd6d94bf1d35c3a448009215e63e0d27c472ff98e7f6a3524da78b339bc1b9cf",
+        "sourceHash": "60c49f6a0d4187d7ce95895a9e4421b586f8a7897440c45296c424d6b3833019",
+        "contextId": "1f074562e0cc00032f4dacab65c90a23ba73b9ebeecc165ca72cc50a3aa4abce",
+        "startLine": 201,
+        "endLine": 248,
+        "status": "partial",
+        "catalog": [
+          {
+            "name": "ProjectStorageFailure",
+            "startLine": 204,
+            "endLine": 204,
+            "complete": true,
+            "scope": "captured top level; outer scope unknown"
+          },
+          {
+            "name": "RecordStorage",
+            "startLine": 205,
+            "endLine": 205,
+            "complete": true,
+            "scope": "captured top level; outer scope unknown"
+          },
+          {
+            "name": "resetProjectState",
+            "startLine": 206,
+            "endLine": 210,
+            "complete": true,
+            "scope": "captured top level; outer scope unknown"
+          },
+          {
+            "name": "persistProjectState",
+            "startLine": 211,
+            "endLine": 228,
+            "complete": true,
+            "scope": "captured top level; outer scope unknown"
+          },
+          {
+            "name": "recordProjectAction",
+            "startLine": 229,
+            "endLine": 233,
+            "complete": true,
+            "scope": "captured top level; outer scope unknown"
+          },
+          {
+            "name": "fenced",
+            "startLine": 234,
+            "endLine": 234,
+            "complete": true,
+            "scope": "captured top level; outer scope unknown"
+          },
+          {
+            "name": "exportProjectRecord",
+            "startLine": 235,
+            "endLine": 248,
+            "complete": true,
+            "scope": "captured top level; outer scope unknown"
+          }
+        ],
+        "unresolvedModuleReferences": 0
+      }
+    ],
+    "staticModuleLinks": [
+      {
+        "from": "75ac462d053a17bdc927a24178cbcbfc00ec69b7bfbfc6183c0b7932791d07e7",
+        "to": "6ca4766e28cf8cc1ba091386d5824d7a03403d5696f6913ec0f3acaa72393d9b",
+        "kind": "imports",
+        "line": 2
+      },
+      {
+        "from": "75ac462d053a17bdc927a24178cbcbfc00ec69b7bfbfc6183c0b7932791d07e7",
+        "to": "b6f01bd00633b343e1e3fa0c8ebbbe557ee2374eef7e56ff8db76854250fdded",
+        "kind": "imports",
+        "line": 3
+      },
+      {
+        "from": "75ac462d053a17bdc927a24178cbcbfc00ec69b7bfbfc6183c0b7932791d07e7",
+        "to": "e2cfc40458a2ef3a0a2f4ad3c915cdeea656c3e96b27d67c81de9e18a88a0a28",
+        "kind": "imports",
+        "line": 5
+      },
+      {
+        "from": "e2cfc40458a2ef3a0a2f4ad3c915cdeea656c3e96b27d67c81de9e18a88a0a28",
+        "to": "b6f01bd00633b343e1e3fa0c8ebbbe557ee2374eef7e56ff8db76854250fdded",
+        "kind": "imports",
+        "line": 3
+      },
+      {
+        "from": "e2cfc40458a2ef3a0a2f4ad3c915cdeea656c3e96b27d67c81de9e18a88a0a28",
+        "to": "6ca4766e28cf8cc1ba091386d5824d7a03403d5696f6913ec0f3acaa72393d9b",
+        "kind": "imports",
+        "line": 4
+      },
+      {
+        "from": "e2cfc40458a2ef3a0a2f4ad3c915cdeea656c3e96b27d67c81de9e18a88a0a28",
+        "to": "75ac462d053a17bdc927a24178cbcbfc00ec69b7bfbfc6183c0b7932791d07e7",
+        "kind": "imports",
+        "line": 11
+      }
+    ],
+    "order": [
+      "75ac462d053a17bdc927a24178cbcbfc00ec69b7bfbfc6183c0b7932791d07e7",
+      "6ca4766e28cf8cc1ba091386d5824d7a03403d5696f6913ec0f3acaa72393d9b",
+      "b6f01bd00633b343e1e3fa0c8ebbbe557ee2374eef7e56ff8db76854250fdded",
+      "e2cfc40458a2ef3a0a2f4ad3c915cdeea656c3e96b27d67c81de9e18a88a0a28",
+      "1f074562e0cc00032f4dacab65c90a23ba73b9ebeecc165ca72cc50a3aa4abce"
+    ],
+    "limits": [
+      "Selected saved excerpts only: up to five captured ranges, 200 lines and 40,000 characters per range, 100 visible declarations and five graph concepts per excerpt. Incomplete declarations, omitted entries and truncated captures remain visible.",
+      "Relative import and re-export links are file relationships, not cross-file function calls or runtime traces. External, missing, ambiguous, dynamic, require, namespace/member dispatch and configured-alias relationships are outside coverage.",
+      "Sequential source captures and rechecks are not an atomic whole-project snapshot or a continued freshness guarantee. Unsaved buffers, unselected source and runtime/environment state are outside this evidence.",
+      "The reading order is a static proposal. It does not confirm requirements, execute checks, advance learning stages or establish mastery. No source is sent to a provider by this operation."
+    ],
+    "actualAppComprehension": "Separate Product Quality browser gate pending",
+    "cleanup": "temporary host and recorder closed/deleted in finally"
+  },
+  "verifiedAtIST": "2026-10-14T23:52:27+05:30",
+  "independentReview": {
+    "status": "two actionable defects fixed and freshly re-reviewed with no remaining actionable issue",
+    "corrections": [
+      "Exclude nested anonymous callback bodies from parent-call attribution",
+      "Inspect retained search match text by default; fresh saved-line recapture explicitly labelled"
+    ],
+    "humanReview": false
+  }
+}

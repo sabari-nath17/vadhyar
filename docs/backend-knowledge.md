@@ -1,5 +1,7 @@
 # Selected-source knowledge backend
 
+This page records the original version-1 backend milestone. The current P07 version-2 range, catalogue, focus and reading-bundle contracts are documented in [bounded source reading](source-reading.md), with a separate [execution receipt](source-reading-evidence.json). Earlier counts and single-file-only UI limits below describe that milestone rather than the current interface.
+
 14 October 2026, post-event development. Authorized: build Vadhyar's backend from the reviewed codebase-knowledge work, in parallel with the existing feature, UI and logic owners. This adds a real local API to the existing companion; source recording, teaching-provider credentials and learning records retain their current owners.
 
 ## Implemented scope

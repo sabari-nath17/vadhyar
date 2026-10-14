@@ -6,6 +6,6 @@ export async function getSelectedKnowledge(projectId: string, selection: Knowled
  const id = identitySchema.parse(projectId), pins = knowledgeSelectionSchema.parse(selection);
  const value = await projectRequest(`/api/projects/${id}/knowledge?${new URLSearchParams({ selection: JSON.stringify(pins) })}`, codebaseKnowledgeSchema, undefined, signal);
  if (signal?.aborted) throw signal.reason ?? new Error('The knowledge request was cancelled.');
- if (value.projectId !== id || value.files.length !== pins.length || value.files.some((file, index) => file.fileId !== pins[index].fileId || file.sourceHash !== pins[index].sourceHash || file.startLine !== pins[index].startLine)) throw new Error('The knowledge response does not match this selected source. Capture it again.');
+ if (value.projectId !== id || value.files.length !== pins.length || value.files.some((file, index) => file.fileId !== pins[index].fileId || file.sourceHash !== pins[index].sourceHash || file.startLine !== pins[index].startLine || file.endLine - file.startLine + 1 > (pins[index].lines ?? 160) || pins[index].focus !== undefined && file.order[0] !== pins[index].focus)) throw new Error('The knowledge response does not match this selected source. Capture it again.');
  return value;
 }

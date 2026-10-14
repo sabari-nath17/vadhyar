@@ -12,11 +12,17 @@ test('real local service enforces sessions, source identities, root boundaries a
  const directory = await mkdtemp(join(tmpdir(), 'vadhyar-reuse-integration-')), root = join(directory, 'project');
  await mkdir(root); const code = 'type User = {id:string};\nfunction owns(u:User) {return u.id === "owner";}\nexport function approve(u:User) {return owns(u);}';
  await writeFile(join(root, 'rule.ts'), code); await writeFile(join(root, 'credentials.ts'), 'export function privateFile() {}');
+ const nested = Array.from({length:230}, () => '// saved source'); nested[0] = 'export function container() {'; nested[229] = '}';
+ for (let index = 0; index < 7; index++) nested[index + 10] = `const helper${index} = () => ${index};`;
+ nested[170] = 'const late = () => helper0();'; await writeFile(join(root, 'nested.ts'), nested.join('\n'));
  await writeFile(join(directory, 'outside.ts'), 'export function outside() {}'); await symlink(join(directory, 'outside.ts'), join(root,'escape.ts'));
- let service, cookie = '';
+ let service, cookie = '', captureFault = '';
  const server = createServer(async (req, res) => { if (!await service.handle(req, res)) { res.writeHead(404); res.end('{}'); } });
  await new Promise(resolve => server.listen(0, '127.0.0.1', resolve)); const origin = `http://127.0.0.1:${server.address().port}`;
- const handler = createWalkthroughHandler({ readSource: (...args) => service.readSource(...args) });
+ const handler = createWalkthroughHandler({ readSource: async (...args) => {
+  const source = await service.readSource(...args);
+  return captureFault === 'start' ? { ...source, startLine: source.startLine + 1, endLine: source.endLine + 1 } : captureFault === 'budget' ? { ...source, endLine: source.startLine + args[2] } : source;
+ } });
  service = await createProjectService({ root, origin, storageRoot: join(directory,'records'), handleExtraApi: handler }); await service.ready;
  const call = (path, { method = 'GET', authenticated = true, headers = {} } = {}) => new Promise((resolve, reject) => {
   const req = request(origin + path, { method, headers: { Origin: origin, 'Sec-Fetch-Site': 'same-origin', ...(authenticated ? { Cookie: cookie } : {}), 'Content-Type':'application/json', ...headers } }, res => {
@@ -27,8 +33,8 @@ test('real local service enforces sessions, source identities, root boundaries a
   const login = await call('/api/session', {method:'POST',authenticated:false}); cookie = login.headers['set-cookie'][0].split(';')[0];
   const project = (await call('/api/projects/current')).data;
   const files = (await call(`/api/projects/${project.id}/files`)).data.files;
-  assert.deepEqual(files.map(file => file.path),['rule.ts']);
-  const file = files[0], source = (await call(`/api/projects/${project.id}/source?fileId=${file.id}`)).data;
+  assert.deepEqual(files.map(file => file.path),['nested.ts','rule.ts']);
+  const file = files.find(file => file.path === 'rule.ts'), source = (await call(`/api/projects/${project.id}/source?fileId=${file.id}`)).data;
   const route = `/api/projects/${project.id}/walkthrough?fileId=${file.id}&sourceHash=${source.sourceHash}&start=1`;
   const result = await call(route); assert.equal(result.code,200); walkthroughSchema.parse(result.data);
   assert.equal(result.data.concepts.length,3); assert.equal(result.data.relationships.length,3); assert.equal(result.data.sourceHash,source.sourceHash);
@@ -40,6 +46,20 @@ test('real local service enforces sessions, source identities, root boundaries a
   assert.equal((await call(route+'&command=run')).code,400);
   assert.equal((await call(route.replace(project.id,'f'.repeat(64)))).code,404);
   assert.equal((await call(route.replace(file.id,'f'.repeat(64)))).code,422);
+  captureFault = 'start'; assert.equal((await call(route)).code,422);
+  captureFault = 'budget'; assert.equal((await call(route)).code,422);
+  captureFault = ''; assert.equal((await call(route)).code,200);
+  const nestedFile = files.find(file => file.path === 'nested.ts'), nestedSource = (await call(`/api/projects/${project.id}/source?fileId=${nestedFile.id}&lines=200`)).data;
+  const nestedRoute = `/api/projects/${project.id}/walkthrough?fileId=${nestedFile.id}&sourceHash=${nestedSource.sourceHash}&start=1`;
+  const legacy = await call(nestedRoute); assert.equal(legacy.code,200); assert.equal(legacy.data.endLine,160); assert.equal(legacy.data.status,'partial'); assert.equal(legacy.data.catalog.some(item => item.name === 'late'),false);
+  const expanded = await call(nestedRoute+'&lines=200'); assert.equal(expanded.code,200); walkthroughSchema.parse(expanded.data); assert.equal(expanded.data.endLine,200); assert.deepEqual(expanded.data.relationships,[]);
+  assert.equal(expanded.data.catalog[0].complete,false); assert.equal(expanded.data.catalog[0].endLine,200);
+  const late = expanded.data.catalog.find(item => item.name === 'late'); assert.equal(late.complete,true); assert.equal(late.startLine,171); assert.equal(expanded.data.order.includes(late.id),false);
+  const focused = await call(nestedRoute+`&lines=200&focus=${late.id}`); assert.equal(focused.code,200); assert.equal(focused.data.order[0],late.id); assert.equal(focused.data.concepts.find(item => item.id === late.id).name,'late');
+  for (const query of ['&lines=0','&lines=201','&lines=1.5','&lines=0200','&lines=200&lines=160','&focus=run','&focus=concept-1&focus=concept-2']) assert.equal((await call(nestedRoute+query)).code,400);
+  assert.equal((await call(nestedRoute+'&lines=200&focus=concept-999')).code,422);
+  assert.equal((await call(nestedRoute+`&lines=200&focus=${expanded.data.catalog[0].id}`)).code,422);
+  assert.equal((await call(nestedRoute+`&focus=${late.id}`)).code,422);
   await writeFile(join(root,'rule.ts'),code+'\n// revised');
   assert.equal((await call(route)).code,409);
   const refreshed = (await call(`/api/projects/${project.id}/source?fileId=${file.id}`)).data;

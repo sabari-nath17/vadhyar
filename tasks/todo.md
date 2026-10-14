@@ -707,3 +707,14 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - Evidence: implementation.md C01–C25 matrix; recovery-evidence.json includes synthetic returned receipt/teacher export, protected newer question, source-refresh/leave guards and check discovery loading/503/empty/manual snapshots with fingerprints. Execution discovery marker stayed6 before/after. Browser conflicts did not advance saved model/activity points; cap/write behavior additionally checked by regressions.
 - Checks: Exact staged-tree export passed typecheck, lint, 99 unit tests, build and 70 service tests; no failures/skips. Log: /tmp/vadhyar-ui-20261014/checks-exact-ui-index.log.. The earlier98unit/66service pass preceded the two recovery fixes; final checkpoint validation is recorded separately.
 - Next: source owner checkpoints its frozen parser/knowledge/bundle against this expanded-source baseline; UI owner mounts SourceReadingBundle and declaration navigation/scoped styles, then combined/browser actual-feature acceptance. Feature owns primary-host refresh and README/plan closeout. Preserve unrelated working changes; do not push.
+
+
+## 2026-10-14 23:52:27 IST — P07 source-reading lane ready
+
+- [x] Implement knowledgev2 captured-context IDs, consistent same-file ranges, optional exact1..200lines/focus and legacy160 defaults, source rechecks/cancellation/deadline.
+- [x] Complete/nested declaration catalogue, manual focus beyond five concepts, partial-capture labels, syntax-valid static module links and no local edges in partial frames.
+- [x] View-local explicit reading set, retained-text search/inspection, explicit recapture/replacement, reading order/module anchors/prompts/export; all16owned source fingerprints recorded.
+- [x]57focused tests,14protected knowledge HTTP tests, protected walkthrough integration/typecheck/scoped lint; independent findings corrected/re-reviewed. Actual repository protected-host probe returns five frames, six static module links, complete observe/act/source/record/storage anchors; temporary host/recorder cleaned.
+- [x] Exact owned source checkpoint/check gate based on feature894a5ab and UI7ff1036: corrected exported index verified at2026-10-14T23:52:27+05:30,126unit/74service plus typecheck/lint/build. Scoped local milestone: feat: add bounded real-repository source reading; exact SHA in Git history/handoff.
+- [ ] UI mount addon and Product Quality actual Record observation browser acceptance remain separately owned. Index remains owner-serialized.
+- Evidence: [contract](../docs/source-reading.md), [reuse mapping](../docs/source-reading-provenance.json), [execution receipt](../docs/source-reading-evidence.json). No push. Next broader curriculum/provider/mastery work remains outside this slice.

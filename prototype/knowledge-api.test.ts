@@ -43,4 +43,30 @@ describe('selected-knowledge browser API boundary', () => {
   await expect(getSelectedKnowledge(source.projectId, [...selection, ...selection])).rejects.toThrow(); expect(fetch).not.toHaveBeenCalled();
   await expect(getSelectedKnowledge(source.projectId, selection)).rejects.toMatchObject({ status: 409, code: 'source_changed' }); expect(fetch).toHaveBeenCalledTimes(1);
  });
+ it('preserves explicit ranges and declaration focus in the request', async () => {
+  const text = Array.from({ length: 6 }, (_, index) => `export function action${index}() { return ${index}; }`).join('\n');
+  const captured = { ...source, text, endLine: 6, fileBytes: text.length, sourceHash: createHash('sha256').update(text).digest('hex') };
+  const pins = [{ fileId: captured.fileId, sourceHash: captured.sourceHash, startLine: 1, lines: 200, focus: 'concept-5' }];
+  const knowledge = createCodebaseKnowledge([captured], ['concept-5']), fetch = vi.fn(async () => ({ ok: true, json: async () => knowledge }));
+  vi.stubGlobal('fetch', fetch);
+  expect((await getSelectedKnowledge(source.projectId, pins)).files[0].order[0]).toBe('concept-5');
+  const [url] = fetch.mock.calls[0] as unknown as [string, RequestInit];
+  expect(JSON.parse(new URL(url, 'http://127.0.0.1').searchParams.get('selection')!)).toEqual(pins);
+  vi.stubGlobal('fetch', vi.fn(async () => ({ ok: true, json: async () => createCodebaseKnowledge([captured]) })));
+  await expect(getSelectedKnowledge(source.projectId, pins)).rejects.toThrow(/does not match/);
+ });
+ it('allows consistent same-file ranges and rejects mixed revisions or invalid bounds before fetch', async () => {
+  const later = { ...source, startLine: 4, endLine: 4, truncated: true }, knowledge = createCodebaseKnowledge([source, later]);
+  const pins = [...selection, { ...selection[0], startLine: 4, lines: 1 }], fetch = vi.fn(async () => ({ ok: true, json: async () => knowledge }));
+  vi.stubGlobal('fetch', fetch);
+  expect((await getSelectedKnowledge(source.projectId, pins)).files.map(file => file.contextId)).toHaveLength(2);
+  fetch.mockClear();
+  for (const invalid of [[...selection, { ...pins[1], sourceHash: 'f'.repeat(64) }], [{ ...selection[0], lines: 201 }], [{ ...selection[0], focus: 'not-a-declaration' }], [...selection, { ...selection[0], lines: 160 }]]) await expect(getSelectedKnowledge(source.projectId, invalid)).rejects.toThrow();
+  expect(fetch).not.toHaveBeenCalled();
+ });
+ it('rejects a schema-valid response that exceeds the selected capture budget', async () => {
+  const captured = { ...source, endLine: 2, text: `${text}\n`, fileBytes: text.length + 1 }, knowledge = createCodebaseKnowledge([captured]);
+  vi.stubGlobal('fetch', vi.fn(async () => ({ ok: true, json: async () => knowledge })));
+  await expect(getSelectedKnowledge(source.projectId, [{ ...selection[0], lines: 1 }])).rejects.toThrow(/does not match/);
+ });
 });

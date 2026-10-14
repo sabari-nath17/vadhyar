@@ -1,0 +1,45 @@
+{
+  "slice": "P07 bounded source reading",
+  "authorization": "User authorized codebase-knowledge backend implementation and parallel work; actual-repository reading gap accepted by feature, UI and Product Quality owners.",
+  "human_review": "pending",
+  "historical_research_unchanged": true,
+  "repositories_cloned_this_slice": 0,
+  "upstream_files_fetched_this_slice": 0,
+  "dependencies_added": [],
+  "extends": ["docs/browser-reuse-provenance.json", "docs/backend-knowledge-provenance.json"],
+  "upstream": {
+    "repository": "The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge",
+    "commit": "05b24cbbb0fe409c5e23c9791f0342f07524ffdc",
+    "license": "MIT",
+    "retained_notice": "docs/third-party/pocketflow-LICENSE.txt",
+    "notice_sha256": "1a4929dfc1f558858148bd90814f0ddf13ca1811c3f389ccc271216d7bc4eb50",
+    "mappings": [
+      {
+        "upstream_path": "nodes.py",
+        "blob_sha": "0e3fa587b6b6710e11e9bb84c917640a7ffd1a4b",
+        "upstream_url": "https://github.com/The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge/blob/05b24cbbb0fe409c5e23c9791f0342f07524ffdc/nodes.py",
+        "local_paths": ["prototype/src/source-concepts.ts", "prototype/src/source-knowledge.ts", "prototype/src/knowledge-types.ts", "prototype/src/walkthrough-types.ts"],
+        "adaptation": "Extend the existing identify -> relationships -> validated reading order port to actual captured contexts and complete nested declarations; retain bounded deterministic compiler extraction rather than generated abstractions or chapters."
+      },
+      {
+        "upstream_path": "flow.py",
+        "blob_sha": "09caa12530c3468e8c2ff7dafaf3ba17396695bc",
+        "upstream_url": "https://github.com/The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge/blob/05b24cbbb0fe409c5e23c9791f0342f07524ffdc/flow.py",
+        "local_paths": ["prototype/knowledge-service.mjs", "prototype/src/source-knowledge.ts", "prototype/src/knowledge-api.ts"],
+        "adaptation": "Extend the existing protected capture/local analysis/recheck pipeline with optional bounded lengths and complete-declaration focus; keep one in-flight request and unchanged authorization, privacy and timeout boundaries."
+      }
+    ]
+  },
+  "original_vadhyar_additions": ["prototype/src/reading-bundle.ts", "prototype/src/SourceReadingBundle.tsx"],
+  "continued_browser_reuse": {
+    "Learn_Claude_Code": "Existing SourceViewer and StepControls adaptations reused for captured declaration inspection and walkthrough navigation; prior pinned mapping/notices retained.",
+    "React_Flow": "Existing published @xyflow/react 12.12.0 library remains the inert focused local relationship map; no library implementation copied."
+  },
+  "modifications": [
+    "Actual-range context IDs, same-file distinct captures and strict consistent-revision validation",
+    "Up to 100 visible declaration anchors; five focused graph concepts; nested-body call attribution corrected",
+    "Individually syntax-valid declaration/import slices in partial captures with all local call/type inference suppressed",
+    "View-local explicit add/replace/remove/entry/export, selected-text search and static source-link inspection"
+  ],
+  "not_adopted": ["Upstream Python framework/provider/repository ingestion", "Generated chapters or automatic curriculum", "Whole-repository source upload", "Runtime/callback/HTTP tracing", "Automatic grading or mastery claims"]
+}

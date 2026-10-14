@@ -24,7 +24,7 @@ export function createKnowledgeHandler({ readSource }) {
    if (request.method !== 'GET') fail(405, 'invalid_method', 'Use GET to inspect selected-source knowledge.');
    if (request.headers['transfer-encoding'] || Number(request.headers['content-length'] ?? 0) !== 0) { request.resume(); fail(400, 'invalid_body', 'Source-knowledge GET requests do not accept a body.'); }
    const raw = url.searchParams.get('selection');
-   if (!raw || raw.length > 4096 || [...url.searchParams.keys()].length !== 1 || url.searchParams.getAll('selection').length !== 1) fail(400, 'invalid_selection', 'Select one to five captured files with their current identities.');
+   if (!raw || raw.length > 4096 || [...url.searchParams.keys()].length !== 1 || url.searchParams.getAll('selection').length !== 1) fail(400, 'invalid_selection', 'Select one to five captured ranges with their current identities.');
    let input; try { input = JSON.parse(raw); } catch { fail(400, 'invalid_selection', 'The selected-source request is not valid JSON.'); }
    const parsed = knowledgeSelectionSchema.safeParse(input);
    if (!parsed.success) fail(400, 'invalid_selection', 'Select unique host-issued file identities and valid source ranges.');
@@ -36,16 +36,17 @@ export function createKnowledgeHandler({ readSource }) {
    const sources = [];
    for (const pin of parsed.data) {
     if (cancelled || response.destroyed) return true;
-    const source = sourceSnapshotSchema.parse(await readSource(pin.fileId, pin.startLine, 160));
+    const source = sourceSnapshotSchema.parse(await readSource(pin.fileId, pin.startLine, pin.lines ?? 160));
     if (source.projectId !== route[1] || source.fileId !== pin.fileId) fail(404, 'unknown_project', 'The selected source does not belong to this project.');
     if (source.sourceHash !== pin.sourceHash || source.startLine !== pin.startLine) fail(409, 'source_changed', 'A selected source changed. Capture it again before building knowledge.');
+    if (source.endLine - source.startLine + 1 > (pin.lines ?? 160)) fail(422, 'knowledge_unavailable', 'The captured source exceeds the requested range.');
     sources.push(source);
    }
    if (cancelled || response.destroyed) return true;
-   const knowledge = createCodebaseKnowledge(sources);
-   for (const before of sources) {
+   const knowledge = createCodebaseKnowledge(sources, parsed.data.map(pin => pin.focus));
+   for (const [index, before] of sources.entries()) {
     if (cancelled || response.destroyed) return true;
-    const after = sourceSnapshotSchema.parse(await readSource(before.fileId, before.startLine, 160));
+    const after = sourceSnapshotSchema.parse(await readSource(before.fileId, before.startLine, parsed.data[index].lines ?? 160));
     if (['projectId', 'fileId', 'path', 'sourceHash', 'startLine', 'endLine', 'text', 'truncated', 'fileBytes'].some(key => before[key] !== after[key])) fail(409, 'source_changed', 'A selected source changed during analysis. Capture the selection again.');
    }
    if (!cancelled) send(200, knowledge);

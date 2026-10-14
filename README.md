@@ -4,6 +4,8 @@
 
 # Vadhyar
 
+The local companion's [bounded source reading](docs/source-reading.md) extends its selected-source knowledge backend with exact captured ranges, complete nested declaration anchors and a view-local reading bundle. [Current verification and limits](docs/source-reading-evidence.json) distinguish source/backend checks from independent actual-app acceptance.
+
 **Understand the feature AI built. Make your next change yourself.**
 
 Vadhyar is a VS Code learning companion for beginners building with AI. It helps you connect a requirement to its code, understand the logic and make your next change yourself.
