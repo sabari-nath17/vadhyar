@@ -413,3 +413,8 @@ Codex merged canonical main into the locally reviewed publication checkpoint usi
 ## 2026-10-15T01:38:02+05:30 — Fresh publication-gate execution
 
 Codex executed a fresh pinned dependency install and all nine source/build/installer/risk/offline gate commands in an isolated committed clone. Actual totals: 141 root, 128 browser, 75 service, 3 installer and 3 policy cases, plus six offline validators; zero provider requests/errors. Full native audit exit 1 (three explicitly deferred development findings) and production exit 0 are retained distinctly. Independent AI reviews checked the merged source identities, package/lock preservation and documentation/CI; the docs reviewer corrected only two archived image URLs. Protected current-host bundle identities match the prior accepted baseline. Human review and live teaching/learning efficacy remain pending.
+
+
+## 2026-10-15T01:49:06+05:30 — Rendered packaging correction
+
+Manager CUA inspection of the freshly installed 4188 preview caught the blank page and exact console error, preventing release publication. Earlier HTTP/manifest/CI results are retained with their actual limits rather than relabelled as rendered acceptance. The installer specialist corrected only the isolated build configuration copy/provenance and one regression; an independent specialist verified the root cause and diff. The new regression failed before the fix; actual Node 24.19.0 typecheck/lint and 4 installer cases then passed. Only the disposable 4188 host was stopped. No product source change, primary session reload, provider call or old release modification. Human review remains pending.

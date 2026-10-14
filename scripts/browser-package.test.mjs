@@ -50,6 +50,14 @@ test('portable release has locked bundled runtime, MIT and complete notices, wit
  for (const value of ['Apache License', 'learn-claude-code', 'pocketflow', 'Bundled local runtime: typescript', 'Bundled local runtime: openai']) assert.ok(notices.includes(value), value);
 });
 
+test('packaged browser entry uses automatic JSX with the exact source compiler configuration', async () => {
+ const client = await readFile(join(bundle, 'runtime', 'dist', 'app.js'), 'utf8');
+ assert.match(client, /\.render\(/, 'The production bundle must contain the actual mounted browser entry.');
+ assert.doesNotMatch(client, /\bReact\.(?:createElement|Fragment)\b/, 'Source components do not bind a global React; classic JSX would make the installed app fail to render.');
+ const info = JSON.parse(await readFile(join(bundle, 'BUILD_INFO.json'), 'utf8'));
+ for (const path of ['tsconfig.json', 'prototype/tsconfig.json']) assert.equal(info.inputs[path], createHash('sha256').update(await readFile(new URL('../' + path, import.meta.url))).digest('hex'), path);
+});
+
 test('installer refuses altered releases and an existing destination without changing its contents', async () => {
  const destination = join(work, 'existing'); await mkdir(destination); await writeFile(join(destination, 'keep.txt'), 'existing files');
  await assert.rejects(installBrowser(bundle, destination), /already exists/);

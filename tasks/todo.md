@@ -972,3 +972,10 @@ Public Vadhyar wording updated on the landing/README/setup/release copy. No sour
 - Passed: both typechecks/lints/builds; 141 root + 128 browser + 75 service + 3 installer + 3 risk-policy cases; 6 offline evaluator fixtures, zero live provider requests. Native full audit 3 high development findings (exit 1) under exact unexpired policy; production 0 (exit 0).
 - Independent source/privacy/package/CI/document review: no new blocker. Fixed/rechecked two archived banner links; protected primary-host JS/CSS hashes unchanged. Evidence: docs/browser-release-evidence.json.
 - Next: create archive from this following clean documentation checkpoint, independently inspect/install it; normally push all current project history; publish browser prerelease; verify hosted jobs, remote contents and downloaded assets; record exact public identities.
+
+
+## 2026-10-15T01:49:06+05:30 — Packaging render gate refusal and correction
+
+- Refused first archive `49fae74b52d2324ffc28f40f8ab50e9dbe2eb69098d422ec190dd0782b75fd97` before release: actual 4188 startup blank, `React is not defined`. Source CI/HTTP/manifest checks remain separately successful, not client acceptance.
+- Minimal script-only correction copies/hashes both source tsconfigs; real packaged-entry regression failed red then passed green. Node 24.19.0 typecheck/lint and 4 installer tests passed; independent diff review found no blocker. Primary JS/CSS identities unchanged.
+- Next: build replacement from this clean correction checkpoint, independently verify manifest/inputs, reload actual installed browser and review its routes/console, then publish/verify exact downloads after current hosted gates. No browser tag/release published yet.

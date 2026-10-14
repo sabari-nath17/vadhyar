@@ -25,7 +25,8 @@ export async function packageBrowser(output = join(root, 'dist', 'releases')) {
  try {
   // Keep the source-checkout assets served by an existing companion untouched.
   const client = join(work, 'client'); await mkdir(join(client, 'prototype'), { recursive: true });
-  for (const path of ['src', 'assets', 'index.html', 'build.mjs']) await cp(join(root, 'prototype', path), join(client, 'prototype', path), { recursive: true });
+  for (const path of ['src', 'assets', 'index.html', 'build.mjs', 'tsconfig.json']) await cp(join(root, 'prototype', path), join(client, 'prototype', path), { recursive: true });
+  await cp(join(root, 'tsconfig.json'), join(client, 'tsconfig.json'));
   for (const path of await readdir(join(root, 'prototype'))) if (path.endsWith('.mjs') && !path.endsWith('.test.mjs')) await cp(join(root, 'prototype', path), join(client, 'prototype', path));
   await cp(join(root, 'src'), join(client, 'src'), { recursive: true });
   await cp(join(root, 'docs', 'third-party'), join(client, 'docs', 'third-party'), { recursive: true });
@@ -64,6 +65,7 @@ export async function packageBrowser(output = join(root, 'dist', 'releases')) {
    for (const path of (await readdir(folder, { recursive: true })).sort()) if (/(?:license|licence|notice)/i.test(basename(path)) && (await lstat(join(folder, path))).isFile()) notices += `\n${name}/${path}\n${await readFile(join(folder, path), 'utf8')}\n`;
    dependencies.push({ name, version: pinned.version, integrity: pinned.integrity, license: metadata.license });
   }
+  for (const path of ['tsconfig.json', 'prototype/tsconfig.json']) inputs[path] = digest(await readFile(join(client, path)));
   for (const path of ['scripts/browser-package.mjs', 'scripts/browser-install.mjs', 'scripts/browser-start.mjs', 'docs/browser-installation.md']) inputs[path] = digest(await readFile(join(root, path)));
   await writeFile(join(directory, 'THIRD_PARTY_NOTICES.txt'), notices);
   const clientSources = [...await fileIdentities(join(client, 'prototype', 'src'), 'prototype/src/'), ...await fileIdentities(join(client, 'src'), 'src/')];

@@ -88,7 +88,7 @@
     "prototype/dist/app.css": "0c07e8b499bb2f34b3eb43fbb5af021b0b3ca0dbd82a74c06088869277eca44c"
   },
   "publication": {
-    "state": "pending actual upload and download verification",
+    "state": "held for exact committed packaging correction and rendered acceptance",
     "browserTag": "browser-v0.1.0",
     "legacyTagsPreserved": [
       "v0.1.0",
@@ -99,5 +99,35 @@
     "No live teacher or independent learner outcome acceptance",
     "Windows execution, native signing and notarization unverified",
     "Hosted runner results and final archive identities recorded separately after execution"
-  ]
+  ],
+  "rejectedArtifacts": [
+    {
+      "sourceCommit": "cb3c9f1c6c525179fd7a12febb2b10754b6045eb",
+      "sha256": "49fae74b52d2324ffc28f40f8ab50e9dbe2eb69098d422ec190dd0782b75fd97",
+      "httpAndManifestGates": "passed separately; not client execution",
+      "hostedSourceCi": {
+        "runId": 38629547088,
+        "result": "success"
+      },
+      "renderedGate": "rejected before GitHub release: ReferenceError React is not defined",
+      "cause": "Isolated browser build omitted root/prototype tsconfigs, changing JSX transform.",
+      "publishedAsRelease": false
+    }
+  ],
+  "packagingCorrection": {
+    "recordedAt": "2026-10-15T01:49:06+05:30",
+    "sourceHashes": {
+      "scripts/browser-package.mjs": "7e6d237788ba57ee22a1cbea9744b8d060fb832e5e4d432c753c4fba6bdf0b7e",
+      "scripts/browser-package.test.mjs": "f7b50845949d544ef9e91e145106384f05534b74d208b9f3261a82f380aa6fdb"
+    },
+    "red": "actual packaged entry regression reproduced unbound React failure",
+    "green": {
+      "node": "24.19.0",
+      "typecheck": "passed",
+      "lint": "passed",
+      "installerTests": 4
+    },
+    "scope": "copy exact root and prototype JSX configs into isolated build and retain their SHA identities",
+    "independentReview": "no blocker; rendered browser acceptance remains pending"
+  }
 }

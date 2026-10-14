@@ -552,3 +552,10 @@ Checks: no unresolved conflicts, unchanged ten current Ponytail/QC source files 
 Fresh isolated Node 24.19.0 / pinned npm 11.19.0 install at `1e067cb` passed: root typecheck/lint/build, 141 root tests, 128 browser tests, 75 service tests, 3 installer cases, 3 risk-policy cases and six offline coach fixtures (zero errors/provider requests). The FTP override is installed and the evaluator still works. Native full audit retains exactly three high development findings; production has zero findings, with exact policy/expiry retained. Existing host JS/CSS hashes are unchanged.
 
 Files: docs/browser-release-evidence.json, docs/browser-release-verification.md and two archived README banner links, plus these milestone records. Independent merge/privacy/package and CI/docs reviews found no new blocker; 289 local targets reviewed and 98 archived targets rechecked after correcting two image paths. Whitespace/rule limits passed. Final exact-source package, hosted checks and publication follow this clean checkpoint; Windows/signing/live teacher/human review remain unverified.
+
+
+## 2026-10-15T01:49:06+05:30 — Correct isolated browser JSX packaging
+
+Actual fresh installed-browser startup found a blank screen (`React is not defined`) in archive `49fae74b…` from `cb3c9f1`, despite successful source CI and manifest/HTTP gates. No browser tag/release was published. The isolated client copy omitted root/prototype tsconfigs, so esbuild changed the JSX transform.
+
+Files: scripts/browser-package.mjs now copies both configs and includes their hashes; scripts/browser-package.test.mjs adds one actual packaged-entry regression; README CI badge now explicitly follows main; exact evidence/verification and these records updated. The regression first failed on the rejected output, then Node 24.19.0 typecheck/lint and 4/4 installer cases passed in isolation. Independent diff review found no blocker; host/session boundaries and shared served asset hashes remain unchanged. Replacement exact-commit build/render/download gates remain pending.

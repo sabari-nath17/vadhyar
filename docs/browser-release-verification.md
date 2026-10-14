@@ -27,6 +27,8 @@ The first packaging development attempts rebuilt ignored assets served by the us
 
 Mac tar initially added undeclared `._` metadata; the environment and ownership normalization were corrected, and the exact-member regression and independent re-review passed. Earlier failed test assumptions and source/artifact snapshots are not relabelled as successful final release runs.
 
+The first committed browser archive passed its manifest/HTTP and hosted source gates but failed actual client startup with `React is not defined`. It was **rejected before release publication**. The isolated build had omitted the root/prototype compiler configurations, changing JSX output. The minimal correction copies both configurations and records their hashes; an actual packaged-entry regression reproduced the error, then passed along with all four installer cases and root typecheck/lint. This targeted regression complements the required rendered acceptance of the replacement archive. The rejected archive identity remains in the receipt.
+
 ## Remaining limits
 
 - Node.js 24 LTS is required separately. No bundled Node runtime, notarization or native OS installation service is supplied.

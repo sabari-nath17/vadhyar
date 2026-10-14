@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/sabari-nath17/vadhyar/actions/workflows/ci.yml"><img src="https://github.com/sabari-nath17/vadhyar/actions/workflows/ci.yml/badge.svg" alt="Repository checks" /></a>
+  <a href="https://github.com/sabari-nath17/vadhyar/actions/workflows/ci.yml"><img src="https://github.com/sabari-nath17/vadhyar/actions/workflows/ci.yml/badge.svg?branch=main" alt="Repository checks" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-3F5F57" alt="MIT license" /></a>
   <img src="https://img.shields.io/badge/Node.js-24%20LTS-3F5F57" alt="Node.js 24 LTS recommended" />
   <img src="https://img.shields.io/badge/status-browser%20preview-D9A05B" alt="Browser preview" />
