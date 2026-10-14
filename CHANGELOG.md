@@ -344,3 +344,11 @@ UI-owned current prototype/design handoffs now agree with the root desktop contr
 - Change/reason: record real mock-use gaps and independent correction receipts, including port collision, concise facts, missing case context, optional teacher, check discovery, rejected interpretation retention and readonly source freshness. Distinguish synthetic runtime, source-only, owner-suite and actual-repository evidence.
 - Files: docs/logic-board.md, docs/persona-logic-audit.md, docs/logic-evidence/persona-* and these additive records. Production fixes remain in their owners' scoped checkpoints.
 - Checks: local links resolve, receipt JSON parses, rule files under50lines; browser source catalogue now exposes observe95–105 on the real repository. P07 retained UI explanation/storage trace and final combined gate still open. No new dependency, live provider or push.
+
+
+## 2026-10-15 00:31:55 IST — Connect and verify bounded source reading
+
+- Change/reason: mount the existing project-local reading bundle and exact-span navigation so a learner can retain the files/ranges needed to explain an actual feature. Include endLine in walkthrough identity and preserve the optional lesson caller. Existing select/getSource/error retention reused. UI's ten scoped reader styles make controls/search/captures readable.
+- Files: prototype/src/ProjectExplorer.tsx, prototype/src/project-style.css, root logic/persona docs and persona-* receipts; exact additive milestone sections. No new dependency, source-engine change or provider request.
+- Checks: root full prototype126unit/74service/typecheck/lint/build; UI finalCSS typecheck/lint/11reader/build; Engineering matching snapshot reports same full checks. Actual code-bundle hash/text comparison, cited feature explanation, keyboard, failure/stale/export/explicit replacement and final1440×1000 rendered capture passed. Local links/JSON/rule limits pass.
+- Limits: bounded maintainer simulation, not a real student study or whole-project/runtime/mastery guarantee. A separate Markdown audit capture supplied the stale probe. Root caller/code/evidence checkpoint is local; final artifact/launch handoff follows, no push.

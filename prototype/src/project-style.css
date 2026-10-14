@@ -141,6 +141,16 @@ html:has(.focused-lesson) { scroll-padding-bottom:180px; }
 .companion-app .source-title { font-size:13px; padding:12px 16px; color:var(--muted); border-color:var(--line); flex-wrap:wrap; }
 .companion-app .source-window pre { background:white; padding:12px 0 24px; color:var(--dark); line-height:2; max-height:360px; overflow:auto; white-space:pre; }
 .companion-app .source-window code { color:inherit; font-size:13px; white-space:pre; overflow-wrap:normal; }
+.companion-app .reading-bundle { margin:24px 0; padding:24px 0; border-block:1px solid var(--line); overflow-wrap:anywhere; }
+.companion-app .reading-bundle h3 { margin:0 0 12px; font-size:22px; }
+.companion-app .reading-bundle h4 { margin:24px 0 12px; }
+.companion-app .reading-bundle label { display:block; margin:20px 0 8px; font-weight:600; }
+.companion-app .reading-bundle input { width:100%; min-height:48px; padding:12px 14px; border:1px solid var(--line); border-radius:10px; background:white; color:var(--dark); font:inherit; }
+.companion-app .reading-captures>li,.companion-app .reading-catalog>ul>li { padding:16px 0; border-bottom:1px solid var(--line); }
+.companion-app .reading-matches li { margin:16px 0; }
+.companion-app .reading-matches code { display:block; white-space:pre-wrap; overflow-wrap:anywhere; }
+.companion-app .reading-bundle .source-window .syntax-keyword,.companion-app .reading-bundle .source-window .syntax-string,.companion-app .reading-bundle .source-window .syntax-number { color:inherit; }
+.companion-app .reading-bundle .source-window .syntax-comment { color:var(--muted); }
 .companion-app .captured-content>.source-window code { min-width:0; white-space:pre-wrap; overflow-wrap:anywhere; }
 .companion-app .captured-content>.source-window .syntax-keyword,.companion-app .captured-content>.source-window .syntax-string,.companion-app .captured-content>.source-window .syntax-number { color:inherit; }
 .companion-app .captured-content>.source-window .syntax-comment { color:var(--muted); }

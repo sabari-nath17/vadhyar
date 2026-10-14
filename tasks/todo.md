@@ -726,3 +726,13 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - [x] Root-only evidence, current roles and historical/current checkpoint boundaries recorded; local links, JSON and rule limits reviewed. Code owners retain their scopes; shared index serialized.
 - [ ] P07 mounted actual-repository retained source trace: observation entry/callback/GET/transition/storage, cited evidence and uncertainty, captured search vs explicit recapture/export. Source/backend5bb7708 alone does not satisfy it.
 - Next: UI mounts existing bundle, root performs app acceptance, engineering final stable checks/primary-host receipt. Stop at the manager's human-authorized MVP boundary; no roadmap expansion/push. This scoped documentation checkpoint is recorded by its commit in Git history.
+
+
+## 2026-10-15 00:31:55 IST — Product Quality mounted P07 closeout
+
+- [x] Existing bundle mounted with project-key retention, optional exact-span callback and endLine identity. Frozen UI ten-rule styles included by owner release.
+- [x] Actual repository five-context/four-file observation explanation, source hash/range export comparison, declaration navigation, captured search/keyboard and failed-range preservation. Separate audit-document stale409/explicit replacement200 recovery and unsupported-language honesty preserved.
+- [x] Synthetic check-specific React hard refusal and empty-draft refresh protect exact returned execution facts/newer saved question, with one execution/no replay.
+- [x] Root full126unit/74service/typecheck/lint/build, final scoped CSS owner checks, measured1440×1000/no overflow, final rendered screenshot and console[]; local links/JSON/rule limits/staged review.
+- [x] Bounded P07 maintainer acceptance closed; exact identity/evidence in docs/logic-evidence/persona-real-reader-acceptance.json and cited explanation. Human efficacy/provider/full accessibility remain distinct limits.
+- Next: release index to Engineering for final stable artifact/launch/README handoff; manager owns once-ready MVP notification/stop. Preserve4173 existing session, no roadmap expansion or push. This addon checkpoint's exact SHA is in Git history and owner handoff.

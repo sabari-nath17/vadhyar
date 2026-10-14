@@ -14,7 +14,7 @@ The logic board reads actual changes and evidence before closing a finding. A me
 
 ## Latest checkpoint status
 
-The current coordinated implementation includes concise-input/parallel-session correction `f1b959e`, exact-range/change-sequence freshness `894a5ab`, desktop UI/recovery `7ff1036` and bounded source reading `5bb7708`. Earlier pending-checkpoint statements below are historical receipts. Source/backend checks do not close P07: the mounted, real-project in-app comprehension trace remains the current acceptance gate.
+The current coordinated implementation includes concise-input/parallel-session correction `f1b959e`, exact-range/change-sequence freshness `894a5ab`, desktop UI/recovery `7ff1036` and bounded source reading `5bb7708`. Earlier pending-checkpoint statements below are historical receipts. Source/backend checks alone do not close P07. The latest final receipt below closes its bounded mounted in-app maintainer gate; Engineering owns the stable artifact/launch handoff.
 
 ## Initial findings
 
@@ -167,3 +167,10 @@ Independent current-bundle management M02/M03 probes pass: a refused valid fixtu
 P08 is reproduced during reading integration: unchanged-source range capture increments metadata revision and falsely makes passed/current execution evidence stale. Engineering owns separating the actual eligible-file change identity from history/capture revisions in both completion and post-result freshness. The [actual HTTP receipt](logic-evidence/persona-read-only-freshness-before.json) preserves passed status and unchanged source hash. P08 remains open until readonly capture stays current while genuine mutations stay stale.
 
 P08 independent post-result HTTP correction now passes on exact service bytes matching894a5ab: metadata revision4→5 after reading unchanged source, same passed/current result. Output was root-observed; the saved JSON establishes status/freshness and unchanged identity rather than output equality. [After receipt](logic-evidence/persona-read-only-freshness-after.json). Engineering separately passes58service cases including during-run reads, real drift and watch-loss. P07 actual-app comprehension remains open.
+
+
+## Final mounted P07 acceptance — 15 October 2026
+
+Product Quality applied the minimal caller mount; UI supplied ten scoped reader CSS rules. Actual real-repository4186 retained five ranges across four code files and enabled the [cited observation explanation](logic-evidence/persona-real-feature-explanation.md). Explicit exact-span navigation, captured search/keyboard focus, export/hash/text comparison and range failure retention passed. A separate audit-document substitution tested genuine stale-source refusal, old-capture inspection/export and explicit recapture/replacement recovery with honest unsupported-language scope. It is distinct from the main five-code-range bundle.
+
+The [acceptance receipt](logic-evidence/persona-real-reader-acceptance.json) preserves project/host/source/bundle identities, full root126unit/74service checks, final CSS/visual attribution and limits. Final reset/reload produced a complete styled desktop capture1440×1000CSSpx/no document overflow, unlike discarded partial-paint attempts. P07's bounded simulated explanation gate is closed. Human learning efficacy, whole-repository/runtime coverage and optional live provider remain unverified. Exact local addon checkpoint and final artifact/launch handoff are recorded by their owners; no push.

@@ -1,0 +1,89 @@
+- link "Skip to question":
+  - /url: "#main"
+- banner:
+  - 'img "Vadhyar: understand what you build"'
+  - generic: BookingDesk / src/booking.mjs
+  - list "Learning activities":
+    - generic: "Predict: recorded activity"
+    - generic: "Observe: recorded activity"
+    - generic: "Change: recorded activity"
+    - generic: "Verify: current activity"
+    - generic: "Reflect: upcoming activity"
+    - generic: "Separate case: upcoming activity"
+  - generic: Verify · 4 of 6
+  - button "Close lesson and return to Path":
+- main:
+  - alert:
+    - strong: Project record needs attention
+    - paragraph: Project progress changed in another tab. Reload before saving.
+    - button "Download saved backup"
+    - button "Export visible record"
+    - button "Reload saved record"
+    - button "Reset this project record"
+  - alert:
+    - strong: Before you continue
+    - paragraph: The freshly read receipt could not be attached. Its output and coverage remain separately exportable; verification was not recorded.
+  - alert:
+    - strong: Returned check receipt · not saved in this record
+    - paragraph: "Returned status: passed · job 12be4908-fbaf-4c28-a7f4-9a46930e6154. Its current coverage is not accepted as verification. Your saved record has not been replaced."
+    - code: "> check > node check.mjs zero and one seat cases passed"
+    - button "Export returned receipt"
+    - button "Retry attaching receipt"
+    - paragraph: If storage is full or changed in another tab, export this receipt and the existing record before explicit reload/reset. Export alone does not free capacity.
+  - paragraph: VERIFY · STEP 4 OF 6
+  - heading "What does the evidence support?" [level=1]
+  - paragraph: Keep the check result and your requirement verdict separate.
+  - generic "Your confirmed rule and case"
+  - generic: Saved source unchanged · captured 5ad1fd737556
+  - group "Verification evidence":
+    - button "Manual evidence"
+    - button "Existing project check" [pressed]
+  - paragraph: Run only an approved existing root-package check. It executes trusted repository code on this computer.
+  - text: Existing check
+  - combobox "Existing check":
+    - option "check" [selected]
+  - code: node check.mjs
+  - button "Review and run check" [disabled]:
+    - text: Review and run check
+  - paragraph: Clear the saved check context first.
+  - strong: "Last saved receipt status: passed · exit 0"
+  - code: "> check > node check.mjs zero and one seat cases passed"
+  - paragraph: "Execution status is retained separately from current coverage: unknown until rechecked. It does not verify your requirement or whole project."
+  - text: Requirement verdict · your assessment
+  - combobox "Requirement verdict · your assessment":
+    - option "Uncertain" [selected]
+    - option "Satisfied for the checked case"
+    - option "Not satisfied"
+  - text: Why does the evidence support that verdict?
+  - textbox "Why does the evidence support that verdict?":
+    - /placeholder: Explain what was established and what is still uncertain.
+  - text: Assistance used · self-declared
+  - textbox "Assistance used · self-declared" [active]:
+    - /placeholder: Describe AI, people, documentation, or no additional help.
+  - button "Refresh source again":
+    - text: Refresh source again
+  - paragraph: Learning records are saved in this browser.
+  - complementary:
+    - generic "YOUR CAPTURED SOURCE src/booking.mjs":
+      - generic: YOUR CAPTURED SOURCE
+      - strong: src/booking.mjs
+    - generic "Selected project source":
+      - generic: "1"
+      - code: "export function canBook(seats) {"
+      - generic: "2"
+      - code: return seats >= 1;
+      - generic: "3"
+      - code: "}"
+    - paragraph: Captured 15/10/2026, 00:06:00 · explicit refresh
+    - generic "Source details"
+    - generic "Open source walkthrough":
+      - text: Open source walkthrough
+    - button "Browse project source":
+      - text: Browse project source
+    - generic "Ask a teacher · optional":
+      - text: Ask a teacher · optional
+- contentinfo:
+  - paragraph: Record the evidence, scope and assistance you used.
+  - button "Record scoped verification" [disabled]:
+    - text: Record scoped verification
+  - paragraph: Attach the returned receipt before recording verification, or export it before leaving.

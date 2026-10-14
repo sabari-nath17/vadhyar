@@ -1,0 +1,16 @@
+Actual root command: node prototype/check.mjs
+Exit: 0
+Raw log SHA256: 16709e055297f84ff237160db86d956f4423741b46170ef8ff39694279df6628
+
+Typecheck
+Lint
+Learning tests
+ Test Files  10 passed (10)
+      Tests  126 passed (126)
+Build
+Local service tests
+ℹ tests 74
+ℹ pass 74
+ℹ fail 0
+ℹ skipped 0
+Local prototype checks passed. Live provider and browser acceptance are separate.
