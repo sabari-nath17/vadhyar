@@ -630,3 +630,10 @@ Fresh-install the produced VSIX into a disposable profile/workspace. Verify the 
 - [x] Combined typecheck/lint/build, 90 unit and 64 service cases, independent bounded code review and fail-stop probe pass. New UI's first full fixture journey passed 30 checks; interrupted-run/final combined acceptance is the remaining handoff gate.
 - Checkpoint: local `feat: add local prototype recovery contracts`; exact SHA is in Git history. UI and source-knowledge owner checkpoints follow this API/model baseline. No push.
 - Next required closeout: finish interruption/currentness/browser cases; save separate knowledge/UI checkpoints; rebuild/start the complete combined prototype in this Vadhyar folder; record final actual receipts. Production-only roadmap items remain explicitly outside this prototype slice.
+
+## 2026-10-14 21:08:24 IST — Logic-board review completed for current design
+
+- [x] Complete current-design behavior contract and cross-chat ownership established;25Cjourneys and7Kgates preserve source, operation, storage and evidence boundaries.
+- [x] Reproduced corrections reviewed with their owners;35actual new-UI checks pass including one-execution reload, post-pass drift, host-restart unknown/archive, short-feed independence and source-read unknown recovery. Historical receipt copy and revision-bound coverage inspected.
+- [x] Recovery6a160c9 staged snapshot verified by owner68unit/54service; combined working-tree90unit/64service plus typecheck/lint/build, and final knowledge7fingerprints match. Root-only closeout accompanies a separate documentation milestone; no source/index ownership borrowed or push.
+- Next: UI/reuse owners save their separately owned checkpoints and final exact-artifact coverage receipts. Keep partially tested compound Crows and human/provider/accessibility limits explicit; extend the board only from new actual evidence. Current phone connection, runtime instrumentation, semantic mastery and multi-file teaching remain outside verified implementation.
