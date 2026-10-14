@@ -8,7 +8,7 @@ const checks = [
  ['Lint', ['node_modules/eslint/bin/eslint.js', 'prototype/src', 'prototype/*.ts', 'prototype/*.mjs', '--max-warnings=0']],
  ['Learning tests', ['node_modules/vitest/vitest.mjs', 'run', '--config', 'prototype/vitest.config.ts']],
  ['Build', ['prototype/build.mjs']],
- ['Local service tests', ['--test', 'prototype/project-service.test.mjs', 'prototype/teaching-service.test.mjs', 'prototype/server.test.mjs', 'prototype/walkthrough-service.test.mjs']]
+ ['Local service tests', ['--test', 'prototype/project-service.test.mjs', 'prototype/teaching-service.test.mjs', 'prototype/server.test.mjs', 'prototype/walkthrough-service.test.mjs', 'prototype/knowledge-service.test.mjs']]
 ];
 for (const [name, args] of checks) {
  process.stdout.write(`\n${name}\n`);

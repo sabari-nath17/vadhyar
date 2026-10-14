@@ -1,0 +1,108 @@
+{
+  "recorded_at_ist": "2026-10-14 20:51:21 IST",
+  "owner": "Codex selected-source knowledge backend",
+  "human_review": "pending",
+  "baseline_commit": "e7e6c20cfaec7ae311ea71ef6238f878190ac12c",
+  "checks": {
+    "prototype_typecheck": "passed",
+    "focused_lint": "passed",
+    "focused_unit_tests": {
+      "passed": 30,
+      "new_parser": 15,
+      "new_client": 4,
+      "existing_source_walkthrough": 11
+    },
+    "focused_http_tests": {
+      "passed": 11,
+      "new_knowledge": 10,
+      "existing_walkthrough": 1,
+      "actual_deadline_ms": 12003,
+      "wrong_project_source_reads": 0
+    },
+    "isolated_knowledge_typecheck": "passed",
+    "whitespace": "passed",
+    "combined_prototype_owner_receipt": {
+      "status": "passed",
+      "owner": "Plan Vadhyar rebuild workflow",
+      "command": "npm run prototype:check",
+      "unit_tests": 90,
+      "service_tests": 64,
+      "typecheck": "passed",
+      "lint": "passed",
+      "build": "passed",
+      "browser_acceptance": "Owned separately by feature/UI chats; not claimed as knowledge UI acceptance."
+    },
+    "provenance_mappings_verified": 2,
+    "retained_notice_sha256_verified": true,
+    "local_links_checked": 100,
+    "local_links_missing": [],
+    "rules_line_counts": {
+      "AGENTS.md": 32,
+      ".customrules": 21
+    },
+    "staged_snapshot": {
+      "status": "passed",
+      "base_commit": "e7e6c20cfaec7ae311ea71ef6238f878190ac12c",
+      "owned_paths": 20,
+      "command": "npm run prototype:check",
+      "unit_tests": 87,
+      "service_tests": 64,
+      "typecheck": "passed",
+      "lint": "passed",
+      "build": "passed",
+      "local_log_sha256": "e68c10a960916f1791f33d5b0dbdfbf47b847d5004bcfa80a3b66505e261ee49",
+      "scope": "Exact index export: accepted feature baseline plus knowledge backend; other-owner UI changes excluded."
+    }
+  },
+  "actual_launcher": {
+    "actual_launcher": true,
+    "loopback_port": 4185,
+    "selected_files": 2,
+    "concepts": [
+      "allow",
+      "owns"
+    ],
+    "static_file_edges": 1,
+    "first_status": 200,
+    "stale_status": 409,
+    "recovery_status": 200,
+    "knowledge_identity_changed": true,
+    "provider_connected": false,
+    "source_executed": false
+  },
+  "independent_review": {
+    "actionable_findings_remaining": 0,
+    "corrected": [
+      "Foreign project authority validated before delegated source reads by feature-owned host.",
+      "Project identity added to stable knowledge fingerprint.",
+      "Ambiguous selected path stays unresolved even when another candidate is malformed.",
+      "Direct parser and browser DTO enforce160-line spans and legitimate empty-file ranges."
+    ],
+    "review_checks": "29 unit/source regressions and10HTTP tests before the final bound regression; independent181-line rejection confirmed after fix."
+  },
+  "commands": [
+    "node node_modules/typescript/bin/tsc -p prototype/tsconfig.json",
+    "node node_modules/eslint/bin/eslint.js prototype/src/knowledge-types.ts prototype/src/source-knowledge.ts prototype/src/knowledge-api.ts prototype/knowledge-service.mjs prototype/source-knowledge.test.ts prototype/knowledge-api.test.ts prototype/knowledge-service.test.mjs --max-warnings=0",
+    "node node_modules/vitest/vitest.mjs run --config prototype/vitest.config.ts prototype/source-knowledge.test.ts prototype/knowledge-api.test.ts prototype/source-concepts.test.ts",
+    "node --test prototype/knowledge-service.test.mjs prototype/walkthrough-service.test.mjs"
+  ],
+  "source_sha256": {
+    "prototype/knowledge-service.mjs": "f8b438646bcab1b6f3df08e6ab769ef9e20c6d5365bed3834905fd367b63e8e2",
+    "prototype/src/knowledge-types.ts": "55b7b1509cc307702f2a0d7d872888799f011baeace4998fbc435b5dfec92d5e",
+    "prototype/src/source-knowledge.ts": "01eacd2376560cca1969c079d23d38e07ebff169a68081f8bedb7bd8978eb3b0",
+    "prototype/src/knowledge-api.ts": "d4d02b8c6901d830763bef4acfffb80ab763f913ce94e673f9c8ecdf31f413ab",
+    "prototype/source-knowledge.test.ts": "9cf16d74579cbd323d03d33da39d3595f31c8d08f93945cdf38a0e048473d58f",
+    "prototype/knowledge-api.test.ts": "7b857cf464aa586c59b0d835ab800e11928e8eb1610b6fcc5d1cca791ef809a1",
+    "prototype/knowledge-service.test.mjs": "999810fd763952436598398a4f7263c56716ec47f5dab854a5da273a855c2c6e"
+  },
+  "limits": [
+    "No new multi-file picker, course generation or live model call.",
+    "Sequential selected-source snapshots and rechecks are not atomic whole-project/runtime evidence.",
+    "Physical phone/LAN access remains unsupported.",
+    "An active host source read finishes under its existing30-second guard after a12-second response deadline.",
+    "Teaching efficacy, production scale and human review remain unverified."
+  ],
+  "historical_research_register_sha256": "0541a9fd29c786924891d9a1b6855e91f3bcbe85dc3704d5b50580d698e85ad6",
+  "required_feature_commit": "6a160c9bbf102d0f9b811b56bf32a69693771505",
+  "updated_at_ist": "2026-10-14 21:12:52 IST"
+}

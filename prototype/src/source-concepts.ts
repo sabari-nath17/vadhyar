@@ -4,14 +4,14 @@ import { sourceSnapshotSchema } from './project-types.ts';
 import { walkthroughSchema, type Concept, type Relationship, type Walkthrough } from './walkthrough-types.ts';
 
 // Port of OrderChapters' complete, unique index validation; IDs replace YAML indices.
-export function validateConceptOrder(order: string[], concepts: Concept[]): string[] {
+export function validateConceptOrder(order: string[], concepts: Pick<Concept, 'id'>[]): string[] {
  const ids = new Set(concepts.map(concept => concept.id));
  if (order.length !== ids.size || new Set(order).size !== ids.size || order.some(id => !ids.has(id))) throw new Error('Concept order must include every captured concept exactly once.');
  return order;
 }
 
 // Entry point first, then its supporting concepts; cycles and disconnected declarations remain inspectable.
-export function orderConcepts(concepts: Concept[], relationships: Relationship[], entryId: string): string[] {
+export function orderConcepts(concepts: Pick<Concept, 'id'>[], relationships: Pick<Relationship, 'from' | 'to'>[], entryId: string): string[] {
  const order: string[] = [];
  for (const seed of [entryId, ...concepts.map(concept => concept.id)]) {
   const queue = [seed];

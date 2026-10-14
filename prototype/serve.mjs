@@ -33,10 +33,12 @@ export async function launchProject() {
  const { createProjectService } = await import('./project-service.mjs');
  const { createTeachingService } = await import('./teaching-service.mjs');
  const { createWalkthroughHandler } = await import('./walkthrough-service.mjs');
+ const { createKnowledgeHandler } = await import('./knowledge-service.mjs');
  let service;
  const teaching = createTeachingService({ readSource: (...values) => service.readSource(...values) });
  const walkthrough = createWalkthroughHandler({ readSource: (...values) => service.readSource(...values) });
- service = await createProjectService({ root, origin: `http://127.0.0.1:${port}`, handleExtraApi: async (request, response) => await walkthrough(request, response) || teaching.handle(request, response) });
+ const knowledge = createKnowledgeHandler({ readSource: (...values) => service.readSource(...values) });
+ service = await createProjectService({ root, origin: `http://127.0.0.1:${port}`, handleExtraApi: async (request, response) => await walkthrough(request, response) || await knowledge(request, response) || teaching.handle(request, response) });
  const server = mockServer({ service });
  const stop = async () => { teaching.close(); await service.close(); server.close(); };
  process.once('SIGINT', () => { void stop(); }); process.once('SIGTERM', () => { void stop(); });

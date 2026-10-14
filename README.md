@@ -222,3 +222,7 @@ The [logic board](docs/logic-board.md) tracks the phone/local-hosting boundary, 
 ### Browser behavior contract
 
 The [product behavior contract](docs/product-logic-contract.md) defines the current redesign's screen actions, lesson stages, source-version rules, persistence and failure recovery, with25concrete acceptance journeys. The [logic board](docs/logic-board.md) tracks implementation evidence and pending owner work.
+
+## Selected-source knowledge backend
+
+The local companion now exposes a protected source-knowledge API for one to five explicitly selected saved excerpts. It reuses the PocketFlow concept/order adaptation and returns source-bound static import/re-export links and a reading path. [API, ownership, provenance and limits](docs/backend-knowledge.md). The current browser source explorer retains its single-file controls; a multi-file course or picker is not implied by the API.

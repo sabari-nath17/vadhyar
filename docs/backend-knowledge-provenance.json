@@ -1,0 +1,47 @@
+{
+  "date_ist": "2026-10-14",
+  "authorization": "Build the Vadhyar backend from reviewed codebase knowledge and work in parallel.",
+  "human_review": "pending",
+  "research_register_unchanged": true,
+  "repositories_cloned_this_slice": 0,
+  "upstream_files_fetched_this_slice": 0,
+  "dependencies_added": [],
+  "upstream": {
+    "repository": "The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge",
+    "commit": "05b24cbbb0fe409c5e23c9791f0342f07524ffdc",
+    "license": "MIT",
+    "retained_notice": "docs/third-party/pocketflow-LICENSE.txt",
+    "notice_sha256": "1a4929dfc1f558858148bd90814f0ddf13ca1811c3f389ccc271216d7bc4eb50",
+    "sources": [
+      {
+        "upstream_path": "nodes.py",
+        "blob_sha": "0e3fa587b6b6710e11e9bb84c917640a7ffd1a4b",
+        "url": "https://github.com/The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge/blob/05b24cbbb0fe409c5e23c9791f0342f07524ffdc/nodes.py",
+        "local_paths": [
+          "prototype/src/source-concepts.ts",
+          "prototype/src/source-knowledge.ts",
+          "prototype/src/knowledge-types.ts"
+        ],
+        "adaptation": "Extend the already implemented deterministic concept/relationship/order port; widen order inputs to actual consumed IDs and add selected static file edges."
+      },
+      {
+        "upstream_path": "flow.py",
+        "blob_sha": "09caa12530c3468e8c2ff7dafaf3ba17396695bc",
+        "url": "https://github.com/The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge/blob/05b24cbbb0fe409c5e23c9791f0342f07524ffdc/flow.py",
+        "local_paths": [
+          "prototype/knowledge-service.mjs",
+          "prototype/src/source-knowledge.ts",
+          "prototype/serve.mjs"
+        ],
+        "adaptation": "Bound the existing staged workflow to explicit host-issued pins, protected capture, local analysis and freshness rechecks."
+      }
+    ]
+  },
+  "local_pipeline": "known selected pins -> protected sequential capture -> existing per-file concepts -> selected static module links -> complete reading order -> selected-source rereads -> validated response",
+  "excluded": [
+    "PocketFlow Python runtime and repository ingestion",
+    "Upstream LLM provider and generated chapter prose",
+    "Automatic whole-project crawl or model transmission",
+    "Runtime traces, requirement verdicts and lesson mutations"
+  ]
+}
