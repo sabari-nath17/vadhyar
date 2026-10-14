@@ -1,0 +1,40 @@
+name: Bug report
+description: Report a reproducible problem with the local companion or installer.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For suspected vulnerabilities, use the private reporting link in SECURITY.md. Do not include API keys, private source, personal records or unredacted logs here.
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: Browser release tag, source commit or VSIX version
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment and installation
+      description: Operating system, Node version, browser/editor, and portable archive or source checkout.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Use a small synthetic example when project source is private.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+      description: Include any source, save, check or recovery labels that were misleading.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sanitized evidence
+      description: Optional screenshots or bounded logs, with credentials and private data removed.

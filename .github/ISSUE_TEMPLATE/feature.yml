@@ -1,0 +1,22 @@
+name: Product improvement
+description: Describe a project-learning task that the current workflow does not support well.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Task and current difficulty
+      description: What were you trying to understand or verify in your project?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed improvement and acceptance
+      description: Describe the smallest useful change and what you should be able to do afterward.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Existing workaround or alternative
+      description: Could your editor, current Vadhyar controls or a shorter workflow already solve this?

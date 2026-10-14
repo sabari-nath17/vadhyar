@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Setup and product documentation
+    url: https://github.com/sabari-nath17/vadhyar#readme
+    about: Start with the current setup instructions and supported limits.
+  - name: Report a vulnerability privately
+    url: https://github.com/sabari-nath17/vadhyar/security/advisories/new
+    about: Share suspected vulnerabilities privately, without publishing sensitive details.

@@ -2,9 +2,9 @@
   "name": "vadhyar",
   "version": "0.1.0",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "type": "module",
-  "description": "Learn the disclosed NovaDesk ownership rule through source-grounded coaching, saved predictions, native edits and real checks; Project Guide is experimental.",
+  "description": "Understand and independently change your AI-built project with a local source-grounded learning companion, saved predictions and scoped evidence.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sabari-nath17/vadhyar.git"
@@ -25,7 +25,9 @@
     "package:vsix": "vsce package --target darwin-arm64 --out dist/vadhyar-0.1.0-darwin-arm64.vsix --skip-license --no-rewrite-relative-links",
     "prototype:start": "node prototype/launch.mjs",
     "prototype:build": "node prototype/build.mjs",
-    "prototype:check": "node prototype/check.mjs"
+    "prototype:check": "node prototype/check.mjs",
+    "browser:package": "node scripts/browser-package.mjs",
+    "browser:check": "node --test scripts/browser-package.test.mjs"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
@@ -130,5 +132,10 @@
     "react-dom": "19.3.0",
     "vitest": "5.0.3",
     "zod": "4.6.5"
+  },
+  "overrides": {
+    "get-uri": {
+      "basic-ftp": "6.2.3"
+    }
   }
 }

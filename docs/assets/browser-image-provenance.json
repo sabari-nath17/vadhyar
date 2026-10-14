@@ -1,0 +1,28 @@
+{
+  "recordedDate": "2026-10-15",
+  "images": [
+    {
+      "source": "output/instagram-story/latest-path-snapshot.jpg",
+      "publicAsset": "docs/assets/browser-learning-path.jpg",
+      "sha256": "267c92e3e99c3908c3dc384883439c1890711b85bbd26e29f891512630344508",
+      "processing": "unchanged original screenshot; no generated product behavior",
+      "scope": "executed desktop MVP; sample learning records or actual selected Vadhyar source; before release packaging"
+    },
+    {
+      "source": "docs/logic-evidence/persona-real-reader-styled-after.jpg",
+      "publicAsset": "docs/assets/browser-captured-reading.jpg",
+      "sha256": "e8e4263d8dba74a7212e879a13b8b6aba82a5198361a9caec047235bcbb57fb5",
+      "processing": "unchanged original screenshot; no generated product behavior",
+      "scope": "executed desktop MVP; sample learning records or actual selected Vadhyar source; before release packaging"
+    }
+  ],
+  "brandSource": "prototype/DESIGN.md and existing docs/assets/vadhyar-banner.jpg",
+  "tokens": {
+    "paper": "#F4EFE6",
+    "ink": "#2C3539",
+    "ochre": "#D9A05B",
+    "outline": "#725023",
+    "teal": "#6A8A82"
+  },
+  "limits": "Screenshots establish visible UI only; sample data does not establish student learning. Fresh installer/runtime acceptance is separately recorded."
+}

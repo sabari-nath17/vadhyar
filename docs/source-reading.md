@@ -24,17 +24,19 @@ Individually syntax-valid static relative import/re-export declarations can conn
 
 ## Reading bundle
 
-The exported `SourceReadingBundle` component adds displayed captures explicitly, preserves them while browsing files in the same project view, allows removal/replacement/entry selection and exports their source plus current analysis. It keeps different saved versions available for local inspection/export but blocks analysis until ranges of each file use one consistent hash. Reopening a saved range recaptures current source; replacing the retained capture is explicit.
+The mounted `SourceReadingBundle` component adds displayed captures explicitly, preserves them while browsing files in the same project view, allows removal/replacement/entry selection and exports their source plus current analysis. It keeps different saved versions available for local inspection/export but blocks analysis until ranges of each file use one consistent hash. Reopening a saved range recaptures current source; replacing the retained capture is explicit.
 
 The bundle displays proposed reading order, static module links with source-line anchors, complete/partial declaration anchors, unresolved coverage and four comprehension prompts: action entry, selected-file handoff, deciding condition/side effects and unknowns. “Find in captured source” searches only retained text, with at most 30 matching lines. It does not search or upload the whole repository.
 
-Captures live only in the current project view. They are not durably restored across leaving/reloading the page; export before leaving. Analysis failure or cancellation preserves the local captures and export. The UI owner supplies the project-keyed mount and exact navigation callback; its final combined browser receipt is distinct from this source component's build and unit tests.
+Captures live only in the current project view. They are not durably restored across leaving/reloading the page; export before leaving. Analysis failure or cancellation preserves the local captures and export. The existing project-keyed workspace mounts the reader with exact-range navigation. Its [independent mounted-reader receipt](logic-evidence/persona-real-reader-acceptance.json) is distinct from this source component's build and unit tests.
 
 ## Concrete acceptance task
 
 Use the actual Vadhyar source to explain **Record observation** while the provider is disconnected. Select useful captured ranges from `ProjectLesson.tsx`, `project-api.ts`, `Workspace.tsx` and `project-learning.ts`; use the complete `observe`/`act` catalogue entries and local text anchors when larger parent functions are partial. Explain the user action, the baseline-hash gate, the observation transition and how the browser record is saved. Separate a static import from a callback/HTTP/storage flow claim. Recapture changed source and show that older captures remain inspectable without being accepted as fresh evidence.
 
-This is a qualitative maintainer/product acceptance journey, not proof of human learning improvement. Product Quality owns the independent actual-app receipt. No automatic grading, generated curriculum, runtime instrumentation, whole-repository completeness, provider quality or mastery is established by this slice.
+Product Quality completed this bounded maintainer/persona journey at integration checkpoint `88a8d69`, using five retained ranges across four actual code files. The [source-cited explanation](logic-evidence/persona-real-feature-explanation.md) and [acceptance receipt](logic-evidence/persona-real-reader-acceptance.json) record exact anchors, export hashes, keyboard focus, range-failure preservation and a separate genuine stale-source/explicit-replacement probe. All twelve source/built fingerprints in that receipt match the reviewed closeout; the sixteen source-owned fingerprints remain unchanged from `5bb7708`.
+
+This is a qualitative maintainer/product acceptance journey, not proof of human learning improvement. No automatic grading, generated curriculum, runtime instrumentation, whole-repository completeness, provider quality or mastery is established by this slice. Engineering and Project Manager retain the final matching-artifact MVP handoff; product code is frozen after the current MVP gates.
 
 ## Attribution and verification
 

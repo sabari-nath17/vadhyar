@@ -4,14 +4,15 @@ Reviewed 14 October 2026, 22:58:17 IST. This chat, **Project Manager — Vadhyar
 
 The shared goal is a desktop learning companion beside the learner's existing coding environment: investigate real saved source, preserve predictions, distinguish observations and command receipts from human assessments, and state remaining gaps. Start with one consequential question. Broader tool adapters and curriculum remain separate work.
 
-## Current product gates — 2026-10-15T00:38:03+05:30
+## Current product gates — 2026-10-15T01:23:23+05:30
 
-**LOCAL MVP READY. Product implementation is stopped for now at verified checkpoint `88a8d69cc8ce0d00352d26c8f4fd59191a1dbeaf`.** The readiness monitor is deactivated (PAUSED). The user receives one readiness notice; another slice requires their direction.
+The user resumed work after the verified local MVP for **professional GitHub presentation, images, an installer and instructions**, and explicitly authorized pushing all updated intended local project work. MIT was separately selected by the human. The prior stopping notice and checkpoint stay historical; the readiness heartbeat remains PAUSED.
 
-- **Useful source investigation:** actual Vadhyar Record observation explained from five exact captures across four files; independent identities, visible guards, file/data handoffs and uncertainty pass. Final reader layout/search/keyboard/export plus failed-range and explicit stale recapture/replacement pass.
-- **Learning and recovery:** existing prediction → labelled observation → change/refresh → scoped manual or consented check → reflection/separate case → resume/export journey has bounded persona/domain/browser evidence. M02/M03 and hard-refusal conflict/empty-draft refresh pass. P08 targeted unchanged-range freshness is closed.
-- **Stable artifact:** Engineering's tested snapshot matches the committed product; typecheck, lint, build, 126 unit and 74 service cases pass. Manager verified 10 committed source and two accepted runtime fingerprints. Final screenshot and complete acceptance are retained.
-- **Limits:** same-computer desktop source checkout; view-local reading captures need export. Optional live teacher, installer/cloud/editor integrations, full failure/accessibility/physical-device matrix, legacy capacity follow-up and human learning efficacy remain separate. No push or publication.
+- Core MVP exact88a8d69 acceptance is retained. The separately human-authorized Ponytail quality lane corrects pagination/reset/guide-selection/concurrent-flush defects with named source/tests and independent review. Final source freeze precedes packaging.
+- Installer/CI/publication lanes are exclusively owned. Node24fresh-install development gates, independent artifact review and risk-policy refusal tests pass; professional README/image provenance/community/setup files are ready.
+- GitHub main has12remote-only commits and the prior local branch17local-only commits at inspection. Reconcile both without force-push, preserve older releases/research and validate the final committed package.
+- One targeted FTP dependency update leaves3unpatched optional-development findings. The shipped host/client excludes that tool; exact dated risk triage preserves full native reports and refuses unknown/runtime/expired conditions. Human review remains pending.
+- Final source/checkpoint, archive identity, upload/download verification, hostedCI and default repository presentation remain publication gates. Generated runtime copies/diagnostics/raw test recordings stay local. No broader product expansion.
 
 ## Chat roles and current scope
 

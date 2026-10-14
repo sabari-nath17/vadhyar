@@ -3,12 +3,12 @@ import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import type * as VSCode from 'vscode';
-const host = vi.hoisted(() => ({ root: '', pick: vi.fn(), open: vi.fn(), info: vi.fn(), warning: vi.fn(), request: vi.fn(), documents: [] as { isDirty: boolean; uri: { scheme: string; fsPath: string } }[] }));
+const host = vi.hoisted(() => ({ root: '', pick: vi.fn(), open: vi.fn(), info: vi.fn(), warning: vi.fn(), request: vi.fn(), copy: vi.fn(), documents: [] as { isDirty: boolean; uri: { scheme: string; fsPath: string } }[] }));
 vi.mock('vscode', () => {
  const disposable = { dispose() {} }; const listener = () => disposable;
  return { workspace: { isTrusted: true, get workspaceFolders() { return [{uri:{scheme:'file',fsPath:host.root}}]; },get textDocuments() { return host.documents; }, getConfiguration:()=>({get:()=> 'test-model'}),createFileSystemWatcher:()=>({dispose(){},onDidChange:listener,onDidCreate:listener,onDidDelete:listener}),onDidSaveTextDocument:listener,onDidChangeTextDocument:listener,registerTextDocumentContentProvider:listener },
    window:{showQuickPick:host.pick,showOpenDialog:host.open,showInformationMessage:host.info,showWarningMessage:host.warning},
-   Uri:{file:(fsPath:string)=>({scheme:'file',fsPath}),parse:(value:string)=>value}, RelativePattern:class{}, commands:{executeCommand:vi.fn()}, ViewColumn:{One:1} };
+   Uri:{file:(fsPath:string)=>({scheme:'file',fsPath}),parse:(value:string)=>value}, RelativePattern:class{}, commands:{executeCommand:vi.fn()}, env:{clipboard:{writeText:host.copy}}, ViewColumn:{One:1} };
 });
 vi.mock('../src/project/coach.js', async importOriginal => ({...await importOriginal<typeof import('../src/project/coach.js')>(),requestProject:host.request}));
 import { createProjectController } from '../src/project/controller.js';
@@ -79,8 +79,36 @@ it('confirms one proposed requirement connection, restores the focused topic and
  await controller.act({ type: 'projectPreview', operation: 'explain' });
  expect(controller.inspect().preview?.topicIdentity).toBe(controller.inspect().topic?.identity);
  expect(JSON.parse(controller.inspect().preview!.text).topic.decision).toEqual(group.decision);
+ const explanation = { summary: 'Count', purpose: 'Display', logic: 'Constant', consequence: 'Number', steps: [{ title: 'Inspect', text: 'Read the value', path: 'src/a.ts', line: 1 }], questions: [], plan: [], prompt: '' };
+ host.request.mockResolvedValue({ output: { kind: 'guide', result: explanation }, responseId: 'synthetic-explanation', model: 'test-model', latencyMs: 1 });
+ await controller.act({ type: 'projectSend', identity: controller.inspect().preview!.identity });
+ expect(controller.inspect().guide?.topicIdentity).toBe(controller.inspect().topic?.identity);
+ const plan = { ...explanation, summary: 'Next count change', plan: ['Update the count and review the diff'], prompt: 'Change the count safely and report actual checks.' };
+ const originalSnapshot = controller.inspect().snapshot;
+ await writeFile(join(host.root, 'src/a.ts'), 'export const a = 2;\n'); await controller.act({ type: 'projectReady' });
+ await controller.act({ type: 'projectPreview', operation: 'plan' });
+ host.request.mockResolvedValue({ output: { kind: 'guide', result: plan }, responseId: 'synthetic-later-source-plan', model: 'test-model', latencyMs: 1 });
+ await controller.act({ type: 'projectSend', identity: controller.inspect().preview!.identity });
+ expect(controller.inspect().guide).toMatchObject({ operation: 'plan', responseId: 'synthetic-later-source-plan', snapshot: controller.inspect().snapshot });
+ await writeFile(join(host.root, 'src/a.ts'), 'export const a = 1;\n'); await controller.act({ type: 'projectReady' });
+ expect(controller.inspect().snapshot).toBe(originalSnapshot);
+ expect(controller.inspect().guide).toMatchObject({ operation: 'explain', responseId: 'synthetic-explanation', snapshot: originalSnapshot });
+ await expect(controller.act({ type: 'projectCopyPrompt' })).rejects.toThrow(/Refresh/);
+ await controller.act({ type: 'projectPreview', operation: 'plan' });
+ host.request.mockResolvedValue({ output: { kind: 'guide', result: plan }, responseId: 'synthetic-plan', model: 'test-model', latencyMs: 1 });
+ await controller.act({ type: 'projectSend', identity: controller.inspect().preview!.identity });
+ expect(controller.inspect().guide).toMatchObject({ operation: 'plan', responseId: 'synthetic-plan' });
+ expect(controller.inspect().guide?.topicIdentity).toBeUndefined();
+ await controller.act({ type: 'projectCopyPrompt' }); expect(host.copy).toHaveBeenCalledWith(plan.prompt);
+ controller.dispose(); controller = create(); await controller.act({ type: 'projectReady' });
+ expect(controller.inspect().guide?.responseId).toBe('synthetic-plan');
+ await controller.act({ type: 'projectCopyPrompt' }); expect(host.copy).toHaveBeenCalledTimes(2);
+ host.documents = [{ isDirty: true, uri: { scheme: 'file', fsPath: join(host.root, 'src/a.ts') } }];
+ await expect(controller.act({ type: 'projectCopyPrompt' })).rejects.toThrow(/Refresh/);
+ host.documents = [];
  await writeFile(join(host.root, 'src/a.ts'), 'export const a = 3;\n'); await controller.act({ type: 'projectReady' });
  expect(controller.inspect().topic?.snapshot).not.toBe(controller.inspect().snapshot);
+ await expect(controller.act({ type: 'projectCopyPrompt' })).rejects.toThrow(/Refresh/);
  await expect(controller.act({ type: 'projectPreview', operation: 'explain' })).rejects.toThrow(/topic.*historical/i);
 });
 
@@ -94,4 +122,17 @@ it('rejects a proposed topic when the source changes during the requirement pick
  host.pick.mockImplementationOnce(async () => { await writeFile(join(host.root, 'src/a.ts'), 'export const a = 3;\n'); return { id: intent.id, label: intent.title }; });
  await expect(controller.act({ type: 'projectUseGroup', index: 0 })).rejects.toThrow(/changed.*clarif/i);
  expect(controller.inspect().topic).toBeUndefined();
+});
+
+it.each(['dirty', 'saved'])('rejects %s source changes while native check confirmation is open', async mode => {
+ await writeFile(join(host.root, 'package.json'), JSON.stringify({ scripts: { test: 'node -e "require(\'node:fs\').writeFileSync(\'ran.txt\', \'executed\')"' } }));
+ host.pick.mockResolvedValue({ label: 'test' }); await controller.act({ type: 'projectSelectCheck' });
+ host.warning.mockImplementationOnce(async () => {
+   if (mode === 'dirty') host.documents = [{ isDirty: true, uri: { scheme: 'file', fsPath: join(host.root, 'src/a.ts') } }];
+   else await writeFile(join(host.root, 'src/a.ts'), 'export const a = 3;\n');
+   return 'Run selected check';
+ });
+ await expect(controller.act({ type: 'projectRunCheck' })).rejects.toThrow(/changed|save|unsaved/i);
+ expect(controller.inspect().checkResult).toBeUndefined();
+ await expect(readFile(join(host.root, 'ran.txt'), 'utf8')).rejects.toMatchObject({ code: 'ENOENT' });
 });

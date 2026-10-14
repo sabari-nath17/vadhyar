@@ -35,7 +35,7 @@ export function ProjectPanel({ state, send, setupKey }: { state: ProjectState; s
  const intent = state.intents.find(item => item.id === state.selectedIntent);
  const selectedTopic = state.topic?.requirementId === intent?.id ? state.topic : undefined;
  const currentTopic = selectedTopic?.snapshot === state.snapshot && selectedTopic?.requirementRevision === intent?.revision && selectedTopic?.paths.length === state.selectedFiles.length && selectedTopic?.paths.every(path => state.selectedFiles.includes(path)) && !state.dirty && !state.specificationStale;
- const currentGuide = !state.error && !state.specificationStale && state.guide?.snapshot === state.snapshot && state.guide?.intentRevision === intent?.revision && state.guide?.topicIdentity === selectedTopic?.identity && !state.dirty;
+ const currentGuide = !state.error && !state.specificationStale && state.guide?.snapshot === state.snapshot && state.guide?.intentRevision === intent?.revision && (state.guide?.operation === 'plan' || state.guide?.topicIdentity === selectedTopic?.identity) && !state.dirty;
  function saveIntent() { send({ type: 'projectAddIntent', intent: { title, request, expected, origin: 'manual' }, replaces }); }
  return <main className="vd-panel">
    <header className="vd-header"><div className="vd-logo-plate"><img src={logo} alt="Vadhyar — understand what you build" /></div><Control className="vd-icon-button" aria-label="Connect OpenAI securely" onClick={setupKey}><Icon name="settings" /></Control></header>

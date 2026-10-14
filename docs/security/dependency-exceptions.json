@@ -1,0 +1,12 @@
+{
+  "expiresAt": "2026-10-29T23:59:59+05:30",
+  "advisory": "https://github.com/advisories/GHSA-86w9-cpqp-85rv",
+  "packages": {
+    "promptfoo": "0.124.1",
+    "jks-js": "1.1.7",
+    "node-forge": "1.4.0"
+  },
+  "scope": "Only the locked development-only Promptfoo certificate-import chain; excluded from the shipped browser host.",
+  "decision": "Conditional preview release after Codex review; human review remains pending.",
+  "evidence": "../dependency-risk.md"
+}

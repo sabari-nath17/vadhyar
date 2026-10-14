@@ -1,6 +1,6 @@
 # Vadhyar V1 — revised implementation plan
 
-Prepared 10 October 2026. Status: approved product direction translated into a proposed build sequence; implementation and runtime checks have not been performed during repository setup.
+Prepared 10 October 2026. This is the original VS Code extension build plan; its repository-setup status is historical. Actual extension gates and the separate browser companion work are recorded in [the slice ledger](../tasks/todo.md) and [the browser prototype plan](superpowers/plans/2026-10-14-project-agnostic.md).
 
 ## 1. Outcome and scope
 
@@ -154,6 +154,14 @@ Deliver one source project, a VSIX, setup/prerequisite guide, third-party attrib
 Deferred: general repository imports, full PRD drift auditing, generic course generation, alternative implementation recommendations, automatic repairs, live Git hooks, all-editor support, cloud sync and mutation-generated exercises.
 
 Material unresolved risks: Graphify installation/schema compatibility, API model access/latency, quality of hints, and beginner usability. The integration gate and pilot observations resolve different risks; neither substitutes for the other.
+
+## 9. Later browser companion status — 14 October 2026
+
+The local browser project companion is a separate, source-checkout prototype built after this extension plan. Its current path is a local Node recorder and browser learning workspace beside the learner's editor on the same computer. It supports the Vadhyar folder or another explicitly selected trusted project; it does not assume the NovaDesk fixture. Eligible saved-file metadata, source history, attempt records, feature concepts and approved check receipts are bound to their captured identities.
+
+The bounded first slice is implemented: local setup, project selection, saved-change recording, Path/Project/Notebook, a six-activity learning sequence, source-linked concepts, manual or explicitly approved project checks, export/recovery, and an optional consented OpenAI teaching adapter. Recording and inspection continue without a provider. The browser path has its own [project-agnostic specification](superpowers/specs/2026-10-14-project-agnostic.md), [implementation plan](superpowers/plans/2026-10-14-project-agnostic.md), [setup and measured limits](../prototype/README.md), [UI acceptance receipt](../docs/design/2026-10-14-duolingo-minimal/implementation.md), and [cross-case contract](../docs/product-logic-contract.md).
+
+Current verification is source-checkout typecheck, lint, unit/service tests, build and recorded same-computer browser journeys. A Node 26.7.0/macOS smoke also indexed and paged 100,000 synthetic JavaScript files and captured a saved change in 17.4 seconds; this verifies metadata handling on that host, not full-source analysis or a performance target. These results establish the checked local prototype only. Live API credentials/generation, screen-reader and physical-device acceptance, learning efficacy, complete C01–C25 permutation coverage, universal editor integrations, standalone installation and larger/cross-platform resource limits remain unverified or separate future work. Do not promote this prototype to a packaged release based on this plan alone.
 
 ## Browser feature corrections — P01/P06 — 2026-10-14
 

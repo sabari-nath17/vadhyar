@@ -20,3 +20,17 @@ it('retains unknown requirement and missing relationships as unresolved, and dis
  expect(unknown).toContain('Clarify requirement before teaching'); expect(unknown).toContain('which confirmed requirement'); expect(unknown).toContain('dependencies are not verified');
  const historical = render({ ...state, dirty: true }); expect(historical).toContain('Historical topic.'); expect(historical).toContain('aria-disabled="true"');
 });
+
+it('keeps a current build plan usable after confirming a learning topic', () => {
+ const topic = { ...group, identity: '2'.repeat(64), snapshot, baseline: snapshot, requirementId: intent.id, requirementRevision: intent.revision, confirmedAt: intent.confirmedAt, reviewedPaths: group.paths, unreviewedPaths: ['src/checkout.js', 'notes.md'], omitted: [], relationships };
+ const guide = { snapshot, intentRevision: intent.revision, operation: 'plan' as const, result: { summary: 'Next capacity change', purpose: 'Reserve seats', logic: 'Plan the next change', consequence: 'Proposed behavior', steps: [], questions: [], plan: ['Review the capacity rule'], prompt: 'Update the capacity rule and report actual checks.' }, responseId: 'synthetic-plan', model: 'test-model', latencyMs: 1 };
+ const current = { ...state, topic, guide };
+ const html = render(current);
+ expect(html).toContain('Proposed build plan'); expect(html).toContain('Copy proposed prompt');
+ expect(html).not.toContain('This guidance describes an earlier source, intention or learning decision.');
+ for (const value of [{ ...current, dirty: true }, { ...current, specificationStale: true }, { ...current, error: 'Refresh failed.' }, { ...current, snapshot: '3'.repeat(64) }, { ...current, guide: { ...guide, intentRevision: '4'.repeat(64) } }]) {
+  const historical = render(value); expect(historical).toContain('This guidance describes an earlier source, intention or learning decision.'); expect(historical).not.toContain('Copy proposed prompt');
+ }
+ const historicalExplanation = render({ ...current, guide: { ...guide, operation: 'explain', topicIdentity: '5'.repeat(64), result: { ...guide.result, plan: [], prompt: '' } } });
+ expect(historicalExplanation).toContain('This guidance describes an earlier source, intention or learning decision.');
+});

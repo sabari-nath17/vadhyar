@@ -1,0 +1,119 @@
+name: CI
+
+on:
+  push:
+    branches: [main, 'codex/**']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Quality (${{ matrix.os }}, Node ${{ matrix.node }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            node: '24'
+          - os: macos-latest
+            node: '24'
+          - os: macos-latest
+            node: '26'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - name: Use the pinned package manager
+        run: npm install --global npm@11.19.0 --ignore-scripts
+      - run: npm ci --ignore-scripts
+      - name: Root checks
+        run: |
+          npm run typecheck
+          npm run lint
+          npm test
+          npm run build
+      - name: Browser companion checks
+        run: npm run prototype:check
+      - name: Portable installer checks
+        run: npm run browser:check
+
+  audit:
+    name: Dependency risk triage
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Use the pinned package manager
+        run: npm install --global npm@11.19.0 --ignore-scripts
+      - name: Risk policy regression tests
+        run: node --test scripts/dependency-audit.test.mjs
+      - name: Audit and enforce the scoped risk policy
+        if: always()
+        run: node scripts/dependency-audit.mjs --output dist/security
+      - name: Preserve native audit reports
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: dependency-audit-${{ github.sha }}
+          path: dist/security/*.json
+          if-no-files-found: error
+          retention-days: 7
+
+  dependency-review:
+    name: Dependency review
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/dependency-review-action@a1d282b36b6f3519aa1f3fc636f609c47dddb294 # v5.0.0
+        with:
+          fail-on-severity: high
+          fail-on-scopes: runtime, development, unknown
+
+  portable-artifact:
+    name: Portable browser artifact
+    needs: [quality, audit]
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Use the pinned package manager
+        run: npm install --global npm@11.19.0 --ignore-scripts
+      - run: npm ci --ignore-scripts
+      - run: npm run browser:package
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: vadhyar-browser-${{ github.sha }}
+          path: |
+            dist/releases/vadhyar-browser-*.tar.gz
+            dist/releases/vadhyar-browser-*.tar.gz.sha256
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7

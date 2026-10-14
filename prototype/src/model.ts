@@ -81,6 +81,11 @@ export function restoreState(raw: string | null): { state: State; error?: string
  catch { return { state: newState(), error: 'Saved prototype data could not be read. It is preserved. Download a backup or reset only this prototype.' }; }
 }
 export class StorageFailure extends Error { constructor() { super('Your action is kept in this tab but could not be saved. Export the visible record before leaving, or retry saving.'); } }
+export function resetState(storage: Pick<Storage, 'setItem'>): State {
+ const fresh = stateSchema.parse(newState());
+ try { storage.setItem(STORAGE_KEY, JSON.stringify(fresh)); } catch { throw new StorageFailure(); }
+ return fresh;
+}
 export function recordAction(state: State, action: Action, storage: Pick<Storage, 'getItem' | 'setItem'>): { state: State; warning?: string } {
  const next = stateSchema.parse(transition(state, action));
  try { return { state: persistState(storage, next, state.serial) }; } catch (e) { if (e instanceof StorageFailure) return { state: next, warning: e.message }; throw e; }

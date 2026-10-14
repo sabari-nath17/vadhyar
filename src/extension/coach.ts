@@ -3,9 +3,9 @@ import OpenAI from 'openai';
 import { zodTextFormat } from 'openai/helpers/zod';
 import { z } from 'zod';
 import { hash, resolveReference, type PreparedFile } from './source.js';
+import { privateText } from './privacy.js';
 import { hintSchema, predictionSchema, type ContextPreview, type Counterexample, type GraphEvidence, type Hint, type Prediction, type SourceRef } from '../shared.js';
 
-const privateText = /(\bsk-(?:proj-)?[A-Za-z0-9_-]{16,}|-----BEGIN [A-Z ]*PRIVATE KEY|(?:api[_-]?key|secret|password|token)\s*[:=]\s*["'][^"']+["'])/i;
 // shortcut: catches explicit positive verdicts; semantic grounding and answer leakage still require review.
 const unsupportedVerdict = /(?:^|[.!?;\n:]\s*)(?:all (?:the )?(?:tests|checks)(?: have)? passed|(?:the )?(?:feature|implementation|requirement) is (?:fully )?(?:verified|correct)|you (?:have )?mastered|you (?:wrote|authored) (?:this|the) code)\b/i;
 

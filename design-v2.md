@@ -1,0 +1,325 @@
+# Vadhyar Design System v2: The Guided Lesson Experience
+
+| | |
+|---|---|
+| **Version** | 2.0.1 |
+| **Scope** | The Vadhyar VS Code panel (React): path home, lessons, feedback, completion, evidence, states, assets |
+| **Audience** | Codex or any engineer building the UI. You MAY generate images, SVG, sounds and scaffolding. You MUST NOT change host behavior. |
+| **Relationship to `design.md` 1.1.0** | v2 **adds an experience layer** on top of it. Where they conflict, v2 wins (see §15). Everything not mentioned here (consent, state catalog, accessibility, editor integration, logo placement) is inherited unchanged. §4 repeats the essentials so this file works alone. |
+| **Maintenance** | Any PR that changes UI updates this file in the same PR. Version rules as in `design.md`. |
+
+## 0. How to read this file
+
+- **MUST / SHOULD / MAY** as usual. Examples are illustrative; never hard-code them.
+- **Reference note:** the three Duolingo files describe Duolingo's *marketing site style* (flat sticker fills, thick rounded borders, mascot beside text, one saturated accent, generous white space). They do not describe the lesson flow. The lesson mechanics below are well-known learning-app patterns, reimagined for Vadhyar. **Do not copy Duolingo's mascot, name, fonts (Feather, duolingo-sans), exact green, illustrations or copy.** Borrow the feel, not the assets.
+- **Honesty overrides delight.** If a delight feature would claim more than the evidence shows, drop it.
+
+## 1. North star
+
+> **Duolingo's momentum, Vadhyar's honesty.** Every moment is one small, clear task with instant, kind feedback, and every number on screen comes from something that actually happened.
+
+| Borrow | Reinterpret as | Do not borrow |
+|---|---|---|
+| Learning path of nodes | Path of rules/exercises; planned ones clearly labelled | Fake locked content that implies features exist |
+| One task per screen, close X, progress bar | Six-step lesson with a segmented bar from the step registry | Hearts, lives, loss framing |
+| Bottom action bar, Check/Continue | Sticky bar with the single Ochre primary | Auto-advance that skips reading |
+| Instant feedback sheet (green/red) | Teal/Terracotta sheet that judges the **code**, never the learner | "Wrong!", "Incorrect", scolding copy |
+| Mascot with speech bubble | **The Guide** (lotus + teaching hand) | Any owl, any lookalike |
+| XP, streaks, leaderboards | **Proof stickers** earned only from recorded evidence | XP, streaks, ranks, percent mastery (until backed by real capability) |
+| Celebration screen | Lotus bloom + real evidence summary | Confetti storms, "You mastered it!" |
+| Sticker-style pills and 12px rounded buttons | Same shape language in our palette | Feather font, Duolingo green/blue |
+
+## 2. Principles
+
+| # | Principle | Rule |
+|---|---|---|
+| E1 | One task per screen | A lesson screen asks one question or offers one action. |
+| E2 | Kind, specific feedback | Feedback names what the **code** did and what the rule says. Mistakes are discoveries. |
+| E3 | Evidence-only numbers | Counts, stickers and summaries derive from recorded evidence. No decorative scores. |
+| E4 | One Ochre primary | One dominant action per screen, in the sticky bottom bar. |
+| E5 | The code stays native | Code, editor highlights and diffs keep native VS Code styling. Illustration never touches code. |
+| E6 | Delight is brief and skippable | Max 1 celebratory moment per lesson; reduced motion removes it; sound is off by default. |
+| E7 | Honest scope | Planned = visibly planned. Imported requirements = "Explanation only". |
+| E8 | Host first | Consent, validation, approvals and state rules from `design.md` §6, §9 are untouched. |
+
+(P1–P9 from `design.md` still apply. In particular: predictions lock before the case runs; future steps never expose withheld answers; "Checks passed" only for executed results on current code.)
+
+## 3. Experience map
+
+```text
+PATH HOME ──tap current node──▶ START SHEET ──Start──▶ LESSON
+   │                                                   1 Confirm
+   │ settings, break node                              2 Understand   (gates: no key, share review, loading)
+   │                                                   3 Predict      ──Save──▶ sheet
+   │                                                   4 Observe      (feedback sheet)
+   │                                                   5 Change       (native editor, hints)
+   │                                                   6 Verify       (cases run, result sheet)
+   ◀── Back to path ◀── COMPLETION ◀──────────────────┘
+                          └─▶ EVIDENCE REVIEW
+```
+
+- Closing a lesson (X) saves progress locally and returns to the path. Reaching a state from stored records follows `design.md` §6 "Returning session".
+- The path shows what exists today: **Rule 1 (prepared NovaDesk exercise)** is playable. **Transfer challenge** and **Build Guide** nodes are dashed with a "Planned" tag and are not tappable. **Take a break** (Snake) is an optional node.
+
+## 4. Visual language
+
+### Tokens (extends `design.md` §2; brand hexes unchanged)
+
+```css
+:root{--terra:#A7413A;--teal:#6A8A82;--ochre:#D9A05B;--charcoal:#1E2022;--parchment:#F4EFE6;--ink:#2C3539;
+  --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-6:24px;--sp-8:32px;--sp-10:40px;--sp-12:48px;
+  --r-ctl:12px;--r-card:12px;--r-sheet:16px;--r-frame:2px;--bd:2px;}
+.vd-theme-light{--canvas:#F4EFE6;--card:#FFFFFF;--border:#CFC6B3;--text:#2C3539;--muted:#4E5659;
+  --lip-ochre:#B8802F;--lip-teal:#4E6B63;--lip-terra:#7F302B;
+  --sheet-ok:#DCE8E4;--sheet-bad:#F2D9D6;--sheet-hint:#F6E5CC;--fail-text:#A7413A;--pass-text:#3F5F57;--link:#8A302A;}
+.vd-theme-dark{--canvas:#1E2022;--card:#262A2D;--border:#3D4144;--text:#F4EFE6;--muted:#B9B2A5;
+  --lip-ochre:#B8802F;--lip-teal:#4E6B63;--lip-terra:#7F302B;
+  --sheet-ok:#24312E;--sheet-bad:#3A2523;--sheet-hint:#3A3022;--fail-text:#E39A93;--pass-text:#8FB0A7;--link:#D9A05B;}
+```
+Sheet tints and lip colors are proposals. Verify every text/background pair (4.5:1) before shipping. High-contrast themes drop brand colors and use `--vscode-*` values; layout and icons stay.
+
+### Color roles (Duolingo's "one saturated color means go", in our palette)
+
+| Role | Color | Rule |
+|---|---|---|
+| Next action / go | Ochre | Primary button, current path node, hint tint |
+| Correct / verified | Teal | Verified rows, ok sheet, done nodes |
+| Rule broken | Terracotta | Failed observation, manuscript frame, bad sheet |
+| Body and headings | `--text` / `--muted` | Mid-tone body so colored elements lead; no colored body paragraphs |
+| Links | `--link` | Links and outlined secondary actions only |
+
+Ochre is never text on Parchment. Terracotta is never a primary button.
+
+### Shape and surface
+
+- **Sticker style:** flat fills, **2px solid borders**, **12px radius** on buttons, cards, chips and path nodes (circle). Sheets: 16px top corners. Manuscript frame stays 2px radius with the double line (see `design.md` §5).
+- **Primary button lip:** 2px border all round with a **4px darker bottom edge** (`--lip-*`). Pressed: move down 2px and drop the lip to 2px (no transform under reduced motion; shift color instead). This is a border, not a shadow.
+- **No shadows, gradients or glass anywhere.** Depth comes from borders and flat tints only.
+- Canvas is `--canvas`; cards are `--card` with a 2px `--border`. Spacing is roomier than v1: **24px between major blocks, 12px between related elements, 16px panel padding**.
+
+### Type (panel scale, 360px)
+
+| Role | Font | Size / line | Notes |
+|---|---|---|---|
+| Display | Playfair Display 600 | 28 / 1.15 | −0.02em. Path title, completion, requirement |
+| Heading | Inter 700 | 22 / 1.25 | −0.01em. Task question |
+| Subhead | Inter 700 | 17 / 1.3 | Card titles |
+| Body | Inter 500 | 15 / 1.45 | Mid-gray `--muted` for secondary |
+| Caption | Inter 500 | 13 / 1.3 | Min size |
+| Label | JetBrains Mono 500 | 12 / 1.4 | Sentence case; file refs, step label |
+| Button | Inter 700 | 15 | Sentence case |
+| Node tag | Inter 700 | 12, uppercase, +0.05em | Only "START" and "PLANNED" |
+
+**Wide mode (panel ≥ 720px):** scale Heading 28, Body 17, Display 40; lesson column max 480px; the Guide illustration sits to the right, sticky (editorial text-left / art-right, as in the reference). Single column below 720. Usable down to 320px.
+
+Fonts are bundled woff2 (design.md §3). Feather/duolingo-sans are not used.
+
+### Imagery
+Flat 2D illustration, rounded geometric shapes, **3px `--ink` outlines**, restrained block-print (Kalamkari-style) motifs. Illustration may use extra warm tints around the brand palette; **UI chrome never uses them**. Icons are stroke-only (Lucide family), 2px, no emoji.
+
+## 5. Components
+
+| Component | Spec |
+|---|---|
+| **StickerButton** | Variants: `primary` (Ochre, lip), `secondary` (transparent, 2px `--border`, `--link` text), `quiet` (text). Min height **48px**. Disabled = `aria-disabled`, neutral fill, **reason line beneath** (design.md Disabled control). Busy = operation label + Cancel. |
+| **ActionBar** | Sticky bottom of the panel, canvas-colored, 2px top border, 16px padding. Holds the one primary (+ optional secondary). Becomes the FeedbackSheet's footer after a check. |
+| **ProgressSegments** | One segment per step from the step registry; 8px high, 4px gap, radius 4. Done Teal, current Ochre, locked `--border`. Close X at left (44px). Segments are buttons to revisit done steps. Fill animates 240ms. |
+| **AnswerCard** | Selectable choice, min height 56px, 2px border, 12px radius, number badge (1/2) and keyboard shortcut. Selected: Ochre border + 10% Ochre tint + check bubble. Real radio input underneath. |
+| **FeedbackSheet** | Slides up inside the panel over the ActionBar, 16px top radius, 2px top border. `ok` (Teal tint), `bad` (Terracotta tint), `hint` (Ochre tint). Icon + title + one sentence + primary. Focus moves to the title; `aria-live="polite"`. |
+| **PathNode** | 64px circle, 2px border. `current` Ochre fill with a "START" tag bubble above; `done` Teal with check; `locked` neutral with lock; `planned` dashed outline + "PLANNED" tag, not focusable as an action; `break` neutral with lotus-pot icon. Label below in Subhead. |
+| **Chip** | Sticker tag: 12px radius, 2px border, Caption/Label text, icon + text. Used for status ("Current code", "Hints used: 1"). |
+| **Banner** | Icon + text + action, tinted `--sheet-*`, 12px radius. Stale/hint = Ochre, error = Terracotta, verified = Teal. |
+| **Requirement frame** | Manuscript double border (design.md §5). Display or Heading text. Always visible; collapses to one line in lessons after Confirm. |
+| **Guide** | See §7. Sizes 96px (panel), 160px (completion, gates, wide mode). |
+| **ProofSticker** | 96px flat sticker with 3px outline; shown only when earned; label beneath. |
+| **Disclosure** | Unchanged: Evidence so far, Technical details. |
+
+## 6. Screens
+
+### 6.1 Path home
+Header: wordmark (transparent logo; Parchment plate on dark), Settings icon (44px). Title (Display): "Your path" (copy may vary). Chip: "Saved locally in this workspace". Below: vertical path with a gentle ±40px zigzag: **Rule 1** (current) → **Transfer challenge** (planned) → **Take a break** (optional) → **Build Guide** (planned). Current node carries the START bubble and a calm ring pulse (3 cycles, then still). Tapping a planned node opens a Banner explaining it is planned and what it will do. Nothing on this screen implies working features that are not built.
+
+### 6.2 Start sheet
+Bottom sheet over the path: Guide (welcome), rule title, one-line promise, a row of the six step names as small chips, primary **Start**, quiet **Not now**. Shows the exercise label "Prepared exercise · NovaDesk · intentional ownership bug" and a disclosure for the longer explanation. Resuming shows "Continue" and the last saved step with whether its evidence is current.
+
+### 6.3 Lesson shell
+Top: ProgressSegments + close X. Middle: scrollable task area (one task). Bottom: ActionBar. A lesson screen MUST fit its primary action without scrolling at 360×640. Step label (Label) shows `Step N of M · Name` derived from the registry.
+
+### 6.4 Steps
+
+| Step | Screen | Primary | Feedback |
+|---|---|---|---|
+| **1 Confirm** | Requirement frame (Display), three acceptance cases as rows (Allow/Deny), Guide small | Confirm this requirement | none |
+| **2 Understand** | Gates first if needed: **No key** (Guide + Connect OpenAI), **Share review** (requirement, files, model, expandable payload), **Loading** (Guide thinking, skeleton, Cancel). Then explanation: Purpose / Logic / Result as three stacked cards, source chips opening the native editor, "Explain further" disclosure | Continue to prediction | none |
+| **3 Predict** | Question (Heading), two AnswerCards, reasoning field with counter, disabled-reason line | Save prediction and run case | After save: prediction locks, case runs, sheet opens |
+| **4 Observe** | Three-fact ledger (You predicted / The code did / The requirement says) and two verdict chips | Investigate this result (in sheet) | `bad` sheet: "The code allowed it." + "The rule says it shouldn’t." Guide: curious |
+| **5 Change** | Task card, source chip, **Hint button** (lightbulb, 3 tiers: Concept, Source attention, Debugging action; each reveals one Ochre hint card; "Hints used: n" chip), saved/unsaved chip, mini diff after save | Run checks on my changes (disabled until saved, with reason) | Runner failed = Banner, separate from failed assertion |
+| **6 Verify** | Cases run **in order**; each row resolves with a Teal tick or Terracotta cross (140ms apart, conveys execution order) with `required → actual` | Rerun checks / Back to the code | `ok` sheet: "All three ownership cases match for your saved code." or `bad` sheet with failing count |
+
+Rules: wrong or surprising outcomes use code-centered language. The sheet never shows "Wrong". After a **correct prediction of broken behavior**, say so: the code still breaks the rule. Stale results show the Ochre banner with Rerun. Imported requirements show "Explanation only" and skip steps 3–6.
+
+### 6.5 Completion
+Guide celebrating inside the **lotus bloom** (one 900ms SVG animation, once). Display title: honest summary (for example "You changed it, and three cases now match"). Stats row, all real: **Predicted first**, **Hints used: n**, **Lines changed: n**, **Cases matched: x of 3**. **Proof stickers** earned from evidence only. Caption: "These cases establish this behavior. They do not measure mastery." Primary: **Back to path**. Secondary: **Review evidence**.
+
+### 6.6 Evidence review
+A vertical timeline (Intent, Interpretation, Prediction, Observation, Change, Verification), each item with its code version and a "Current code / Earlier code" chip. Collapsed technical details. Keeps the evidence model from `design.md` (categories visibly distinct).
+
+### 6.7 Gates and states
+Every state in `design.md` §6 appears in v2 with the Guide where it helps (no key, loading, stale, runner failed, API error, empty path). Copy and recovery are unchanged; presentation uses Banner/Sheet and a small Guide pose. Errors never apologize and never stay vague.
+
+## 7. The Guide and proof stickers
+
+**The Guide:** a friendly character built from the logo symbol: a lotus with one raised hand in a simple teaching gesture (palm out, thumb touching index fingertip; keep it abstract and respectful). Calm, curious, patient. Two dot eyes, no mouth detail beyond a small curve. Palette: brand colors plus warm tints; 3px `--ink` outline. The Guide never appears over code or technical details.
+
+**Poses (SVG):** `welcome`, `thinking`, `pointing`, `curious`, `aha`, `celebrate` (with bloom), `resting` (break), `key` (no key). Eyes, hand and petals are separate groups with ids so CSS can animate them.
+
+**Proof stickers (earned only if the evidence exists):**
+
+| Sticker | Earned when |
+|---|---|
+| Predicted first | The prediction was locked before the case ran |
+| Found the bug | The learner opened the source after Observe and the prior case broke the rule |
+| Fixed it yourself | A saved learner edit made all three cases match |
+| All cases match | Verification on current code passed 3 of 3 |
+| No hints | Verified with zero hints used |
+
+No XP, streaks, levels or percentages. A streak or return reminder is **planned** and MUST wait for real session-resume support.
+
+## 8. Motion and sound
+
+| Element | Motion |
+|---|---|
+| Button press | Down 2px, lip to 2px, 80ms |
+| AnswerCard select | Border/tint 120ms, check pop 140ms |
+| FeedbackSheet | Slide up 220ms ease-out; focus handoff |
+| Progress fill | 240ms |
+| Verify rows | 140ms apart, in execution order |
+| Lotus bloom | 900ms, once, on completion only |
+| Current path node | Ring pulse, 3 cycles, then still |
+| Source navigation | Immediate |
+
+Keep inputs and the requirement stationary. No confetti, bounce, typewriter text or looping idle animations. `prefers-reduced-motion`: remove transforms, pulse and bloom; keep visible state changes.
+
+**Sound:** three short WebAudio tones (tap, reveal, verified). **Off by default**, toggle in Settings, never on load, never for errors.
+
+## 9. Voice and microcopy
+
+Warm, curious, specific, sentence case, active voice. One idea per line. Praise is rare and specific ("Your prediction was locked before the case ran"), never generic ("Great job!"). Feedback talks about the **code**. Errors say what happened and what to do, in the interface's voice, without apologizing.
+
+| Moment | Default copy |
+|---|---|
+| Path title | Your path |
+| Current node tag | START |
+| Start primary | Start |
+| Predict primary | Save prediction and run case |
+| Observe sheet | The code allowed it. The rule says it shouldn’t. |
+| Verify success | All three ownership cases match for your saved code. |
+| Honest caption | These cases establish this behavior. They do not measure mastery. |
+| Planned node | Planned. This will let you plan your next feature. (adjust per node) |
+
+Keep product terms consistent with the app: Requirement, Predict, Observe, Change, Verify.
+
+## 10. Asset generation brief (Codex: generate these)
+
+Prefer **hand-built SVG** (crisp, animatable). Raster only for the pitch deck hero. Store under `media/`.
+
+| Asset | Files | Spec |
+|---|---|---|
+| Brand symbol | `media/brand/symbol.svg`, `symbol-mono.svg`, `activity-bar.svg` | Square emblem: structural V, lotus base, descending hand. Activity bar: 16×16, geometric V + bindu dots only |
+| Guide | `media/guide/{welcome,thinking,pointing,curious,aha,celebrate,resting,key}.svg` | viewBox 240×240, transparent, 3px `#2C3539` outline, flat fills |
+| Bloom | `media/guide/bloom.svg` | Petals as ids for CSS animation |
+| Path nodes | `media/path/{start,done,locked,planned,break}.svg` | 64×64, 2px stroke |
+| Stickers | `media/stickers/*.svg` | 96×96, one per §7 row |
+| Gate art | `media/gates/{no-key,loading,stale,runner-failed}.svg` | 160×120, uses the Guide |
+
+**Style prompt (for any image tool):** "Flat 2D vector illustration of a friendly lotus character with one raised hand in a simple teaching gesture, rounded geometric shapes, thick dark slate outlines (#2C3539, 3px), warm earthy palette (terracotta #A7413A, muted teal #6A8A82, ochre #D9A05B, parchment #F4EFE6), subtle block-print pattern on petals, transparent background, no text, no owl, no existing characters, calm and patient expression."
+
+Review every asset at 360px and 32px; outlines consistent; no text baked in; no resemblance to Duolingo's characters.
+
+## 11. Demo mode and hackathon polish
+
+- **Demo mode** (Settings toggle): resets to a prepared state; when the network or key is unavailable, uses a **recorded response clearly labelled "Recorded response"**. Never presented as live.
+- **Golden path (about 90 seconds):** path home → tap START → confirm → explanation → predict → the Observe sheet reveal → hint → edit and save → verify rows tick Teal → completion bloom and honest summary → Evidence review.
+- The first 10 seconds MUST look finished: wordmark, Guide, path with a single glowing START.
+- Keyboard: `1`/`2` choose answers, `Enter` triggers the primary, `Esc` closes sheets.
+- Include a dev route `/gallery` that renders every component and state at 320, 360 and 720px in light, dark and high-contrast.
+
+## 12. Build plan for Codex
+
+| Phase | Work | Done when |
+|---|---|---|
+| 0 | Tokens, bundled fonts, theme mapping, component library (§5), `/gallery` | Gallery renders all components in 3 themes at 3 widths |
+| 1 | Generate assets (§10) | All files exist and pass the asset review |
+| 2 | Lesson shell: ProgressSegments, ActionBar, FeedbackSheet; wire steps to **existing host actions unchanged** | Each step works at 360×640 without scrolling the primary |
+| 3 | Path home, Start sheet, Completion, Evidence review | Full golden path runs end to end |
+| 4 | Gates and states, motion, sound toggle, reduced motion | Every `design.md` §6 state appears and recovers |
+| 5 | Demo mode, accessibility pass, screenshots (320/360/720 × 3 themes), short screen recording | QA checklist (§13) passes |
+
+Constraints: do not change consent, validation or storage behavior; no new network calls; no runtime font fetch; keep the panel inside its slots; update this file with any deviation.
+
+## 13. QA checklist
+
+- 6 steps render from the registry; counts derived, never hard-coded.
+- One Ochre primary per screen; disabled controls give reasons.
+- Feedback never uses "Wrong", "Incorrect" or "Failed" about the learner.
+- Every number and sticker traces to recorded evidence; planned items are labelled.
+- Text-safe contrast verified for all tints; high-contrast themes use host colors.
+- Keyboard-only run of the golden path; visible focus; focus handoff on sheets.
+- Reduced motion removes pulse, bloom and transforms.
+- Sound is off by default.
+- No shadows, gradients, emoji or Duolingo marks.
+- Screenshots at 320, 360 and 720 in light, dark and high-contrast.
+
+## 14. Don't
+
+No owl or lookalike. No Feather or duolingo-sans. No hearts, XP, streak, rank or percent mastery. No scolding copy. No shadows, gradients, glass. No illustration over code. No colored body text. No Terracotta primary. No auto-advance past feedback. No hidden "Planned" features that look playable. No new sharing without the review step.
+
+## 15. Where v2 overrides `design.md` 1.1.0
+
+| Topic | v1.1 | v2 |
+|---|---|---|
+| Radii | 2 / 6 / 8 | 12 for controls and cards, 16 sheets, 2 manuscript frame |
+| Borders | 1px hairlines | 2px sticker borders; primary buttons get a 4px bottom lip |
+| Targets | ≥ 44px | ≥ 48px for primary and answer cards, 44px otherwise |
+| Spacing | 12 gaps | 24 between blocks, 12 between related items, 16 padding |
+| Heritage styling | Teacher elements only | Also Guide, path and completion art (never code or technical content) |
+| Layout | Panel with all sections visible | Path + one-task lesson shell with sticky ActionBar |
+| Break | Disclosure at the end | Optional path node |
+| Step indicator | Label + segments | Segments + close X, with progress fill |
+
+## 16. Decision log
+
+| ID | Decision | Reason |
+|---|---|---|
+| V-001 | Keep our palette and fonts; borrow Duolingo's structure | The brand is the identity; the feel is the goal |
+| V-002 | Ochre is "go" (Duolingo's single saturated color) | Terracotta signals broken, Teal verified |
+| V-003 | Proof stickers, not XP or streaks | The product's rule: no score unless evidence |
+| V-004 | Feedback sheets judge the code | Learner stays curious, not scolded |
+| V-005 | Primary lip is a border, not a shadow | The reference bans shadows; the lip adds tactile feel |
+| V-006 | Sentence-case buttons | Long labels at 360px; uppercase only for START / PLANNED |
+| V-007 | Planned nodes visible but inert | Shows the roadmap without implying features |
+| V-008 | Demo mode with labelled recorded response | Reliability on stage without faking live results |
+| V-009 | Guide built from the logo symbol | Ownable character, no lookalike risk |
+| V-010 | Sound off by default | VS Code is a work environment |
+
+## 17. Open items
+
+- Name for the Guide (team decision; optional).
+- Confirm sheet tint and lip colors pass 4.5:1 in the real panel.
+- Decide when streaks or return reminders become real (needs session resume).
+- Path content beyond Rule 1 depends on Transfer and Build Guide support.
+- Nothing here has been built or user-tested yet.
+
+## 18. Changelog
+
+- **2.0.0**: first release of the guided-lesson experience layer.
+
+## 19. Phase 0 implementation decisions
+
+- The user requested §10 assets **before screens**. Generate and review them ahead of Phase 0; Phase 1's asset gate is pulled forward. The supplied Downloads original remains unchanged.
+- Phase 0 is an isolated development gallery and component library, not a replacement for the live NovaDesk or Project Guide panels. `/gallery` sends no host messages, makes no API calls, and cannot reset sessions. Later phases retain every existing action; inventory: `feature-parity.json`.
+- Contrast overrides the proposed border/lip colors in §4. Use the already verified v1 light/dark border values and semantic border variants; document measured ratios with gallery evidence. High-contrast uses host tokens only.
+- Proof labels must not infer authorship. “Fixed it yourself” becomes **Saved edit checked**; “Found the bug” needs a recorded post-observation source-open event, which the current host does not record. It stays unawarded. “No hints” means **No Vadhyar hints recorded**, never no outside assistance.
+- Gallery examples use labelled historical S12 developer-rehearsal evidence, not invented learner records. Sizes, radio shortcut numbers and the step total describe actual layout/component structure, not learning achievement. Asset review thumbnails are explicitly unawarded previews.
+- Existing Transfer and Project Guide are implemented. Their eventual path placement must reflect actual host capability, rather than the older §3 planned wording. Runtime tracing, sound, motion and demo reset remain deferred; no new host operations are introduced.
+- Reuse the bundled Inter variable face (verified weight axis 100–900) for 700; no font download or runtime font request. Font language coverage remains the existing Latin subset with platform fallbacks.

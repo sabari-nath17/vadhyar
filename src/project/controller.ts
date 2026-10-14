@@ -24,7 +24,11 @@ export function createProjectController(context: vscode.ExtensionContext, publis
  function storage() { if (!context.storageUri) throw new Error('Workspace memory is unavailable.'); return context.storageUri.fsPath; }
  function dirty() { const folders = vscode.workspace.workspaceFolders; if (!vscode.workspace.isTrusted || folders?.length !== 1 || folders[0].uri.scheme !== 'file') return true; return vscode.workspace.textDocuments.some(doc => doc.isDirty && doc.uri.scheme === 'file' && supportedPath(relative(folders[0].uri.fsPath, doc.uri.fsPath))); }
  function selectedTopic() { return record?.topic?.requirementId === record?.selectedIntent ? record?.topic : undefined; }
- function selectedGuide() { const revision = record?.intents.find(item => item.id === record!.selectedIntent)?.revision; return record?.guides.filter(item => item.intentRevision === revision && item.topicIdentity === selectedTopic()?.identity).at(-1) ?? record?.guides.filter(item => item.intentRevision === revision).at(-1) ?? (record?.guide?.intentRevision === revision ? record?.guide : undefined); }
+ function selectedGuide() {
+   const revision = record?.intents.find(item => item.id === record!.selectedIntent)?.revision;
+   const guides = record?.guides.filter(item => item.intentRevision === revision && (item.operation === 'plan' || item.topicIdentity === selectedTopic()?.identity));
+   return guides?.filter(item => item.snapshot === record?.current?.id).at(-1) ?? guides?.at(-1) ?? record?.guides.filter(item => item.intentRevision === revision).at(-1) ?? (record?.guide?.intentRevision === revision ? record?.guide : undefined);
+ }
  function invalidateContext() { preview = undefined; groups = undefined; groupSnapshot = undefined; groupReviewedPaths = undefined; relationships = undefined; }
  function state(): ProjectState {
    return { name: basename(vscode.workspace.workspaceFolders?.[0]?.uri.fsPath ?? 'Workspace'), busy, operation, error, notice, dirty: dirty(), specificationStale: specificationStale(), started: Boolean(record?.baseline), snapshot: record?.current?.id, baseline: record?.baseline?.id, fileCount: record?.current?.files.length ?? 0, omitted: record?.current?.omitted ?? [], changes: record?.baseline && record.current ? changesBetween(record.baseline, record.current) : [], intents: record?.intents ?? [], selectedIntent: record?.selectedIntent, files: record?.current?.files.map(file => file.path) ?? [], selectedFiles: record?.selectedFiles ?? [], groups: groups?.map(group => ({ ...group, change: decisionChange(record!.baseline!, record!.current!, group.decision) })), groupSnapshot, groupReviewedPaths, relationships, topic: record?.topic, guide: selectedGuide(), preview, check: record?.check, checkResult: checkResult ?? record?.checkRuns.at(-1), checkDefinitionStale: Boolean((checkResult ?? record?.checkRuns.at(-1)) && record?.current?.files.find(file => file.path === 'package.json')?.hash !== (checkResult ?? record?.checkRuns.at(-1))?.packageHash), captureConnected: record?.captureConnected ?? false };
@@ -192,8 +196,11 @@ export function createProjectController(context: vscode.ExtensionContext, publis
      if (picked) await persist({ ...record, check: { script: picked.label, packageHash: manifest.hash } });
    } else if (action.type === 'projectRunCheck') {
      if (!record.check || !record.current || dirty()) throw new Error('Choose a project check and save source first.');
-     const consent = await vscode.window.showWarningMessage(`Run npm run ${record.check.script} in ${basename(root())}? This executes trusted project code, is not sandboxed, and may change files.`, { modal: true }, 'Run selected check');
-     if (consent) {
+     const approvedSnapshot = record.current.id;
+     const consent = await vscode.window.showWarningMessage(`Run npm run --ignore-scripts ${record.check.script} in ${basename(root())}? Only the selected script runs; automatic npm pre/post hooks are disabled. This executes trusted project code, is not sandboxed, and may change files.`, { modal: true }, 'Run selected check');
+     if (consent === 'Run selected check') {
+       await refresh();
+       if (dirty() || record.current?.id !== approvedSnapshot) throw new Error('Project changed or has unsaved edits while confirming. Save, refresh and review the check again.');
        request = new AbortController(); busy = true; operation = 'Running the selected project check…'; emit();
        try {
          const result = await runProjectScript(root(), record.check.script, record.check.packageHash, record.current.id, record.intents.find(item => item.id === record!.selectedIntent)?.revision, request.signal);

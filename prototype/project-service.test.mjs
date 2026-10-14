@@ -1,14 +1,17 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createServer, request } from 'node:http';
-import { mkdtemp, mkdir, writeFile, rm, symlink, readFile, chmod, rename } from 'node:fs/promises';
+import fs from 'node:fs';
+import fsPromises, { mkdtemp, mkdir, writeFile, rm, symlink, readFile, chmod, rename, realpath } from 'node:fs/promises';
+import { EventEmitter } from 'node:events';
+import { syncBuiltinESMExports } from 'node:module';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { execFile } from 'node:child_process';
 import { Buffer } from 'node:buffer';
 import process from 'node:process';
-import { setTimeout } from 'node:timers';
+import { clearTimeout, setTimeout } from 'node:timers';
 import { promisify } from 'node:util';
 import { DatabaseSync } from 'node:sqlite';
 import { createProjectService } from './project-service.mjs';
@@ -445,6 +448,33 @@ test('reading a new selected file during and after a check preserves current fre
   await f.call(`/api/projects/${project.id}/source?fileId=${helper.id}&start=2&lines=1`);
   const after = (await f.call(`${runs}/${started.data.id}`)).data; assert.equal(after.status, 'passed'); assert.equal(after.exitCode, 0); assert.equal(after.output, completed.output); assert.equal(after.freshness, 'current');
  } finally { await f.close(); }
+});
+
+test('concurrent freshness reads share an active recorder flush without losing watch coverage', async t => {
+ let watchCallback, blockedPath, releaseScan, enteredScan, scanDeadline, f;
+ const scanEntered = new Promise(resolve => { enteredScan = resolve; });
+ const originalOpendir = fsPromises.opendir;
+ t.mock.method(fs, 'watch', (_root, _options, callback) => { watchCallback = callback; const watcher = new EventEmitter(); watcher.close = () => {}; return watcher; });
+ t.mock.method(fsPromises, 'opendir', async (...args) => {
+  if (args[0] === blockedPath) { blockedPath = null; enteredScan(); await new Promise(resolve => { releaseScan = resolve; }); }
+  return originalOpendir(...args);
+ });
+ syncBuiltinESMExports();
+ try {
+  f = await fixture({ 'answer.py': 'print(42)\n', 'folder/value.py': 'print(1)\n', 'package.json': JSON.stringify({ scripts: { test: 'node -e "process.exit(0)"' } }) });
+  await f.login(); const project = (await f.call('/api/projects/current')).data; const file = (await f.call(`/api/projects/${project.id}/files?q=answer.py`)).data.files[0]; const source = (await f.call(`/api/projects/${project.id}/source?fileId=${file.id}`)).data; const script = (await f.call(`/api/projects/${project.id}/scripts`)).data.scripts[0]; const runs = `/api/projects/${project.id}/runs`;
+  const started = await f.call(runs, { method: 'POST', body: { scriptId: script.id, fileId: file.id, sourceHash: source.sourceHash, manifestHash: script.manifestHash, approved: true } }); assert.equal(started.code, 202);
+  let completed;
+  for (let i = 0; i < 100; i++) { completed = (await f.call(`${runs}/${started.data.id}`)).data; if (completed.status !== 'running') break; await new Promise(resolve => setTimeout(resolve, 30)); }
+  assert.equal(completed.status, 'passed'); assert.equal(completed.freshness, 'current'); const before = (await f.call('/api/projects/current')).data;
+  blockedPath = await realpath(join(f.root, 'folder')); watchCallback('rename', 'folder');
+  await Promise.race([scanEntered, new Promise((_, reject) => { scanDeadline = setTimeout(() => reject(new Error('The controlled recorder scan did not start within 3 seconds.')), 3000); })]); clearTimeout(scanDeadline);
+  const reads = Promise.all([f.call(`${runs}/${started.data.id}`), f.call(`${runs}/${started.data.id}`)]);
+  await new Promise(resolve => setTimeout(resolve, 200)); watchCallback('change', 'answer.py'); releaseScan();
+  for (const result of await reads) { assert.equal(result.code, 200); assert.deepEqual(result.data, completed); }
+  const after = (await f.call('/api/projects/current')).data;
+  assert.equal(after.watching, true); assert.equal(after.watchError, null); assert.equal(after.status, 'ready'); assert.equal(after.revision, before.revision);
+ } finally { clearTimeout(scanDeadline); releaseScan?.(); try { await f?.close(); } finally { t.mock.restoreAll(); syncBuiltinESMExports(); } }
 });
 
 test('a completed passed receipt becomes unknown when watcher coverage is lost without rewriting its execution fact', async () => {

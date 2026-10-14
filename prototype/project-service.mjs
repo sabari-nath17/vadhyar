@@ -150,6 +150,7 @@ export async function createProjectService({ root, origin, storageRoot, handleEx
   clearTimeout(watchTimer); watchTimer = setTimeout(() => { watchFinished = flushChanges().catch(() => watchFailed('watch_failed')); }, 120);
  }
  async function flushChanges() {
+  if (processingChanges) return watchFinished;
   processingChanges = true;
   try {
    await ready;

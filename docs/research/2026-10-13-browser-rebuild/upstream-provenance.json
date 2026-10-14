@@ -1,0 +1,494 @@
+{
+  "review_date_ist": "2026-10-13",
+  "scope": "Public primary-source desk review. Default-branch commit snapshots; not verified package releases. No install, clone, import, benchmark or runtime execution.",
+  "license_authority": "Read the pinned license and per-directory terms; GitHub SPDX metadata is descriptive and may be NOASSERTION.",
+  "reviewed_by": "Codex primary agent; initial agent research separate; follow-up repository agents reached usage limit.",
+  "repositories": [
+    {
+      "repository": "Graphify-Labs/graphify",
+      "repository_url": "https://github.com/Graphify-Labs/graphify",
+      "default_branch": "v8",
+      "reviewed_commit": "e8eb76e797bed4f324bf0e1c262984a525aaab3e",
+      "commit_date_utc": "2026-10-13T10:27:05Z",
+      "archived_at_review": false,
+      "github_spdx_metadata": "Apache-2.0",
+      "tree_truncated": false,
+      "inspected_files": [
+        {
+          "path": "README.md",
+          "blob_sha": "ed4b09f4d1fcc14e0634a92bbf80c6198ef30c3e",
+          "url": "https://github.com/Graphify-Labs/graphify/blob/e8eb76e797bed4f324bf0e1c262984a525aaab3e/README.md",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "LICENSE",
+          "blob_sha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+          "url": "https://github.com/Graphify-Labs/graphify/blob/e8eb76e797bed4f324bf0e1c262984a525aaab3e/LICENSE",
+          "review_scope": "full short file/license"
+        },
+        {
+          "path": "NOTICE",
+          "blob_sha": "791bf88bb1e50572902dbbe9228153ea29846adf",
+          "url": "https://github.com/Graphify-Labs/graphify/blob/e8eb76e797bed4f324bf0e1c262984a525aaab3e/NOTICE",
+          "review_scope": "full short file/license"
+        },
+        {
+          "path": "LICENSE-MIT",
+          "blob_sha": "b1d9746fb5c6c39fd502e2ebe432a12ad9a097f3",
+          "url": "https://github.com/Graphify-Labs/graphify/blob/e8eb76e797bed4f324bf0e1c262984a525aaab3e/LICENSE-MIT",
+          "review_scope": "full short file/license"
+        },
+        {
+          "path": "pyproject.toml",
+          "blob_sha": "8f5cca6526da485e37e41971917fbbbea0a3f3fa",
+          "url": "https://github.com/Graphify-Labs/graphify/blob/e8eb76e797bed4f324bf0e1c262984a525aaab3e/pyproject.toml",
+          "review_scope": "selected manifest fields"
+        },
+        {
+          "path": "graphify/extractors/models.py",
+          "blob_sha": "02e1d38b630d5491fbc83aee4e020d65b7ae0a30",
+          "url": "https://github.com/Graphify-Labs/graphify/blob/e8eb76e797bed4f324bf0e1c262984a525aaab3e/graphify/extractors/models.py",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "graphify/extract.py",
+          "blob_sha": "b2e7d77a88d80f9de159a96e84e74b887445c8ba",
+          "url": "https://github.com/Graphify-Labs/graphify/blob/e8eb76e797bed4f324bf0e1c262984a525aaab3e/graphify/extract.py",
+          "review_scope": "selected relevant source/documentation excerpts"
+        }
+      ]
+    },
+    {
+      "repository": "memvid/memvid",
+      "repository_url": "https://github.com/memvid/memvid",
+      "default_branch": "main",
+      "reviewed_commit": "e6bd9f7b9c38cd8d5370fa0fc936ac1dcd751813",
+      "commit_date_utc": "2026-07-14T14:39:06Z",
+      "archived_at_review": false,
+      "github_spdx_metadata": "Apache-2.0",
+      "tree_truncated": false,
+      "inspected_files": [
+        {
+          "path": "README.md",
+          "blob_sha": "602572e2e0e93f6de72652f1cc4d3d4615bb81fa",
+          "url": "https://github.com/memvid/memvid/blob/e6bd9f7b9c38cd8d5370fa0fc936ac1dcd751813/README.md",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "LICENSE",
+          "blob_sha": "b261ce12f3c79d32ab8aeb9f793f23cfb0bca521",
+          "url": "https://github.com/memvid/memvid/blob/e6bd9f7b9c38cd8d5370fa0fc936ac1dcd751813/LICENSE",
+          "review_scope": "full short file/license"
+        },
+        {
+          "path": "Cargo.toml",
+          "blob_sha": "c548bc5764d1fc3e00e65de1694d45af9ffcb3b1",
+          "url": "https://github.com/memvid/memvid/blob/e6bd9f7b9c38cd8d5370fa0fc936ac1dcd751813/Cargo.toml",
+          "review_scope": "selected manifest fields"
+        },
+        {
+          "path": "src/memvid/memory.rs",
+          "blob_sha": "404043b3dd838d13aa9f899ba41dc1f34cc01193",
+          "url": "https://github.com/memvid/memvid/blob/e6bd9f7b9c38cd8d5370fa0fc936ac1dcd751813/src/memvid/memory.rs",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "src/types/memory_card.rs",
+          "blob_sha": "f8ce6280b01b271b2d0870cd516879debd77ab22",
+          "url": "https://github.com/memvid/memvid/blob/e6bd9f7b9c38cd8d5370fa0fc936ac1dcd751813/src/types/memory_card.rs",
+          "review_scope": "selected relevant source/documentation excerpts"
+        }
+      ]
+    },
+    {
+      "repository": "NirDiamant/RAG_Techniques",
+      "repository_url": "https://github.com/NirDiamant/RAG_Techniques",
+      "default_branch": "main",
+      "reviewed_commit": "cbf9e528206bbb5cd23970ff612d12c1074e02dc",
+      "commit_date_utc": "2026-10-11T16:10:51Z",
+      "archived_at_review": false,
+      "github_spdx_metadata": "NOASSERTION",
+      "tree_truncated": false,
+      "inspected_files": [
+        {
+          "path": "README.md",
+          "blob_sha": "94e43c7e65380aa87349c39058be257f71319e10",
+          "url": "https://github.com/NirDiamant/RAG_Techniques/blob/cbf9e528206bbb5cd23970ff612d12c1074e02dc/README.md",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "LICENSE",
+          "blob_sha": "c3130d97e64bacdef4c33ac60e94e0b719dbf42e",
+          "url": "https://github.com/NirDiamant/RAG_Techniques/blob/cbf9e528206bbb5cd23970ff612d12c1074e02dc/LICENSE",
+          "review_scope": "full short file/license"
+        }
+      ]
+    },
+    {
+      "repository": "langfuse/langfuse",
+      "repository_url": "https://github.com/langfuse/langfuse",
+      "default_branch": "main",
+      "reviewed_commit": "65fdd26b9eca61eba5bd69e8706a5e63508fcbb8",
+      "commit_date_utc": "2026-10-13T13:23:12Z",
+      "archived_at_review": false,
+      "github_spdx_metadata": "NOASSERTION",
+      "tree_truncated": false,
+      "inspected_files": [
+        {
+          "path": "README.md",
+          "blob_sha": "3c4ad5773b846b6b1c16355640ebd87ff031f92e",
+          "url": "https://github.com/langfuse/langfuse/blob/65fdd26b9eca61eba5bd69e8706a5e63508fcbb8/README.md",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "LICENSE",
+          "blob_sha": "cf2d4abed1de0891f5dd4a20490ee5033f011605",
+          "url": "https://github.com/langfuse/langfuse/blob/65fdd26b9eca61eba5bd69e8706a5e63508fcbb8/LICENSE",
+          "review_scope": "full short file/license"
+        },
+        {
+          "path": "ee/LICENSE",
+          "blob_sha": "3e78f3e97ac04d255328733b8c479d62bbaebadf",
+          "url": "https://github.com/langfuse/langfuse/blob/65fdd26b9eca61eba5bd69e8706a5e63508fcbb8/ee/LICENSE",
+          "review_scope": "full short file/license"
+        },
+        {
+          "path": "docker-compose.yml",
+          "blob_sha": "2c545ba6f5cfa855fb02197fdec63943ba2b3f52",
+          "url": "https://github.com/langfuse/langfuse/blob/65fdd26b9eca61eba5bd69e8706a5e63508fcbb8/docker-compose.yml",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "packages/shared/src/domain/traces.ts",
+          "blob_sha": "5e0c39c671048354652b2dd6b87a29cb05b56e08",
+          "url": "https://github.com/langfuse/langfuse/blob/65fdd26b9eca61eba5bd69e8706a5e63508fcbb8/packages/shared/src/domain/traces.ts",
+          "review_scope": "full short file/license"
+        },
+        {
+          "path": "packages/shared/src/features/evals/decisionModel.ts",
+          "blob_sha": "794f8c5e779ea5249d48fffbcb4160bd30a44b68",
+          "url": "https://github.com/langfuse/langfuse/blob/65fdd26b9eca61eba5bd69e8706a5e63508fcbb8/packages/shared/src/features/evals/decisionModel.ts",
+          "review_scope": "selected relevant source/documentation excerpts"
+        }
+      ]
+    },
+    {
+      "repository": "shareAI-lab/learn-claude-code",
+      "repository_url": "https://github.com/shareAI-lab/learn-claude-code",
+      "default_branch": "main",
+      "reviewed_commit": "ce8f9f186058939da54c9d6fead78dfb5d0fd6c3",
+      "commit_date_utc": "2026-09-28T13:49:16Z",
+      "archived_at_review": false,
+      "github_spdx_metadata": "MIT",
+      "tree_truncated": false,
+      "inspected_files": [
+        {
+          "path": "README.md",
+          "blob_sha": "cd068f31eb579f5ab7c4288f134358135408ec5a",
+          "url": "https://github.com/shareAI-lab/learn-claude-code/blob/ce8f9f186058939da54c9d6fead78dfb5d0fd6c3/README.md",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "LICENSE",
+          "blob_sha": "ac5ab8405e8ead1ec7a8856b1c2c9baf86006f92",
+          "url": "https://github.com/shareAI-lab/learn-claude-code/blob/ce8f9f186058939da54c9d6fead78dfb5d0fd6c3/LICENSE",
+          "review_scope": "full short file/license"
+        },
+        {
+          "path": "web/package.json",
+          "blob_sha": "984b6028a8452f042d4df513e7a5d4a06c4a2fa4",
+          "url": "https://github.com/shareAI-lab/learn-claude-code/blob/ce8f9f186058939da54c9d6fead78dfb5d0fd6c3/web/package.json",
+          "review_scope": "selected manifest fields"
+        },
+        {
+          "path": "s01_agent_loop/code.py",
+          "blob_sha": "a43d0f2f45719d8d8d91c96a6d6a17265d7623c1",
+          "url": "https://github.com/shareAI-lab/learn-claude-code/blob/ce8f9f186058939da54c9d6fead78dfb5d0fd6c3/s01_agent_loop/code.py",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "web/src/components/code/source-viewer.tsx",
+          "blob_sha": "e26ea44563d86610f0b0263b194ed4c85320ada9",
+          "url": "https://github.com/shareAI-lab/learn-claude-code/blob/ce8f9f186058939da54c9d6fead78dfb5d0fd6c3/web/src/components/code/source-viewer.tsx",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "web/src/components/visualizations/shared/step-controls.tsx",
+          "blob_sha": "cd0beaa2cc5a683540ae74e25186b6ff1fa326e3",
+          "url": "https://github.com/shareAI-lab/learn-claude-code/blob/ce8f9f186058939da54c9d6fead78dfb5d0fd6c3/web/src/components/visualizations/shared/step-controls.tsx",
+          "review_scope": "full short file/license"
+        }
+      ]
+    },
+    {
+      "repository": "xyflow/xyflow",
+      "repository_url": "https://github.com/xyflow/xyflow",
+      "default_branch": "main",
+      "reviewed_commit": "3d35b57317576b0916c0bfeaaedd573aaacc2839",
+      "commit_date_utc": "2026-09-24T12:38:12Z",
+      "archived_at_review": false,
+      "github_spdx_metadata": "MIT",
+      "tree_truncated": false,
+      "inspected_files": [
+        {
+          "path": "README.md",
+          "blob_sha": "116e99c700ee30bbd29f1631c5b84c897d3631ac",
+          "url": "https://github.com/xyflow/xyflow/blob/3d35b57317576b0916c0bfeaaedd573aaacc2839/README.md",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "LICENSE",
+          "blob_sha": "072ff46d7c23dd8e18ccba11aa6563f14e524312",
+          "url": "https://github.com/xyflow/xyflow/blob/3d35b57317576b0916c0bfeaaedd573aaacc2839/LICENSE",
+          "review_scope": "full short file/license"
+        },
+        {
+          "path": "packages/react/package.json",
+          "blob_sha": "567bf310a8ed080d8386422ee1ebb3d6b6a56500",
+          "url": "https://github.com/xyflow/xyflow/blob/3d35b57317576b0916c0bfeaaedd573aaacc2839/packages/react/package.json",
+          "review_scope": "selected manifest fields"
+        },
+        {
+          "path": "packages/react/src/index.ts",
+          "blob_sha": "6e41645346034023b9b4d8ca3df01338805e0f25",
+          "url": "https://github.com/xyflow/xyflow/blob/3d35b57317576b0916c0bfeaaedd573aaacc2839/packages/react/src/index.ts",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "packages/react/src/container/ReactFlow/index.tsx",
+          "blob_sha": "21e5f42c2a5e2f414eefa5328672ed6da789c083",
+          "url": "https://github.com/xyflow/xyflow/blob/3d35b57317576b0916c0bfeaaedd573aaacc2839/packages/react/src/container/ReactFlow/index.tsx",
+          "review_scope": "selected relevant source/documentation excerpts"
+        }
+      ]
+    },
+    {
+      "repository": "microsoft/codetour",
+      "repository_url": "https://github.com/microsoft/codetour",
+      "default_branch": "main",
+      "reviewed_commit": "29955a004445d3fd2ad5df35dd00f9cc0400ba7d",
+      "commit_date_utc": "2025-08-07T04:37:59Z",
+      "archived_at_review": false,
+      "github_spdx_metadata": "MIT",
+      "tree_truncated": false,
+      "inspected_files": [
+        {
+          "path": "README.md",
+          "blob_sha": "46fafad796a54ab48465d0e354593b1f3c8bf445",
+          "url": "https://github.com/microsoft/codetour/blob/29955a004445d3fd2ad5df35dd00f9cc0400ba7d/README.md",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "LICENSE.txt",
+          "blob_sha": "b2f52a2bad4e27e2d9c68a755abb74cb8943f2fa",
+          "url": "https://github.com/microsoft/codetour/blob/29955a004445d3fd2ad5df35dd00f9cc0400ba7d/LICENSE.txt",
+          "review_scope": "full short file/license"
+        },
+        {
+          "path": "schema.json",
+          "blob_sha": "ea8e63ab3d0845cc8e086352d62c921f01e7577c",
+          "url": "https://github.com/microsoft/codetour/blob/29955a004445d3fd2ad5df35dd00f9cc0400ba7d/schema.json",
+          "review_scope": "full short file/license"
+        }
+      ]
+    },
+    {
+      "repository": "Tour-de-Code-AI/Tour-de-Code-AI",
+      "repository_url": "https://github.com/Tour-de-Code-AI/Tour-de-Code-AI",
+      "default_branch": "main",
+      "reviewed_commit": "85f5718629d63083f2bdb83a2072a223be8a6a02",
+      "commit_date_utc": "2026-01-13T09:21:09Z",
+      "archived_at_review": false,
+      "github_spdx_metadata": "MIT",
+      "tree_truncated": false,
+      "inspected_files": [
+        {
+          "path": "README.md",
+          "blob_sha": "685666173817164470b8fae01343cea286e792bc",
+          "url": "https://github.com/Tour-de-Code-AI/Tour-de-Code-AI/blob/85f5718629d63083f2bdb83a2072a223be8a6a02/README.md",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "LICENSE.txt",
+          "blob_sha": "da921236b42d5980391f73c2f5b3bf43c0303dd8",
+          "url": "https://github.com/Tour-de-Code-AI/Tour-de-Code-AI/blob/85f5718629d63083f2bdb83a2072a223be8a6a02/LICENSE.txt",
+          "review_scope": "full short file/license"
+        },
+        {
+          "path": "src/generator/tour-generator.ts",
+          "blob_sha": "fd2a6093f7c626ad5b696fb055495c0a8ea1f592",
+          "url": "https://github.com/Tour-de-Code-AI/Tour-de-Code-AI/blob/85f5718629d63083f2bdb83a2072a223be8a6a02/src/generator/tour-generator.ts",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "src/repomix/repomix-service.ts",
+          "blob_sha": "dd78ab58632a241a2394a59c2cdb4072c0c9a1ae",
+          "url": "https://github.com/Tour-de-Code-AI/Tour-de-Code-AI/blob/85f5718629d63083f2bdb83a2072a223be8a6a02/src/repomix/repomix-service.ts",
+          "review_scope": "selected relevant source/documentation excerpts"
+        }
+      ]
+    },
+    {
+      "repository": "The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge",
+      "repository_url": "https://github.com/The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge",
+      "default_branch": "main",
+      "reviewed_commit": "05b24cbbb0fe409c5e23c9791f0342f07524ffdc",
+      "commit_date_utc": "2026-05-31T01:26:41Z",
+      "archived_at_review": false,
+      "github_spdx_metadata": "MIT",
+      "tree_truncated": false,
+      "inspected_files": [
+        {
+          "path": "README.md",
+          "blob_sha": "b27b85337d00ba0c340c66da6632f984b793939f",
+          "url": "https://github.com/The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge/blob/05b24cbbb0fe409c5e23c9791f0342f07524ffdc/README.md",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "LICENSE",
+          "blob_sha": "db84ce26de35849d2306225eb2d13cc4fbd90a6f",
+          "url": "https://github.com/The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge/blob/05b24cbbb0fe409c5e23c9791f0342f07524ffdc/LICENSE",
+          "review_scope": "full short file/license"
+        },
+        {
+          "path": "nodes.py",
+          "blob_sha": "0e3fa587b6b6710e11e9bb84c917640a7ffd1a4b",
+          "url": "https://github.com/The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge/blob/05b24cbbb0fe409c5e23c9791f0342f07524ffdc/nodes.py",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "flow.py",
+          "blob_sha": "09caa12530c3468e8c2ff7dafaf3ba17396695bc",
+          "url": "https://github.com/The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge/blob/05b24cbbb0fe409c5e23c9791f0342f07524ffdc/flow.py",
+          "review_scope": "full short file/license"
+        }
+      ]
+    },
+    {
+      "repository": "dsherret/ts-morph",
+      "repository_url": "https://github.com/dsherret/ts-morph",
+      "default_branch": "latest",
+      "reviewed_commit": "f288183ddb496adc6f4c5b6929830b5b73437185",
+      "commit_date_utc": "2026-08-21T22:15:37Z",
+      "archived_at_review": false,
+      "github_spdx_metadata": "MIT",
+      "tree_truncated": false,
+      "inspected_files": [
+        {
+          "path": "readme.md",
+          "blob_sha": "6ad6dbb3a8990d845973e357cace548ddc1d9eed",
+          "url": "https://github.com/dsherret/ts-morph/blob/f288183ddb496adc6f4c5b6929830b5b73437185/readme.md",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "LICENSE",
+          "blob_sha": "a00c181d52691c6ad55aabeb9582741ccf7ef8b9",
+          "url": "https://github.com/dsherret/ts-morph/blob/f288183ddb496adc6f4c5b6929830b5b73437185/LICENSE",
+          "review_scope": "full short file/license"
+        },
+        {
+          "path": "packages/ts-morph/package.json",
+          "blob_sha": "900a1de4db29328d1b597e8968cf9178e5aea91a",
+          "url": "https://github.com/dsherret/ts-morph/blob/f288183ddb496adc6f4c5b6929830b5b73437185/packages/ts-morph/package.json",
+          "review_scope": "selected manifest fields"
+        },
+        {
+          "path": "packages/ts-morph/src/compiler/ast/expression/CallExpression.ts",
+          "blob_sha": "6b34664e9867afcc074a23563aabcc6c61dcd3a7",
+          "url": "https://github.com/dsherret/ts-morph/blob/f288183ddb496adc6f4c5b6929830b5b73437185/packages/ts-morph/src/compiler/ast/expression/CallExpression.ts",
+          "review_scope": "full short file/license"
+        },
+        {
+          "path": "packages/ts-morph/src/Project.ts",
+          "blob_sha": "82e9cbda7ca91ef0ec2c9533b88a2658d190bbe8",
+          "url": "https://github.com/dsherret/ts-morph/blob/f288183ddb496adc6f4c5b6929830b5b73437185/packages/ts-morph/src/Project.ts",
+          "review_scope": "selected relevant source/documentation excerpts"
+        }
+      ]
+    },
+    {
+      "repository": "sverweij/dependency-cruiser",
+      "repository_url": "https://github.com/sverweij/dependency-cruiser",
+      "default_branch": "main",
+      "reviewed_commit": "59606f7133843b190aa328c95d5c676631ca45f1",
+      "commit_date_utc": "2026-10-11T19:28:19Z",
+      "archived_at_review": false,
+      "github_spdx_metadata": "MIT",
+      "tree_truncated": false,
+      "inspected_files": [
+        {
+          "path": "README.md",
+          "blob_sha": "2f59dd73866fa05496d29fdde0e7bfdc7136e0fe",
+          "url": "https://github.com/sverweij/dependency-cruiser/blob/59606f7133843b190aa328c95d5c676631ca45f1/README.md",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "LICENSE",
+          "blob_sha": "a8fdae8a7f0f519a5db79e19c7739b315d83ac6e",
+          "url": "https://github.com/sverweij/dependency-cruiser/blob/59606f7133843b190aa328c95d5c676631ca45f1/LICENSE",
+          "review_scope": "full short file/license"
+        },
+        {
+          "path": "package.json",
+          "blob_sha": "07ac4065bea736b334313a717b0b7fe1103fa3c7",
+          "url": "https://github.com/sverweij/dependency-cruiser/blob/59606f7133843b190aa328c95d5c676631ca45f1/package.json",
+          "review_scope": "selected manifest fields"
+        },
+        {
+          "path": "src/main/cruise.mjs",
+          "blob_sha": "77b3ff1626c1193cfb0a0c38b9abffbc4d8363ca",
+          "url": "https://github.com/sverweij/dependency-cruiser/blob/59606f7133843b190aa328c95d5c676631ca45f1/src/main/cruise.mjs",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "doc/api.md",
+          "blob_sha": "c49a1a7caf84f769f40729992796125af4da9470",
+          "url": "https://github.com/sverweij/dependency-cruiser/blob/59606f7133843b190aa328c95d5c676631ca45f1/doc/api.md",
+          "review_scope": "selected relevant source/documentation excerpts"
+        }
+      ]
+    },
+    {
+      "repository": "yamadashy/repomix",
+      "repository_url": "https://github.com/yamadashy/repomix",
+      "default_branch": "main",
+      "reviewed_commit": "55c6de6aebde4c38877fbcaf005c4cc396bf6e2d",
+      "commit_date_utc": "2026-10-11T15:58:43Z",
+      "archived_at_review": false,
+      "github_spdx_metadata": "MIT",
+      "tree_truncated": false,
+      "inspected_files": [
+        {
+          "path": "README.md",
+          "blob_sha": "01c1c80d933353c6df5a0638ad4664a79ee27114",
+          "url": "https://github.com/yamadashy/repomix/blob/55c6de6aebde4c38877fbcaf005c4cc396bf6e2d/README.md",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "LICENSE",
+          "blob_sha": "cc6cde3b20418ea0c9f503be0ab2e301bb02d6db",
+          "url": "https://github.com/yamadashy/repomix/blob/55c6de6aebde4c38877fbcaf005c4cc396bf6e2d/LICENSE",
+          "review_scope": "full short file/license"
+        },
+        {
+          "path": "src/core/file/fileSearch.ts",
+          "blob_sha": "c5c2270d5d09177c1f5841fb569d2991ac247879",
+          "url": "https://github.com/yamadashy/repomix/blob/55c6de6aebde4c38877fbcaf005c4cc396bf6e2d/src/core/file/fileSearch.ts",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "src/core/security/filterOutUntrustedFiles.ts",
+          "blob_sha": "06fcfa0d6cb01ebd42cdd963deb75a6cdf9de8bf",
+          "url": "https://github.com/yamadashy/repomix/blob/55c6de6aebde4c38877fbcaf005c4cc396bf6e2d/src/core/security/filterOutUntrustedFiles.ts",
+          "review_scope": "selected relevant source/documentation excerpts"
+        },
+        {
+          "path": "src/core/security/securityCheck.ts",
+          "blob_sha": "bde4755ebb9d6af99334ac4461ac0b46a84a25c4",
+          "url": "https://github.com/yamadashy/repomix/blob/55c6de6aebde4c38877fbcaf005c4cc396bf6e2d/src/core/security/securityCheck.ts",
+          "review_scope": "selected relevant source/documentation excerpts"
+        }
+      ]
+    }
+  ]
+}

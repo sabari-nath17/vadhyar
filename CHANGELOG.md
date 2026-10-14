@@ -200,6 +200,21 @@ Packaged the real Vitest runtime, added explicit application Graphify setup and 
 - Saved one source/requirement-bound topic and focused explanation; old records remain compatible. Native panel reopen/restart and historical link blocking were verified in a disposable workspace.
 - Typecheck/lint/build, 118 tests and six offline validators passed. Two live production coaching operations and real Graphify 0.9.84 passed native acceptance. New keyboard/theme matrices, other platforms and human teaching-quality review remain unverified. The 06:00 IST brief cutoff had passed; this is follow-up work, not a submission claim or a repackaged release.
 
+## 2026-10-11T07:25:32+05:30 — Side red-team boundary corrections (uncommitted)
+
+- Fixed quoted/serialized common private-field detection through one shared guard; withheld private-looking project manifests before command display.
+- Revalidated saved source after native run confirmation, suppressed undisclosed npm pre/post hooks, avoided spawning pre-cancelled checks, and classified null exits as execution errors.
+- Files: `src/extension/privacy.ts`, `src/extension/coach.ts`, `src/project/model.ts`, `src/project/checks.ts`, `src/project/controller.ts`, three red-team tests and controller race tests; Project Guide docs and appended evidence records. No panel/protocol/storage migration or dependency change.
+- Actual checkout typecheck/lint and 134/134 tests passed; isolated build/six offline validators passed. No live/native/package acceptance of this patch. Parent UI and active sessions preserved; no commit/push. [Review and limits](docs/red-team-review.md).
+
+## 2026-10-13T19:25:38+05:30 — Post-event browser rebuild and upstream reuse research
+
+- Researched reported AI-code verification/comprehension pain, contrary evidence, existing products and learning mechanisms; reconciled the corrected Trio paper and METR follow-up. Proposed a local browser application with optional editor launch, separate beginner/developer paths and revision-aware learning evidence.
+- Inspected 12 upstream repositories / 57 pinned files: recommend existing core/Graphify plus selective React Flow, CodeTour and teaching patterns; exclude RAG_Techniques code under its commercial restrictions and defer memory/observability infrastructure. No dependency/code import or relicensing.
+- Files: `docs/research/2026-10-13-browser-rebuild/{README.md,rebuild-direction.md,reuse-candidates.md,sources.md,upstream-provenance.json,documentation-checks.json}`; appended README, task and AI assistance records. Reason: user requested complete research and reuse candidates for a maintained post-event OSS application.
+- Checks: 13 research-local Markdown targets, 12 provenance refs/57 blob identities, 88 unchanged source/config fingerprints, unchanged HEAD/branch/empty index, rule files 32/21 lines. Final documentation recheck is recorded in the task handoff.
+- Limits: no app tests/build, upstream runtime, interviews, learning pilot or browser acceptance ran. Research conclusions are candidates; mixed existing work preserved, no commit/push.
+
 ## 2026-10-14 16:03:10 IST — Evidence-informed browser mock (post-event)
 
 - Change: added `prototype/` with six destinations, a complete prepared ownership loop, local resume/history/notes/export, scoped browser checks, website and protected static asset launcher.
@@ -210,6 +225,21 @@ Packaged the real Vitest runtime, added explicit application Graphify setup and 
 - Preservation: all 110 snapshotted source/test/fixture/media/website files unchanged; package/lockfile and extension bundle unchanged. Local links and rule-file limits checked. Existing mixed work and Graft artifacts retained.
 - Limits: private prepared mock only; no protected repository service, model connection, real learner edit/archived run, learning/customer validation, formal screen-reader or cross-browser acceptance. Simultaneous local-storage transactions are not atomic; use one tab. No push/deployment/submission.
 
+## 2026-10-14 20:08:40 IST — Browser reuse implementation
+
+- Change: adapted Learn Claude Code source-viewer/manual step-controls, ported PocketFlow's concept → relationship → order pipeline and complete order validation, installed published React Flow 12.12.0 with locked system0.0.83. The browser source explorer/lesson now share a five-concept source map with real anchors and keyboard/text navigation.
+- Reason: close the three explicitly pending browser reuse gaps with inspectable adoption rather than inspiration-only labels.
+- Files: prototype source-concepts/walkthrough contracts, SourceViewer/StepControls/SourceWalkthrough/styles, walkthrough-service and tests; owned ProjectSource/launcher seams; package/lock, build/server notice artifacts, tsconfig, retained MIT notices and browser-reuse records. Concurrent generic recorder/provider/design changes stay separately owned.
+- Checks: focused11/11; authenticated endpoint1/1; prototype units53/53; combined Node44/44; root134/134/typecheck/lint/build; real browser1440/320/391 CSS widths, navigation/prediction gate, stale map removal, prediction retention and recovery. Final typecheck/lint/notice checks and checkpoint are in docs/browser-reuse-evidence.json.
+- Limits: one bounded JS/TS excerpt, static relationships/proposed order; lexical coloring is approximate. NovaDesk QA uses the disclosed role-only bug, simulated actors and a disposable copy. Human review/teaching efficacy/live coaching/native extension acceptance remain unverified. Post-event work; no push or submission.
+
+## 2026-10-14 19:22:29 IST — Duolingo-inspired minimal browser UX proposal
+
+- Change: added a proposed browser design handoff and static desktop/mobile screens, a source-bounded reference register, light-theme contrast data and artifact validation; linked the proposal from prototype/DESIGN.md.
+- Reason: the user requested a minimal, distinctive Duolingo-inspired UX while feature and browser reuse work continue in parallel.
+- Files: docs/design/2026-10-14-duolingo-minimal/ and additive prototype/DESIGN.md, AI_USAGE.md and tasks/todo.md records.
+- Checks/limits: current Today/Project and four reference pages inspected; four SVGs and five raster exports reviewed, 15 initial local links valid and nine contrast pairs passing. This is a design proposal; no redesigned application, runtime UI acceptance or learning-gain claim. No staging, commit or push by this chat.
+
 
 ## 2026-10-14 20:01:14 IST — Generic local companion feature checkpoint
 
@@ -219,13 +249,6 @@ Packaged the real Vitest runtime, added explicit application Graphify setup and 
 - Corrections: source/result binding, fresh observation source gate, Reflect-stage verification retention, empty/EOF ranges, observed dependency/config/check freshness, preflight consent race, distinct context retention with failed-write rollback, atomic reset identity, copied-prediction/XP deduplication, read/lost-status recovery, draft refresh protection, stale pagination, saved teaching/cancellation and valid UTF-8 input bounds.
 - Limits: saves can coalesce; selected content only, 20 contexts/file and 10k events, no global disk quota; trusted-code execution and observed eligible-file freshness; provider verification uses fixture transport, no live key/model; local records editable and simultaneous tabs non-atomic; old observations not retroactively validated; source-checkout launcher only. UI/UX remains assigned to the separate design chat. No push/deployment.
 
-## 2026-10-14 20:08:40 IST — Browser reuse implementation
-
-- Change: adapted Learn Claude Code source-viewer/manual step-controls, ported PocketFlow's concept → relationship → order pipeline and complete order validation, installed published React Flow 12.12.0 with locked system0.0.83. The browser source explorer/lesson now share a five-concept source map with real anchors and keyboard/text navigation.
-- Reason: close the three explicitly pending browser reuse gaps with inspectable adoption rather than inspiration-only labels.
-- Files: prototype source-concepts/walkthrough contracts, SourceViewer/StepControls/SourceWalkthrough/styles, walkthrough-service and tests; owned ProjectSource/launcher seams; package/lock, build/server notice artifacts, tsconfig, retained MIT notices and browser-reuse records. Concurrent generic recorder/provider/design changes stay separately owned.
-- Checks: focused11/11; authenticated endpoint1/1; prototype units53/53; combined Node44/44; root134/134/typecheck/lint/build; real browser1440/320/391 CSS widths, navigation/prediction gate, stale map removal, prediction retention and recovery. Final typecheck/lint/notice checks and checkpoint are in docs/browser-reuse-evidence.json.
-- Limits: one bounded JS/TS excerpt, static relationships/proposed order; lexical coloring is approximate. NovaDesk QA uses the disclosed role-only bug, simulated actors and a disposable copy. Human review/teaching efficacy/live coaching/native extension acceptance remain unverified. Post-event work; no push or submission.
 
 ## 2026-10-14 19:47:54 IST — Cross-chat product logic board
 
@@ -234,9 +257,17 @@ Packaged the real Vitest runtime, added explicit application Graphify setup and 
 - Checks: board local links4/4, AGENTS/.customrules32/21 lines and diff whitespace; root source-viewer tests11/11. Further reviewer results and open consent/history cases are recorded with their scope in the board.
 - Limits: concurrent working tree; phone access, live model quality and learning efficacy unverified. Implementation owner checkpoints/final combined acceptance are pending at this record; no push/deployment/vault/memory update.
 
+## 2026-10-14 19:56:45 IST — Design-owned logic correction: desktop access and captured evidence
+
+- Change/reason: corrected proposed device/storage/source-status semantics against the current implementation and independent logic review. Preserve native file watching; describe explicit lesson refresh; identify browser-local learning records; show prior-version evidence as historical. Narrow layouts do not imply phone connectivity.
+- Files: docs/design/2026-10-14-duolingo-minimal/ and additive prototype/DESIGN.md, AI_USAGE.md and tasks/todo.md owner records. Added path-source-changed SVG/PNG; existing exports and validation regenerated.
+- Checks/limits: five SVGs, six rasters, visual final-label inspection, local links and eleven color pairs. No app/state-machine change, source repair certification, physical-device access or redesigned runtime acceptance. No stage/commit/push by this design lane.
+
+
 ## 2026-10-14 20:02:24 IST — Cross-chat logic verification completed
 
 All six board repros now pass after owner corrections: source-observation identity, accepted verification preservation, dependency drift/execution consent, empty source gates, distinct/atomic history, and reset generation. Corrected UI contracts/exports received structural and changed-path visual review. Root added one30-line consent-window regression using the existing service fixture; no production implementation was changed by root. Files: `docs/logic-board.md`, named appended block in `prototype/project-service.test.mjs`, additive review records. Checks: prototype typecheck/lint/build,53unit+41service tests, new focused regression1/1, root links/SVG/PNG/diff checks. No new full browser journey, phone connection, live provider or learning-efficacy acceptance claimed. Owner checkpoint serialization remains pending; no push.
+
 
 ## 2026-10-14 20:23:06 IST — Browser redesign behavior contract
 
@@ -246,11 +277,19 @@ All six board repros now pass after owner corrections: source-observation identi
 - Checks: local source links and25unique acceptance IDs validated, diff whitespace and rule-file line limits; no new application-suite or redesigned-UI pass claimed for this documentation slice.
 - Limits: D1–D8 implementation and new-UI acceptance remain owner-managed/pending. Newly authorized knowledge backend requires its own interface/provenance/consent proof before surfaced capability claims. No push, provider request, phone exposure, vault or memory write.
 
+
 ## 2026-10-14 20:46:02 IST — Redesign logic verification receipts
 
 - Updated the root behavior contract and logic board with independent D1–D8 source review, K01 authority and K06 deadline corrections, and C13 error/timeout composition proof. Reason: preserve honest uncertainty and prevent late/foreign/stale evidence from appearing as current learning.
 - Files: root board/contract plus this additive log, AI-use and task record. Current 42 domain/API/activity and seven loaded-snapshot host cases pass; protected knowledge API zero-read regression1/1 and knowledge units14/14 pass; independent host-shaped command matrix8/8 passes. New UI completed verdict/reason is source-verified.
 - Documentation links/unique C/D/K IDs, diff whitespace and 32/21-line rule limits pass. Root source implementation remains untouched. New UI browser/accessibility/retention/provider journeys remain owner-managed acceptance; these proofs do not establish all25journeys, live teaching, learning efficacy or phone use. No push.
+
+## 2026-10-14 21:12:52 IST — Selected-source knowledge backend
+
+- Change/reason: implemented an authenticated local knowledge API for 1–5 explicitly selected source pins using the existing PocketFlow concept/order port, captured relative import/re-export file links and complete entry-first order. The reviewed codebase-knowledge workflow now has a concrete backend contract.
+- Files: `prototype/knowledge-service.mjs`, `prototype/src/knowledge-types.ts`, `prototype/src/source-knowledge.ts`, `prototype/src/knowledge-api.ts`, three new test files, two minimal order-helper type changes, additive launcher/check wiring, backend documentation/provenance/evidence and reuse notices. Core project preflight remains feature-owned.
+- Checks: actual prototype typecheck and focused lint; 30 focused unit cases (19 new),11 actual HTTP cases (10 new), 12,003 ms deadline/late-read recovery, zero-read foreign-project rejection, and actual launcher 200→stale409→recapture200 on a disposable two-file project. Independent review found and verified the corrected 160 line DTO/parser bound. Exact staged export passes typecheck, lint, 87 unit tests, build and 64 service tests; the working combined app separately passes 90 unit/64 service tests.
+- Limits: static selected excerpts; no atomic whole-project/runtime proof, automatic chapters, new UI picker, model calls or learning-stage mutation. No dependencies, upstream fetches/clones, credential access or push in this slice. [Exact API, reuse and evidence](docs/backend-knowledge.md).
 
 
 ## 2026-10-14 20:57:19 IST — Local prototype recovery contracts
@@ -260,18 +299,13 @@ All six board repros now pass after owner corrections: source-observation identi
 - Checks: current combined prototype typecheck/lint/build; 90 unit tests and 64 local-service tests; independent recovery-code review without findings; negative check-command fail-stop probe. New-design fixture journey passed 30 checks at 1440/390/320 CSS pixels, including actual external saved changes, scoped command/manual evidence, fixture teaching consent, records/export/search/reload. Dedicated interruption probes remain separate acceptance evidence, not inferred from unit checks.
 - Limits: host run receipts remain session-bound; restored missing acknowledgement/result stays unknown and never resubmits automatically. Observed eligible-file freshness is not whole-repository/runtime proof. Old stored records remain compatible and historical. Live OpenAI, physical-phone access, standalone installation, editor/tool bridges and production-scale acceptance were not tested or added. No push.
 
+
 ## 2026-10-14 21:08:24 IST — Redesigned-browser logic review closeout
 
 - Recorded35actual redesigned-browser checks (30main at1440/390/320CSS widths plus5recovery), source-verified historical command labels and revision-bound rechecks, and final bounded backend evidence in root logic board/contract. Preserved prior failing receipts. Corrected K01 wording to unknown pin fields/repeated query parameters/duplicate file IDs.
 - Files: docs/logic-board.md, docs/product-logic-contract.md and exact root additive closeout records. Root verified7backend fingerprints, local links/unique C/D/K IDs, diff and rule-line bounds. Recovery6a160c9 exact checkpoint passes68unit/54service; combined owners report90unit/64service plus typecheck/lint/build. Different artifacts remain distinguished.
 - Limits: compound C-row coverage remains partial where specified; final owner keyboard/motion/prepared/fault-variant receipt and UI/knowledge checkpoints are separately owned. Live teaching quality, learning efficacy, phone/LAN, universal scale and simultaneous-tab writes unverified/unsupported. No root production edit or push.
 
-## 2026-10-14 21:12:52 IST — Selected-source knowledge backend
-
-- Change/reason: implemented an authenticated local knowledge API for 1–5 explicitly selected source pins using the existing PocketFlow concept/order port, captured relative import/re-export file links and complete entry-first order. The reviewed codebase-knowledge workflow now has a concrete backend contract.
-- Files: `prototype/knowledge-service.mjs`, `prototype/src/knowledge-types.ts`, `prototype/src/source-knowledge.ts`, `prototype/src/knowledge-api.ts`, three new test files, two minimal order-helper type changes, additive launcher/check wiring, backend documentation/provenance/evidence and reuse notices. Core project preflight remains feature-owned.
-- Checks: actual prototype typecheck and focused lint; 30 focused unit cases (19 new),11 actual HTTP cases (10 new), 12,003 ms deadline/late-read recovery, zero-read foreign-project rejection, and actual launcher 200→stale409→recapture200 on a disposable two-file project. Independent review found and verified the corrected 160 line DTO/parser bound. Exact staged export passes typecheck, lint, 87 unit tests, build and 64 service tests; the working combined app separately passes 90 unit/64 service tests.
-- Limits: static selected excerpts; no atomic whole-project/runtime proof, automatic chapters, new UI picker, model calls or learning-stage mutation. No dependencies, upstream fetches/clones, credential access or push in this slice. [Exact API, reuse and evidence](docs/backend-knowledge.md).
 
 ## 2026-10-14 21:21:31 IST — Desktop use-case correction
 
@@ -279,38 +313,10 @@ All six board repros now pass after owner corrections: source-observation identi
 - Files: root behavior contract/logic board and additive README/AI-use/task records. Read-only audit confirms216pxsidebar/two-column desktop source and narrow reflow; remaining mobile terminology/master priority in UI-owned handoffs assigned for correction. Existing responsive CSS and historical artifacts preserved.
 - Validation: root local links/unique acceptance IDs/diff/rule lines checked; no product-suite rerun claimed for documentation. UI-owned desktop/split-window rendered receipt and its applied handoff remain pending. No push or new network exposure.
 
+
 ## 2026-10-14 21:33:59 IST — Desktop use-case enforcement verified
 
 UI-owned current prototype/design handoffs now agree with the root desktop contract:1440primary,1024and700–900coding panel;320/390secondary reflow and legacy mobile filenames explicitly historical. Source audit confirms desktop sidebar/two-column base and no phone flow; no CSS rewrite or transport was needed. Root inspected applied wording and preserved pending rendered/accessibility/compound-row proof. Root links/unique C/D IDs/diff/rule-line checks pass. Only root documentation/records enter this milestone; no push.
-
-## 2026-10-14 23:04:43 IST — Concise learning inputs and parallel local sessions
-
-- **Changed:** concise nonblank case/prediction/assistance inputs now match the UI's 1–2,000 character bounds while reasoning/evidence remains explanatory; local project session-cookie names now include the validated port.
-- **Reason:** valid short factual answers were rejected, and same-host projects on different ports overwrote the browser's single fixed cookie name.
-- **Files:** `prototype/src/project-learning.ts`, `prototype/project-learning.test.ts`, `prototype/teaching-service.mjs`, `prototype/teaching-service.test.mjs`, `prototype/project-service.mjs`, `prototype/project-service.test.mjs`, `prototype/feature-contract.md`, `prototype/README.md`, `README.md`, `docs/implementation-plan.md`, `AI_USAGE.md`, and `tasks/todo.md`.
-- **Checks:** root typecheck/lint/build and 134 tests; prototype:check with 98 learning and 66 service tests; focused 41 domain, 20 teaching-service and 34 project-service cases; same-browser two-host browser repro passed.
-- **Limits:** provider use, learning gains, phone access and full C01–C25 coverage remain unverified. P07 actual-repository source navigation is the next gate. No push.
-
-## 2026-10-14 23:33 IST — Exact source ranges and check freshness
-
-- **Changed:** legacy source reads keep their 160-line default; project browsing can request up to 200 lines explicitly, and teaching rereads the approved start/end range before and after provider work. Check freshness now follows the monotonic recorded-file change sequence, so reading a new range does not mark unchanged code stale.
-- **Reason:** actual-repository lessons need complete bounded excerpts, while browsing/history revisions must not invalidate a check that still matches the project source and command manifest.
-- **Files:** `prototype/src/project-api.ts`, `prototype/project-api.test.ts`, `prototype/project-service.mjs`, `prototype/project-service.test.mjs`, `prototype/teaching-service.mjs`, `prototype/teaching-service.test.mjs`, `CHANGELOG.md`, `AI_USAGE.md`, and `tasks/todo.md`.
-- **Checks:** project API tests 3/3; source-range freshness regression and dependency/config/manifest stale cases 5/5; prototype TypeScript check; `git diff --check`. The full combined prototype suite remains pending the source/UI integration checkpoint.
-- **Limits:** Product Quality's independent rerun is pending. P07 remains open until parser attribution/captured-source selection fixes and the visible multi-file reading bundle are integrated. No live OpenAI request or learner study was performed; no push.
-
-## 2026-10-14 19:22:29 IST — Duolingo-inspired minimal browser UX proposal
-
-- Change: added a proposed browser design handoff and static desktop/mobile screens, a source-bounded reference register, light-theme contrast data and artifact validation; linked the proposal from prototype/DESIGN.md.
-- Reason: the user requested a minimal, distinctive Duolingo-inspired UX while feature and browser reuse work continue in parallel.
-- Files: docs/design/2026-10-14-duolingo-minimal/ and additive prototype/DESIGN.md, AI_USAGE.md and tasks/todo.md records.
-- Checks/limits: current Today/Project and four reference pages inspected; four SVGs and five raster exports reviewed, 15 initial local links valid and nine contrast pairs passing. This is a design proposal; no redesigned application, runtime UI acceptance or learning-gain claim. No staging, commit or push by this chat.
-
-## 2026-10-14 19:56:45 IST — Design-owned logic correction: desktop access and captured evidence
-
-- Change/reason: corrected proposed device/storage/source-status semantics against the current implementation and independent logic review. Preserve native file watching; describe explicit lesson refresh; identify browser-local learning records; show prior-version evidence as historical. Narrow layouts do not imply phone connectivity.
-- Files: docs/design/2026-10-14-duolingo-minimal/ and additive prototype/DESIGN.md, AI_USAGE.md and tasks/todo.md owner records. Added path-source-changed SVG/PNG; existing exports and validation regenerated.
-- Checks/limits: five SVGs, six rasters, visual final-label inspection, local links and eleven color pairs. No app/state-machine change, source repair certification, physical-device access or redesigned runtime acceptance. No stage/commit/push by this design lane.
 
 ## 2026-10-14 21:40:28 IST — Approved desktop learning UI implemented
 
@@ -320,6 +326,77 @@ UI-owned current prototype/design handoffs now agree with the root desktop contr
 - Checks: final prototype check passed typecheck/lint,90unit/build/64service; focused path/domain43; final path-rail-only correction rebuilt and rendered. CUA real fixture six-stage journey, failed/unmet reflection, draft/record export, unchanged/changed refresh, reload GET-only resume and host loss;5explicit consents/5execution markers. Measured1440/1024desktop,900panel and320/391window robustness; final concept/render comparison,57local links and32/21rule lines.
 - Corrections: stale receipt coverage after host polling failure, historical lost-running copy, same-page/late-response guards, operation-specific retries, explicit unsaved/non-retained labels, separate-case completion, unresolved verdict visibility and source review after completion.
 - Limits: [exact acceptance/matrix](docs/design/2026-10-14-duolingo-minimal/implementation.md) distinguishes browser, regression/source and unverified cases. No live OpenAI, physical touch/screen-reader/OS reduced-motion/full200%zoom/performance certification; no phone/LAN flow, learning proof, push or deployment. Final human review remains pending.
+
+
+
+## 2026-10-14T22:53:00+05:30 — Specialist learning idea review
+
+- Changed: added [specialist learning plan](docs/specialist-learning-plan.md), linked from the current browser plan and README; recorded accepted, changed and deferred proposal parts, assumption flips and nine proposed acceptance cases.
+- Why: use the learner's existing specialist tools while teaching from a confirmed task, captured source, declared assistance and scoped checks. Preserve the same-computer browser direction and current learning/evidence contract.
+- Review/checks: two independent read-only reviews covered product logic and official primary sources; corrected setup-versus-persisted-stage wording. Final documentation links 54/54, nine unique S01–S09 probes, whitespace and rule limits 32/21 passed. Preexisting document/record text, shared index and HEAD are preserved exactly.
+- Limits: documentation only; no advice UI, tool catalog, adapter, result importer, installation, source/config/test edits, runtime check or learning pilot. Existing shared index/HEAD unchanged at verification. Keep this addition unstaged while the UI owner holds the shared index; no commit or push by this review.
+
+
+## 2026-10-14T22:59:21+05:30 — Vadhyar workflow management and independent quality snapshot
+
+- Change/reason: user-requested overview, alignment and quality review of Vadhyar chats/workflows; renamed all 11 existing chats by demonstrated role and reread the inventory. Six project assignments were acknowledged but subsequent inventory membership stayed null, so grouping remains unconfirmed.
+- Files: `docs/workflow-management.md`, `docs/workflow-management-evidence.json`, additive records here, `AI_USAGE.md` and `tasks/todo.md`. No product code change by this chat.
+- Checks: stable isolated 175-input snapshot at `606657e`; prototype typecheck/lint/build,98 unit/66 service, root typecheck/lint/build,134 tests; total298 passed. Cookie-port mutation failed the expected regression; restored copy passed. Initial copied-build failure was omitted attribution assets, corrected before build/service reruns.
+- Limits: actual-repository P07 remains open; two UI cases are source-confirmed but need browser reproduction; legacy capacity rejection reproduced in memory. Final owner artifact/commit, live provider, full compound/accessibility and human learner validation remain separate gates. No source/index/active-session change, commit, push or background monitor.
+
+
+- 2026-10-14T23:04:05+05:30: human granted coordination dispatch; manager sent role-specific notes to five active chats. Verified separate direct user instruction from AI Workflow Strategist and assigned CEO / Product Strategy the first bounded manual-pilot protocol with Skill Router and Delegation Brief, keeping P07 prerequisite and no product/participant/integration expansion. Receiving chat active; first artifact review pending. Register/evidence updated; shared index preserved, no push.
+
+## 2026-10-14 23:04:43 IST — Concise learning inputs and parallel local sessions
+
+- **Changed:** concise nonblank case/prediction/assistance inputs now match the UI's 1–2,000 character bounds while reasoning/evidence remains explanatory; local project session-cookie names now include the validated port.
+- **Reason:** valid short factual answers were rejected, and same-host projects on different ports overwrote the browser's single fixed cookie name.
+- **Files:** `prototype/src/project-learning.ts`, `prototype/project-learning.test.ts`, `prototype/teaching-service.mjs`, `prototype/teaching-service.test.mjs`, `prototype/project-service.mjs`, `prototype/project-service.test.mjs`, `prototype/feature-contract.md`, `prototype/README.md`, `README.md`, `docs/implementation-plan.md`, `AI_USAGE.md`, and `tasks/todo.md`.
+- **Checks:** root typecheck/lint/build and 134 tests; prototype:check with 98 learning and 66 service tests; focused 41 domain, 20 teaching-service and 34 project-service cases; same-browser two-host browser repro passed.
+- **Limits:** provider use, learning gains, phone access and full C01–C25 coverage remain unverified. P07 actual-repository source navigation is the next gate. No push.
+
+
+- 2026-10-14T23:08:46+05:30: manager independently verified Engineering checkpoint `f1b959ea2828573a427817c193a4da5220475ff1` (13 files, P01/P06). Register/evidence distinguish that checkpoint from the historical298-test606657e snapshot. Shared index inspected empty; UI/P07 working changes preserved. Final combined stable-artifact, M02/M03 and actual-repository acceptance remain open. Documentation-only update; no repeated product checks, source/index mutation, commit or push.
+
+
+- 2026-10-14T23:11:27+05:30: manager reviewed four owner-executed M02 temporary rendered/export receipts and current UI source. Both Close/Browse guards and complete source-bound exported teaching draft checked; fingerprinted in management evidence. Scoped M02 gate passed with injected provider; no manager browser/product-test rerun. M03 rendered probes, P07 and exact stable combined artifact remain open; source/index preserved, no commit/push.
+
+
+- 2026-10-14T23:19:11+05:30: latest user better-product steering routed to four implementation/quality owners: P07 usable real-feature comprehension first, M02/M03 reliable retention/discovery and low learner burden. Manager checked durable independent M03 text receipts; scoped correction gate passed, final artifact still open. P07 exact160/200range plumbing recorded as owner-tested working-tree implementation, not committed acceptance. Pilot first artifact reviewed with one read-only helper; two corrections assigned to CEO: learner card separate from solutions, first feasibility15–20minutes. No participant/provider/browser/product-test/source/index/commit/push action by this manager update.
+
+
+- 2026-10-14T23:24:56+05:30: manager recorded Source Intelligence P07 focused7client/20knowledge/14HTTP and prototype-typecheck passes as owner-reported source/backend gates. Inspected range callers; legacy160/newExplorer explicit200 contract supersedes earlier intermediate default200state. View-local/export-before-leaving labels preserve retention limits. Independent correctness review, parser/bundle UI, actual Record observation trace and stable combined checkpoint remain open. Documentation-only manager update; no test/browser/provider/source/index/commit/push action.
+
+
+- 2026-10-14T23:28:52+05:30: manager recorded P08/M07 false-stale actual HTTP receipt and Engineering/Product Quality ownership. Verified receipt passed/current→passed/stale, identical-source flag and metadata revision2→3. Read-only history must not invalidate current evidence; actual source/config/dependency drift and unknown coverage guards remain required. P08/P07/final artifact open. Documentation-only receipt review; no product/browser/provider/source/index/commit/push action.
+
+
+- 2026-10-14T23:31:58+05:30: manager recorded source-owner independent P07 review M08callback attribution/M09captured-context reopening defects and exclusive fixes/regressions.116unit/typecheck/lint/build is pre-fix owner baseline; exact corrected-source/service acceptance remains pending. Agreed featureAPI→UIexpanded→source→UIbundle checkpoint order routed to Engineering/UI; actual-file tests must use committed predecessor bytes. Shared index inspected empty and preserved; no manager source/test/browser/provider/commit/push action.
+
+## 2026-10-14 23:33 IST — Exact source ranges and check freshness
+
+- **Changed:** legacy source reads keep their 160-line default; project browsing can request up to 200 lines explicitly, and teaching rereads the approved start/end range before and after provider work. Check freshness now follows the monotonic recorded-file change sequence, so reading a new range does not mark unchanged code stale.
+- **Reason:** actual-repository lessons need complete bounded excerpts, while browsing/history revisions must not invalidate a check that still matches the project source and command manifest.
+- **Files:** `prototype/src/project-api.ts`, `prototype/project-api.test.ts`, `prototype/project-service.mjs`, `prototype/project-service.test.mjs`, `prototype/teaching-service.mjs`, `prototype/teaching-service.test.mjs`, `CHANGELOG.md`, `AI_USAGE.md`, and `tasks/todo.md`.
+- **Checks:** project API tests 3/3; source-range freshness regression and dependency/config/manifest stale cases 5/5; prototype TypeScript check; `git diff --check`. The full combined prototype suite remains pending the source/UI integration checkpoint.
+- **Limits:** Product Quality's independent rerun is pending. P07 remains open until parser attribution/captured-source selection fixes and the visible multi-file reading bundle are integrated. No live OpenAI request or learner study was performed; no push.
+
+
+- 2026-10-14T23:33:25+05:30: manager inspected local P08 completion/later freshness diff (change-ledger sequence replaces history revision); preserved source/manifest/watcher/unknown guards. Engineering reports TDDred and5focusedgreen cases. Independent read-only reviewer assigned; Product Quality actual HTTP/browser and checkpoint/combined acceptance remain pending. Local implementation recorded without closure; no manager source/index/test/browser/provider/commit/push action.
+
+
+- 2026-10-14T23:34:44+05:30: independent read-only P08 source review found no actionable defect in named service/test snapshot; manager compared fingerprints (True). Completion/later change identity, event pruning/restart and watcher-loss boundaries reviewed; assertions read, not executed. Current gate summary refreshed; actual HTTP/browser recheck, checkpoint and final combined acceptance remain open. No manager source/index/test/provider/commit/push action.
+
+
+- 2026-10-14T23:39:26+05:30: manager verified Engineering `894a5ab3587f36cbaf8f95aec440870fcf2bb5a2` (nine paths; owner58project/teachingservice passes), Source P07frozen16/16fingerprints and retained MIT notice.57focused+14HTTP owner receipts and corrected M08/M09 independent re-review distinguished from historical116unit/73service pre-fix baseline. Protected actual-repository5contexts/6staticlinks source/API proof does not close actual browser comprehension. Next UIinitial→sourceexact-index→UIbundle→ProductQuality→finalcombined sequence routed; P08actual recheck open. No manager index/source/test/browser/provider/commit/push action.
+
+
+## 2026-10-14 23:52:27 IST — P07 bounded source reading
+
+- Change/reason: selected-source knowledge v2 keeps distinct same-file ranges, exact optional200line requests with legacy160 default, complete nested declaration catalogue/focus, honest partial captures and a view-local reading bundle. This addresses actual source that was truncated or hidden by the former five-concept view.
+- Files: source parser/walkthrough/schema/handler; knowledge schema/analysis/service/client; new bundle/helper and focused tests; [current contract](docs/source-reading.md), [upstream mapping/notices](docs/source-reading-provenance.json) and [execution evidence](docs/source-reading-evidence.json). No new dependency or upstream import.
+- Checks:57focused units;14protected knowledge HTTP tests; parser/walkthrough integration; typecheck, scoped lint,52local links and retained notice fingerprint. Actual approved repository through isolated authenticated host returns five contexts and six static module links with complete observe/act/record/storage anchors; no source/provider/command execution. Earlier combined116unit/73service pass is historical; corrected exact exported index verified at2026-10-14T23:52:27+05:30 passes126unit/74service plus typecheck/lint/build.
+- Corrections/limits: independently found anonymous callback attribution and captured-search/fresh-read confusion fixed and re-reviewed; captures are view-local/exportable, selected static evidence remains incomplete. UI initial/source/mount milestones serialize separately; browser learner trace/human review pending. No push.
 
 ## 2026-10-14 23:40:14 IST — Desktop UI recovery and exact-range alignment
 
@@ -331,12 +408,13 @@ UI-owned current prototype/design handoffs now agree with the root desktop contr
 - Limits: final human review, live provider, physical touch/screen reader/OS reduced motion/full200% zoom/performance unverified. P07 reader mount/actual-repository acceptance remains a separate additive gate. Local checkpoint only; no push.
 
 
-## 2026-10-14 23:52:27 IST — P07 bounded source reading
+- 2026-10-14T23:43:49+05:30: manager parsed Product Quality corrected P08 HTTP receipt (passed/current retained after metadata revision4→5, identical-source flag), verified service bytes equal committed894a5ab, and recorded targeted post-result defect closure. During-run/real-drift/watcher checks remain Engineering-owned suite scope; raw output unchanged is owner-reported, not independently compared from minimal receipt. P07 actual mount/feature walkthrough and final combined artifact remain open. No manager source/index/test/browser/provider/commit/push action.
 
-- Change/reason: selected-source knowledge v2 keeps distinct same-file ranges, exact optional200line requests with legacy160 default, complete nested declaration catalogue/focus, honest partial captures and a view-local reading bundle. This addresses actual source that was truncated or hidden by the former five-concept view.
-- Files: source parser/walkthrough/schema/handler; knowledge schema/analysis/service/client; new bundle/helper and focused tests; [current contract](docs/source-reading.md), [upstream mapping/notices](docs/source-reading-provenance.json) and [execution evidence](docs/source-reading-evidence.json). No new dependency or upstream import.
-- Checks:57focused units;14protected knowledge HTTP tests; parser/walkthrough integration; typecheck, scoped lint,52local links and retained notice fingerprint. Actual approved repository through isolated authenticated host returns five contexts and six static module links with complete observe/act/record/storage anchors; no source/provider/command execution. Earlier combined116unit/73service pass is historical; corrected exact exported index verified at2026-10-14T23:52:27+05:30 passes126unit/74service plus typecheck/lint/build.
-- Corrections/limits: independently found anonymous callback attribution and captured-search/fresh-read confusion fixed and re-reviewed; captures are view-local/exportable, selected static evidence remains incomplete. UI initial/source/mount milestones serialize separately; browser learner trace/human review pending. No push.
+
+- 2026-10-14T23:49:32+05:30: manager verified UI initial baseline `7ff10369a1a2653f708d4bb0e7e3bd169cde5b73` (33 files) and index release, resolving reported staging blocker. Owner exact staged typecheck/lint/build, 99 unit/70 service passes recorded without manager rerun. Actual predecessor sent to Source Intelligence for its frozen exact-index milestone; UI reader mount addon follows. No repeat baseline gate, empty commit, index takeover or push; P07 actual walkthrough/final artifact open.
+
+
+- 2026-10-14T23:58:03+05:30: user requested MVP-ready notification and stopping product work at that level. Manager configured ACTIVE thread heartbeat `vadhyar-mvp-readiness` every15minutes, quiet while unchanged, once-ready notice/freeze then deactivate; six owner stopping boundaries sent. Source checkpoint `5bb7708a4bcd3cf5d2e68c3eb23e66e4c1200c06` verified (26 paths, owner exact-index126unit/74service/typecheck/lint/build). UI reader mount, actual feature trace and final stable artifact remain pending; MVP not declared ready. Optional provider/installer/cloud bridges/pilot remain separate limits. No manager source/index/runtime tests/commit/push.
 
 
 ## 2026-10-15 00:00:59 IST — Persona logic and recovery evidence
@@ -344,6 +422,9 @@ UI-owned current prototype/design handoffs now agree with the root desktop contr
 - Change/reason: record real mock-use gaps and independent correction receipts, including port collision, concise facts, missing case context, optional teacher, check discovery, rejected interpretation retention and readonly source freshness. Distinguish synthetic runtime, source-only, owner-suite and actual-repository evidence.
 - Files: docs/logic-board.md, docs/persona-logic-audit.md, docs/logic-evidence/persona-* and these additive records. Production fixes remain in their owners' scoped checkpoints.
 - Checks: local links resolve, receipt JSON parses, rule files under50lines; browser source catalogue now exposes observe95–105 on the real repository. P07 retained UI explanation/storage trace and final combined gate still open. No new dependency, live provider or push.
+
+
+- 2026-10-15T00:15:23+05:30: manager intervened on stalled reader mount; UI-owner shared diff now exists, exact navigation/project lifetime inspected. Isolated fallback prepared/tested but not applied because base changed; shared writer/index/session preserved. Independent current-source review refuted two ordinary recovery defects; six Product Quality hard-refusal artifacts reviewed, buffered run ID/output export matches. Actual P07 reader trace/focus/final artifact remains open; no manager shared product/source/index/commit/push or browser run.
 
 
 ## 2026-10-15 00:31:55 IST — Connect and verify bounded source reading
@@ -361,9 +442,26 @@ UI-owned current prototype/design handoffs now agree with the root desktop contr
 - Checks: owner/Engineering matching product typecheck/lint/build, 126 unit/74 services; manager compared 10 committed source and two runtime fingerprints, exact five source spans and final rendered receipt. Final documentation local links/JSON/diff/rule lengths checked. No new product test or app execution by this closeout.
 - Limits: bounded same-computer desktop maintainer/persona acceptance, view-local captures/export; human review, real learner efficacy, live provider quality and complete fault/accessibility/device matrix unverified. Other pending work preserved; no push.
 
+
+## 2026-10-15T00:39:09+05:30 — Source reading acceptance closeout
+
+- Verified the committed Product Quality P07 maintainer/persona receipt at88a8d69: five retained contexts/four actual code files, exact source anchors/export hashes, keyboard focus, source-range failure preservation and a separate genuine stale409/old inspection/explicit replacement200 path. Twelve source/built fingerprints match; all sixteen source-owned files remain unchanged from5bb7708.
+- Updated only [source contract](docs/source-reading.md), [source evidence](docs/source-reading-evidence.json) and own additive records to replace pending mounted-reader status with this bounded actual receipt. JSON/source references/local links/diff/rule-line limits validated; no source changes or repeated product/browser checks.
+- Human learning efficacy, live-provider quality and complete runtime/accessibility coverage remain unverified. Final matching-artifact MVP handoff belongs to Engineering/Project Manager; stop further product work at that boundary. No push or user4173-session operation.
+
 ## 2026-10-15 00:48:58 IST — Final UI design acceptance handoff
 
 - Change/reason: close the approved design documentation against verified product88a8d69 and the local MVP stop boundary; distinguish Product Quality's minimal reader mount from the UI owner's ten scoped style rules.
 - Files: prototype/DESIGN.md; docs/design/2026-10-14-duolingo-minimal/implementation.md and reader-visual-evidence.json; these exact additive records.
 - Checks:37local design links, valid JSON and clean documentation diff. Prior exact initial UI99unit/70service and integrated126unit/74service gates remain their respective evidence; no unchanged source suite repeated.
 - Limits: bounded simulation and desktop inspection; no real learner efficacy, live provider, physical accessibility or cloud/installer claim. Product code remains frozen; no push or change to the existing4173 user session.
+
+
+## 2026-10-15T01:23:23+05:30 — Prepare professional GitHub presentation and browser distribution
+
+- Change/reason: user resumed work for a professional public repository, images, setup/installer and explicitly requested every updated local project change be pushed. Human separately chose MIT. Preserve both Git histories, old native releases and prior evidence.
+- Source: integrate the prior red-team unit, sticky output-privacy correction, and the separately authorized Ponytail quality lane's four reproduced defects/callers/regressions. Its 137 root/128 browser/75 service gates, actual UI paging/recovery and latest exact-source receipt remain attributable; final packaging/source validation follows at the reconciled checkpoint.
+- Distribution: portable prebuilt Node24 browser installer/launcher and isolated allowlisted packaging, archive hashes, complete notices, fresh-install three-case host/consent/integrity tests and independent source/artifact review. Corrected shared-asset build isolation, Mac AppleDouble/owner metadata and redacted setup errors; primary accepted served asset hashes restored without UI/record operations.
+- Presentation: concise README, unchanged actual screenshot gallery/provenance, preserved local/remote README histories, first-question guide, MIT license, contribution/security/issue/PR guides, pinned CI and Dependabot. Private vulnerability reporting enabled and verified. Historical research/proposals remain labelled; generated copied runtimes/raw recordings stay local under ignored output directories.
+- Dependencies: one targeted basic-ftp5.3.1→6.2.3 override plus root MIT lock metadata. Native full audit now3high optional development findings with no forge patch; production0. Exact temporary risk gate expires29October2026IST, preserves native exit1/0/raw reports and rejects scope/version/advisory/count/chain/expiry drift. Three policy regressions and an isolated expiry mutation pass; no forced upgrade or clean-full-audit claim.
+- State: local preparation checkpoint; user-authorized push/release and hosted CI are still pending. Node24.19macOS installer development gates and independent reviews pass. Live provider/human efficacy/Windows/native signing/full accessibility remain unverified. Actual final commit/artifact/GitHub identities will be verified before completion.

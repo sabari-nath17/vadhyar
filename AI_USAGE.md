@@ -105,6 +105,18 @@ Two live production Project Guide operations in the labelled disposable TopicPro
 
 Topic decisions are validated against exact current source; the model's requirement/rationale is a proposal requiring confirmation. Real Graphify static links are separated from inferred edges and runtime/whole-project claims. Automated validation and native mechanics do not establish teaching quality. See [actual acceptance and limits](docs/learning-topics-evidence/README.md).
 
+## 2026-10-11T07:25:32+05:30 — Side red-team assistance and presentation validation
+
+Codex reviewed the actual committed checkpoint and recorded H1/T1/S13 evidence, traced affected callers with Graft, authored adversarial regression cases and made narrowly owned context/runner/consent corrections. Synthetic private-field values were used; no real credential was retrieved or shared. Native dialog/process-event boundaries are simulated; npm fixture execution and filesystem side effects are real. No OpenAI request, learner edit, native reload or delegate was used.
+
+The before-fix batch failed 12 assertions; after-fix checkout typecheck/lint and 134 tests passed. An existing subprocess test initially timed out during concurrent checks, then passed without relaxing limits. Bundle/six offline validators were verified only in the isolated copy to preserve active sessions and parent UI work. Full review and check/source identities: [review](docs/red-team-review.md), [checks](docs/red-team-evidence/checks.json). Human review and fresh native/installed acceptance of this patch remain pending. No mastery or universal-support claim, commit or push.
+
+## 2026-10-13T19:25:38+05:30 — Post-event research assistance
+
+Codex applied Skill Router, Search evidence-quality guidance, Run an Agent Team, Firecrawl, Superpowers brainstorming, Competitive Analysis, Absolute Mode and active Ponytail. Three read-only agents completed pain/alternatives/learning research. Follow-up repository/critic agents hit account limits; the primary agent completed pinned GitHub source/license inspection of 12 repositories / 57 paths and bounded self-review. Exa was unavailable and made zero calls; no unavailable Haiku run is claimed.
+
+Codex reconciled source discrepancies, authored the research/reuse/direction/source/provenance documents and appended current records while preserving historical plans. Source-derived facts are separated from product hypotheses. Human review, discovery interviews, learning efficacy, actual dependency integration and browser acceptance remain pending. Research-local links, provenance metadata and 88 source/config identities were checked; no application test/build, live model request, credential access, implementation, commit or push occurred.
+
 ## 2026-10-14 16:03:10 IST — Browser mock, research and critiques
 
 - Codex used the invoked skill-router, Superpowers and Ponytail instructions, existing frontend build/testing guidance and ARS evidence-quality roles. Native research workers investigated industry and campus/programming evidence; independent skeptical, code and product-logic reviews challenged the conclusions and implementation. These roles are not cross-family verification or human review.
@@ -113,80 +125,12 @@ Topic decisions are validated against exact current source; the model's requirem
 - Corrections from review: preserved unsaved valid progress; generation-aware conflicts; impossible restored states; stale editing; scoped case evaluation; one source change; assistance honesty; in-product confirmations; mobile hierarchy/contrast. A missing expected headless executable was diagnosed and the verified installed revision was used.
 - Human status: user supplied implementation/research/critique authorization and steering; file-level review and real learner/mentor evaluation remain pending. No efficacy, employability, institution endorsement, production readiness or public launch is inferred.
 
-
-## 2026-10-14 20:01:14 IST — Project companion implementation and feature review
-
-Codex implemented the bounded generic launcher/service, SQLite metadata/selected contexts, saved-file watcher, validated learning model/client, consented checks and explicit OpenAI session adapter. Authorized native agents independently owned host and domain/provider files. Read-only review and independent logic repros found source mismatches, lost verification, stale dependency evidence, history rollback, reset identity, stuck polling, draft loss, range/input bounds, stale pagination and lost teaching/run-result paths; these were corrected with permanent regression coverage. Existing mock visuals were retained; the latest user assigns further UI/UX to the Duolingo design chat. The user authorized coordination with the browser-reuse chat; its additions and separately marked design/logic planning records remain outside this checkpoint.
-
-Actual checks: 27 generic model + 13 prepared + 2 activity; host full 21 plus 1 new preflight regression, 19 provider and 1 static server; combined working prototype 53 Vitest; root 134 tests/typecheck/lint; isolated staged prototype typecheck/lint/build and 42 browser fixture checks with no console errors/external browser requests; final actual 10,001-file benchmark. Browser plugin was unavailable; IAB connected-project inspection was supplemented by installed Playwright exact-width fixtures at 1440/390/320px because IAB clamps narrow widths and concurrent chats use independent QA. Provider transport was injected. No API key/environment secret was read, no live teaching request or unknown real project command was run, no original extension source altered, and no push/deployment performed. Human code review and real learner/provider/production-repository acceptance remain pending.
-
 ## 2026-10-14 20:08:40 IST — Browser reuse adoption
 
 - Codex read current repository/rules/history, relevant memory/vault context and the pinned upstream research. Eight exact source/license/manifest blobs were fetched and verified; no repository clone or whole upstream runtime import.
 - Assisted implementation: adapted viewer/controls, deterministic TypeScript port of PocketFlow workflow/order validation, published React Flow map, strict endpoint/source identity validation, small integration tests, retained licenses and actual adoption records. Existing provider/Graphify and learner evidence authority stay intact.
 - Verification: focused11/11, protected endpoint1/1, prototype units53/53, combined Node44/44 and root134/134; typecheck/lint/build and live rendered browser integration with observed widths, keyboard/text/map selection and stale-source recovery. QA corrected source contrast/number wrapping, shadowing/merged-name classification and map routing/label space.
 - Human requested implementation; file/teaching review pending. Saved predictions used by QA are developer-entered fixture records, not novice/independent-learning results. Existing concurrent work preserved; no credentials or live provider call, publication, push or event submission.
-
-## 2026-10-14 19:47:54 IST — Cross-chat product logic board
-
-Codex applied Skill Router, assumption-audit and ai-code-review; three read-only reviewers challenged access, dynamic evidence and source/storage behavior. It inspected current source/history and the three authorized chats, sent bounded repros to their owners, saved `docs/logic-board.md`, and independently reran11 source-viewer tests. Reviewers reproduced bugs despite52 older focused tests passing. Corrections and remaining proof obligations are distinguished in the board; end-to-end-verifier was read, but no new full browser-journey claim is made by this board.
-
-Human review of the corrected implementation/design is pending. Automated source review and disposable tests do not establish mastery, phone connectivity or live teaching quality. Root made documentation/coordination changes only and preserved the active shared index; feature/reuse owners own actual code. No credentials accessed, external publication, push, vault edit or memory write.
-
-## 2026-10-14 20:02:24 IST — Logic-board verification closeout
-
-Correction to the earlier root scope record: root additionally authored one isolated appended consent-window regression in `prototype/project-service.test.mjs`, after notifying the feature owner of exclusive block ownership. It reused the existing fixture, preserved all prior bytes and proved rejection before an unapproved marker plus clean fresh-consent recovery (1/1). Feature owner is explicitly authorized to include this block in its milestone. Independent review verified all six fixes; root ran53unit/41service plus typecheck/lint/build and inspected current design delivery. Human implementation/design review and the new full browser journey remain pending; no production source edit, live API, push, vault or memory change by root.
-
-## 2026-10-14 20:23:06 IST — Product behavior contract for approved redesign
-
-Codex used refreshed Skill Router metadata, API & Interface Design, Design Handoff Brief, Assumption Audit and prior AI Code Review guidance. Two read-only reviewers independently checked stage/data/screen semantics and reproduced the same-source/different-question delayed-observation gap. Root wrote only contract/board and additive records, coordinated UI/feature/reuse ownership, and corrected four overly broad draft claims (export scope, capacity recovery, staticexample/runtimeexample and JSONcode-unit storage bound). Post-terminal command freshness was added as an explicit acceptance case.
-
-Human review remains pending. A specification and independent source review do not establish implemented D1–D8 behavior, new UI usability, live teaching or learning gains. Existing actual local checkpoints5e2ebc9/b571397 are preserved; no root code edit, credential access, push, phone/network exposure, vault or memory update in this slice.
-
-## 2026-10-14 20:46:02 IST — Independent redesign logic verification
-
-Codex coordinated the three user-designated chats and independent read-only reviewers. Reviews verified attempt-bound actions, draft/retry/history isolation, unknown recorder state, persisted job pointers, per-file source-state and post-terminal check freshness. They reproduced wrong-project collection ordering and real error/timeout receipt refusal; owners corrected both. Root corrected its own overly broad command prerequisite and retained timestamped failing and passing receipts. Root performed documentation changes and selective root-only staging; no production source edits in this slice.
-
-Human review remains pending. Verified scope: knowledge authority/deadline/14unit cases,42domain/API/activity plus7host loaded-snapshot cases,8command admission combinations, and source-visible completed unresolved verdict. Browser rendering/reload/accessibility/retention and live providers remain separately evidenced or pending with their owners. No credentials, network exposure, publication, push, memory or vault write.
-
-
-## 2026-10-14 20:57:19 IST — Parallel local prototype completion: feature contracts
-
-Codex coordinated explicitly authorized UI, reuse/backend and logic chats, preserving exclusive source ownership and serialized Git staging. Native workers implemented host/source-state/current-coverage and learning-record recovery; independent read-only review found no remaining bounded recovery defect. Corrections included unknown submission/result handling, immutable execution evidence, origin-attempt/operation fencing, post-terminal dependency drift, error/timeout reflection with unknown coverage, foreign-project delegation before reads, and a fail-stop local check command. UI and knowledge authors own their consumer/adaptor changes; they are preserved outside this feature milestone.
-
-Actual current checks: prototype typecheck/lint/build, 90 unit and 64 service cases, negative command-failure probe, and 30 new-design browser checks at 1440/390/320 on a disposable project. Playwright used the already installed headless Chromium; no IAB resize/zoom or user-profile storage was touched. Browser teaching used fixture transport, not live authentication. Initial browser locator failures were corrected against rendered labels; a temporary fixture's newline escape was corrected before interrupted-run acceptance. Human code/learner review and real provider/production-scale validation remain pending. No push, vault edit or memory update.
-
-## 2026-10-14 21:08:24 IST — Cross-chat redesigned-browser logic closeout
-
-Codex inspected actual30main+5recovery browser results and current source, caught misleading retained-running/disabled-action copy after host restart, and sent the bounded correction to the UI owner. It verified historical-status wording and project-revision-triggered job rechecks; earlier selector/temporary-fixture failures were recorded as harness corrections, not product successes. Seven source fingerprints match the knowledge owner’s actual receipt. Root edited documentation and selectively staged only its own closeout; source ownership stayed with the three designated chats.
-
-Human review remains pending.35observed checks are not full coverage of every compound C01–C25 row, live provider behavior or learning gains. The knowledge route is static/read-only and its29newchecks/launcher/deadline retain stated limits; no multi-file UI/model exposure claimed. No credential, push, network exposure, vault or memory changes.
-
-## 2026-10-14 21:12:52 IST — Selected-source knowledge backend
-
-Codex implemented the bounded host/API/schema/client lane, reused the existing PocketFlow TypeScript workflow and retained MIT notice, and coordinated source/UI/behavior ownership with the three active Vadhyar chats. Three parallel workers independently reviewed the contract/implementation and exclusively wrote parser and protected-host tests. Human review remains pending.
-
-Actual checks: prototype typecheck, focused lint,30focused unit cases and 11 HTTP cases passed; the real 12 second response deadline, cancellation/busy recovery, source drift, private/symlink exclusions and launcher wiring were exercised. Corrections: feature-owned approved-project preflight before delegated reads, project-bound fingerprint, conservative ambiguous-path resolution and 160 line/empty-range DTO validation. The early combined run caught other-owner in-progress learning tests; it was reported to that owner and not treated as a pass. Exact staged export passed all 87 unit and 64 service tests, typecheck, lint and build; the feature owner separately reports 90 unit/64 service tests on the combined working app. No source was sent to a teaching model or executed by this lane; no credentials were read, new packages added or repositories cloned. [Implementation and limits](docs/backend-knowledge.md).
-
-## 2026-10-14 21:21:31 IST — Desktop use-case enforcement
-
-Codex refreshed Skill Router and applied Assumption Audit/Design Handoff Brief to the user's explicit mobile-interface challenge. A read-only reviewer inspected current desktop/narrow source and misleading mobile handoff labels. Root updated the current device use case, C24 priority, closure rule and additive records; it sent concrete owned-file corrections to the UI chat and matching setup/backend boundaries to the other two. No UI source edit, phone transport, preview opening, credentials, push, memory or vault update. Human review and final owner-applied/rendered receipts remain pending; source structure alone does not certify the final layout.
-
-## 2026-10-14 21:33:59 IST — Desktop use-case correction closeout
-
-Codex independently inspected the owner-applied desktop priority, current implementation authorization and historical narrow-filename explanation against the earlier read-only source audit. It closed the device-wording correction, preserving final UI receipt/accessibility and compound C-row limits as pending. Assumption Audit and Design Handoff Brief were applied through Skill Router; no phone implementation, CSS rewrite, live preview, production edit, credential, push, vault or memory change by this chat.
-
-## 2026-10-14 23:04:43 IST — P01/P06 feature corrections
-
-Codex corrected concise factual-answer validation in the lesson domain and teaching boundary, and isolated local browser sessions by validated port. The source, tests and feature handoff were edited in the feature lane while the UI and product-quality chats retained their file ownership. Product Quality independently reproduced and browser-checked the two-host session collision; UI owner reports the returned-check receipt remains exportable and verification stays locked until attachment. Human review of the code and learner experience remains pending.
-
-Checks: root typecheck/lint/build and 134/134 tests; prototype typecheck/lint/build with 98 learning and 66 local-service tests; focused 41/41 domain, 20/20 teaching-service, 34/34 project-service and 7/7 receipt tests. No live OpenAI request or learner-efficacy study was performed. P07 actual-repository reading remains open; no push.
-
-## 2026-10-14 23:33 IST — Exact source ranges and check freshness
-
-Codex added explicit source-range transport while preserving the legacy 160-line default. The teaching service carries the exact selected line range through both source reads and rejects a changed end line before accepting the explanation. A regression first reproduced the false-stale result, then bound check freshness to the local recorded-file change sequence rather than browser-history revisions. Actual tracked-file, dependency, config and manifest changes still invalidate freshness; watcher loss remains unknown.
-
-Checks after this change: project API 3/3; P08 regression and dependency/config/manifest stale cases 5/5; prototype TypeScript check and diff whitespace pass. Product Quality's independent browser/HTTP retest and the full combined suite remain pending source/UI integration. Human review is pending. No live OpenAI call, participant study, credential inspection, push or publication occurred.
 
 ## 2026-10-14 19:22:29 IST — Duolingo-inspired minimal browser UX proposal
 
@@ -195,11 +139,74 @@ Checks after this change: project API 3/3; P08 regression and dependency/config/
 - Actual checks: local links, SVG structure/script absence, raster dimensions, visual inspection and nine light-theme contrast pairs. No application typecheck/test success, learner execution, teaching/API call, animation measurement or learning validation is attributed to this planning task.
 - Human status: user requested minimal Duolingo inspiration and parallel coordination; master-screen/file-level review remains pending. Design ownership was communicated to both named chats. No application code change, stage/commit/push or vault/memory update.
 
+
+## 2026-10-14 20:01:14 IST — Project companion implementation and feature review
+
+Codex implemented the bounded generic launcher/service, SQLite metadata/selected contexts, saved-file watcher, validated learning model/client, consented checks and explicit OpenAI session adapter. Authorized native agents independently owned host and domain/provider files. Read-only review and independent logic repros found source mismatches, lost verification, stale dependency evidence, history rollback, reset identity, stuck polling, draft loss, range/input bounds, stale pagination and lost teaching/run-result paths; these were corrected with permanent regression coverage. Existing mock visuals were retained; the latest user assigns further UI/UX to the Duolingo design chat. The user authorized coordination with the browser-reuse chat; its additions and separately marked design/logic planning records remain outside this checkpoint.
+
+Actual checks: 27 generic model + 13 prepared + 2 activity; host full 21 plus 1 new preflight regression, 19 provider and 1 static server; combined working prototype 53 Vitest; root 134 tests/typecheck/lint; isolated staged prototype typecheck/lint/build and 42 browser fixture checks with no console errors/external browser requests; final actual 10,001-file benchmark. Browser plugin was unavailable; IAB connected-project inspection was supplemented by installed Playwright exact-width fixtures at 1440/390/320px because IAB clamps narrow widths and concurrent chats use independent QA. Provider transport was injected. No API key/environment secret was read, no live teaching request or unknown real project command was run, no original extension source altered, and no push/deployment performed. Human code review and real learner/provider/production-repository acceptance remain pending.
+
+
+## 2026-10-14 19:47:54 IST — Cross-chat product logic board
+
+Codex applied Skill Router, assumption-audit and ai-code-review; three read-only reviewers challenged access, dynamic evidence and source/storage behavior. It inspected current source/history and the three authorized chats, sent bounded repros to their owners, saved `docs/logic-board.md`, and independently reran11 source-viewer tests. Reviewers reproduced bugs despite52 older focused tests passing. Corrections and remaining proof obligations are distinguished in the board; end-to-end-verifier was read, but no new full browser-journey claim is made by this board.
+
+Human review of the corrected implementation/design is pending. Automated source review and disposable tests do not establish mastery, phone connectivity or live teaching quality. Root made documentation/coordination changes only and preserved the active shared index; feature/reuse owners own actual code. No credentials accessed, external publication, push, vault edit or memory write.
+
 ## 2026-10-14 19:56:45 IST — Design-owned logic correction: desktop access and captured evidence
 
 - Codex refreshed Skill Router and applied Design Critique, Figma User Flow Planner and Design Handoff Brief to contract/export corrections. Inspected loopback host, native watcher/status, browser-local storage, stage transitions and the independently owned logic-board register; corrected an outdated watcher assumption rather than removing the capability.
 - Codex changed only its proposed design documents, structured SVGs/static exports and additive owner-specific records. It rendered/inspected all six raster artifacts, checked five SVGs and links, and calculated eleven light-theme contrast pairs. No feature code, root board, index or commit was modified by this design lane; no application tests, live watcher/check, phone connection or provider request was executed or certified here.
 - Human master-screen approval and runtime UI acceptance remain pending. The contract preserves baseline predictions, historical accepted evidence, exact generic browser provenance and current feature-owner authority.
+
+
+## 2026-10-14 20:02:24 IST — Logic-board verification closeout
+
+Correction to the earlier root scope record: root additionally authored one isolated appended consent-window regression in `prototype/project-service.test.mjs`, after notifying the feature owner of exclusive block ownership. It reused the existing fixture, preserved all prior bytes and proved rejection before an unapproved marker plus clean fresh-consent recovery (1/1). Feature owner is explicitly authorized to include this block in its milestone. Independent review verified all six fixes; root ran53unit/41service plus typecheck/lint/build and inspected current design delivery. Human implementation/design review and the new full browser journey remain pending; no production source edit, live API, push, vault or memory change by root.
+
+
+## 2026-10-14 20:23:06 IST — Product behavior contract for approved redesign
+
+Codex used refreshed Skill Router metadata, API & Interface Design, Design Handoff Brief, Assumption Audit and prior AI Code Review guidance. Two read-only reviewers independently checked stage/data/screen semantics and reproduced the same-source/different-question delayed-observation gap. Root wrote only contract/board and additive records, coordinated UI/feature/reuse ownership, and corrected four overly broad draft claims (export scope, capacity recovery, staticexample/runtimeexample and JSONcode-unit storage bound). Post-terminal command freshness was added as an explicit acceptance case.
+
+Human review remains pending. A specification and independent source review do not establish implemented D1–D8 behavior, new UI usability, live teaching or learning gains. Existing actual local checkpoints5e2ebc9/b571397 are preserved; no root code edit, credential access, push, phone/network exposure, vault or memory update in this slice.
+
+
+## 2026-10-14 20:46:02 IST — Independent redesign logic verification
+
+Codex coordinated the three user-designated chats and independent read-only reviewers. Reviews verified attempt-bound actions, draft/retry/history isolation, unknown recorder state, persisted job pointers, per-file source-state and post-terminal check freshness. They reproduced wrong-project collection ordering and real error/timeout receipt refusal; owners corrected both. Root corrected its own overly broad command prerequisite and retained timestamped failing and passing receipts. Root performed documentation changes and selective root-only staging; no production source edits in this slice.
+
+Human review remains pending. Verified scope: knowledge authority/deadline/14unit cases,42domain/API/activity plus7host loaded-snapshot cases,8command admission combinations, and source-visible completed unresolved verdict. Browser rendering/reload/accessibility/retention and live providers remain separately evidenced or pending with their owners. No credentials, network exposure, publication, push, memory or vault write.
+
+## 2026-10-14 21:12:52 IST — Selected-source knowledge backend
+
+Codex implemented the bounded host/API/schema/client lane, reused the existing PocketFlow TypeScript workflow and retained MIT notice, and coordinated source/UI/behavior ownership with the three active Vadhyar chats. Three parallel workers independently reviewed the contract/implementation and exclusively wrote parser and protected-host tests. Human review remains pending.
+
+Actual checks: prototype typecheck, focused lint,30focused unit cases and 11 HTTP cases passed; the real 12 second response deadline, cancellation/busy recovery, source drift, private/symlink exclusions and launcher wiring were exercised. Corrections: feature-owned approved-project preflight before delegated reads, project-bound fingerprint, conservative ambiguous-path resolution and 160 line/empty-range DTO validation. The early combined run caught other-owner in-progress learning tests; it was reported to that owner and not treated as a pass. Exact staged export passed all 87 unit and 64 service tests, typecheck, lint and build; the feature owner separately reports 90 unit/64 service tests on the combined working app. No source was sent to a teaching model or executed by this lane; no credentials were read, new packages added or repositories cloned. [Implementation and limits](docs/backend-knowledge.md).
+
+
+## 2026-10-14 20:57:19 IST — Parallel local prototype completion: feature contracts
+
+Codex coordinated explicitly authorized UI, reuse/backend and logic chats, preserving exclusive source ownership and serialized Git staging. Native workers implemented host/source-state/current-coverage and learning-record recovery; independent read-only review found no remaining bounded recovery defect. Corrections included unknown submission/result handling, immutable execution evidence, origin-attempt/operation fencing, post-terminal dependency drift, error/timeout reflection with unknown coverage, foreign-project delegation before reads, and a fail-stop local check command. UI and knowledge authors own their consumer/adaptor changes; they are preserved outside this feature milestone.
+
+Actual current checks: prototype typecheck/lint/build, 90 unit and 64 service cases, negative command-failure probe, and 30 new-design browser checks at 1440/390/320 on a disposable project. Playwright used the already installed headless Chromium; no IAB resize/zoom or user-profile storage was touched. Browser teaching used fixture transport, not live authentication. Initial browser locator failures were corrected against rendered labels; a temporary fixture's newline escape was corrected before interrupted-run acceptance. Human code/learner review and real provider/production-scale validation remain pending. No push, vault edit or memory update.
+
+
+## 2026-10-14 21:08:24 IST — Cross-chat redesigned-browser logic closeout
+
+Codex inspected actual30main+5recovery browser results and current source, caught misleading retained-running/disabled-action copy after host restart, and sent the bounded correction to the UI owner. It verified historical-status wording and project-revision-triggered job rechecks; earlier selector/temporary-fixture failures were recorded as harness corrections, not product successes. Seven source fingerprints match the knowledge owner’s actual receipt. Root edited documentation and selectively staged only its own closeout; source ownership stayed with the three designated chats.
+
+Human review remains pending.35observed checks are not full coverage of every compound C01–C25 row, live provider behavior or learning gains. The knowledge route is static/read-only and its29newchecks/launcher/deadline retain stated limits; no multi-file UI/model exposure claimed. No credential, push, network exposure, vault or memory changes.
+
+
+## 2026-10-14 21:21:31 IST — Desktop use-case enforcement
+
+Codex refreshed Skill Router and applied Assumption Audit/Design Handoff Brief to the user's explicit mobile-interface challenge. A read-only reviewer inspected current desktop/narrow source and misleading mobile handoff labels. Root updated the current device use case, C24 priority, closure rule and additive records; it sent concrete owned-file corrections to the UI chat and matching setup/backend boundaries to the other two. No UI source edit, phone transport, preview opening, credentials, push, memory or vault update. Human review and final owner-applied/rendered receipts remain pending; source structure alone does not certify the final layout.
+
+
+## 2026-10-14 21:33:59 IST — Desktop use-case correction closeout
+
+Codex independently inspected the owner-applied desktop priority, current implementation authorization and historical narrow-filename explanation against the earlier read-only source audit. It closed the device-wording correction, preserving final UI receipt/accessibility and compound C-row limits as pending. Assumption Audit and Design Handoff Brief were applied through Skill Router; no phone implementation, CSS rewrite, live preview, production edit, credential, push, vault or memory change by this chat.
 
 ## 2026-10-14 21:40:28 IST — Approved desktop UI implementation assistance
 
@@ -208,6 +215,71 @@ Codex applied Skill Router, Frontend App Builder, Frontend Testing & Debugging, 
 Actual validation: prototype typecheck/lint,90unit/build/64service; focused43path/domain checks; CUA desktop1440/1024 and900coding-panel/window robustness, exact five-consent fixture execution count, historical host-loss receipt, source drift after23unrelated saves, export contents, same-page/Escape draft protection and Enter advancement without animation. Final concepts and rendered screenshots were inspected together; the raw IAB exterior was cropped to measured page bounds without UI editing.57local links and rule limits passed. Full C01–C25 coverage is explicitly partial in the [receipt](docs/design/2026-10-14-duolingo-minimal/implementation.md).
 
 No actual API credential was read or transmitted, no live model request was made, and fixture records are not learner/efficacy proof. No source/reuse/domain ownership was borrowed, memory/vault written, push or deployment performed. Existing unrelated edits/records remain local. The separate feature owner owns README/setup/plan closeout and primary-server refresh after this UI checkpoint.
+
+
+
+## 2026-10-14T22:53:00+05:30 — Specialist learning idea review
+
+Codex applied Assumption Audit and Ponytail to the user's pasted specialist-companion proposal. It consulted bounded project/vault/memory context, inspected current status/history and Graft source evidence, and delegated two read-only reviews for independent logic and official-source verification. It wrote only [the proposed specialist learning slice](docs/specialist-learning-plan.md), two discovery links and these additive records. Corrected the pasted VS Code/NovaDesk-first framing, distinguished installed tools from connected support, and clarified that Confirm/Understand setup differs from persisted stages and reflection/separate-case evidence. Human product/teaching review remains pending.
+
+Final local documentation links 54/54, nine unique proposed acceptance IDs, whitespace and 32/21 instruction-line limits passed. Preexisting document/record text, shared index and HEAD are preserved exactly. No product tests/build/browser run, specialist invocation, hook setup, provider request, installation, source upload or learner pilot occurred. These additions remain unstaged/uncommitted and unpushed. No implemented integration or measured learning benefit is claimed.
+
+
+## 2026-10-14T22:59:21+05:30 — Workflow manager and independent QC
+
+Codex read current instructions, relevant Second Brain guidance, targeted memory, source contracts and existing Vadhyar chat summaries. Three exclusively read-only reviewers checked UI, backend and documentation alignment. Root renamed the 11 chats by specialist role using the app, verified the names and prepared the management register and evidence. No credential values or secrets were retrieved. Human review of the findings is pending.
+
+Root executed isolated typecheck/lint/build plus298 tests across browser and extension/core workflows; shared source and active app bundles were preserved. An isolated cookie-port mutation was caught by its regression and restored. The initial isolated build omitted existing attribution assets; root copied them and successfully reran build/services, retaining the initial failure. Source-confirmed UI retention/discovery findings are not new browser acceptance. P07 actual-app evidence belongs to the product quality owner; legacy capacity has in-memory schema evidence. No live provider request, product edit, commit/push, new learner assessment or ongoing monitor. Cross-chat dispatch requires separate explicit user authorization.
+
+
+- 2026-10-14T23:04:05+05:30: human granted coordination dispatch; manager sent role-specific notes to five active chats. Verified separate direct user instruction from AI Workflow Strategist and assigned CEO / Product Strategy the first bounded manual-pilot protocol with Skill Router and Delegation Brief, keeping P07 prerequisite and no product/participant/integration expansion. Receiving chat active; first artifact review pending. Register/evidence updated; shared index preserved, no push.
+
+## 2026-10-14 23:04:43 IST — P01/P06 feature corrections
+
+Codex corrected concise factual-answer validation in the lesson domain and teaching boundary, and isolated local browser sessions by validated port. The source, tests and feature handoff were edited in the feature lane while the UI and product-quality chats retained their file ownership. Product Quality independently reproduced and browser-checked the two-host session collision; UI owner reports the returned-check receipt remains exportable and verification stays locked until attachment. Human review of the code and learner experience remains pending.
+
+Checks: root typecheck/lint/build and 134/134 tests; prototype typecheck/lint/build with 98 learning and 66 local-service tests; focused 41/41 domain, 20/20 teaching-service, 34/34 project-service and 7/7 receipt tests. No live OpenAI request or learner-efficacy study was performed. P07 actual-repository reading remains open; no push.
+
+
+- 2026-10-14T23:08:46+05:30: manager independently verified Engineering checkpoint `f1b959ea2828573a427817c193a4da5220475ff1` (13 files, P01/P06). Register/evidence distinguish that checkpoint from the historical298-test606657e snapshot. Shared index inspected empty; UI/P07 working changes preserved. Final combined stable-artifact, M02/M03 and actual-repository acceptance remain open. Documentation-only update; no repeated product checks, source/index mutation, commit or push.
+
+
+- 2026-10-14T23:11:27+05:30: manager reviewed four owner-executed M02 temporary rendered/export receipts and current UI source. Both Close/Browse guards and complete source-bound exported teaching draft checked; fingerprinted in management evidence. Scoped M02 gate passed with injected provider; no manager browser/product-test rerun. M03 rendered probes, P07 and exact stable combined artifact remain open; source/index preserved, no commit/push.
+
+
+- 2026-10-14T23:19:11+05:30: latest user better-product steering routed to four implementation/quality owners: P07 usable real-feature comprehension first, M02/M03 reliable retention/discovery and low learner burden. Manager checked durable independent M03 text receipts; scoped correction gate passed, final artifact still open. P07 exact160/200range plumbing recorded as owner-tested working-tree implementation, not committed acceptance. Pilot first artifact reviewed with one read-only helper; two corrections assigned to CEO: learner card separate from solutions, first feasibility15–20minutes. No participant/provider/browser/product-test/source/index/commit/push action by this manager update.
+
+
+- 2026-10-14T23:24:56+05:30: manager recorded Source Intelligence P07 focused7client/20knowledge/14HTTP and prototype-typecheck passes as owner-reported source/backend gates. Inspected range callers; legacy160/newExplorer explicit200 contract supersedes earlier intermediate default200state. View-local/export-before-leaving labels preserve retention limits. Independent correctness review, parser/bundle UI, actual Record observation trace and stable combined checkpoint remain open. Documentation-only manager update; no test/browser/provider/source/index/commit/push action.
+
+
+- 2026-10-14T23:28:52+05:30: manager recorded P08/M07 false-stale actual HTTP receipt and Engineering/Product Quality ownership. Verified receipt passed/current→passed/stale, identical-source flag and metadata revision2→3. Read-only history must not invalidate current evidence; actual source/config/dependency drift and unknown coverage guards remain required. P08/P07/final artifact open. Documentation-only receipt review; no product/browser/provider/source/index/commit/push action.
+
+
+- 2026-10-14T23:31:58+05:30: manager recorded source-owner independent P07 review M08callback attribution/M09captured-context reopening defects and exclusive fixes/regressions.116unit/typecheck/lint/build is pre-fix owner baseline; exact corrected-source/service acceptance remains pending. Agreed featureAPI→UIexpanded→source→UIbundle checkpoint order routed to Engineering/UI; actual-file tests must use committed predecessor bytes. Shared index inspected empty and preserved; no manager source/test/browser/provider/commit/push action.
+
+## 2026-10-14 23:33 IST — Exact source ranges and check freshness
+
+Codex added explicit source-range transport while preserving the legacy 160-line default. The teaching service carries the exact selected line range through both source reads and rejects a changed end line before accepting the explanation. A regression first reproduced the false-stale result, then bound check freshness to the local recorded-file change sequence rather than browser-history revisions. Actual tracked-file, dependency, config and manifest changes still invalidate freshness; watcher loss remains unknown.
+
+Checks after this change: project API 3/3; P08 regression and dependency/config/manifest stale cases 5/5; prototype TypeScript check and diff whitespace pass. Product Quality's independent browser/HTTP retest and the full combined suite remain pending source/UI integration. Human review is pending. No live OpenAI call, participant study, credential inspection, push or publication occurred.
+
+
+- 2026-10-14T23:33:25+05:30: manager inspected local P08 completion/later freshness diff (change-ledger sequence replaces history revision); preserved source/manifest/watcher/unknown guards. Engineering reports TDDred and5focusedgreen cases. Independent read-only reviewer assigned; Product Quality actual HTTP/browser and checkpoint/combined acceptance remain pending. Local implementation recorded without closure; no manager source/index/test/browser/provider/commit/push action.
+
+
+- 2026-10-14T23:34:44+05:30: independent read-only P08 source review found no actionable defect in named service/test snapshot; manager compared fingerprints (True). Completion/later change identity, event pruning/restart and watcher-loss boundaries reviewed; assertions read, not executed. Current gate summary refreshed; actual HTTP/browser recheck, checkpoint and final combined acceptance remain open. No manager source/index/test/provider/commit/push action.
+
+
+- 2026-10-14T23:39:26+05:30: manager verified Engineering `894a5ab3587f36cbaf8f95aec440870fcf2bb5a2` (nine paths; owner58project/teachingservice passes), Source P07frozen16/16fingerprints and retained MIT notice.57focused+14HTTP owner receipts and corrected M08/M09 independent re-review distinguished from historical116unit/73service pre-fix baseline. Protected actual-repository5contexts/6staticlinks source/API proof does not close actual browser comprehension. Next UIinitial→sourceexact-index→UIbundle→ProductQuality→finalcombined sequence routed; P08actual recheck open. No manager index/source/test/browser/provider/commit/push action.
+
+
+## 2026-10-14 23:52:27 IST — P07 source intelligence assistance
+
+- Direct authorization: build the reviewed codebase-knowledge backend and work in parallel; human-authorized cross-chat acceptance expands the source lane to bounded actual-repository reading. Codex used three exclusive workers for parser/walkthrough, source/HTTP tests and bundle UI/helper. Feature and UI owners retained core/API/teaching/range consumers, mount and styles.
+- Actual assistance: knowledge v2 context identity/validation, deterministic compiler catalogue/partial recovery, selected source reading and exact-range consumers; original PocketFlow notice and existing Learn Claude Code/React Flow adaptations retained. No new dependency, clone, upstream fetch or provider transmission.
+- Review/checks:57focused units,14knowledge HTTP tests, protected walkthrough test, typecheck/scoped lint and actual protected repository read. A separate read-only review found callback attribution and captured-search interpretation defects; both were corrected, covered and re-reviewed. Earlier combined116unit/73service receipt is historical before those corrections; corrected exact exported index verified at2026-10-14T23:52:27+05:30 passes126unit/74service, typecheck/lint/build. Mounted actual-app gate remains pending.
+- Human review remains pending. Static reading does not establish runtime, requirements or mastery; view-local captures need export before leaving. Other source/index/data changes preserved; no push or credential retrieval.
 
 ## 2026-10-14 23:40:14 IST — Desktop UI recovery and exact-range alignment
 
@@ -218,12 +290,13 @@ No actual API credential was read or transmitted, no live model request was made
 - Human review: implementation authorized; final code/render review pending. No real API key, live model call or real learner validation was used. Source backend/API work belongs to its owners; this milestone does not claim their P07 UI acceptance.
 
 
-## 2026-10-14 23:52:27 IST — P07 source intelligence assistance
+- 2026-10-14T23:43:49+05:30: manager parsed Product Quality corrected P08 HTTP receipt (passed/current retained after metadata revision4→5, identical-source flag), verified service bytes equal committed894a5ab, and recorded targeted post-result defect closure. During-run/real-drift/watcher checks remain Engineering-owned suite scope; raw output unchanged is owner-reported, not independently compared from minimal receipt. P07 actual mount/feature walkthrough and final combined artifact remain open. No manager source/index/test/browser/provider/commit/push action.
 
-- Direct authorization: build the reviewed codebase-knowledge backend and work in parallel; human-authorized cross-chat acceptance expands the source lane to bounded actual-repository reading. Codex used three exclusive workers for parser/walkthrough, source/HTTP tests and bundle UI/helper. Feature and UI owners retained core/API/teaching/range consumers, mount and styles.
-- Actual assistance: knowledge v2 context identity/validation, deterministic compiler catalogue/partial recovery, selected source reading and exact-range consumers; original PocketFlow notice and existing Learn Claude Code/React Flow adaptations retained. No new dependency, clone, upstream fetch or provider transmission.
-- Review/checks:57focused units,14knowledge HTTP tests, protected walkthrough test, typecheck/scoped lint and actual protected repository read. A separate read-only review found callback attribution and captured-search interpretation defects; both were corrected, covered and re-reviewed. Earlier combined116unit/73service receipt is historical before those corrections; corrected exact exported index verified at2026-10-14T23:52:27+05:30 passes126unit/74service, typecheck/lint/build. Mounted actual-app gate remains pending.
-- Human review remains pending. Static reading does not establish runtime, requirements or mastery; view-local captures need export before leaving. Other source/index/data changes preserved; no push or credential retrieval.
+
+- 2026-10-14T23:49:32+05:30: manager verified UI initial baseline `7ff10369a1a2653f708d4bb0e7e3bd169cde5b73` (33 files) and index release, resolving reported staging blocker. Owner exact staged typecheck/lint/build, 99 unit/70 service passes recorded without manager rerun. Actual predecessor sent to Source Intelligence for its frozen exact-index milestone; UI reader mount addon follows. No repeat baseline gate, empty commit, index takeover or push; P07 actual walkthrough/final artifact open.
+
+
+- 2026-10-14T23:58:03+05:30: user requested MVP-ready notification and stopping product work at that level. Manager configured ACTIVE thread heartbeat `vadhyar-mvp-readiness` every15minutes, quiet while unchanged, once-ready notice/freeze then deactivate; six owner stopping boundaries sent. Source checkpoint `5bb7708a4bcd3cf5d2e68c3eb23e66e4c1200c06` verified (26 paths, owner exact-index126unit/74service/typecheck/lint/build). UI reader mount, actual feature trace and final stable artifact remain pending; MVP not declared ready. Optional provider/installer/cloud bridges/pilot remain separate limits. No manager source/index/runtime tests/commit/push.
 
 
 ## 2026-10-15 00:00:59 IST — Independent persona and recovery verification
@@ -231,6 +304,9 @@ No actual API credential was read or transmitted, no live model request was made
 - Direct human authorization: act as founder/student/developer, use the app on synthetic and actual working code, find and implement logic gaps through the existing owners. Codex used Skill Router and relevant end-to-end/exploratory/design review instructions; two independent read-only persona reviewers and one records reviewer supplemented root browser/HTTP observations.
 - Root verified concise factual inputs, path-search recovery, immutable rule/case, optional/no-key teaching, separate execution/verdict, reload/export, port-specific sessions, changed-source protections, rejected teaching export/leave/refresh protection and discovery pending/503/retry/empty states on controlled local hosts. Corrected readonly-capture freshness was independently checked against committed894a5ab bytes. No live model, real credentials, user-record mutations or source execution on the actual repository.
 - Evidence and limits: docs/persona-logic-audit.md, docs/logic-board.md and root persona-* receipts. Local links/JSON/rule limits checked; review found ambiguous output equality wording and outdated role labels, corrected. Human review pending. P07 actual retained cross-file reader trace remains open despite source checkpoint5bb7708; full final combined gate belongs to engineering. No push.
+
+
+- 2026-10-15T00:15:23+05:30: manager intervened on stalled reader mount; UI-owner shared diff now exists, exact navigation/project lifetime inspected. Isolated fallback prepared/tested but not applied because base changed; shared writer/index/session preserved. Independent current-source review refuted two ordinary recovery defects; six Product Quality hard-refusal artifacts reviewed, buffered run ID/output export matches. Actual P07 reader trace/focus/final artifact remains open; no manager shared product/source/index/commit/push or browser run.
 
 
 ## 2026-10-15 00:31:55 IST — Mounted actual-repository persona acceptance
@@ -248,8 +324,23 @@ No actual API credential was read or transmitted, no live model request was made
 - Corrections: initial UI-owner mount attribution corrected; separate stale probe and later explicit recapture/replacement receipts distinguished from main reading bundle. Earlier historical/mutation/harness results keep their original boundaries.
 - Human review: not yet confirmed. Maintainer simulation is not human learning efficacy. Implementation frozen as requested; source-checkout/optional-provider/full-matrix limits disclosed. No push or publication.
 
+
+## 2026-10-15T00:39:09+05:30 — Source acceptance receipt review
+
+- Codex read the committed88a8d69 Product Quality actual-reader receipt and source-cited explanation, verified all twelve receipt source/built fingerprints and the sixteen source-owned5bb7708 fingerprints, then closed only the source documentation's pending browser status. Browser execution remains attributed to Product Quality; no source/product/browser/test rerun in this closeout.
+- This is bounded maintainer/persona acceptance, not a human learner study, live provider or whole-code runtime proof. Final matching-artifact MVP closeout remains Engineering/Manager-owned. Other working changes and open4173 user session preserved; no push.
+
 ## 2026-10-15 00:48:58 IST — Final UI design acceptance handoff
 
 - Codex completed the final UI acceptance documentation, recorded actual1707×960/no-overflow/search50.927px/10pxwrapped-actions/Tabfocus measurements and linked Product Quality's1440px styled/actual-project trace.
 - Attribution: UI supplied the approved desktop/recovery/range work at7ff1036 and ten reader CSS rules; Product Quality applied the four-line reader mount and committed integration88a8d69 after the handoff lag. No duplicate source or styling patch was applied.
 - Validation:37local links, JSON and documentation diff; final human review and real learning efficacy remain unverified. No live API key/provider call or user-session navigation was used for this closeout.
+
+
+## 2026-10-15T01:23:23+05:30 — GitHub and installer preparation with Codex
+
+- Human authorization: professional GitHub setup with images, instructions and installer; explicitly push all updated local project work. Human explicitly selected MIT; no invented license grant or signer identity.
+- Primary manager applied freshly refreshed Skill Router (1683readable entries,6unrelated indexing errors), README Writer, Docs Quickstart, Brand Guidelines, CI/CD and Automation, Security and Hardening, Code Review and Quality and QA Release Sign-off. No routing website or extra skills were installed; original Cline publisher skill was inspected/rejected as mismatched.
+- Native helper lanes: runtime/installer implementation; CI/community files; independent source/publication/privacy/artifact review. Separate human-authorized Check file base with Ponytail chat used its root+3implementation agents and Engineering/Product Quality/UI reviewers; simulated founder review is AI, not human acceptance. Exclusive source ownership and serialized staging preserved.
+- Corrections: shared-client rebuild mistake detected; exact old ignored assets restored after refusing a mismatched candidate. Installer now builds in isolation, hashes verified buffers before install, normalizes tar metadata and uses generic setup failures. Two real-process privacy tests were red before sticky recognition; independent artifact review found/closed AppleDouble. Audit reviewers found/closed inconsistent counts and missing/cyclic advisory-chain acceptance; mutation caught removed expiry refusal.
+- Actual gates: known quality340cases+types/lints/isolated builds, installer3Node24cases, risk-policy3cases/lint/mutation, nativefull3high/prod0triage, actionlint/YAML/negativecontrol and front-door57links. These are preparation receipts; final reconciled source/archive/upload/hosted-job verification remains pending. No live provider, native-editor or human learning study performed in this slice.

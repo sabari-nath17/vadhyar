@@ -29,3 +29,8 @@ Thumbs.db
 # Vadhyar generated Graphify output and isolated CLI environment.
 graphify-out/
 .venv-graphify/
+
+# Temporary recordings, copied runtimes and local diagnostics.
+# Curated public screenshots live in docs/assets instead.
+/output/
+/outputs/

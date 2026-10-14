@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { checkCases, exportNotes, newState, persistState, recordAction, restoreState, STORAGE_KEY, transition } from './src/model.js';
+import { checkCases, exportNotes, newState, persistState, recordAction, resetState, restoreState, STORAGE_KEY, transition } from './src/model.js';
 const ready = () => transition(transition(newState(), { type: 'confirm' }), { type: 'next' });
 const predicted = () => transition(ready(), { type: 'predict', answer: 'block', reasoning: 'Only the owning client should approve.' });
 describe('browser mock evidence', () => {
@@ -76,6 +76,24 @@ describe('browser mock evidence', () => {
   persistState(storage, transition(newState(), { type: 'note', title: 'New record', body: 'Keep this note after the reset.' }), 0);
   expect(() => persistState(storage, transition(old, { type: 'observe' }), old.serial)).toThrow(/another tab/);
   expect(JSON.parse(data.get(STORAGE_KEY)!).notes).toHaveLength(1);
+ });
+ it('writes a fresh reset generation that rejects serial-zero and saved stale tabs', () => {
+  const data = new Map<string,string>(); const storage = { getItem: (key:string) => data.get(key) ?? null, setItem: (key:string,value:string) => { data.set(key,value); } };
+  const unsaved = recordAction(ready(), { type: 'predict', answer: 'allow', reasoning: 'The role alone passes the condition.' }, { ...storage, setItem: () => { throw new Error('Quota'); } }).state;
+  const old = persistState(storage, predicted(), 0);
+  const fresh = resetState(storage);
+  expect(fresh.serial).toBe(0); expect(fresh.recordId).not.toBe(old.recordId); expect(fresh.attempt.prediction).toBeNull();
+  expect(restoreState(data.get(STORAGE_KEY)!).state).toEqual(fresh);
+  expect(() => persistState(storage, unsaved, 0)).toThrow(/another tab/);
+  expect(() => persistState(storage, old, old.serial)).toThrow(/another tab/);
+  expect(data.get(STORAGE_KEY)).toBe(JSON.stringify(fresh));
+ });
+ it('retains the prior saved and visible record when a reset write fails', () => {
+  const data = new Map<string,string>(); const storage = { getItem: (key:string) => data.get(key) ?? null, setItem: (key:string,value:string) => { data.set(key,value); } };
+  const old = persistState(storage, predicted(), 0), raw = data.get(STORAGE_KEY);
+  let visible = old;
+  expect(() => { visible = resetState({ setItem: () => { throw new Error('Quota'); } }); }).toThrow(/could not be saved/);
+  expect(visible).toBe(old); expect(data.get(STORAGE_KEY)).toBe(raw);
  });
  it('rejects contradictory restored check evidence', () => {
   const checking = transition(transition(predicted(), { type: 'observe' }), { type: 'next' });

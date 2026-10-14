@@ -1,6 +1,6 @@
 {
   "slice": "P07 bounded source reading",
-  "status": "Source/parser/backend/component exact-index gate passed; independent mounted actual-app acceptance pending.",
+  "status": "Source/parser/backend/component exact-index gate and bounded independent mounted maintainer acceptance passed; final matching-artifact MVP handoff remains Engineering/Manager-owned.",
   "source_baseline": "7ff10369a1a2653f708d4bb0e7e3bd169cde5b73",
   "checks": {
     "knowledge_client": {
@@ -50,7 +50,36 @@
       "intendedStagedPaths": 26
     },
     "independent_browser": {
-      "status": "pending Product Quality actual-repository Record observation trace"
+      "status": "passed: bounded maintainer/persona simulation",
+      "acceptanceCommit": "88a8d69cc8ce0d00352d26c8f4fd59191a1dbeaf",
+      "receipt": "docs/logic-evidence/persona-real-reader-acceptance.json",
+      "explanation": "docs/logic-evidence/persona-real-feature-explanation.md",
+      "owner": "Product Quality",
+      "rootReceiptVerifiedAtIST": "2026-10-15T00:39:09+05:30",
+      "rootBrowserRerun": false,
+      "sourceAndBuiltFingerprintsMatched": 12,
+      "sourceOwnedFingerprintsUnchanged": 16,
+      "selectedContexts": 5,
+      "physicalCodeFiles": 4,
+      "staticModuleLinks": 6,
+      "desktopCssViewport": [
+        1440,
+        1000
+      ],
+      "executed": [
+        "Exact declaration/body anchors and exported source hashes",
+        "Keyboard focus and retained search inspection",
+        "Beyond-file source failure preserves retained source/bundle/analysis/export and refuses Start",
+        "Separate genuine stale-source409, old captured inspection/export, explicit matching-range replacement and fresh200"
+      ],
+      "limits": [
+        "No project command/model request or lesson advancement from actual-repository reader.",
+        "No host command implementation body in main four-file bundle; client separate POST only.",
+        "Recorded synthetic command/teacher fault probes are separate from actual repository comprehension.",
+        "Unselected source, runtime inputs/builds and unsaved buffers are outside captured equality.",
+        "View-local reader captures require export before leaving; no automatic restore/import.",
+        "Physical phone/LAN, real learner efficacy, live teacher quality and complete accessibility/performance remain unverified."
+      ]
     },
     "source_walkthrough": {
       "passed": 19,
@@ -98,7 +127,7 @@
     "path": "docs/third-party/pocketflow-LICENSE.txt",
     "sha256": "1a4929dfc1f558858148bd90814f0ddf13ca1811c3f389ccc271216d7bc4eb50"
   },
-  "commit": "Local source milestone: feat: add bounded real-repository source reading; exact identity is in Git history and owner handoff.",
+  "commit": "5bb7708a4bcd3cf5d2e68c3eb23e66e4c1200c06",
   "pushed": false,
   "human_review": "pending",
   "actualRepositoryProtectedHost": {
@@ -788,5 +817,9 @@
       "Inspect retained search match text by default; fresh saved-line recapture explicitly labelled"
     ],
     "humanReview": false
-  }
+  },
+  "integrationCommit": "88a8d69cc8ce0d00352d26c8f4fd59191a1dbeaf",
+  "mvpFinalHandoff": "Core MVP verified at product88a8d69 and managementf83c71e; professional GitHub/installer publication is a separate newly authorized slice.",
+  "closeoutReviewedAtIST": "2026-10-15T00:39:09+05:30",
+  "handoffReconciledAtIST": "2026-10-15T01:17:45+05:30"
 }

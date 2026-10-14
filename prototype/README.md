@@ -10,7 +10,7 @@ Use the installed repository dependencies and a supported Node.js runtime (teste
 npm run prototype:start -- --project /absolute/path/to/a/trusted/project
 ```
 
-Run `npm run prototype:start` from the Vadhyar repository to study the Vadhyar folder itself. Without `--project`, the launcher uses the current folder. It builds only the prototype and binds to [127.0.0.1:4173](http://127.0.0.1:4173). `VADHYAR_MOCK_PORT` selects another local port. Stop with the terminal interrupt action. This is the source-checkout installation path; a standalone installer and shared VS Code/plugin connection remain future work. Root extension bundles are unaffected.
+Run `npm run prototype:start` from the Vadhyar repository to study the Vadhyar folder itself. Without `--project`, the launcher uses the current folder. It builds only the prototype and binds to [127.0.0.1:4173](http://127.0.0.1:4173). This is a same-computer desktop companion for use beside an editor or terminal. Primary layout checks target 1440px and 1024px desktop widths and a 700–900px coding panel; 320px/390px checks cover narrow windows and zoom reflow, not phone access. `VADHYAR_MOCK_PORT` selects another local port. Stop with the terminal interrupt action. This is the source-checkout installation path; a standalone installer and shared VS Code/plugin connection remain future work. Root extension bundles are unaffected.
 
 ## Complete a question
 
@@ -38,7 +38,7 @@ The accepted check pointer and its latest receipt are saved with the question. B
 
 ## Verification
 
-Run `npm run prototype:check` for the prototype typecheck, lint, learning tests, build and local-service tests. It uses disposable test projects and injected teaching clients; browser and live-provider acceptance remain separate. `npm run prototype:build` builds the browser bundle alone. Individual checks remain available:
+Run `npm run prototype:check` for the prototype typecheck, lint, learning tests, build and local-service tests. It uses disposable test projects and injected teaching clients; browser and live-provider acceptance remain separate. A disposable scale smoke on Node 26.7.0/macOS indexed 100,000 synthetic JavaScript files in 1,000 folders, paged all 100,000 through the local API, and captured a subsequent saved change in 17.4 seconds end to end. This measures the metadata/index/pagination/change path on this host; it does not parse every file, establish a performance target, or prove the same size on other operating systems. `npm run prototype:build` builds the browser bundle alone. Individual checks remain available:
 
 ```sh
 npx tsc -p prototype/tsconfig.json
@@ -48,7 +48,7 @@ node prototype/build.mjs
 node --test prototype/project-service.test.mjs prototype/teaching-service.test.mjs prototype/server.test.mjs
 ```
 
-[Product behavior contract](../docs/product-logic-contract.md) and [feature contract and handoff](feature-contract.md) record the implemented boundaries and pending adapters. [Project-independent specification](../docs/superpowers/specs/2026-10-14-project-agnostic.md) and [plan](../docs/superpowers/plans/2026-10-14-project-agnostic.md) describe this slice. [Research](../docs/research/2026-10-14-industry-learning/README.md), [roasted findings](../docs/research/2026-10-14-industry-learning/decisions.md), [logic contract](logic-contract.md), [design references](DESIGN.md) and [original UI review](ui-review.md) retain provenance. The separate Duolingo UI chat owns the next visual proposal; this checkpoint's later changes fix feature behavior.
+[Product behavior contract](../docs/product-logic-contract.md) and [feature contract and handoff](feature-contract.md) record the implemented boundaries and pending adapters. [Project-independent specification](../docs/superpowers/specs/2026-10-14-project-agnostic.md) and [plan](../docs/superpowers/plans/2026-10-14-project-agnostic.md) describe this slice. [Research](../docs/research/2026-10-14-industry-learning/README.md), [roasted findings](../docs/research/2026-10-14-industry-learning/decisions.md), [logic contract](logic-contract.md), [design references](DESIGN.md), [rendered UI acceptance](../docs/design/2026-10-14-duolingo-minimal/implementation.md) and [original UI review](ui-review.md) retain provenance and verification boundaries.
 
 Original wordmark, generated lotus/books illustration and repository fonts/OFL notices are retained. House Control, React, Zod, OpenAI SDK, esbuild and Vitest reuse the installed stack. Research establishes design hypotheses, not product demand or learning benefit. The optional prepared lesson still discloses its seeded ownership bug; it cannot be mistaken for recorded source or actual project execution.
 

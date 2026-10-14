@@ -989,5 +989,36 @@
       "full failure/accessibility/physical-device matrix unverified",
       "legacy Project Guide capacity follow-up separate"
     ]
+  },
+  "githubPublicationSlice": {
+    "authorizedAtDate": "2026-10-15",
+    "updatedAtIST": "2026-10-15T01:23:23+05:30",
+    "userAuthorizedPushAllUpdatedProjectWork": true,
+    "userSelectedLicense": "MIT",
+    "rootScope": [
+      "README/images/guides",
+      "runtime installer",
+      "CI/community",
+      "reviewed local source/doc corrections",
+      "non-destructive main reconciliation and push/release"
+    ],
+    "skillRefresh": {
+      "readable": 1683,
+      "unrelatedErrors": 6
+    },
+    "coreMVPCheckpoint": "88a8d69cc8ce0d00352d26c8f4fd59191a1dbeaf",
+    "readinessAutomationRemains": "PAUSED",
+    "sourceQualityReceipt": "docs/quality/2026-10-15-ponytail-check.md",
+    "installerDevelopmentNode": "24.19.0",
+    "nativeFullAuditHigh": 3,
+    "productionAuditFindings": 0,
+    "riskPolicy": "docs/security/dependency-exceptions.json",
+    "primaryAssetRestoreReceipt": "/tmp/vadhyar-primary-assets-restoration.json",
+    "ignoredLocalArtifactRoots": [
+      "output/",
+      "outputs/"
+    ],
+    "privateVulnerabilityReporting": "enabled and verified",
+    "publicationStatus": "pending final source/reconciliation/artifact/hosted checks"
   }
 }
