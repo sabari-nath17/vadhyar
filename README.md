@@ -210,3 +210,7 @@ The [research and revised product decisions](docs/research/2026-10-14-industry-l
 ## Local project companion prototype
 
 The browser prototype now opens a trusted local project, follows eligible saved changes, keeps durable metadata/selected-source contexts, and records source-driven questions with scoped manual/script evidence. OpenAI teaching is optional and explicitly consented; its key stays only in host memory. Run `node prototype/launch.mjs --project /absolute/path/to/project`. [Setup, limits and checks](prototype/README.md), [feature contract](prototype/feature-contract.md). NovaDesk remains an optional separate example. This is the source-checkout launcher, not a completed standalone installer or shared extension/plugin bridge.
+
+## Browser source walkthrough adoption — 14 October 2026
+
+The local-project browser now adapts Learn Claude Code's source viewer and manual step controls, ports PocketFlow's concept/relationship/order workflow, and renders a focused read-only map using React Flow `12.12.0`. Select a JS/TS file in Project, then **Explore source concepts**. Exact upstream-file mappings, modifications, retained notices and actual integration limits are in [browser reuse](docs/browser-reuse.md). A changed file rejects its earlier source hash; the map never determines runtime behavior, a requirement verdict or learning progress.

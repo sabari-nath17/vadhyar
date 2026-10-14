@@ -1,0 +1,104 @@
+{
+  "date_ist": "2026-10-14",
+  "owner": "Codex browser reuse slice; human review pending",
+  "research_register_unchanged": true,
+  "repositories_cloned": 0,
+  "pinned_files_fetched_and_blob_verified": 8,
+  "adoptions": [
+    {
+      "repository": "shareAI-lab/learn-claude-code",
+      "commit": "ce8f9f186058939da54c9d6fead78dfb5d0fd6c3",
+      "license": "MIT",
+      "retained_notice": "docs/third-party/learn-claude-code-LICENSE.txt",
+      "notice_sha256": "204ff5ee216c8f895268a23b66d959f82aa4d868e871e0690fbf2844eff8a26b",
+      "adaptation": "local component adaptation",
+      "sources": [
+        {
+          "upstream_path": "web/src/components/code/source-viewer.tsx",
+          "blob_sha": "e26ea44563d86610f0b0263b194ed4c85320ada9",
+          "url": "https://github.com/shareAI-lab/learn-claude-code/blob/ce8f9f186058939da54c9d6fead78dfb5d0fd6c3/web/src/components/code/source-viewer.tsx",
+          "local_paths": [
+            "prototype/src/SourceViewer.tsx"
+          ]
+        },
+        {
+          "upstream_path": "web/src/components/visualizations/shared/step-controls.tsx",
+          "blob_sha": "cd0beaa2cc5a683540ae74e25186b6ff1fa326e3",
+          "url": "https://github.com/shareAI-lab/learn-claude-code/blob/ce8f9f186058939da54c9d6fead78dfb5d0fd6c3/web/src/components/visualizations/shared/step-controls.tsx",
+          "local_paths": [
+            "prototype/src/StepControls.tsx"
+          ]
+        }
+      ]
+    },
+    {
+      "repository": "xyflow/xyflow",
+      "commit": "3d35b57317576b0916c0bfeaaedd573aaacc2839",
+      "license": "MIT",
+      "retained_notice": "docs/third-party/xyflow-LICENSE.txt",
+      "notice_sha256": "023119ac20fb1c8c9930abe0bcd196989a1960388529a96fc43cebf96f07c9ff",
+      "adaptation": "published npm dependency; no package source edits",
+      "sources": [
+        {
+          "upstream_path": "packages/react/package.json",
+          "blob_sha": "567bf310a8ed080d8386422ee1ebb3d6b6a56500",
+          "url": "https://github.com/xyflow/xyflow/blob/3d35b57317576b0916c0bfeaaedd573aaacc2839/packages/react/package.json",
+          "local_paths": [
+            "package.json",
+            "package-lock.json",
+            "prototype/src/SourceWalkthrough.tsx",
+            "prototype/src/walkthrough.css"
+          ]
+        }
+      ]
+    },
+    {
+      "repository": "The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge",
+      "commit": "05b24cbbb0fe409c5e23c9791f0342f07524ffdc",
+      "license": "MIT",
+      "retained_notice": "docs/third-party/pocketflow-LICENSE.txt",
+      "notice_sha256": "1a4929dfc1f558858148bd90814f0ddf13ca1811c3f389ccc271216d7bc4eb50",
+      "adaptation": "TypeScript port of workflow and complete order validation; deterministic local extraction replaces model-generated concepts/edges",
+      "sources": [
+        {
+          "upstream_path": "nodes.py",
+          "blob_sha": "0e3fa587b6b6710e11e9bb84c917640a7ffd1a4b",
+          "url": "https://github.com/The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge/blob/05b24cbbb0fe409c5e23c9791f0342f07524ffdc/nodes.py",
+          "local_paths": [
+            "prototype/src/source-concepts.ts",
+            "prototype/src/walkthrough-types.ts"
+          ]
+        },
+        {
+          "upstream_path": "flow.py",
+          "blob_sha": "09caa12530c3468e8c2ff7dafaf3ba17396695bc",
+          "url": "https://github.com/The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge/blob/05b24cbbb0fe409c5e23c9791f0342f07524ffdc/flow.py",
+          "local_paths": [
+            "prototype/src/source-concepts.ts",
+            "prototype/walkthrough-service.mjs"
+          ]
+        }
+      ]
+    }
+  ],
+  "dependency": {
+    "@xyflow/react": {
+      "version": "12.12.0",
+      "resolved": "https://registry.npmjs.org/@xyflow/react/-/react-12.12.0.tgz",
+      "integrity": "sha512-74oXI0Rgm1Eu33cHQAd74J6oVgCH9mbFyTVQbsGgp2kmWwh0HdtBr2VP04z8mbPD+M/xO69nqG5dDEt7/EN2rQ==",
+      "dev": true
+    },
+    "@xyflow/system": {
+      "version": "0.0.83",
+      "resolved": "https://registry.npmjs.org/@xyflow/system/-/system-0.0.83.tgz",
+      "integrity": "sha512-a//eDjez3WZF47aaPTfVUDD0OINOq+WVwBZCRTqG+m0a5euX8EwlJ4jMY1Wxz0Ocj4xOeekJ70V22Pq0ll8RJw==",
+      "dev": true
+    }
+  },
+  "limits": [
+    "Post-event browser work, not hackathon submission code.",
+    "Only selected bounded JavaScript/TypeScript excerpts are analyzed.",
+    "Static relationships and proposed order are not runtime traces, confirmed requirements, mastery or measured learning gains.",
+    "Existing provider, Graphify adapter and source/runner consent boundaries retain their authority; no new live provider call."
+  ]
+}

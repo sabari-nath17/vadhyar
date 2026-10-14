@@ -1,0 +1,170 @@
+{
+  "captured_at_ist": "2026-10-14T19:09:57.499346+05:30",
+  "baseline_head": "636eb73a030cdbb026928a388701038b6aec08ef",
+  "branch": "codex/panel-v2-phase0",
+  "scope": "Final observed combined working-tree acceptance after generic baseline5e2ebc9. Root logic-board consent test remains separately owned/unstaged; this receipt does not attribute its coverage to reuse.",
+  "adoption_provenance": "browser-reuse-provenance.json",
+  "commands": [
+    {
+      "command": "npx tsc -p prototype/tsconfig.json",
+      "status": "passed"
+    },
+    {
+      "command": "npx eslint prototype/src prototype/*.ts prototype/*.mjs --max-warnings=0",
+      "status": "passed"
+    },
+    {
+      "command": "npx vitest run --config prototype/vitest.config.ts",
+      "status": "passed",
+      "tests": 53,
+      "files": 4
+    },
+    {
+      "command": "node --test prototype/*.test.mjs",
+      "status": "passed",
+      "tests": 44
+    },
+    {
+      "command": "npm run typecheck",
+      "status": "passed"
+    },
+    {
+      "command": "npm run lint",
+      "status": "passed"
+    },
+    {
+      "command": "npm test",
+      "status": "passed",
+      "tests": 134,
+      "files": 29
+    },
+    {
+      "command": "npm run build",
+      "status": "passed"
+    },
+    {
+      "command": "node prototype/build.mjs",
+      "status": "passed"
+    },
+    {
+      "command": "npm ls @xyflow/react @xyflow/system",
+      "status": "passed"
+    },
+    {
+      "command": "git diff --check",
+      "status": "passed"
+    }
+  ],
+  "focused_adaptation_tests": 11,
+  "real_endpoint_tests": 1,
+  "protected_baseline": {
+    "checked": 79,
+    "changed": []
+  },
+  "retained_notice_check": "Exact pinned donor license bytes retained; compiled notice artifact includes donor and all actually bundled package licenses.",
+  "browser": {
+    "tool": "Codex in-app browser through cua_repl",
+    "url": "http://127.0.0.1:4181/",
+    "project": "Disposable copy of novadesk/src/approval.ts; disclosed role-only ownership bug, simulated actors",
+    "observed_css_viewports": [
+      [
+        1440,
+        900
+      ],
+      [
+        320,
+        700
+      ],
+      [
+        391,
+        844
+      ]
+    ],
+    "source_hash_before": "eda012742754",
+    "source_hash_after": "46fe370f15c1",
+    "concepts": 3,
+    "static_relationships": 2,
+    "checks": [
+      "Page title and nonblank project/source screens",
+      "No framework overlay or console errors/warnings",
+      "Source text and line offsets/highlighting rendered",
+      "Text, previous/next/restart and Enter-activated map buttons select the same source spans",
+      "Three real React Flow nodes/two static type-reference edges with graph edit/deletion disabled",
+      "No document overflow at observed widths; source text scrolls within pane",
+      "Source controls cannot advance the Predict stage or reveal observation",
+      "Prediction saved before observation and preserved after disk edit",
+      "Stale 409 clears map; source reload recovers with a new full-file hash",
+      "Named third-party notice artifact serves successfully"
+    ],
+    "screenshots": [
+      "/tmp/vadhyar-reuse-qa/320-final.png",
+      "/tmp/vadhyar-reuse-qa/desktop-final.png",
+      "/tmp/vadhyar-reuse-qa/stale-source.png",
+      "/tmp/vadhyar-reuse-qa/final-proof.png",
+      "/tmp/vadhyar-reuse-qa/final-desktop-page.png"
+    ],
+    "touch_targets_css_px": [
+      44,
+      44,
+      44,
+      44,
+      44,
+      44
+    ]
+  },
+  "corrections": [
+    "A control test initially expected native disabled; corrected to existing aria-disabled house semantics.",
+    "Isolated CLI typechecking omitted project CSS declarations; the complete project typecheck is the authority.",
+    "Concurrent provider/domain edits briefly failed lint/typecheck; their owners corrected them before the final combined pass.",
+    "Browser QA corrected dark source contrast, line-number wrapping, edge routing/label fit and 44px touch targets."
+  ],
+  "unverified": [
+    "Live OpenAI calls and model teaching quality",
+    "Graphify extraction/upgrade and native extension/CodeTour playback",
+    "Cross-platform browser/runtime behavior",
+    "Independent learner transfer and learning effectiveness",
+    "Source relationships outside the selected complete JS/TS excerpt",
+    "Physical phone connectivity"
+  ],
+  "push": false,
+  "event_submission": false,
+  "local_checkpoint": "Owned milestone feat: integrate browser source walkthrough reuse after generic baseline5e2ebc9. Exact commit identity is reported at handoff.",
+  "research_register_check": "Pinned assessment and 12-repository/57-file provenance unchanged from start.",
+  "local_link_checks": 20,
+  "rule_line_counts": {
+    "AGENTS.md": 32,
+    ".customrules": 21
+  },
+  "logic_board_followup": {
+    "regression": "Empty or reversed source captures render no fabricated numbers; exploration is disabled.",
+    "focused_tests": 11,
+    "browser_checks": [
+      "Empty physical TS file: Empty file, zero anchors, Explore disabled",
+      "Incomplete TS: parse limitation and no concepts",
+      "Python: readable source, explicit unsupported extraction",
+      "Delayed walkthrough1.5s, selection changed to empty file: after delay zero old nodes/walkthroughs/anchors"
+    ],
+    "phone_access": "Unsupported. All width checks use a desktop browser; service remains loopback-only.",
+    "shared_feature_corrections": "Separately owned host/domain corrections; independent board retains acceptance authority."
+  },
+  "final_verified_at_ist": "2026-10-14T20:08:40.988956+05:30",
+  "generic_baseline_commit": "5e2ebc9bc92419f9b69c88e181cbac392f7e1bfa",
+  "staged_verification": {
+    "at_ist": "2026-10-14T20:13:24.385556+05:30",
+    "exported_index_tree": "1d76ed1c7c6102f54a87b4d00e8e7673f05375a7",
+    "isolated_export": true,
+    "checks": [
+      "Prototype strict typecheck passed",
+      "Prototype and adapter lint passed",
+      "53 Vitest cases passed in4files",
+      "Browser build and full bundled license collection passed",
+      "Actual static-server and walkthrough endpoint tests2/2 passed"
+    ],
+    "excluded": [
+      "Other-owner UI/design/logic records",
+      "Unrelated src/tests changes",
+      "Root-owned appended consent regression",
+      "Temporary QA artifacts"
+    ]
+  }
+}

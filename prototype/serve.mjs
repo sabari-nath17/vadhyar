@@ -15,10 +15,10 @@ export function mockServer({ service } = {}) {
   if (!['GET', 'HEAD'].includes(request.method ?? '')) { response.writeHead(405, { Allow: 'GET, HEAD' }); response.end(); return; }
   try {
    const path = decodeURIComponent((request.url ?? '/').split('?')[0]);
-   if (path.includes('..') || path.includes('\\') || path.includes('\0') || !/^\/(?:index\.html|app\.(?:js|css)|assets\/[a-z0-9_.-]+)?$/.test(path)) { response.writeHead(404); response.end('Not found'); return; }
+   if (path.includes('..') || path.includes('\\') || path.includes('\0') || !/^\/(?:index\.html|THIRD_PARTY_NOTICES\.txt|app\.(?:js|css)|assets\/[a-z0-9_.-]+)?$/.test(path)) { response.writeHead(404); response.end('Not found'); return; }
    const target = await realpath(join(directory, path === '/' ? 'index.html' : path)); const base = await realpath(directory);
    if (!target.startsWith(base + sep)) { response.writeHead(404); response.end('Not found'); return; }
-   const extension = target.slice(target.lastIndexOf('.')); const type = types[extension];
+   const extension = target.slice(target.lastIndexOf('.')); const type = path === '/THIRD_PARTY_NOTICES.txt' ? 'text/plain; charset=utf-8' : types[extension];
    if (!type) { response.writeHead(404); response.end('Not found'); return; }
    const body = await readFile(target); response.writeHead(200, { 'Content-Type': type }); response.end(request.method === 'HEAD' ? undefined : body);
   } catch { response.writeHead(404); response.end('Not found'); }
@@ -32,9 +32,11 @@ export async function launchProject() {
  const root = resolve(args[1] ?? process.cwd());
  const { createProjectService } = await import('./project-service.mjs');
  const { createTeachingService } = await import('./teaching-service.mjs');
+ const { createWalkthroughHandler } = await import('./walkthrough-service.mjs');
  let service;
  const teaching = createTeachingService({ readSource: (...values) => service.readSource(...values) });
- service = await createProjectService({ root, origin: `http://127.0.0.1:${port}`, handleExtraApi: teaching.handle });
+ const walkthrough = createWalkthroughHandler({ readSource: (...values) => service.readSource(...values) });
+ service = await createProjectService({ root, origin: `http://127.0.0.1:${port}`, handleExtraApi: async (request, response) => await walkthrough(request, response) || teaching.handle(request, response) });
  const server = mockServer({ service });
  const stop = async () => { teaching.close(); await service.close(); server.close(); };
  process.once('SIGINT', () => { void stop(); }); process.once('SIGTERM', () => { void stop(); });

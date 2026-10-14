@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import { getFiles, getSource, getVersions } from './project-api.js';
 import type { ProjectFile, ProjectInfo, SourceSnapshot } from './project-types.js';
 import { Arrow, Control, NavIcon } from './ui.js';
+import { SourceWalkthrough } from './SourceWalkthrough.js';
 export function ProjectSource({ source }: { source: SourceSnapshot }) {
- return <div className="source-window real-source"><div className="source-title"><span><NavIcon name="Source" />{source.path}</span><span>{source.language} · {source.text.length ? `lines ${source.startLine}–${source.endLine}` : 'empty file'}</span></div>{source.text.length ? <pre aria-label="Selected project source">{source.text.split('\n').map((line, i) => <div key={i}><span className="line-number" aria-hidden="true">{source.startLine + i}</span><code>{line}</code></div>)}</pre> : <p>This file is empty.</p>}<div className="source-foot">Full-file identity {source.sourceHash.slice(0, 12)} · {source.fileBytes.toLocaleString()} bytes{source.truncated ? ' · excerpt only' : ''}</div></div>;
+ return <SourceWalkthrough key={`${source.projectId}:${source.fileId}:${source.sourceHash}:${source.startLine}`} source={source} />;
 }
 export function ProjectExplorer({ project, start, onDirty }: { project: ProjectInfo; start: (source: SourceSnapshot, requirement: string, caseInput: string) => boolean; onDirty: (value: boolean) => void }) {
  const requestId = useRef(0);

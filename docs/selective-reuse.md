@@ -42,3 +42,9 @@ Cline and Tour de Code AI remain references. Stryker and unlicensed research can
 - A generated tour passed the pinned upstream CodeTour draft-04 JSON schema using the already installed Ajv validator. A schema check is not a native CodeTour playback test.
 - Native CodeTour playback and the new controls in a real Extension Development Host have not been exercised in this task. Read-only inspection found an active S7 learner session; it was not reloaded or altered. Existing native acceptance records are not new acceptance for these additions.
 - Existing and concurrently edited S7/UI work is preserved. These additions remain uncommitted; a mixed checkpoint would include work from other tasks. No push.
+
+## Browser adaptation completed — 14 October 2026
+
+Learn Claude Code's source viewer/manual step controls, a TypeScript adaptation of PocketFlow's concept → relationships → order workflow, and the published React Flow library are implemented in the local-project browser source explorer and lesson source view. These were pending during research and are now exercised as a bounded integration.
+
+The adapter uses current protected source reads, strict source identities and an inert map; it does not import an agent runtime or replace Vadhyar's coach/validation. Original notices, exact upstream-file → Vadhyar-file mappings, local modifications, actual checks and remaining coverage limits: [browser reuse](browser-reuse.md), [adoption provenance](browser-reuse-provenance.json) and [integration evidence](browser-reuse-evidence.json). The prior research's no-import/no-execution statements describe that historical phase.
