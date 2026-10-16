@@ -1,200 +1,223 @@
-# Vadhyar product behavior contract
+# Next milestone — one connected lesson
 
-14 October 2026, IST. Owner: **Verify Vadhyar product logic**. Scope: the approved browser redesign being implemented by **Plan Duolingo-inspired Vadhyar UI**, using the existing local-folder companion. This specifies behavior, not a second visual direction or permission to add unrelated features.
+Status: the human has requested a stability stopping point for the current version. The M0 focus/integrated review passed within scope with no blocker; code work is stopped and specialist chats are held. The connected-lesson requirements below remain the agreed future direction and are not represented as implemented. Author: Project Manager — Vadhyar. The [implementation plan](implementation-plan.md) defines task contracts; the [task register](../tasks/todo.md) owns exact activations and acceptance.
 
-**User goal:** after changes in my coding tool, understand one consequential decision in my own project, record a prediction, compare evidence and decide what to investigate or change next. The learner may be uncertain, interrupted or wrong; useful completion must not depend on manufacturing a bug or a passing verdict.
+The existing behaviour contract below remains the baseline. New requirements in this section are proposals, not shipped capabilities. [Capability register](capability-register.md) separates reproduced behaviour, inspected code, partial work and proposals. The interrupted browser-only cleanup is preserved in the task register; no publish, reset or deployment is authorized by this milestone.
 
-The [feature handoff](../prototype/feature-contract.md), [runtime DTOs](../prototype/src/project-types.ts), [learning transitions](../prototype/src/project-learning.ts), [approved design](design/2026-10-14-duolingo-minimal/DESIGN.md) and [logic board](logic-board.md) are the source references. Preserve the existing interfaces and storage keys. **Implemented** means source behavior was inspected; **required UI behavior** means it must be implemented and exercised before the new UI is accepted. A written rule alone is not an implemented feature.
+## Confirmed first lesson task
 
-**Primary device and use case:** a desktop/laptop browser on the same computer as the learner's project, used alongside their code editor and terminal. Full desktop and practical split windows are the primary design/acceptance targets; use 1024/1440px and approximately 700–900px as concrete layout probes. Keep the question, captured source and evidence usable there. 320/390px probes cover a very narrow browser pane and zoom/reflow robustness; they are not a second phone product or equal-priority phone master screen. Do not add phone-specific onboarding, navigation journeys, device frames, pairing or mobile availability claims. Existing narrow-window reflow remains useful without adding phone connectivity.
+The human selected Vadhyar's source-trust extension: getSourceState should explicitly reject evidence for another file, while continuing to accept valid requested-file unavailable states and changed hashes. The current sourceFreshness helper already classifies foreign-file evidence as unknown; that working behaviour anchors the prediction, not a fabricated defect. The meaningful code task adds the stricter boundary. Tutor help, short practice, saved-source submission and scoped verification stay attached to this one task.
 
-## 1. Independent facts; no single success flag
+This confirmation chooses the objective. Refreeze source/range identities after upstream changes; Product Quality must independently accept the exercise oracle and equivalent-code checking method. Do not implement the target change on the learner's behalf or mark their practice complete merely because specialists built the practice feature. Keep original prediction-source identity separate from the later submitted-code version.
 
-| Fact | Authority | Meaning / limit |
+## Quality target carried from the human's later direction
+
+Aim for UI/UX-award-level craft through understandable tasks, accurate copy, strong recovery, consistent visual hierarchy and accessible interaction. Use relevant official judging/reference evidence to make checks concrete, without claiming eligibility, readiness, a win or demonstrated learning benefit. Keep one design direction and the existing architecture; previously shared GitHub repositories remain evaluated references rather than an installation list. M0-05 research supplies the bounded handoff; independent privacy/functional acceptance remains required.
+
+### Reconciled quality checks
+
+The official [UX Design Awards criteria](https://ux-design-awards.com/jury/judging-criteria) support research-grounded usefulness, accessibility, responsible data/AI use and consistent experience/writing. [Awwwards evaluation](https://www.awwwards.com/about-evaluation/) separates design 40%, usability 30%, creativity 20% and content 10%; these are reference dimensions, not Vadhyar scores or eligibility. PM opened both official sources on 16 October 2026. Use the following checks in existing task reviews; they add no new application module.
+
+| Check | Acceptance evidence and existing task mapping |
+| --- | --- |
+| Task orientation | One primary next action, visible confirmed rule/case/source. Measure unfamiliar-learner orientation rather than infer it from a screenshot. The proposed five-person feasibility pilot uses 60 seconds as an initial orientation target, with 30 seconds a non-gating stretch; record actual results and treat these as internal hypotheses, not award rules or learning proof. M1-03/M1-08. |
+| Source/help connection | Source links open the intended captured range; every local reader action keeps its own explanation; node questions retain task/source lineage. M0-04c/M2-01/01b. |
+| Repair without loss | Relevant validation errors preserve text and offer a keyboard route to affected fields, following the [GOV.UK error-summary behaviour](https://design-system.service.gov.uk/components/error-summary/) using existing controls. A wrong prediction is learning evidence, not an invalid form. Quota/stale/source/provider/host failures preserve/export work and never replay commands or generation silently. M1-01/02/05 and current safety gates. |
+| Keyboard/reflow | Test the supported journey without pointer/drag, including dialog return and visible focus near fixed controls. Preserve 700–900 pixel checks and assess ordinary-content reflow at 320 CSS pixels, equivalent to 1280 pixels at 400% zoom. [W3C reflow guidance](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html) limits two-dimensional exceptions to content that needs them; code/map regions do not exempt surrounding controls or paragraphs. This is a test target, not a current WCAG-compliance claim. M1-08 and each changed surface. |
+| Consistent craft/truthful states | Review actual master-screen states against existing type/spacing/contrast/asset provenance. Important stale/unsaved/cost consequences stay visible. Interpretation, observation, command outcome and learner verdict remain distinct; relevant status is announced without unnecessary focus stealing. M0-04/M0-04d/M1-08. |
+
+The specification lead's [Duolingo path reference](https://blog.duolingo.com/new-duolingo-home-screen-design/) is a 2022 historical pattern for a clear next activity and earlier work, not verification of today's interface. Existing React Flow/CSS/icons/controls remain preferred. No current gap establishes a need for Radix, Lucide, cmdk, another animation engine, editor, layout, search or storage framework. Performance/assistive-technology/real-learner studies require actual measurements; role rehearsal is not a substitute. No award entry, fee, public deployment or complete accessibility/learning claim is authorized by this research.
+
+## Objective and scope
+
+Help one person understand and independently modify one task in their existing AI-built project. Preserve the React browser companion, protected local Node host, SQLite source history, browser learning records and Path / Project / Notebook. Initial audience assumption is an AI-assisted JS/TS builder who can read basic conditions and edit/run their own project; absolute-beginner suitability and 8 GB performance are unverified. Initial supported scope is one trusted local JS/TS project on a desktop/laptop; broader languages, phone access and hardware/model performance are not promised.
+
+A usable lesson connects entry → confirmed task/source → prediction → requested help → meaningful learner change → scoped verification → resume. Short practice remains distinct from the full investigation, but references the same task and source. Activity, assistance, process success, requirement satisfaction and independent application remain separate facts.
+
+## Capability map and build order
+
+| Stable module | Responsibility | Depends on |
 | --- | --- | --- |
-| Connected local project | Authenticated host response | One approved folder on this computer; phone/LAN access unsupported |
-| Recording available | Fresh project status, watcher state and read outcome | Eligible saved files are followed; unavailable/stale status is unknown, not healthy |
-| Captured source | Host snapshot: project/file/path/range/full-file hash/text/time | One selected saved excerpt; not runtime, environment, deployed data or whole-project coverage |
-| Current-source check | Explicit successful host read / available current per-file signal | A known newer hash can show drift; absence in a short event feed cannot show freshness |
-| Lesson progress | Validated active attempt and its actual fields | Activities recorded in Vadhyar, not correctness, unaided work or understanding |
-| Durable learning save | Browser persistence acknowledgement | Saved in this browser profile at this address/port; memory-only work stays visibly unsaved |
-| Command status | Host job result | This approved command's status/output and scoped freshness; not the requirement verdict |
-| Requirement verdict | Learner's assessment, reason and coverage | Satisfied for checked case / not satisfied / uncertain; self-reported |
-| Teaching interpretation | Validated provider response and retention acknowledgement | Source-bounded assistance; neither execution evidence nor a saved result until accepted |
+| task-context | Entry, small approved context, immutable task/source identity, draft recovery | Existing project/source/record contracts |
+| contextual-tutor | Multi-turn text help and assistance history for that task | task-context |
+| validated-practice | One defensible prediction MCQ and one typed-code task | task-context; reviewed assessment contract |
+| source-flow | Inspect a small source-backed flow and step through a labelled example | task-context; existing reader/map |
+| application-review | Different-case attempt and simple revisit list | validated-practice; reliable attempt records |
+| specialist-journeys | Approved tool handoff/result/explanation/change/verification | Reliable task/evidence contracts |
 
-Do not turn a file save, model completion, check exit 0, source-map edge, activity reward or reflection into a claim that the whole app works or the learner has mastered it. A successful save does not establish live source freshness. A successful source read does not establish the deployed/runtime revision.
+Build order: baseline gate → task-context → contextual-tutor / validated-practice, integrated one at a time → one-lesson acceptance → source-flow / application-review → specialist-journeys. Voice, more languages, richer assessment and integrations follow separate acceptance. No destination is added for an individual capability.
 
-## 2. Ownership and identity
+## A. Entry and reliable resume
 
-- The host approves the project root. The browser cannot supply arbitrary filesystem paths or command strings. Changing folders uses the launcher; a different project identity loads a separate learning record.
-- An attempt owns immutable confirmed requirement, case and baseline source. Editing the rule/case, choosing another file/range, or replacing a stale prediction starts a new attempt after appropriate draft/replacement confirmation. Saved old work enters history; it is not rewritten.
-- Every asynchronous operation owns the originating **project, attempt, source selection, request identity and operation context**. A late response may update only that matching view/attempt. Abort or ignore responses after replacement, navigation or a newer request. Source equality alone does not identify a question.
-- Drafts and pending UI operations belong to their mounted question/view. Same-destination navigation is a no-op and must not clear draft protection. Leaving uses Keep working / explicit discard, with export where available; pending execution is not automatically cancelled or repeated by navigation.
-- Host SQLite owns metadata, saved-file events and selected source versions. Browser storage owns generic attempts/history. Prepared examples retain their separate `vadhyar.mock.v1` data. No cross-device/profile/port synchronization or generic import is implied.
-- Settings, Guided/Review presentation, page selection and source-panel visibility must use their actual persistence behavior. Generic records currently persist attempts/history, not invented profiles, goals or course preferences. Prepared stored pages/modes must remain readable during navigation migration.
+Let Project begin with a feature/question, pasted error, selected source, or a learner-approved saved change. An error or feature description is a search lead, not evidence of a cause. Use host-approved metadata and explicitly selected bounded captures; show why each candidate is suggested and what is missing. If there is no useful match, retain the input and offer ordinary file/source selection. Never claim semantic repository-wide search from filename filtering.
 
-## 3. Screen and control contract
+Before starting, show one rule, concrete case and small source context with exact identity/ranges. Confirmation creates the existing attempt; extending its source context later is explicit. Keep its immutable prediction baseline separate from supplementary approved captures. Each context revision records its parent, originating attempt, selected pins and approval; refresh/replacement invalidates dependent current help without rewriting the baseline. Extra reading/tutor context never enlarges verification coverage implicitly. Saved-change entry initially uses the local host's captured versions/events; Git history, unsaved editor buffers and another assistant's private activity are outside scope.
 
-| Surface / control | Prerequisite / real action | State, persistence and recovery |
+Preserve saved records and draft text through refresh/restart. Restore only against the matching project, record generation, attempt, stage and source pins. Show stale/unknown context before continuing; never relabel an old draft as current. New draft persistence must not rewrite the existing version-1 record format or silently delete old/corrupt bytes. Engineering must specify and test the separate bounded draft envelope before it is used. Failed saving keeps visible work with retry/export; clearing it is explicit.
+
+## B. Contextual text tutor
+
+Use the existing provider/service and SDK first. Provide Explain, Give a hint, Ask me and Show the flow for the confirmed task. Ask one useful question at a time. Hints become more explicit only when requested. A direct explanation remains available and is recorded as assistance without a penalty or mastery claim.
+
+Proposed request contract: task/attempt identity, operation identity, mode, confirmed rule/case, approved source pins, the learner's selected attempts and bounded prior turns, selected model and explicit payload consent. The host resolves source text from its own approved IDs; browser/model claims never grant filesystem or execution authority. The approval preview includes all text sent, including the actual rule/case text, previous turns and learner answers. Apply the existing recognizable-private-value refusal policy to every outgoing context field, not only source, without silently rewriting task meaning. More source, another model or a changed task requires renewed review.
+
+Proposed result contract: matching request/task/source identities, bounded text, valid source references, one optional question, declared uncertainty and assistance type. Schema validity and valid citation bounds do not prove the explanation correct. Preserve the existing source recheck, connection epoch, one-active-request limit, timeout, safe output, store:false and no automatic retry/fallback. Reject or retain as historical late results after navigation/source/task changes; they must not advance the learner's stage.
+
+Show the current request and Stop immediately; retain the input after failure. Cancellation cannot undo provider use already incurred. Initially retain the existing five-assistant-output budget across old interpretations and new turns; local Show the flow need not spend a model call. Keep the existing request-body/output limits, preview selected context and refuse over-budget input without dropping prior evidence. Record the actual model/request scope and token/usage facts only when the provider supplies them; do not invent a price or promise a latency. Measure first useful response during acceptance before choosing streaming or another transport. Core reading and records work with AI disconnected. Show the flow initially opens the existing static source explanation or its text equivalent; it does not fabricate an execution trace.
+
+## C. Validated short practice
+
+Start with one prediction MCQ and one meaningful typed-code task tied to the confirmed task. Store question/version, source pins, alternatives, answer rationale, validation method, attempt, assistance and outcome separately. A source change makes the old exercise historical; it cannot silently receive a new key.
+
+Only offer automatic correctness for an MCQ with an independently reviewed answer and defensible evidence: a pinned requirement plus deterministic check/observed case, or a recorded human-reviewed oracle. Review misleading alternatives and counterexamples. A model may draft a question, but another model agreeing, a citation existing, or a schema passing is insufficient. If there is no independent oracle, retain it as an ungraded prediction and withhold correctness feedback. The first accepted lesson requires one reviewed MCQ for an actual supported task; a detached prepared demo does not satisfy this gate.
+
+For the first typed-code task, use existing text controls and the learner's editor. The learner writes or changes relevant code, records the attempt and explicitly chooses existing checks or manual review. The assessed submission must be an explicitly captured externally saved source version with project/file/range/hash identity, or an independently reviewed typed submission. A check receipt applies only to its captured saved source/manifest; a different textarea answer cannot inherit that result. Until the learner applies/captures their code or it is explicitly reviewed, the typed answer remains unverified. Preserve its own text identity separately from the saved source; this binds evidence without using string equality as a correctness oracle. Typing itself earns no correctness or competence claim. Accept different valid implementations through the declared checks and independent review, never exact-string equality. Test at least two equivalent correct solutions and a plausible incorrect one against the same oracle. Clearly distinguish unverified, passed selected checks, failed selected checks and reviewed outcome. No generated exercise code is automatically executed, installed or written into the project. An already-correct investigation may end with a justified no-change outcome; the initial coding exercise must use a legitimate learner-confirmed extension or requirement rather than forcing a needless edit. The exact first learner task, revision, cases and independent oracle must be frozen before assessment implementation.
+
+A short-practice record binds the originating attempt, stage, source pins and question version. Opening it preserves the main prediction and exposes known prior hints/answers as assistance. Save the first choice/reasoning before revealing independently validated feedback; an unvalidated question reveals no correctness key. Skip/Leave practice returns to the originating investigation stage without satisfying its prerequisites. If the investigation changes meanwhile, retain practice as historical and return to the current task without rewinding it. Keep short practice exit/skip and investigation progression distinct. A completed MCQ cannot skip observation, change, evidence or reflection prerequisites.
+
+## D. Interactive source and logic
+
+Extend SourceWalkthrough / SourceReadingBundle and existing React Flow; keep the capture limits and exact source/range identities. A selected node opens its source, supports a task-scoped question and has a keyboard/text route. Start with a few relevant nodes. Retain native panel scrolling and non-drag controls.
+
+Use explicit evidence labels: source-supported static relationship; simulated example walkthrough; actual observed execution. The current static analysis supports only the first. A simulated branch can use a declared input and stated assumptions, but is never labelled recorded execution. Runtime instrumentation is outside this milestone. Preserve historical explanations and mark them stale/unknown after drift; changed and restored bytes do not automatically restore verification coverage.
+
+## E. Two specialist-tool journeys
+
+Use Need → suitable tool → explicit approval → execution or handoff → actual result → explanation → learner change → verification. Start with a browser/UI-quality task and one dependency/security-analysis task supported by a known project format. Prefer handoff to an already available upstream tool; never copy a library of skill files into Vadhyar or introduce a generic model-controlled runner.
+
+A recommendation records problem, applicability, official tool identity/version, local/hosted boundary, cost/permissions, scope and exact requested action. Approval applies only to that action. No automatic installations, uploads, shell/database actions or visibility into another coding assistant. A manually attached report remains learner-supplied/untrusted; it is not a host-attested command receipt. Redact secrets before retaining results. Explain a finding with source and limitations, ask the learner to make the change, then verify it independently. A clean dependency report is not complete security, and a screenshot is not functional acceptance.
+
+## F. History and later application
+
+Reuse attempt/history and Notebook. Preserve original predictions, assistance, code attempts, reviewed outcomes, real command facts and learner verdicts as distinct fields/events. Support export and inspectable historical source. Do not infer independent application from a repeat of the same case or AI-authored change.
+
+After one lesson is accepted, add a different-case task with its own prediction and verification and a simple explicit revisit list. Defer adaptive scheduling/ts-fsrs, streaks/mastery scoring, social rankings and certification until attempts and assessment records are reliable.
+
+## One UI direction and required states
+
+Keep the parchment/ink/ochre identity and existing controls described in the current design contract. Aim for easy progression and clear choices; do not borrow Duolingo artwork or identity. Use literal labels, one obvious next action, contextual help, consistent spacing and professional licensed icons only when existing ones are insufficient. No AI-generated imagery. Use real source, diagrams and actual application screenshots.
+
+The single master lesson has a header with task title/progress/Close, a context strip with rule/case/path/range/freshness, and Task / Code / Help views. On wide screens Task sits beside a context pane that switches Code/Help; on narrow screens use one active view. Preserve each view's draft and scroll position; one active view or consent dialog owns the primary action. Full hashes can collapse while stale, unsaved, pending and cost consequences stay visible.
+
+| State | Primary action | Required visible boundary |
 | --- | --- | --- |
-| Connection / Connect or Retry | Launch the local host for an approved folder; same-origin session bootstrap and project read | Show connecting/error until actual response. Reconnect must retain browser work and use draft protection if it changes the view/root. No invented connected dashboard. |
-| Path / Choose a question | No active attempt, or explicit replacement | Open Project setup. No seeded question or course is automatically created. |
-| Path / Continue | Active attempt exists | Open its actual next activity. Completed reflection with no separate case opens that case; a fully recorded path offers review or a new question. No automatic run or stage mutation. |
-| Path / earlier activity | Recorded field exists | Read its captured evidence; cannot rewrite immutable prediction or bypass missing prerequisites. Historical source/evidence remains identified. |
-| Project / search, next page, select file/range | Host-issued IDs, eligible source and bounded queries | Latest request wins. Keep query/source/drafts on failure. Retry file list, source or versions according to the operation that failed; never substitute another retry. Version loading/error is selection-bound: previous-file versions cannot be displayed as the new file's history. |
-| Project / source steps, list or map | Supported captured excerpt and validated walkthrough | Read-only navigation to the same source anchors. Does not advance learning, reveal an executed outcome, call a model or run code. |
-| Project / Begin | Nonempty valid selected excerpt; confirmed rule and concrete case within domain bounds | Start at Predict. Preserve old attempt with confirmation; refuse when retention/storage prevents safe replacement. |
-| Lesson / save stage | Current attempt and stage-specific valid input | Apply the existing transition, then persist. Clear only accepted field drafts. Failed validation leaves draft. A persistence failure retains valid work in this tab, marks it unsaved and offers export/retry. |
-| Lesson / read source or change presentation | Valid captured context | Does not mutate lesson progress or run source. Source-panel close is reversible and must not discard a lesson draft. |
-| Notebook / search and inspect | Actual recorded data | Generic Notebook searches recorded reflections/history. Prepared authored notes remain separate. Do not fabricate notes, resume actions or validated understanding. |
-| History / review | Archived record exists | Read/export only under current domain. Only the active saved attempt resumes; archived resume is not implemented. |
-| Export visible record | Valid in-memory ProjectState | Export accepted current/archived evidence, labels, source identities and assistance, including actions kept only in memory after a storage failure. Raw form drafts and interpretations rejected from retention are excluded; those interpretations have a separate export. Download request is not proof the user has safely stored a backup. |
-| Download saved backup | Browser raw record available | Preserve/export saved bytes, including corrupt data, without overwriting them. Do not confuse saved backup with newer unsaved visible work. |
-| Reset project record | Explicit confirmation; offer backup/export first | Atomically replace this browser's project record with a fresh identity. Clear active view only on success. Retain host source history, other projects and prepared records. Old tab generations cannot resurrect prior work. |
-| Settings / provider Connect | Explicit key; actual model list | Key is cleared from the form and held only by host session. Listing models sends no source and does not establish generation capability. No ambient credential import or silent model selection/fallback. |
-| Ask teacher / Review and Send | Active matching source/question; selected model; fewer than five retained interpretations; exact sharing approval | Show real pending/error/result. Cancel stays local before send; leaving aborts the browser request, but cannot undo incurred provider usage. No automatic generation retry. |
-| Teacher result / inspect or export | Valid returned interpretation | Accepted retained result is recorded assistance. If retention fails, keep valid result individually exportable with an explicit **not saved in this record** label. Rejected/stale result cannot acquire a saved/current badge. |
-| Prepared example / enter and return | Explicit NovaDesk example choice, through draft protection | Separate example state and simulated/mock provenance; role-only ownership defect disclosed. SeatCheck's zero-seat defect belongs to the static design illustrations, not another implemented runtime example. Returning preserves generic record. |
-| About / website | Read-only navigation | Product availability and coverage match current implemented features. No phone, installable bridge, automatic grading or unlimited-scale claim. |
+| Context review | Confirm task | Exact selected context and missing/ambiguous evidence |
+| Prediction | Save prediction | Original reasoning retained; known help exposure recorded |
+| Hint / explanation | Review request | All outgoing text, model and possible usage cost |
+| Provider pending | Stop | Actual request scope; no invented progress |
+| Code practice | Record attempt | Typed vs externally saved/assessed source identity |
+| Check preparation | Review check | Exact separate command/source/manifest approval |
+| Check result | Record verdict | Process result, freshness and learner verdict are distinct |
+| Stale source | Review source | Original draft/prediction remains historical |
+| Unknown host | Reconnect | Captured work remains available; currentness unknown |
+| Unsaved / quota refusal | Retry saving | Export and Keep working remain reachable |
+| Provider failed/cancelled | Back to task | Input/prior help retained; explicit retry only |
+| Resume/conflict | Resume task / Review recovered draft | Generation/stage/source match or explicit recovery |
 
-Required accessibility behavior: actual buttons/radios, field labels and error associations, visible focus, keyboard access to every source/map action, dialog cancellation and focus return, current-stage announcement without focus loss, and reduced-motion behavior. An unavailable action must explain the missing prerequisite without relying only on color. Keep errors that block action visible when support panels collapse.
+Review one master lesson in these states before expanding it: initial task/context confirmation; prediction; requested hint/direct explanation; typed-code attempt; selected-check result; stale/unknown source; unsaved/storage failure; provider unavailable/cancelled; resume conflict. At narrow widths choose task/source/tutor views instead of compressing unreadable panes. Keep consent, unsaved work, uncertainty and consequential costs visible when details collapse.
 
-## 4. Lesson transition table
+Required acceptance: keyboard-only operation and focus return; native code/tutor/diagram scrolling; visible focus/contrast; practical 700–900px companion window; 200% zoom/reflow; non-drag map navigation; reduced motion. Automated accessibility tools supplement rendered/manual checks. No ambient animation or custom default smooth scroller.
 
-Confirm/Understand are requirement/case acknowledgement and source exploration in setup. They are not separately persisted generic stages or measured understanding gates. The actual stages remain `predict → observe → change → verify → reflect → complete`.
+## Dependencies and alternatives
 
-| Action | Prerequisites | Output / next activity | Must not imply |
-| --- | --- | --- | --- |
-| Start | Valid current-project captured source, rule and case | New active question at Predict; prior saved attempt archived | An inferred requirement, imported AI intent or whole-codebase understanding |
-| Save prediction | Predict; outcome text and reasoning valid | Immutable answer against baseline A; Observe next | Correct/unaided answer or no prior external observation |
-| Record observation | Prediction exists; fresh saved excerpt matches baseline identity/text/range | Self-reported result/method; Change/review next | Vadhyar executed the case or proved runtime revision |
-| Review/refresh after observation | Same selected project/file/path/start line | Changed/unchanged capture; Verify next | A required edit, fresh executed check or requirement satisfaction |
-| Record manual verification | Verify or pre-reflection replacement; method/evidence, verdict, reason, assistance | Self-reported verification; Reflect next | Executed or independently assessed evidence |
-| Record command verification | Matching terminal job plus verdict/reason/assistance; passed/failed requires current scope; error/timeout with unknown scope allows only uncertain/unmet assessment | Actual command evidence and separate assessment; Reflect next; unknown coverage stays visible | Exit status supplied the human verdict, unknown scope became current, or the command covered all cases |
-| Save reflection | Recorded verification and verdict | Reflection saved; separate case available | The requirement passed: failed/uncertain results may still be reflected on |
-| Record separate case | Reflection; case differs after whitespace/case normalization; prediction/reasoning/assistance | Separate answer recorded, without an invented outcome | Semantic independence, executed transfer, correctness or mastery |
-| Record teaching | Matching active source and valid bounded citations; retention available | Retained assistance, same lesson activity | Progress advancement, runtime evidence or an unaided attempt |
+First task: zero new runtime libraries. Keep installed React, Zod, official OpenAI SDK, TypeScript analysis, existing controls, CSS and React Flow. The latter two analysis/map packages may be declared devDependencies but are bundled into delivered code; include them in security/licence inventories.
 
-Path completion is derived from fields: prediction, observation, refresh, verification, reflection and separate-case record. `stage === 'complete'` means reflection exists; **the separate case is still current while `transfer` is absent**. Use “Recorded” for completed activities. An unmet/uncertain requirement remains visibly unresolved even when the reasoning record is complete. Duplicate archived copies must not increase saved-prediction counts or activity XP.
+Genuine alternatives: a storage rewrite could improve atomic multi-tab use but introduces migration risk; use the current one-writing-tab boundary and a bounded draft envelope first. A complete chat framework could reduce UI work but adds data/protocol assumptions; extend the existing teacher first. A full IDE/editor could provide richer editing but changes execution trust and setup; use the learner's editor and existing text controls for the first practice task. Revisit only after a demonstrated blocker, not because a shortlist exists.
 
-Current retention is bounded: 20 archived attempts, 20 refreshes per attempt, five interpretations per attempt, and 3,000,000 serialized JSON string code units per project record (not a byte guarantee). Hitting a limit must refuse safe mutation and retain evidence. Export alone does not free capacity. For per-attempt refresh/teaching limits, export and start another question if archive capacity permits. For full project history/record size, export followed by explicit project-record reset is the available recovery. Same-source replacement of the active verification is currently allowed; do not promise permanent retention of every check run. Archival before changed-source invalidation is guaranteed.
+[Dependency decisions](capability-register.md#dependency-decisions) separate runtime, development checks, external learner tools, source-owned components and design references. No package is approved merely by appearing in this document.
 
-## 5. Dynamic-code matrix
+## Acceptance, review and open decisions
 
-| Change / interruption | Required decision |
+The first feature task is durable recovery for one confirmed task, bounded separately from intent search and tutoring. Baseline privacy/freshness findings are resolved or disproved first. Its exact files, interfaces, failure cases and stop are in the implementation plan. The complete first-lesson gate additionally requires the reviewed MCQ, meaningful learner change, scoped verification and no-AI recovery on the same task.
+
+Open decisions are owned and due at gates, not assumed: Engineering + Product Quality approve the draft envelope/compatibility before M1-01; Source Intelligence approves candidate-selection limits before M1-03; AI Workflow + Product Quality approve consent/context budgets before M1-04; Product Quality approves the exercise oracle before M1-06; UI/UX approves the master-screen states before any UI expansion; CEO reviews audience/scope trade-offs after the current handoffs. Missing role findings remain provisional.
+
+No implementation task is activated by this draft. Human approval of this specification, implementation plan and next execution scope is the stopping gate.
+
+---
+
+# Existing browser behaviour contract
+
+# Baseline behaviour
+
+The learner investigates one consequential decision in an approved local project, records a prediction, compares evidence and decides what to investigate next. Useful completion must allow uncertainty, interruption and an already-correct program. Current surfaces are Path, Project and Notebook on a desktop browser beside the learner's editor.
+
+[Feature contract](../prototype/feature-contract.md), [runtime DTOs](../prototype/src/project-types.ts), [learning transitions](../prototype/src/project-learning.ts), [design](../prototype/DESIGN.md) and [source reading](source-reading.md) define maintained interfaces. This document states required behavior; exact test and browser execution belong to their dated receipts.
+
+## Independent facts
+
+| Fact | Authority and limit |
 | --- | --- |
-| Code changes after selection but before prediction | The question still describes captured A. Offer inspect/new question on B; do not call A current merely because the user can predict it. |
-| Code changes after prediction, before observation | Fresh observation read rejects B as A. Preserve A's answer and draft; offer a confirmed fresh question on B. |
-| Code changes after observation, before verification | Explicit refresh adopts B for verification; prediction/observation remain baseline A. Preserve their version labels and comparison scope. |
-| Code changes after accepted verification at Reflect or Complete | Archive accepted old evidence before clearing dependent current verification/reflection/separate case; require fresh B evidence. No green current-result badge for old outcomes. |
-| Refresh finds identical source | Record unchanged capture, retain later evidence and proceed when eligible. Do not execute checks or create an invented revision. |
-| Imported files/config/checks change during command | Existing host recorder/coverage checks mark scoped result stale; retain actual exit/output. Source/manifest consent is freshly validated after settling before start. No automatic rerun. |
-| Imported files/config/manifest or recorded project context change after terminal completion, before recording/display as current | The retained terminal result is an execution fact at its earlier time, not fresh evidence for today's context. Revalidate available scope or label it historical/currentness unknown; require fresh scoped evidence before current-result treatment. Do not rewrite a passed execution as an assertion failure or automatically rerun. |
-| Runtime data/environment/deployment changes, selected file unchanged | Outcome may differ without a selected-file hash change. State method/runtime as learner report or unknown; do not invent a source-change explanation. |
-| Short recent event feed lacks the selected file | Freshness is unknown. Use direct current-source read or available latest-per-file capture to detect drift; feed absence cannot certify unchanged source. |
-| Selected source is deleted, excluded, private, invalid or out of range | Keep old captured evidence; current source is unavailable. Explain the specific limitation and permit a different valid selection/new question. |
-| Reopen a saved/completed record | Validate structure and ownership; source/dependency/runtime freshness starts unknown. Old evidence is about its captured version until a new host check. |
-| Response completes after another question/view/request replaced it | Abort/ignore; no change to replacement record, stage, draft or current-source display. |
+| Connected project / recorder | Fresh authenticated host status for one approved folder; errors mean unknown coverage |
+| Captured source | Project/file/path/range/full-file hash/text/time; excludes unsaved buffers and runtime state |
+| Currentness | Explicit successful source-state/read and observed watch coverage; no inference from absent recent events |
+| Lesson progress | Validated attempt fields; activity is not competence or correctness |
+| Durable save | Browser persistence acknowledgement for this profile/origin; memory-only work is visibly unsaved |
+| Command status | Approved host process result and scoped freshness; not the human requirement verdict |
+| Requirement verdict | Learner's satisfied/unmet/uncertain assessment, reason and coverage; self-reported |
+| Teaching | Source-bound provider interpretation and retention acknowledgement; assistance, not executed evidence |
 
-The native recorder observes eligible saved files, not unsaved editor buffers, every keystroke, AI-session completion, Git history or deployed behavior. Coalescing/exclusion/depth/watch/disk limits stay visible. A host capture revision is a recorder sequence, not a semantic whole-app version.
+A source save, model completion, exit code 0, static edge, reward or reflection cannot establish that the whole app works or the learner mastered it.
 
-## 6. Execution and unknown outcomes
+## Identity and ownership
 
-| Status | UI meaning and allowed action |
+The host approves the project root and issues file identities. Browser requests cannot supply arbitrary filesystem paths or commands. Different roots have separate project/record identities.
+
+An attempt owns an immutable confirmed requirement, case, captured baseline and prediction. Replacing its question/selection or stale baseline starts a new attempt with draft/replacement confirmation; prior saved work enters history.
+
+Every asynchronous operation is fenced to its project, view, attempt, selected source, request and operation context. Ignore/abort late responses after replacement/navigation. Same source alone does not identify a question. Same-page navigation is a no-op.
+
+SQLite owns metadata, save events and selected source history. Browser storage owns learning attempts/history. Reset writes a new record identity before clearing the view, rejects older generations and leaves host history intact. No cross-browser/profile/port/device sync is implied. Existing old user records are not removed by source cleanup.
+
+## Learning transitions
+
+| Action | Prerequisite and result |
 | --- | --- |
-| Not started | Review approved existing check and exact context; explicit consent required |
-| Starting, response not yet confirmed | Operation may be accepted; prevent duplicate execution, protect navigation and drafts |
-| Running with acknowledged job | Poll its GET status; never retry POST automatically |
-| Passed / failed | Actual terminal command result; separately record scoped human verdict |
-| Error / timeout | Execution failure/unknown coverage, distinct from a failed assertion; may be recorded honestly with an uncertain/unmet verdict and visible unknown scope, never a satisfied/current command result |
-| Stale | Keep actual output/exit as historical operation evidence; cannot record as current verification |
-| Start response lost / unavailable | Start outcome unknown, potentially executed; never state “did not run” without proof or silently resend |
-| Host restarted / acknowledged job evicted | GET 404/410 becomes unknown result; explicit clear/review action; no inferred pass/fail or automatic rerun |
+| Begin | Valid nonempty captured source, confirmed rule and concrete case; starts Predict, archives prior saved attempt after review |
+| Save prediction | Valid outcome/reasoning; retains immutable baseline and advances to Observe |
+| Record observation | Fresh selected range must still match prediction source; stores self-reported result/method, then Change |
+| Refresh | Explicit current-source read; changed/unchanged comparison, preserved original prediction and archived dependent evidence; no forced edit |
+| Verify manually | Evidence/method, independent verdict/reason and assistance; records self-report, then Reflect |
+| Verify command | Matching terminal host receipt plus verdict/reason/assistance; passed/failed needs current coverage; error/timeout with unknown coverage permits uncertain/unmet only |
+| Reflect | Saved verification including uncertain/unmet outcomes; makes separate case available |
+| Separate case | Distinct normalized case, prediction/reasoning and assistance; records another reasoning task without inventing an observed outcome |
 
-**Required recovery refinement:** an acknowledged job pointer must survive browser reload, bound to originating project/attempt/file/source/manifest. Restoration resumes GET status only against the running host. Host jobs remain session-bound unless a separate durable job backend is implemented. Retain unknown status honestly after host restart/eviction. Keep no-response start outcomes distinct from an acknowledged resumable job. Provider generation and trusted repository execution are separate operations; model output never owns check status.
+Earlier activities show captured records; later activities explain prerequisites. Guided/Review is presentation, not a gate bypass. Archived attempts are review/export-only; only the active attempt resumes. Counts/rewards deduplicate historical copies and do not claim unaided authorship.
 
-The first runner exposes approved existing root-package check/test/lint/typecheck scripts. It does not install packages, accept arbitrary browser commands or invoke implicit npm hooks. It executes trusted repository code on this computer; it is not a hostile-code sandbox or an immutable execution snapshot. Other language runners are not connected.
+## Source and selected reading
 
-## 7. Error, cancellation and persistence matrix
+Project search/paging/selection uses host IDs, bounded queries and latest-request identity. Keep valid query/source/drafts on failure; retry the operation that failed. Previous-file versions cannot appear as new-file history. Empty/private/deleted/out-of-range/partial source stays distinct from a valid source result.
 
-| Failure / cancellation | Keep | Recovery / prohibited shortcut |
-| --- | --- | --- |
-| Connection/project-status read fails | Saved browser work and captured source | Mark current host/recording state unknown; reconnect/read retry without pretending old status is fresh |
-| File list/source/history read fails | Current selection, query and drafts | Retry that read; no fallback source or fake empty-success state |
-| Loading or feed error | Last known data with explicit status | Loading/error is not “starting index captured; no changes” |
-| Sharing/check review cancelled | Draft, source, prediction and prior evidence | Stay local; no provider transmission or execution |
-| Pending read or teacher request abandoned | Saved evidence and current record | Abort/ignore late completion by operation/attempt; cancellation is not reversal of provider usage |
-| Save refused by validation/conflict/capacity | Existing saved record and draft/returned result | Explain refusal; do not show a saved badge or overwrite protected data |
-| Genuine storage write fails | Valid new work in this tab | Mark unsaved, export visible work, retry explicit save; leaving/reload requires discard review |
-| Corrupt saved JSON | Original raw bytes | Download backup; explicit reset only. No silent overwrite with empty state |
-| Another tab changed/reset record | This tab's draft and latest saved data | Reject obsolete save; export/reload after review. Simultaneous cross-tab writes remain unsupported; use one tab |
-| History/source context write fails | Exact prior retained history and revision | Atomic rollback; visible coverage/error state, never deletion before failed replacement |
-| Provider setup/generation fails or stale response returns | Recorder, drafts, previous valid interpretations | Named failure; explicit retry with new consent as needed; no ambient credential or model fallback |
-| Teaching cannot be retained | Valid returned result, if any | Label not recorded and allow individual export; exclude it from saved-history/progress claims |
-| Reset fails | Prior saved record and current view | Error; do not show a successful reset or clear draft protection |
+The reading bundle retains up to five explicit ranges, exact captured versions, complete/partial declaration anchors and local text search. Analysis refuses mixed versions of the same file. Reopening recaptures current source; replacing a retained range is explicit. Failed range/analysis loads preserve captures/export.
 
-## 8. Acceptance register for the new UI
+Static relative import/re-export links and proposed order concern selected captures only. They do not establish callbacks, HTTP/storage handoffs or runtime coverage. Reading cannot advance learning, run code or share source. Bundles are view-local; export before leaving/reloading Project.
 
-These are concrete journeys to run on an approved disposable project after implementation. A row remains pending until the owner records actual observed results; old tests or static mockups do not certify the new UI.
+## Command lifecycle
 
-| ID | Probe / required outcome |
-| --- | --- |
-| C01 | Cold start, absent host and reconnect: actual project status, protected drafts, no fake connected/recording state |
-| C02 | Two differently named folders / readable languages: separate source/records; unsupported parser or runner disclosed |
-| C03 | Search/paging/selection with delayed old response: latest request wins; list/source/history failures retry their own read; previous-file versions cannot appear as new-file history |
-| C04 | Empty/private/deleted/out-of-range/partial source: safe distinct states; no empty lesson or fabricated source/map |
-| C05 | Start with confirmed rule/case; existing question replacement preserves prior record and respects unsaved drafts |
-| C06 | Predict with reasoning; duplicate save rejected; draft choice does not auto-submit or reveal/execute an outcome |
-| C07 | A→B before observation: reject mismatch, preserve A and permit fresh B question |
-| C08 | Already-correct source: unchanged Refresh → Verify → Reflect, with no forced edit |
-| C09 | Changed source at Reflect and Complete: old accepted evidence remains reviewable/exportable; new evidence required |
-| C10 | Changed imports/config/checks during execution AND after terminal completion before recording/current-result display, queued/reverted saves, partial watcher: real stale/historical/unknown scope labels, no whole-project freshness inference |
-| C11 | Approve a command then alter manifest during settling: reject before replacement execution; fresh consent recovers |
-| C12 | Running check, lost response, failed status read, acknowledged-job browser reload and host restart: GET-only recovery or explicit unknown; no duplicate execution |
-| C13 | Failed/error/timeout command plus uncertain/unmet verdict: reflection available; unresolved requirement remains visible |
-| C14 | Same captured source but different question: a late Q1 observe/refresh/teaching/status response cannot write Q2 |
-| C15 | Same-page navigation, then leave/reload/reset/example switch with drafts or pending work: correct protection remains |
-| C16 | Sharing review/cancel/send, provider disconnect/rotation/cancel/failure: exact context, no secret persistence, stage unchanged, late result rejected |
-| C17 | Retention/storage/conflict failure after valid teaching: individually exportable result labelled not recorded; no paid sixth retained request |
-| C18 | Reflection saved without transfer: Separate case is current; normalized identical case refused; recorded new answer has no invented observed outcome |
-| C19 | Archive/reload/export/search: captured identities and self-report/assistance remain; counts/XP deduplicate historical copies; archived records are review-only |
-| C20 | History/refresh/provider capacity full: refuse mutation, preserve evidence and explain export plus explicit reset where supported |
-| C21 | Corrupt storage, failed writes, stale serial-zero tab and failed reset: raw/saved/visible work preserved appropriately |
-| C22 | More than 20 unrelated feed events after selected-file change: no false unchanged/current label; direct/per-file drift detection still works |
-| C23 | Polling/feed unavailable after healthy state: recording/currentness becomes unknown; historical data is clearly retained |
-| C24 | Desktop-first 1024/1440px and practical 700–900px split-window use, keyboard and reduced motion: question/source/evidence and every control/dialog/source-map action stay usable. 320/390px and zoom are secondary reflow probes, not phone support; no hidden blocking errors or document overflow. |
-| C25 | Prepared records migrated through new navigation: their pages/modes/notes preserved, examples labelled, no merging with generic data |
+Expose only eligible existing root-package scripts. Review exact command/source/manifest and obtain separate consent. No installs, arbitrary command strings or npm pre/post hooks. Queued saves settle before revalidation. Trusted repository commands run without a sandbox, under timeout/output limits.
 
-## 9. Ownership, gaps and release boundary
+Persist the attempt/source/script/manifest-bound starting intent before POST. Reload resumes acknowledged GET status only. Lost start acknowledgement or restarted/missing jobs remain unknown; explicit clear archives that uncertainty before another run. Never replay execution automatically. New execution always needs new approval.
 
-Root owns this contract and the logic board. UI owner owns components, navigation, operation fences, truthful status/retention labels and browser/accessibility acceptance. Feature owner owns launcher/setup and additive job/source-freshness contracts, domain/host validation and their regression tests. Reuse owner owns source/map adaptations and bounded provenance. Shared schema/caller changes are coordinated before writing; Git staging remains serialized. No push.
+Source/manifest changes before start refuse obsolete consent. Eligible source/dependency/config/check drift during or after a completed job makes coverage stale/unknown while retaining its execution fact. A new command verdict rereads the receipt; incomplete watch scope remains explicit.
 
-A finding is closed only when its affected implementation, callers, UI labels/disabled reasons, persisted/restored/exported evidence, current design/setup documentation and focused verification agree. An owner acknowledgement or a note in this contract is insufficient. Apply only the parts actually affected: the desktop/phone finding requires consistent desktop priority and capability wording, not deletion of working reflow CSS or a new connection feature. Preserve historical receipts while correcting the current contract.
+## Optional teaching
 
-At initial contract creation, **required implementation refinements** are: attempt-bound asynchronous saves, same-page draft protection, operation-specific retry, unknown recording/loading labels, honest non-retained teaching display, acknowledged-job reload recovery, selected-source detection outside the short event feed, and honest freshness after terminal command completion. Assign their exact callers and tests; do not declare them complete merely because this document exists.
+Require an explicit host-memory key, actual model list/selection and exact excerpt approval. Listing models sends no source and does not establish generation compatibility. The provider has no edit/shell tools, ambient auth, silent model fallback or automatic retry. Render bounded source-cited output safely.
 
-Not part of the current design: phone connection/pairing, hosted accounts/sync, standalone installer or coding-tool bridge, automatic AI-session intent capture, semantic transfer grading, course catalogue/scheduling, all-language runners, universal repository size, mastery or independent-authorship certification. Keep these outside controls and availability claims until separately implemented and verified. Human learning/teaching efficacy and live provider access remain unverified.
+The result is recorded assistance only after validated retention. Failed/capacity-refused retention keeps valid output individually exportable and visibly unsaved; do not issue a sixth retained interpretation. Navigation/cancellation cannot reverse already incurred provider usage. Failure preserves recorder/drafts/prior valid interpretations.
 
-## 10. Newly authorized source-knowledge backend
+## Recovery and retention
 
-The user separately authorized the reuse chat to build a source-knowledge backend in parallel. This is an additional backend slice; the current UI must not claim it is available merely from this proposed interface. Root review covers its contract; reuse owner supplies code and actual proof.
+Keep working / explicit discard / export protects drafts and pending work across leaving, replacing and resetting. Failed persistence leaves validated work in the tab visibly unsaved with retry/export. Corrupt saved bytes remain untouched for backup. Saved raw backup and newer visible export are different recovery artifacts.
 
-Current owner interface: authenticated GET `/api/projects/:projectId/knowledge?selection=<JSON array>`, 1–5 `{fileId, sourceHash, startLine}` pins, first entry is the reading entry point, query length at most 4096 characters. It uses existing safe source reads, bounded source walkthroughs and ordering. It has no model transmission, stage transition, source edit or command execution. The small `serve.mjs` mount hunk belongs to the reuse owner; shared feature schema and UI changes remain separately owned.
+Conflicting/reset tab generations refuse obsolete saves; use one writing tab because simultaneous writes are not atomic. Failed reset retains prior saved data/view. Capacity refusal never silently prunes protected evidence. History-context write failure rolls back atomically. Host/status failure marks recording/currentness unknown immediately, while retaining historical work.
 
-| Gate | Required behavior / proof |
-| --- | --- |
-| K01 / authority | Mount only after existing Host/Origin/session checks. Reject wrong project, unknown pin fields, unknown/repeated query parameters, invalid identities/ranges and duplicate selected file IDs before collecting source. |
-| K02 / identity | Deterministic knowledge identity from stable project/pin/content/range/extraction identities; capture time is metadata, not semantic identity. Returned anchors/order/edges resolve only to validated selected source. |
-| K03 / freshness | Read sequentially and recheck pinned hashes/ranges; reject the stale selected batch. Label capture optimistic/non-atomic across files, not a runtime/whole-project/atomic Git snapshot. Test drift between collection and recheck. |
-| K04 / interpretation | Static selected-file concepts and relative import/re-export candidates only. External/dynamic/alias/ambiguous/partial paths remain explicitly unknown, not broken or invented. Supported empty/parser-failure states are distinct. |
-| K05 / ordering | Complete unique entry-first selected-file order and bounded concept order; no missing/duplicate/foreign IDs. Test cycles/disconnected files and ambiguous candidates. Source reading order is a proposal, not a learning/verification grade. |
-| K06 / resource and cancellation | One in-flight batch; bounded total budget and declared client-timeout relationship. Stop subsequent source reads on disconnect/timeout, discard late results and release ownership safely. Existing per-file hashing limits alone do not bound a ten-read batch. |
-| K07 / exposure and provenance | Preserve donor/license attribution and actual modification mapping. No source upload, model cost, stage advancement or execution from the knowledge GET. UI exposure awaits verified DTO/caller integration; do not silently expand teaching sharing context. |
+Keyboard focus, labelled controls, Escape/cancel/focus return, reduced motion and visible blocking errors are required. Desktop/split-window layouts are primary; narrow-window probes do not establish phone connectivity.
 
-K01–K07 are additional backend acceptance, separate from C01–C25's current-design journeys. They remain pending until the reuse owner returns the implemented interface and observed checks. A future model-written multi-file explanation would require its own exact context approval and response provenance; it is not authorized by this read-only endpoint.
+## Acceptance and scope
 
-Independent review at 20:37 IST: 10 service and 12 source-knowledge unit cases pass. K06's fixed 12-second response budget is below the existing 15-second browser GET timeout. A native HTTP probe returned 408 after 12,006 ms, retained the busy slot until the active host read drained, stopped subsequent reads and recovered; a late read failure did not send another response. Cancellation does not interrupt the already-running host hash, which retains its existing 30-second guard. K01 remains open: a wrong-project request returned 404 but performed one source read; the approved-project check must precede collection and a regression must assert zero reads. No browser integration or live provider evidence is claimed by these backend checks.
+Changes need focused regressions for identity, drift, consent, retry/lost jobs, draft guards, persistence refusal/reset, provider retention and failed/stale reading. UI changes also need actual rendered desktop/source/export acceptance. [Published-preview verification](browser-release-verification.md) records exact executed source/artifact scopes; it is not blanket acceptance of subsequent changes.
 
-Subsequent independent recheck at 20:40 IST closes that K01 defect: the host validates the approved project after Host/Origin/session validation and before delegated handlers. The exact protected-API case passes with foreign-project 404 and zero source reads. All 14 current knowledge unit tests pass, including malformed-candidate ambiguity and same-pins/different-project knowledge identity. These proofs concern the bounded backend; UI exposure and optimistic multi-file capture limits remain separate.
+The [original C01–C25/K01–K07 register](https://github.com/sabari-nath17/vadhyar/blob/92e118d542ab7332a6d6821929a870cc25187516/docs/product-logic-contract.md) and [maintainer reader receipt](https://github.com/sabari-nath17/vadhyar/blob/92e118d542ab7332a6d6821929a870cc25187516/docs/logic-evidence/persona-real-reader-acceptance.json) remain historical evidence. Their proposed/implemented/tested distinctions and original counts stay intact in [history](history.md).
 
-The [final backend evidence](backend-knowledge-evidence.json) now records 19 new unit and 10 HTTP cases, the direct 160-line/empty-range bound regression, actual mounted launcher 200→409→200 source-change recovery and retained license mapping. Root verifies all seven recorded source fingerprints. K01–K07 pass within those bounded cases; new multi-file UI exposure and any model-sharing expansion remain unsupported. The [logic board](logic-board.md) separately records 35 executed redesigned-browser checks and partial/unverified C-row coverage; this contract's existence is not blanket release acceptance.
+Automatic grading, mastery/authorship certification, runtime instrumentation, whole-repository completeness, cloud sync, phone/LAN pairing and shared editor bridges are unavailable. Live teacher quality, independent learner outcomes, Windows execution and full device/accessibility coverage remain unverified. The portable installer is separately implemented and has exact release receipts.

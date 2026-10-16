@@ -1,17 +1,25 @@
-# Dependency risk decision
+# Dependency audits
 
-**Preview release with conditions. The full development audit is not clean.** The browser installer excludes the affected development tool. Human review and live teaching-quality evaluation remain pending.
+Current source uses a strict gate with **zero findings required in both the full dependency tree and production tree**. The removed optional evaluation tool and its expiring exception are no longer part of the current source setup. There is no current exception policy.
 
-On 15 October 2026 the native npm audit reported seven high-severity development-tree findings. A targeted `get-uri` override updates only `basic-ftp` from 5.3.1 to 6.2.3, beyond the [published fix](https://github.com/advisories/GHSA-c475-qrg2-pj4r). The lockfile preserves all other package versions.
+## Reproduce the gate
 
-Three high findings remain in `promptfoo 0.124.1 → jks-js 1.1.7 → node-forge 1.4.0`. The [upstream signature-verification advisory](https://github.com/advisories/GHSA-86w9-cpqp-85rv) has no published patched version. Forcing npm's suggested Promptfoo downgrade would change the evaluation tool without resolving this chain through a supported patch.
+Use the pinned package manager and lockfile:
 
-## Scope and conditions
+```sh
+npm ci --ignore-scripts
+node --test scripts/dependency-audit.test.mjs
+node scripts/dependency-audit.mjs --output dist/security
+```
 
-- All three packages are development-only in the root lockfile. The browser distribution bundles the protected host and its runtime dependencies; it excludes Promptfoo, JKS and node-forge. Its dependency/build receipt is included in the archive.
-- Promptfoo is used only by the separate coach-evaluation command. Owned evaluation fixtures use trusted local configurations; the inspected JKS integration converts keys/certificates and does not call the affected RSA signature verifier. This inspection is a reachability bound, not a complete upstream security assurance. Do not import untrusted certificate stores or evaluation configurations.
-- The native production audit must have no findings. The unmodified full and production JSON reports are preserved by CI and locally under `dist/security`.
-- The temporary [exception](security/dependency-exceptions.json) expires **29 October 2026 at 23:59:59 IST**. It accepts only this advisory and the exact three locked development packages/chain. New or changed advisories, runtime scope, version/chain drift, an unavailable/malformed audit or expiry block the gate.
-- The gate is named **dependency risk triage**, not a clean audit. Its output explicitly reports the three accepted findings. Remove the exception when an upstream supported fix is verified, or isolate/replace the optional evaluator in a separately reviewed change.
+The command runs native `npm audit --json` and `npm audit --json --omit=dev`, preserving their output as `full-audit.json` and `production-audit.json`. Success writes `triage.json` with `nativeAuditClean: true` and both native exit codes. Findings in either tree, inconsistent counts/status, malformed JSON or unavailable audits fail. CI attempts raw-report upload even after a failure. Inspect the reports; an absent report is not a clean result.
 
-Run `node scripts/dependency-audit.mjs --output dist/security` to reproduce the native audits and decision. `node --test scripts/dependency-audit.test.mjs` checks refusal cases. The complete release record states actual results; no blanket `continue-on-error`, forced update or audit omission is used.
+The [regressions](../scripts/dependency-audit.test.mjs) cover clean reports and refusal of production/development findings and malformed counts. Actual source/release checks belong to their exact execution receipts. This guide defines the gate and does not assert that an unexecuted checkout has passed it.
+
+The 15 October browser-only dependency prune installed 160 packages and returned native exit 0 with zero findings for both full and production audits. That observed dependency-tree result does not replace the final source, browser or installer gates.
+
+## Immutable browser 0.1.0 decision
+
+The earlier preview was built with a different development tree. Its native full audit retained **three high findings** in `promptfoo 0.124.1 → jks-js 1.1.7 → node-forge 1.4.0` for GHSA-86w9-cpqp-85rv, with zero production findings and an exact temporary policy expiring 29 October 2026. Its browser archive excluded those tools. The [original decision](https://github.com/sabari-nath17/vadhyar/blob/92e118d542ab7332a6d6821929a870cc25187516/docs/dependency-risk.md), [policy](https://github.com/sabari-nath17/vadhyar/blob/92e118d542ab7332a6d6821929a870cc25187516/docs/security/dependency-exceptions.json) and [release receipt](browser-release-evidence.json) preserve the actual evidence and pending human review.
+
+Removing the evaluator from current source does not change that published archive or retroactively make its full audit clean. See [history](history.md) for recovery and [maintenance](github-maintenance.md) for publication checks.

@@ -12,6 +12,7 @@ import { URL } from 'node:url';
 import { TextDecoder } from 'node:util';
 import { DatabaseSync } from 'node:sqlite';
 import { z } from 'zod';
+import { privateText } from './privacy.mjs';
 import { sourceSnapshotSchema } from './src/project-types.ts';
 
 const identity = z.string().regex(/^[a-f0-9]{64}$/);
@@ -20,8 +21,6 @@ const manifestSchema = z.object({ scripts: z.record(z.string(), z.string()) }).p
 const excluded = new Set(['node_modules', 'dist', 'build', 'coverage', 'vendor', 'venv', '__pycache__', 'target', 'graft', 'evals', 'out', 'bin', 'obj']);
 const binary = new Set(['.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.pdf', '.zip', '.gz', '.br', '.tar', '.7z', '.woff', '.woff2', '.ttf', '.otf', '.mp3', '.mp4', '.wav', '.ogg', '.mov', '.avi', '.db', '.sqlite', '.sqlite3', '.exe', '.dll', '.so', '.dylib', '.o', '.class', '.pyc', '.wasm']);
 const languages = { '.ts': 'TypeScript', '.tsx': 'TypeScript', '.js': 'JavaScript', '.jsx': 'JavaScript', '.mjs': 'JavaScript', '.cjs': 'JavaScript', '.py': 'Python', '.go': 'Go', '.rs': 'Rust', '.java': 'Java', '.kt': 'Kotlin', '.swift': 'Swift', '.rb': 'Ruby', '.php': 'PHP', '.cs': 'C#', '.c': 'C', '.cpp': 'C++', '.h': 'C', '.vue': 'Vue', '.svelte': 'Svelte', '.html': 'HTML', '.css': 'CSS', '.scss': 'SCSS', '.sql': 'SQL', '.md': 'Markdown', '.json': 'JSON', '.yaml': 'YAML', '.yml': 'YAML', '.toml': 'TOML' };
-// shortcut: common credential literals only; review source and output before sharing them.
-const privateText = /(\bsk-(?:proj-)?[A-Za-z0-9_-]{16,}|-----BEGIN [A-Z ]*PRIVATE KEY|(?:api[_-]?key|secret|password|token)(?:\\?["'])?\s*[:=]\s*\\?["'][^"'])/i;
 const hash = value => createHash('sha256').update(value).digest('hex');
 const sameStat = (a, b) => a.dev === b.dev && a.ino === b.ino && a.size === b.size && a.mtimeNs === b.mtimeNs && a.ctimeNs === b.ctimeNs;
 const safeName = name => !name.startsWith('.') && !excluded.has(name.toLowerCase()) && !/(?:^|[-_])(?:secrets?|credentials?|private[-_]?keys?)(?:[._-]|$)/i.test(name) && !/\.(?:pem|key|p12|pfx|keystore)$/i.test(name);

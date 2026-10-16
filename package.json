@@ -10,19 +10,18 @@
     "url": "git+https://github.com/sabari-nath17/vadhyar.git"
   },
   "engines": {
-    "node": "^22.22.0 || ^24.0.0 || >=26.0.0",
-    "vscode": "^1.140.0"
+    "node": ">=24.0.0"
   },
   "scripts": {
+    "start": "node prototype/launch.mjs",
     "typecheck": "tsc --project tsconfig.json",
-    "lint": "eslint src scripts novadesk/src tests fixtures vitest.config.ts eslint.config.mjs --max-warnings=0",
-    "test": "vitest run --reporter=verbose",
-    "build": "node scripts/build.mjs",
-    "test:host": "node scripts/test-host.mjs",
-    "eval:coach": "node scripts/eval-coach.mjs",
-    "vscode:prepublish": "npm run build",
-    "demo:prepare": "node scripts/prepare-demo.mjs",
-    "package:vsix": "vsce package --target darwin-arm64 --out dist/vadhyar-0.1.1-darwin-arm64.vsix --skip-license --no-rewrite-relative-links",
+    "lint": "eslint prototype/src prototype/*.ts prototype/*.mjs scripts/*.mjs eslint.config.mjs --max-warnings=0",
+    "pretest": "npm run build",
+    "test": "npm run test:unit && npm run test:services && npm run test:policy",
+    "test:unit": "vitest run --config prototype/vitest.config.ts",
+    "test:services": "node --test prototype/project-service.test.mjs prototype/teaching-service.test.mjs prototype/server.test.mjs prototype/walkthrough-service.test.mjs prototype/knowledge-service.test.mjs",
+    "test:policy": "node --test scripts/dependency-audit.test.mjs",
+    "build": "node prototype/build.mjs",
     "prototype:start": "node prototype/launch.mjs",
     "prototype:build": "node prototype/build.mjs",
     "prototype:check": "node prototype/check.mjs",
@@ -34,115 +33,18 @@
     "@types/node": "26.6.5",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
-    "@types/vscode": "1.140.0",
-    "@vscode/vsce": "4.0.0",
     "@xyflow/react": "12.12.0",
     "esbuild": "0.28.2",
     "eslint": "10.12.0",
-    "promptfoo": "0.124.1",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.71.1"
-  },
-  "displayName": "Vadhyar",
-  "publisher": "sabari-nath17",
-  "main": "./dist/extension.cjs",
-  "categories": [
-    "Education"
-  ],
-  "activationEvents": [
-    "onCommand:vadhyar.open",
-    "onCommand:vadhyar.project",
-    "onCommand:vadhyar.captureIntent"
-  ],
-  "extensionKind": [
-    "workspace"
-  ],
-  "capabilities": {
-    "untrustedWorkspaces": {
-      "supported": false,
-      "description": "Source capture and existing checks require a trusted local workspace."
-    }
-  },
-  "contributes": {
-    "commands": [
-      {
-        "command": "vadhyar.open",
-        "title": "Vadhyar: Understand this change"
-      },
-      {
-        "command": "vadhyar.setupKey",
-        "title": "Vadhyar: Set OpenAI API key securely"
-      },
-      {
-        "command": "vadhyar.project",
-        "title": "Vadhyar: Open Project Guide"
-      }
-    ],
-    "configuration": {
-      "title": "Vadhyar",
-      "properties": {
-        "vadhyar.graphifyPath": {
-          "type": "string",
-          "default": "",
-          "scope": "application",
-          "description": "Absolute Graphify executable from an isolated graphifyy==0.9.84 installation. Empty uses the source checkout's .venv-graphify development environment."
-        },
-        "vadhyar.model": {
-          "type": "string",
-          "default": "gpt-6-astra",
-          "scope": "application",
-          "description": "OpenAI model for explanations and project guidance. No automatic fallback; account access must be verified."
-        }
-      }
-    }
+    "typescript-eslint": "8.71.1",
+    "vitest": "5.0.3"
   },
   "packageManager": "npm@11.19.0",
-  "files": [
-    "dist/extension.cjs",
-    "dist/panel.js",
-    "dist/panel.css",
-    "dist/*.woff2",
-    "dist/*.png",
-    "package-lock.json",
-    "fixtures/novadesk/**",
-    "fixtures/seat-check/**",
-    "novadesk/**",
-    "node_modules/**",
-    "scripts/prepare-demo.mjs",
-    "media/fonts/*-OFL.txt",
-    "docs/third-party/*.txt",
-    "THIRD_PARTY_NOTICES.md",
-    "README.md",
-    "CHANGELOG.md",
-    "docs/release.md",
-    "docs/demo.md",
-    "docs/strengthen-demo.md",
-    "docs/strengthen-evidence/acceptance.json",
-    "docs/selective-reuse.md",
-    "docs/project-guide.md",
-    "docs/coach-quality.md",
-    "docs/assets/vadhyar-banner.jpg",
-    "docs/s13-evidence/release.json",
-    "docs/installation.md",
-    "docs/landing-release.md",
-    "SUBMISSION.md",
-    "docs/submission-release.md",
-    "docs/red-team-review.md",
-    "docs/red-team-evidence/checks.json",
-    "docs/learning-topics-evidence/README.md",
-    "docs/learning-topics-evidence/acceptance.json",
-    "docs/submission-evidence/verification.json"
-  ],
   "dependencies": {
     "openai": "7.32.0",
     "react": "19.3.0",
     "react-dom": "19.3.0",
-    "vitest": "5.0.3",
     "zod": "4.6.5"
-  },
-  "overrides": {
-    "get-uri": {
-      "basic-ftp": "6.2.3"
-    }
   }
 }

@@ -1,0 +1,1321 @@
+{
+  "recordedAt": "2026-10-16T14:25:06+05:30",
+  "status": "technical-checks-reproduced; current-render/clean-dependency-install/human-acceptance-open",
+  "head": "92e118d542ab7332a6d6821929a870cc25187516",
+  "branch": "codex/browser-repository-cleanup",
+  "workingTreeIsUncommitted": true,
+  "executorChatId": "01a138f7-13d0-78e0-b3b3-abe8c8e23cf8",
+  "nodeVersionReported": "26.7.0",
+  "dependencyMode": "already-installed node_modules symlinked; no clean dependency install",
+  "ownerManifest": {
+    "count": 114,
+    "sha256": "8415e9cec1eacfabbd48fcaf32b6be53200f342d7f789af4720aa2ddcf3d7fc3",
+    "scope": "owner-generated inline source/config/test manifest; before/after matched; separate file was not saved"
+  },
+  "rootIndependentComparison": {
+    "count": 85,
+    "allMatchExistingAuditSnapshot": true,
+    "algorithm": "SHA256 of UTF8 compact sorted-key JSON array of relative path and sha256 records",
+    "sha256": "491de37d4d232868bece2785f05e067a6578cbf4645376d8e0356c9053ac23da",
+    "files": [
+      {
+        "path": ".github/ISSUE_TEMPLATE/bug.yml",
+        "sha256": "8e3249005a229a7ec3a7d71d8dc1717a65fbff26fefff1c275c20dc68880e8b3"
+      },
+      {
+        "path": ".github/ISSUE_TEMPLATE/config.yml",
+        "sha256": "dacc78e917d3bd9557966274680d11cb59019f4ba79dbfee2456be41262a41ff"
+      },
+      {
+        "path": ".github/ISSUE_TEMPLATE/feature.yml",
+        "sha256": "e7a6fcf127533db5c9f00392960c6bef6c08f9315be531d327c0e27c9132d1aa"
+      },
+      {
+        "path": ".github/dependabot.yml",
+        "sha256": "06c866a85cd0a1c3d033f0d3774ae43993506bca4984d095de7e6ab53cac95c6"
+      },
+      {
+        "path": ".github/pull_request_template.md",
+        "sha256": "d5671d9b88cddc8953d72c2aebb051c316f7af446d2434c25d21313b5fd6bc02"
+      },
+      {
+        "path": ".github/workflows/ci.yml",
+        "sha256": "8b6d066af014debdb5d55b163afc435546280c4eec1f580aa0002c47ac62cd80"
+      },
+      {
+        "path": "eslint.config.mjs",
+        "sha256": "7ed41f3a829e532c1d1ed8975bef58605d4faff14d527776c57d10641eaa18fa"
+      },
+      {
+        "path": "package-lock.json",
+        "sha256": "529d30217979a679f71c40f4d81c16d2c0f7936f66e654b933a64d1935b7d486"
+      },
+      {
+        "path": "package.json",
+        "sha256": "945185e6648fab4174bd5be17b9bdae87c41563cd3189546bc49733a351265a3"
+      },
+      {
+        "path": "prototype/.gitignore",
+        "sha256": "ed19d3c9c8a5e34d0179e0b1a9c2907d2e657738733e4a432a8cf81c76ce56f1"
+      },
+      {
+        "path": "prototype/DESIGN.md",
+        "sha256": "b83897ecc447fdff16a4c863d27dec751dac1f3e897d65371ca442b446b095d9"
+      },
+      {
+        "path": "prototype/README.md",
+        "sha256": "f03c1107e8db56fe2d31d80935564fdce75761f1a9c7c78891ed33bc4486b062"
+      },
+      {
+        "path": "prototype/activity.test.ts",
+        "sha256": "5625459d442e17f40a194657b5f061ed615c7b5b9457e9ef2130f475b155a897"
+      },
+      {
+        "path": "prototype/assets/inter-OFL.txt",
+        "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57"
+      },
+      {
+        "path": "prototype/assets/inter-normal-400.woff2",
+        "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+      },
+      {
+        "path": "prototype/assets/inter-normal-500.woff2",
+        "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+      },
+      {
+        "path": "prototype/assets/inter-normal-600.woff2",
+        "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+      },
+      {
+        "path": "prototype/assets/jetbrains-mono-normal-400.woff2",
+        "sha256": "83c005d49d8a6a50474c73a5a36ac0468076e9c4a29da7bdb14995d80560a5be"
+      },
+      {
+        "path": "prototype/assets/jetbrainsmono-OFL.txt",
+        "sha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d"
+      },
+      {
+        "path": "prototype/assets/logo.png",
+        "sha256": "2f9202e450e3ab2c2b92364e23bfc1c8fca6f62e2f821861c96000d3c5809e09"
+      },
+      {
+        "path": "prototype/assets/playfair-display-normal-600.woff2",
+        "sha256": "e0c764a8e9e1cce92163c55bac4b2ad6cd4cf8c696ce2289ab5c41565e65b7e2"
+      },
+      {
+        "path": "prototype/assets/playfairdisplay-OFL.txt",
+        "sha256": "566be814f8e96e93dfa16101331557eb6b5467e9e03f627c0910fe93ca12300e"
+      },
+      {
+        "path": "prototype/build.mjs",
+        "sha256": "635af9c815b0cd75a2e5f4b475921ab2347532954ea4cc098827c1b98055592f"
+      },
+      {
+        "path": "prototype/check-receipt.test.ts",
+        "sha256": "6af618215123db4d7a79d441224d857d17c49d1776d5b7abdefcc5622b5bcfa3"
+      },
+      {
+        "path": "prototype/check.mjs",
+        "sha256": "1971273edff42834d178f7f1acb4b7390c06406b7f05418964ef226bed52b791"
+      },
+      {
+        "path": "prototype/design-reference.png",
+        "sha256": "cfef63a35c243ed2e9b35396f103c9a47c168d617e39c7e10ddc65604a152a55"
+      },
+      {
+        "path": "prototype/feature-contract.md",
+        "sha256": "41b6ab477ac7b006110d4f4af8642ad5bfbe14092d00a1be50ce7b090e522a2f"
+      },
+      {
+        "path": "prototype/index.html",
+        "sha256": "9811488bb5f00be75372beab91ebe8ff5ffecb0fb0f7fe1425e987d53eeae5ba"
+      },
+      {
+        "path": "prototype/knowledge-api.test.ts",
+        "sha256": "d52e224c21d1fb5cf77c546dd8416cf68b749c0af02096420e10c61d40521e92"
+      },
+      {
+        "path": "prototype/knowledge-service.mjs",
+        "sha256": "badad13644b37744606c85723b93a02ef29ba2fa12bf4001442e7fea9d10d97b"
+      },
+      {
+        "path": "prototype/knowledge-service.test.mjs",
+        "sha256": "65aa6878d133c75b978580fb26af6ca78a6e5f4e7c31d1560f67037dc641dd77"
+      },
+      {
+        "path": "prototype/launch.mjs",
+        "sha256": "a39304fd3518afac719546e1fff2774fb142479529894d73080e1703e494e6c9"
+      },
+      {
+        "path": "prototype/learning-path.test.ts",
+        "sha256": "a6c93c59f66ab16cc0bb4b79bfe8df23ed1318ddf0263e28e32e9c4364118f15"
+      },
+      {
+        "path": "prototype/project-api.test.ts",
+        "sha256": "c9a3414d017d7a989144552a275909de344f6ed88f971e13689f9c4dd6680030"
+      },
+      {
+        "path": "prototype/project-learning.test.ts",
+        "sha256": "b5805ffc07be62e4db72c63440613060290c65fe6922a399c943f6b4878a0fee"
+      },
+      {
+        "path": "prototype/project-service.mjs",
+        "sha256": "8337f89b68222afafd1faa2ff4924046752426a92d4629d6eecce60a04f3ee7d"
+      },
+      {
+        "path": "prototype/project-service.test.mjs",
+        "sha256": "c062b1068f8e3923641c1433381a58118e2908c7744ca170029303d0f1d7032a"
+      },
+      {
+        "path": "prototype/reading-bundle.test.ts",
+        "sha256": "30e0ebe00f9da2ad62e13f3c0fcf59ab491f6fbf0b8faf42cc0aad81b4b47b20"
+      },
+      {
+        "path": "prototype/serve.mjs",
+        "sha256": "a7dd3e1eade794312915504c1db99ab63233a2eaacf49de01a34a7e02c4a22da"
+      },
+      {
+        "path": "prototype/server.test.mjs",
+        "sha256": "c47dfe25635f2eed4947802e28b23e8b88ea3de77fed92cbc9497a792f7e203c"
+      },
+      {
+        "path": "prototype/source-concepts.test.ts",
+        "sha256": "bdff5b263ec399dcd6321d88fe41ec9fb3b1dfc4818ed31bd3ce5e33aa163bbd"
+      },
+      {
+        "path": "prototype/source-knowledge.test.ts",
+        "sha256": "ec5bf5a6f6a6365692ca2e0624ad02dedc004ff08655c451ef9b6e2b4a6f85ff"
+      },
+      {
+        "path": "prototype/src/CompanionStatus.tsx",
+        "sha256": "2387fc79da732cce2691c66d72dd95aa968b0e3f33d706af7415266fb0289caa"
+      },
+      {
+        "path": "prototype/src/LearningPath.tsx",
+        "sha256": "3060c3258b38bea81fe5151af2950a02a192ef2fd80aa1299fcff5af5966859c"
+      },
+      {
+        "path": "prototype/src/ProjectExplorer.tsx",
+        "sha256": "83efc67ccfa1bfb185b6fd929dc29ab429ba85506d8cbbf539649e073f2c009d"
+      },
+      {
+        "path": "prototype/src/ProjectLesson.tsx",
+        "sha256": "8dacf84f8e9201ece3d75ca934074d8bcdb8049f2cf5c4265642e348ac5136a3"
+      },
+      {
+        "path": "prototype/src/SourceReadingBundle.tsx",
+        "sha256": "298e5a66320c76d8c127518e0563a6f86cd4c04c25a4aecbd18ed6bc5c9b33c3"
+      },
+      {
+        "path": "prototype/src/SourceViewer.tsx",
+        "sha256": "1e6cd324d5782821d6850b2951e6f0a44bdbd96ab0598a26859e65a32cec94bf"
+      },
+      {
+        "path": "prototype/src/SourceWalkthrough.tsx",
+        "sha256": "f9a365287b00e71b1c616d6084f199f77f13661c1efe94cb184850d93a5ce974"
+      },
+      {
+        "path": "prototype/src/StepControls.tsx",
+        "sha256": "01ad95d801b9bc3c977405ec026d8d8b877bb9815b11935167805f7727a7abfd"
+      },
+      {
+        "path": "prototype/src/TeachingPanel.tsx",
+        "sha256": "d6af69242d1ed217227b11a9585a973df0b0e605751f11d2384f52555f03dc2a"
+      },
+      {
+        "path": "prototype/src/Website.tsx",
+        "sha256": "f719701790e60a02e32aa2f38489ad67e9d3c299d61e2e2d3f1dbf29a7b00a7e"
+      },
+      {
+        "path": "prototype/src/Workspace.tsx",
+        "sha256": "e5d8493212fc76c4e6fce53318254fe1d478778988b7a53a156fc1d81b899366"
+      },
+      {
+        "path": "prototype/src/activity.ts",
+        "sha256": "4aa36bfa877f3addea3db8aef73b86e33290a30527f46a6c2328c5e1f046c985"
+      },
+      {
+        "path": "prototype/src/assets.d.ts",
+        "sha256": "da5bf71d48cf909584a01c80b445f730507068f5b34c920f352e2bfcf0315e4c"
+      },
+      {
+        "path": "prototype/src/check-receipt.ts",
+        "sha256": "33bada95d9a7e5e909d794da97039e34bc0da979c81e5b2cfe9979553c9034ff"
+      },
+      {
+        "path": "prototype/src/knowledge-api.ts",
+        "sha256": "6936f70e3996ab79ab88c9aa99bef27ea0ebd1cf7aad4091eeaeb6a7bee93892"
+      },
+      {
+        "path": "prototype/src/knowledge-types.ts",
+        "sha256": "200804c9c946efefa2a9247c4694f3ed90569c1dccc45bd7be24586cb4ee878c"
+      },
+      {
+        "path": "prototype/src/learning-path.ts",
+        "sha256": "a741a11f06ada1ca2d84461c2bc4f2d2e1ab0f0d9e46fd5f3a1d174d3286b50b"
+      },
+      {
+        "path": "prototype/src/main.tsx",
+        "sha256": "b7fbf73d757b17da651d8737d010abd9be1b04317fd3523c33fd3092ea7cb1a9"
+      },
+      {
+        "path": "prototype/src/project-api.ts",
+        "sha256": "da549f9d85080c9e23f0704815537508e266ab4e46f2d160d219646915695fa7"
+      },
+      {
+        "path": "prototype/src/project-learning.ts",
+        "sha256": "60c49f6a0d4187d7ce95895a9e4421b586f8a7897440c45296c424d6b3833019"
+      },
+      {
+        "path": "prototype/src/project-style.css",
+        "sha256": "f652233333a735ad0cab9560c48d7425ecefc5ef40f836beec779dfae79dc04c"
+      },
+      {
+        "path": "prototype/src/project-types.ts",
+        "sha256": "e2e141e9afb02c212a702fb3834c562bba0423d5ac5adfacab662660d5a35cde"
+      },
+      {
+        "path": "prototype/src/reading-bundle.ts",
+        "sha256": "c8b64ea65e6ee523a86e8379a5358180f9c37447890acba4d19bd6b2d071b8aa"
+      },
+      {
+        "path": "prototype/src/source-concepts.ts",
+        "sha256": "c28b0bc5cc8183a618dba98bc0c16a0488dd68d2323062d02dad8c9d7b98fe3c"
+      },
+      {
+        "path": "prototype/src/source-knowledge.ts",
+        "sha256": "b2cde252dc628efe0d7030b4821a68dfb3090f090f22b2ef3e73a51afff4923e"
+      },
+      {
+        "path": "prototype/src/style.css",
+        "sha256": "43a8f2a455f7fb155d03005c2c246770687728b51bb0c5651306cfb22d0a1bdf"
+      },
+      {
+        "path": "prototype/src/ui.tsx",
+        "sha256": "e53cddd1406a2211cf005bd35f3098dc920174823a256361d0fa5b245c101478"
+      },
+      {
+        "path": "prototype/src/walkthrough-types.ts",
+        "sha256": "c693d09eafb4620663a22493c87f31c22da11a945f647f3328ccb361a9489693"
+      },
+      {
+        "path": "prototype/src/walkthrough.css",
+        "sha256": "495a1a69ed4f2ee38fc7621199dd99478c907ef551e4a164e939f86801191996"
+      },
+      {
+        "path": "prototype/teaching-service.mjs",
+        "sha256": "454f142c15c1c0ffdf4f8bb45a3b630df4ac5a0d976cc4d8a54ca5f5205a3371"
+      },
+      {
+        "path": "prototype/teaching-service.test.mjs",
+        "sha256": "e76d9dc546031d02f33df7aad39e61b358c38781ac5d3c54ba0e338d8b4925c5"
+      },
+      {
+        "path": "prototype/tsconfig.json",
+        "sha256": "aeb3e2aaa8d81f29f0291efa5086636d13202d66918ccfe9c08efb1ecb8fc054"
+      },
+      {
+        "path": "prototype/vitest.config.ts",
+        "sha256": "683fbe4ebaf76ffe950e9702901cf8292b4dfa3e1979022a755f3f56ce288039"
+      },
+      {
+        "path": "prototype/walkthrough-service.mjs",
+        "sha256": "e5070fc4812679aaf523814b07623383080443c38ccc86b76feb46c73ec0ac77"
+      },
+      {
+        "path": "prototype/walkthrough-service.test.mjs",
+        "sha256": "5a31b5409eaa0fc0724901a1e4078fba199276d9d3772c79b4a46bc251a48922"
+      },
+      {
+        "path": "scripts/README.md",
+        "sha256": "4162f2d6c973c8f499ebf3fa6c9441187eb12730c55b37c917a4cf018280a157"
+      },
+      {
+        "path": "scripts/browser-install.mjs",
+        "sha256": "bd5b801f8489f8f59a182a3e20d8fb4c341f82efe6fb3fc81793348b4fb818a7"
+      },
+      {
+        "path": "scripts/browser-package.mjs",
+        "sha256": "a23709ca5d532ce7178518004a428964582b54e9d2bb06522c788b196969c818"
+      },
+      {
+        "path": "scripts/browser-package.test.mjs",
+        "sha256": "2dc60904a3845065b16f8e3301ff2b2871023ba342b8a27be619948193b8fa5e"
+      },
+      {
+        "path": "scripts/browser-start.mjs",
+        "sha256": "59c12c6cae50564ec82346bc87c819cf2469ed3cee6f80328855318f06848a20"
+      },
+      {
+        "path": "scripts/dependency-audit.mjs",
+        "sha256": "4c3cfd0b960451ff8cea8ccb65fa55fe1fb4fcd50678409c352b00e748c7be27"
+      },
+      {
+        "path": "scripts/dependency-audit.test.mjs",
+        "sha256": "dbf1d7e77182299285c38b156904aaf47d836452af06381c04e50689bdf691aa"
+      },
+      {
+        "path": "tsconfig.json",
+        "sha256": "e4d5e978e4318827706d3a58b05d6e125c5429504337296ecbe1aa809e81a4c3"
+      }
+    ]
+  },
+  "ownerReportedChecks": {
+    "typecheck": "passed",
+    "lint": "passed",
+    "unit": 113,
+    "service": 75,
+    "policy": 3,
+    "totalBeforeInstaller": 191,
+    "installer": 4,
+    "installerTotal": 4,
+    "initialInstallerAttempt": "failed because disposable snapshot lacked Git metadata; metadata supplied; rerun passed",
+    "portableInstallerSmoke": "read real fixture source/knowledge and ran one explicitly approved fixture check",
+    "diffWhitespace": "passed"
+  },
+  "rootInspectedNativeAuditOutputs": [
+    {
+      "file": "full-audit.json",
+      "sha256": "71f868287e10147b78cc864bafa3a67e853d27c66f7e9dfb5d382b54f901324e",
+      "nativeVulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "triage": null
+    },
+    {
+      "file": "production-audit.json",
+      "sha256": "71f868287e10147b78cc864bafa3a67e853d27c66f7e9dfb5d382b54f901324e",
+      "nativeVulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "triage": null
+    },
+    {
+      "file": "triage.json",
+      "sha256": "e1d2cdd44acd38a02ee1e8fe0626be6d750852f6d68730dfb144232d22ec6595",
+      "nativeVulnerabilities": null,
+      "triage": {
+        "nativeAuditClean": true,
+        "nativeExitCodes": {
+          "full-audit": 0,
+          "production-audit": 0
+        }
+      }
+    }
+  ],
+  "notPerformed": [
+    "fresh checkout dependency installation",
+    "current rendered-browser acceptance",
+    "live external AI generation",
+    "human learner trial",
+    "source implementation",
+    "shared build/session operation",
+    "commit/push/deployment"
+  ],
+  "planningValidation": {
+    "recordedAt": "2026-10-16T14:31:02+05:30",
+    "localLinks": 185,
+    "jsonFiles": 18,
+    "uniqueIndexedTaskIds": 21,
+    "explicitProposedNewImplementationPaths": 15,
+    "ruleLines": {
+      "AGENTS.md": 30,
+      ".customrules": 19
+    },
+    "stagedPaths": 0,
+    "sourceConfigUnchangedDuringPlanning": true,
+    "sharedBuildAndPublishedArchiveUnchanged": true,
+    "gitDiffWhitespace": "passed"
+  },
+  "checkpointScope": "Initial planning checkpoint; activeVerification records the later authorized fresh baseline run.",
+  "activeVerification": {
+    "taskId": "M0-00",
+    "updatedAt": "2026-10-16T15:37:41+05:30",
+    "status": "technical-and-bounded-browser-verification-collected; overall-baseline-held-for-M0-02-P0",
+    "authorization": "Human instructed PM to dispatch ready work; PM activated M0-00 only at 2026-10-16T14:35:46+05:30.",
+    "executorChatId": "01a138f7-13d0-78e0-b3b3-abe8c8e23cf8",
+    "reviewerChatId": "01a13ab1-e4f4-7d53-ac9a-3f48e91c3856",
+    "sourceManifest": {
+      "inputCount": 114,
+      "fileCount": 98,
+      "expectedMissingPathCount": 16,
+      "fingerprintSha256": "8415e9cec1eacfabbd48fcaf32b6be53200f342d7f789af4720aa2ddcf3d7fc3",
+      "manifestFileSha256": "61c8863f01e2c9d7f6e6e6b11b5fb3b207c74990b92f524e355e06fe3db44018",
+      "exclusions": [
+        "AI_USAGE.md",
+        "CHANGELOG.md",
+        "README.md",
+        "docs/capability-register.md",
+        "docs/history.md",
+        "docs/implementation-plan.md",
+        "docs/milestone-handoffs.md",
+        "docs/product-logic-contract.md",
+        "tasks/todo.md"
+      ],
+      "ownerBeforeAfterMismatches": [],
+      "rootIndependentCurrentInputComparison": {
+        "compared": 114,
+        "mismatches": [],
+        "scope": "Compared before M0-02 activation; subsequent authorized fixes intentionally change this baseline."
+      }
+    },
+    "environment": {
+      "node": "v26.7.0",
+      "npm": "11.19.0",
+      "node24FloorTested": false
+    },
+    "dependencyMode": {
+      "command": "npm ci --ignore-scripts",
+      "location": "disposable snapshot only",
+      "addedPackages": 160,
+      "newDependencyAdoption": false
+    },
+    "ownerReportedChecks": {
+      "unit": 113,
+      "service": 75,
+      "policy": 3,
+      "installer": 4,
+      "typecheck": "pass",
+      "lint": "pass",
+      "fullDependencyAudit": "clean",
+      "productionDependencyAudit": "clean"
+    },
+    "rootInspectedLogSha256": {
+      "npm-ci.log": "ca870d6c1e9efd678e86c708c881462fd13e447c2c6647c68157edd082176d56",
+      "typecheck.log": "553d6667ffa459b883065851c4b4632c6e6a80af07d81980ed3a571a2bdf6074",
+      "lint.log": "c3081245d2f541e956091bb52b3aec8003d5dd1485f4ea9811576dd86ef77d2d",
+      "npm-test.log": "fa4a51275083078ec450ef509eaed9fb98435a56852fdaf28548cd7a71a38414",
+      "browser-check.log": "cef0bd3b38578c684d199cd89ab0411e816c813495013f9e913a623ff0029429",
+      "dependency-audit.log": "4548f1650471439779acf140506bc773a15d6537a720436dc8dcae53eced3335"
+    },
+    "rootInspectedNativeAudits": {
+      "fullVulnerabilityTotal": 0,
+      "productionVulnerabilityTotal": 0,
+      "fullAndProductionAuditSha256": "71f868287e10147b78cc864bafa3a67e853d27c66f7e9dfb5d382b54f901324e",
+      "triageSha256": "e1d2cdd44acd38a02ee1e8fe0626be6d750852f6d68730dfb144232d22ec6595",
+      "nativeExitCodes": {
+        "full-audit": 0,
+        "production-audit": 0
+      }
+    },
+    "candidate": {
+      "version": "0.1.0",
+      "published": false,
+      "dirtySnapshot": true,
+      "baseCommit": "92e118d542ab7332a6d6821929a870cc25187516",
+      "archiveSha256": "09caaa7de1699ff5221d640475f95189005f03d2e762ddc90e8139b0d23e9b77",
+      "buildInfoSha256": "503da99b3ea4b667f2a32756bf5777a4cf20cfff4cae730ae208c7e1395cb088",
+      "sourceLockSha256": "529d30217979a679f71c40f4d81c16d2c0f7936f66e654b933a64d1935b7d486",
+      "rootVerifiedArchiveAndBuildIdentity": true
+    },
+    "isolatedHost": {
+      "origin": "http://127.0.0.1:4188/",
+      "project": "disposable copy of current real Vadhyar source",
+      "indexedFiles": 112,
+      "httpSmokeSource": "prototype/src/project-learning.ts",
+      "sourceHash": "60c49f6a0d4187d7ce95895a9e4421b586f8a7897440c45296c424d6b3833019",
+      "providerCalls": 0,
+      "projectChecks": 0,
+      "hostHandoffFileSha256": "5d26240f4a15b92ff9cea0578b3153aa99c79e778feddc8d57df72efae29f5ee",
+      "state": "Engineering gracefully stopped its verified task-owned host after QA; source/artifact/evidence/isolated data retained",
+      "stopReported": {
+        "exitCode": 130,
+        "pidAbsent": true,
+        "port4188ConnectionRefused": true,
+        "primary4173Untouched": true
+      }
+    },
+    "independentQuality": {
+      "status": "bounded_browser_checks_passed; milestone_acceptance_remains_partial",
+      "finishedAtIST": "2026-10-16T15:08:41+05:30",
+      "reviewerChatId": "01a13ab1-e4f4-7d53-ac9a-3f48e91c3856",
+      "receiptSha256": "5015c469cc1a01a8acf62b8cd672b33792b654b037ccd6ace51ef2fee11f1c52",
+      "rootInspectedReceipt": true,
+      "rootVerifiedEvidenceHashes": 30,
+      "rootEvidenceHashMismatches": [],
+      "checks": [
+        {
+          "id": "M0-QA-01",
+          "status": "passed",
+          "observed": "Provided file hashes match; nonblank initial Path at1707x960, focus page-heading, open dialogs0, horizontal overflow0.",
+          "evidence": [
+            "identity-checkpoint.json",
+            "identity-review.json",
+            "01-path-initial.jpg"
+          ]
+        },
+        {
+          "id": "M0-QA-02",
+          "status": "passed_bounded",
+          "observed": "Path→Project→lesson→Path→Notebook exercised. Only current Path/Project/Notebook navigation observed; no prepared/NovaDesk entry appeared.",
+          "evidence": [
+            "01-path-initial.json",
+            "06-path-saved.json",
+            "07-notebook-state.json"
+          ]
+        },
+        {
+          "id": "M0-QA-03",
+          "status": "passed",
+          "observed": "Real project-learning.ts exact lines1–200, full-file SHA and text independently matched copied file.",
+          "evidence": [
+            "02-reading-bundle.json",
+            "02-reading-verification.json"
+          ]
+        },
+        {
+          "id": "M0-QA-04",
+          "status": "passed_bounded",
+          "observed": "Added one explicit range, analyzed it, inspected captured line153 and exported. Partial coverage and suppressed edges are explicit; no cross-file/runtime claim.",
+          "evidence": [
+            "02-reading-analysis.jpg",
+            "02-reading-bundle.json"
+          ]
+        },
+        {
+          "id": "M0-QA-05",
+          "status": "passed_bounded",
+          "observed": "Start9999 caused beyond-file error. Retry after field changed to1 returned same error; explicit Load excerpt1 recovered. Retained bundle exports before/after failure are byte-identical. Rule/case persisted.",
+          "evidence": [
+            "03-source-failure-state.json",
+            "03-retry-focus.json",
+            "03-source-error-full.jpg",
+            "03-reading-bundle-after-failure.json",
+            "03-source-recovered.json"
+          ]
+        },
+        {
+          "id": "M0-QA-06",
+          "status": "passed",
+          "observed": "Close opened guard; exported actual unsaved JSON; export kept guard open. Keep working and separate Escape preserved text/reasoning and returned focus to Close.",
+          "evidence": [
+            "04-unsaved-draft.json",
+            "04-draft-guard.jpg",
+            "04-keep-working.json",
+            "04-escape.json"
+          ]
+        },
+        {
+          "id": "M0-QA-07",
+          "status": "passed",
+          "observed": "Enter saved prediction only. Actual tab reload retained Observe/current question; Continue resumed original case/prediction, empty observation. Notebook shows exactly1prediction,0reflections,0separatecases; downloaded Markdown preserves attempt/source/text/reasoning.",
+          "evidence": [
+            "06-prediction-saved.json",
+            "06-reload-resume.json",
+            "06-resumed-lesson.json",
+            "07-notebook-state.json",
+            "07-notebook-record.md",
+            "07-notebook.jpg"
+          ]
+        },
+        {
+          "id": "M0-QA-08",
+          "status": "passed_bounded",
+          "observed": "Keep/Escape focus return, stage-heading focus, Tab to prediction, Enter save and focusable source PRE PageDown0→333.33 verified. Measured900x900CSS document width900 and save bottom880. Temporary viewport reset1707x960.",
+          "evidence": [
+            "05-predict-narrow.json",
+            "05-predict-900css.json",
+            "05-predict-900css.jpg",
+            "05-source-keyboard-scroll.json"
+          ]
+        },
+        {
+          "id": "M0-QA-09",
+          "status": "passed_bounded",
+          "observed": "Source/analysis/export/draft/local record/reload/resume completed without teacher or project-command actions. No provider/command invoked by this run. WAN blocking and full manual verification loop were not tested.",
+          "evidence": [
+            "02-reading-verification.json",
+            "06-reload-resume.json",
+            "07-notebook-state.json"
+          ]
+        },
+        {
+          "id": "M0-QA-10",
+          "status": "passed_bounded",
+          "observed": "Evidence outside checkout, unique-suffixed actual downloads copied without overwrite. No source/build/index/process/reset/primary4173 actions; host left to Engineering/PM.",
+          "evidence": [
+            "identity-checkpoint.json",
+            "identity-review.json"
+          ]
+        }
+      ],
+      "notChecked": [
+        "Real provider requests, semantic teaching quality, costs or efficacy",
+        "Automatically graded MCQ or typed-code exercises",
+        "Project command execution, lost acknowledgements, delayed final-verdict race",
+        "WAN-blocked operation or stopped-local-host boot recovery",
+        "Compound faults, quota/corrupt storage, multi-tab reset/capacity or changed-source drift",
+        "Cross-file reading relationships, whole-repository comprehension or runtime trace",
+        "320CSSpx,200percentzoom,VoiceOver/full assistive technology,contrast/reduced-motion matrix",
+        "Windows/phone/LAN access",
+        "Human learner outcomes"
+      ],
+      "sourceVerification": {
+        "projectId": "dc3c84f1c9bb79b8c89299aa56576c8d1e643c6a3f8bb6020278dde2b1a4562d",
+        "fileId": "4dd011bd798d2a05b4e6d45d1208f141483a50bcdd0f0a123f95d46735821d5e",
+        "path": "prototype/src/project-learning.ts",
+        "startLine": 1,
+        "endLine": 200,
+        "sourceHash": "60c49f6a0d4187d7ce95895a9e4421b586f8a7897440c45296c424d6b3833019",
+        "capturedAt": "2026-10-16T09:23:36.230Z",
+        "exactTextMatchesRealCopy": true,
+        "captureCount": 1,
+        "analysisStatus": "partial",
+        "knowledgeId": "fbb0d5226a36ddf28cec8a23f54c7b281de11d802d4ed0cf191e9f9c382bad32",
+        "staticRelationshipCount": 0,
+        "bundleUnchangedAcrossFailure": true,
+        "bundleSha256": "7388168f873cda9336f25cc6b821000ff1a6d75dc5d7041fb52c4ff35bcbb3a1",
+        "scope": "one exact retained range; source-supported static analysis, not observed execution"
+      },
+      "console": {
+        "initialWarningErrorSample": [],
+        "finalWarningErrorSample": [],
+        "limit": "Initial/final samples only; intermediate failure phase console/network trace was not separately captured."
+      }
+    },
+    "limits": [
+      "No application code changed.",
+      "No clean release or publication; base commit alone does not identify dirty inputs.",
+      "Installer project-command smoke used a disclosed test fixture; independent browser targets real copied app source.",
+      "No live external provider or learner evaluation.",
+      "M0-02 privacy gap remains unimplemented; M0-01 race remains unreproduced; M0-03 source-client gap remains inspected only.",
+      "Node 24 advertised floor has not been tested in this run.",
+      "This accepted bounded pre-fix verification is historical after authorized M0-02 source edits; the correction needs its own receipt."
+    ],
+    "localEvidenceRetention": "Transient execution logs, manifest, candidate and host handoff retained under task-specific vadhyar-m0-00 temporary directory until independent QA completes.",
+    "subsequentPrivacyClosure": {
+      "task": "M0-02",
+      "status": "accepted bounded scope",
+      "recordedAt": "2026-10-16T16:42:40+05:30"
+    }
+  },
+  "executionDirection": {
+    "recordedAt": "2026-10-16T15:37:41+05:30",
+    "humanScope": "Execute remaining planned work in order; internal copy and visual quality review.",
+    "activeCodeTask": "M0-02",
+    "activeReadOnlyTask": "M0-04",
+    "noPublicationOrDestructiveOperations": true
+  },
+  "M0-02": {
+    "updatedAt": "2026-10-16T16:05:32+05:30",
+    "status": "PASS for bounded technical, Node24.19 and independent synthetic packaged UI/host journeys; nonblocking focus followup M0-04d",
+    "ownerReportedChecks": {
+      "fullSuiteBeforeFinalTestOnlyDelta": {
+        "unit": 113,
+        "service": 76,
+        "policy": 3,
+        "total": 192
+      },
+      "focusedTeachingAfterTestOnlyDelta": 25,
+      "typecheck": "passed",
+      "lint": "passed",
+      "installerFirstAttempt": "failed at test-runner level during concurrent full suite; exact cause unconfirmed",
+      "installerStandaloneRerun": {
+        "passed": 4,
+        "total": 4
+      },
+      "newDependencyAdoption": false,
+      "externalProviderCalls": 0
+    },
+    "independentTechnicalReview": {
+      "scope": "M0-02 independent technical privacy and consent review",
+      "head": "92e118d542ab7332a6d6821929a870cc25187516",
+      "sourceManifest": "review-source.json",
+      "repositoryWrites": false,
+      "sourceDrift": [],
+      "executed": {
+        "independentInjectedCases": 24,
+        "passed": 24,
+        "focusedAuthorServiceTests": 5,
+        "focusedPassed": 5,
+        "strictNodeNextDeclarationCheck": "passed",
+        "externalProviderCalls": 0,
+        "mutations": "mutation-results.json"
+      },
+      "findings": [
+        {
+          "priority": "P2",
+          "kind": "regression-test gap",
+          "path": "prototype/teaching-service.test.mjs",
+          "line": 31,
+          "issue": "Omitting raw-source scanning leaves the new privacy test green; multiline credential assignment is protected only by the independent probe.",
+          "minimumCorrection": "Add a raw source fixture containing api_key, equals, newline and a quoted synthetic value; show raw regex matches and numbered text does not, assert422 private_context and zero Responses calls."
+        }
+      ],
+      "dataFlowNote": {
+        "path": "prototype/src/TeachingPanel.tsx",
+        "line": 61,
+        "note": "Host uses key as Bearer authentication. Wording that key stays local should distinguish memory-only storage from authentication transmission; route to assigned disclosure/copy owner."
+      },
+      "verdict": "implementation passes independent scope checks; request targeted regression before technical closeout; rendered acceptance separate",
+      "notExecuted": [
+        "full application suite",
+        "shared or isolated build/package",
+        "rendered browser/accessibility",
+        "live provider",
+        "learning or semantic accuracy evaluation"
+      ]
+    },
+    "reviewedSourceManifest": {
+      "prototype/teaching-service.mjs": {
+        "reviewSha256": "874bf3132d9c40685f8fba9fe5f4ca972bc3484a83a75a6e7bc4a6d39c60bfa0",
+        "baselineSha256": "454f142c15c1c0ffdf4f8bb45a3b630df4ac5a0d976cc4d8a54ca5f5205a3371"
+      },
+      "prototype/teaching-service.test.mjs": {
+        "reviewSha256": "d4fc83566ba53ff260a1b9314473b6b8f185a25ef562b0c6b5b83348e7db0924",
+        "baselineSha256": "e76d9dc546031d02f33df7aad39e61b358c38781ac5d3c54ba0e338d8b4925c5"
+      },
+      "prototype/src/TeachingPanel.tsx": {
+        "reviewSha256": "336307fa1c161f882c7b17eb0ae0846efbfa7499f2eb818c6f82e967450f1b69",
+        "baselineSha256": "d6af69242d1ed217227b11a9585a973df0b0e605751f11d2384f52555f03dc2a"
+      },
+      "prototype/project-service.mjs": {
+        "reviewSha256": "5bf5d70e17bc106265dc8f9892c76d0b747f54056fd225a627f72b1367439bcc",
+        "baselineSha256": "8337f89b68222afafd1faa2ff4924046752426a92d4629d6eecce60a04f3ee7d"
+      },
+      "prototype/privacy.mjs": {
+        "reviewSha256": "44481ab291afd6285d6a9a2ad50878c4e4402994af94a1b294562fafa1c3be87",
+        "baselineSha256": null
+      },
+      "prototype/privacy.d.mts": {
+        "reviewSha256": "f3eba0a7db56b53f8a9758ba09233cfd1ceddcb8b7aa4b883e00c36d547a7cd7",
+        "baselineSha256": null
+      }
+    },
+    "mutations": [
+      {
+        "mutation": "remove entire outgoing privacy guard",
+        "authorPrivacyTestExit": 1,
+        "caught": true
+      },
+      {
+        "mutation": "omit raw source and scan only numbered context/model",
+        "authorPrivacyTestExit": 0,
+        "independentProbeExit": 1,
+        "gap": "new service privacy regression lacks raw-versus-numbered multiline case"
+      },
+      {
+        "restoredIndependentProbeExit": 0
+      }
+    ],
+    "rootInspectedReceiptSha256": "73ce2653b3eaa72584cbf049167c055e79e384f48e4fab5931e6c68576b68a03",
+    "rootInspectedMutationReceiptSha256": "fe67c4a47a97c84822f8868670779370b060a513561bf3598c06907ffe23addb",
+    "countsAreOverlapping": "Focused and independent cases are not added to the full-suite total.",
+    "correctedCandidate": {
+      "origin": "http://127.0.0.1:4191/",
+      "archiveSha256": "c69cbe2a19972a49aaafb042d860f809959cab16302e8e836f7ea6591ded8201",
+      "buildInfoSha256": "ea8b3ca3f96305b2d3db152278389f199320dd4baa4132e9a4c2a98d0192d99a",
+      "sourceManifestSha256Reported": "c61824d59c7a1a247bd60931f1ff5a9150455181d9ad9f07b77aae5f208a2847",
+      "rootVerifiedArchiveAndBuildInfo": true,
+      "rootVerifiedSixFinalSourcePins": true,
+      "independentRenderedAcceptance": "in progress",
+      "superseded4190": "held and stopped; not dispatched to independent QA"
+    },
+    "ownerReportedNode24Checks": {
+      "node": "24.19.0",
+      "npm": "11.19.0",
+      "typecheck": "passed",
+      "lint": "passed",
+      "unit": 113,
+      "service": 77,
+      "policy": 3,
+      "total": 193,
+      "installerPassed": 4,
+      "installerTotal": 4,
+      "installerRanSeriallyAfterSuite": true,
+      "newInstallOrExternalProviderCalls": false,
+      "summarySha256Reported": "ba38a266002f95b998eb4ffc6e5bc53654f16bcdee408a732897a8722c441cfc",
+      "rootLogInspection": {
+        "summarySha256": "ba38a266002f95b998eb4ffc6e5bc53654f16bcdee408a732897a8722c441cfc",
+        "testLogSha256": "cc47172a83061501e6b368df25769d5641251f2fb817c1a22dc80a33ba2c1aba",
+        "installerLogSha256": "8b938174973c643130e09dab54aa6f0a048fc91ee430cfcc002eb191bee307fc",
+        "rootReadActualSummaryAndLogs": true
+      }
+    },
+    "boundedQuality4191": {
+      "receiptSha256": "e5e771713727abeb6a33bc8d7736ea1ed78cfdf77c4089449beb0967fe38dd74",
+      "rootVerifiedEvidenceFileCount": 34,
+      "rootEvidenceMismatches": [],
+      "status": "bounded checks passed; second controlled fixture pending for in-flight cancellation/source drift",
+      "knownNonBlockingFollowup": "M0-04d: Connect/Disconnect focus falls to BODY"
+    },
+    "finalTechnicalDelta": {
+      "status": "PASS",
+      "rawSourceMutationCaught": true,
+      "disclosureCorrected": true,
+      "sixHashesMatchFrozenHandoff": true,
+      "receiptPath": "transient vadhyar-m002-delta-qmtxracj/final-technical-review.json",
+      "rootReceiptInspection": {
+        "sha256": "34d89773b8973d5674a80eb42ca151dec670f7691466642f6ace4e26ba0467b7",
+        "mutationFailsWhenRawScanRemoved": true,
+        "currentAndRestoredRegressionPassed": true,
+        "reportedSourceDrift": []
+      }
+    },
+    "resolvedAcceptanceRequirements": [
+      "Owner final raw-source regression delta review",
+      "Corrected key-storage-versus-authentication disclosure and short request labels",
+      "New actually fingerprinted candidate; superseded 4190 candidate held and not sent to independent Quality",
+      "Independent rendered consent/refusal/recovery checks"
+    ],
+    "openBeforeAcceptance": [],
+    "finalQuality": {
+      "receiptSha256": "f8b5ac5673024e010b2f1bf983754a0d4ba855119eb9431e1f1f81de1215f849",
+      "rootReadReceipt": true,
+      "rootVerifiedEvidenceFileCount": 63,
+      "rootEvidenceMismatches": [],
+      "lifecycleReceiptSha256Reported": "33d76b524b6494beb41e964faaad1061cc6abccf195b065d4c07646ce4863185",
+      "sourceRestoredByteForByteSha256": "60c49f6a0d4187d7ce95895a9e4421b586f8a7897440c45296c424d6b3833019",
+      "directBrowserHttpStatus": "unobserved; UI rejection and unchanged counter observed",
+      "realProviderOrLearnerEvaluation": false
+    }
+  },
+  "internalQualityReview": {
+    "task": "M0-04",
+    "copyAudit": {
+      "readOnly": true,
+      "corpus": {
+        "readmes": 2,
+        "uiFiles": 8
+      },
+      "findings": 5,
+      "noAiAuthorshipInference": true
+    },
+    "visualAudit": {
+      "readOnly": true,
+      "actualHashPinnedScreenshots": 5,
+      "visualOnlyBlockingDefectEstablished": false,
+      "findings": {
+        "important": 2,
+        "capturePresentation": 1,
+        "provenanceHold": 1
+      }
+    },
+    "bannerDecision": {
+      "humanDirection": "Unsure—keep it out of new public material",
+      "origin": "unconfirmed",
+      "originalPreserved": true,
+      "readmeReferenceReplacedWithExistingWordmark": true
+    },
+    "correctionTasks": [
+      "M0-04b",
+      "M0-04c"
+    ],
+    "noAiDetectorOrExternalReviewService": true,
+    "status": "accepted scoped corpus/concrete fixes; recurring future gate retained"
+  },
+  "awardQualityDirection": {
+    "humanMessageVerifiedByPM": true,
+    "sourceChatId": "01a13ab1-e4f4-7d53-ac9a-3f48e91c3856",
+    "task": "M0-05",
+    "status": "bounded research handoffs reconciled into one specification; implementation/real learner/accessibility outcomes pending",
+    "awardReadinessOrSubmissionClaim": false,
+    "rootOpenedOfficialSources": [
+      "https://ux-design-awards.com/jury/judging-criteria",
+      "https://www.awwwards.com/about-evaluation/",
+      "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+      "https://design-system.service.gov.uk/components/error-summary/"
+    ],
+    "referencesNotAnInstallCommand": true
+  },
+  "M0-04b": {
+    "status": "accepted bounded independent copy/guard scope",
+    "sourceFiles": [
+      "prototype/src/Website.tsx",
+      "prototype/src/Workspace.tsx"
+    ],
+    "ownerReportedFullSuite": 193,
+    "rootReviewedExactPatch": true,
+    "verificationReceiptSha256BeforeEvidenceOnlyClarification": "fcc4e52f992c04f53f7c7ae49bb60221371f71bc0c7b6b6c8ffd77cfb1e3d085",
+    "origin": "http://127.0.0.1:4217/",
+    "artifactKind": "isolated source build; not4191package or public release",
+    "limits": [
+      "Fixture initially omitted scripts; corrected only in disposable fixture.",
+      "Initial unknown-check dialog interaction did not retain dialog; fresh DOM retries passed twice; cause unconfirmed.",
+      "Reconnect runtime branch not exercised; no provided failure control.",
+      "No full accessibility, phone, other-browser, learner or award-readiness result."
+    ],
+    "pmSourceReplacementHandshake": {
+      "scope": "disposable QA-M0-04b/src/qa.mjs only; no application source or rebuild",
+      "originalSha256": "9ecafd9c8c7f9efa4f280b89ed37570920cf4476efa7d13f288c18b7073178da",
+      "changedSha256": "2deec842c54886b6ddf078cf0b77c8f6f01db40da0200e03cb36c0b269ddd414",
+      "restoredByteForByte": true,
+      "receiptSha256": "e5afa64f8d96fa7e84cf7384bef725b429d2a0cdbdd54d25318c7b6f2edf636a",
+      "qualityReportedBrowser": "Continue default retained; cancellation preserved all four draft fields and returned focus to Refresh source again; final independent receipt pending"
+    },
+    "documentationCorrection": {
+      "rootReadmeSha256": "90a469ba1258d39d15b65c9fcec7ca6bf6cd6fd346fb270ce61937dacecb93aa",
+      "prototypeReadmeSha256": "1fea3f5bb3c452e2fe5881368d6c67b45ccb06c62e05008ee7cc94b8aa0b7907",
+      "bothAllowJustifiedUnchangedSource": true
+    },
+    "independentQuality": {
+      "receiptSha256": "9a31ab2e61cc720cc38c19e6b602ece0b5221ddb3ce77bb16850da438dc48746",
+      "rootReadReceipt": true,
+      "rootVerifiedEvidenceHashes": 61,
+      "mismatches": 0,
+      "actualMeasuredWidths": [
+        800,
+        715
+      ],
+      "defaultContinueContextsExercised": [
+        "new question",
+        "reset open/cancel only",
+        "reload open/cancel only",
+        "unknown check clear open/cancel only",
+        "source replacement cancel"
+      ],
+      "reconnectRuntimeExercised": false,
+      "sourceFixtureIndependentlyConfirmedRestored": true,
+      "noLearnerCommandProviderResetOrSourceApply": true,
+      "narrowCaptureLimit": "715 geometry and controls verified via measured DOM; screenshot15 has exterior padding/top cropping and is not whole-screen pixel/accessibility proof."
+    },
+    "finalOwnerVerificationReceiptSha256": "887c76c0737d926607eebd9daf5ce25d7741e0be848e8c0ec78bb551f90cae05"
+  },
+  "M0-03": {
+    "status": "accepted bounded API/caller contract",
+    "sourcePins": {
+      "prototype/src/project-api.ts": "36d94f0e086aafca164482db605e4003ced24b2067a17aebc8a8379cf18ced6e",
+      "prototype/project-api.test.ts": "ed4d056a2c68cbde0c0bc8f62b45c3c873e1cdcee57a116230e4c6ce05003d44"
+    },
+    "rootMatchedBothPinsAgainstCurrentAndTestedSnapshot": true,
+    "ownerReported": {
+      "node": "24.19.0",
+      "typecheck": "pass",
+      "lint": "pass",
+      "fullUnitTests": 116,
+      "build": "pass",
+      "browser": "isolated4218 actual fixture source selected and displayed; host stopped; exact receipt requested"
+    },
+    "notClaimed": [
+      "reproduced host defect",
+      "combined artifact acceptance",
+      "service or installer rerun"
+    ],
+    "sourceIntelligenceReview": {
+      "verdict": "no defects against specified contract",
+      "bothPinsBeforeAfter": "match",
+      "isolatedFocusedTests": 6,
+      "node": "26.7.0",
+      "noSharedSourceOrBuildChange": true,
+      "notRun": [
+        "live HTTP/browser",
+        "full suites"
+      ]
+    },
+    "ownerObservedFinalFullUnitTests": 116,
+    "ownerObservedFinalFullUnitIncludesSixApiCases": true,
+    "rootObservedOwnerToolReceiptSha256": "0938fdfb5dde0ca8e1873e610fe99e2680a998ebccfb49173510d3d0711dac16",
+    "qualityReview": {
+      "receiptSha256": "5965cfc41d398806bab32dc810946b7fef702b93ccbeae5dd232b44fd6d57642",
+      "testReportSha256": "220c91b7d71e67e8f705cd32698c4e7036436f9cce79241ec7dc4de1403c8dd8",
+      "rootReadAndHashedBoth": true,
+      "node": "24.19.0",
+      "focusedTests": 6,
+      "callerMethod": "unchanged static caller inspection; no new component fault injection"
+    },
+    "limits": [
+      "Owner emitted browser screenshot only; no recovered durable file/hash or measured viewport.",
+      "First build succeeded; subsequent search for nonexistent server file caused shell exit2. Corrected build/discovery passed.",
+      "Owner disposable copy included unnecessary ignored historical/venv/output directories; no deletion or content inspection authorized. Future copies are scoped.",
+      "Combined artifact with later TeachingPanel changes requires independent identity/acceptance."
+    ],
+    "ownerObservedFinalSeparateFocusedRun": 6,
+    "rootFinalFocusedAddendumSha256": "04ff35bb926f2a567b2707ebc50bd411b7db9e0141ad6e1f154f8a07c01fe8c7",
+    "rootEvidenceCorrection": "PM initial filter excluded a combined diff/test/hash command; reading complete actual tool item exec-f7c5f861-4c79-4dc0-952b-b63458c72a34 confirmed owner final focused6 pass. Earlier PM inference of only5 was incorrect; original evidence retained."
+  },
+  "M0-04d": {
+    "status": "accepted bounded independent focus scope",
+    "retryFinding": "fixed in final source; independent review pending",
+    "noSharedControlOrDependencyChange": true,
+    "sourceSha256": "926c4ddc4caf8f8ac048476ac28d6d76fd22fd1a9519558f32e28b752e043b31",
+    "rootMatchedActualSource": true,
+    "rootReadExactPatch": true,
+    "verificationSha256": "3a7a82a4e00e5dca2a33c7f99e4eb64d6e151a26013ae2c2a963cd4059798563",
+    "ownerFinalChecks": {
+      "typecheck": "pass",
+      "lint": "pass",
+      "unitTests": 113,
+      "isolatedBuild": "pass",
+      "actualBrowserChecks": 17
+    },
+    "rootFrozenManifestVerification": [
+      {
+        "manifest": "source-final.json",
+        "checkedNonLicenseFiles": 127,
+        "excludedLicenseNoticeFiles": 19,
+        "mismatches": []
+      },
+      {
+        "manifest": "served-assets-final.json",
+        "checkedNonLicenseFiles": 9,
+        "excludedLicenseNoticeFiles": 4,
+        "mismatches": []
+      }
+    ],
+    "independentReviewOrigin": "http://127.0.0.1:4234/",
+    "apiChangesExcludedFromFocusSnapshot": true,
+    "copy4217Shutdown": "owner session31976 exit0; no listener; evidence preserved",
+    "independentAcceptance": {
+      "receiptSha256": "68803b33c90ce71d75d3496fca79174a8fe6b43f5a3a7b456abef43add3ffbb6",
+      "previousReceiptSha256": "c99ddf9eeaed6714e58f9433604feaa7d63ddd8393dca41150439ab8829b2d67",
+      "rootReadBoth": true,
+      "rootVerifiedEvidenceHashes": 56,
+      "mismatches": 0,
+      "assertionBackedChecks": 19,
+      "controlsRestoredByteForByte": true,
+      "actualSyntheticGenerationsAdded": 1,
+      "savedRecordByteIdenticalToOriginal": true,
+      "usageWarningAndLateSuppression": "pass",
+      "fullAccessibilityOrIntegratedApiAcceptance": false
+    }
+  },
+  "pmDocumentationValidation": {
+    "recordedAt": "2026-10-16T18:53:55+05:30",
+    "markdownFiles": 26,
+    "localLinks": {
+      "markdown": 174,
+      "html": 6
+    },
+    "brokenLinks": [],
+    "jsonFiles": 18,
+    "jsonErrors": [],
+    "taskIds": 27,
+    "unique": true,
+    "acceptedM0Tasks": [
+      "M0-00",
+      "M0-02",
+      "M0-01",
+      "M0-03",
+      "M0-04",
+      "M0-04b",
+      "M0-04c",
+      "M0-04d",
+      "M0-04e",
+      "M0-05"
+    ],
+    "deferredTasks": [
+      "M1-01",
+      "M1-02",
+      "M1-03a",
+      "M1-03b",
+      "M1-04",
+      "M1-05a",
+      "M1-05b",
+      "M1-06",
+      "M1-07",
+      "M1-08",
+      "M2-01",
+      "M2-01b",
+      "M2-02",
+      "M2-03a",
+      "M2-03b",
+      "M3-01",
+      "M3-02"
+    ],
+    "ruleLines": {
+      "AGENTS.md": 30,
+      ".customrules": 20
+    },
+    "preservedPins": {
+      "prototype/dist/app.js": "385faae51ce4f1a4d321385d36384bd4ef5495ede7dc01e5a2c0c520684603b2",
+      "prototype/dist/app.css": "0c07e8b499bb2f34b3eb43fbb5af021b0b3ca0dbd82a74c06088869277eca44c",
+      "dist/releases/vadhyar-browser-0.1.0.tar.gz": "d5cdf484c3aa0cc9bdbc6f5efd17b628730122794b15c951301d32d73b7dd78d",
+      "docs/assets/vadhyar-banner.jpg": "07cdd0d6f6300a67adcf447ee50d9f48c7139356d2e79cd603f8df0c6b093d32"
+    }
+  },
+  "M0-01": {
+    "status": "accepted bounded context/save guard; combined application gate separate",
+    "qualityHandoffSha256": "c188d65bbc3248d0ecf2a2d7e1a6c73dd07e2b784d57f713acc3c1b16bd765b8",
+    "qualityReceiptSha256": "2ae5467e4b47a87d930e48a9fc2f884dbf626bf0b411001789796d96b703bc56",
+    "rootReadAndHashedBoth": true,
+    "reproduced": true,
+    "implemented": false,
+    "exclusiveFiles": [
+      "prototype/src/ProjectLesson.tsx",
+      "prototype/src/check-receipt.ts",
+      "prototype/check-receipt.test.ts"
+    ],
+    "fourthHostTestPathRequiresDemonstratedNeedAndScopeAmendment": true,
+    "preFixObservationSha256": "26beb7fc6f18c7ee4f75085d6f19f30ae1268072472be6260df96ebe6a3d889d",
+    "rootReadPreFixObservation": true,
+    "reproducedScope": "actual pinned ProjectLesson async continuation with synthetic fetch and parent action sink; not actual host/persistence",
+    "cases": [
+      "hostAvailable false while receipt GET held",
+      "revision5 to6 while earlier receipt GET held despite newer poll"
+    ],
+    "acceptedAt": "2026-10-16T18:20:24+05:30",
+    "finalSourceSHA256": "52256ce69a3e03063f8649c65230e338f84fab55be9232a0b1a7bc38199a8ff6",
+    "independentQuality": {
+      "receipt": "/var/folders/sf/n25n_n_95s3bcrss73_y4rph0000gn/T/vadhyar-m001-schema-quality-dmzm8msq/receipt.json",
+      "sha256": "7ce44a6899896f94e50c87a3e61af3c407540f716612aa067d29bb7f25a1f4d5",
+      "assertions": 20,
+      "manifestSHA256": "41e33fc8cc73d3a899d2fd94fb0a65d36e6471d3441df03b5d2f41f785b8ac88",
+      "rootVerifiedEvidenceLeaves": 175,
+      "methodBoundary": "actual production reducer/domain/localStorage, synthetic GET receipt and empty script list; separate mocked-fetch API method test"
+    },
+    "ownerMutation": {
+      "receipt": "/tmp/vadhyar-m001-review-20261016/mutation-observation.json",
+      "sha256": "797ae4831486543ca87dfc257f0cb56fcabb6618f3271f4b8abfd2cb9b8c5103",
+      "rootVerifiedDistLeaves": 3,
+      "independent": false,
+      "observed": "removing generation comparison admits late host-bounce save serial0 to2"
+    },
+    "canonicalBuild": {
+      "receipt": "/tmp/vadhyar-m001-review-20261016/canonical-build-receipt.json",
+      "sha256": "0c24504767094e42be2f173afdb93ce3aa8179a1d1aa5b2fa744af7c022f51c6",
+      "rootVerifiedLeaves": 13,
+      "scope": "isolated earlier snapshot, not combined application after M0-04e"
+    },
+    "rootObservedOwnerChecks": {
+      "receipt": "/tmp/vadhyar-pm-m001-observed/owner-command-evidence.json",
+      "sha256": "405c6e4ef48709f4fe9a0a3abe3bef48b5d9562b92ad1125b70936e5a02d4c18",
+      "typecheck": 0,
+      "lint": 0,
+      "focused": 7,
+      "unit": 116,
+      "policy": 3,
+      "isolatedBuild": 0,
+      "serviceInstallerRepeated": false
+    },
+    "limitations": [
+      "No direct mounted operation/job replacement;7 existing domain tests attributed separately.",
+      "No real command/provider/host network or whole-workspace draft retention claim.",
+      "Old invalid fixtures historical; failed preparation attempts excluded and retained.",
+      "Extra guard mutation owner-run; independent immutable vulnerable/fixed comparison supports acceptance."
+    ]
+  },
+  "M0-04c": {
+    "status": "active UI/UX two-file local grouping lease",
+    "sourceFiles": [
+      "prototype/src/SourceReadingBundle.tsx",
+      "prototype/src/project-style.css"
+    ],
+    "explicitlyDisjointFrom": "Engineering M0-01 receipt three-file scope",
+    "noSharedControlOrHandlerContractChange": true,
+    "newDependencies": 0
+  },
+  "assessmentPreparation": {
+    "owner": "AI Workflow Strategist",
+    "status": "real task confirmed; independent oracle gate open",
+    "candidate": "Reject foreign-file source-state responses while preserving valid unavailable/new-hash states. Existing sourceFreshness already returns unknown for foreign evidence.",
+    "humanTaskQuestionPending": false,
+    "automaticGradeApproved": false,
+    "newDependencies": 0,
+    "newImplementation": false,
+    "humanTaskConfirmed": true,
+    "humanReply": "Use this Vadhyar task (Recommended)",
+    "confirmationRecordedAt": "2026-10-16T18:13:42.675195+05:30",
+    "targetApiChangeImplementedByPracticeFeature": false
+  },
+  "M0-04e": {
+    "status": "accepted bounded focus and combined normal-app stability",
+    "recordedAt": "2026-10-16T18:32:07+05:30",
+    "artifactRoot": "/var/folders/sf/n25n_n_95s3bcrss73_y4rph0000gn/T/vadhyar-m004e-93jk46qm",
+    "origin": "http://127.0.0.1:4241",
+    "beforeOrigin": "http://127.0.0.1:4240",
+    "sourceSHA256": "6db0e024f4f081be43460f2277539174284d5f741792a283a15f8b873e511447",
+    "ownerReceiptSHA256": "dbc718b2d2b1d30eaaea7d2b5f95ad1a06ca9cdd4e0875f475153ce3ab462171",
+    "patchSHA256": "c6fd11d79d0f19c08c8fa100332a83bcff4b0842f6f7e76d095eb7d12e8180a9",
+    "sourceManifestSHA256": "33cc3b479cae06658ee0bd11ede4f2719549f055da22e3615ee2e22181e3cf88",
+    "rootComparison": {
+      "sourceMainAndCandidate": 91,
+      "builtLeaves": 13,
+      "mismatches": {
+        "main": [],
+        "candidate": [],
+        "dist": []
+      }
+    },
+    "ownerChecks": {
+      "typecheck": 0,
+      "lint": 0,
+      "focused": 18,
+      "unit": 116,
+      "isolatedBuild": 0,
+      "browserAssertions": 21,
+      "viewports": [
+        [
+          1440,
+          900
+        ],
+        [
+          900,
+          900
+        ]
+      ]
+    },
+    "normalBuild": {
+      "app.js": "f094dcd32d215c44fa956f71eeffee4f25e513a8f7070b2cd461dff98548aa05",
+      "app.css": "e86dd38b49a0bab6a67bd30bd97da39388a4d0e258b53f208f22453d8c7cb5b8",
+      "index.html": "9811488bb5f00be75372beab91ebe8ff5ffecb0fb0f7fe1425e987d53eeae5ba"
+    },
+    "limits": [
+      "Owner self-checks; independent acceptance pending.",
+      "Labelled DOM/503/delay probes synthetic, normal capture/local analysis/export real.",
+      "No backend/installer repeat, provider usage, other browser/device or whole-app acceptance yet.",
+      "Two QA helper corrections preserved; images .png names contain JPEG bytes, no retouch."
+    ],
+    "reuse": "Proposed exact normal artifact for short combined-current-app acceptance, no redundant build.",
+    "acceptedAt": "2026-10-16T18:52:11+05:30",
+    "independentQuality": {
+      "root": "/var/folders/sf/n25n_n_95s3bcrss73_y4rph0000gn/T/vadhyar-m004e-quality-99kee9ul",
+      "receiptSHA256": "ba4325e90828d0e2681a331948ef47bbe010cc0ba27041113f07266ba30bbaba",
+      "reportSHA256": "ce522112b47ebed8d54720d27d37ace75e157676aa19e2faa8e0cab662a3ed77",
+      "manifestSHA256": "b34012826089d97a9ded0df0e360cf2c832d6226d3d2a5c041179dcc93afd5f5",
+      "assertions": 25,
+      "rootVerifiedEvidenceLeaves": 82,
+      "blockingFailures": [],
+      "controlRestoredSHA256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+    },
+    "combinedLimits": [
+      "Small170byte fixture fits PRE; actualoverflow belongs to earlierc/unchangedCSS.",
+      "No connection/command invoked; namedroutecount is not generalnetwork/cost attestation.",
+      "Labelled mock record, no learner/fulla11y/largeproject/otherdevice/award acceptance.",
+      "QA07wrong900label excluded;25nochangeAX supplemented by37fullNotebook; originals retained."
+    ]
+  },
+  "stabilityStop": {
+    "requestedAt": "2026-10-16T18:35:58+05:30",
+    "humanDirection": "once the new version has enough stability.. you can stop working for now adn all the other chats",
+    "scope": [
+      "M0-04e independent focus acceptance",
+      "bounded combined normal4241 behaviour review",
+      "M0-04 internal-quality closure",
+      "actual blocking correction only if found"
+    ],
+    "afterAcceptance": "Stop root and existing Vadhyar specialist chats; M1+ deferred until later human resume.",
+    "currentCodeWriter": null,
+    "laterTasksImplemented": false,
+    "status": "M0 accepted; feature work stopped, specialist hold issued, later17 tasks deferred",
+    "acceptedAt": "2026-10-16T18:52:11+05:30",
+    "rootDelivery": "Previously requested browser-only GitHub cleanup/sync through protected checks; no deploy/release replacement.",
+    "readinessAutomation": {
+      "id": "vadhyar-mvp-readiness",
+      "status": "PAUSED",
+      "verifiedFromLocalConfiguration": true
+    },
+    "all10SpecialistChatsObservedIdle": true,
+    "idleVerifiedAt": "2026-10-16T18:55:58+05:30",
+    "ownedHostCloseout": {
+      "path": "/var/folders/sf/n25n_n_95s3bcrss73_y4rph0000gn/T/vadhyar-m004e-93jk46qm/owned-host-closeout.json",
+      "sha256": "a857641a877beed1f9aa6103e37f191c19c8c1f2b7fe95ba66b33524087d58b9",
+      "reportedPorts": [
+        4236,
+        4240,
+        4241
+      ],
+      "allExitCode0": true,
+      "artifactsPreserved": true
+    }
+  }
+}

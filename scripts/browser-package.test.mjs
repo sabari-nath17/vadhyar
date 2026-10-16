@@ -39,6 +39,8 @@ test('portable release has locked bundled runtime, MIT and complete notices, wit
  const manifest = JSON.parse(await readFile(join(bundle, 'package.json'), 'utf8'));
  assert.equal(manifest.license, 'MIT'); assert.equal(manifest.dependencies, undefined);
  const info = JSON.parse(await readFile(join(bundle, 'BUILD_INFO.json'), 'utf8'));
+ assert.ok(info.clientSources.length > 0 && info.clientSources.every(file => file.path.startsWith('prototype/src/')), 'The portable browser must build independently of removed native-extension source.');
+ assert.ok(!Object.keys(info.inputs).some(path => /^(?:src|novadesk|fixtures)\//.test(path)));
  assert.ok(info.runtimeDependencies.some(item => item.name === 'typescript'));
  assert.ok(info.runtimeDependencies.some(item => item.name === 'openai'));
  assert.ok(info.runtimeDependencies.some(item => item.name === 'zod'));

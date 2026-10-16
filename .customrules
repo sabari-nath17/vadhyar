@@ -1,21 +1,20 @@
-# Vadhyar stack and evidence rules
+# Vadhyar browser stack and evidence rules
 
-- V1: one prepared NovaDesk TypeScript workspace, one ownership requirement and an archived-milestone transfer task.
-- Current authorization: professional GitHub presentation, portable browser installer and reviewed local updates; the user explicitly authorized pushing. Preserve the published v0.1.1 artifact, historical S7 evidence and active sessions; never force-push.
-- The learner edits source; the runtime coach has no edit, shell or arbitrary-command tool.
-- Use strict TypeScript, Vitest and one root npm lockfile; add later dependencies only when needed.
-- The fixture intentionally checks client role without ownership; label its baseline behavior honestly.
-- Keep approval logic pure and shared with future preview/check consumers; simulated actors are not authentication.
-- Use React/native VS Code APIs for the future panel, esbuild/Vite for bundles, Zod at external boundaries and the official OpenAI SDK.
-- Keep requirement documents in the project; snapshots/sessions belong in workspace extension storage.
-- Store API credentials only in SecretStorage; never send them to the webview or child processes.
-- Preview bounded context before transmission; exclude secrets, tests/solutions, dependencies, generated and unrelated files.
+- Current status: all M0 gates accepted at the human stability stop; no app writer, M1+ deferred. Only root finishes previously requested protected GitHub sync/records; no automatic continuation.
+- Root alone may finish the previously requested GitHub cleanup/sync after stability acceptance, through normal branch/required-CI protections. No release/tag replacement or history rewrite.
+- The product follows one trusted local project; prepared native demos are historical, not a current requirement.
+- Use React, strict TypeScript, the existing esbuild/Vitest stack, Zod contracts and the official OpenAI SDK; keep one pinned npm lockfile.
+- The host listens on loopback and owns root/project identity, Host/Origin/session validation, metadata, source captures and check execution.
 - Host-issued source IDs resolve only to allowlisted real paths and valid current line spans.
-- Graph relationships are proposed interpretations confirmed by the learner, not proof of requirement satisfaction.
-- Require Workspace Trust and the prepared scenario before execution; use fixed executables, arguments, check IDs and timeouts.
-- Fingerprint requirement/source/check/config identities; dirty buffers block runs and concurrent edits invalidate results.
-- Reject edited check definitions; distinguish failure, error, timeout, stale, refusal and malformed output.
-- The runner determines verification status; render model text safely with no executable links or HTML.
-- Record predictions before counterexamples, hint use and guided versus unassisted transfer attempts.
-- Persist records atomically, preserve valid evidence after failure and delete only Vadhyar-owned session data on request.
-- Do not claim mastery, authorship or learning gains from checkpoints or rehearsed demos.
+- Browser records stay local to the profile/origin; keep original predictions, attempts and source identities.
+- Validate async operation identity and reject stale/late responses; failed reads/saves preserve valid work.
+- Preview bounded excerpts and obtain explicit consent before optional provider transmission. Never expose keys in browser data or child processes.
+- Interpretations and static links are proposals, not runtime evidence or requirement verdicts.
+- Project checks require separate consent; use eligible existing scripts, fixed invocation, no implicit npm hooks, bounded redacted output and timeouts.
+- Trusted project commands are not sandboxed. Keep command outcomes, freshness and self-reported verdicts separate.
+- Preserve dirty-buffer guards, cancellation, acknowledgement, storage conflict/reset invalidation and export recovery.
+- Render model output safely without executable links or HTML; the teacher has no edit or shell tools.
+- Keep reading captures version-bound and view-local; support explicit export before leaving.
+- Do not claim mastery, authorship or learning gains from activity or rehearsed developer fixtures.
+- Build and package in isolated copies; do not rebuild shared assets or reload another user's active session.
+- Preserve upstream mappings, copyright/license texts and exact release evidence; old paths resolve through docs/history.md.

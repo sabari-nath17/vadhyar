@@ -52,8 +52,8 @@
     "independent_browser": {
       "status": "passed: bounded maintainer/persona simulation",
       "acceptanceCommit": "88a8d69cc8ce0d00352d26c8f4fd59191a1dbeaf",
-      "receipt": "docs/logic-evidence/persona-real-reader-acceptance.json",
-      "explanation": "docs/logic-evidence/persona-real-feature-explanation.md",
+      "receipt": "https://github.com/sabari-nath17/vadhyar/blob/92e118d542ab7332a6d6821929a870cc25187516/docs/logic-evidence/persona-real-reader-acceptance.json",
+      "explanation": "https://github.com/sabari-nath17/vadhyar/blob/92e118d542ab7332a6d6821929a870cc25187516/docs/logic-evidence/persona-real-feature-explanation.md",
       "owner": "Product Quality",
       "rootReceiptVerifiedAtIST": "2026-10-15T00:39:09+05:30",
       "rootBrowserRerun": false,

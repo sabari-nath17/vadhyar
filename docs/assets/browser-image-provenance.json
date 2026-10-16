@@ -9,14 +9,14 @@
       "scope": "executed desktop MVP; sample learning records or actual selected Vadhyar source; before release packaging"
     },
     {
-      "source": "docs/logic-evidence/persona-real-reader-styled-after.jpg",
+      "source": "https://github.com/sabari-nath17/vadhyar/blob/92e118d542ab7332a6d6821929a870cc25187516/docs/logic-evidence/persona-real-reader-styled-after.jpg",
       "publicAsset": "docs/assets/browser-captured-reading.jpg",
       "sha256": "e8e4263d8dba74a7212e879a13b8b6aba82a5198361a9caec047235bcbb57fb5",
       "processing": "unchanged original screenshot; no generated product behavior",
       "scope": "executed desktop MVP; sample learning records or actual selected Vadhyar source; before release packaging"
     }
   ],
-  "brandSource": "prototype/DESIGN.md and existing docs/assets/vadhyar-banner.jpg",
+  "brandSource": "prototype/DESIGN.md and the existing user-supplied prototype/assets/logo.png wordmark",
   "tokens": {
     "paper": "#F4EFE6",
     "ink": "#2C3539",
@@ -24,5 +24,17 @@
     "outline": "#725023",
     "teal": "#6A8A82"
   },
-  "limits": "Screenshots establish visible UI only; sample data does not establish student learning. Fresh installer/runtime acceptance is separately recorded."
+  "limits": "Screenshots establish visible UI only; sample data does not establish student learning. Fresh installer/runtime acceptance is separately recorded.",
+  "historicalBrandSource": "prototype/DESIGN.md and existing docs/assets/vadhyar-banner.jpg",
+  "excludedFromNewPublicMaterial": [
+    {
+      "asset": "docs/assets/vadhyar-banner.jpg",
+      "sha256": "07cdd0d6f6300a67adcf447ee50d9f48c7139356d2e79cd603f8df0c6b093d32",
+      "origin": "unconfirmed; not inferred to be AI-generated",
+      "humanDirection": "Unsure—keep it out of new public material",
+      "recordedAt": "2026-10-16T15:56:30+05:30",
+      "originalBytesPreserved": true,
+      "currentReadmeUse": "removed; existing user-supplied wordmark reused"
+    }
+  ]
 }

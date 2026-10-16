@@ -4,6 +4,7 @@ import { URL } from 'node:url';
 import OpenAI from 'openai';
 import { zodTextFormat } from 'openai/helpers/zod';
 import { z } from 'zod';
+import { createTeachingContext, privateText } from './privacy.mjs';
 
 const identity = z.string().regex(/^[a-f0-9]{64}$/);
 const modelId = z.string().regex(/^[A-Za-z0-9._:/-]{1,120}$/);
@@ -115,7 +116,8 @@ export function createTeachingService({ readSource, clientFactory = options => n
     const explanation = await bounded(controller, async signal => {
      const source = await selected(data);
      if (signal.aborted || epoch !== token) throw signal.reason ?? new TeachingError(409, 'connection_changed', 'The teaching connection changed.');
-     const context = { path: source.path, language: source.language, startLine: source.startLine, endLine: source.endLine, source: source.text.split('\n').map((line, i) => `${source.startLine + i}: ${line}`).join('\n'), requirement: data.requirement, caseInput: data.caseInput };
+     const context = createTeachingContext(source, data.requirement, data.caseInput);
+     if ([source.text, data.model, ...Object.values(context)].some(value => typeof value === 'string' && privateText.test(value))) fail(422, 'private_context', 'Possible private values were detected. Nothing was sent to OpenAI. Review the selected source, rule, case and model before retrying.');
      const response = await current.client.responses.create({ model: data.model, store: false, max_output_tokens: 3000, input: [{ role: 'developer', content: instructions }, { role: 'user', content: JSON.stringify(context) }], text: { format: zodTextFormat(explanationSchema, 'source_explanation') } }, { signal });
      if (signal.aborted || epoch !== token) throw signal.reason ?? new TeachingError(409, 'connection_changed', 'The teaching connection changed.');
      const result = responseSchema.safeParse(response);

@@ -144,6 +144,9 @@ html:has(.focused-lesson) { scroll-padding-bottom:180px; }
 .companion-app .reading-bundle { margin:24px 0; padding:24px 0; border-block:1px solid var(--line); overflow-wrap:anywhere; }
 .companion-app .reading-bundle h3 { margin:0 0 12px; font-size:22px; }
 .companion-app .reading-bundle h4 { margin:24px 0 12px; }
+.companion-app .reading-bundle .reading-actions { align-items:flex-start; }
+.companion-app .reading-bundle .reading-action { flex:1 1 180px; min-width:0; }
+.companion-app .reading-bundle .reading-action>button { max-width:100%; }
 .companion-app .reading-bundle label { display:block; margin:20px 0 8px; font-weight:600; }
 .companion-app .reading-bundle input { width:100%; min-height:48px; padding:12px 14px; border:1px solid var(--line); border-radius:10px; background:white; color:var(--dark); font:inherit; }
 .companion-app .reading-captures>li,.companion-app .reading-catalog>ul>li { padding:16px 0; border-bottom:1px solid var(--line); }

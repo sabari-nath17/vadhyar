@@ -40,14 +40,11 @@ jobs:
       - name: Use the pinned package manager
         run: npm install --global npm@11.19.0 --ignore-scripts
       - run: npm ci --ignore-scripts
-      - name: Root checks
+      - name: Browser product checks
         run: |
           npm run typecheck
           npm run lint
           npm test
-          npm run build
-      - name: Browser companion checks
-        run: npm run prototype:check
       - name: Portable installer checks
         run: npm run browser:check
 
@@ -65,9 +62,7 @@ jobs:
           package-manager-cache: false
       - name: Use the pinned package manager
         run: npm install --global npm@11.19.0 --ignore-scripts
-      - name: Risk policy regression tests
-        run: node --test scripts/dependency-audit.test.mjs
-      - name: Audit and enforce the scoped risk policy
+      - name: Require clean full and production dependency audits
         if: always()
         run: node scripts/dependency-audit.mjs --output dist/security
       - name: Preserve native audit reports

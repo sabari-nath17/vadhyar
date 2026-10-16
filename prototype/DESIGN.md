@@ -1,46 +1,31 @@
-# Vadhyar browser design
+# Browser design
 
-## Current direction — approved and implemented 14 October 2026
+Vadhyar is a desktop learning companion beside the learner's editor and terminal. Primary probes are 1440/1024px desktop windows and a practical 700–900px coding panel. Smaller widths test reflow and zoom; they do not establish phone connectivity.
 
-A **desktop-first learning companion beside the learner’s existing coding tool**. The main target is a full desktop window at 1440px or 1024px, with a practical 700–900px coding panel. Smaller widths are resilience checks for desktop windows and zoom. The local host remains on the same computer’s loopback address; no phone, LAN, tunnel or pairing flow is implemented.
+## Identity and layout
 
-The [approved design](../docs/design/2026-10-14-duolingo-minimal/DESIGN.md) and [implementation acceptance](../docs/design/2026-10-14-duolingo-minimal/implementation.md) are the current browser references. The static PNG/SVG concepts remain reference artifacts. The user requested implementation; the final diff and rendered result await human review.
+Use parchment `#F4EFE6`, ink `#2C3539`, ochre `#D9A05B` with `#725023` action outline/bottom lip, recorded-activity teal `#6A8A82`, muted `#4E5659` and outline `#8B8273`. Bundled Inter 400/500/600 carries interface text, Playfair 600 confirmed rules and JetBrains Mono source at 13px or larger. Keep the original wordmark's aspect ratio and font notices.
 
-Four inspected references informed this direction:
+The connected shell has Path, Project and Notebook with a 216px desktop sidebar. A focused lesson removes global navigation, retaining six-stage progress and a close action. Wide layouts place the task beside captured source; at 700–1099px source follows the task in a disclosure. Native scrolling and a bounded action footer keep long evidence accessible.
 
-- [Duolingo learning path](https://blog.duolingo.com/new-duolingo-home-screen-design/#quick-overview-what-are-the-big-changes): one next activity, labeled nodes and readable earlier records.
-- [Duolingo core tabs](https://blog.duolingo.com/core-tabs-redesign/#4-flat-minimal-layout-with-heavy-white-space): flat surfaces, generous space and a restrained type system.
-- [Component Gallery progress indicators](https://component.gallery/components/progress-indicator/): completed, current, upcoming and historical labels.
-- [Motion Primitives transition panel](https://motion-primitives.com/docs/transition-panel): keep the task in place during explicit advancement. Its code/dependency was not imported; reference timing/performance was not measured.
+## Evidence and state
 
-## Tokens and layout
-
-Parchment #F4EFE6, ink #2C3539, ochre #D9A05B with #725023 outline and bottom lip, recorded-activity teal #6A8A82, muted #4E5659 and outline #8B8273. Use the bundled Inter 400/500/600 for interface/body, Playfair 600 for confirmed rules and JetBrains Mono for source at 13px or larger. Keep the original wordmark and its aspect ratio. The small original lotus is a vector icon; the main app has no large books illustration.
-
-The connected shell has **Path, Project, Notebook**. The desktop sidebar is 216px. The focused lesson removes global navigation, keeps a six-part progress indicator and close action, and places the task beside captured source at wide desktop sizes. At 700–1099px, the source disclosure follows the task. Native scrolling and a bounded action footer retain access to long questions and evidence. Smaller windows reflow the same desktop journey.
-
-## Components, data and states
-
-Path derives Predict → Observe → Change → Verify → Reflect → Separate case from validated attempt state. Reflection alone does not complete the separate case. Earlier nodes read captured records; later nodes explain prerequisites. Guided/Review is an in-memory presentation choice, without gate bypass or ability inference.
-
-Project retains bounded search/pages, source ranges, the reused source walkthrough/map, captured versions and confirmed rule/case setup. The15October reader integration adds a view-local set of up to five explicit captured ranges, a bounded declaration catalogue, retained-text search, explicit fresh recapture/replacement and static module links. It keeps captures across file/range loading and failures. Reading cannot advance a lesson or send source to a model. [Integrated reader acceptance](../docs/logic-evidence/persona-real-reader-acceptance.json) covers one real feature across four files; it does not establish whole-project runtime behavior or learning efficacy. Notebook consolidates question history and reflections, search and complete export. The optional prepared example remains separately labeled, with its existing saved pages, modes and authored notes; its application/data are not merged or reset.
-
-Generic predictions remain free text plus reasoning. The static SeatCheck radio choices are example-specific and are not inferred from arbitrary project prose. Every observation is labeled self-reported. Command status, available host freshness and the human requirement verdict remain separate. Uncertain and unmet verdicts stay visible through reflection, completion and Path.
-
-Captured source has identity/range/time. A direct source-state read supplies selected-file drift; a short event feed cannot prove freshness. Project-status failure/reconnect makes recording and receipt coverage unknown immediately. Explicit refresh preserves original prediction and archives accepted prior evidence. Every async lesson save is fenced to the originating view, attempt and source.
-
-A check intent is persisted before POST. Reload resumes acknowledged GET status only; lost starts/jobs require explicit clear and never replay automatically. New command verification rereads its host receipt. Failed checks and honest error/timeout coverage can lead to scoped uncertain/unmet reflection. Source sharing and execution retain separate exact review dialogs. Teaching cancellation, failed retention and individual export remain visible. A non-retained teacher response joins the lesson’s guarded export state, stays visible outside the disclosure and cannot be silently replaced by a new generation. Check discovery distinguishes loading, read failure and confirmed empty, with retry/manual fallback.
-
-Drafts have Keep working / explicit discard / export, including same-page no-op navigation. Browser write failures keep valid work in this tab and change save labels accordingly; backups and visible exports remain distinct. No autosave, sync, mastery, unlimited scale or whole-project/runtime correctness is implied.
+- Path derives Predict → Observe → Change → Verify → Reflect → Separate case from validated attempt state. Reflection does not complete the separate case. Earlier nodes show recorded evidence; later nodes explain prerequisites.
+- Project presents bounded files/ranges, source anchors and static maps, confirmed rule/case setup and up to five retained reading captures. Reading is separate from lesson advancement, teaching and command execution.
+- Notebook consolidates actual question history/reflections, search and export. Use free-text project predictions; illustrated example choices are not inferred from arbitrary code.
+- Show captured identity/range/time and current/stale/unknown coverage. Self-reported observations, command status, human verdict and model assistance retain separate labels. Activity rewards do not imply skill.
+- Keep unresolved/unmet outcomes visible. Explicit refresh preserves the original prediction and archives accepted prior evidence. Reading failures preserve captures; leaving the reading view requires an export to retain them outside that view.
+- Drafts have Keep working / explicit discard / export. Failed persistence keeps valid work visibly unsaved. Same-page navigation is a no-op. No filled dashboard, successful check or save badge is fabricated.
+- Sharing and command execution have distinct review dialogs. Non-retained teaching stays visible and individually exportable. Check discovery distinguishes loading, error and genuinely empty results.
 
 ## Accessibility and motion
 
-Native labels, buttons/selects/textareas, skip link, visible focus and dialogs with Escape/focus return. Targets are at least 48px; the principal action is 56–60px. Source scrolls within its own keyboard-focusable region. State has text/shape as well as color.
+Use labelled native controls, a skip link, visible focus and dialogs with Escape/focus return. Source scrolling is keyboard-focusable; state uses text/shape as well as color. Targets are at least 48px and the principal action 56–60px.
 
-Pointer press uses an 80ms bottom-lip contraction; explicit pointer stage advancement uses 180ms opacity. Keyboard advancement is immediate. Source/map navigation is immediate. Actual result arrival may fade for 160ms. Reduced-motion CSS removes transitions and animations. No ambient loops, fabricated check sequence or sound was added.
+Pointer press contracts the bottom lip over 80ms; explicit pointer stage advancement uses 180ms opacity. Keyboard advancement and source/map navigation are immediate. Actual result arrival may fade over 160ms. Reduced-motion CSS removes transitions/animations. No ambient loops, fabricated execution sequence or sound is required.
 
-## Verification and history
+## Provenance and verification
 
-The [acceptance receipt](../docs/design/2026-10-14-duolingo-minimal/implementation.md) distinguishes actual browser probes from domain/service checks and unverified hardware/assistive-technology states. Final desktop concepts and current rendered screenshots were inspected together; 900px coding-panel, 1024px desktop and minimum-window checks supplement that comparison.
+The original [approved concepts](https://github.com/sabari-nath17/vadhyar/blob/92e118d542ab7332a6d6821929a870cc25187516/docs/design/2026-10-14-duolingo-minimal/DESIGN.md), [implementation receipt](https://github.com/sabari-nath17/vadhyar/blob/92e118d542ab7332a6d6821929a870cc25187516/docs/design/2026-10-14-duolingo-minimal/implementation.md) and [static validation](https://github.com/sabari-nath17/vadhyar/blob/92e118d542ab7332a6d6821929a870cc25187516/docs/design/2026-10-14-duolingo-minimal/validation.json) remain dated references. They distinguish proposals, simulated checks and rendered acceptance; names containing “mobile” describe narrow-window illustrations, not a phone product.
 
-The 19:22:29 IST proposal was planning-only. The 19:56:45 IST correction clarified captured context, browser-local learning storage and same-computer access. Those original static artifacts and [static receipt](../docs/design/2026-10-14-duolingo-minimal/validation.json) remain historical evidence. Files named *-mobile are legacy narrow-window illustrations; their names do not establish a phone product target. The approved implementation now supersedes the earlier proposal status.
+The bounded [real-source reader journey](https://github.com/sabari-nath17/vadhyar/blob/92e118d542ab7332a6d6821929a870cc25187516/docs/logic-evidence/persona-real-reader-acceptance.json) and [published installed-browser receipt](../docs/browser-release-verification.md) have separate source identities. Historical visual checks do not certify a later source change, complete accessibility or learning gains. See [history](../docs/history.md) for original design/research materials and [notices](../THIRD_PARTY_NOTICES.md) for asset provenance. Human review remains pending.

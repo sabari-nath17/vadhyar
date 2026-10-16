@@ -1,12 +1,12 @@
 import { spawnSync } from 'node:child_process';
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import process from 'node:process';
 import { fileURLToPath, pathToFileURL, URL } from 'node:url';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 
-export function auditDecision(full, production, lock, policy, now = Date.now()) {
+export function auditDecision(full, production) {
   if (!full?.metadata?.vulnerabilities || !production?.metadata?.vulnerabilities || !full.vulnerabilities || !production.vulnerabilities) throw new Error('Malformed native audit report.');
   for (const report of [full, production]) {
     const counts = report.metadata.vulnerabilities;
@@ -14,22 +14,8 @@ export function auditDecision(full, production, lock, policy, now = Date.now()) 
     if (Array.isArray(report.vulnerabilities) || severities.some(name => !Number.isInteger(counts[name]) || counts[name] < 0 || Object.values(report.vulnerabilities).filter(finding => finding.severity === name).length !== counts[name]) || severities.reduce((total, name) => total + counts[name], 0) !== counts.total || Object.keys(report.vulnerabilities).length !== counts.total) throw new Error('Malformed native audit counts.');
   }
   if (Object.keys(production.vulnerabilities).length) throw new Error('Production dependency findings block release.');
-  const findings = Object.entries(full.vulnerabilities);
-  if (!findings.length) return { accepted: [], nativeAuditClean: true };
-  if (!Number.isFinite(Date.parse(policy.expiresAt)) || now > Date.parse(policy.expiresAt)) throw new Error('Development dependency exception expired.');
-  const names = Object.keys(policy.packages).sort();
-  if (findings.map(([name]) => name).sort().join(',') !== names.join(',')) throw new Error('New or changed dependency findings block release.');
-  if (lock.packages[''].devDependencies?.promptfoo !== policy.packages.promptfoo || lock.packages[''].dependencies?.promptfoo) throw new Error('Promptfoo is no longer the pinned development-only tool.');
-  for (const [name, finding] of findings) {
-    const node = `node_modules/${name}`;
-    const dependency = lock.packages[node];
-    if (!dependency?.dev || dependency.version !== policy.packages[name] || finding.severity !== 'high' || finding.nodes?.length !== 1 || finding.nodes[0] !== node) throw new Error(`Dependency scope or version changed: ${name}.`);
-    const via = finding.via;
-    const parent = { promptfoo: 'jks-js', 'jks-js': 'node-forge' }[name];
-    if (via?.length !== 1 || (name === 'node-forge' ? typeof via[0] !== 'object' || via[0]?.url !== policy.advisory || via[0]?.severity !== 'high' : via[0] !== parent)) throw new Error(`Unapproved advisory: ${name}.`);
-  }
-  if (lock.packages['node_modules/promptfoo'].optionalDependencies?.['jks-js'] !== '^1.1.5' || lock.packages['node_modules/jks-js'].dependencies?.['node-forge'] !== '^1.4.0') throw new Error('Accepted development dependency chain changed.');
-  return { accepted: names, nativeAuditClean: false, advisory: policy.advisory, expiresAt: policy.expiresAt };
+  if (Object.keys(full.vulnerabilities).length) throw new Error('Dependency findings block release, including development dependencies.');
+  return { nativeAuditClean: true };
 }
 
 async function main() {
@@ -50,11 +36,9 @@ async function main() {
     nativeExitCodes[name] = result.status;
     reports.push(report);
   }
-  const lock = JSON.parse(await readFile(resolve(root, 'package-lock.json'), 'utf8'));
-  const policy = JSON.parse(await readFile(resolve(root, 'docs/security/dependency-exceptions.json'), 'utf8'));
-  const decision = { ...auditDecision(reports[0], reports[1], lock, policy), nativeExitCodes };
+  const decision = { ...auditDecision(reports[0], reports[1]), nativeExitCodes };
   await writeFile(resolve(directory, 'triage.json'), JSON.stringify(decision, null, 2) + '\n');
-  process.stdout.write(decision.nativeAuditClean ? 'Native full and production audits are clean.\n' : `Native full audit exit ${nativeExitCodes['full-audit']}: ${decision.accepted.length} accepted development findings; production audit exit ${nativeExitCodes['production-audit']}: clean. Temporary risk triage expires ${decision.expiresAt}. See docs/dependency-risk.md and unmodified native reports.\n`);
+  process.stdout.write('Native full and production audits are clean.\n');
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) main().catch(error => { process.stderr.write(`Dependency risk triage refused: ${error.message}\n`); process.exitCode = 1; });

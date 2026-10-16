@@ -2,31 +2,29 @@
 
 - Read [RULES.md](RULES.md), [.customrules](.customrules), [the plan](docs/implementation-plan.md) and [the slice record](tasks/todo.md) before work.
 - Canonical repository: https://github.com/sabari-nath17/vadhyar.git. Inspect status, remotes and history before reconciling work.
-- Build implementation from scratch at the event; libraries/APIs/datasets are allowed with source attribution.
-- Follow organizer instructions; the event wraps up by 10:00 AM IST on 11 October 2026.
-- Preserve user/teammate changes, `.ignore`, Graft artifacts and prior task evidence.
+- Current product: the browser companion in prototype/. Historical native/demo work is available through docs/history.md and immutable releases.
+- Preserve user/teammate changes, .ignore, Graft artifacts, active sessions and prior evidence in its recorded historical revision.
 - Scope one authorized slice, its callers, tests, config and exact verification before coding.
 - Apply Ponytail: existing patterns, platform features, installed dependencies, minimum new code.
 - Use small functions, clear names and simple data; add abstractions only for an actual repeated need.
-- Validate trust boundaries, preserve error handling and disclose the seeded fixture bug.
+- Validate trust boundaries, preserve error handling and disclose any seeded test-fixture bug.
 - Keep truthful boundaries among implemented, executed, planned and unverified behavior.
-- Use only relevant skills/context; delegate only authorized independent work with exclusive ownership.
-- Inspect the diff after each code batch; run actual typecheck, lint and focused tests immediately.
-- Run the full relevant suite at the slice boundary; exercise editor behavior when implemented.
+- Use only relevant skills/context; delegate independent work with exclusive ownership.
+- Inspect each code batch; run actual typecheck, lint and focused tests immediately.
+- Run the full relevant suite at the slice boundary and exercise actual browser behavior.
+- Build/package in isolation; never overwrite assets served by another active session.
 - For documentation-only changes, validate local links, consistency and rule-file line limits.
-- Update [README.md](README.md) when setup, commands, requirements or behavior change.
-- Update [CHANGELOG.md](CHANGELOG.md) in the same milestone commit: actual IST timestamp, change, reason, files, checks and limits.
-- Update [AI_USAGE.md](AI_USAGE.md) with actual Codex assistance, human review status, checks and corrections.
-- Save actual outcomes, commit/checkpoint and next slice in `tasks/todo.md` before handoff/reset.
+- Update README.md when setup, commands, requirements or behavior change.
+- Update CHANGELOG.md in the milestone commit: actual IST timestamp, change, reason, files, checks and limits.
+- Update AI_USAGE.md with actual assistance, human review status, checks and corrections.
+- Save outcomes, commit/checkpoint and next slice in tasks/todo.md before handoff/reset.
 - Stage explicit intended paths and review the staged diff before committing each completed milestone.
-- Aim for meaningful commits about every 30 minutes while building; this is a convention, not an event rule.
 - Use descriptive commits; never fabricate/backdate records or create empty cadence commits.
 - Preserve shared history: no force-push, destructive reset or unrelated cleanup; explain recovery targets first.
-- Push only when authorized; the 15 October GitHub setup request explicitly authorizes updated local project work. Never force-push.
+- Current scope: human-authorized sequential milestone execution; tasks/todo.md owns exact active file leases and dated acceptance. No source writes outside an active lease; preserve prior cleanup, records and sessions.
 - Keep credentials, QR codes and private data out of source/logs; sanitized examples only.
-- Enable verbose development diagnostics while logging only timings, operation IDs and redacted error categories.
-- For non-trivial ongoing work, consult `/Users/sabarismac/Documents/Second Brain/Second Brain/README_FOR_AI.md` and `Home.md`, then relevant notes under its AGENTS rules.
+- Enable verbose diagnostics with only timings, operation IDs and redacted error categories.
+- For non-trivial ongoing work, consult the Second Brain README_FOR_AI.md, Home.md and relevant notes under its AGENTS rules.
 - Do not scan the whole vault, modify raw sources or retrieve secrets; read sensitive notes only when required.
-- Before submission, complete [SUBMISSION.md](SUBMISSION.md), verify setup/demo/limits, update records and commit.
-- Follow the actual submission method; record its verified commit SHA and push only with authorization.
-- Keep this file and `.customrules` under 50 lines; put detailed plans and task state elsewhere.
+- Historical event/submission instructions remain archived in docs/history.md; follow any separately authorized future submission method.
+- Keep this file and .customrules under 50 lines; put detailed plans and task state elsewhere.

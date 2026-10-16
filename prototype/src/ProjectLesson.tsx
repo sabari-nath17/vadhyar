@@ -26,6 +26,8 @@ export function ProjectLesson({ attempt: a, act, onDirty, browse, close, ask, pr
  const inputMethod = useRef<'pointer' | 'keyboard'>('keyboard');
  const [stageMotion, setStageMotion] = useState(false);
  const dialog = useRef<HTMLDialogElement>(null), mounted = useRef(true), latest = useRef(a), starting = useRef(false);
+ const receiptContext = useRef({ hostAvailable, projectRevision, freshness, generation: 0 });
+ if (receiptContext.current.hostAvailable !== hostAvailable || receiptContext.current.projectRevision !== projectRevision || receiptContext.current.freshness !== freshness) receiptContext.current = { hostAvailable, projectRevision, freshness, generation: receiptContext.current.generation + 1 };
  latest.current = a;
  const index = lessonSteps.findIndex(step => step.key === a.stage), step = lessonSteps[index];
  const run = a.checkResult, pendingCheck = a.pendingCheck, lostRun = pendingCheck?.status === 'unknown';
@@ -142,11 +144,11 @@ export function ProjectLesson({ attempt: a, act, onDirty, browse, close, ask, pr
  const canSave = !busy && !teachingBusy && (a.stage === 'predict' ? valid('text', 'reasoning') : a.stage === 'observe' ? valid('text') : a.stage === 'change' ? true : a.stage === 'verify' ? !checkBlocked && valid('reason', 'assistance') && (manual ? valid('description', 'evidence') : Boolean(terminalRun && hostAvailable && receiptRead?.revision === projectRevision)) : a.stage === 'reflect' ? valid('text') : complete || valid('caseInput', 'prediction', 'reasoning', 'assistance'));
  const recordRun = async (common: { verdict: 'satisfied' | 'not-satisfied' | 'uncertain'; reason: string; assistance: string }) => {
   if (!run || !pendingCheck) return;
-  const origin = a;
+  const origin = a, generation = receiptContext.current.generation;
   setBusy(true); setError(''); setReceiptRead(null);
   try {
    const fresh = await getRun(origin.current.projectId, run.id);
-   if (!current(origin)) return;
+   if (!current(origin) || !receiptContext.current.hostAvailable || receiptContext.current.generation !== generation) return;
    const buffered = checkReceiptBuffer(latest.current, pendingCheck.operationId, fresh);
    if (!act({ type: 'updateCheck', attemptId: origin.id, operationId: pendingCheck.operationId, run: fresh })) { setUnretained(buffered); setError('The freshly read receipt could not be attached. Its output and coverage remain separately exportable; verification was not recorded.'); return; }
    setReceiptRead({ revision: projectRevision, at: new Date().toISOString() });

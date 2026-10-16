@@ -28,7 +28,6 @@ export async function packageBrowser(output = join(root, 'dist', 'releases')) {
   for (const path of ['src', 'assets', 'index.html', 'build.mjs', 'tsconfig.json']) await cp(join(root, 'prototype', path), join(client, 'prototype', path), { recursive: true });
   await cp(join(root, 'tsconfig.json'), join(client, 'tsconfig.json'));
   for (const path of await readdir(join(root, 'prototype'))) if (path.endsWith('.mjs') && !path.endsWith('.test.mjs')) await cp(join(root, 'prototype', path), join(client, 'prototype', path));
-  await cp(join(root, 'src'), join(client, 'src'), { recursive: true });
   await cp(join(root, 'docs', 'third-party'), join(client, 'docs', 'third-party'), { recursive: true });
   await symlink(join(root, 'node_modules'), join(client, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir');
   const clientBuild = join(client, 'prototype', 'build.mjs');
@@ -68,7 +67,7 @@ export async function packageBrowser(output = join(root, 'dist', 'releases')) {
   for (const path of ['tsconfig.json', 'prototype/tsconfig.json']) inputs[path] = digest(await readFile(join(client, path)));
   for (const path of ['scripts/browser-package.mjs', 'scripts/browser-install.mjs', 'scripts/browser-start.mjs', 'docs/browser-installation.md']) inputs[path] = digest(await readFile(join(root, path)));
   await writeFile(join(directory, 'THIRD_PARTY_NOTICES.txt'), notices);
-  const clientSources = [...await fileIdentities(join(client, 'prototype', 'src'), 'prototype/src/'), ...await fileIdentities(join(client, 'src'), 'src/')];
+  const clientSources = await fileIdentities(join(client, 'prototype', 'src'), 'prototype/src/');
   await writeFile(join(directory, 'BUILD_INFO.json'), JSON.stringify({ version, sourceCommit: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim(), nodeVersion: process.versions.node, sourceLockSha256: digest(lockText), runtimeDependencies: dependencies, clientDependencies, inputs, clientSources }, null, 2) + '\n');
   const files = await fileIdentities(directory); await writeFile(join(directory, 'MANIFEST.json'), JSON.stringify({ version, files }, null, 2) + '\n');
   await mkdir(resolve(output), { recursive: true });

@@ -49,11 +49,11 @@ export function SourceReadingBundle({ source, onNavigate }: { source: SourceSnap
  return <section className="reading-bundle" aria-label="Selected source reading bundle">
   <h3>Build a source reading bundle</h3>
   <p className="disclosure">Keep up to five explicit captured ranges while browsing this project. This bundle lives only in this open view; export it before leaving. Reading and searching do not send source to a model, run code or change lesson progress.</p>
-  <div className="button-row">
-   <Control className="secondary" disabled={sameRange || captures.length >= 5} reason={duplicate ? 'This exact captured range is already included.' : sameRange ? 'Explicitly replace the existing capture for this range.' : 'Remove a capture before adding a sixth.'} onClick={() => captureCurrent()}>Add displayed range</Control>
-   <Control className="secondary" disabled={!captures.length} reason="Add a captured range before exporting." onClick={() => download(JSON.stringify({ projectId: source.projectId, captures, knowledge, status: 'View-local captured evidence; freshness is not guaranteed.' }, null, 2), 'vadhyar-reading-bundle.json')}>Export reading bundle</Control>
-   <Control disabled={busy || !captures.length || mixed} reason={busy ? 'The selected ranges are being analyzed.' : mixed ? 'Ranges from one file have different saved hashes. Recapture and replace them with one consistent version.' : 'Add a captured range before analysis.'} onClick={() => { void analyze(); }}>{busy ? 'Analyzing selected ranges…' : 'Analyze selected ranges'}</Control>
-   {busy && <Control className="secondary" onClick={() => { pending.current?.abort(); request.current++; setBusy(false); }}>Cancel analysis</Control>}
+  <div className="button-row reading-actions">
+   <div className="reading-action"><Control className="secondary" disabled={sameRange || captures.length >= 5} reason={duplicate ? 'This exact captured range is already included.' : sameRange ? 'Explicitly replace the existing capture for this range.' : 'Remove a capture before adding a sixth.'} onClick={() => captureCurrent()}>Add displayed range</Control></div>
+   <div className="reading-action"><Control className="secondary" disabled={!captures.length} reason="Add a captured range before exporting." onClick={() => download(JSON.stringify({ projectId: source.projectId, captures, knowledge, status: 'View-local captured evidence; freshness is not guaranteed.' }, null, 2), 'vadhyar-reading-bundle.json')}>Export reading bundle</Control></div>
+   <div className="reading-action"><Control data-reading-action="analyze" disabled={busy || !captures.length || mixed} reason={busy ? 'The selected ranges are being analyzed.' : mixed ? 'Ranges from one file have different saved hashes. Recapture and replace them with one consistent version.' : 'Add a captured range before analysis.'} onClick={() => { void analyze(); }}>{busy ? 'Analyzing selected ranges…' : 'Analyze selected ranges'}</Control></div>
+   {busy && <div className="reading-action"><Control className="secondary" onClick={() => { pending.current?.abort(); request.current++; setBusy(false); }}>Cancel analysis</Control></div>}
   </div>
   {error && <p className="notice warning" role="alert">{error}</p>}
   {mixed && <p className="notice warning">This bundle contains different saved versions of the same file. Local reading and export remain available; analysis waits for consistent recaptures.</p>}
@@ -61,12 +61,12 @@ export function SourceReadingBundle({ source, onNavigate }: { source: SourceSnap
   <ol className="reading-captures" aria-label="Captured ranges">
    {captures.map((capture, index) => { const captured = capture.source, key = readingCaptureKey(captured); return <li key={key}>
     <strong>{index === 0 ? 'Entry · ' : ''}{captured.path}</strong><span className="muted"> · {captured.endLine >= captured.startLine ? `lines ${captured.startLine}–${captured.endLine}` : 'empty file'} · {captured.sourceHash.slice(0, 12)} · captured {captured.capturedAt}{captured.truncated ? ' · excerpt only' : ''}{capture.focus ? ` · selected concept ${capture.focus}` : ''}</span>
-    <div className="button-row">
-     <Control className="text-button" onClick={() => { setPreviewKey(key); setFocus(undefined); setInspectedLine(null); setPreviewOpen(true); }}>Inspect capture</Control>
-     <Control className="text-button" onClick={() => open(captured)}>Recapture saved range</Control>
-     {index > 0 && <Control className="text-button" onClick={() => change(chooseReadingEntry(captures, key))}>Choose as entry</Control>}
-     {captured.fileId === source.fileId && captured.startLine === source.startLine && <Control className="text-button" disabled={duplicate} reason="This exact displayed capture is already included. Recapture the saved range before replacing it." onClick={() => captureCurrent(key)}>Replace with displayed capture</Control>}
-     <Control className="text-button" onClick={() => change(captures.filter(item => item !== capture))}>Remove capture</Control>
+    <div className="button-row reading-actions">
+     <div className="reading-action"><Control className="text-button" onClick={() => { setPreviewKey(key); setFocus(undefined); setInspectedLine(null); setPreviewOpen(true); }}>Inspect capture</Control></div>
+     <div className="reading-action"><Control className="text-button" onClick={() => open(captured)}>Recapture saved range</Control></div>
+     {index > 0 && <div className="reading-action"><Control className="text-button" onClick={() => change(chooseReadingEntry(captures, key))}>Choose as entry</Control></div>}
+     {captured.fileId === source.fileId && captured.startLine === source.startLine && <div className="reading-action"><Control className="text-button" disabled={duplicate} reason="This exact displayed capture is already included. Recapture the saved range before replacing it." onClick={() => captureCurrent(key)}>Replace with displayed capture</Control></div>}
+     <div className="reading-action"><Control className="text-button" onClick={() => change(captures.filter(item => item !== capture))}>Remove capture</Control></div>
     </div>
    </li>; })}
   </ol>
@@ -81,7 +81,11 @@ export function SourceReadingBundle({ source, onNavigate }: { source: SourceSnap
     <h4>{file.path} · captured declarations</h4><p className="disclosure">{file.message}{file.omittedDeclarations ? ` ${file.omittedDeclarations} further declarations are outside this bounded catalogue.` : ''}</p>
     <ul>{file.catalog.map(concept => <li key={concept.id}>
      <strong>{concept.name}</strong> · {concept.kind} · {concept.scope} · lines {concept.startLine}–{concept.endLine} · {concept.complete ? 'complete captured declaration' : 'partial captured declaration'}
-     {captured && <div className="button-row"><Control className="text-button" onClick={() => { setPreviewKey(readingCaptureKey(captured)); setFocus(concept); setInspectedLine(null); setPreviewOpen(true); }}>{concept.complete ? 'Inspect declaration' : 'Inspect captured fragment'}</Control><Control className="text-button" disabled={concept.endLine - concept.startLine + 1 > 200} reason="This declaration exceeds the supported source range. Inspect its captured fragment." onClick={() => open(captured, concept.startLine, concept.endLine)}>{concept.complete ? 'Recapture saved declaration' : 'Recapture saved fragment'}</Control><Control className="text-button" disabled={!canUseReadingConcept(file.status, concept.complete)} reason={file.status === 'invalid' || file.status === 'unsupported' ? 'Recapture readable, supported source before choosing a starting concept.' : 'A partial declaration cannot be the complete starting concept.'} onClick={() => change(captures.map(capture => capture.source === captured ? { ...capture, focus: concept.id } : capture))}>Use as starting concept</Control></div>}
+     {captured && <div className="button-row reading-actions"><div className="reading-action"><Control className="text-button" onClick={() => { setPreviewKey(readingCaptureKey(captured)); setFocus(concept); setInspectedLine(null); setPreviewOpen(true); }}>{concept.complete ? 'Inspect declaration' : 'Inspect captured fragment'}</Control></div><div className="reading-action"><Control className="text-button" disabled={concept.endLine - concept.startLine + 1 > 200} reason="This declaration exceeds the supported source range. Inspect its captured fragment." onClick={() => open(captured, concept.startLine, concept.endLine)}>{concept.complete ? 'Recapture saved declaration' : 'Recapture saved fragment'}</Control></div><div className="reading-action"><Control className="text-button" disabled={!canUseReadingConcept(file.status, concept.complete)} reason={file.status === 'invalid' || file.status === 'unsupported' ? 'Recapture readable, supported source before choosing a starting concept.' : 'A partial declaration cannot be the complete starting concept.'} onClick={event => {
+      const analyzeControl = event.currentTarget.closest('.reading-bundle')?.querySelector<HTMLButtonElement>('button[data-reading-action="analyze"]');
+      change(captures.map(capture => capture.source === captured ? { ...capture, focus: concept.id } : capture));
+      if (analyzeControl?.isConnected && !analyzeControl.disabled && analyzeControl.getAttribute('aria-disabled') !== 'true' && analyzeControl.getClientRects().length) analyzeControl.focus();
+     }}>Use as starting concept</Control></div></div>}
     </li>)}</ul>
    </div>; })}
    <ul className="disclosure">{knowledge.limits.map(limit => <li key={limit}>{limit}</li>)}</ul>
